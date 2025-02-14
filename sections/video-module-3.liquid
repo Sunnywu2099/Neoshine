@@ -1,0 +1,254 @@
+<style>
+    #shopify-section-{{ section.id }} .video_module_3{
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+    #shopify-section-{{ section.id }} .video_module_3 .centent{
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  #shopify-section-{{ section.id }} .video_module_3 .centent .title{
+     margin:0;
+     max-width:90%;
+     margin-bottom:20px;
+   }
+  #shopify-section-{{ section.id }} .video_module_3 .centent .title *{
+    margin:0;
+  }
+  #shopify-section-{{ section.id }} .video_module_3 .centent .mySwiper{
+    width:100%;
+    
+  }
+  #shopify-section-{{ section.id }} .video_module_3 .centent .mySwiper .swiper-slide{
+    position: relative;
+  }
+  #shopify-section-{{ section.id }} .video_module_3 .centent .mySwiper .swiper-slide .ico{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%) scale(.7);
+    padding: 30px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    z-index:2;
+  }
+   #shopify-section-{{ section.id }} .video_module_3 .centent .mySwiper .swiper-slide .ico svg.icon.icon-play {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-45%, -50%);
+    color: #000;
+}
+  #shopify-section-{{ section.id }} .video_module_3 .centent .mySwiper .swiper-slide video{
+    width:100%;
+    height:auto;
+  }
+  #shopify-section-{{ section.id }} .video_module_3 .centent .mySwiper .swiper-slide video.mobile{
+    display:none;
+  }
+  #shopify-section-{{ section.id }} .video_module_3 .centent .mySwiper .swiper-buttons{
+    display:flex;
+    background: #fff;
+    width:30px;
+    height:30px;
+    opacity: 0.8;
+  }
+  #shopify-section-{{ section.id }} .video_module_3 .centent .mySwiper .swiper-buttons:hover{
+    opacity: 1;
+    box-shadow: 0 0 5px 0px #ccc;
+  }
+  #shopify-section-{{ section.id }} .video_module_3 .centent .mySwiper .swiper-buttons::after{
+    font-size:10px;
+  }
+  @media screen and (max-width: 750px) {
+    #shopify-section-{{ section.id }} .video_module_3 .centent .mySwiper .swiper-slide video{
+      display:none;
+    }
+    #shopify-section-{{ section.id }} .video_module_3 .centent .mySwiper .swiper-slide video.mobile{
+      display:block;
+    }
+  }
+  
+</style>
+
+
+
+
+<div class="video_module_3">
+        <div class="centent">
+          <div class="title">{{ section.settings.title }}</div>
+           <div class="swiper mySwiper Swiper_video">
+              <div class="swiper-wrapper">
+                 {% for block in section.blocks %}
+                  {% case block.type %}
+                    {% when 'item' %}
+                       <div class="swiper-slide">
+                         <span class="ico" >
+                            {% render "icon-play" %}
+                          </span>
+                          {{
+                            block.settings.video
+                            | video_tag:
+                              image_size: '100%',
+                              autoplay: false,
+                              loop: true,
+                              controls: false,
+                              muted: false,
+                               class:'pc'
+                          }}
+                         {{
+                            block.settings.video_mobile
+                            | video_tag:
+                              image_size: '100%',
+                              autoplay: false,
+                              loop: true,
+                              controls: false,
+                              muted: false,
+                               class:'mobile'
+                          }}
+                       </div>
+                    
+                    {% endcase %}
+                  {% endfor %}
+               
+               
+              </div>
+              <div class="swiper-button-next swiper-buttons"></div>
+              <div class="swiper-button-prev swiper-buttons"></div>
+              
+            </div>
+        </div>
+</div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var swiper = new Swiper("#shopify-section-{{ section.id }} .Swiper_video", {
+      
+      loop: true,
+      navigation: {
+        nextEl: "#shopify-section-{{ section.id }} .swiper-button-next",
+        prevEl: "#shopify-section-{{ section.id }} .swiper-button-prev",
+      },
+      breakpoints: {
+
+        320: {
+          slidesPerView: 1, 
+          spaceBetween: 10   
+        },
+        640: {
+          slidesPerView: 2, 
+          spaceBetween: 10   
+        },
+        
+        768: {
+          slidesPerView: 3,  
+          spaceBetween: 10   
+        },
+        
+        1024: {
+          slidesPerView: 4,  
+          spaceBetween: 10   
+        }
+      }
+    });
+
+
+    let video_list = document.querySelectorAll('#shopify-section-{{ section.id }} .video_module_3 .centent .mySwiper .swiper-slide');
+
+    video_list.forEach(item => {
+      const playIcon = item.querySelector('.ico')
+      const video = item.querySelector('video')
+        playIcon.onclick = function () {
+          if (video.paused) {
+            playIcon.style.display = 'none';
+            video.play();
+          } else {
+            video.pause();
+            playIcon.style.display = 'block';
+          }
+        }
+      video.onclick = function () {
+          if (video.paused) {
+            playIcon.style.display = 'none';
+            video.play();
+          } else {
+            video.pause();
+            playIcon.style.display = 'block';
+          }
+        }
+    })
+
+
+    
+  })
+</script>
+
+
+{% schema %}
+  {
+    "name": "video module 3",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "title",
+        "label": "title"
+      },
+      {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }     
+    ],
+    "blocks": [
+      {
+        "type": "item",
+        "name": "item",
+        "settings": [
+          {
+            "type": "video",
+            "id": "video",
+            "label": "video"
+          },
+          {
+            "type": "video",
+            "id": "video_mobile",
+            "label": "video_mobile"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "video module 3"
+      }
+    ]
+  }
+{% endschema %}

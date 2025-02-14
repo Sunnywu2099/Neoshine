@@ -1,0 +1,172 @@
+<style>
+    #shopify-section-{{section.id}} .text_module{
+       padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+      background:{{section.settings.background}};
+    }
+
+    #shopify-section-{{ section.id }} .text_module .centent{
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  #shopify-section-{{ section.id }} .text_module .centent .title{
+    margin-top:0;
+  }
+  #shopify-section-{{ section.id }} .text_module .centent .title *{
+    margin-top:0;
+  }
+  #shopify-section-{{ section.id }} .text_module .centent .center{
+    width:100%;
+    display:flex;
+     justify-content: center;
+     flex-wrap: wrap;
+  }
+  #shopify-section-{{ section.id }} .text_module .centent .center .item{
+    width:24%;
+    margin: 0 0.5% 25px;
+  }
+  #shopify-section-{{ section.id }} .text_module .centent .center .item .image{
+       width: auto;
+    height:50px;
+  }
+   #shopify-section-{{ section.id }} .text_module .centent .center .item .image img{
+     height:100%;
+     width:auto;
+   }
+  #shopify-section-{{ section.id }} .text_module .centent .center .item .title{
+    margin:20px 0 10px;
+  }
+  #shopify-section-{{ section.id }} .text_module .centent .center .item .title *{
+    margin:0;
+  }
+  #shopify-section-{{ section.id }} .text_module .centent .center .item .details{
+    
+  }
+  #shopify-section-{{ section.id }} .text_module .centent .center .item .btn{
+    text-decoration: none;
+    color:#000;
+    margin-top:15px;
+    display:inline-block;
+  }
+
+   @media screen and (max-width: 750px) {
+       #shopify-section-{{ section.id }} .text_module .centent .center .item{
+          width:95%;
+         margin: 0 0.5% 50px;
+       }
+  }
+  
+</style>
+
+
+      <div class="text_module">
+        <div class="centent">
+          <div class="title">{{ section.settings.title }}</div>
+            <div class="center">
+              {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'item' %}
+                <div class="item">
+                    <div class="image">
+                      <img src="{{ block.settings.image | img_url:"" }}" alt="{{ block.settings.image.alt }}" width="" height="" />
+                    </div>
+                  <div class="title">{{ block.settings.title }}</div>
+                  <div class="details">{{ block.settings.details }}</div>
+                  <a class="btn" href="{{ block.settings.url }}">{{ block.settings.url_txt }}</a>
+                </div>
+          {% endcase %}
+              {% endfor %}
+                
+                
+            </div>
+        </div>
+    </div>
+
+
+
+{% schema %}
+  {
+    "name": "Plain text module",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "title",
+        "label": "title"
+        
+      },
+      {
+        "type": "color",
+        "id": "background",
+        "label": "background"
+      },
+      {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }      
+    ],
+    "blocks": [
+      {
+        "type": "item",
+        "name": "item",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "image"
+          },
+          {
+            "type": "richtext",
+            "id": "title",
+            "label": "title"
+          },
+          {
+            "type": "inline_richtext",
+            "id": "details",
+            "label": "details"
+          },
+          {
+            "type": "text",
+            "id": "url_txt",
+            "label": "url_txt"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "url"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Plain text module"
+      }
+    ]   
+    
+  }
+{% endschema %}

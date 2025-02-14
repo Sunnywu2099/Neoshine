@@ -1,628 +1,1920 @@
+<link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-search.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-cart-notification.css' | asset_url }}" media="print" onload="this.media='all'">
+
+{%- if settings.predictive_search_enabled -%}
+  <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
+{%- endif -%}
+
+{%- if section.settings.menu_type_desktop == 'mega' -%}
+  <link rel="stylesheet" href="{{ 'component-mega-menu.css' | asset_url }}" media="print" onload="this.media='all'">
+{%- endif -%}
+
+
 <style>
-  :root {
-    --header-is-sticky: {% if section.settings.enable_sticky %}1{% else %}0{% endif %};
+  header-drawer {
+    justify-self: start;
+    margin-left: -1.2rem;
+    margin-left: 20%;
+  }
+  .header:not(.drawer-menu).page-width{
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    max-width: none;
+  }
+  .header__icons_mobile{
+    display:none;
   }
 
-  #shopify-section-{{ section.id }} {
-    --header-grid: "primary-nav logo secondary-nav" / minmax(0, 1fr) auto minmax(0, 1fr);
-    --header-padding-block: 1rem;
-    --header-transparent-header-text-color: {{ section.settings.transparent_header_text_color.rgb }};
-    --header-separation-border-color: {% if section.settings.show_separation_border %}{{ section.settings.color_scheme.settings.text_color.rgb }} / 0.15{% else %}0 0 0 / 0{% endif %};
-
-    position: relative;
-    z-index: 4;
-  }
-
-  @media screen and (min-width: 700px) {
-    #shopify-section-{{ section.id }} {
-      --header-padding-block: {% if section.settings.reduce_padding %}1.2rem{% else %}1.6rem{% endif %};
-    }
-  }
-
-  @media screen and (min-width: 1000px) {
-    #shopify-section-{{ section.id }} {
-      {%- case section.settings.layout -%}
-        {%- when 'logo_left_navigation_inline' -%}
-          --header-grid: "logo primary-nav secondary-nav" / auto minmax(0, 1fr) auto;
-
-        {%- when 'logo_left_navigation_center' -%}
-          --header-grid: "logo primary-nav secondary-nav" / minmax(max-content, 1fr) auto minmax(max-content, 1fr);
-
-        {%- when 'logo_center_navigation_below' -%}
-          --header-grid: ". logo secondary-nav" "primary-nav primary-nav primary-nav" / minmax(0, 1fr) auto minmax(0, 1fr);
-      {%- endcase -%}
-    }
-  }
-
-  {%- if section.settings.enable_sticky -%}
-    #shopify-section-{{ section.id }} {
-      position: sticky;
-      top: 0;
-    }
-
-    .shopify-section--announcement-bar ~ #shopify-section-{{ section.id }} {
-      top: calc(var(--announcement-bar-is-sticky, 0) * var(--announcement-bar-height, 0px));
+  {%- if section.settings.sticky_header_type == 'reduce-logo-size' -%}
+    .scrolled-past-header .header__heading-logo-wrapper {
+      width: 75%;
     }
   {%- endif -%}
 
-  {%- if section.settings.logo != blank -%}
-    #shopify-section-{{ section.id }} {
-      --header-logo-width: {{ section.settings.logo_mobile_max_width }}px;
-    }
-
-    @media screen and (min-width: 700px) {
-      #shopify-section-{{ section.id }} {
-        --header-logo-width: {{ section.settings.logo_max_width }}px;
+  {%- if section.settings.menu_type_desktop != "drawer" -%}
+    @media screen and (min-width: 990px) {
+      header-drawer {
+        display: none;
       }
     }
   {%- endif -%}
+
+  .menu-drawer-container {
+    display: flex;
+  }
+
+  .list-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .list-menu--inline {
+    width: 100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    /* gap:40px; */
+  }
+
+  summary.list-menu__item {
+    padding-right: 2.7rem;
+  }
+
+  .list-menu__item {
+    display: flex;
+    align-items: center;
+    line-height: calc(1 + 0.3 / var(--font-body-scale));
+  }
+
+  .list-menu__item--link {
+    text-decoration: none;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    line-height: calc(1 + 0.8 / var(--font-body-scale));
+  }
+ 
+
+  @media screen and (min-width: 750px) {
+    .list-menu__item--link {
+      padding-bottom: 0.5rem;
+      padding-top: 0.5rem;
+    }
+  }
+  @media screen and (max-width: 750px) {
+    .header__icons_mobile{
+    display:flex;
+  }
+    #shopify-section-{{section.id}} .header__icons{
+      margin-left: 0 !important;
+    }
+    
+
+    
+}
 </style>
 
-<height-observer variable="header">
-  <x-header {% if section.settings.hide_on_scroll and section.settings.enable_sticky %}hide-on-scroll{% endif %} class="header color-scheme color-scheme--{{ section.settings.color_scheme.id }}">
-    {%- comment -%}
-    --------------------------------------------------------------------------------------------------------------------
-    LOGO AREA
-    --------------------------------------------------------------------------------------------------------------------
-    {%- endcomment -%}
+{%- style -%}
+  .header {
+    padding: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px 3rem {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px 3rem;
+  }
 
-    {%- capture logo_content -%}
-      {%- if section.settings.logo -%}
-        {%- capture sizes -%}{{ section.settings.logo_max_width }}px{%- endcapture -%}
-        {%- capture widths -%}{{ section.settings.logo_max_width | times: 2 | at_most: section.settings.logo.width }}, {{ section.settings.logo_max_width | times: 3 | at_most: section.settings.logo.width }}{%- endcapture -%}
+  .section-header {
+    position: sticky; /* This is for fixing a Safari z-index issue. PR #2147 */
+    margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
+  }
 
-        <span class="sr-only">{{ shop.name }}</span>
-        {{- section.settings.logo | image_url: width: section.settings.logo.width | image_tag: sizes: sizes, widths: widths, class: 'header__logo-image' -}}
+  @media screen and (min-width: 750px) {
+    .section-header {
+      margin-bottom: {{ section.settings.margin_bottom }}px;
+    }
+  }
 
-        {%- if section.settings.transparent_logo -%}
-          {{- section.settings.transparent_logo | image_url: width: section.settings.transparent_logo.width | image_tag: sizes: sizes, widths: widths, class: 'header__logo-image header__logo-image--transparent' -}}
-        {%- endif -%}
-      {%- else -%}
-        <span class="header__logo-text h5">{{ shop.name }}</span>
+  @media screen and (min-width: 990px) {
+    .header {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  for block in section.blocks
+    if block.type == '@app'
+      assign has_app_block = true
+    endif
+  endfor
+-%}
+
+<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
+  {%- liquid
+    assign social_links = false
+    assign localization_forms = false
+
+    if settings.social_twitter_link != blank or settings.social_facebook_link != blank or settings.social_pinterest_link != blank or settings.social_instagram_link != blank or settings.social_youtube_link != blank or settings.social_vimeo_link != blank or settings.social_tiktok_link != blank or settings.social_tumblr_link != blank or settings.social_snapchat_link != blank
+      assign social_links = true
+    endif
+
+    if localization.available_countries.size > 1 and section.settings.enable_country_selector or section.settings.enable_language_selector and localization.available_languages.size > 1
+      assign localization_forms = true
+    endif
+  -%}
+  <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
+    {%- liquid
+      if section.settings.menu != blank
+        render 'header-drawer'  block:section.blocks
+      endif
+    
+    -%}
+
+
+    <div class="left-menu small-hide">
+      {{ section.settings.leftmenu }}
+    </div>
+
+    {%- if section.settings.logo_position != 'middle-center' -%}
+      {%- if request.page_type == 'index' -%}
+        <h1 class="header__heading">
       {%- endif -%}
-    {%- endcapture -%}
-
-    {%- if request.page_type == 'index' -%}
-      <h1 class="header__logo">
-        <a href="{{ routes.root_url }}">{{ logo_content }}</a>
-      </h1>
-    {% else %}
-      <a href="{{ routes.root_url }}" class="header__logo">{{ logo_content }}</a>
-    {% endif %}
-
-    {%- comment -%}
-    --------------------------------------------------------------------------------------------------------------------
-    PRIMARY NAVIGATION AREA
-    --------------------------------------------------------------------------------------------------------------------
-    {%- endcomment -%}
-
-    {%- assign menu = section.settings.menu -%}
-    {%- assign sidebar_menu = section.settings.sidebar_menu -%}
-
-    {%- if menu.links.size > 0 or sidebar_menu.links.size > 0 -%}
-      <nav class="header__primary-nav {% if section.settings.layout == 'logo_center_navigation_below' or section.settings.layout == 'logo_left_navigation_center' %}header__primary-nav--center{% endif %}" aria-label="{{ 'header.general.primary_navigation' | t | escape }}">
-        <button type="button" aria-controls="sidebar-menu" {% unless section.settings.layout == 'drawer' %}class="md:hidden"{% endunless %}>
-          <span class="sr-only">{{ 'header.general.menu' | t }}</span>
-          {%- render 'icon' with 'hamburger', class: 'header__nav-icon' -%}
-        </button>
-
-        {%- if menu.links.size > 0 and section.settings.layout != 'drawer' -%}
-          <ul class="contents unstyled-list md-max:hidden">
-            {%- for link in menu.links -%}
-              {% liquid
-                assign link_title_downcase = link.title | strip | downcase
-                assign mega_menu_block = ''
-
-                for block in section.blocks
-                  assign menu_item_downcase = block.settings.menu_item | strip | downcase
-
-                  if menu_item_downcase == link_title_downcase
-                    assign mega_menu_block = block
-                    break
-                  endif
-
-                endfor
-              %}
-
-              <li class="header__primary-nav-item" data-title="{{ link.title | escape }}">
-                {%- if link.levels == 0 and mega_menu_block == '' -%}
-                  <a href="{{ link.url }}" class="block {% if section.settings.menu_text_font == 'heading' %}h6{% endif %}" {% if link.current %}aria-current="page"{% endif %}>{{ link.title }}</a>
-                {%- else -%}
-                  {%- capture disclosure_content -%}
-                    <details class="header__menu-disclosure">
-                      <summary data-follow-link="{{ link.url }}" {% if section.settings.menu_text_font == 'heading' %}class="h6"{% endif %}>
-                        {{- link.title -}}
-                      </summary>
-
-                      {%- if mega_menu_block != '' -%}
-                        {%- render 'mega-menu', link: link, block: mega_menu_block -%}
-                      {%- else -%}
-                        <ul class="header__dropdown-menu {% if link.levels <= 1 %}header__dropdown-menu--restrictable{% endif %} unstyled-list" role="list">
-                          {%- for sub_link in link.links -%}
-                            <li>
-                              {%- if sub_link.levels == 0 -%}
-                                <a href="{{ sub_link.url }}" class="link-faded-reverse" {% if sub_link.current %}aria-current="page"{% endif %}>{{ sub_link.title }}</a>
-                              {%- else -%}
-                                <dropdown-menu-disclosure follow-summary-link trigger="{{ section.settings.menu_open_trigger }}" class="contents">
-                                  <details class="header__menu-disclosure">
-                                    <summary data-follow-link="{{ sub_link.url }}" class="link-faded-reverse">
-                                      <div class="h-stack gap-4 justify-between">
-                                        {{- sub_link.title -}}
-                                        {%- render 'icon' with 'arrow-right', width: 8, direction_aware: true -%}
-                                      </div>
-                                    </summary>
-
-                                    <ul class="header__dropdown-menu unstyled-list" role="list">
-                                      {%- for sub_sub_link in sub_link.links -%}
-                                        <li>
-                                          <a href="{{ sub_sub_link.url }}" class="link-faded-reverse" {% if sub_sub_link.current %}aria-current="page"{% endif %}>{{ sub_sub_link.title }}</a>
-                                        </li>
-                                      {%- endfor -%}
-                                    </ul>
-                                  </details>
-                                </dropdown-menu-disclosure>
-                              {%- endif -%}
-                            </li>
-                          {%- endfor -%}
-                        </ul>
-                      {%- endif -%}
-                    </details>
-                  {%- endcapture -%}
-
-                  {% if mega_menu_block != '' %}
-                    <mega-menu-disclosure follow-summary-link trigger="{{ section.settings.menu_open_trigger }}" class="contents">
-                      {{- disclosure_content -}}
-                    </mega-menu-disclosure>
-                  {%- else -%}
-                    <dropdown-menu-disclosure follow-summary-link trigger="{{ section.settings.menu_open_trigger }}">
-                      {{- disclosure_content -}}
-                    </dropdown-menu-disclosure>
-                  {%- endif -%}
-                {%- endif -%}
-              </li>
-            {%- endfor -%}
-          </ul>
-        {%- endif -%}
-      </nav>
-    {%- endif -%}
-
-    {%- comment -%}
-    --------------------------------------------------------------------------------------------------------------------
-    SECONDARY NAVIGATION AREA
-    --------------------------------------------------------------------------------------------------------------------
-    {%- endcomment -%}
-
-    <nav class="header__secondary-nav" aria-label="{{ 'header.general.secondary_navigation' | t | escape }}">
-      {%- liquid
-        if section.settings.show_country_selector and localization.available_countries.size > 1
-          assign show_country_selector = true
-        endif
-
-        if section.settings.show_locale_selector and localization.available_languages.size > 1
-          assign show_locale_selector = true
-        endif
-      -%}
-
-      <ul class="contents unstyled-list">
-        {%- if show_country_selector or show_locale_selector -%}
-          <li class="localization-selectors md-max:hidden">
-            {%- if show_country_selector -%}
-              {%- render 'localization-selector', type: 'country', placement: 'bottom-end', show_country_name: section.settings.show_country_name, show_country_flag: section.settings.show_country_flag, id_prefix: 'header-nav' -%}
-            {%- endif -%}
-
-            {%- if show_locale_selector -%}
-              {%- render 'localization-selector', type: 'locale', placement: 'bottom-end', id_prefix: 'header-nav' -%}
-            {%- endif -%}
-          </li>
-        {%- endif -%}
-
-        {%- comment -%}Offer a hook for apps to integrate into the header to add their own icon, for instance{%- endcomment -%}
-        {%- for block in section.blocks -%}
-          {%- if block.type == '@app' -%}
-            <li>
-              {%- render block -%}
-            </li>
-          {%- endif -%}
-        {%- endfor -%}
-
-        {%- if shop.customer_accounts_enabled -%}
-          <li class="header__account-link sm-max:hidden">
-            <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}">
-              <span class="sr-only">{% if customer %}{{ 'header.general.account' | t }}{% else %}{{ 'header.general.login' | t }}{% endif %}</span>
-
-              {%- if section.settings.show_icons -%}
-                {%- render 'icon' with 'account', class: 'header__nav-icon' -%}
-              {%- else -%}
-                <span class="md:hidden">{%- render 'icon' with 'account', class: 'header__nav-icon' -%}</span>
-
-                <span class="{% if section.settings.menu_text_font == 'heading' %}h6{% endif %} link-faded md-max:hidden" aria-hidden="true">
-                  {%- if customer -%}
-                    {{- 'header.general.account' | t -}}
-                  {%- else -%}
-                    {{- 'header.general.login' | t -}}
-                  {%- endif -%}
-                </span>
-              {%- endif -%}
-            </a>
-          </li>
-        {%- endif -%}
-
-        {%- if section.settings.enable_search -%}
-          <li class="header__search-link">
-            <a href="{{ routes.search_url }}" aria-controls="header-search-{{ section.id }}">
-              <span class="sr-only">{{ 'header.general.search' | t }}</span>
-
-              {%- if section.settings.show_icons -%}
-                {%- render 'icon' with 'search', class: 'header__nav-icon' -%}
-              {%- else -%}
-                <span class="md:hidden">{%- render 'icon' with 'search', class: 'header__nav-icon' -%}</span>
-                <span class="{% if section.settings.menu_text_font == 'heading' %}h6{% endif %} link-faded md-max:hidden" aria-hidden="true">{{ 'header.general.search' | t }}</span>
-              {%- endif -%}
-            </a>
-          </li>
-        {%- endif -%}
-
-        <li class="relative header__cart-link">
-          <a href="{{ routes.cart_url }}" {% if settings.cart_type != 'page' and request.page_type != 'cart' %}aria-controls="cart-drawer"{% endif %} data-no-instant>
-            <span class="sr-only">{{ 'header.general.cart' | t }}</span>
-
-            {%- if section.settings.show_icons -%}
-              {%- render 'icon' with 'cart', class: 'header__nav-icon' -%}
+          <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
+            {%- if settings.logo != blank -%}
+              <div class="header__heading-logo-wrapper">
+                {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
+                {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
+                {% capture sizes %}(max-width: {{ settings.logo_width | times: 2 }}px) 50vw, {{ settings.logo_width }}px{% endcapture %}
+                {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
+                {{ settings.logo | image_url: width: 600 | image_tag:
+                  class: 'header__heading-logo motion-reduce',
+                  widths: widths,
+                  height: logo_height,
+                  width: settings.logo_width,
+                  alt: logo_alt,
+                  sizes: sizes,
+                  preload: true
+                }}
+              </div>
             {%- else -%}
-              <span class="md:hidden">{%- render 'icon' with 'cart', class: 'header__nav-icon' -%}</span>
-              <span class="{% if section.settings.menu_text_font == 'heading' %}h6{% endif %} link-faded md-max:hidden">{{ 'header.general.cart' | t }} (<cart-count>{{ cart.item_count }}</cart-count>)</span>
+              <span class="h2">{{ shop.name }}</span>
             {%- endif -%}
-
-            <cart-dot class="header__cart-dot {% unless cart.empty? %}is-visible{% endunless %} {% unless section.settings.show_icons %}md:hidden{% endunless %}"></cart-dot>
           </a>
-        </li>
-      </ul>
-    </nav>
+      {%- if request.page_type == 'index' -%}
+        </h1>
+      {%- endif -%}
+    {%- endif -%}
+    {% if section.settings.icon_show_on_top == true %}
+      {% render 'header-icon-list' block:section.blocks %}
+    {% endif %}
+    
+      {% if section.settings.menu != blank %}
+        {% if section.settings.menu_type_desktop == 'dropdown' %}
+          {% render 'header-dropdown-menu' block:section.blocks %}
+          {% elsif section.settings.menu_type_desktop != 'drawer' %}
+          {% render 'header-mega-menu' block:section.blocks %}
+          {% endif %}
+        {% endif %}
+          
+       
+      
+    
 
-    {%- if section.settings.enable_search -%}
-      {%- render 'header-search' -%}
+    {%- if section.settings.logo_position == 'middle-center' -%}
+      {%- if request.page_type == 'index' -%}
+        <h1 class="header__heading">
+      {%- endif -%}
+          <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
+            {%- if settings.logo != blank -%}
+              <div class="header__heading-logo-wrapper">
+                {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
+                {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
+                {% capture sizes %}(min-width: 750px) {{ settings.logo_width }}px, 50vw{% endcapture %}
+                {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
+                {{ settings.logo | image_url: width: 600 | image_tag:
+                  class: 'header__heading-logo',
+                  widths: widths,
+                  height: logo_height,
+                  width: settings.logo_width,
+                  alt: logo_alt,
+                  sizes: sizes,
+                  preload: true
+                }}
+              </div>
+            {%- else -%}
+              <span class="h2">{{ shop.name }}</span>
+            {%- endif -%}
+          </a>
+      {%- if request.page_type == 'index' -%}
+        </h1>
+      {%- endif -%}
     {%- endif -%}
 
-    {%- assign sidebar_menu = section.settings.sidebar_menu | default: section.settings.menu -%}
+    <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %} header__icons_mobile ">
+      <div class="desktop-localization-wrapper">
+        {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
+          <localization-form class="small-hide medium-hide" data-prevent-hide>
+            {%- form 'localization', id: 'HeaderCountryForm', class: 'localization-form' -%}
+              <div>
+                <h2 class="visually-hidden" id="HeaderCountryLabel">{{ 'localization.country_label' | t }}</h2>
+                {%- render 'country-localization', localPosition: 'HeaderCountry' -%}
+              </div>
+            {%- endform -%}
+          </localization-form>
+        {% endif %}
 
-    {%- if sidebar_menu.links.size > 0 -%}
-      {%- render 'header-sidebar', menu: sidebar_menu, color_scheme: section.settings.sidebar_color_scheme, show_dividers: section.settings.sidebar_show_dividers, open_second_level_menus: section.settings.sidebar_open_second_level_menus -%}
-    {%- endif -%}
-  </x-header>
-</height-observer>
+        {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
+          <localization-form class="small-hide medium-hide" data-prevent-hide>
+            {%- form 'localization', id: 'HeaderLanguageForm', class: 'localization-form' -%}
+              <div>
+                <h2 class="visually-hidden" id="HeaderLanguageLabel">{{ 'localization.language_label' | t }}</h2>
+                {%- render 'language-localization', localPosition: 'HeaderLanguage' -%}
+              </div>
+            {%- endform -%}
+          </localization-form>
+        {%- endif -%}
+      </div>
+ 
+      
 
-<script>
-  document.documentElement.style.setProperty('--header-height', `${document.getElementById('shopify-section-{{ section.id }}').clientHeight.toFixed(2)}px`);
+      
+      {%- if shop.customer_accounts_enabled -%}
+        <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
+          {%- if section.settings.enable_customer_avatar -%}
+            <account-icon>
+              {%- if customer and customer.has_avatar? -%}
+                {{ customer | avatar }}
+              {%- else -%}
+                <span class="svg-wrapper">{{ 'icon-account.svg' | inline_asset_content }}</span>
+              {%- endif -%}
+            </account-icon>
+          {%- else -%}
+            <span class="svg-wrapper">{{ 'icon-account.svg' | inline_asset_content }}</span>
+          {%- endif -%}
+          <span class="visually-hidden">
+            {%- liquid
+              if customer
+                echo 'customer.account_fallback' | t
+              else
+                echo 'customer.log_in' | t
+              endif
+            -%}
+          </span>
+        </a>
+      {%- endif -%}
+
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when '@app' -%}
+            {% render block %}
+        {%- endcase -%}
+      {%- endfor -%}
+
+    <a href="/pages/swym-share-wishlist" class="header__icon link">
+      <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.0737 2.08829C16.665 1.67949 16.1799 1.35521 15.646 1.13395C15.112 0.912704 14.5397 0.798828 13.9617 0.798828C13.3837 0.798828 12.8113 0.912704 12.2773 1.13395C11.7434 1.35521 11.2583 1.67949 10.8497 2.08829L10.0017 2.93629L9.15366 2.08829C8.3283 1.26294 7.20888 0.799255 6.04166 0.799255C4.87442 0.799255 3.75501 1.26294 2.92966 2.08829C2.1043 2.91364 1.64062 4.03306 1.64062 5.20029C1.64062 6.36751 2.1043 7.48694 2.92966 8.31229L3.77766 9.16029L10.0017 15.3843L16.2257 9.16029L17.0737 8.31229C17.4825 7.90368 17.8067 7.41854 18.028 6.88458C18.2493 6.35061 18.3631 5.77828 18.3631 5.20029C18.3631 4.6223 18.2493 4.04997 18.028 3.516C17.8067 2.98204 17.4825 2.4969 17.0737 2.08829Z" fill="none" stroke="currentColor" style="fill:none;fill-opacity:1;stroke:currentColor;stroke-opacity:1;" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+
+      
+      <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
+          {% if cart == empty %}
+            <span class="svg-wrapper">{{'icon-cart-empty.svg' | inline_asset_content }}</span>
+          {% else %}
+            <span class="svg-wrapper">{{'icon-cart.svg' | inline_asset_content }}</span>
+          {% endif %}
+        <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+        {%- if cart != empty -%}
+          <div class="cart-count-bubble">
+            {%- if cart.item_count < 100 -%}
+              <span aria-hidden="true">{{ cart.item_count }}</span>
+            {%- endif -%}
+            <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+          </div>
+        {%- endif -%}
+      </a>
+    </div>
+
+  </header>
+</{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
+
+{%- if settings.cart_type == "notification" -%}
+  {%- render 'cart-notification', color_scheme: section.settings.color_scheme, desktop_menu_type: section.settings.menu_type_desktop -%}
+{%- endif -%}
+
+{% javascript %}
+  class StickyHeader extends HTMLElement {
+    constructor() {
+      super();
+    }
+
+    connectedCallback() {
+      this.header = document.querySelector('.section-header');
+      this.headerIsAlwaysSticky = this.getAttribute('data-sticky-type') === 'always' || this.getAttribute('data-sticky-type') === 'reduce-logo-size';
+      this.headerBounds = {};
+
+      this.setHeaderHeight();
+
+      window.matchMedia('(max-width: 990px)').addEventListener('change', this.setHeaderHeight.bind(this));
+
+      if (this.headerIsAlwaysSticky) {
+        this.header.classList.add('shopify-section-header-sticky');
+      };
+
+      this.currentScrollTop = 0;
+      this.preventReveal = false;
+      this.predictiveSearch = this.querySelector('predictive-search');
+
+      this.onScrollHandler = this.onScroll.bind(this);
+      this.hideHeaderOnScrollUp = () => this.preventReveal = true;
+
+      this.addEventListener('preventHeaderReveal', this.hideHeaderOnScrollUp);
+      window.addEventListener('scroll', this.onScrollHandler, false);
+
+      this.createObserver();
+    }
+
+    setHeaderHeight() {
+      document.documentElement.style.setProperty('--header-height', `${this.header.offsetHeight}px`);
+    }
+
+    disconnectedCallback() {
+      this.removeEventListener('preventHeaderReveal', this.hideHeaderOnScrollUp);
+      window.removeEventListener('scroll', this.onScrollHandler);
+    }
+
+    createObserver() {
+      let observer = new IntersectionObserver((entries, observer) => {
+        this.headerBounds = entries[0].intersectionRect;
+        observer.disconnect();
+      });
+
+      observer.observe(this.header);
+    }
+
+    onScroll() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (this.predictiveSearch && this.predictiveSearch.isOpen) return;
+
+      if (scrollTop > this.currentScrollTop && scrollTop > this.headerBounds.bottom) {
+        this.header.classList.add('scrolled-past-header');
+        if (this.preventHide) return;
+        requestAnimationFrame(this.hide.bind(this));
+      } else if (scrollTop < this.currentScrollTop && scrollTop > this.headerBounds.bottom) {
+        this.header.classList.add('scrolled-past-header');
+        if (!this.preventReveal) {
+          requestAnimationFrame(this.reveal.bind(this));
+        } else {
+          window.clearTimeout(this.isScrolling);
+
+          this.isScrolling = setTimeout(() => {
+            this.preventReveal = false;
+          }, 66);
+
+          requestAnimationFrame(this.hide.bind(this));
+        }
+      } else if (scrollTop <= this.headerBounds.top) {
+        this.header.classList.remove('scrolled-past-header');
+        requestAnimationFrame(this.reset.bind(this));
+      }
+
+      this.currentScrollTop = scrollTop;
+    }
+
+    hide() {
+      if (this.headerIsAlwaysSticky) return;
+      this.header.classList.add('shopify-section-header-hidden', 'shopify-section-header-sticky');
+      this.closeMenuDisclosure();
+      this.closeSearchModal();
+    }
+
+    reveal() {
+      if (this.headerIsAlwaysSticky) return;
+      this.header.classList.add('shopify-section-header-sticky', 'animate');
+      this.header.classList.remove('shopify-section-header-hidden');
+    }
+
+    reset() {
+      if (this.headerIsAlwaysSticky) return;
+      this.header.classList.remove('shopify-section-header-hidden', 'shopify-section-header-sticky', 'animate');
+    }
+
+    closeMenuDisclosure() {
+      this.disclosures = this.disclosures || this.header.querySelectorAll('header-menu');
+      this.disclosures.forEach(disclosure => disclosure.close());
+    }
+
+    closeSearchModal() {
+      this.searchModal = this.searchModal || this.header.querySelector('details-modal');
+      this.searchModal.close(false);
+    }
+  }
+
+  customElements.define('sticky-header', StickyHeader);
+{% endjavascript %}
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": {{ shop.name | json }},
+    {% if settings.logo %}
+      "logo": {{ settings.logo | image_url: width: 500 | prepend: "https:" | json }},
+    {% endif %}
+    "sameAs": [
+      {{ settings.social_twitter_link | json }},
+      {{ settings.social_facebook_link | json }},
+      {{ settings.social_pinterest_link | json }},
+      {{ settings.social_instagram_link | json }},
+      {{ settings.social_tiktok_link | json }},
+      {{ settings.social_tumblr_link | json }},
+      {{ settings.social_snapchat_link | json }},
+      {{ settings.social_youtube_link | json }},
+      {{ settings.social_vimeo_link | json }}
+    ],
+    "url": {{ request.origin | append: page.url | json }}
+  }
 </script>
+
+{%- if request.page_type == 'index' -%}
+  {% assign potential_action_target = request.origin | append: routes.search_url | append: "?q={search_term_string}" %}
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": {{ shop.name | json }},
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {{ potential_action_target | json }},
+        "query-input": "required name=search_term_string"
+      },
+      "url": {{ request.origin | append: page.url | json }}
+    }
+  </script>
+{%- endif -%}
 
 {% schema %}
 {
   "name": "t:sections.header.name",
-  "class": "shopify-section--header",
-  "tag": "header",
+  "class": "section-header",
+  
   "settings": [
     {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:global.colors.scheme",
-      "default": "scheme-2"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_sticky",
-      "label": "t:sections.header.enable_sticky_header",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "hide_on_scroll",
-      "label": "t:sections.header.hide_on_scroll",
-      "default": false
-    },
-    {
-      "type": "checkbox",
-      "id": "show_separation_border",
-      "label": "t:sections.header.show_separation_border",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "reduce_padding",
-      "label": "t:sections.header.reduce_padding",
-      "default": false
-    },
-    {
-      "type": "header",
-      "content": "t:sections.header.logo_category"
-    },
-    {
-      "type": "image_picker",
-      "id": "logo",
-      "label": "t:global.image.image",
-      "info": "t:sections.header.logo_size_recommendation"
-    },
-    {
-      "type": "range",
-      "id": "logo_max_width",
-      "min": 20,
-      "max": 300,
-      "step": 5,
-      "unit": "px",
-      "label": "t:global.image.width",
-      "default": 140
-    },
-    {
-      "type": "range",
-      "id": "logo_mobile_max_width",
-      "min": 20,
-      "max": 200,
-      "step": 5,
-      "unit": "px",
-      "label": "t:global.image.mobile_width",
-      "default": 100
-    },
-    {
-      "type": "header",
-      "content": "t:sections.header.navigation_category"
+      "type": "select",
+      "id": "logo_position",
+      "options": [
+        {
+          "value": "top-left",
+          "label": "t:sections.header.settings.logo_position.options__2.label"
+        },
+        {
+          "value": "top-center",
+          "label": "t:sections.header.settings.logo_position.options__3.label"
+        },
+        {
+          "value": "middle-left",
+          "label": "t:sections.header.settings.logo_position.options__1.label"
+        },
+        {
+          "value": "middle-center",
+          "label": "t:sections.header.settings.logo_position.options__4.label"
+        }
+      ],
+      "default": "middle-left",
+      "label": "t:sections.header.settings.logo_position.label",
+      "info": "t:sections.header.settings.logo_help.content"
     },
     {
       "type": "link_list",
       "id": "menu",
-      "label": "t:sections.header.menu",
-      "default": "main-menu"
+      "default": "main-menu",
+      "label": "t:sections.header.settings.menu.label"
     },
     {
-      "type": "link_list",
-      "id": "sidebar_menu",
-      "label": "t:sections.header.mobile_menu"
-    },
-    {
-      "type": "select",
-      "id": "menu_open_trigger",
-      "label": "t:sections.header.menu_open_trigger",
-      "info": "t:sections.header.menu_open_trigger_info",
-      "options": [
-        {
-          "value": "hover",
-          "label": "t:sections.header.menu_open_trigger_options.hover"
-        },
-        {
-          "value": "click",
-          "label": "t:sections.header.menu_open_trigger_options.click"
-        }
-      ],
-      "default": "hover"
-    },
+      "type": "richtext",
+      "id": "leftmenu",
+      "label": "left menu"
+    },    
     {
       "type": "select",
-      "id": "menu_text_font",
-      "label": "t:sections.header.menu_text_font",
+      "id": "menu_type_desktop",
       "options": [
         {
-          "value": "heading",
-          "label": "t:sections.header.menu_text_font_options.heading"
+          "value": "dropdown",
+          "label": "t:sections.header.settings.menu_type_desktop.options__1.label"
         },
         {
-          "value": "body",
-          "label": "t:sections.header.menu_text_font_options.body"
-        }
-      ],
-      "default": "heading"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_search",
-      "label": "t:sections.header.enable_search",
-      "default": true
-    },
-    {
-      "type": "header",
-      "content": "t:sections.header.sidebar_navigation_category"
-    },
-    {
-      "type": "color_scheme",
-      "id": "sidebar_color_scheme",
-      "label": "t:global.colors.scheme",
-      "default": "scheme-2"
-    },
-    {
-      "type": "select",
-      "id": "sidebar_text_font",
-      "label": "t:sections.header.sidebar_text_font",
-      "options": [
-        {
-          "value": "heading",
-          "label": "t:sections.header.sidebar_text_font_options.heading"
-        },
-        {
-          "value": "body",
-          "label": "t:sections.header.sidebar_text_font_options.body"
-        }
-      ],
-      "default": "heading"
-    },
-    {
-      "type": "checkbox",
-      "id": "sidebar_show_dividers",
-      "label": "t:sections.header.sidebar_show_dividers",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "sidebar_open_second_level_menus",
-      "label": "t:sections.header.sidebar_open_second_level_menus",
-      "default": false
-    },
-    {
-      "type": "header",
-      "content": "t:sections.header.desktop_category"
-    },
-    {
-      "type": "select",
-      "id": "layout",
-      "label": "t:sections.header.layout",
-      "options": [
-        {
-          "value": "logo_left_navigation_inline",
-          "label": "t:sections.header.layout_options.logo_left_navigation_inline"
-        },
-        {
-          "value": "logo_left_navigation_center",
-          "label": "t:sections.header.layout_options.logo_left_navigation_center"
-        },
-        {
-          "value": "logo_center_navigation_inline",
-          "label": "t:sections.header.layout_options.logo_center_navigation_inline"
-        },
-        {
-          "value": "logo_center_navigation_below",
-          "label": "t:sections.header.layout_options.logo_center_navigation_below"
+          "value": "mega",
+          "label": "t:sections.header.settings.menu_type_desktop.options__2.label"
         },
         {
           "value": "drawer",
-          "label": "t:sections.header.layout_options.drawer"
+          "label": "t:sections.header.settings.menu_type_desktop.options__3.label"
         }
       ],
-      "default": "logo_left_navigation_inline"
+      "default": "dropdown",
+      "label": "t:sections.header.settings.menu_type_desktop.label",
+      "info": "t:sections.header.settings.menu_type_desktop.info"
+    },
+    {
+      "type": "select",
+      "id": "sticky_header_type",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:sections.header.settings.sticky_header_type.options__1.label"
+        },
+        {
+          "value": "on-scroll-up",
+          "label": "t:sections.header.settings.sticky_header_type.options__2.label"
+        },
+        {
+          "value": "always",
+          "label": "t:sections.header.settings.sticky_header_type.options__3.label"
+        },
+        {
+          "value": "reduce-logo-size",
+          "label": "t:sections.header.settings.sticky_header_type.options__4.label"
+        }
+      ],
+      "default": "on-scroll-up",
+      "label": "t:sections.header.settings.sticky_header_type.label"
     },
     {
       "type": "checkbox",
-      "id": "show_icons",
-      "label": "t:sections.header.show_icons",
-      "default": true
+      "id": "show_line_separator",
+      "default": true,
+      "label": "t:sections.header.settings.show_line_separator.label"
     },
     {
       "type": "header",
-      "content": "t:global.localization.country_region_selector_category",
-      "info": "t:global.localization.country_region_selector_category_info"
+      "content": "t:sections.header.settings.header__1.content"
     },
     {
-      "type": "checkbox",
-      "id": "show_country_selector",
-      "label": "t:global.localization.show_country_region_selector",
-      "default": true
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
     },
     {
-      "type": "checkbox",
-      "id": "show_country_name",
-      "label": "t:global.localization.show_country_name",
-      "default": false
-    },
-    {
-      "type": "checkbox",
-      "id": "show_country_flag",
-      "label": "t:global.localization.show_country_flag",
-      "default": true
+      "type": "color_scheme",
+      "id": "menu_color_scheme",
+      "label": "t:sections.header.settings.menu_color_scheme.label",
+      "default": "scheme-1"
     },
     {
       "type": "header",
-      "content": "t:global.localization.language_selector_category",
-      "info": "t:global.localization.language_selector_category_info"
+      "content": "t:sections.header.settings.header__3.content",
+      "info": "t:sections.header.settings.header__4.info"
     },
     {
       "type": "checkbox",
-      "id": "show_locale_selector",
-      "label": "t:global.localization.show_locale_selector",
-      "default": false
+      "id": "enable_country_selector",
+      "default": false,
+      "label": "t:sections.header.settings.enable_country_selector.label"
     },
     {
       "type": "header",
-      "content": "t:sections.header.transparent_header_category"
+      "content": "t:sections.header.settings.header__5.content",
+      "info": "t:sections.header.settings.header__6.info"
     },
     {
-      "type": "paragraph",
-      "content": "t:sections.header.transparent_header_info"
+      "type": "checkbox",
+      "id": "enable_language_selector",
+      "default": false,
+      "label": "t:sections.header.settings.enable_language_selector.label"
     },
     {
-      "type": "color",
-      "id": "transparent_header_text_color",
-      "label": "t:global.colors.text",
-      "default": "#ffffff"
+      "type": "header",
+      "content": "t:sections.header.settings.header__7.content",
+      "info": "t:sections.header.settings.header__7.info"
     },
     {
-      "type": "image_picker",
-      "id": "transparent_logo",
-      "label": "t:sections.header.transparent_header_logo_image",
-      "info": "t:sections.header.transparent_header_logo_size_recommendation"
+      "type": "checkbox",
+      "id": "enable_customer_avatar",
+      "default": true,
+      "label": "t:sections.header.settings.enable_customer_avatar.label",
+      "info": "t:sections.header.settings.enable_customer_avatar.info"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.header.settings.mobile_layout.content"
+    },
+    {
+      "type": "select",
+      "id": "mobile_logo_position",
+      "options": [
+        {
+          "value": "center",
+          "label": "t:sections.header.settings.mobile_logo_position.options__1.label"
+        },
+        {
+          "value": "left",
+          "label": "t:sections.header.settings.mobile_logo_position.options__2.label"
+        }
+      ],
+      "default": "center",
+      "label": "t:sections.header.settings.mobile_logo_position.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.spacing"
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.header.settings.margin_bottom.label",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 36,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 36,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 20
+    },
+    {
+      "type":"checkbox",
+      "id":"icon_show_on_top",
+      "label":"Icon show on top",
+      "default":false
+      
     }
   ],
   "blocks": [
     {
-      "type": "mega_menu",
-      "name": "t:sections.header.blocks.mega_menu.name",
-      "settings": [
+      "type": "@app"
+    },
+    {
+      "type": "contact",
+      "name":"contact",
+      "settings":[
         {
-          "type": "text",
-          "id": "menu_item",
-          "label": "t:sections.header.blocks.mega_menu.menu_item",
-          "info": "t:sections.header.blocks.mega_menu.menu_item_info"
+          "type":"image_picker",
+          "id":"icon",
+          "label": "icon"
         },
         {
-          "type": "select",
-          "id": "images_position",
-          "label": "t:sections.header.blocks.mega_menu.images_position",
-          "options": [
-            {
-              "value": "left",
-              "label": "t:global.position.left"
-            },
-            {
-              "value": "right",
-              "label": "t:global.position.right"
-            }
-          ],
-          "default": "right"
-        },
-        {
-          "type": "header",
-          "content": "t:sections.header.blocks.mega_menu.image_1"
-        },
-        {
-          "type": "image_picker",
-          "id": "image_1",
-          "label": "t:global.image.image",
-          "info": "t:sections.header.blocks.mega_menu.image_size_recommendation"
-        },
-        {
-          "type": "inline_richtext",
-          "id": "image_1_heading",
-          "label": "t:global.text.heading"
-        },
-        {
-          "type": "inline_richtext",
-          "id": "image_1_text",
-          "label": "t:global.text.text"
-        },
-        {
-          "type": "url",
-          "id": "image_1_link",
-          "label": "t:global.text.link"
-        },
-        {
-          "type": "header",
-          "content": "t:sections.header.blocks.mega_menu.image_2"
-        },
-        {
-          "type": "image_picker",
-          "id": "image_2",
-          "label": "t:global.image.image",
-          "info": "t:sections.header.blocks.mega_menu.image_size_recommendation"
-        },
-        {
-          "type": "inline_richtext",
-          "id": "image_2_heading",
-          "label": "t:global.text.heading"
-        },
-        {
-          "type": "inline_richtext",
-          "id": "image_2_text",
-          "label": "t:global.text.text"
-        },
-        {
-          "type": "url",
-          "id": "image_2_link",
-          "label": "t:global.text.link"
+          "type":"inline_richtext",
+          "id":"text",
+          "label": "text"
         }
+      ]
+    },
+    {
+      "type": "item_blocks",
+      "name":"item_blocks",
+      "settings":[
+        {
+          "type":"text",
+          "id":"link_title",
+          "label": "link_title"
+        },
+        {
+          "type":"image_picker",
+          "id":"link_banner",
+          "label": "link_banner"
+        },
+        {
+          "type":"inline_richtext",
+          "id":"link_tap",
+          "label": "link_tap"
+        },
+        {
+          "type":"url",
+          "id":"link_tap_url",
+          "label": "link_tap_url"
+        },
+        {
+          "type": "header",
+          "content": "item-1"
+          
+        },
+        {
+        "type":"inline_richtext",
+        "id":"title_1",
+        "label": "title_1"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_1_1",
+        "label": "image_1_1"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_1_1",
+        "label": "text_1_1"
+      },
+      {
+        "type":"url",
+        "id": "text_1_1_url",
+        "label": "text_1_1_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_1_2",
+        "label": "image_1_2"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_1_2",
+        "label": "text_1_2"
+      },
+      {
+        "type":"url",
+        "id": "text_1_2_url",
+        "label": "text_1_2_url"
+      },
+      
+      {
+        "type":"image_picker",
+        "id": "image_1_3",
+        "label": "image_1_3"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_1_3",
+        "label": "text_1_3"
+      },
+      {
+        "type":"url",
+        "id": "text_1_3_url",
+        "label": "text_1_3_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_1_4",
+        "label": "image_1_4"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_1_4",
+        "label": "text_1_4"
+      },
+      {
+        "type":"url",
+        "id": "text_1_4_url",
+        "label": "text_1_4_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_1_5",
+        "label": "image_1_5"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_1_5",
+        "label": "text_1_5"
+      },
+      {
+        "type":"url",
+        "id": "text_1_5_url",
+        "label": "text_1_5_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_1_6",
+        "label": "image_1_6"
+      },
+      
+      {
+        "type":"inline_richtext",
+        "id": "text_1_6",
+        "label": "text_1_6"
+      },
+      {
+        "type":"url",
+        "id": "text_1_6_url",
+        "label": "text_1_6_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_1_7",
+        "label": "image_1_7"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_1_7",
+        "label": "text_1_7"
+      },
+      {
+        "type":"url",
+        "id": "text_1_7_url",
+        "label": "text_1_7_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_1_8",
+        "label": "image_1_8"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_1_8",
+        "label": "text_1_8"
+      },
+      {
+        "type":"url",
+        "id": "text_1_8_url",
+        "label": "text_1_8_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_1_9",
+        "label": "image_1_9"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_1_9",
+        "label": "text_1_9"
+      },
+      {
+        "type":"url",
+        "id": "text_1_9_url",
+        "label": "text_1_9_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_1_10",
+        "label": "image_1_10"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_1_10",
+        "label": "text_1_10"
+      },
+      {
+        "type":"url",
+        "id": "text_1_10_url",
+        "label": "text_1_10_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_1_11",
+        "label": "image_1_11"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_1_11",
+        "label": "text_1_11"
+      },
+      {
+        "type":"url",
+        "id": "text_1_11_url",
+        "label": "text_1_11_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_1_12",
+        "label": "image_1_12"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_1_12",
+        "label": "text_1_12"
+      },
+      {
+        "type":"url",
+        "id": "text_1_12_url",
+        "label": "text_1_12_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_1_13",
+        "label": "image_1_13"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_1_13",
+        "label": "text_1_13"
+      },
+      {
+        "type":"url",
+        "id": "text_1_13_url",
+        "label": "text_1_13_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_1_14",
+        "label": "image_1_14"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_1_14",
+        "label": "text_1_14"
+      },
+      {
+        "type":"url",
+        "id": "text_1_14_url",
+        "label": "text_1_14_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_1_15",
+        "label": "image_1_15"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_1_15",
+        "label": "text_1_15"
+      },
+      {
+        "type":"url",
+        "id": "text_1_15_url",
+        "label": "text_1_15_url"
+      },
+        {
+          "type": "header",
+          "content": "item-2"
+          
+        },
+        {
+          "type":"inline_richtext",
+          "id":"title_2",
+          "label": "title_2"
+        },
+        {
+        "type":"image_picker",
+        "id": "image_2_1",
+        "label": "image_2_1"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_2_1",
+        "label": "text_2_1"
+      },
+      {
+        "type":"url",
+        "id": "text_2_1_url",
+        "label": "text_2_1_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_2_2",
+        "label": "image_2_2"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_2_2",
+        "label": "text_2_2"
+      },
+      {
+        "type":"url",
+        "id": "text_2_2_url",
+        "label": "text_2_2_url"
+      },
+      
+      {
+        "type":"image_picker",
+        "id": "image_2_3",
+        "label": "image_2_3"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_2_3",
+        "label": "text_2_3"
+      },
+      {
+        "type":"url",
+        "id": "text_2_3_url",
+        "label": "text_2_3_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_2_4",
+        "label": "image_2_4"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_2_4",
+        "label": "text_2_4"
+      },
+      {
+        "type":"url",
+        "id": "text_2_4_url",
+        "label": "text_2_4_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_2_5",
+        "label": "image_2_5"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_2_5",
+        "label": "text_2_5"
+      },
+      {
+        "type":"url",
+        "id": "text_2_5_url",
+        "label": "text_2_5_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_2_6",
+        "label": "image_2_6"
+      },
+      
+      {
+        "type":"inline_richtext",
+        "id": "text_2_6",
+        "label": "text_2_6"
+      },
+      {
+        "type":"url",
+        "id": "text_2_6_url",
+        "label": "text_2_6_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_2_7",
+        "label": "image_2_7"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_2_7",
+        "label": "text_2_7"
+      },
+      {
+        "type":"url",
+        "id": "text_2_7_url",
+        "label": "text_2_7_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_2_8",
+        "label": "image_2_8"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_2_8",
+        "label": "text_2_8"
+      },
+      {
+        "type":"url",
+        "id": "text_2_8_url",
+        "label": "text_2_8_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_2_9",
+        "label": "image_2_9"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_2_9",
+        "label": "text_2_9"
+      },
+      {
+        "type":"url",
+        "id": "text_2_9_url",
+        "label": "text_2_9_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_2_10",
+        "label": "image_2_10"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_2_10",
+        "label": "text_2_10"
+      },
+      {
+        "type":"url",
+        "id": "text_2_10_url",
+        "label": "text_2_10_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_2_11",
+        "label": "image_2_11"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_2_11",
+        "label": "text_2_11"
+      },
+      {
+        "type":"url",
+        "id": "text_2_11_url",
+        "label": "text_2_11_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_2_12",
+        "label": "image_2_12"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_2_12",
+        "label": "text_2_12"
+      },
+      {
+        "type":"url",
+        "id": "text_2_12_url",
+        "label": "text_2_12_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_2_13",
+        "label": "image_2_13"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_2_13",
+        "label": "text_2_13"
+      },
+      {
+        "type":"url",
+        "id": "text_2_13_url",
+        "label": "text_2_13_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_2_14",
+        "label": "image_2_14"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_2_14",
+        "label": "text_2_14"
+      },
+      {
+        "type":"url",
+        "id": "text_2_14_url",
+        "label": "text_2_14_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_2_15",
+        "label": "image_2_15"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_2_15",
+        "label": "text_2_15"
+      },
+      {
+        "type":"url",
+        "id": "text_2_15_url",
+        "label": "text_2_15_url"
+      },
+        {
+          "type": "header",
+          "content": "item-3"
+          
+        },
+        {
+          "type":"inline_richtext",
+          "id":"title_3",
+          "label": "title_3"
+        },
+        {
+        "type":"image_picker",
+        "id": "image_3_1",
+        "label": "image_3_1"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_3_1",
+        "label": "text_3_1"
+      },
+      {
+        "type":"url",
+        "id": "text_3_1_url",
+        "label": "text_3_1_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_3_2",
+        "label": "image_3_2"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_3_2",
+        "label": "text_3_2"
+      },
+      {
+        "type":"url",
+        "id": "text_3_2_url",
+        "label": "text_3_2_url"
+      },
+      
+      {
+        "type":"image_picker",
+        "id": "image_3_3",
+        "label": "image_3_3"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_3_3",
+        "label": "text_3_3"
+      },
+      {
+        "type":"url",
+        "id": "text_3_3_url",
+        "label": "text_3_3_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_3_4",
+        "label": "image_3_4"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_3_4",
+        "label": "text_3_4"
+      },
+      {
+        "type":"url",
+        "id": "text_3_4_url",
+        "label": "text_3_4_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_3_5",
+        "label": "image_3_5"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_3_5",
+        "label": "text_3_5"
+      },
+      {
+        "type":"url",
+        "id": "text_3_5_url",
+        "label": "text_3_5_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_3_6",
+        "label": "image_3_6"
+      },
+      
+      {
+        "type":"inline_richtext",
+        "id": "text_3_6",
+        "label": "text_3_6"
+      },
+      {
+        "type":"url",
+        "id": "text_3_6_url",
+        "label": "text_3_6_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_3_7",
+        "label": "image_3_7"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_3_7",
+        "label": "text_3_7"
+      },
+      {
+        "type":"url",
+        "id": "text_3_7_url",
+        "label": "text_3_7_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_3_8",
+        "label": "image_3_8"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_3_8",
+        "label": "text_3_8"
+      },
+      {
+        "type":"url",
+        "id": "text_3_8_url",
+        "label": "text_3_8_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_3_9",
+        "label": "image_3_9"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_3_9",
+        "label": "text_3_9"
+      },
+      {
+        "type":"url",
+        "id": "text_3_9_url",
+        "label": "text_3_9_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_3_10",
+        "label": "image_3_10"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_3_10",
+        "label": "text_3_10"
+      },
+      {
+        "type":"url",
+        "id": "text_3_10_url",
+        "label": "text_3_10_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_3_11",
+        "label": "image_3_11"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_3_11",
+        "label": "text_3_11"
+      },
+      {
+        "type":"url",
+        "id": "text_3_11_url",
+        "label": "text_3_11_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_3_12",
+        "label": "image_3_12"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_3_12",
+        "label": "text_3_12"
+      },
+      {
+        "type":"url",
+        "id": "text_3_12_url",
+        "label": "text_3_12_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_3_13",
+        "label": "image_3_13"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_3_13",
+        "label": "text_3_13"
+      },
+      {
+        "type":"url",
+        "id": "text_3_13_url",
+        "label": "text_3_13_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_3_14",
+        "label": "image_3_14"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_3_14",
+        "label": "text_3_14"
+      },
+      {
+        "type":"url",
+        "id": "text_3_14_url",
+        "label": "text_3_14_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_3_15",
+        "label": "image_3_15"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_3_15",
+        "label": "text_3_15"
+      },
+      {
+        "type":"url",
+        "id": "text_3_15_url",
+        "label": "text_3_15_url"
+      },
+        {
+          "type": "header",
+          "content": "item-4"
+          
+        },
+        {
+          "type":"inline_richtext",
+          "id":"title_4",
+          "label": "title_4"
+        },
+        
+      {
+        "type":"image_picker",
+        "id": "image_4_1",
+        "label": "image_4_1"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_4_1",
+        "label": "text_4_1"
+      },
+      {
+        "type":"url",
+        "id": "text_4_1_url",
+        "label": "text_4_1_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_4_2",
+        "label": "image_4_2"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_4_2",
+        "label": "text_4_2"
+      },
+      {
+        "type":"url",
+        "id": "text_4_2_url",
+        "label": "text_4_2_url"
+      },
+      
+      {
+        "type":"image_picker",
+        "id": "image_4_3",
+        "label": "image_4_3"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_4_3",
+        "label": "text_4_3"
+      },
+      {
+        "type":"url",
+        "id": "text_4_3_url",
+        "label": "text_4_3_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_4_4",
+        "label": "image_4_4"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_4_4",
+        "label": "text_4_4"
+      },
+      {
+        "type":"url",
+        "id": "text_4_4_url",
+        "label": "text_4_4_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_4_5",
+        "label": "image_4_5"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_4_5",
+        "label": "text_4_5"
+      },
+      {
+        "type":"url",
+        "id": "text_4_5_url",
+        "label": "text_4_5_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_4_6",
+        "label": "image_4_6"
+      },
+      
+      {
+        "type":"inline_richtext",
+        "id": "text_4_6",
+        "label": "text_4_6"
+      },
+      {
+        "type":"url",
+        "id": "text_4_6_url",
+        "label": "text_4_6_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_4_7",
+        "label": "image_4_7"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_4_7",
+        "label": "text_4_7"
+      },
+      {
+        "type":"url",
+        "id": "text_4_7_url",
+        "label": "text_4_7_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_4_8",
+        "label": "image_4_8"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_4_8",
+        "label": "text_4_8"
+      },
+      {
+        "type":"url",
+        "id": "text_4_8_url",
+        "label": "text_4_8_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_4_9",
+        "label": "image_4_9"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_4_9",
+        "label": "text_4_9"
+      },
+      {
+        "type":"url",
+        "id": "text_4_9_url",
+        "label": "text_4_9_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_4_10",
+        "label": "image_4_10"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_4_10",
+        "label": "text_4_10"
+      },
+      {
+        "type":"url",
+        "id": "text_4_10_url",
+        "label": "text_4_10_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_4_11",
+        "label": "image_4_11"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_4_11",
+        "label": "text_4_11"
+      },
+      {
+        "type":"url",
+        "id": "text_4_11_url",
+        "label": "text_4_11_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_4_12",
+        "label": "image_4_12"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_4_12",
+        "label": "text_4_12"
+      },
+      {
+        "type":"url",
+        "id": "text_4_12_url",
+        "label": "text_4_12_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_4_13",
+        "label": "image_4_13"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_4_13",
+        "label": "text_4_13"
+      },
+      {
+        "type":"url",
+        "id": "text_4_13_url",
+        "label": "text_4_13_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_4_14",
+        "label": "image_4_14"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_4_14",
+        "label": "text_4_14"
+      },
+      {
+        "type":"url",
+        "id": "text_4_14_url",
+        "label": "text_4_14_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_4_15",
+        "label": "image_4_15"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_4_15",
+        "label": "text_4_15"
+      },
+      {
+        "type":"url",
+        "id": "text_4_15_url",
+        "label": "text_4_15_url"
+      },
+        {
+          "type": "header",
+          "content": "item-5"
+          
+        },
+        {
+          "type":"inline_richtext",
+          "id":"title_5",
+          "label": "title_5"
+        },
+        
+      {
+        "type":"image_picker",
+        "id": "image_5_1",
+        "label": "image_5_1"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_5_1",
+        "label": "text_5_1"
+      },
+      {
+        "type":"url",
+        "id": "text_5_1_url",
+        "label": "text_5_1_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_5_2",
+        "label": "image_5_2"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_5_2",
+        "label": "text_5_2"
+      },
+      {
+        "type":"url",
+        "id": "text_5_2_url",
+        "label": "text_5_2_url"
+      },
+      
+      {
+        "type":"image_picker",
+        "id": "image_5_3",
+        "label": "image_5_3"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_5_3",
+        "label": "text_5_3"
+      },
+      {
+        "type":"url",
+        "id": "text_5_3_url",
+        "label": "text_5_3_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_5_4",
+        "label": "image_5_4"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_5_4",
+        "label": "text_5_4"
+      },
+      {
+        "type":"url",
+        "id": "text_5_4_url",
+        "label": "text_5_4_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_5_5",
+        "label": "image_5_5"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_5_5",
+        "label": "text_5_5"
+      },
+      {
+        "type":"url",
+        "id": "text_5_5_url",
+        "label": "text_5_5_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_5_6",
+        "label": "image_5_6"
+      },
+      
+      {
+        "type":"inline_richtext",
+        "id": "text_5_6",
+        "label": "text_5_6"
+      },
+      {
+        "type":"url",
+        "id": "text_5_6_url",
+        "label": "text_5_6_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_5_7",
+        "label": "image_5_7"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_5_7",
+        "label": "text_5_7"
+      },
+      {
+        "type":"url",
+        "id": "text_5_7_url",
+        "label": "text_5_7_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_5_8",
+        "label": "image_5_8"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_5_8",
+        "label": "text_5_8"
+      },
+      {
+        "type":"url",
+        "id": "text_5_8_url",
+        "label": "text_5_8_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_5_9",
+        "label": "image_5_9"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_5_9",
+        "label": "text_5_9"
+      },
+      {
+        "type":"url",
+        "id": "text_5_9_url",
+        "label": "text_5_9_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_5_10",
+        "label": "image_5_10"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_5_10",
+        "label": "text_5_10"
+      },
+      {
+        "type":"url",
+        "id": "text_5_10_url",
+        "label": "text_5_10_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_5_11",
+        "label": "image_5_11"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_5_11",
+        "label": "text_5_11"
+      },
+      {
+        "type":"url",
+        "id": "text_5_11_url",
+        "label": "text_5_11_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_5_12",
+        "label": "image_5_12"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_5_12",
+        "label": "text_5_12"
+      },
+      {
+        "type":"url",
+        "id": "text_5_12_url",
+        "label": "text_5_12_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_5_13",
+        "label": "image_5_13"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_5_13",
+        "label": "text_5_13"
+      },
+      {
+        "type":"url",
+        "id": "text_5_13_url",
+        "label": "text_5_13_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_5_14",
+        "label": "image_5_14"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_5_14",
+        "label": "text_5_14"
+      },
+      {
+        "type":"url",
+        "id": "text_5_14_url",
+        "label": "text_5_14_url"
+      },
+      {
+        "type":"image_picker",
+        "id": "image_5_15",
+        "label": "image_5_15"
+      },
+      {
+        "type":"inline_richtext",
+        "id": "text_5_15",
+        "label": "text_5_15"
+      },
+      {
+        "type":"url",
+        "id": "text_5_15_url",
+        "label": "text_5_15_url"
+      },
       ]
     }
   ]
