@@ -1,0 +1,285 @@
+
+<style>
+  #shopify-section-{{ section.id }} .image_module_1{
+    margin-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    margin-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    width:100%;
+    position: relative;
+    /* min-height:634px; */
+  }
+  #shopify-section-{{ section.id }} .image_module_1 img{
+    width:100%;
+  }
+  #shopify-section-{{ section.id }} .image_module_1 img.mobile{
+    display:none;
+  }
+  #shopify-section-{{ section.id }} .image_module_1 .centent{
+    position: absolute;
+    top:0;
+    width:100%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #shopify-section-{{ section.id }} .image_module_1 .centent .center{
+    max-width: 1200px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+  }
+  #shopify-section-{{ section.id }} .image_module_1 .centent .center .tap{
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 28px;
+        margin-bottom: 16px;
+  }
+  #shopify-section-{{ section.id }} .image_module_1 .centent .center .title{
+    margin:0;
+     margin-bottom: 16px;
+  }
+   #shopify-section-{{ section.id }} .image_module_1 .centent .center .title *{
+     margin:0;
+   }
+  #shopify-section-{{ section.id }} .image_module_1 .centent .center .datalist{
+    max-width: 450px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    margin: 0 0 32px;
+     text-align: left;
+  }
+  #shopify-section-{{ section.id }} .image_module_1 .centent .center .btns{
+     display: flex;
+    align-items: center;
+  }
+  #shopify-section-{{ section.id }} .image_module_1 .centent .center .btns .btn{
+        padding: 12px 24px;
+    min-width:200px;
+    background: #83a78d;
+        color:#fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right:15px;
+  }
+  #shopify-section-{{ section.id }} .image_module_1 .centent.centent_left{
+   
+    align-items: center;
+    
+  }
+  #shopify-section-{{ section.id }} .image_module_1 .centent.centent_left .center{
+    
+    align-items: flex-start;
+    
+  }
+  #shopify-section-{{ section.id }} .image_module_1 .centent.centent_right{
+    
+    align-items: center;
+    
+  }
+  #shopify-section-{{ section.id }} .image_module_1 .centent.centent_right .center{
+    
+    align-items: flex-end;
+    
+  }
+   #shopify-section-{{ section.id }} .image_module_1 .centent.centent_right .center .datalist{
+     text-align: right;
+   }
+  #shopify-section-{{ section.id }} .image_module_1 .centent.centent_center{
+  
+    align-items: center;
+    
+  }
+  #shopify-section-{{ section.id }} .image_module_1 .centent.centent_center .center{
+    
+    align-items: center;
+    
+  }
+  #shopify-section-{{ section.id }} .image_module_1 .centent.centent_center .center .datalist{
+    max-width: none;
+  }
+
+   #shopify-section-{{ section.id }} .image_module_1 .centent.centent_top{
+   
+    align-items: flex-start;
+        padding-top: 5%;
+    box-sizing: border-box;
+  }
+  #shopify-section-{{ section.id }} .image_module_1 .centent.centent_top .center{
+    
+    align-items: center;
+  }
+  #shopify-section-{{ section.id }} .image_module_1 .centent.centent_top .center .datalist{
+    max-width: none;
+  }
+  #shopify-section-{{ section.id }} .image_module_1 .centent.centent_bottom{
+   
+    align-items: flex-end;
+     padding-bottom: 5%;
+    box-sizing: border-box;
+  }
+  #shopify-section-{{ section.id }} .image_module_1 .centent.centent_bottom .center{
+    
+    align-items: center;
+  }
+  #shopify-section-{{ section.id }} .image_module_1 .centent.centent_bottom .center .datalist{
+    max-width: none;
+  }
+
+   @media screen and (max-width: 750px) {
+     #shopify-section-{{ section.id }} .image_module_1 img.pc{
+      display:none;
+    }
+     #shopify-section-{{ section.id }} .image_module_1 img.mobile{
+        display:block;
+      }
+     #shopify-section-template--23428732780833__image_module_1_bLyixJ .image_module_1 .centent .center{
+       width:90%;
+       flex: none;
+     }
+
+     
+   }
+  
+  
+</style>
+
+
+
+ <div class="image_module_1">
+   
+         <img class="pc" src="{{ section.settings.image | img_url:'' }}" alt="{{ section.settings.image.alt }}" width="100%" height="" />
+         <img class="mobile" src="{{ section.settings.mobile_image | img_url:'' }}" alt="{{ section.settings.mobile_image.alt }}" width="100%" height="" />
+   
+        <div class="centent centent_{{ section.settings.location }}">
+            <div class="center">
+                <div class="tap">{{ section.settings.tap }}</div>
+                <div class="title">{{ section.settings.title }}</div>
+                <div class="datalist">{{ section.settings.datalist }}</div>
+                <div class="btns">
+                  {% if section.settings.btn_txt_1 != blank %}
+                    <a href="{{ section.settings.url_1 }}" class="btn">{{ section.settings.btn_txt_1 }}</a>
+                    {% endif %}
+                  {% if section.settings.btn_txt_2 != blank %}
+                    <a href="{{ section.settings.url_2 }}" class="btn">{{ section.settings.btn_txt_2 }}</a>
+                  {% endif %}
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% schema %}
+  {
+    "name": "image module 1",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "image"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_image",
+        "label": "mobile_image"
+      },
+        {
+          "type": "inline_richtext",    
+          "id": "tap",
+          "label": "tap"
+        },
+      {
+          "type": "richtext",
+          "id": "title",
+          "label": "title"
+        },
+      {
+          "type": "inline_richtext",
+          "id": "datalist",
+          "label": "datalist"
+        },
+      {
+      "type": "select",
+      "id": "location",
+      "options": [
+        {
+          "value": "left",
+          "label": "left"
+        },
+        {
+          "value": "center",
+          "label": "center"
+        },
+        {
+          "value": "right",
+          "label": "right"
+        },
+        {
+          "value": "top",
+          "label": "top"
+        },
+        {
+          "value": "bottom",
+          "label": "bottom"
+        }
+      ],
+      "default": "left",
+      "label": "location",
+     
+    },
+      {
+        "type": "inline_richtext",
+        "id": "btn_txt_1",
+        "label": "btn_txt_1"
+      },
+      {
+        "type": "url",
+        "id": "url_1",
+        "label": "btn_url_1"
+      },
+      {
+        "type": "inline_richtext",
+        "id": "btn_txt_2",
+        "label": "btn_txt_2"
+      },
+      {
+        "type": "url",
+        "id": "url_2",
+        "label": "btn_url_2"
+      },
+      
+      {
+        "type": "header",
+        "content": "t:sections.all.padding.section_padding_heading"
+      },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }      
+      
+    ],
+    "presets": [
+    {
+      "name": "image module 1"
+    }
+  ]   
+  }
+{% endschema %}

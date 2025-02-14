@@ -1,0 +1,387 @@
+{% comment %}
+  Renders a megamenu for the header.
+
+  Usage:
+  {% render 'header-mega-menu' %}
+{% endcomment %}
+
+<style>
+   #shopify-section-{{section.id}} header{
+     /* position: relative; */
+     overflow: hidden;
+   }
+   #shopify-section-{{section.id}} .header--top-center .header__inline-menu>.list-menu--inline li{
+     padding:25px 0;
+   }
+   #shopify-section-{{section.id}} .header--top-center .header__inline-menu>.list-menu--inline li .list-menu__item{
+     /* color:#fff; */
+   }
+  #shopify-section-{{section.id}} .link-blocks{
+    position: absolute;
+    top:100%;
+    left: 0;
+    width:100vw;
+    background: #fff;
+        height: 0;
+    overflow: hidden;
+    padding: 0;
+    /* transition: all 1s; */
+  }
+   #shopify-section-{{section.id}} .link-blocks.art{
+      padding:44px 0;
+      height: auto;
+     transition: all 1s;
+     /* transform: translateY(-25px); */
+   }
+   #shopify-section-{{section.id}} .link-blocks .centent{
+     display:flex;
+     justify-content: space-between;
+      max-width: var(--page-width);
+     margin:0 auto;
+     padding-left: 5rem;
+        padding-right: 5rem;
+   }
+   #shopify-section-{{section.id}} .link-blocks .centent .left{
+     display: flex;
+     /* justify-content: space-between; */
+     width:40%;
+     /* padding-right:5%; */
+     gap:20px;
+   }
+  #shopify-section-{{section.id}} .link-blocks .centent .left .list{
+     display: flex;
+      flex-direction: column;
+   }
+  #shopify-section-{{section.id}} .link-blocks .centent .left .list .item{
+    display: flex;
+    align-items: center;
+    margin-bottom:10px;
+  }
+  #shopify-section-{{section.id}} .link-blocks .centent .left .list .title{
+    margin:0 0 20px;
+  }
+   #shopify-section-{{section.id}} .link-blocks .centent .left .list .item a{
+     text-decoration: none;
+    font-size: 16px;
+    color:#636465;
+  }
+  #shopify-section-{{section.id}} .link-blocks .centent .left .list .item .image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+  }
+  #shopify-section-{{section.id}} .link-blocks .centent .left .list .item img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+   
+   #shopify-section-{{section.id}} .link-blocks .centent .right{
+     width:50%;
+     text-align: left;
+   }
+  #shopify-section-{{section.id}} .link-blocks .centent .right .image{
+    width:100%;
+    margin-bottom:20px;
+  }
+  #shopify-section-{{section.id}} .link-blocks .centent .right .image img{
+    width:100%;
+  }
+   #shopify-section-{{section.id}} .link-blocks .centent .right a{
+     text-decoration: none;
+     color:#000;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+
+   }
+#shopify-section-{{section.id}} .header__inline-menu{
+    max-width: var(--page-width);
+    padding: 0 6rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* background: #83a78d; */
+    /* padding: 10px 0; */
+}
+  #shopify-section-{{section.id}} .header__inline-menu .header__icon{
+    color:#fff;
+    margin: 0 10px;
+  }
+  #shopify-section-{{section.id}} .header__icons{
+        /* margin-left: 200px; */
+  }
+
+  @media screen and (max-width: 990px) {
+    #shopify-section-{{section.id}} .header__inline-menu{
+      display: none;
+    }
+    
+  }
+  
+</style>
+
+<nav class="header__inline-menu">
+  <ul class="list-menu list-menu--inline" role="list">
+    {%- for link in section.settings.menu.links -%}
+      <li>
+        {%- if link.links != blank -%}
+          <header-menu>
+            <details id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu">
+              <summary
+                id="HeaderMenu-{{ link.handle }}"
+                class="header__menu-item list-menu__item link focus-inset"
+              >
+                <span
+                  {%- if link.child_active %}
+                    class="header__active-menu-item"
+                  {% endif %}
+                >
+                  {{- link.title | escape -}}
+                </span>
+                {{- 'icon-caret.svg' | inline_asset_content -}}
+              </summary>
+              <div
+                id="MegaMenu-Content-{{ forloop.index }}"
+                class="mega-menu__content color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup"
+                tabindex="-1"
+              >
+                <ul
+                  class="mega-menu__list page-width{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}"
+                  role="list"
+                >
+                  {%- for childlink in link.links -%}
+                    <li>
+                      <a
+                        id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
+                        href="{{ childlink.url }}"
+                        class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %}"
+                        {% if childlink.current %}
+                          aria-current="page"
+                        {% endif %}
+                      >
+                        {{ childlink.title | escape }}
+                      </a>
+                      {%- if childlink.links != blank -%}
+                        <ul class="list-unstyled" role="list">
+                          {%- for grandchildlink in childlink.links -%}
+                            <li>
+                              <a
+                                id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                                href="{{ grandchildlink.url }}"
+                                class="mega-menu__link link{% if grandchildlink.current %} mega-menu__link--active{% endif %}"
+                                {% if grandchildlink.current %}
+                                  aria-current="page"
+                                {% endif %}
+                              >
+                                {{ grandchildlink.title | escape }}
+                              </a>
+                            </li>
+                          {%- endfor -%}
+                        </ul>
+                      {%- endif -%}
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              </div>
+            </details>
+          </header-menu>
+        {%- else -%}
+          <a
+            id="HeaderMenu-{{ link.handle }}"
+            href="{{ link.url }}"
+            class="header__menu-item list-menu__item link link--text focus-inset"
+            {% if link.current %}
+              aria-current="page"
+            {% endif %}
+          >
+            <span
+              {%- if link.current %}
+                class="header__active-menu-item"
+              {% endif %}
+            >
+              {{- link.title | escape -}}
+            </span>
+          </a>
+          
+        
+         
+        {%- endif -%}
+        {% for block in block %}
+          {% case block.type %}
+              {% when "item_blocks" %}
+            {% if link.title == block.settings.link_title %}
+             
+            <div class="link-blocks">
+                    <div class="centent">
+                      <div class="left" 
+                        style="{% if block.settings.link_banner != blank %}
+                           width:40%;
+                          {% else %}
+                             width:100%;
+                          {% endif %}">
+                        {% for i in (1..5) %}
+                          {% assign title = 'title_' | append:i %}
+                            {% if block.settings[title] != blank %}
+                              <div class="list">
+                                <div class="title">{{ block.settings[title] }}</div>
+                                 {% for k in (1..16) %}
+                                     {% assign text = 'text_' | append: i | append: '_' | append: k %}
+                                      {% assign image = 'image_' | append: i | append: '_' | append: k %}
+                                      {% assign url = 'text_' | append: i | append: '_' | append: k | append: '_url' %}
+                                   {% if block.settings[text] != blank or block.settings[image] != blank %}
+                                    <div class="item">
+                                      <div class="image menu-icon"> <img src="{{ block.settings[image] | img_url:'' }}" alt="{{ block.settings[image].alt }}" width="" height="" /></div>
+                                     
+                                      <a href="{{ block.settings[url] }}">{{ block.settings[text] }}</a>
+                                    </div>
+                                     {% endif %}
+                                   {% endfor %}
+                              </div> 
+                            {% endif %}
+                        {% endfor %}
+                      </div>
+                      <div class="right" style="{% if block.settings.link_banner != blank %}
+                           width:50%;
+                          {% else %}
+                             width:0px;
+                          {% endif %}">
+                        {% if block.settings.link_banner != blank %}
+                        <div class="image">
+                          <img src="{{ block.settings.link_banner | img_url:'' }}" alt="{{ block.settings.icon.alt }}" width="" height="" />
+                        </div>
+                          {% endif %}
+                        {% if block.settings.link_tap != blank %}
+                          <a href="{{ block.settings.link_tap_url }}">{{ block.settings.link_tap }} > </a>
+                          {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                
+                  
+                  {% endif %}
+            {% endcase %}
+        {% endfor %}
+      </li>
+    {%- endfor -%}
+  </ul>
+  {% if section.settings.icon_show_on_top == false %}
+  <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
+      <div class="desktop-localization-wrapper">
+        {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
+          <localization-form class="small-hide medium-hide" data-prevent-hide>
+            {%- form 'localization', id: 'HeaderCountryForm', class: 'localization-form' -%}
+              <div>
+                <h2 class="visually-hidden" id="HeaderCountryLabel">{{ 'localization.country_label' | t }}</h2>
+                {%- render 'country-localization', localPosition: 'HeaderCountry' -%}
+              </div>
+            {%- endform -%}
+          </localization-form>
+        {% endif %}
+
+        {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
+          <localization-form class="small-hide medium-hide" data-prevent-hide>
+            {%- form 'localization', id: 'HeaderLanguageForm', class: 'localization-form' -%}
+              <div>
+                <h2 class="visually-hidden" id="HeaderLanguageLabel">{{ 'localization.language_label' | t }}</h2>
+                {%- render 'language-localization', localPosition: 'HeaderLanguage' -%}
+              </div>
+            {%- endform -%}
+          </localization-form>
+        {%- endif -%}
+      </div>
+
+      {% comment %}
+        {% render 'header-search', input_id: 'Search-In-Modal' %}
+      {% endcomment %}
+
+      
+      {%- if shop.customer_accounts_enabled -%}
+        <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
+          {%- if section.settings.enable_customer_avatar -%}
+            <account-icon>
+              {%- if customer and customer.has_avatar? -%}
+                {{ customer | avatar }}
+              {%- else -%}
+                <span class="svg-wrapper">{{ 'icon-account.svg' | inline_asset_content }}</span>
+              {%- endif -%}
+            </account-icon>
+          {%- else -%}
+            <span class="svg-wrapper">{{ 'icon-account.svg' | inline_asset_content }}</span>
+          {%- endif -%}
+          <span class="visually-hidden">
+            {%- liquid
+              if customer
+                echo 'customer.account_fallback' | t
+              else
+                echo 'customer.log_in' | t
+              endif
+            -%}
+          </span>
+        </a>
+      {%- endif -%}
+
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when '@app' -%}
+            {% render block %}
+        {%- endcase -%}
+      {%- endfor -%}
+
+    <a href="/pages/swym-share-wishlist" class="header__icon link">
+      <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.0737 2.08829C16.665 1.67949 16.1799 1.35521 15.646 1.13395C15.112 0.912704 14.5397 0.798828 13.9617 0.798828C13.3837 0.798828 12.8113 0.912704 12.2773 1.13395C11.7434 1.35521 11.2583 1.67949 10.8497 2.08829L10.0017 2.93629L9.15366 2.08829C8.3283 1.26294 7.20888 0.799255 6.04166 0.799255C4.87442 0.799255 3.75501 1.26294 2.92966 2.08829C2.1043 2.91364 1.64062 4.03306 1.64062 5.20029C1.64062 6.36751 2.1043 7.48694 2.92966 8.31229L3.77766 9.16029L10.0017 15.3843L16.2257 9.16029L17.0737 8.31229C17.4825 7.90368 17.8067 7.41854 18.028 6.88458C18.2493 6.35061 18.3631 5.77828 18.3631 5.20029C18.3631 4.6223 18.2493 4.04997 18.028 3.516C17.8067 2.98204 17.4825 2.4969 17.0737 2.08829Z" fill="none" stroke="currentColor" style="fill:none;fill-opacity:1;stroke:currentColor;stroke-opacity:1;" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+
+      
+      <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
+          {% if cart == empty %}
+            <span class="svg-wrapper">{{'icon-cart-empty.svg' | inline_asset_content }}</span>
+          {% else %}
+            <span class="svg-wrapper">{{'icon-cart.svg' | inline_asset_content }}</span>
+          {% endif %}
+        <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+        {%- if cart != empty -%}
+          <div class="cart-count-bubble">
+            {%- if cart.item_count < 100 -%}
+              <span aria-hidden="true">{{ cart.item_count }}</span>
+            {%- endif -%}
+            <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+          </div>
+        {%- endif -%}
+      </a>
+    </div>
+    {% endif %}
+</nav>
+
+<script>
+    const list_menu_li = document.querySelectorAll("#shopify-section-{{section.id}} .list-menu--inline li");
+  
+  list_menu_li.forEach(item => {
+    const link_blocks = item.querySelector(".link-blocks");
+    // 鼠标进入时添加类
+        item.onmouseenter = function () {
+          
+          if(link_blocks){
+            link_blocks.classList.add("art");
+
+            link_blocks
+            
+          }
+          
+        }
+    // 鼠标移出时移除类
+  item.onmouseleave = function () {
+    if (link_blocks) {
+      link_blocks.classList.remove("art");
+    }
+  }
+
+  
+  })
+  
+</script>

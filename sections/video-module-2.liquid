@@ -1,0 +1,263 @@
+<style>
+  #shopify-section-{{ section.id }} .video_module_2{
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  #shopify-section-{{ section.id }} .video_module_2 .centent{
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  #shopify-section-{{ section.id }} .video_module_2 .centent .center{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+  }
+  #shopify-section-{{ section.id }} .video_module_2 .centent .center .text{
+    width:50%;
+    text-align: left;
+  }
+   #shopify-section-{{ section.id }} .video_module_2 .centent .center .text .title{
+     margin:0;
+     max-width:90%;
+     margin-bottom:20px;
+   }
+  #shopify-section-{{ section.id }} .video_module_2 .centent .center .text .title *{
+    margin:0;
+  }
+  #shopify-section-{{ section.id }} .video_module_2 .centent .center .text .datalist{
+    max-width:90%;
+  }
+  #shopify-section-{{ section.id }} .video_module_2 .centent .center .video{
+    width:50%;
+    display:flex;
+     position: relative;
+  }
+  #shopify-section-{{ section.id }} .video_module_2 .centent .center .video .ico{
+     position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    padding: 30px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    z-index:2;
+  }
+  #shopify-section-{{ section.id }} .video_module_2 .centent .center .video .ico svg.icon.icon-play {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-45%, -50%);
+    color: #000;
+}
+  #shopify-section-{{ section.id }} .video_module_2 .centent .center .video video{
+    width:95%;
+    height:auto;
+  }
+
+   #shopify-section-{{ section.id }} .video_module_2 .centent .center.right{
+         flex-direction: row-reverse;
+     
+   }
+  #shopify-section-{{ section.id }} .video_module_2 .centent .center.right .text{
+    padding-left:2%;
+  }
+     @media screen and (max-width: 750px) {
+       #shopify-section-template--23428732780833__video_module_2_rrRNf9 .video_module_2 .centent .center.left{
+             flex-direction: column;
+    align-items: center;
+       }
+       #shopify-section-template--23428732780833__video_module_2_rrRNf9 .video_module_2 .centent .center.right{
+             flex-direction: column-reverse;
+    align-items: center;
+       }
+       #shopify-section-template--23428732780833__video_module_2_rrRNf9 .video_module_2 .centent .center .text{
+         width: 90%;
+       }
+        #shopify-section-template--23428732780833__video_module_2_rrRNf9 .video_module_2 .centent .center.right .text{
+          margin-top:20px;
+        }
+        #shopify-section-template--23428732780833__video_module_2_rrRNf9 .video_module_2 .centent .center.left .text{
+          margin-bottom:20px;
+        }
+       #shopify-section-template--23428732780833__video_module_2_rrRNf9 .video_module_2 .centent .center .video{
+          width: 100%;
+       }
+       #shopify-section-template--23428732780833__video_module_2_rrRNf9 .video_module_2 .centent .center .video video{
+         width: 100%;
+       }
+     }
+</style>
+
+
+
+<div class="video_module_2">
+  <div class="centent">
+    <div class="title">{{ section.settings.title }}</div>
+    <div class="center {{ section.settings.location }}">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'item_text' %}
+            <div class="text">
+              <div class="title">{{ block.settings.title }}</div>
+              <div class="datalist">{{ block.settings.datalist }}</div>
+            </div>
+          {% when 'item_video' %}
+            <div class="video">
+              <span class="ico" >
+                {% render "icon-play" %}
+              </span>
+              {{
+                block.settings.video
+                | video_tag:
+                  image_size: '100%',
+                  autoplay: false,
+                  loop: true,
+                  controls: false,
+                  muted: false
+              }}
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  let video_list = document.querySelectorAll('#shopify-section-{{ section.id }} .video_module_2 .centent .center .video');
+
+    video_list.forEach(item => {
+      const playIcon = item.querySelector('.ico')
+      const video = item.querySelector('video')
+        playIcon.onclick = function () {
+          if (video.paused) {
+            playIcon.style.display = 'none';
+            video.play();
+          } else {
+            video.pause();
+            playIcon.style.display = 'block';
+          }
+        }
+      video.onclick = function () {
+          if (video.paused) {
+            playIcon.style.display = 'none';
+            video.play();
+          } else {
+            video.pause();
+            playIcon.style.display = 'block';
+          }
+        }
+    })
+
+
+});
+  
+</script>
+
+{% schema %}
+{
+  "name": "video module 2",
+  "settings": [
+    {
+        "type": "richtext",
+        "id": "title",
+        "label": "title"
+      },
+    {
+      "type": "select",
+      "id": "location",
+      "options": [
+        {
+          "value": "left",
+          "label": "left"
+        },
+        
+        {
+          "value": "right",
+          "label": "right"
+        }
+        
+      ],
+      "default": "left",
+      "label": "location",
+     
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }      
+  ],
+  "blocks": [
+    {
+      "type": "item_text",
+      "name":"item_text",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "title"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "datalist",
+          "label": "datalist"
+        }
+      ]
+    },
+     {
+      "type": "item_video",
+      "name":"item_video",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "video"
+        },
+        {
+          "type": "video_url",
+          "id": "video_url",
+          "accept": ["youtube", "vimeo"],
+          "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+          "label": "t:sections.video.settings.video_url.label",
+          "info": "t:sections.video.settings.video_url.info"
+        }
+      ]
+    }
+  ],
+  "presets": [
+  {
+    "name": "video module 2"
+  }
+  ]
+}
+{% endschema %}
