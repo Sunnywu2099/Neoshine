@@ -96,7 +96,21 @@ margin-left: 30px;
 </style>
 
 <div class="banner">
-  <img
+  <picture>
+    <source media="(min-width: 768px)" srcset="{{ section.settings.pc_image | img_url: 'master' }}">
+    <source media="(max-width: 767px)" srcset="{{ section.settings.mobile_image | img_url: 'master' }}">
+    <img
+      class="banner-image"
+      src="{{ section.settings.pc_image | img_url: '2048x' }}"
+      alt="{{ section.settings.pc_image.alt }}"
+      width="100%"
+      height="auto"
+      loading="lazy"
+      style="object-fit: cover; aspect-ratio: 16/9;"
+    >
+  </picture>
+
+  {% comment %} <img
     class="pc"
     src="{{ section.settings.pc_image | img_url:'' }}"
     alt="{{ section.settings.pc_image.alt }}"
@@ -109,7 +123,7 @@ margin-left: 30px;
     alt="{{ section.settings.mobile_image.alt }}"
     width="100%"
     height=""
-  > 
+  >  {% endcomment %}
   
   <div class="centent">
     <div class="title">{{ section.settings.title }}</div>
