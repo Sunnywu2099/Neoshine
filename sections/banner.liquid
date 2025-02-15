@@ -97,16 +97,16 @@ margin-left: 30px;
 
 <div class="banner">
   <picture>
-    <source media="(min-width: 768px)" srcset="{{ section.settings.pc_image | img_url: 'master' }}">
-    <source media="(max-width: 767px)" srcset="{{ section.settings.mobile_image | img_url: 'master' }}">
+    <source media="(min-width: 751px)" srcset="{{ section.settings.pc_image | img_url: 'master' }}">
+    <source media="(max-width: 750px)" srcset="{{ section.settings.mobile_image | img_url: 'master' }}">
     <img
       class="banner-image"
-      src="{{ section.settings.pc_image | img_url: '2048x' }}"
+      src="{{ section.settings.pc_image | img_url: 'master' }}"
       alt="{{ section.settings.pc_image.alt }}"
       width="100%"
       height="auto"
       loading="lazy"
-      style="object-fit: cover; aspect-ratio: 16/9;"
+
     >
   </picture>
 
