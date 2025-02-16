@@ -361,6 +361,50 @@
         "padding_bottom": 36
       }
     },
+    "custom_warranty_EBJnGK": {
+      "type": "custom-warranty",
+      "blocks": {
+        "image_Lj7hYT": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/landding_page_second_product_promise-55.svg",
+            "text": "IGI-certified for superior quality and authenticity."
+          }
+        },
+        "image_mwPdYb": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/landding_page_second_first_icon-design.svg",
+            "text": "Designed for ultimate brilliance and symmetry."
+          }
+        },
+        "image_GT4qid": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/landding_page_second_first_icon-Guaranteed.svg",
+            "text": "Guaranteed lifetime sparkle with our warranty."
+          }
+        },
+        "image_NgFtRB": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/landding_page_second_first_icon-30_day.svg",
+            "text": "Shop confidently with 30-day free returns."
+          }
+        }
+      },
+      "block_order": [
+        "image_Lj7hYT",
+        "image_mwPdYb",
+        "image_GT4qid",
+        "image_NgFtRB"
+      ],
+      "settings": {
+        "title": "IGI Certified Diamonds with Full Assurance",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "pagefly_section_nnTkPH": {
       "type": "pagefly-section",
       "settings": {
@@ -386,6 +430,7 @@
     "image_with_text_ai6BHE",
     "image_8kVDJG",
     "custom_ugc_V7exNB",
+    "custom_warranty_EBJnGK",
     "pagefly_section_nnTkPH",
     "swiper_blog_PNYrrB"
   ]
