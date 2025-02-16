@@ -405,12 +405,6 @@
         "padding_bottom": 36
       }
     },
-    "pagefly_section_nnTkPH": {
-      "type": "pagefly-section",
-      "settings": {
-        "section_id": "pf-9283f479"
-      }
-    },
     "swiper_blog_PNYrrB": {
       "type": "swiper-blog",
       "settings": {
@@ -431,7 +425,6 @@
     "image_8kVDJG",
     "custom_ugc_V7exNB",
     "custom_warranty_EBJnGK",
-    "pagefly_section_nnTkPH",
     "swiper_blog_PNYrrB"
   ]
 }
