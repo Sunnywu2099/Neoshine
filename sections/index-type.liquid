@@ -157,7 +157,22 @@
           {{ block.settings.tap }}
         </div>
         {% endif %}
-        <img src="{{ block.settings.image | img_url:'' }}" alt="{{ block.settings.image.alt }}" width="" height="" />
+        
+            
+            {% assign full_width = '100vw' %}
+            {% assign sizes = full_width %}
+            {% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
+            {{
+              block.settings.image
+              | image_url: width: block.settings.image.width
+              | image_tag:
+                width: block.settings.image.width,
+                class: '',
+                sizes: sizes,
+                widths: widths,
+                loading: 'lazy',
+                alt: block.settings.image.alt | escape
+            }}
         <div class="centent">
           <!-- <h3>{{ block.settings.title }}</h3> -->
           <div class="title">{{ block.settings.title }}</div>

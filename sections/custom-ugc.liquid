@@ -1,0 +1,187 @@
+<style>
+  #shopify-section-{{section.id}}.custom-ugc{
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    overflow: hidden;
+  }
+  #shopify-section-{{section.id}}.custom-ugc .wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    padding: 0 15px;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1170px;
+  }
+  #shopify-section-{{section.id}}.custom-ugc .item{
+    flex-shrink: 0;
+    width: calc((100% - 60px)/3);
+  }
+  #shopify-section-{{section.id}}.custom-ugc .video-item{
+    position: relative;
+  }
+  #shopify-section-{{section.id}}.custom-ugc .video-item .play-btn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+  #shopify-section-{{section.id}}.custom-ugc .item img,
+  #shopify-section-{{section.id}}.custom-ugc .item video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  @media screen and (max-width: 999px) {
+    #shopify-section-{{section.id}}.custom-ugc .wrapper{
+      gap: 15px;
+    }
+    #shopify-section-{{section.id}}.custom-ugc .item{
+      width: calc((100% - 30px)/3);
+    }
+  }
+  @media screen and (max-width: 750px) {
+    #shopify-section-{{section.id}}.custom-ugc .item{
+      width: 100%;
+    }
+  }
+  
+
+  
+</style>
+{% if section.settings.title != blank %}
+  <h2 class="h2" style="font-weight:600;text-align:center;">{{ section.settings.title }}</h2>
+{% endif %}
+<div class="wrapper">
+  {% for block in section.blocks %}
+    
+      {% case block.type %}
+        {% when 'image' %}
+          <div class="item">
+            {% assign image_height = block.settings.image.width | divided_by: block.settings.image.aspect_ratio %}
+            {% assign full_width = '100vw' %}
+            {% assign sizes = full_width %}
+            {% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
+            {{
+              block.settings.image
+              | image_url: width: 3840
+              | image_tag:
+                width: block.settings.image.width,
+                height: image_height,
+                class: '',
+                sizes: sizes,
+                widths: widths,
+                loading: 'lazy'
+            }}
+          </div>
+        {% when 'video' %}
+          <div class="item video-item">
+            {{ block.settings.video | video_tag: autoplay: false, loop: false, muted: false, controls: false, playsinline: true, image_size: 'master', loading: 'lazy' ,class:'' }}
+
+            <span class="play-btn">
+              {% render 'video-btn' %}
+            </span>
+          </div>
+      {% endcase %}
+    
+  {% endfor %}
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const videoItems = document.querySelectorAll('.video-item');
+    videoItems.forEach((item) => {
+      const video = item.querySelector('video');
+      const playBtn = item.querySelector('.play-btn');
+      playBtn.addEventListener('click', function () {
+        video.play();
+        playBtn.style.display = 'none';
+      });
+      video.addEventListener('click', function () {
+        if (video.paused) {
+          video.play();  
+          playBtn.style.display = 'none';
+        } else {
+          video.pause(); 
+          playBtn.style.display = 'block';
+        }
+      });
+
+      video.addEventListener('ended', function () {
+        playBtn.style.display = 'block';
+    })
+  })
+  })
+</script>
+
+{% schema %}
+{
+  "name": "Custom UGC",
+  "tag": "section",
+  "class": "custom-ugc",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "title"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": "video",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video",
+          "info": "A Shopify-hosted video"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom UGC"
+    }
+  ]
+}
+{% endschema %}
