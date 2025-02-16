@@ -34,6 +34,9 @@
 </style>
 
 <div class="wrapper">
+  {% if section.settings.title != blank %}
+    <h2 class="h2">{{ section.settings.title }}</h2>
+  {% endif %}
   {% for block in section.blocks %}
     <div class="item">
       {% case block.type %}
