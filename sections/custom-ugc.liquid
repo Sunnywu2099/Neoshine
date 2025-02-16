@@ -1,0 +1,106 @@
+<style>
+  #shopify-section-{{section.id}}.custom-ugc{
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (max-width: 750px) {
+  }
+  
+
+  
+</style>
+
+<div class="wrapper">
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'image' %}
+        {% assign image_height = block.settings.image.width | divided_by: block.settings.image.aspect_ratio %}
+        
+        {% assign full_width = '100vw' %}
+        {% assign sizes = full_width %}
+        {% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
+        {{
+          block.settings.image
+          | image_url: width: 3840
+          | image_tag:
+            width: block.settings.image.width,
+            height: image_height,
+            class: '',
+            sizes: sizes,
+            widths: widths
+        }}
+        
+      {% when 'video' %}
+        {{ block.settings.video | video_tag: autoplay: false, loop: false, muted: false, controls: false, playsinline: true, image_size: 'master', class:'' }}
+    {% endcase %}
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Custom UGC",
+  "tag": "section",
+  "class": "custom-ugc",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "title"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": "video",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video",
+          "info": "A Shopify-hosted video"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom UGC"
+    }
+  ]
+}
+{% endschema %}
