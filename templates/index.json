@@ -361,12 +361,6 @@
         "padding_bottom": 36
       }
     },
-    "pagefly_section_GVN9nK": {
-      "type": "pagefly-section",
-      "settings": {
-        "section_id": "pf-b45ff2ed"
-      }
-    },
     "pagefly_section_nnTkPH": {
       "type": "pagefly-section",
       "settings": {
@@ -392,7 +386,6 @@
     "image_with_text_ai6BHE",
     "image_8kVDJG",
     "custom_ugc_V7exNB",
-    "pagefly_section_GVN9nK",
     "pagefly_section_nnTkPH",
     "swiper_blog_PNYrrB"
   ]
