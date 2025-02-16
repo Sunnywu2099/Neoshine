@@ -158,7 +158,7 @@
         </div>
         {% endif %}
         
-            {% assign image_height = block.settings.image.width | divided_by: block.settings.image.aspect_ratio %}
+            
             {% assign full_width = '100vw' %}
             {% assign sizes = full_width %}
             {% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
@@ -167,7 +167,7 @@
               | image_url: width: block.settings.image.width
               | image_tag:
                 width: block.settings.image.width,
-                height: image_height,
+                height: '',
                 class: '',
                 sizes: sizes,
                 widths: widths,
