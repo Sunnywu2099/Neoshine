@@ -80,6 +80,22 @@
   {% endfor %}
 </div>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const videoItems = document.querySelectorAll('.video-item');
+    videoItems.forEach((item) => {
+      const video = item.querySelector('video');
+      const playBtn = item.querySelector('.play-btn');
+      playBtn.addEventListener('click', function () {
+        video.play();
+        playBtn.style.display = 'none';
+      });
+      video.addEventListener('ended', function () {
+        playBtn.style.display = 'block';
+    })
+  })
+</script>
+
 {% schema %}
 {
   "name": "Custom UGC",
