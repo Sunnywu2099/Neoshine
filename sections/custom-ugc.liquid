@@ -69,7 +69,7 @@
           </div>
         {% when 'video' %}
           <div class="item video-item">
-            {{ block.settings.video | video_tag: autoplay: false, loop: false, muted: false, controls: true, playsinline: true, image_size: 'master', loading: 'lazy' ,class:'' }}
+            {{ block.settings.video | video_tag: autoplay: false, loop: false, muted: false, controls: false, playsinline: true, image_size: 'master', loading: 'lazy' ,class:'' }}
 
             <span class="play-btn">
               {% render 'video-btn' %}
