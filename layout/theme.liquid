@@ -3,26 +3,14 @@
   <head>
     {% include 'booster-seo' %}
     <!-- Google Tag Manager -->
-    <script async>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-5RL6ZP88');</script>
-    <!-- End Google Tag Manager -->
-    <!-- Event snippet for Google Ads Page View -code conversion page -->
-    <script>
-      window.addEventListener('load', function() {
-        gtag('event', 'conversion', {
-            'send_to': 'AW-16775864033/gA36CL24vPkZEOG9rb8-',
-            'value': 1.0,
-            'currency': 'USD'
-        });
-      });
-    </script>
+    
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, height=device-height, minimum-scale=1.0, maximum-scale=1.0"
+    >
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
 
@@ -40,6 +28,22 @@
       {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
       {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
     </title>{% endcomment %}
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5RL6ZP88');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Event snippet for Google Ads Page View -code conversion page -->
+    <script>
+      window.addEventListener('DOMContentLoaded', function (event) {
+        gtag('event', 'conversion', {
+            'send_to': 'AW-16775864033/gA36CL24vPkZEOG9rb8-',
+            'value': 1.0,
+            'currency': 'USD'
+        });
+      });
+    </script>
 
     {% if page_description %}
       {% comment %}<meta name="description" content="{{ page_description | escape }}">{% endcomment %}
@@ -317,7 +321,8 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
-  {% include 'pagefly-app-header' %}</head>
+    {% comment %} {% include 'pagefly-app-header' %} {% endcomment %}
+  </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
     <!-- Google Tag Manager (noscript) -->
