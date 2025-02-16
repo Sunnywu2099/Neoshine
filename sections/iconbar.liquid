@@ -106,7 +106,7 @@
     <h2 class="heading">{{ section.settings.heading }}</h2>
     <div class="icon-bar">
       {% for block in section.blocks %}
-        <a class="icon-box" href="{{ block.settings.link }}">
+        <a class="icon-box 123" href="{{ block.settings.link }}">
           {% comment %} <img src="{{ block.settings.image | img_url:'' }}" class="" width="" height="" alt="{{ block.settings.image.alt }}"> {% endcomment %}
           {% assign full_width = '100vw' %}
           {% assign sizes = full_width %}
@@ -120,7 +120,7 @@
               class: 'icon',
               sizes: sizes,
               widths: widths,
-              alt: block.settings.image.alt | escape
+              alt: block.settings.text | escape
           }}
           <h6>{{ block.settings.text }}</h6>
         </a>
