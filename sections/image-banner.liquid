@@ -81,7 +81,8 @@
           class: image_class,
           sizes: sizes,
           widths: widths,
-          fetchpriority: fetch_priority
+          fetchpriority: fetch_priority,
+          loading: 'lazy'
       }}
     </div>
   {%- elsif section.settings.image_2 == blank -%}
@@ -113,7 +114,8 @@
           class: image_class_2,
           sizes: sizes,
           widths: widths,
-          fetchpriority: fetch_priority
+          fetchpriority: fetch_priority,
+          loading: 'lazy'
       }}
     </div>
   {%- endif -%}
