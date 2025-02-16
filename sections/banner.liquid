@@ -96,32 +96,31 @@ margin-left: 30px;
 </style>
 
 <div class="banner">
-  <picture>
-    <source media="(min-width: 751px)" srcset="{{ section.settings.pc_image | img_url: 'master' }}">
-    <source media="(max-width: 750px)" srcset="{{ section.settings.mobile_image | img_url: 'master' }}">
-    <img
-      class="banner-image"
-      src="{{ section.settings.pc_image | img_url: 'master' }}"
-      alt="{{ section.settings.pc_image.alt }}"
-      width="100%"
-      height="auto"
-    >
-  </picture>
-
-  {% comment %} <img
-    class="pc"
-    src="{{ section.settings.pc_image | img_url:'' }}"
-    alt="{{ section.settings.pc_image.alt }}"
-    width="100%"
-    height=""
-  >
-  <img
-    class="mobile"
-    src="{{ section.settings.mobile_image | img_url:'' }}"
-    alt="{{ section.settings.mobile_image.alt }}"
-    width="100%"
-    height=""
-  >  {% endcomment %}
+            {% assign full_width = '100vw' %}
+            {% assign sizes = full_width %}
+            {% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
+            {{
+              section.settings.pc_image
+              | image_url: width: section.settings.pc_image.width
+              | image_tag:
+                width: section.settings.pc_image.width,
+                class: 'pc',
+                sizes: sizes,
+                widths: widths,
+                loading: 'lazy',
+                alt: section.settings.pc_image.alt | escape
+            }}
+            {{
+              section.settings.mobile_image
+              | image_url: width: section.settings.mobile_image.width
+              | image_tag:
+                width: section.settings.mobile_image.width,
+                class: 'mb',
+                sizes: sizes,
+                widths: widths,
+                loading: 'lazy',
+                alt: section.settings.mobile_image.alt | escape
+            }}
   
   <div class="centent">
     <div class="title">{{ section.settings.title }}</div>
