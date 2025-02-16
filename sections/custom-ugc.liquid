@@ -27,11 +27,12 @@
             height: image_height,
             class: '',
             sizes: sizes,
-            widths: widths
+            widths: widths,
+            loading: 'lazy'
         }}
         
       {% when 'video' %}
-        {{ block.settings.video | video_tag: autoplay: false, loop: false, muted: false, controls: false, playsinline: true, image_size: 'master', class:'' }}
+        {{ block.settings.video | video_tag: autoplay: false, loop: false, muted: false, controls: false, playsinline: true, image_size: 'master', loading: 'lazy' ,class:'' }}
     {% endcase %}
   {% endfor %}
 </div>
