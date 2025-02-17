@@ -186,13 +186,19 @@
 <script>
   let YourSwiper = null;
   document.addEventListener("DOMContentLoaded", (event) => {
-    if (window.innerWidth < 750) {
-      console.log('移动端');
+    if (window.innerWidth > 750) {
       initYourSwiper();
     }
 
     window.addEventListener("resize", function () {
-      initYourSwiper();
+      if (window.innerWidth <= 750) {
+        if (YourSwiper) {
+          YourSwiper.destroy(true, true); // 销毁并清除DOM
+          YourSwiper = null;
+        }
+      }else{
+        initYourSwiper();
+      }
     });
   });
 
