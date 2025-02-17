@@ -132,7 +132,23 @@
         <div class="article-box {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
           <div class="img_box">
           {% if article.image != blank %}
-            <img src="{{ article.image | img_url: '' }}" alt="{{  article.image.alt }}" width="100%" height="auto">
+            {% comment %} <img src="{{ article.image | img_url: '' }}" alt="{{  article.image.alt }}" width="100%" height="auto"> {% endcomment %}
+            {% assign image_height = article.image.width | divided_by: article.image.aspect_ratio %}
+            {% assign full_width = '100vw' %}
+            {% assign sizes = full_width %}
+            {% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
+            {{
+              article.image
+              | image_url: width: article.image.width
+              | image_tag:
+                width: article.image.width,
+                height: image_height,
+                class: '',
+                sizes: sizes,
+                widths: widths,
+                alt: article.title,
+                loading: 'lazy'
+            }}
           {% endif %}
           </div>
         <div class="content">
