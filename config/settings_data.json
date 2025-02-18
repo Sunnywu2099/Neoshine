@@ -9,7 +9,7 @@
  */
 {
   "current": {
-    "block_chinese_broswer": true,
+    "block_chinese_broswer": false,
     "jump_url": "https://www.google.com",
     "logo": "shopify://shop_images/NEOSHINE_logo-18.svg",
     "logo_width": 250,
