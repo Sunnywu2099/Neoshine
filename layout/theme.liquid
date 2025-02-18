@@ -403,7 +403,7 @@
           {% if settings.jump_url == blank %}
             document.location.href = "https://www.xiaohongshu.com/user/profile/5d45ab8e0000000011026dd7";
             {% else %}
-            document.location.href = {{settings.jump_url}};
+            document.location.href = "{{settings.jump_url}}" ;
           {% endif %}
         }
       </script>
