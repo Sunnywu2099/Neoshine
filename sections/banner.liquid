@@ -25,12 +25,11 @@
   justify-content: center;
   flex-direction: column;
   width:100%;
-  max-width:1200px;
-  margin:0 auto;
-  top:50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-margin-left: 30px;
+  height: 100%;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
   #shopify-section-{{section.id}} .banner .centent .title{
     margin:0;
@@ -96,6 +95,7 @@ margin-left: 30px;
 </style>
 
 <div class="banner">
+            
             {% assign full_width = '100vw' %}
             {% assign sizes = full_width %}
             {% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
@@ -105,9 +105,12 @@ margin-left: 30px;
               | image_url: width: section.settings.pc_image.width
               | image_tag:
                 width: section.settings.pc_image.width,
+                height: 'auto',
                 class: 'pc',
                 sizes: sizes,
                 widths: widths,
+                loading: 'eager',
+                preload: true,
                 fetchpriority: fetch_priority,
                 alt: section.settings.title | escape
             }}
@@ -116,14 +119,17 @@ margin-left: 30px;
               | image_url: width: section.settings.mobile_image.width
               | image_tag:
                 width: section.settings.mobile_image.width,
+                height: 'auto',
                 class: 'mobile',
                 sizes: sizes,
                 widths: widths,
+                loading: 'eager',
+                preload: true,
                 fetchpriority: fetch_priority,
                 alt: section.settings.title | escape
             }}
   
-  <div class="centent">
+  <div class="centent page-width">
     <div class="title">{{ section.settings.title }}</div>
     <div class="datalist">{{ section.settings.details }}</div>
 
