@@ -1,1 +1,145 @@
-{"name":"t:sections.footer.name","type":"footer","sections":{"17332808910760d65c":{"type":"apps","blocks":{"judge_me_reviews_verified_badge_QCnXRa":{"type":"shopify:\/\/apps\/judge-me-reviews\/blocks\/verified_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8","disabled":true,"settings":{}}},"block_order":["judge_me_reviews_verified_badge_QCnXRa"],"settings":{"include_margins":true}},"173313603394e178de":{"type":"apps","blocks":{"judge_me_reviews_featured_carousel_qfLhM7":{"type":"shopify:\/\/apps\/judge-me-reviews\/blocks\/featured_carousel\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8","disabled":true,"settings":{"maxwidth":1080}}},"block_order":["judge_me_reviews_featured_carousel_qfLhM7"],"settings":{"include_margins":true}},"footer":{"type":"footer","blocks":{"link_list_eKwrWm":{"type":"link_list","settings":{"heading":"DISCOVER","menu":"footer"}},"link_list_T34QUW":{"type":"link_list","settings":{"heading":"SUPPORT","menu":"customer-support-footer"}},"link_list_Ly7AyG":{"type":"link_list","settings":{"heading":"RESOURCES","menu":"resources-footer"}},"link_list_paXjBt":{"type":"link_list","settings":{"heading":"<strong> INSIGHTS<\/strong>","menu":"jewelry-insights"}},"link_list_aP48mA":{"type":"link_list","settings":{"heading":"<strong>SPECIAL OFFERS<\/strong>","menu":"special-offers"}},"brand_information_RLV4JM":{"type":"brand_information","settings":{"show_social":true,"place_img":"shopify:\/\/shop_images\/Pin_Icon_4e30878c-b855-44e9-8e0e-ff829f563c37.svg","place_txt":"RM C13 4\/F, KAISER ESTATE PHASE I 41 MAN YUE STREET HUNG HOM Hong Kong","relation_img":"shopify:\/\/shop_images\/Phone_Icon_8682a635-2e64-40d1-8970-3dd32d1dbe21.svg","relation_txt":"+852 8402 3651","mailbox_img":"shopify:\/\/shop_images\/Email_Icon_54ff0c75-8949-4560-bd75-b9e99bcbe8e6.svg","mailbox_txt":"Hello@Neoshine.com"}}},"block_order":["link_list_eKwrWm","link_list_T34QUW","link_list_Ly7AyG","link_list_paXjBt","link_list_aP48mA","brand_information_RLV4JM"],"custom_css":[],"settings":{"color_scheme":"scheme-1","newsletter_enable":true,"newsletter_heading":"","enable_follow_on_shop":false,"show_social":true,"enable_country_selector":false,"enable_language_selector":false,"payment_enable":true,"show_policy":true,"margin_top":0,"padding_top":0,"padding_bottom":0}},"custom_liquid_z6kMzd":{"type":"custom-liquid","disabled":true,"custom_css":[".custom-text-box {padding: 2px; font-size: 16px; color: #333; max-width: 500px; margin: 5px auto; text-align: center;}",".custom-link-box {padding: 2px; font-size: 16px; color: #333; max-width: 800px; margin: 5px auto; text-align: center;}",".custom-link-box .link-item {color: #333; text-decoration: none; \/* .klaviyo-form-Vd4xs2 {margin: 5px auto;}"],"settings":{"custom_liquid":"<div class=\"custom-link-box\">\n  <a href=\"https:\/\/neoshine.com\/pages\/return-policy\" target=\"_blank\" class=\"link-item\">Returns & Exchanges<\/a> |\n  <a href=\"https:\/\/neoshine.com\/pages\/neoshine-warranty-policy\" target=\"_blank\" class=\"link-item\">Lifetime Warranty<\/a> |\n  <a href=\"https:\/\/neoshine.com\/pages\/shipping-policy\" target=\"_blank\" class=\"link-item\">Shipping Information<\/a> |\n  <a href=\"https:\/\/neoshine.com\/apps\/parcelpanel\" target=\"_blank\" class=\"link-item\">Order Track<\/a>\n<\/div>","color_scheme":"scheme-1","padding_top":4,"padding_bottom":4}}},"order":["17332808910760d65c","173313603394e178de","footer","custom_liquid_z6kMzd"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "17332808910760d65c": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_verified_badge_QCnXRa": {
+          "type": "shopify://apps/judge-me-reviews/blocks/verified_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_verified_badge_QCnXRa"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "173313603394e178de": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_featured_carousel_qfLhM7": {
+          "type": "shopify://apps/judge-me-reviews/blocks/featured_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
+          "settings": {
+            "maxwidth": 1080
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_featured_carousel_qfLhM7"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "link_list_eKwrWm": {
+          "type": "link_list",
+          "settings": {
+            "heading": "DISCOVER",
+            "menu": "footer"
+          }
+        },
+        "link_list_T34QUW": {
+          "type": "link_list",
+          "settings": {
+            "heading": "SUPPORT",
+            "menu": "customer-support-footer"
+          }
+        },
+        "link_list_Ly7AyG": {
+          "type": "link_list",
+          "settings": {
+            "heading": "RESOURCES",
+            "menu": "resources-footer"
+          }
+        },
+        "link_list_paXjBt": {
+          "type": "link_list",
+          "settings": {
+            "heading": "<strong> INSIGHTS</strong>",
+            "menu": "jewelry-insights"
+          }
+        },
+        "link_list_aP48mA": {
+          "type": "link_list",
+          "settings": {
+            "heading": "<strong>SPECIAL OFFERS</strong>",
+            "menu": "special-offers"
+          }
+        },
+        "brand_information_RLV4JM": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": false,
+            "place_img": "shopify://shop_images/Pin_Icon_4e30878c-b855-44e9-8e0e-ff829f563c37.svg",
+            "place_txt": "RM C13 4/F, KAISER ESTATE PHASE I 41 MAN YUE STREET HUNG HOM Hong Kong",
+            "relation_img": "shopify://shop_images/Phone_Icon_8682a635-2e64-40d1-8970-3dd32d1dbe21.svg",
+            "relation_txt": "+852 8402 3651",
+            "mailbox_img": "shopify://shop_images/Email_Icon_54ff0c75-8949-4560-bd75-b9e99bcbe8e6.svg",
+            "mailbox_txt": "Hello@Neoshine.com"
+          }
+        }
+      },
+      "block_order": [
+        "link_list_eKwrWm",
+        "link_list_T34QUW",
+        "link_list_Ly7AyG",
+        "link_list_paXjBt",
+        "link_list_aP48mA",
+        "brand_information_RLV4JM"
+      ],
+      "custom_css": [],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "newsletter_enable": true,
+        "newsletter_heading": "",
+        "enable_follow_on_shop": false,
+        "show_social": true,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": true,
+        "show_policy": true,
+        "margin_top": 0,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_z6kMzd": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "custom_css": [
+        ".custom-text-box {padding: 2px; font-size: 16px; color: #333; max-width: 500px; margin: 5px auto; text-align: center;}",
+        ".custom-link-box {padding: 2px; font-size: 16px; color: #333; max-width: 800px; margin: 5px auto; text-align: center;}",
+        ".custom-link-box .link-item {color: #333; text-decoration: none; /* .klaviyo-form-Vd4xs2 {margin: 5px auto;}"
+      ],
+      "settings": {
+        "custom_liquid": "<div class=\"custom-link-box\">\n  <a href=\"https://neoshine.com/pages/return-policy\" target=\"_blank\" class=\"link-item\">Returns & Exchanges</a> |\n  <a href=\"https://neoshine.com/pages/neoshine-warranty-policy\" target=\"_blank\" class=\"link-item\">Lifetime Warranty</a> |\n  <a href=\"https://neoshine.com/pages/shipping-policy\" target=\"_blank\" class=\"link-item\">Shipping Information</a> |\n  <a href=\"https://neoshine.com/apps/parcelpanel\" target=\"_blank\" class=\"link-item\">Order Track</a>\n</div>",
+        "color_scheme": "scheme-1",
+        "padding_top": 4,
+        "padding_bottom": 4
+      }
+    }
+  },
+  "order": [
+    "17332808910760d65c",
+    "173313603394e178de",
+    "footer",
+    "custom_liquid_z6kMzd"
+  ]
+}
