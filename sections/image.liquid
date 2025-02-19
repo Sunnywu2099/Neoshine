@@ -1,140 +1,156 @@
 <style>
 
-#shopify-section-{{section.id}} .banner{
+  #shopify-section-{{ section.id }} .banner {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  width:100%;
-  display: block;
-  position: relative;
-}
-  #shopify-section-{{section.id}} .banner:after{
-    display:none;
+    width: 100%;
+    display: block;
+    position: relative;
+  }
+  #shopify-section-{{ section.id }}.banner:after {
+    display: none;
   }
 
-#shopify-section-{{section.id}} .banner img{
-  width:100%;
-  
-}
-  #shopify-section-{{section.id}} .banner img.mobile{
-    display:none;
-  }
-  
-#shopify-section-{{section.id}} .banner .centent{
-  position: absolute;
-  display:flex;
-  justify-content: center;
-  flex-direction: column;
-  /* width:100%;
-  max-width:1200px; */
-  margin:0 auto;
-      top: 65%;
-    left: 75%;
-  transform: translate(-50%,-50%);
+  #shopify-section-{{ section.id }}
+  .banner img {
+    width: 100%;
 
-}
-  #shopify-section-{{section.id}} .banner .centent .title{
-    margin:0;
-    color:#fff;
   }
-  #shopify-section-{{section.id}} .banner .centent .title *{
-     margin:0;
-     color:#fff;
+  #shopify-section-{{ section.id }}
+  .banner img.mobile {
+    display: none;
   }
-  #shopify-section-{{section.id}} .banner .centent .title h1{
-    font-size:30px;
-   
-  }
-  #shopify-section-{{section.id}} .banner .centent .datalist{
-    font-size:18px;
-    color:#fff;
-    max-width:434px;
-    
-  }
-  #shopify-section-{{section.id}} .banner .centent .btn{
+
+  #shopify-section-{{ section.id }}
+  .banner .centent {
+    position: absolute;
     display: flex;
-            align-items: center;
-            justify-content: center;
-    font-size:18px;
-     font-weight: bold;
-        color:#fff;
-   width: fit-content;
+    justify-content: center;
+    flex-direction: column;
+
+    /*
+   width:100%;
+   max-width:1200px;
+*/
+    margin: 0 auto;
+    top: 65%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+
+  }
+  #shopify-section-{{ section.id }}
+  .banner .centent .title {
+    margin: 0;
+    color: #fff;
+  }
+  #shopify-section-{{ section.id }}
+  .banner .centent .title * {
+    margin: 0;
+    color: #fff;
+  }
+  #shopify-section-{{ section.id }}
+  .banner .centent .title h1 {
+    font-size: 30px;
+
+  }
+  #shopify-section-{{ section.id }}
+  .banner .centent .datalist {
+    font-size: 18px;
+    color: #fff;
+    max-width: 434px;
+
+  }
+  #shopify-section-{{ section.id }}
+  .banner .centent .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    width: fit-content;
     margin-top: 10px;
     text-decoration: none;
-    background-color:#83A78D;
-    box-shadow:none;
+    background-color: #83A78D;
+    box-shadow: none;
   }
-  #shopify-section-{{section.id}} .banner .centent .btn:before,#shopify-section-{{section.id}} .banner .centent .btn:after{
-    display:none;
+  #shopify-section-{{ section.id }}.banner .centent .btn:before,
+  #shopify-section-{{ section.id }}.banner .centent .btn:after {
+    display: none;
   }
-  @media screen and (min-width:750px){
-    #shopify-section-{{section.id}} .banner .centent{
-      left:65%;
-      right:0px;
-      top:0px;
-      bottom:0px;
-      transform: translate(0%,0%);
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .banner .centent {
+      left: 65%;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      transform: translate(0%, 0%);
     }
   }
-  @media screen and (max-width: 1000px){
-    #shopify-section-{{section.id}} .banner .centent .title h1{
-    font-size:24px;
+  @media screen and (max-width: 1000px) {
+    #shopify-section-{{ section.id }} .banner .centent .title h1 {
+      font-size: 24px;
     }
-    #shopify-section-{{section.id}} .banner .centent .title *{
-      font-size:20px !important;
+    #shopify-section-{{ section.id }}
+    .banner .centent .title * {
+      font-size: 20px !important;
     }
-    #shopify-section-{{section.id}} .banner .centent .datalist{
-      font-size:14px;
+    #shopify-section-{{ section.id }}
+    .banner .centent .datalist {
+      font-size: 14px;
     }
-    #shopify-section-{{section.id}} .banner .centent .btn{
+    #shopify-section-{{ section.id }}
+    .banner .centent .btn {
       margin-top: 10px;
-      font-size:16px;
+      font-size: 16px;
     }
   }
   @media screen and (max-width: 750px) {
-    #shopify-section-{{section.id}} .banner img.pc{
-      display:none;
+    #shopify-section-{{ section.id }} .banner img.pc {
+      display: none;
     }
-     #shopify-section-{{section.id}} .banner img.mobile{
-      display:block;
+    #shopify-section-{{ section.id }}
+    .banner img.mobile {
+      display: block;
     }
-    #shopify-section-{{section.id}} .banner .centent{
-      max-width:90%;
+    #shopify-section-{{ section.id }}
+    .banner .centent {
+      max-width: 90%;
       width: 100%;
       overflow: hidden;
       top: 50%;
       left: 50%;
     }
-    #shopify-section-{{section.id}} .banner .centent .title *{
-      font-size:26px !important;
+    #shopify-section-{{ section.id }}
+    .banner .centent .title * {
+      font-size: 26px !important;
     }
-    #shopify-section-{{section.id}} .banner .centent .datalist{
-      font-size:16px;
+    #shopify-section-{{ section.id }}
+    .banner .centent .datalist {
+      font-size: 16px;
     }
-    #shopify-section-{{section.id}} .banner .centent .btn{
+    #shopify-section-{{ section.id }}
+    .banner .centent .btn {
       margin-top: 25px;
-      font-size:16px;
+      font-size: 16px;
     }
   }
-  
 
-  
+
 </style>
 
 <div class="banner">
-  <img
-    class="pc"
-    src="{{ section.settings.pc_image | img_url:'' }}"
-    alt="{{ section.settings.pc_image.alt }}"
-    width="100%"
-    height=""
-  >
-  <img
-    class="mobile"
-    src="{{ section.settings.mobile_image | img_url:'' }}"
-    alt="{{ section.settings.mobile_image.alt }}"
-    width="100%"
-    height=""
-  >
+  {% assign full_width = '100vw' %}
+  {% assign sizes = full_width %}
+  {% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
+  {% assign fetch_priority = 'auto' %}
+  {{
+    section.settings.pc_image | image_url: width: section.settings.pc_image.width | image_tag: width: section.settings.pc_image.width, class: 'pc', sizes: sizes, widths: widths, fetchpriority: fetch_priority, alt: section.settings.title | escape
+  }}
+  {{
+    section.settings.mobile_image | image_url: width: section.settings.mobile_image.width | image_tag: width: section.settings.mobile_image.width, class: 'mobile', sizes: sizes, widths: widths, fetchpriority: fetch_priority, alt: section.settings.title | escape
+  }}
+  
   <div class="centent">
     <div class="title">{{ section.settings.title }}</div>
     <div class="datalist">{{ section.settings.details }}</div>
@@ -144,68 +160,63 @@
 </div>
 
 {% schema %}
-{
-  "name": "image",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "pc_image",
-      "label": "pc_image"
-    },
-    {
-      "type": "image_picker",
-      "id": "mobile_image",
-      "label": "mobile_image"
-    },
-    {
-      "type": "richtext",
-      "id": "title",
-      "label": "title"
-    },
-    {
-      "type": "richtext",
-      "id": "details",
-      "label": "details"
-    },
-    {
+  {
+    "name": "image",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "pc_image",
+        "label": "pc_image"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_image",
+        "label": "mobile_image"
+      },
+      {
+        "type": "richtext",
+        "id": "title",
+        "label": "title"
+      },
+      {
+        "type": "richtext",
+        "id": "details",
+        "label": "details"
+      }, {
         "type": "text",
         "id": "btn",
         "label": "btn"
-      },
-      {
+      }, {
         "type": "url",
         "id": "url",
         "label": "url"
-      },
-    {
-    "type": "header",
-    "content": "t:sections.all.padding.section_padding_heading"
-  },
-  {
-    "type": "range",
-    "id": "padding_top",
-    "min": 0,
-    "max": 100,
-    "step": 4,
-    "unit": "px",
-    "label": "t:sections.all.padding.padding_top",
-    "default": 36
-  },
-  {
-    "type": "range",
-    "id": "padding_bottom",
-    "min": 0,
-    "max": 100,
-    "step": 4,
-    "unit": "px",
-    "label": "t:sections.all.padding.padding_bottom",
-    "default": 36
+      }, {
+        "type": "header",
+        "content": "t:sections.all.padding.section_padding_heading"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      }
+    ],
+    "presets": [
+      {
+        "name": "image"
+      }
+    ]
   }
-  ],
-  "presets": [
-    {
-      "name": "image"
-    }
-  ]
-}
 {% endschema %}
