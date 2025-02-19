@@ -631,6 +631,12 @@ details > * {
   width: 1.5rem;
 }
 
+img,
+video,
+canvas{
+  overflow: hidden;
+}
+
 h3 .icon-arrow,
 .h3 .icon-arrow {
   width: calc(var(--font-heading-scale) * 1.5rem);
