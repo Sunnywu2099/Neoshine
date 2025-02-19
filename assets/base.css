@@ -635,6 +635,7 @@ img,
 video,
 canvas{
   overflow: hidden;
+  width: 100%;
 }
 
 h3 .icon-arrow,

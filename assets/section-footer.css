@@ -411,6 +411,9 @@
   align-items: flex-start;
   gap: 15px;
 }
+.footer-ul li img{
+  width: 20px;
+}
 
 .footer-ul li p{
   margin: 0;
