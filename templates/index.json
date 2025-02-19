@@ -12,8 +12,8 @@
     "banner_zKz8Ld": {
       "type": "banner",
       "settings": {
-        "pc_image": "shopify://shop_images/0120-home_page_banner.jpg",
-        "mobile_image": "shopify://shop_images/0120-home-page-banner-phone.jpg",
+        "pc_image": "shopify://shop_images/hpb.webp",
+        "mobile_image": "shopify://shop_images/hpb-m.webp",
         "title": "<h1> <strong>Redefine Luxury with </strong></h1><h1><strong>Lab-Grown  Diamonds</strong></h1>",
         "details": "",
         "btn": "Valentine's Day Event",
