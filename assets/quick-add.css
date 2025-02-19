@@ -290,7 +290,7 @@ quick-add-modal .product__media-item:not(:first-child) {
 }
 
 quick-add-modal .slider.slider--mobile {
-  overflow: visible;
+  overflow: hidden;
 }
 
 quick-add-modal .product__column-sticky .product__media-list {

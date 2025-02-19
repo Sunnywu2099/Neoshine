@@ -14,7 +14,7 @@
 
 .image-with-text__media {
   min-height: 100%;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .image-with-text__media--small {

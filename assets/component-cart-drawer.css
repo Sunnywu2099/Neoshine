@@ -201,7 +201,7 @@ cart-drawer-items {
 
 @media screen and (max-height: 650px) {
   cart-drawer-items {
-    overflow: visible;
+    overflow: hidden;
   }
 
   .drawer__inner {
