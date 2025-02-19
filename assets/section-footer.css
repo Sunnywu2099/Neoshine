@@ -413,6 +413,7 @@
 }
 .footer-ul li img{
   width: 20px;
+  flex-shrink: 0;
 }
 
 .footer-ul li p{
