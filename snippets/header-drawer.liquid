@@ -37,16 +37,19 @@
     #shopify-section-{{section.id}} .contact_list .item{
       width:100%;
       display:flex;
-      /* align-items: center; */
+      align-items: center;
       font-size:14px;
       margin-bottom:12px;
       color:#181818;
+      line-height: 1;
     }
     #shopify-section-{{section.id}} .contact_list .item img{
-      height:20px;
-      width:20px;
-      margin-top: 0px;
-      margin-right:10px;
+      height: 20px;
+        width: 20px;
+        flex-shrink: 0;
+        object-fit: contain;
+        margin-top: 0px;
+        margin-right: 10px;
     }
   }
 </style>
