@@ -1,10 +1,3 @@
-{% assign image_width = section.settings.pc_image.width %}
-{% assign image_height = section.settings.pc_image.height %}
-{% assign aspect_ratio_pc = image_width | divided_by: image_height %}
-
-{% assign image_width = section.settings.mobile_image.width %}
-{% assign image_height = section.settings.mobile_image.height %}
-{% assign aspect_ratio_m = image_width | divided_by: image_height %}
 <style>
 #shopify-section-{{section.id}} .banner{
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -12,11 +5,6 @@
   width:100%;
   display: block;
   position: relative;
-}
-#shopify-section-{{section.id}} .banner .img-container{
-  position: relative; 
-  width: 100%; 
-  aspect-ratio: {{ aspect_ratio_pc }};
 }
   #shopify-section-{{section.id}} .banner:after{
     display:none;
@@ -77,9 +65,6 @@
     display:none;
   }
   @media screen and (max-width: 750px) {
-    #shopify-section-{{section.id}} .banner .img-container{
-      aspect-ratio: {{ aspect_ratio_m }};
-    }
     #shopify-section-{{section.id}} .banner img.pc{
       display:none;
     }
@@ -117,12 +102,19 @@
             {% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
             {% assign fetch_priority = 'high' %}
 
+            
+            {% assign aspect_ratio_pc = section.settings.pc_image.width | divided_by: section.settings.pc_image.height %}
+            {% assign image_height_pc = section.settings.pc_image.width | divided_by: aspect_ratio_pc %}
+
+            {% assign aspect_ratio_m = section.settings.mobile_image.width | divided_by: section.settings.mobile_image.height %}
+            {% assign image_height_m = section.settings.mobile_image.width | divided_by: aspect_ratio_m %}
+
             {{
               section.settings.pc_image
               | image_url: width: section.settings.pc_image.width
               | image_tag:
                 width: section.settings.pc_image.width,
-                height: 'auto',
+                height: image_height_pc,
                 class: 'pc',
                 sizes: sizes,
                 widths: widths,
@@ -136,7 +128,7 @@
               | image_url: width: section.settings.mobile_image.width
               | image_tag:
                 width: section.settings.mobile_image.width,
-                height: 'auto',
+                height: image_height_m,
                 class: 'mobile',
                 sizes: sizes,
                 widths: widths,
