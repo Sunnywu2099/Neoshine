@@ -1,11 +1,22 @@
-<style>
+{% assign image_width = section.settings.pc_image.width %}
+{% assign image_height = section.settings.pc_image.height %}
+{% assign aspect_ratio_pc = image_width | divided_by: image_height %}
 
+{% assign image_width = section.settings.mobile_image.width %}
+{% assign image_height = section.settings.mobile_image.height %}
+{% assign aspect_ratio_m = image_width | divided_by: image_height %}
+<style>
 #shopify-section-{{section.id}} .banner{
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   width:100%;
   display: block;
   position: relative;
+}
+#shopify-section-{{section.id}} .banner .img-container{
+  position: relative; 
+  width: 100%; 
+  aspect-ratio: {{ aspect_ratio_pc }};
 }
   #shopify-section-{{section.id}} .banner:after{
     display:none;
@@ -66,6 +77,9 @@
     display:none;
   }
   @media screen and (max-width: 750px) {
+    #shopify-section-{{section.id}} .banner .img-container{
+      aspect-ratio: {{ aspect_ratio_m }};
+    }
     #shopify-section-{{section.id}} .banner img.pc{
       display:none;
     }
@@ -97,11 +111,12 @@
 </style>
 
 <div class="banner">
-            
+    <div class="img-container">
             {% assign full_width = '100vw' %}
             {% assign sizes = full_width %}
             {% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
             {% assign fetch_priority = 'high' %}
+
             {{
               section.settings.pc_image
               | image_url: width: section.settings.pc_image.width
@@ -130,7 +145,7 @@
                 fetchpriority: fetch_priority,
                 alt: section.settings.title | escape
             }}
-  
+  </div>
   <div class="centent page-width">
     <div class="title">{{ section.settings.title }}</div>
     <div class="datalist">{{ section.settings.details }}</div>
