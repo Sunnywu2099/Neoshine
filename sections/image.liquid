@@ -151,17 +151,17 @@
     section.settings.mobile_image | image_url: width: section.settings.mobile_image.width | image_tag: width: section.settings.mobile_image.width, class: 'mobile', sizes: sizes, widths: widths, fetchpriority: fetch_priority, alt: section.settings.title | escape
   }} {% endcomment %}
   
-  
-  {% comment %} <div class="img-wrapper">
+
+  <div class="img-wrapper">
     {% render 'responsive-image',
+      sid: section.id,
       image_desktop: section.settings.pc_image,
       image_mobile: section.settings.mobile_image,
       alt: "Product Banner",
       lazy: true,
       preload: false
-      
     %}
-  </div> {% endcomment %}
+  </div>
   
   <div class="centent">
     <div class="title">{{ section.settings.title }}</div>
