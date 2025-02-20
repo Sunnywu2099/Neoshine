@@ -251,7 +251,7 @@
                           {% endif %}">
                         {% if block.settings.link_banner != blank %}
                         <div class="image">
-                          <img src="{{ block.settings.link_banner | img_url:'' }}" alt="{{ block.settings.icon.alt }}" width="" height="" />
+                          <img src="{{ block.settings.link_banner | img_url:'' }}" alt="{{ block.settings.icon.alt }}" width="" height="" loading="lazy" fetchpriority="low"/>
                         </div>
                           {% endif %}
                         {% if block.settings.link_tap != blank %}
