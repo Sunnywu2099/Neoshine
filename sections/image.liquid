@@ -140,7 +140,7 @@
 </style>
 
 <div class="banner">
-  {% assign full_width = '100vw' %}
+  {% comment %} {% assign full_width = '100vw' %}
   {% assign sizes = full_width %}
   {% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
   {% assign fetch_priority = 'auto' %}
@@ -149,7 +149,17 @@
   }}
   {{
     section.settings.mobile_image | image_url: width: section.settings.mobile_image.width | image_tag: width: section.settings.mobile_image.width, class: 'mobile', sizes: sizes, widths: widths, fetchpriority: fetch_priority, alt: section.settings.title | escape
-  }}
+  }} {% endcomment %}
+  <div class="img-wrapper">
+    {% render 'responsive-image',
+      image_desktop: section.settings.pc_image,
+      image_mobile: section.settings.mobile_image,
+      alt: "Product Banner",
+      lazy: true,
+      preload: false
+      
+    %}
+  </div>
   
   <div class="centent">
     <div class="title">{{ section.settings.title }}</div>
