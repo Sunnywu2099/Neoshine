@@ -35,13 +35,13 @@
 -%}
 
 <style>
-  #{{sid}} .adaptive-image{
+  #shopify-section-{{sid}} .adaptive-image{
     position: relative;
     display: block;
     margin: 0 auto;
   }
 
-  #{{sid}} .adaptive-image img {
+  #shopify-section-{{sid}} .adaptive-image img {
     width: 100%;
     height: auto;
     display: block;
@@ -49,22 +49,22 @@
   }
 
   /* 原生宽高比支持 */
-  #{{sid}} .adaptive-image--desktop {
+  #shopify-section-{{sid}} .adaptive-image--desktop {
     aspect-ratio: {{ desktop_aspect }};
   }
 
-  #{{sid}} .adaptive-image--mobile {
+  #shopify-section-{{sid}} .adaptive-image--mobile {
     aspect-ratio: {{ mobile_aspect }};
   }
 
   @media (min-width: 750px) {
-    #{{sid}} .adaptive-image--mobile {
+    #shopify-section-{{sid}} .adaptive-image--mobile {
       display: none !important;
     }
   }
 
   @media (max-width: 749px) {
-    #{{sid}} .adaptive-image--desktop {
+    #shopify-section-{{sid}} .adaptive-image--desktop {
       display: none !important;
     }
   }
