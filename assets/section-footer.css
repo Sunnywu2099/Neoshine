@@ -308,7 +308,10 @@
   .footer-ul{
     margin-top: 0!important;
     max-width: 100%!important;
-
+  }
+  .footer .svg-wrapper{
+    width: 15px;
+    height: 15px;
   }
 }
 
