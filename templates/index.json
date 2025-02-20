@@ -252,9 +252,7 @@
         "text_rPamRC",
         "button_D3448z"
       ],
-      "custom_css": [
-        ".image-with-text__content {font-size: 10px;}"
-      ],
+      "custom_css": [],
       "settings": {
         "image": "shopify://shop_images/home_page_post.jpg",
         "height": "adapt",
