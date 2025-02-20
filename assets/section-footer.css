@@ -297,10 +297,10 @@
     transform: rotate(180deg);
   }
   .footer-block__details-content .list-menu__item--link{
-    padding: 0;
+    padding: 0!important;
   }
   .footer-block__details-content{
-    margin-bottom: 2rem;
+    margin-bottom: 2rem!important;
   }
   .footer-block__brand-info{
     padding: 2rem 0;
