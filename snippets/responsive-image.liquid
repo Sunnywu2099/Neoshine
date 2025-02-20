@@ -9,6 +9,7 @@
 
 {%- liquid
   # 优先使用图片自身宽高比
+  assign sid = section_id
   assign desktop_aspect = image_desktop.aspect_ratio | default: 1.7777
   assign mobile_aspect = image_mobile.aspect_ratio | default: desktop_aspect
 
