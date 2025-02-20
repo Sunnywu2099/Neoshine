@@ -9,7 +9,7 @@
 
 {%- liquid
   # 优先使用图片自身宽高比
-  assign sid = section_id
+  assign sid = sid
   assign desktop_aspect = image_desktop.aspect_ratio | default: 1.7777
   assign mobile_aspect = image_mobile.aspect_ratio | default: desktop_aspect
 
@@ -35,13 +35,13 @@
 -%}
 
 <style>
-  .adaptive-image{
+  #{{sid}} .adaptive-image{
     position: relative;
     display: block;
     margin: 0 auto;
   }
 
-  .adaptive-image img {
+  #{{sid}} .adaptive-image img {
     width: 100%;
     height: auto;
     display: block;
@@ -49,22 +49,22 @@
   }
 
   /* 原生宽高比支持 */
-  .adaptive-image--desktop {
+  #{{sid}} .adaptive-image--desktop {
     aspect-ratio: {{ desktop_aspect }};
   }
 
-  .adaptive-image--mobile {
+  #{{sid}} .adaptive-image--mobile {
     aspect-ratio: {{ mobile_aspect }};
   }
 
   @media (min-width: 750px) {
-    .adaptive-image--mobile {
+    #{{sid}} .adaptive-image--mobile {
       display: none !important;
     }
   }
 
   @media (max-width: 749px) {
-    .adaptive-image--desktop {
+    #{{sid}} .adaptive-image--desktop {
       display: none !important;
     }
   }
