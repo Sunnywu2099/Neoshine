@@ -234,7 +234,7 @@
                                       {% assign url = 'text_' | append: i | append: '_' | append: k | append: '_url' %}
                                    {% if block.settings[text] != blank or block.settings[image] != blank %}
                                     <div class="item">
-                                      <div class="image menu-icon"> <img src="{{ block.settings[image] | img_url:'' }}" alt="{{ block.settings[image].alt }}" width="" height="" /></div>
+                                      <div class="image menu-icon"> <img src="{{ block.settings[image] | img_url:'' }}" alt="{{ block.settings[image].alt }}" width="" height="" loading="lazy" fetchpriority="low"/></div>
                                      
                                       <a href="{{ block.settings[url] }}">{{ block.settings[text] }}</a>
                                     </div>
