@@ -47,7 +47,7 @@
 
   .footer-block.grid__item {
     padding: 0;
-    margin: 4rem 0;
+    /* margin: 4rem 0; */
     width: 100%;
   }
 
@@ -290,9 +290,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 1rem;
+    font-size: 14px;
   }
   .footer-block__heading.active svg{
     transform: rotate(180deg);
+  }
+  .footer-block__details-content .list-menu__item--link{
+    padding: 0;
+  }
+  .footer-block__details-content{
+    margin-bottom: 2rem;
   }
 }
 
