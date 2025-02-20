@@ -1,0 +1,148 @@
+{%- comment -%}
+  Responsive image component with lazy loading
+  Parameters:
+  image_desktop: 桌面端图片
+  image_mobile: 移动端图片 (可选)
+  link: 点击链接 (可选)
+  alt: 图片描述
+  aspect_ratio: 宽高比 (默认16:9)
+  lazy: 启用懒加载 (默认true)
+  priority: 预加载提示 (首屏建议true)
+{%- endcomment -%}
+
+{%- liquid
+  assign aspect_ratio = aspect_ratio | default: 1.7777
+  assign desktop_image = image_desktop | default: image_mobile
+  assign mobile_image = image_mobile | default: image_desktop
+  assign preload = false
+  if priority and lazy == false
+    assign preload = true
+  endif
+-%}
+
+<style>
+  .responsive-image {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+  .responsive-image__inner {
+    width: 100%;
+    height: 0;
+    padding-bottom: {{ 100 | divided_by: aspect_ratio }}%;
+  }
+
+  .responsive-image img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.4s;
+  }
+
+  .responsive-image--lazy img {
+    opacity: 0;
+  }
+
+  .responsive-image--loaded img {
+    opacity: 1;
+  }
+
+  @media (max-width: 749px) {
+    .responsive-image--desktop-only {
+      display: none !important;
+    }
+  }
+
+  @media (min-width: 750px) {
+    .responsive-image--mobile-only {
+      display: none !important;
+    }
+  }
+</style>
+
+<div class="responsive-image{% if lazy %} responsive-image--lazy{% endif %}" 
+     style="background-color: {{ image_desktop.palette.first.hex }}">
+  <div class="responsive-image__inner">
+    {%- if link != blank -%}<a href="{{ link }}" aria-label="{{ alt | escape }}">{%- endif -%}
+    <picture>
+      <!-- 移动端图片 -->
+      <source 
+        media="(max-width: 749px)" 
+        {% if mobile_image != blank %}
+          srcset="
+            {{ mobile_image | img_url: '360x' }} 360w,
+            {{ mobile_image | img_url: '540x' }} 540w,
+            {{ mobile_image | img_url: '720x' }} 720w
+          "
+          sizes="100vw"
+        {% endif %}
+        {% if lazy %} 
+          data-sizes="auto"
+          loading="lazy" 
+          decoding="async"
+        {% endif %}
+      >
+      
+      <!-- 桌面端图片 -->
+      <source 
+        media="(min-width: 750px)" 
+        {% if desktop_image != blank %}
+          srcset="
+            {{ desktop_image | img_url: '720x' }} 720w,
+            {{ desktop_image | img_url: '960x' }} 960w,
+            {{ desktop_image | img_url: '1440x' }} 1440w
+          "
+          sizes="100vw"
+        {% endif %}
+        {% if lazy %} 
+          data-sizes="auto"
+          loading="lazy" 
+          decoding="async"
+        {% endif %}
+      >
+      
+      <!-- 回退图片 -->
+      <img
+        {% if desktop_image != blank %}
+          src="{{ desktop_image | img_url: '1440x' }}"
+          width="{{ desktop_image.width }}" 
+          height="{{ desktop_image.height }}"
+        {% else %}
+          src="{{ 'image-placeholder.svg' | asset_url }}"
+        {% endif %}
+        alt="{{ alt | escape }}"
+        {% if preload %}preload{% endif %}
+        {% if lazy %}
+          loading="lazy"
+          decoding="async"
+          onload="this.parentElement.parentElement.parentElement.classList.add('responsive-image--loaded')"
+        {% endif %}
+      >
+    </picture>
+    {%- if link != blank -%}</a>{%- endif -%}
+  </div>
+</div>
+
+<script>
+// 渐进增强的懒加载方案
+if ('loading' in HTMLImageElement.prototype) {
+  document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+    img.src = img.dataset.src;
+  });
+} else {
+  const lazyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        lazyObserver.unobserve(img);
+      }
+    });
+  });
+  document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+    lazyObserver.observe(img);
+  });
+}
+</script>

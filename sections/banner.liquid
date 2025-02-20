@@ -96,7 +96,7 @@
 </style>
 
 <div class="banner">
-    <div class="img-container">
+  {% comment %} <div class="img-container">
             {% assign full_width = '100vw' %}
             {% assign sizes = full_width %}
             {% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
@@ -130,6 +130,17 @@
                 fetchpriority: fetch_priority,
                 alt: section.settings.title | escape
             }}
+  </div> {% endcomment %}
+  <div class="img-wrapper">
+    {% render 'responsive-image',
+      image_desktop: section.settings.pc_image,
+      image_mobile: section.settings.mobile_image,
+      alt: "Banner Image",
+      link: section.settings.url,
+      aspect_ratio: 1.3333,
+      priority: true,
+      lazy: false
+    %}
   </div>
   <div class="centent page-width">
     <div class="title">{{ section.settings.title }}</div>
