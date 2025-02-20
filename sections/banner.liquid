@@ -1,5 +1,4 @@
 <style>
-
 #shopify-section-{{section.id}} .banner{
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
@@ -97,11 +96,12 @@
 </style>
 
 <div class="banner">
-            
+    <div class="img-container">
             {% assign full_width = '100vw' %}
             {% assign sizes = full_width %}
             {% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
             {% assign fetch_priority = 'high' %}
+
             {{
               section.settings.pc_image
               | image_url: width: section.settings.pc_image.width
@@ -130,7 +130,7 @@
                 fetchpriority: fetch_priority,
                 alt: section.settings.title | escape
             }}
-  
+  </div>
   <div class="centent page-width">
     <div class="title">{{ section.settings.title }}</div>
     <div class="datalist">{{ section.settings.details }}</div>
