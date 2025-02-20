@@ -135,11 +135,10 @@
     {% render 'responsive-image',
       image_desktop: section.settings.pc_image,
       image_mobile: section.settings.mobile_image,
-      alt: "Banner Image",
-      link: section.settings.url,
-      aspect_ratio: 1.3333,
-      priority: true,
-      lazy: false
+      alt: "Product Banner",
+      lazy: false,
+      preload: true
+      
     %}
   </div>
   <div class="centent page-width">
