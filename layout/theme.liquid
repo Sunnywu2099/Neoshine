@@ -30,7 +30,7 @@
     })(window,document,'script','dataLayer','GTM-5RL6ZP88');</script>
     <!-- End Google Tag Manager -->
     <!-- Event snippet for Google Ads Page View -code conversion page -->
-    <script>
+    {% comment %} <script>
       window.addEventListener('DOMContentLoaded', function (event) {
         gtag('event', 'conversion', {
             'send_to': 'AW-16775864033/gA36CL24vPkZEOG9rb8-',
@@ -38,6 +38,15 @@
             'currency': 'USD'
         });
       });
+    </script> {% endcomment %}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H41PPXJZ1T"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-H41PPXJZ1T');
     </script>
 
     {% if page_description %}
