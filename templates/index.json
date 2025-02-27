@@ -39,407 +39,182 @@
       ],
       "settings": {}
     },
-    "index_type_EFYE7V": {
-      "type": "index-type",
+    "index_grid_BkrBKz": {
+      "type": "index-grid",
       "blocks": {
-        "type_jWqwXj": {
-          "type": "type",
+        "item_wK7AKk": {
+          "type": "item",
           "settings": {
-            "image": "shopify://shop_images/0120-home_page_banner-Valentine_s_Day_2_b4e886bf-8180-4d9c-8a30-f4f584fe9984.jpg",
-            "tap": "Valentine's Day Special",
-            "title": "1 CT Lab  Diamond Ring for <em><strong>$999</strong></em>",
-            "text": "SHOP NOW",
-            "link": "shopify://products/14k-1ct-lab-created-diamond-ring"
+            "pc_image": "shopify://shop_images/image_18.png",
+            "mobile_image": "shopify://shop_images/Group_1000002174.png",
+            "title": "Hearts & Arrows Diamonds",
+            "content": "14K 1CT Lab Created Diamond Ring",
+            "product": "14k-1ct-lab-created-diamond-ring"
           }
         },
-        "type_4UGprT": {
-          "type": "type",
+        "item_yqtDTK": {
+          "type": "item",
           "settings": {
-            "image": "shopify://shop_images/earring--post-4.jpg",
-            "tap": "",
-            "title": "Diamond Earring Stud",
-            "text": "SHOP NOW",
-            "link": "shopify://products/stud-earrings"
+            "pc_image": "shopify://shop_images/image_21.png",
+            "mobile_image": "shopify://shop_images/image_2.png",
+            "title": "",
+            "content": "",
+            "product": "1ct-diamond-solitaire-engagement-ring"
+          }
+        },
+        "item_NHHFyn": {
+          "type": "item",
+          "settings": {
+            "pc_image": "shopify://shop_images/image_20.png",
+            "mobile_image": "shopify://shop_images/image_2.png",
+            "title": "",
+            "content": "",
+            "product": "14k-1ct-lab-created-diamond-ring"
+          }
+        },
+        "item_ybdwJx": {
+          "type": "item",
+          "settings": {
+            "pc_image": "shopify://shop_images/image_19.png",
+            "mobile_image": "shopify://shop_images/image_b02ea5e5-0bb8-45ef-87d8-db41559d5278.png",
+            "title": "",
+            "content": "",
+            "product": "bezel-diamond-earrings"
           }
         }
       },
       "block_order": [
-        "type_jWqwXj",
-        "type_4UGprT"
+        "item_wK7AKk",
+        "item_yqtDTK",
+        "item_NHHFyn",
+        "item_ybdwJx"
       ],
-      "settings": {
-        "color_scheme": "",
-        "padding_top": 24,
-        "padding_bottom": 24
-      }
+      "settings": {}
     },
-    "iconbar_RDDLdc": {
-      "type": "iconbar",
+    "index_shape_33hB7Q": {
+      "type": "index-shape",
       "blocks": {
-        "icon_FLdLd8": {
-          "type": "icon",
+        "item_PMQaRw": {
+          "type": "item",
           "settings": {
-            "image": "shopify://shop_images/round.png",
-            "text": "Round",
-            "link": "shopify://collections/round-engagement-rings-timeless-beauty-for-your-proposal"
+            "image": "shopify://shop_images/round_1.png",
+            "content": "Round",
+            "url": "shopify://collections/round-engagement-rings-timeless-beauty-for-your-proposal"
           }
         },
-        "icon_UzyAwM": {
-          "type": "icon",
+        "item_UkKgCp": {
+          "type": "item",
           "settings": {
-            "image": "shopify://shop_images/oval.png",
-            "text": "Oval",
-            "link": "shopify://collections/oval-engagement-rings-elegant-designs-for-proposals"
+            "image": "shopify://shop_images/oval_1.png",
+            "content": "Oval",
+            "url": "shopify://collections/oval-engagement-rings-elegant-designs-for-proposals"
           }
         },
-        "icon_Kmf3F8": {
-          "type": "icon",
+        "item_inbkpF": {
+          "type": "item",
           "settings": {
-            "image": "shopify://shop_images/radiant.png",
-            "text": "Radiant",
-            "link": "shopify://collections/radiant-engagement-rings-brilliant-sparkle-for-proposals"
+            "image": "shopify://shop_images/radiant_1.png",
+            "content": "Radiant",
+            "url": "shopify://collections/radiant-engagement-rings-brilliant-sparkle-for-proposals"
           }
         },
-        "icon_JTgqf6": {
-          "type": "icon",
+        "item_ykaDwa": {
+          "type": "item",
           "settings": {
-            "image": "shopify://shop_images/pear.png",
-            "text": "Pear",
-            "link": "shopify://collections/pear-shaped-engagement-rings-elegant-unique-for-proposals"
+            "image": "shopify://shop_images/pear_1.png",
+            "content": "Pear",
+            "url": "shopify://collections/pear-shaped-engagement-rings-elegant-unique-for-proposals"
           }
         },
-        "icon_WgFa3G": {
-          "type": "icon",
-          "disabled": true,
+        "item_YGHEW8": {
+          "type": "item",
           "settings": {
-            "image": "shopify://shop_images/Cushion.png",
-            "text": "Cushion",
-            "link": "shopify://collections/cushion-engagement-rings-vintage-charm-for-proposals"
+            "image": "shopify://shop_images/Princess_1.png",
+            "content": "Princess",
+            "url": "shopify://collections/princess-cut-engagement-rings-modern-sparkle-for-your-proposal"
           }
         },
-        "icon_WwPqmA": {
-          "type": "icon",
+        "item_XPXrgj": {
+          "type": "item",
           "settings": {
-            "image": "shopify://shop_images/Princess.png",
-            "text": "Princess",
-            "link": "shopify://collections/princess-cut-engagement-rings-modern-sparkle-for-your-proposal"
+            "image": "shopify://shop_images/Emerald_1.png",
+            "content": "Emerald",
+            "url": "shopify://collections/emerald-cut-engagement-rings-timeless-elegance-for-proposals"
           }
         },
-        "icon_kf69wy": {
-          "type": "icon",
+        "item_HUBdWe": {
+          "type": "item",
           "settings": {
-            "image": "shopify://shop_images/Emerald.png",
-            "text": "Emerald",
-            "link": "shopify://collections/emerald-cut-engagement-rings-timeless-elegance-for-proposals"
-          }
-        },
-        "icon_jKRFRa": {
-          "type": "icon",
-          "settings": {
-            "image": "shopify://shop_images/marquise.png",
-            "text": "Marquise",
-            "link": "shopify://collections/marquise-engagement-rings-unique-diamonds-for-proposals"
-          }
-        },
-        "icon_rmV9rN": {
-          "type": "icon",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/heart.png",
-            "text": "Heart",
-            "link": "shopify://collections/heart-engagement-rings-romantic-diamonds-for-proposals"
-          }
-        },
-        "icon_dhLF73": {
-          "type": "icon",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Asscher.png",
-            "text": "Ass",
-            "link": ""
+            "image": "shopify://shop_images/marquise_1.png",
+            "content": "Marquise",
+            "url": "shopify://collections/marquise-engagement-rings-unique-diamonds-for-proposals"
           }
         }
       },
       "block_order": [
-        "icon_FLdLd8",
-        "icon_UzyAwM",
-        "icon_Kmf3F8",
-        "icon_JTgqf6",
-        "icon_WgFa3G",
-        "icon_WwPqmA",
-        "icon_kf69wy",
-        "icon_jKRFRa",
-        "icon_rmV9rN",
-        "icon_dhLF73"
+        "item_PMQaRw",
+        "item_UkKgCp",
+        "item_inbkpF",
+        "item_ykaDwa",
+        "item_YGHEW8",
+        "item_XPXrgj",
+        "item_HUBdWe"
       ],
-      "custom_css": [],
       "settings": {
-        "heading": "Shop by Diamond Shape",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 36
+        "title": "Shop by Diamond Shape"
       }
     },
-    "index_style_b7eeFi": {
-      "type": "index-style",
+    "index_styles_M88mTB": {
+      "type": "index-styles",
       "blocks": {
-        "type_W4HrjB": {
-          "type": "type",
+        "item_kFfAPK": {
+          "type": "item",
           "settings": {
-            "image": "shopify://shop_images/neoshine-diamond-ring-style-solitaire.jpg",
-            "title": "Solitaire",
-            "link": "shopify://collections/solitaire-engagement-rings-classic-elegance-for-proposals"
+            "image": "shopify://shop_images/image_f1f238ff-2aa9-45f9-b8b6-c84281d37e9b.png",
+            "content": "Solitaire",
+            "url": "shopify://collections/solitaire-engagement-rings-classic-elegance-for-proposals"
           }
         },
-        "type_PKb8bB": {
-          "type": "type",
+        "item_YPXJtA": {
+          "type": "item",
           "settings": {
-            "image": "shopify://shop_images/neoshine-diamond-ring-style-pave.jpg",
-            "title": "Pave",
-            "link": "shopify://collections/pave-engagement-rings-sparkling-diamonds-for-your-proposal"
+            "image": "shopify://shop_images/image_1_3d56eb7e-9f69-4132-91c7-e34b79e1c938.png",
+            "content": "Halo",
+            "url": "shopify://collections/halo-engagement-rings-brilliant-diamonds-in-a-perfect-setting"
           }
         },
-        "type_xnndFj": {
-          "type": "type",
+        "item_NRhzir": {
+          "type": "item",
           "settings": {
-            "image": "shopify://shop_images/neoshine-diamond-ring-style-halo.jpg",
-            "title": "Halo",
-            "link": "shopify://collections/halo-engagement-rings-brilliant-diamonds-in-a-perfect-setting"
+            "image": "shopify://shop_images/image_2_c0bf53b7-db6e-421d-8123-a8409f26194d.png",
+            "content": "pave",
+            "url": "shopify://collections/pave-engagement-rings-sparkling-diamonds-for-your-proposal"
           }
         },
-        "type_xy6Bhd": {
-          "type": "type",
+        "item_FXqXk3": {
+          "type": "item",
           "settings": {
-            "image": "shopify://shop_images/neoshine-diamond-ring-style-hidden-halo.jpg",
-            "title": "Hidden Halo",
-            "link": "shopify://collections/hidden-halo-engagement-rings-subtle-sparkle-stunning-beauty"
-          }
-        },
-        "type_dCCyyp": {
-          "type": "type",
-          "settings": {
-            "image": "shopify://shop_images/neoshine-diamond-ring-style-Bezel.jpg",
-            "title": "Bezel",
-            "link": "shopify://collections/bezel-engagement-rings-sleek-modern-diamond-settings"
+            "image": "shopify://shop_images/image_3.png",
+            "content": "Three Stone",
+            "url": "shopify://collections/three-stone-engagement-rings-symbolize-your-past-present-future"
           }
         }
       },
       "block_order": [
-        "type_W4HrjB",
-        "type_PKb8bB",
-        "type_xnndFj",
-        "type_xy6Bhd",
-        "type_dCCyyp"
+        "item_kFfAPK",
+        "item_YPXJtA",
+        "item_NRhzir",
+        "item_FXqXk3"
       ],
       "settings": {
-        "title": "Shop by Style",
-        "color_scheme": "scheme-1b6298aa-dfb9-4e2d-85fc-52d5fd933d3c",
-        "padding_top": 32,
-        "padding_bottom": 60
-      }
-    },
-    "image_with_text_ai6BHE": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_XJGxby": {
-          "type": "heading",
-          "settings": {
-            "heading": "Celebrate Love, Shine Brighter",
-            "heading_size": "h2"
-          }
-        },
-        "text_rPamRC": {
-          "type": "text",
-          "settings": {
-            "text": "<p>At NeoShine, we believe love deserves to shine without compromise. Our ethically crafted lab-grown diamonds offer brilliance and beauty at an accessible price, making your special moments unforgettable. Discover the perfect symbol of your love, crafted with passion and precision.</p>",
-            "text_style": "body"
-          }
-        },
-        "button_D3448z": {
-          "type": "button",
-          "settings": {
-            "button_label": "About NeoShine",
-            "button_link": "shopify://pages/about-us",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_XJGxby",
-        "text_rPamRC",
-        "button_D3448z"
-      ],
-      "custom_css": [],
-      "settings": {
-        "image": "shopify://shop_images/home_page_post.jpg",
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "section_color_scheme": "scheme-12ceca98-4848-4696-8216-19292799d7df",
-        "color_scheme": "scheme-12ceca98-4848-4696-8216-19292799d7df",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "padding_top_mob": 36,
-        "padding_bottom_mob": 36
-      }
-    },
-    "image_8kVDJG": {
-      "type": "image",
-      "settings": {
-        "pc_image": "shopify://shop_images/neoshine-homepage-diamond-ring-Brand-story.jpg",
-        "mobile_image": "shopify://shop_images/post.jpg",
-        "title": "<h2><strong>Every Gem Tells a Story</strong></h2><h2><strong>Make It Yours with Neoshine</strong></h2><h2></h2>",
-        "details": "<p>Ethically crafted diamonds and vibrant gemstones that reflect your love, values, and life’s milestones.</p>",
-        "btn": "Explore Neoshine Today",
-        "url": "shopify://pages/about-us",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "custom_ugc_V7exNB": {
-      "type": "custom-ugc",
-      "blocks": {
-        "image_gFNTnp": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/ugc1.jpg"
-          }
-        },
-        "image_GeJkeB": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/ugc2.jpg"
-          }
-        },
-        "image_a6ekt6": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/ugc3.jpg"
-          }
-        },
-        "image_Bcf4jw": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/ugc4.jpg"
-          }
-        },
-        "image_gKChMV": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/ugc5.jpg"
-          }
-        },
-        "image_jatF3G": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/ugc6.jpg"
-          }
-        },
-        "video_MJBtCp": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/Milana-whitegold-$999(1).mov"
-          }
-        },
-        "video_AjrBxC": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/Neoshine-lab created-UGC.mp4"
-          }
-        },
-        "video_ErR7Fi": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/copy_EBB34B69-D33F-4E47-B111-4465018F6F30(1).mov"
-          }
-        }
-      },
-      "block_order": [
-        "image_gFNTnp",
-        "image_GeJkeB",
-        "image_a6ekt6",
-        "image_Bcf4jw",
-        "image_gKChMV",
-        "image_jatF3G",
-        "video_MJBtCp",
-        "video_AjrBxC",
-        "video_ErR7Fi"
-      ],
-      "settings": {
-        "title": "Neoshine on the Instagram @Neoshine_jewelry",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "custom_warranty_EBJnGK": {
-      "type": "custom-warranty",
-      "blocks": {
-        "image_Lj7hYT": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/landding_page_second_product_promise-55.svg",
-            "text": "IGI-certified for superior quality and authenticity."
-          }
-        },
-        "image_mwPdYb": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/landding_page_second_first_icon-design.svg",
-            "text": "Designed for ultimate brilliance and symmetry."
-          }
-        },
-        "image_GT4qid": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/landding_page_second_first_icon-Guaranteed.svg",
-            "text": "Guaranteed lifetime sparkle with our warranty."
-          }
-        },
-        "image_NgFtRB": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/landding_page_second_first_icon-30_day.svg",
-            "text": "Shop confidently with 30-day free returns."
-          }
-        }
-      },
-      "block_order": [
-        "image_Lj7hYT",
-        "image_mwPdYb",
-        "image_GT4qid",
-        "image_NgFtRB"
-      ],
-      "settings": {
-        "title": "IGI Certified Diamonds with Full Assurance",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "swiper_blog_PNYrrB": {
-      "type": "swiper-blog",
-      "settings": {
-        "color_scheme": "",
-        "title": "<p>Our Blog</p>",
-        "blog": "news",
-        "padding_top": 40,
-        "padding_bottom": 36
+        "title": "Shop by style"
       }
     }
   },
   "order": [
     "banner_zKz8Ld",
-    "index_type_EFYE7V",
-    "iconbar_RDDLdc",
-    "index_style_b7eeFi",
-    "image_with_text_ai6BHE",
-    "image_8kVDJG",
-    "custom_ugc_V7exNB",
-    "custom_warranty_EBJnGK",
-    "swiper_blog_PNYrrB"
+    "index_grid_BkrBKz",
+    "index_shape_33hB7Q",
+    "index_styles_M88mTB"
   ]
 }
