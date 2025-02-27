@@ -34,6 +34,20 @@
     grid-column: span 2 / span 2;
     grid-row-start: 2;
   }
+  #shopify-section-{{ section.id }} .index-grid .content-wrapper{
+    position: relative;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  #shopify-section-{{ section.id }} .index-grid .item:hover .content-wrapper{
+    background-color: rgba(0, 0, 0, 0.7);
+  }
   @media screen and (max-width: 1024px) {}
   @media screen and (max-width: 749px) {
     #shopify-section-{{ section.id }} .index-grid {
@@ -70,8 +84,8 @@
   {% for block in section.blocks %}
     <a
       class="item item-{{ forloop.index }}"
-      {% if block.settings.url != blank %}
-      href="{{ block.settings.url }}"
+      {% if block.settings.product != blank %}
+      href="{{ block.settings.product.url }}"
       {% endif %}>
       <div class="img-wrapper">
         {{ block.settings.pc_image
@@ -95,6 +109,15 @@
           loading: 'lazy'
         }}
 
+      </div>
+      <div class="content-wrapper">
+        <div class="text-box">
+          <h2 class="item-title">{{ block.settings.title }}</h2>
+          <p class="item-title">{{ block.settings.content }}</p>
+        </div>
+        <div class="price-box">
+          
+        </div>
       </div>
     </a>
   {% endfor %}
