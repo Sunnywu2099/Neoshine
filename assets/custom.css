@@ -29,6 +29,10 @@
 }
 
 @media (max-width: 749px) {
+  .page-width{
+    padding-left: 5px;
+    padding-right: 5px;
+  }
   img.pc {
     display: none !important;
   }
