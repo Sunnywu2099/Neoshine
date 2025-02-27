@@ -11,8 +11,8 @@
   "current": {
     "block_chinese_broswer": false,
     "jump_url": "https://www.google.com",
-    "logo": "shopify://shop_images/NEOSHINE_logo-18.svg",
-    "logo_width": 250,
+    "logo": "shopify://shop_images/Logo.png",
+    "logo_width": 160,
     "favicon": "shopify://shop_images/neoshine-logo_2.svg",
     "type_header_font": "lato_n5",
     "heading_scale": 100,
