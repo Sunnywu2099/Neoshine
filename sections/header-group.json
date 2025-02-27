@@ -1266,9 +1266,7 @@
         "contact_A3cjzf",
         "contact_xDbRda"
       ],
-      "custom_css": [
-        ".header__inline-menu {margin-top: -25px;}"
-      ],
+      "custom_css": [],
       "settings": {
         "logo_position": "top-center",
         "menu": "main-menu",
