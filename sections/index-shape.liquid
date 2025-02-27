@@ -35,7 +35,7 @@
       width: 50px;
       height: 50px;
       object-fit: cover;
-      margin-bottom: 5px;
+      margin-bottom: 0px;
     }
     #shopify-section-{{section.id}} .shapes-wrapper .item .shape-name{
       font-size: 18px;
@@ -46,6 +46,13 @@
     #shopify-section-{{section.id}} .shapes-wrapper .item .shape-name{
       font-size: 12px;
       line-height: 18px;
+    }
+    #shopify-section-{{section.id}} .shapes-wrapper{
+      padding: 0 30px;
+      justify-content: flex-start;
+    }
+    #shopify-section-{{section.id}} .shapes-wrapper .item{
+      flex: 0 0 calc( (100% - 48px)/4);
     }
   }
 </style>
