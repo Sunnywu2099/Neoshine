@@ -11,16 +11,33 @@
   "sections": {
     "banner_zKz8Ld": {
       "type": "banner",
-      "settings": {
-        "pc_image": "shopify://shop_images/hpb.webp",
-        "mobile_image": "shopify://shop_images/hpb-m.webp",
-        "title": "<h1> <strong>Redefine Luxury with </strong></h1><h1><strong>Lab-Grown  Diamonds</strong></h1>",
-        "details": "",
-        "btn": "Explore Now",
-        "url": "shopify://pages/lab-grown-diamond",
-        "padding_top": 0,
-        "padding_bottom": 36
-      }
+      "blocks": {
+        "item_AdMd3F": {
+          "type": "item",
+          "settings": {
+            "pc_image": "shopify://shop_images/image_14.png",
+            "mobile_image": "shopify://shop_images/image_16.png",
+            "title": "Get 10% Off & a Welcome Gift on Your First Purchase",
+            "content": "Enjoy 10% off your first purchase, plus a complimentary pair of 1/2 carat diamond studs as a welcome gift.",
+            "url": ""
+          }
+        },
+        "item_bP9zFX": {
+          "type": "item",
+          "settings": {
+            "pc_image": "shopify://shop_images/image_15.png",
+            "mobile_image": "shopify://shop_images/image_16.png",
+            "title": "Get 10% Off & a Welcome Gift on Your First Purchase",
+            "content": "Enjoy 10% off your first purchase, plus a complimentary pair of 1/2 carat diamond studs as a welcome gift.",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_AdMd3F",
+        "item_bP9zFX"
+      ],
+      "settings": {}
     },
     "index_type_EFYE7V": {
       "type": "index-type",
