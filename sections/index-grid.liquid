@@ -35,7 +35,7 @@
     grid-row-start: 2;
   }
   #shopify-section-{{ section.id }} .index-grid .content-wrapper{
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
@@ -117,7 +117,7 @@
         </div>
         {% if block.settings.product != blank %}
           <div class="price-box">
-            {% render 'ns-price', product: product %}
+            {% render 'ns-price', product: block.settings.product %}
           </div>
         {% endif %}
       </div>
