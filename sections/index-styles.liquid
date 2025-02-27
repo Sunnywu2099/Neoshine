@@ -5,11 +5,24 @@
   }
   #shopify-section-{{section.id}} .styles-wrapper .item{
     text-align: center;
+    width: calc( (100% - 60px)/4);
+  }
+  #shopify-section-{{section.id}} .styles-wrapper .item .img-wrapper{
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
   }
   #shopify-section-{{section.id}} .styles-wrapper .item img{
     object-fit: cover;
-    margin-bottom: 15px;
     transition: all .3s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
   #shopify-section-{{section.id}} .styles-wrapper .item:hover img{
     transform: scale(1.08);
@@ -52,18 +65,20 @@
   <div class="styles-wrapper">
     {% for block in section.blocks %}
       <a class="item" href="{{block.settings.url}}">
-          {{
-            block.settings.image
-            | image_url: width: block.settings.image.width
-            | image_tag:
-              width: block.settings.image.width,
-              height: block.settings.image.height,
-              class: 'icon',
-              sizes: sizes,
-              widths: widths,
-              alt: block.settings.text,
-              loading: 'lazy'
-          }}
+          <div class="img-wrapper">
+            {{
+              block.settings.image
+              | image_url: width: block.settings.image.width
+              | image_tag:
+                width: block.settings.image.width,
+                height: block.settings.image.height,
+                class: 'icon',
+                sizes: sizes,
+                widths: widths,
+                alt: block.settings.text,
+                loading: 'lazy'
+            }}
+          </div>
           <span class="style-name">{{ block.settings.content }}</span>
       </a>
     {% endfor %}
