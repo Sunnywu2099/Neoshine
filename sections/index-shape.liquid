@@ -11,7 +11,7 @@
 {% assign full_width = '100vw' %}
 {% assign sizes = full_width %}
 {% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
-<div class="shapes">
+<div class="shapes page-width">
   <h2 class="title">{{section.settings.title}}</h2>
   <div class="shapes-wrapper">
     {% for block in section.blocks %}
@@ -25,10 +25,10 @@
               class: 'icon',
               sizes: sizes,
               widths: widths,
-              alt: 'Shape',
+              alt: block.settings.text,
               loading: 'lazy'
           }}
-          <span>{{ block.settings.text }}</span>
+          <span class="shape-name">{{ block.settings.text }}</span>
       </a>
     {% endfor %}
   </div>
