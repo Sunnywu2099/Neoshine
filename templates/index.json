@@ -90,10 +90,77 @@
         "item_ybdwJx"
       ],
       "settings": {}
+    },
+    "index_shape_33hB7Q": {
+      "type": "index-shape",
+      "blocks": {
+        "item_PMQaRw": {
+          "type": "item",
+          "settings": {
+            "content": "",
+            "url": ""
+          }
+        },
+        "item_UkKgCp": {
+          "type": "item",
+          "settings": {
+            "content": "",
+            "url": ""
+          }
+        },
+        "item_inbkpF": {
+          "type": "item",
+          "settings": {
+            "content": "",
+            "url": ""
+          }
+        },
+        "item_ykaDwa": {
+          "type": "item",
+          "settings": {
+            "content": "",
+            "url": ""
+          }
+        },
+        "item_YGHEW8": {
+          "type": "item",
+          "settings": {
+            "content": "",
+            "url": ""
+          }
+        },
+        "item_XPXrgj": {
+          "type": "item",
+          "settings": {
+            "content": "",
+            "url": ""
+          }
+        },
+        "item_HUBdWe": {
+          "type": "item",
+          "settings": {
+            "content": "",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_PMQaRw",
+        "item_UkKgCp",
+        "item_inbkpF",
+        "item_ykaDwa",
+        "item_YGHEW8",
+        "item_XPXrgj",
+        "item_HUBdWe"
+      ],
+      "settings": {
+        "title": "Shop by Diamond Shape"
+      }
     }
   },
   "order": [
     "banner_zKz8Ld",
-    "index_grid_BkrBKz"
+    "index_grid_BkrBKz",
+    "index_shape_33hB7Q"
   ]
 }
