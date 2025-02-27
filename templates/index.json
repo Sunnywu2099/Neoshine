@@ -39,39 +39,57 @@
       ],
       "settings": {}
     },
-    "index_type_EFYE7V": {
-      "type": "index-type",
+    "index_grid_BkrBKz": {
+      "type": "index-grid",
       "blocks": {
-        "type_jWqwXj": {
-          "type": "type",
+        "item_wK7AKk": {
+          "type": "item",
           "settings": {
-            "image": "shopify://shop_images/0120-home_page_banner-Valentine_s_Day_2_b4e886bf-8180-4d9c-8a30-f4f584fe9984.jpg",
-            "tap": "Valentine's Day Special",
-            "title": "1 CT Lab  Diamond Ring for <em><strong>$999</strong></em>",
-            "text": "SHOP NOW",
-            "link": "shopify://products/14k-1ct-lab-created-diamond-ring"
+            "pc_image": "shopify://shop_images/image_18.png",
+            "mobile_image": "shopify://shop_images/Group_1000002174.png",
+            "title": "Hearts & Arrows Diamonds",
+            "content": "14K 1CT Lab Created Diamond Ring",
+            "product": "14k-1ct-lab-created-diamond-ring"
           }
         },
-        "type_4UGprT": {
-          "type": "type",
+        "item_yqtDTK": {
+          "type": "item",
           "settings": {
-            "image": "shopify://shop_images/earring--post-4.jpg",
-            "tap": "",
-            "title": "Diamond Earring Stud",
-            "text": "SHOP NOW",
-            "link": "shopify://products/stud-earrings"
+            "pc_image": "shopify://shop_images/image_21.png",
+            "mobile_image": "shopify://shop_images/image_2.png",
+            "title": "",
+            "content": "",
+            "product": "1ct-diamond-solitaire-engagement-ring"
+          }
+        },
+        "item_NHHFyn": {
+          "type": "item",
+          "settings": {
+            "pc_image": "shopify://shop_images/image_20.png",
+            "mobile_image": "shopify://shop_images/image_2.png",
+            "title": "",
+            "content": "",
+            "product": "14k-1ct-lab-created-diamond-ring"
+          }
+        },
+        "item_ybdwJx": {
+          "type": "item",
+          "settings": {
+            "pc_image": "shopify://shop_images/image_19.png",
+            "mobile_image": "shopify://shop_images/image_b02ea5e5-0bb8-45ef-87d8-db41559d5278.png",
+            "title": "",
+            "content": "",
+            "product": "bezel-diamond-earrings"
           }
         }
       },
       "block_order": [
-        "type_jWqwXj",
-        "type_4UGprT"
+        "item_wK7AKk",
+        "item_yqtDTK",
+        "item_NHHFyn",
+        "item_ybdwJx"
       ],
-      "settings": {
-        "color_scheme": "",
-        "padding_top": 24,
-        "padding_bottom": 24
-      }
+      "settings": {}
     },
     "iconbar_RDDLdc": {
       "type": "iconbar",
@@ -433,7 +451,7 @@
   },
   "order": [
     "banner_zKz8Ld",
-    "index_type_EFYE7V",
+    "index_grid_BkrBKz",
     "iconbar_RDDLdc",
     "index_style_b7eeFi",
     "image_with_text_ai6BHE",
