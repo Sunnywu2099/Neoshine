@@ -95,6 +95,7 @@
     <div class="swiper-button-next">
       {% render 'banner-next' %}
     </div>
+    <div class="swiper-pagination"></div>
   </div>
   
 </div>
@@ -106,7 +107,10 @@
       navigation: {
         nextEl: '.banner .swiper-button-next',
         prevEl: '.banner .swiper-button-prev',
-      }
+      },
+      pagination: {
+        el: '.banner .swiper-pagination',
+      },
     })
   })
 </script>
