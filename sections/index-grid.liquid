@@ -115,9 +115,11 @@
           <h2 class="item-title">{{ block.settings.title }}</h2>
           <p class="item-title">{{ block.settings.content }}</p>
         </div>
-        <div class="price-box">
-          
-        </div>
+        {% if block.settings.product != blank %}
+          <div class="price-box">
+            {% render 'ns-price', product: product %}
+          </div>
+        {% endif %}
       </div>
     </a>
   {% endfor %}
