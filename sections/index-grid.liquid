@@ -1,114 +1,115 @@
 <style>
-  #shopify-section-{{section.id}} .index-grid{
+  #shopify-section-{{ section.id }} .index-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 15px;
   }
-  #shopify-section-{{section.id}} .index-grid .item{
-    
-  }
-  #shopify-section-{{section.id}} .index-grid .item-1{
-    grid-column: span 4 / span 4;
-  }
-  #shopify-section-{{section.id}} .index-grid .item-2{
-    grid-row-start: 2;
-  }
-  #shopify-section-{{section.id}} .index-grid .item-3{
-    grid-row-start: 2;
-  }
-  #shopify-section-{{section.id}} .index-grid .item-4{
-    grid-column: span 2 / span 2;
-    grid-row-start: 2;
-  }
-  @media screen and (max-width: 1024px) {
-
-  }
-  @media screen and (max-width: 749px) {
-
-  }
+  #shopify-section-{{ section.id }}
+  .index-grid .item {}
+#shopify-section-{{ section.id }}
+.index-grid .item-1 {
+  grid-column: span 4 / span 4;
+}
+#shopify-section-{{ section.id }}
+.index-grid .item-2 {
+  grid-row-start: 2;
+}
+#shopify-section-{{ section.id }}
+.index-grid .item-3 {
+  grid-row-start: 2;
+}
+#shopify-section-{{ section.id }}
+.index-grid .item-4 {
+  grid-column: span 2 / span 2;
+  grid-row-start: 2;
+}
+@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 749px) {}
 </style>
 
+{% assign full_width = '100vw' %}
+{% assign sizes = full_width %}
+{% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
+
 <div class="index-grid">
-  {% for block in section.blocks %} 
-    <a class="item item-{{ forloop.index }}" {% if block.settings.url != blank %}href="{{ block.settings.url }}"{% endif %}>
+  {% for block in section.blocks %}
+    <a
+      class="item item-{{ forloop.index }}"
+      {% if block.settings.url != blank %}
+      href="{{ block.settings.url }}"
+      {% endif %}>
       <div class="img-wrapper">
-            {% assign full_width = '100vw' %}
-            {% assign sizes = full_width %}
-            {% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
-            {{
-              block.settings.image
-              | image_url: width: 3840
-              | image_tag:
-                width: block.settings.pc_image.width,
-                height: block.settings.pc_image.height,
-                class: 'pc',
-                sizes: sizes,
-                widths: widths,
-                loading: 'lazy'
-            }}
-            {{
-              block.settings.mobile_image
-              | image_url: width: 3840
-              | image_tag:
-                width: block.settings.mobile_image.width,
-                height: block.settings.mobile_image.height,
-                class: 'mb',
-                sizes: sizes,
-                widths: widths,
-                loading: 'lazy'
-            }}
+        {{ block.settings.pc_image
+          | image_url: width: 3840
+          | image_tag:
+          width: block.settings.pc_image.width,
+          height: block.settings.pc_image.height,
+          class: 'pc',
+          sizes: sizes,
+          widths: widths,
+          loading: 'lazy'
+        }}
+        {{ block.settings.mobile_image
+          | image_url: width: 3840
+          | image_tag:
+          width: block.settings.mobile_image.width,
+          height: block.settings.mobile_image.height,
+          class: 'mb',
+          sizes: sizes,
+          widths: widths,
+          loading: 'lazy'
+        }}
       </div>
     </a>
   {% endfor %}
-  
+
 </div>
 
 {% schema %}
-{
-  "name": "Home grid",
-  "tag": "section",
-  "class": "home-grid",
-  "limit": 1,
-  "max_blocks": 4,
-  "settings": [],
-  "blocks": [
-    {
-      "type": "item",
-      "name": "Item",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "pc_image",
-          "label": "pc_image"
-        },
-        {
-          "type": "image_picker",
-          "id": "mobile_image",
-          "label": "mobile_image"
-        },
-        {
-          "type": "textarea",
-          "id": "title",
-          "label": "title"
-        },
-        {
-          "type": "textarea",
-          "id": "content",
-          "label": "content"
-        },
-        {
-          "type": "product",
-          "id": "product",
-          "label": "Product"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Home grid"
-    }
-  ]
-}
+  {
+    "name": "Home grid",
+    "tag": "section",
+    "class": "home-grid",
+    "limit": 1,
+    "max_blocks": 4,
+    "settings": [],
+    "blocks": [
+      {
+        "type": "item",
+        "name": "Item",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "pc_image",
+            "label": "pc_image"
+          },
+          {
+            "type": "image_picker",
+            "id": "mobile_image",
+            "label": "mobile_image"
+          },
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "title"
+          },
+          {
+            "type": "textarea",
+            "id": "content",
+            "label": "content"
+          }, {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Home grid"
+      }
+    ]
+  }
 {% endschema %}
