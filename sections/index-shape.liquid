@@ -45,7 +45,7 @@
   <h2 class="section-title">{{section.settings.title}}</h2>
   <div class="shapes-wrapper">
     {% for block in section.blocks %}
-      <a class="item">
+      <a class="item" href="{{block.settings.url}}">
           {{
             block.settings.image
             | image_url: width: block.settings.image.width
