@@ -97,50 +97,57 @@
         "item_PMQaRw": {
           "type": "item",
           "settings": {
-            "content": "",
-            "url": ""
+            "image": "shopify://shop_images/round_1.png",
+            "content": "Round",
+            "url": "shopify://collections/round-engagement-rings-timeless-beauty-for-your-proposal"
           }
         },
         "item_UkKgCp": {
           "type": "item",
           "settings": {
-            "content": "",
-            "url": ""
+            "image": "shopify://shop_images/oval_1.png",
+            "content": "Oval",
+            "url": "shopify://collections/oval-engagement-rings-elegant-designs-for-proposals"
           }
         },
         "item_inbkpF": {
           "type": "item",
           "settings": {
-            "content": "",
-            "url": ""
+            "image": "shopify://shop_images/radiant_1.png",
+            "content": "Radiant",
+            "url": "shopify://collections/radiant-engagement-rings-brilliant-sparkle-for-proposals"
           }
         },
         "item_ykaDwa": {
           "type": "item",
           "settings": {
-            "content": "",
-            "url": ""
+            "image": "shopify://shop_images/pear_1.png",
+            "content": "Pear",
+            "url": "shopify://collections/pear-shaped-engagement-rings-elegant-unique-for-proposals"
           }
         },
         "item_YGHEW8": {
           "type": "item",
           "settings": {
-            "content": "",
-            "url": ""
+            "image": "shopify://shop_images/Princess_1.png",
+            "content": "Princess",
+            "url": "shopify://collections/princess-cut-engagement-rings-modern-sparkle-for-your-proposal"
           }
         },
         "item_XPXrgj": {
           "type": "item",
           "settings": {
-            "content": "",
-            "url": ""
+            "image": "shopify://shop_images/Emerald_1.png",
+            "content": "Emerald",
+            "url": "shopify://collections/emerald-cut-engagement-rings-timeless-elegance-for-proposals"
           }
         },
         "item_HUBdWe": {
           "type": "item",
           "settings": {
-            "content": "",
-            "url": ""
+            "image": "shopify://shop_images/marquise_1.png",
+            "content": "Marquise",
+            "url": "shopify://collections/marquise-engagement-rings-unique-diamonds-for-proposals"
           }
         }
       },
