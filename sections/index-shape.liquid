@@ -28,8 +28,25 @@
     #shopify-section-{{section.id}} .shapes-wrapper{
       gap: 18px;
     }
+    #shopify-section-{{section.id}} .shapes-wrapper .item{
+      flex: 0 0 50px;
+    }
+    #shopify-section-{{section.id}} .shapes-wrapper .item img{
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      margin-bottom: 5px;
+    }
+    #shopify-section-{{section.id}} .shapes-wrapper .item .shape-name{
+      font-size: 18px;
+      line-height: 22px;
+    }
   }
   @media screen and (max-width: 749px) {
+    #shopify-section-{{section.id}} .shapes-wrapper .item .shape-name{
+      font-size: 12px;
+      line-height: 18px;
+    }
   }
 </style>
 
