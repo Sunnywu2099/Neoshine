@@ -2,6 +2,7 @@
   #shopify-section-{{section.id}} .styles-wrapper{
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
   }
   #shopify-section-{{section.id}} .styles-wrapper .item{
     text-align: center;
@@ -52,6 +53,9 @@
     }
     #shopify-section-{{section.id}} .styles-wrapper .item{
       flex: 0 0 calc( (100% - 10px)/2);
+    }
+    #shopify-section-{{section.id}} .styles-wrapper .item .img-wrapper{
+      margin-bottom: 9px;
     }
   }
 </style>
