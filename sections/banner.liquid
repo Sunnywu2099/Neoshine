@@ -11,7 +11,7 @@
   <div class="swiper-container">
     <div class="swiper-wrapper">
       {% for block in section.blocks %} 
-        <div class="swiper-slide item">
+      <a class="swiper-slide item" {% if block.settings.url != blank %}href="{{ block.settings.url }}"{% endif %}>
           <div class="img-wrapper">
             {% render 'responsive-image',
               sid: section.id,
@@ -22,7 +22,11 @@
               preload: true
             %}
           </div>
-        </div>
+          <div class="banner-wrapper page-width">
+            <h2 class="banner-title">{{ block.settings.title }}</h2>
+            <div class="banner-content">{{ block.settings.content }}</div>
+          </div>
+        </a>
       {% endfor %}
     </div>
   </div>
