@@ -70,13 +70,13 @@
   #shopify-section-{{ section.id }} .index-grid .price-box .price{
     color: #121212;
     font-size: 36px;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 48px;
   }
   #shopify-section-{{ section.id }} .index-grid .content-wrapper .item-title{
     color: #121212;
     font-size: 36px;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 32px;
     letter-spacing: 0.48px;
     margin: 0 0 20px;
@@ -89,7 +89,19 @@
     margin: 0;
     text-align: center;
   }
-  @media screen and (max-width: 1024px) {}
+  @media screen and (max-width: 1200px) {
+    #shopify-section-{{ section.id }} .index-grid .content-wrapper .item-title{
+      font-size: 30px;
+      margin: 0 0 10px;
+    }
+    #shopify-section-{{ section.id }} .index-grid .content-wrapper .item-content{
+      font-size: 18px;
+      line-height: 26px;   
+    }
+    #shopify-section-{{ section.id }} .index-grid .price-box .price{
+      font-size: 30px;
+    }
+  }
   @media screen and (max-width: 749px) {
     #shopify-section-{{ section.id }} .index-grid {
       display: grid;
