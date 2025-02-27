@@ -7,14 +7,35 @@
   width: 17px;
   height: 26px;
 }
+.section-pt{
+  padding-top: 146px;
+}
+.section-pb{
+  padding-top: 146px;
+}
+@media (max-width: 1024px){
+
+}
 @media (min-width: 750px) {
   img.mb {
     display: none !important;
+  }
+  .section-pt{
+    padding-top: 80px;
+  }
+  .section-pb{
+    padding-top: 80px;
   }
 }
 
 @media (max-width: 749px) {
   img.pc {
     display: none !important;
+  }
+  .section-pt{
+    padding-top: 40px;
+  }
+  .section-pb{
+    padding-top: 40px;
   }
 }
