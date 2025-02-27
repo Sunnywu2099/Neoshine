@@ -117,7 +117,8 @@
         </div>
         {% if block.settings.product != blank %}
           <div class="price-box">
-            {% render 'ns-price', product: block.settings.product %}
+            <span class="price">{{ block.settings.product.compare_at_price | money }}</span>
+            <span class="price">{{ block.settings.product.price | money }}</span>
           </div>
         {% endif %}
       </div>
