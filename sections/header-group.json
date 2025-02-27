@@ -1270,7 +1270,7 @@
       "settings": {
         "logo_position": "top-center",
         "menu": "main-menu",
-        "leftmenu": "",
+        "leftmenu": "<p>test</p>",
         "menu_type_desktop": "mega",
         "sticky_header_type": "reduce-logo-size",
         "show_line_separator": true,
