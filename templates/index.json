@@ -39,6 +39,54 @@
       ],
       "settings": {}
     },
+    "index_grid_Wn4zCa": {
+      "type": "index-grid",
+      "blocks": {
+        "item_MEhBy9": {
+          "type": "item",
+          "settings": {
+            "pc_image": "shopify://shop_images/image_18.png",
+            "title": "Hearts & Arrows Diamonds",
+            "content": "14K 1CT Lab Created Diamond Ring",
+            "product": ""
+          }
+        },
+        "item_9UbtWd": {
+          "type": "item",
+          "settings": {
+            "pc_image": "shopify://shop_images/image_21.png",
+            "title": "",
+            "content": "",
+            "product": ""
+          }
+        },
+        "item_YH6YwG": {
+          "type": "item",
+          "settings": {
+            "pc_image": "shopify://shop_images/image_20.png",
+            "title": "",
+            "content": "",
+            "product": ""
+          }
+        },
+        "item_eGGznF": {
+          "type": "item",
+          "settings": {
+            "pc_image": "shopify://shop_images/image_19.png",
+            "title": "",
+            "content": "",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_MEhBy9",
+        "item_9UbtWd",
+        "item_YH6YwG",
+        "item_eGGznF"
+      ],
+      "settings": {}
+    },
     "index_type_EFYE7V": {
       "type": "index-type",
       "blocks": {
@@ -433,6 +481,7 @@
   },
   "order": [
     "banner_zKz8Ld",
+    "index_grid_Wn4zCa",
     "index_type_EFYE7V",
     "iconbar_RDDLdc",
     "index_style_b7eeFi",
