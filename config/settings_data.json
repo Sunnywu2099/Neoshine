@@ -11,14 +11,14 @@
   "current": {
     "block_chinese_broswer": false,
     "jump_url": "https://www.google.com",
-    "logo": "shopify://shop_images/NEOSHINE_logo-18.svg",
-    "logo_width": 250,
+    "logo": "shopify://shop_images/Logo.png",
+    "logo_width": 160,
     "favicon": "shopify://shop_images/neoshine-logo_2.svg",
     "type_header_font": "lato_n5",
     "heading_scale": 100,
     "type_body_font": "lato_n4",
     "body_scale": 100,
-    "page_width": 1200,
+    "page_width": 1660,
     "spacing_sections": 0,
     "spacing_grid_horizontal": 8,
     "spacing_grid_vertical": 8,
@@ -177,77 +177,6 @@
         "disabled": false,
         "settings": {}
       },
-      "8409675092115237846": {
-        "type": "shopify://apps/accounts-concierge/blocks/custom_forms/3c495b68-652c-468d-a0ef-5bad6935d104",
-        "disabled": true,
-        "settings": {}
-      },
-      "12046557757412368804": {
-        "type": "shopify://apps/accounts-concierge/blocks/customer_account_page/3c495b68-652c-468d-a0ef-5bad6935d104",
-        "disabled": true,
-        "settings": {
-          "style": "light",
-          "dropdownMenu": "slider",
-          "mobile_nav_offset_top": 0,
-          "shadow": true,
-          "border_radius": 4,
-          "background_color": "#ffffff",
-          "text_color": "#202202",
-          "primary_color": "#5873f9",
-          "btn_text_color": "#ffffff",
-          "max_width": 800,
-          "custom_css": ""
-        }
-      },
-      "6471712195879653093": {
-        "type": "shopify://apps/accounts-concierge/blocks/social_logins/3c495b68-652c-468d-a0ef-5bad6935d104",
-        "disabled": true,
-        "settings": {
-          "position": "below",
-          "divider": true,
-          "style": "icon_and_text",
-          "text_alignment": "center",
-          "icon_alignment": "left",
-          "icon_style": "white",
-          "border_radius": 4,
-          "spacing": 8,
-          "shadow": true,
-          "custom_css": ""
-        }
-      },
-      "11356494674496455976": {
-        "type": "shopify://apps/accounts-concierge/blocks/loyalty/3c495b68-652c-468d-a0ef-5bad6935d104",
-        "disabled": true,
-        "settings": {}
-      },
-      "11074193060611426105": {
-        "type": "shopify://apps/accounts-concierge/blocks/product_wishlist/3c495b68-652c-468d-a0ef-5bad6935d104",
-        "disabled": true,
-        "settings": {
-          "placement": "below_add_to_cart",
-          "product_css_selector": "",
-          "button_style": "icon_and_text",
-          "border_radius": 2,
-          "shadow": true,
-          "offset_top": 0,
-          "offset_bottom": 0,
-          "offset_left": 0,
-          "offset_right": 0,
-          "collections_wishlist_button": "none",
-          "collection_button_border_radius": 50,
-          "floating_link_placement": "right",
-          "floating_link_vertical_offset": 0,
-          "floating_link_lateral_offset": 0,
-          "floating_link_border_radius": 2,
-          "navigation_link": false,
-          "navigation_link_css_selector": "",
-          "add_button_color": "#5873f9",
-          "add_button_text_color": "#ffffff",
-          "remove_button_color": "#333333",
-          "remove_button_text_color": "#ffffff",
-          "custom_css": ""
-        }
-      },
       "10059099789788467215": {
         "type": "shopify://apps/scala-parcelamentos/blocks/parcelaEmbed/def817a5-48c7-43b3-b8b9-553076d860c7",
         "disabled": false,
@@ -336,18 +265,6 @@
         "type": "shopify://apps/booster-page-speed-optimizer/blocks/app-embed/d920faf3-7c60-423a-9636-22618b5561b5",
         "disabled": false,
         "settings": {}
-      },
-      "16477348613150133823": {
-        "type": "shopify://apps/unlimited-bundles/blocks/script-app-block/d33d0f48-dee0-42a0-b156-2a5dce91814a",
-        "disabled": false,
-        "settings": {
-          "reload_on_line_item_properties": false,
-          "disable_reload_on_cart_update": false,
-          "disable_cart_attribute_tracker": false,
-          "disable_facebook_events": false,
-          "enable_reload_on_bundle_auto_match": false,
-          "use_h2_header": false
-        }
       },
       "5134484470793087125": {
         "type": "shopify://apps/vitals/blocks/app-embed/aeb48102-2a5a-4f39-bdbd-d8d49f4e20b8",
