@@ -59,6 +59,8 @@
   }
   #shopify-section-{{ section.id }} .index-grid .price-box{
     margin-bottom: 32px;
+    display: flex;
+    flex-wrap: wrap;
   }
   #shopify-section-{{ section.id }} .index-grid .price-box .price-del{
     color: #787878;
@@ -100,9 +102,11 @@
     }
     #shopify-section-{{ section.id }} .index-grid .price-box .price{
       font-size: 24px;
+      line-height: 1.2;
     }
     #shopify-section-{{ section.id }} .index-grid .price-box{
       margin-bottom: 10px;
+      justify-content: center;
     }
   }
   @media screen and (max-width: 749px) {
