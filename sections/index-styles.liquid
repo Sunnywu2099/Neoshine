@@ -1,0 +1,132 @@
+<style>
+  #shopify-section-{{section.id}} .styles-wrapper{
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+    flex-wrap: wrap;
+  }
+  #shopify-section-{{section.id}} .styles-wrapper .item{
+    flex: 0 0 88px;
+    flex-shrink: 0;
+    text-align: center;
+  }
+  #shopify-section-{{section.id}} .styles-wrapper .item img{
+    width: 82px;
+    height: 82px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    transition: all .3s ease-in-out;
+  }
+  #shopify-section-{{section.id}} .styles-wrapper .item:hover img{
+    transform: scale(1.08);
+  }
+  #shopify-section-{{section.id}} .styles-wrapper .item .style-name{
+    color: #121212;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26px;
+    text-transform: capitalize;
+  }
+  @media screen and (max-width: 1200px) {
+    #shopify-section-{{section.id}} .styles-wrapper .item{
+      flex: 0 0 50px;
+    }
+    #shopify-section-{{section.id}} .styles-wrapper .item img{
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      margin-bottom: 0px;
+    }
+    #shopify-section-{{section.id}} .styles-wrapper .item .style-name{
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{section.id}} .styles-wrapper .item .style-name{
+      font-size: 12px;
+      line-height: 18px;
+    }
+    #shopify-section-{{section.id}} .styles-wrapper{
+      gap: 18px;
+      padding: 0 30px;
+      justify-content: flex-start;
+    }
+    #shopify-section-{{section.id}} .styles-wrapper .item{
+      flex: 0 0 calc( (100% - 54px)/4);
+    }
+  }
+</style>
+
+{% assign full_width = '100vw' %}
+{% assign sizes = full_width %}
+{% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
+<div class="styles page-width section-pt">
+  <h2 class="section-title">{{section.settings.title}}</h2>
+  <div class="styles-wrapper">
+    {% for block in section.blocks %}
+      <a class="item" href="{{block.settings.url}}">
+          {{
+            block.settings.image
+            | image_url: width: block.settings.image.width
+            | image_tag:
+              width: block.settings.image.width,
+              height: block.settings.image.height,
+              class: 'icon',
+              sizes: sizes,
+              widths: widths,
+              alt: block.settings.text,
+              loading: 'lazy'
+          }}
+          <span class="style-name">{{ block.settings.content }}</span>
+      </a>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Home style",
+  "tag": "section",
+  "class": "home-style",
+  "limit": 1,
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "title",
+      "default": "Shop by style"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "image"
+        },
+        {
+          "type": "text",
+          "id": "content",
+          "label": "content"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "url"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home style"
+    }
+  ]
+}
+{% endschema %}
