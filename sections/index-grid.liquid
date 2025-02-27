@@ -35,7 +35,7 @@
       href="{{ block.settings.url }}"
       {% endif %}>
       <div class="img-wrapper">
-        {% comment %} {{ block.settings.pc_image
+        {{ block.settings.pc_image
           | image_url: width: 3840
           | image_tag:
           width: block.settings.pc_image.width,
@@ -54,15 +54,8 @@
           sizes: sizes,
           widths: widths,
           loading: 'lazy'
-        }} {% endcomment %}
-        {% render 'responsive-image',
-          sid: section.id,
-          image_desktop: block.settings.pc_image,
-          image_mobile: block.settings.mobile_image,
-          alt: block.settings.title,
-          lazy: true,
-          preload: false
-        %}
+        }}
+
       </div>
     </a>
   {% endfor %}
