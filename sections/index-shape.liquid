@@ -14,6 +14,15 @@
     height: 82px;
     object-fit: cover;
   }
+  #shopify-section-{{section.id}} .shapes .section-title{
+    margin: 0 0 40px;
+    color: #121212;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 48px;
+    text-transform: capitalize;
+  }
   @media screen and (max-width: 1024px) {
   }
   @media screen and (max-width: 749px) {
@@ -24,7 +33,7 @@
 {% assign sizes = full_width %}
 {% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
 <div class="shapes page-width section-pt">
-  <h2 class="title">{{section.settings.title}}</h2>
+  <h2 class="section-title">{{section.settings.title}}</h2>
   <div class="shapes-wrapper">
     {% for block in section.blocks %}
       <a class="item">
