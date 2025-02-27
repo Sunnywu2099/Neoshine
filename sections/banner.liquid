@@ -152,66 +152,48 @@
 
 {% schema %}
 {
-  "name": "banner",
-  "settings": [
+  "name": "Home banner",
+  "tag": "section",
+  "class": "home-banner",
+  "limit": 1,
+  "max_blocks": 3,
+  "settings": [],
+  "blocks": [
     {
-      "type": "image_picker",
-      "id": "pc_image",
-      "label": "pc_image"
-    },
-    {
-      "type": "image_picker",
-      "id": "mobile_image",
-      "label": "mobile_image"
-    },
-    {
-      "type": "richtext",
-      "id": "title",
-      "label": "title"
-    },
-    {
-      "type": "richtext",
-      "id": "details",
-      "label": "details"
-    },
-    {
-        "type": "text",
-        "id": "btn",
-        "label": "btn"
-      },
-      {
-        "type": "url",
-        "id": "url",
-        "label": "url"
-      },
-    {
-    "type": "header",
-    "content": "t:sections.all.padding.section_padding_heading"
-  },
-  {
-    "type": "range",
-    "id": "padding_top",
-    "min": 0,
-    "max": 100,
-    "step": 4,
-    "unit": "px",
-    "label": "t:sections.all.padding.padding_top",
-    "default": 36
-  },
-  {
-    "type": "range",
-    "id": "padding_bottom",
-    "min": 0,
-    "max": 100,
-    "step": 4,
-    "unit": "px",
-    "label": "t:sections.all.padding.padding_bottom",
-    "default": 36
-  }
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "pc_image",
+          "label": "pc_image"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "mobile_image"
+        },
+        {
+          "type": "textarea",
+          "id": "title",
+          "label": "title"
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "content"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "url"
+        }
+      ]
+    }
   ],
   "presets": [
     {
-      "name": "banner"
+      "name": "Home banner"
     }
   ]
 }
