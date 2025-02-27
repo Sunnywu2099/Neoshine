@@ -73,6 +73,21 @@
     line-height: 48px;
     letter-spacing: 0.72px;
   }
+  #shopify-section-{{ section.id }} .index-grid .content-wrapper .item-title{
+    color: #121212;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: 0.48px;
+    margin: 0 0 20px;
+  }
+  #shopify-section-{{ section.id }} .index-grid .content-wrapper .item-desc{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px;   
+    margin: 0;
+  }
   @media screen and (max-width: 1024px) {}
   @media screen and (max-width: 749px) {
     #shopify-section-{{ section.id }} .index-grid {
@@ -138,7 +153,7 @@
       <div class="content-wrapper">
         <div class="text-box">
           <h2 class="item-title">{{ block.settings.title }}</h2>
-          <p class="item-title">{{ block.settings.content }}</p>
+          <p class="item-content">{{ block.settings.content }}</p>
         </div>
         {% if block.settings.product != blank %}
           <div class="price-box">
