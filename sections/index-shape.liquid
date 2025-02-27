@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     gap: 36px;
+    flex-wrap: wrap;
   }
   #shopify-section-{{section.id}} .shapes-wrapper .item{
     flex: 0 0 88px;
@@ -24,6 +25,9 @@
     text-transform: capitalize;
   }
   @media screen and (max-width: 1200px) {
+    #shopify-section-{{section.id}} .shapes-wrapper{
+      gap: 18px;
+    }
   }
   @media screen and (max-width: 749px) {
   }
