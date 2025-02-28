@@ -320,18 +320,6 @@
             "date": "2.22"
           }
         },
-        "item_phQD7L": {
-          "type": "item",
-          "settings": {
-            "pc_image": "shopify://shop_images/image_11.png",
-            "user_name": "",
-            "color": "#ffffff",
-            "img1": "shopify://shop_images/image_9.png",
-            "likes": "",
-            "comment": "Love is in the air 🤍<br>\nFrom passing by in the school halls to years later swiping right - these two lovebirds have been head over heels ever since! Nicole said YES to Will and sealed the deal with her gorgeous Petra💍",
-            "date": ""
-          }
-        },
         "item_UV7Qh7": {
           "type": "item",
           "settings": {
@@ -367,7 +355,7 @@
             "color": "#ffffff",
             "video": "shopify://files/videos/Milana-whitegold-$999(1).mov",
             "likes": "999",
-            "comment": "",
+            "comment": "Love is in the air 🤍<br>\nFrom passing by in the school halls to years later swiping right - these two lovebirds have been head over heels ever since! Nicole said YES to Will and sealed the deal with her gorgeous Petra💍",
             "date": "2.22"
           }
         }
@@ -375,7 +363,6 @@
       "block_order": [
         "item_M7rXGi",
         "item_3UmhRL",
-        "item_phQD7L",
         "item_UV7Qh7",
         "item_ax9AmB",
         "item_BNNpqg"
