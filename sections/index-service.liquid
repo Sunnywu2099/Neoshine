@@ -115,6 +115,14 @@
   </div>
 </div>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    $('.service-name[data-event="chat"]').on('click', function () {
+      $("#tidio-chat").click();
+    })
+  })
+</script>
+
 {% schema %}
 {
   "name": "Home service",
