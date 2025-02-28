@@ -28,7 +28,6 @@ a{
 }
 .social-popup-open{
   overflow: hidden;
-  height: 100%;
 }
 @media (max-width: 1200px){
   .section-title{
