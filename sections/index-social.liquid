@@ -158,6 +158,11 @@
       },
     })
 
+    $('#social-popup .toggle-popup').on('click', function () {
+      $('#social-popup').show();
+      $('body,html').removeClass('social-popup-open');
+    })
+    
     $('.social-wrapper .swiper-slide').on('click', function () {
       $('#social-popup').show();
       $('body,html').addClass('social-popup-open');
