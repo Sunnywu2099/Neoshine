@@ -72,8 +72,32 @@
               preload: true
             %}
             <div class="banner-wrapper">
-              <div class="banner-container">
-                <h2 class="banner-title">{{ block.settings.title }}</h2>
+              <h2 class="banner-title">{{ block.settings.title }}</h2>
+              <div class="icon-box">
+                {% if block.settings.icon_svg1 != blank %}
+                  <div class="icon-box">
+                    <span>{{ block.settings.icon_svg1 }}</span>
+                    <p>{{block.settings.icon_name1}}</p>
+                  </div>
+                {% endif %}
+                {% if block.settings.icon_svg2 != blank %}
+                  <div class="icon-box">
+                    <span>{{ block.settings.icon_svg2 }}</span>
+                    <p>{{block.settings.icon_name2}}</p>
+                  </div>
+                {% endif %}
+                {% if block.settings.icon_svg3 != blank %}
+                  <div class="icon-box">
+                    <span>{{ block.settings.icon_svg3 }}</span>
+                    <p>{{block.settings.icon_name3}}</p>
+                  </div>
+                {% endif %}
+                {% if block.settings.icon_svg4 != blank %}
+                  <div class="icon-box">
+                    <span>{{ block.settings.icon_svg4 }}</span>
+                    <p>{{block.settings.icon_name4}}</p>
+                  </div>
+                {% endif %}
               </div>
             </div>
           </div>
