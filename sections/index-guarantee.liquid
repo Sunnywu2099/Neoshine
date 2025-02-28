@@ -149,6 +149,7 @@
       {% for block in section.blocks %} 
         <div class="swiper-slide item">
           <div class="img-wrapper">
+            <div style="position: relative;">
             {% render 'responsive-image',
               sid: section.id,
               image_desktop: block.settings.pc_image,
@@ -158,6 +159,8 @@
               preload: true
             %}
             <h2 class="banner-title pc-hidden">{{ block.settings.title }}</h2>
+            </div>
+            
             <div class="banner-wrapper">
               <h2 class="banner-title">{{ block.settings.title }}</h2>
               <div class="icon-box">
