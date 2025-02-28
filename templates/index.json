@@ -298,7 +298,8 @@
           "settings": {
             "pc_image": "shopify://shop_images/image_8_9db72e00-1609-46e8-a90b-a68d21a499a5.png",
             "user_img": "shopify://shop_images/Ellipse_1697.png",
-            "user_name": "Anastasia Petrova"
+            "user_name": "Anastasia Petrova",
+            "color": "#ffffff"
           }
         },
         "item_3UmhRL": {
@@ -306,7 +307,8 @@
           "settings": {
             "pc_image": "shopify://shop_images/image_9.png",
             "user_img": "shopify://shop_images/Ellipse_1697.png",
-            "user_name": "Anastasia Petrova"
+            "user_name": "Anastasia Petrova",
+            "color": "#121212"
           }
         },
         "item_UV7Qh7": {
@@ -314,7 +316,8 @@
           "settings": {
             "pc_image": "shopify://shop_images/image_10_d5d2a130-d1a1-48aa-b02c-481e047d68dd.png",
             "user_img": "shopify://shop_images/Ellipse_1697.png",
-            "user_name": "Anastasia Petrova"
+            "user_name": "Anastasia Petrova",
+            "color": "#121212"
           }
         },
         "item_ax9AmB": {
@@ -322,7 +325,8 @@
           "settings": {
             "pc_image": "shopify://shop_images/image_11.png",
             "user_img": "shopify://shop_images/Ellipse_1697.png",
-            "user_name": "Anastasia Petrova"
+            "user_name": "Anastasia Petrova",
+            "color": "#ffffff"
           }
         },
         "item_BNNpqg": {
@@ -330,7 +334,8 @@
           "settings": {
             "pc_image": "shopify://shop_images/image_8_9db72e00-1609-46e8-a90b-a68d21a499a5.png",
             "user_img": "shopify://shop_images/Ellipse_1697.png",
-            "user_name": "Anastasia Petrova"
+            "user_name": "Anastasia Petrova",
+            "color": "#ffffff"
           }
         }
       },
