@@ -52,6 +52,9 @@
               lazy: true,
               preload: false
             %}
+            <div class="user-wrapper">
+              <img src="{{ block.settings.user_img | img_url: '32x' }}" alt="{{block.settings.user_name}}" width="32" height="32" loading="lazy">
+            </div>
         </div>
       {% endfor %}
     </div>
@@ -62,7 +65,7 @@
       {% render 'banner-next' %}
     </div>
   </div>
-  <a class="view-more" href="{{ section.settings.url }}" target="_blank">{{ section.settings.btn_name }}</a>
+  <a class="view-more" href="{{ section.settings.btn_url }}" target="_blank">{{ section.settings.btn_name }}</a>
 </div>
 
 <script>
