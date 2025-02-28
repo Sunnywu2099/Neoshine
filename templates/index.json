@@ -91,6 +91,36 @@
       ],
       "settings": {}
     },
+    "index_guarantee_HiiMc7": {
+      "type": "index-guarantee",
+      "blocks": {
+        "item_QhchYk": {
+          "type": "item",
+          "settings": {
+            "pc_image": "shopify://shop_images/image_4.png",
+            "mobile_image": "shopify://shop_images/image_6.png",
+            "title": "NeoShine 100% Guarantee, 0% Risk",
+            "url": "/",
+            "btn_name": "View More"
+          }
+        },
+        "item_Yhw8HC": {
+          "type": "item",
+          "settings": {
+            "pc_image": "shopify://shop_images/image_5.png",
+            "mobile_image": "shopify://shop_images/image_6.png",
+            "title": "NeoShine 100% Guarantee, 0% Risk",
+            "url": "/",
+            "btn_name": "View More"
+          }
+        }
+      },
+      "block_order": [
+        "item_QhchYk",
+        "item_Yhw8HC"
+      ],
+      "settings": {}
+    },
     "index_shape_33hB7Q": {
       "type": "index-shape",
       "blocks": {
@@ -214,6 +244,7 @@
   "order": [
     "banner_zKz8Ld",
     "index_grid_BkrBKz",
+    "index_guarantee_HiiMc7",
     "index_shape_33hB7Q",
     "index_styles_M88mTB"
   ]
