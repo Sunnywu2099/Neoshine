@@ -120,7 +120,7 @@
     $('.service-name[data-event="chat"]').on('click', function () {
       console.log(123);
       
-      $("#tidio-chat button").trigger('click');
+      tidioChatApi.open()
       console.log(456);
       
     })
