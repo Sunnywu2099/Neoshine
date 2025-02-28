@@ -1,0 +1,378 @@
+<style>
+  #shopify-section-{{section.id}} .guarantee .img-wrapper{
+    position: relative;
+  }
+  #shopify-section-{{section.id}} .guarantee .banner-wrapper{
+    padding: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
+  }
+  #shopify-section-{{section.id}} .guarantee .icon-box{
+    display: flex;
+    gap: 45px;
+  }
+  #shopify-section-{{section.id}} .guarantee .icon-box p{
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px; 
+    margin-bottom: 0;
+  }
+  #shopify-section-{{section.id}} .guarantee .icon-item{
+    display: flex;
+    flex-direction: column;
+  }
+  #shopify-section-{{section.id}} .guarantee .icon-box svg{
+    display: block;
+    margin: auto;
+  }
+  #shopify-section-{{section.id}} .guarantee .banner-title{
+    font-size: 36px;
+    line-height: 48px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #fff;
+  }
+  #shopify-section-{{section.id}} .guarantee .view-more{
+    margin: 50px 0 0 50px;
+    display: flex;
+    width: 190px;
+    height: 42px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 3px;
+    border: 1px solid #121212;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    transition: all .3s ease-in-out;
+  }
+  #shopify-section-{{section.id}} .guarantee .view-more:hover{
+    background-color: #121212;
+    color: #fff;
+  }
+  #shopify-section-{{section.id}} .guarantee .banner-title.pc-hidden{
+    display: none;
+  }
+  #shopify-section-{{section.id}} .guarantee .swiper-pagination-progressbar{
+    width: 170px;
+    height: 2px;
+    margin: 30px auto 0;
+    position: static;
+    display: none;
+  }
+  #shopify-section-{{section.id}} .guarantee .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+    background: #121212;
+  }
+  @media screen and (max-width: 1200px) {
+    #shopify-section-{{section.id}} .guarantee .banner-title{
+      font-size: 30px;
+      line-height: 42px;
+    }
+    #shopify-section-{{section.id}} .guarantee .view-more{
+      margin: 30px 0 0;
+      display: flex;
+      width: 130px;
+      height: 28px;
+      font-size: 14px;
+      line-height: 22px;
+    }
+    #shopify-section-{{section.id}} .guarantee .icon-box{
+      display: flex;
+      gap: 20px;
+    }
+    #shopify-section-{{section.id}} .guarantee .icon-box p{
+      color: #fff;
+      font-size: 12px;
+      line-height: 16px; 
+      margin-top: 10px;
+    }
+    #shopify-section-{{section.id}} .guarantee .icon-item{
+      display: flex;
+      flex-direction: column;
+    }
+    #shopify-section-{{section.id}} .guarantee .icon-box svg{
+      width: 45px;
+      height: 50px;
+    }
+  }
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{section.id}} .guarantee .banner-title{
+      font-size: 26px;
+      line-height: 32px;
+      margin-bottom: 16px;
+      display: none;
+    }
+    #shopify-section-{{section.id}} .guarantee .banner-title.pc-hidden{
+      display: block;
+      position: absolute;
+      padding: 30px;
+      bottom: 0;
+    }
+    #shopify-section-{{section.id}} .guarantee .banner-wrapper{
+      position: static;
+      padding: 28px;
+    }
+    #shopify-section-{{section.id}} .guarantee .icon-box{
+      flex-wrap: wrap;
+      column-gap: 55px;
+      row-gap: 20px;
+    }
+    #shopify-section-{{section.id}} .guarantee .icon-box p{
+      color: #121212;
+      font-size: 12px;
+      line-height: 16px; 
+      margin-top: 0px;
+    }
+    #shopify-section-{{section.id}} .guarantee .icon-item{
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      width: calc((100% - 55px) / 2);
+      /* justify-content: center; */
+      align-items: center;
+    }
+    #shopify-section-{{section.id}} .guarantee .icon-box svg path{
+      fill: #121212!important;
+    }
+    #shopify-section-{{section.id}} .guarantee .view-more{
+      margin: 0 auto;
+      display: flex;
+      width: 190px;
+    }
+    #shopify-section-{{section.id}} .guarantee .swiper-button-next,
+    #shopify-section-{{section.id}} .guarantee .swiper-button-prev{
+      top: 32%;
+    }
+    #shopify-section-{{section.id}} .guarantee .swiper-pagination-progressbar{
+      display: block;
+    }
+  }
+</style>
+
+<div class="guarantee section-pt page-width">
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %} 
+        <div class="swiper-slide item">
+          <div class="img-wrapper">
+            <div style="position: relative;">
+            {% render 'responsive-image',
+              sid: section.id,
+              image_desktop: block.settings.pc_image,
+              image_mobile: block.settings.mobile_image,
+              alt: block.settings.title,
+              lazy: false,
+              preload: true
+            %}
+            <h2 class="banner-title pc-hidden">{{ block.settings.title }}</h2>
+            </div>
+            
+            <div class="banner-wrapper">
+              <h2 class="banner-title">{{ block.settings.title }}</h2>
+              <div class="icon-box">
+                {% if block.settings.icon_svg1 != blank %}
+                  <a class="icon-item" href="{{block.settings.icon_url1}}">
+                    <span>{{ block.settings.icon_svg1 }}</span>
+                    <p>{{block.settings.icon_name1}}</p>
+                  </a>
+                {% endif %}
+                {% if block.settings.icon_svg2 != blank %}
+                  <a class="icon-item" href="{{block.settings.icon_url2}}">
+                    <span>{{ block.settings.icon_svg2 }}</span>
+                    <p>{{block.settings.icon_name2}}</p>
+                  </a>
+                {% endif %}
+                {% if block.settings.icon_svg3 != blank %}
+                  <a class="icon-item" href="{{block.settings.icon_url3}}">
+                    <span>{{ block.settings.icon_svg3 }}</span>
+                    <p>{{block.settings.icon_name3}}</p>
+                  </a>
+                {% endif %}
+                {% if block.settings.icon_svg4 != blank %}
+                  <a class="icon-item" href="{{block.settings.icon_url4}}">
+                    <span>{{ block.settings.icon_svg4 }}</span>
+                    <p>{{block.settings.icon_name4}}</p>
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          <a class="view-more" href="{{ block.settings.url }}">{{ block.settings.btn_name }}</a>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="swiper-button-prev">
+      {% render 'banner-prev' %}
+    </div>
+    <div class="swiper-button-next">
+      {% render 'banner-next' %}
+    </div>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const guarantee_swiper = new Swiper('.guarantee .swiper', {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      loop: true,
+      navigation: {
+        nextEl: '.guarantee .swiper-button-next',
+        prevEl: '.guarantee .swiper-button-prev',
+      },
+      breakpoints: { 
+        750: {  //当屏幕宽度大于等于768 
+          slidesPerView: 1.2,
+          spaceBetween: 15
+        },
+        1200: {  //当屏幕宽度大于等于1280
+          slidesPerView: 1.2,
+          spaceBetween: 24
+        }
+      },
+      pagination: {
+        el: '.guarantee .swiper-pagination',
+        type : 'progressbar',
+      },
+    })
+  })
+</script>
+
+{% schema %}
+{
+  "name": "Home guarantee",
+  "tag": "section",
+  "class": "home-guarantee",
+  "limit": 1,
+  "max_blocks": 4,
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "pc_image",
+          "label": "pc image"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "mobile image"
+        },
+        {
+          "type": "textarea",
+          "id": "title",
+          "label": "title"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "url"
+        },
+        {
+          "type": "text",
+          "id": "btn_name",
+          "label": "button name"
+        },
+        {
+          "type": "header",
+          "content": "----------for icon----------"
+        },
+        {
+          "type": "textarea",
+          "id": "icon_name1",
+          "label": "icon name 1"
+        },
+        {
+          "type": "html",
+          "id": "icon_svg1",
+          "label": "icon svg 1"
+        },
+        {
+          "type": "url",
+          "id": "icon_url1",
+          "label": "icon url 1"
+        },
+        {
+          "type": "header",
+          "content": "----------for icon----------"
+        },
+        {
+          "type": "textarea",
+          "id": "icon_name2",
+          "label": "icon name 2"
+        },
+        {
+          "type": "html",
+          "id": "icon_svg2",
+          "label": "icon svg 2"
+        },
+        {
+          "type": "url",
+          "id": "icon_url2",
+          "label": "icon url 2"
+        },
+        {
+          "type": "header",
+          "content": "----------for icon----------"
+        },
+        {
+          "type": "textarea",
+          "id": "icon_name3",
+          "label": "icon name 3"
+        },
+        {
+          "type": "html",
+          "id": "icon_svg3",
+          "label": "icon svg 3"
+        },
+        {
+          "type": "url",
+          "id": "icon_url3",
+          "label": "icon url 3"
+        },
+        {
+          "type": "header",
+          "content": "----------for icon----------"
+        },
+        {
+          "type": "textarea",
+          "id": "icon_name4",
+          "label": "icon name 4"
+        },
+        {
+          "type": "html",
+          "id": "icon_svg4",
+          "label": "icon svg 4"
+        },
+        {
+          "type": "url",
+          "id": "icon_url4",
+          "label": "icon url 4"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home guarantee"
+    }
+  ]
+}
+{% endschema %}
