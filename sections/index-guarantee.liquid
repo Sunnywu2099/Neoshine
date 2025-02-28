@@ -21,6 +21,21 @@
     margin-bottom: 25px;
     color: #fff;
   }
+  #shopify-section-{{section.id}} .guarantee .view-more{
+    margin: 50px 0 0 50px;
+    display: flex;
+    width: 240px;
+    height: 42px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 3px;
+    border: 1px solid #121212;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    text-transform: uppercase;
+  }
   @media screen and (max-width: 1200px) {
     #shopify-section-{{section.id}} .guarantee .banner-title{
       font-size: 30px;
@@ -56,7 +71,7 @@
               </div>
             </div>
           </div>
-          <a href="{{ block.settings.url }}">{{ block.settings.btn_name }}</a>
+          <a class="view-more" href="{{ block.settings.url }}">{{ block.settings.btn_name }}</a>
         </div>
       {% endfor %}
     </div>
