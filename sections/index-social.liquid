@@ -70,7 +70,7 @@
             %}
             <div class="user-wrapper">
               <img src="{{ block.settings.user_img | img_url: '32x' }}" alt="{{block.settings.user_name}}" width="32" height="32" loading="lazy">
-              <span class="user-name">{{block.settings.user_name}}</span>
+              <span class="user-name" style="color: {{block.settings.color}};">{{block.settings.user_name}}</span>
             </div>
         </div>
       {% endfor %}
