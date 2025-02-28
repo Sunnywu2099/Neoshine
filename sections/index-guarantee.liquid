@@ -16,6 +16,7 @@
   }
   #shopify-section-{{section.id}} .guarantee .icon-box{
     display: flex;
+    gap: 45px;
   }
   #shopify-section-{{section.id}} .guarantee .icon-item{
     display: flex;
@@ -82,28 +83,28 @@
               <h2 class="banner-title">{{ block.settings.title }}</h2>
               <div class="icon-box">
                 {% if block.settings.icon_svg1 != blank %}
-                  <div class="icon-item">
+                  <a class="icon-item">
                     <span>{{ block.settings.icon_svg1 }}</span>
                     <p>{{block.settings.icon_name1}}</p>
-                  </div>
+                  </a>
                 {% endif %}
                 {% if block.settings.icon_svg2 != blank %}
-                  <div class="icon-item">
+                  <a class="icon-item">
                     <span>{{ block.settings.icon_svg2 }}</span>
                     <p>{{block.settings.icon_name2}}</p>
-                  </div>
+                  </a>
                 {% endif %}
                 {% if block.settings.icon_svg3 != blank %}
-                  <div class="icon-item">
+                  <a class="icon-item">
                     <span>{{ block.settings.icon_svg3 }}</span>
                     <p>{{block.settings.icon_name3}}</p>
-                  </div>
+                  </a>
                 {% endif %}
                 {% if block.settings.icon_svg4 != blank %}
-                  <div class="icon-item">
+                  <a class="icon-item">
                     <span>{{ block.settings.icon_svg4 }}</span>
                     <p>{{block.settings.icon_name4}}</p>
-                  </div>
+                  </a>
                 {% endif %}
               </div>
             </div>
