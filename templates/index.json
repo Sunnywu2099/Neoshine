@@ -271,6 +271,7 @@
           "type": "item",
           "settings": {
             "pc_image": "shopify://shop_images/Group_1000002138.png",
+            "mb_image": "shopify://shop_images/Group_1000002205.png",
             "btn_name": "Call on us anytime!",
             "url": ""
           }
@@ -279,6 +280,7 @@
           "type": "item",
           "settings": {
             "pc_image": "shopify://shop_images/image_7.png",
+            "mb_image": "shopify://shop_images/Group_1000002204.png",
             "btn_name": "Find Your Perfect Fit: Try It On Virtually",
             "url": ""
           }
