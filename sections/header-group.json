@@ -1266,24 +1266,22 @@
         "contact_A3cjzf",
         "contact_xDbRda"
       ],
-      "custom_css": [
-        ".header__inline-menu {margin-top: -25px;}"
-      ],
+      "custom_css": [],
       "settings": {
         "logo_position": "top-center",
         "menu": "main-menu",
-        "leftmenu": "",
+        "leftmenu": "<p>test</p>",
         "menu_type_desktop": "mega",
         "sticky_header_type": "reduce-logo-size",
-        "show_line_separator": false,
+        "show_line_separator": true,
         "color_scheme": "scheme-1",
         "menu_color_scheme": "scheme-1",
-        "enable_country_selector": true,
+        "enable_country_selector": false,
         "enable_language_selector": true,
         "enable_customer_avatar": true,
         "mobile_logo_position": "center",
         "margin_bottom": 0,
-        "padding_top": 8,
+        "padding_top": 0,
         "padding_bottom": 0,
         "icon_show_on_top": true
       }
