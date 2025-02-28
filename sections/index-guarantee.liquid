@@ -138,12 +138,22 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const guarantee_swiper = new Swiper('.guarantee .swiper', {
-      slidesPerView: 1.2,
-      spaceBetween: 24,
+      slidesPerView: 1,
+      spaceBetween: 0,
       loop: true,
       navigation: {
         nextEl: '.guarantee .swiper-button-next',
         prevEl: '.guarantee .swiper-button-prev',
+      },
+      breakpoints: { 
+        768: {  //当屏幕宽度大于等于768 
+          slidesPerView: 1.2,
+          spaceBetween: 15
+        },
+        1200: {  //当屏幕宽度大于等于1280
+          slidesPerView: 1.2,
+          spaceBetween: 24
+        }
       },
       pagination: {
         el: '.guarantee .swiper-pagination',
