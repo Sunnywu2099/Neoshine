@@ -314,8 +314,20 @@
             "user_img": "shopify://shop_images/Ellipse_1697.png",
             "user_name": "Anastasia Petrova",
             "color": "#121212",
+            "video": "shopify://files/videos/Milana-whitegold-$999(1).mov",
+            "likes": "999",
+            "comment": "Love is in the air 🤍<br>\nFrom passing by in the school halls to years later swiping right - these two lovebirds have been head over heels ever since! Nicole said YES to Will and sealed the deal with her gorgeous Petra💍",
+            "date": "2.22"
+          }
+        },
+        "item_phQD7L": {
+          "type": "item",
+          "settings": {
+            "user_name": "",
+            "color": "#ffffff",
+            "img1": "shopify://shop_images/image_9.png",
             "likes": "",
-            "comment": "",
+            "comment": "Love is in the air 🤍<br>\nFrom passing by in the school halls to years later swiping right - these two lovebirds have been head over heels ever since! Nicole said YES to Will and sealed the deal with her gorgeous Petra💍",
             "date": ""
           }
         },
@@ -326,9 +338,10 @@
             "user_img": "shopify://shop_images/Ellipse_1697.png",
             "user_name": "Anastasia Petrova",
             "color": "#121212",
-            "likes": "",
-            "comment": "",
-            "date": ""
+            "img1": "shopify://shop_images/image_10_d5d2a130-d1a1-48aa-b02c-481e047d68dd.png",
+            "likes": "999",
+            "comment": "Love is in the air 🤍<br>\nFrom passing by in the school halls to years later swiping right - these two lovebirds have been head over heels ever since! Nicole said YES to Will and sealed the deal with her gorgeous Petra💍",
+            "date": "2.22"
           }
         },
         "item_ax9AmB": {
@@ -338,9 +351,10 @@
             "user_img": "shopify://shop_images/Ellipse_1697.png",
             "user_name": "Anastasia Petrova",
             "color": "#ffffff",
-            "likes": "",
-            "comment": "",
-            "date": ""
+            "video": "shopify://files/videos/Milana-whitegold-$999(1).mov",
+            "likes": "999",
+            "comment": "Love is in the air 🤍<br>\nFrom passing by in the school halls to years later swiping right - these two lovebirds have been head over heels ever since! Nicole said YES to Will and sealed the deal with her gorgeous Petra💍",
+            "date": "2.22"
           }
         },
         "item_BNNpqg": {
@@ -350,15 +364,17 @@
             "user_img": "shopify://shop_images/Ellipse_1697.png",
             "user_name": "Anastasia Petrova",
             "color": "#ffffff",
-            "likes": "",
+            "video": "shopify://files/videos/Milana-whitegold-$999(1).mov",
+            "likes": "999",
             "comment": "",
-            "date": ""
+            "date": "2.22"
           }
         }
       },
       "block_order": [
         "item_M7rXGi",
         "item_3UmhRL",
+        "item_phQD7L",
         "item_UV7Qh7",
         "item_ax9AmB",
         "item_BNNpqg"
