@@ -323,6 +323,7 @@
         "item_phQD7L": {
           "type": "item",
           "settings": {
+            "pc_image": "shopify://shop_images/image_11.png",
             "user_name": "",
             "color": "#ffffff",
             "img1": "shopify://shop_images/image_9.png",
