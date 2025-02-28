@@ -26,6 +26,11 @@
     text-transform: capitalize;
     padding: 12px;
     background: #E9E9E9;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
   }
   @media screen and (max-width: 1200px) {
     #shopify-section-{{section.id}} .service-wrapper .item .service-name{
