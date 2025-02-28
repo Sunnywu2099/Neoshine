@@ -263,6 +263,32 @@
       "settings": {
         "title": "Shop by style"
       }
+    },
+    "index_service_DxpMrh": {
+      "type": "index-service",
+      "blocks": {
+        "item_DaH7t6": {
+          "type": "item",
+          "settings": {
+            "pc_image": "shopify://shop_images/Group_1000002138.png",
+            "btn_name": "Call on us anytime!",
+            "url": ""
+          }
+        },
+        "item_XNCtwD": {
+          "type": "item",
+          "settings": {
+            "pc_image": "shopify://shop_images/image_7.png",
+            "btn_name": "Find Your Perfect Fit: Try It On Virtually",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_DaH7t6",
+        "item_XNCtwD"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -270,6 +296,7 @@
     "index_grid_BkrBKz",
     "index_guarantee_HiiMc7",
     "index_shape_33hB7Q",
-    "index_styles_M88mTB"
+    "index_styles_M88mTB",
+    "index_service_DxpMrh"
   ]
 }
