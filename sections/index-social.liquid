@@ -11,12 +11,50 @@
 
 <div class="social page-width section-pt section-pb">
   <h2 class="section-title">{{section.settings.title}}</h2>
-  <div class="service-wrapper">
-    {% for block in section.blocks %}
-      
-    {% endfor %}
+  <div class="social-wrapper swiper">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        <div class="swiper-slide">
+            {% render 'responsive-image',
+              sid: section.id,
+              image_desktop: block.settings.pc_image,
+              alt: section.settings.title,
+              lazy: true,
+              preload: false
+            %}
+        </div>
+      {% endfor %}
+    </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const guarantee_swiper = new Swiper('.social .swiper', {
+      slidesPerView: 1.2,
+      spaceBetween: 10,
+      loop: true,
+      navigation: {
+        nextEl: '.social .swiper-button-next',
+        prevEl: '.social .swiper-button-prev',
+      },
+      breakpoints: { 
+        750: {  //当屏幕宽度大于等于768 
+          slidesPerView: 2,
+          spaceBetween: 15
+        },
+        1200: {  //当屏幕宽度大于等于1280
+          slidesPerView: 4,
+          spaceBetween: 20
+        }
+      },
+      pagination: {
+        el: '.guarantee .swiper-pagination',
+        type : 'progressbar',
+      },
+    })
+  })
+</script>
 
 {% schema %}
 {
@@ -51,7 +89,7 @@
         {
           "type": "image_picker",
           "id": "pc_image",
-          "label": "pc image"
+          "label": "image"
         },
         {
           "type": "image_picker",
