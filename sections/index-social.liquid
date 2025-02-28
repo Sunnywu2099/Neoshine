@@ -52,6 +52,7 @@
     top: 0;
     left: 0;
     background: rgba(0, 0, 0, .8);
+    display: none;
   }
   @media screen and (max-width: 1200px) {
     #shopify-section-{{section.id}} .social .view-more{
@@ -140,6 +141,11 @@
         type : 'progressbar',
       },
     })
+
+    $('.social-wrapper .swiper-slide').on('click', function () {
+      $('#social-popup').show();
+    })
+
   })
 </script>
 
