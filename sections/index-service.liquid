@@ -118,7 +118,11 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     $('.service-name[data-event="chat"]').on('click', function () {
-      $("#tidio-chat button").trigger('click')
+      console.log(123);
+      
+      $("#tidio-chat button").trigger('click');
+      console.log(456);
+      
     })
   })
 </script>
