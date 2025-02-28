@@ -56,7 +56,7 @@
   <h2 class="section-title">{{section.settings.title}}</h2>
   <div class="service-wrapper">
     {% for block in section.blocks %}
-      <a class="item" href="{{block.settings.url}}">
+      <div class="item">
           <div class="img-wrapper">
             {{
               block.settings.pc_image
@@ -84,7 +84,7 @@
             }}
           </div>
           <span class="service-name">{{ block.settings.btn_name }}</span>
-      </a>
+      </div>
     {% endfor %}
   </div>
 </div>
@@ -117,11 +117,6 @@
           "type": "text",
           "id": "btn_name",
           "label": "button name"
-        },
-        {
-          "type": "url",
-          "id": "url",
-          "label": "url"
         }
       ]
     }
