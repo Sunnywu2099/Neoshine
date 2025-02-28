@@ -1,0 +1,114 @@
+<style>
+  #shopify-section-{{section.id}} .guarantee{
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+    flex-wrap: wrap;
+  }
+  @media screen and (max-width: 1200px) {
+
+  }
+  @media screen and (max-width: 749px) {
+
+  }
+</style>
+
+<div class="guarantee">
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %} 
+        <div class="swiper-slide item">
+          <div class="img-wrapper">
+            {% render 'responsive-image',
+              sid: section.id,
+              image_desktop: block.settings.pc_image,
+              image_mobile: block.settings.mobile_image,
+              alt: block.settings.title,
+              lazy: false,
+              preload: true
+            %}
+            <div class="banner-wrapper">
+              <div class="banner-container">
+                <h2 class="banner-title">{{ block.settings.title }}</h2>
+              </div>
+            </div>
+          </div>
+          <a href="{{ block.settings.url }}">{{ block.settings.btn_name }}</a>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="swiper-button-prev">
+      {% render 'banner-prev' %}
+    </div>
+    <div class="swiper-button-next">
+      {% render 'banner-next' %}
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const guarantee_swiper = new Swiper('.guarantee .swiper', {
+      loop: true,
+      navigation: {
+        nextEl: '.guarantee .swiper-button-next',
+        prevEl: '.guarantee .swiper-button-prev',
+      },
+      pagination: {
+        el: '.guarantee .swiper-pagination',
+        clickable: true,
+      },
+    })
+  })
+</script>
+
+{% schema %}
+{
+  "name": "Home guarantee",
+  "tag": "section",
+  "class": "home-guarantee",
+  "limit": 1,
+  "max_blocks": 4,
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "pc_image",
+          "label": "pc image"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "mobile image"
+        },
+        {
+          "type": "textarea",
+          "id": "title",
+          "label": "title"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "url"
+        },
+        {
+          "type": "text",
+          "id": "btn_name",
+          "label": "button name"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home guarantee"
+    }
+  ]
+}
+{% endschema %}
