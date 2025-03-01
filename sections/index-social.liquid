@@ -170,7 +170,7 @@
       $('#social-popup').hide();
       $('body,html').removeClass('social-popup-open');
     })
-
+    let popupContent = ``;
     let post_data = [
       {% for block in section.blocks %}
         {% assign bs = block.settings %}  
@@ -189,7 +189,7 @@
     $('.social-wrapper .swiper-slide').on('click', function () {
       
       const index = $(this).index();
-      console.log(post_data);
+      console.log(index,post_data);
       
       
       // 检查是否有视频
