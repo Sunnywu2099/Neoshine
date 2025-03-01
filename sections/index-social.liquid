@@ -179,8 +179,8 @@
           img2: '{{ bs.img2 | img_url: 'master' }}',
           img3: '{{ bs.img3 | img_url: 'master' }}',
           video: '{{ bs.video }}',
-          likes: {{ bs.likes }},
-          comment: {{ bs.comment }},
+          likes: '{{ bs.likes | default: 0 }}',
+          comment: '{{ bs.comment | escape }}',
           date: '{{ bs.date }}'
         }
         {% unless forloop.last %},{% endunless %}
