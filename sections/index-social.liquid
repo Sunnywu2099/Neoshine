@@ -175,9 +175,12 @@
       {% for block in section.blocks %}
         {% assign bs = block.settings %}  
         {
-          img1: {% if bs.img1 %}"{{ bs.img1 | img_url: 'master' | escape }}"{% else %}null{% endif %},
-          img2: {% if bs.img2 %}"{{ bs.img2 | img_url: 'master' | escape }}"{% else %}null{% endif %},
-          img3: {% if bs.img3 %}"{{ bs.img3 | img_url: 'master' | escape }}"{% else %}null{% endif %},
+          imgs: [
+            {% if bs.img1 %}"{{ bs.img1 | img_url: 'master' | escape }}"{% else %}null{% endif %},
+            {% if bs.img2 %}"{{ bs.img2 | img_url: 'master' | escape }}"{% else %}null{% endif %},
+            {% if bs.img3 %}"{{ bs.img3 | img_url: 'master' | escape }}"{% else %}null{% endif %}
+          ],
+          
           video: {% if bs.video %}"{{ bs.video | escape }}"{% else %}null{% endif %},
           likes: {% if bs.likes %}{{ bs.likes }}{% else %}0{% endif %},
           comment: {% if bs.comment %}"qwertyuiop"{% else %}null{% endif %},
