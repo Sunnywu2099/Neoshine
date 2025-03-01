@@ -222,10 +222,8 @@
       },
     })
 
-    $('#social-popup .toggle-popup').on('click', function () {
-      $('#social-popup').hide();
-      $('body,html').removeClass('social-popup-open');
-    })
+    
+    
     let popupContent = ``;
     let post_data = [
       {% for block in section.blocks %}
@@ -243,20 +241,8 @@
     ];
 
     $('.social-wrapper .swiper-slide').on('click', function () {
-      
       const index = $(this).data('index');
       const info = post_data[index];
-      // // 检查是否有视频
-      // if (info.video) {
-        
-      // } else {
-      //   const images = [info.img1, info.img2, info.img3].filter(img => img);
-      //   if (images.length > 0) {
-      //     popupContent = `<div class="popup-images">
-      //       ${images.map(img => `<img src="${img}" alt="" loading="lazy">`).join('')}
-      //     </div>`;
-      //   }
-      // }
       
       popupContent += `
         <div class="media-wrapper">
@@ -275,10 +261,16 @@
           <div class="date">${info.date}</div>
         </div>`;
 
-      $('#popup-content').html(popupContent);
-      $('#social-popup').css('display', 'flex');
-      $('body,html').addClass('social-popup-open');
-    })
+        $('#popup-content').html(popupContent);
+        $('#social-popup').css('display', 'flex');
+        $('body,html').addClass('social-popup-open');
+      })
+
+      $('#social-popup .toggle-popup').on('click', function () {
+        popupContent = ``;
+        $('#social-popup').hide();
+        $('body,html').removeClass('social-popup-open');
+      })
 
   })
 </script>
