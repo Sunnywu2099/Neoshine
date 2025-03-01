@@ -188,18 +188,13 @@
 
     $('.social-wrapper .swiper-slide').on('click', function () {
       
-      const index = $(this).data('index');
-      console.log(post_data[index]);
-      
-      
-      // 检查是否有视频
-      // if (block.settings.video) {
-      //   popupContent = `<video controls width="100%">
-      //     <source src="${block.settings.video}" type="video/mp4">
-      //   </video>`;
+      // const index = $(this).data('index');
+      // const info = post_data[index];
+      // // 检查是否有视频
+      // if (info.video) {
+        
       // } else {
-      //   如果没有视频，则加载图片
-      //   const images = [block.settings.img1, block.settings.img2, block.settings.img3].filter(img => img);
+      //   const images = [info.img1, info.img2, info.img3].filter(img => img);
       //   if (images.length > 0) {
       //     popupContent = `<div class="popup-images">
       //       ${images.map(img => `<img src="${img}" alt="" loading="lazy">`).join('')}
@@ -223,7 +218,7 @@
 
 
 
-      $('#popup-content').html(popupContent);
+      // $('#popup-content').html(popupContent);
       $('#social-popup').css('display', 'flex');
       $('body,html').addClass('social-popup-open');
     })
