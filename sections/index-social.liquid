@@ -173,24 +173,15 @@
 
     let post_data = [
       {% for block in section.blocks %}
-        {% assign bs = block.settings %}
-        
-        {% assign img1 = bs.img1 %}
-        {% assign img2 = bs.img2 %}
-        {% assign img3 = bs.img3 %}
-        {% assign video = bs.video %}
-        {% assign likes = bs.likes %}
-        {% assign comment = bs.comment %}
-        {% assign date = bs.date %}
-            
+        {% assign bs = block.settings %}  
         {
-          img1: '{{ img1 | img_url: 'master' }}',
-          img2: '{{ img2 | img_url: 'master' }}',
-          img3: '{{ img3 | img_url: 'master' }}',
-          video: '{{ video }}',
-          likes: {{ likes }},
-          comment: {{ comment }},
-          date: '{{ date }}'
+          img1: '{{ bs.img1 | img_url: 'master' }}',
+          img2: '{{ bs.img2 | img_url: 'master' }}',
+          img3: '{{ bs.img3 | img_url: 'master' }}',
+          video: '{{ bs.video }}',
+          likes: {{ bs.likes }},
+          comment: {{ bs.comment }},
+          date: '{{ bs.date }}'
         }
         {% unless forloop.last %},{% endunless %}
       {% endfor %}
