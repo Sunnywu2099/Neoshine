@@ -180,7 +180,7 @@
           img3: {% if bs.img3 %}"{{ bs.img3 | img_url: 'master' | escape }}"{% else %}null{% endif %},
           video: {% if bs.video %}"{{ bs.video | escape }}"{% else %}null{% endif %},
           likes: {% if bs.likes %}{{ bs.likes }}{% else %}0{% endif %},
-          
+          comment: {% if bs.comment %}"qwertyuiop"{% else %}null{% endif %},
           date: {% if bs.date %}"{{ bs.date | escape }}"{% else %}null{% endif %}
         }{% unless forloop.last %},{% endunless %}
       {% endfor %}
