@@ -173,7 +173,7 @@
 
     $('.social-wrapper .swiper-slide').on('click', function () {
       const index = $(this).index();
-      const block = {{ section.blocks | json }}[index];
+      const block = {{ section.blocks | json }};
       console.log(block);
       
       let popupContent = '';
