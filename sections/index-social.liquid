@@ -267,7 +267,14 @@
       {% endfor %}
     ];
 
-    $('.social-wrapper .swiper-slide').on('click', function () {
+    $('.social-wrapper .swiper-slide').on('click touchend', function (e) {
+      e.preventDefault();
+        
+      // 确保在触摸事件中只触发一次
+      if (e.type === 'touchend') {
+        $(this).off('click');
+      }
+      
       const index = $(this).data('index');
       const info = post_data[index];
       let meidiaContent = ``;
