@@ -262,7 +262,7 @@
           img3: {% if bs.img3 %}"{{ bs.img3 | img_url: 'master' | escape }}"{% else %}null{% endif %},
           video: {% if bs.video %}"{{ bs.video.sources[1].url | escape }}"{% else %}null{% endif %},
           likes: {% if bs.likes %}{{ bs.likes }}{% else %}0{% endif %},
-          comment: {% if bs.comment %}"{{bs.comment | strip_html | newline_to_br }}"{% else %}null{% endif %},
+          comment: {% if bs.comment %}"{{bs.comment }}"{% else %}null{% endif %},
           date: {% if bs.date %}"{{ bs.date | escape }}"{% else %}null{% endif %}
         }{% unless forloop.last %},{% endunless %}
       {% endfor %}
