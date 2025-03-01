@@ -174,6 +174,8 @@
     $('.social-wrapper .swiper-slide').on('click', function () {
       const index = $(this).index();
       const block = {{ section.blocks | json }}[index];
+      console.log(block);
+      
       let popupContent = '';
       
       // 检查是否有视频
@@ -183,12 +185,12 @@
         // </video>`;
       } else {
         // 如果没有视频，则加载图片
-        const images = [block.settings.img1, block.settings.img2, block.settings.img3].filter(img => img);
-        if (images.length > 0) {
-          popupContent = `<div class="popup-images">
-            ${images.map(img => `<img src="${img}" alt="" loading="lazy">`).join('')}
-          </div>`;
-        }
+        // const images = [block.settings.img1, block.settings.img2, block.settings.img3].filter(img => img);
+        // if (images.length > 0) {
+        //   popupContent = `<div class="popup-images">
+        //     ${images.map(img => `<img src="${img}" alt="" loading="lazy">`).join('')}
+        //   </div>`;
+        // }
       }
       
       // 添加用户信息和互动数据
@@ -204,6 +206,8 @@
             <span class="date">${block.settings.date || ''}</span>
           </div>
         </div>`;
+
+
 
       $('#popup-content').html(popupContent);
       $('#social-popup').css('display', 'flex');
