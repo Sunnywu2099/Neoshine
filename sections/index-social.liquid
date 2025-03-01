@@ -190,10 +190,8 @@
     $('.social-wrapper .swiper-slide').on('click', function () {
       
       const index = $(this).index();
-      const block = {{ section.blocks | json }}[index];
-      console.log((block.settings));
+      console.log(post_data);
       
-      let popupContent = '';
       
       // 检查是否有视频
       // if (block.settings.video) {
@@ -211,18 +209,18 @@
       // }
       
       // 添加用户信息和互动数据
-      popupContent += `
-        <div class="popup-info">
-          <div class="user-info">
-            <img src="${block.settings.user_img}" alt="${block.settings.user_name}" width="32" height="32">
-            <span>${block.settings.user_name}</span>
-          </div>
-          <div class="interaction-info">
-            <span class="likes">❤️ ${block.settings.likes || 0}</span>
-            <p class="comment">${block.settings.comment || ''}</p>
-            <span class="date">${block.settings.date || ''}</span>
-          </div>
-        </div>`;
+      // popupContent += `
+      //   <div class="popup-info">
+      //     <div class="user-info">
+      //       <img src="${block.settings.user_img}" alt="${block.settings.user_name}" width="32" height="32">
+      //       <span>${block.settings.user_name}</span>
+      //     </div>
+      //     <div class="interaction-info">
+      //       <span class="likes">❤️ ${block.settings.likes || 0}</span>
+      //       <p class="comment">${block.settings.comment || ''}</p>
+      //       <span class="date">${block.settings.date || ''}</span>
+      //     </div>
+      //   </div>`;
 
 
 
