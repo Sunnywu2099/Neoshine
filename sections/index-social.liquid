@@ -243,6 +243,36 @@
     $('.social-wrapper .swiper-slide').on('click', function () {
       const index = $(this).data('index');
       const info = post_data[index];
+      let meidiaContent = ``;
+      // 判断是视频还是图片
+      if (info.video) {
+        meidiaContent = `<video controls width="100%" height="100%">
+          <source src="${info.video}" type="video/mp4">
+        </video>`;
+      } else {
+        // 收集所有有效的图片URL
+        const images = [info.img1, info.img2, info.img3].filter(img => img !== null);
+        
+        if (images.length > 1) {
+          // 多张图片时创建轮播
+          meidiaContent = `
+            <div class="popup-swiper swiper">
+              <div class="swiper-wrapper">
+                ${images.map(img => `
+                  <div class="swiper-slide">
+                    <img src="${img}" alt="" loading="lazy">
+                  </div>
+                `).join('')}
+              </div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-prev">{% render 'banner-prev' %}</div>
+              <div class="swiper-button-next">{% render 'banner-next' %}</div>
+            </div>`;
+        } else if (images.length === 1) {
+          // 单张图片直接显示
+          meidiaContent = `<img src="${images[0]}" alt="" loading="lazy">`;
+        }
+      }
       
       popupContent += `
         <div class="media-wrapper">
@@ -264,6 +294,22 @@
         $('#popup-content').html(popupContent);
         $('#social-popup').css('display', 'flex');
         $('body,html').addClass('social-popup-open');
+        // 初始化弹窗中的轮播
+        if ($('.popup-swiper').length > 0) {
+          new Swiper('.popup-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            loop: true,
+            pagination: {
+              el: '.popup-swiper .swiper-pagination',
+              type: 'bullets',
+            },
+            navigation: {
+              nextEl: '.popup-swiper .swiper-button-next',
+              prevEl: '.popup-swiper .swiper-button-prev',
+            }
+          });
+        }
       })
 
       $('#social-popup .toggle-popup').on('click', function () {
