@@ -109,7 +109,7 @@
   <div class="social-wrapper swiper">
     <div class="swiper-wrapper">
       {% for block in section.blocks %}
-        <div class="swiper-slide" data-info="{{ block.settings }}">
+        <div class="swiper-slide">
             {% render 'responsive-image',
               sid: section.id,
               image_desktop: block.settings.pc_image,
@@ -172,6 +172,40 @@
     })
 
     $('.social-wrapper .swiper-slide').on('click', function () {
+      const index = $(this).index();
+      const block = {{ section.blocks | json }}[index];
+      let popupContent = '';
+      
+      // 检查是否有视频
+      if (block.settings.video) {
+        popupContent = `<video controls width="100%">
+          <source src="${block.settings.video}" type="video/mp4">
+        </video>`;
+      } else {
+        // 如果没有视频，则加载图片
+        const images = [block.settings.img1, block.settings.img2, block.settings.img3].filter(img => img);
+        if (images.length > 0) {
+          popupContent = `<div class="popup-images">
+            ${images.map(img => `<img src="${img}" alt="" loading="lazy">`).join('')}
+          </div>`;
+        }
+      }
+      
+      // 添加用户信息和互动数据
+      popupContent += `
+        <div class="popup-info">
+          <div class="user-info">
+            <img src="${block.settings.user_img}" alt="${block.settings.user_name}" width="32" height="32">
+            <span>${block.settings.user_name}</span>
+          </div>
+          <div class="interaction-info">
+            <span class="likes">❤️ ${block.settings.likes || 0}</span>
+            <p class="comment">${block.settings.comment || ''}</p>
+            <span class="date">${block.settings.date || ''}</span>
+          </div>
+        </div>`;
+
+      $('#popup-content').html(popupContent);
       $('#social-popup').css('display', 'flex');
       $('body,html').addClass('social-popup-open');
     })
