@@ -193,25 +193,7 @@
 
 <div id="social-popup">
   <span class="toggle-popup">✕</span>
-  <div id="popup-content">
-    <div class="media-wrapper">
-      <img src="https://cdn.shopify.com/s/files/1/0897/6921/4241/files/image_11.png?v=1740730191" alt="" loading="lazy">
-    </div>
-    <div class="info-wrapper">
-      <div class="brand">
-        <img src="https://cdn.shopify.com/s/files/1/0897/6921/4241/files/neoshine-logo_2.svg?v=1732765111" alt="" loading="lazy" width="32" height="32">
-        <span>Neoshine</span>
-      </div>
-
-      <div class="comment-wrapper">
-        <span>❤ 999</span>
-        <p>Love is in the air 🤍
-          From passing by in the school halls to years later swiping right - these two lovebirds have been head over heels ever since! Nicole said YES to Will and sealed the deal with her gorgeous Petra💍
-        </p>
-      </div>
-      <div class="date">2.22</div>
-    </div>
-  </div>
+  <div id="popup-content"></div>
 </div>
 
 <script>
@@ -262,8 +244,8 @@
 
     $('.social-wrapper .swiper-slide').on('click', function () {
       
-      // const index = $(this).data('index');
-      // const info = post_data[index];
+      const index = $(this).data('index');
+      const info = post_data[index];
       // // 检查是否有视频
       // if (info.video) {
         
@@ -276,23 +258,25 @@
       //   }
       // }
       
-      // 添加用户信息和互动数据
-      // popupContent += `
-      //   <div class="popup-info">
-      //     <div class="user-info">
-      //       <img src="${block.settings.user_img}" alt="${block.settings.user_name}" width="32" height="32">
-      //       <span>${block.settings.user_name}</span>
-      //     </div>
-      //     <div class="interaction-info">
-      //       <span class="likes">❤️ ${block.settings.likes || 0}</span>
-      //       <p class="comment">${block.settings.comment || ''}</p>
-      //       <span class="date">${block.settings.date || ''}</span>
-      //     </div>
-      //   </div>`;
+      添加用户信息和互动数据
+      popupContent += `
+        <div class="media-wrapper">
+          <img src="https://cdn.shopify.com/s/files/1/0897/6921/4241/files/image_11.png?v=1740730191" alt="" loading="lazy">
+        </div>
+        <div class="info-wrapper">
+          <div class="brand">
+            <img src="https://cdn.shopify.com/s/files/1/0897/6921/4241/files/neoshine-logo_2.svg?v=1732765111" alt="" loading="lazy" width="32" height="32">
+            <span>Neoshine</span>
+          </div>
 
+          <div class="comment-wrapper">
+            <span>❤ ${info.likes}</span>
+            <p>${info.comment}</p>
+          </div>
+          <div class="date">${info.date}</div>
+        </div>`;
 
-
-      // $('#popup-content').html(popupContent);
+      $('#popup-content').html(popupContent);
       $('#social-popup').css('display', 'flex');
       $('body,html').addClass('social-popup-open');
     })
