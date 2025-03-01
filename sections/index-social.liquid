@@ -92,7 +92,12 @@
     font-size: 14px;
     line-height: 1.4;
   }
-  #popup-content .media-wrapper img{
+  #popup-content .media-wrapper{
+    width: calc(100% - 500px);
+  }
+  #popup-content .media-wrapper img,
+  #popup-content .media-wrapper video{
+    width: 100%;
     height: 100%;
     object-fit: cover;
   }
