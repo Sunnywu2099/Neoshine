@@ -178,9 +178,9 @@
       
       // 检查是否有视频
       if (block.settings.video) {
-        popupContent = `<video controls width="100%">
-          <source src="${block.settings.video}" type="video/mp4">
-        </video>`;
+        // popupContent = `<video controls width="100%">
+        //   <source src="${block.settings.video}" type="video/mp4">
+        // </video>`;
       } else {
         // 如果没有视频，则加载图片
         const images = [block.settings.img1, block.settings.img2, block.settings.img3].filter(img => img);
