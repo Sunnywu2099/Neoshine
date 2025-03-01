@@ -183,6 +183,15 @@
         {% assign comment = bs.comment %}
         {% assign date = bs.date %}
             
+        {
+          img1: '{{ img1 | img_url: 'master' }}',
+          img2: '{{ img2 | img_url: 'master' }}',
+          img3: '{{ img3 | img_url: 'master' }}',
+          video: '{{ video }}',
+          likes: {{ likes }},
+          comment: {{ comment }},
+          date: '{{ date }}',
+        }
         {% unless forloop.last %},{% endunless %}
       {% endfor %}
     ];
