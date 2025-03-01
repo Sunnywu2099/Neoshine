@@ -175,15 +175,14 @@
       {% for block in section.blocks %}
         {% assign bs = block.settings %}  
         {
-          img1: '{{ bs.img1 | img_url: 'master' }}',
-          img2: '{{ bs.img2 | img_url: 'master' }}',
-          img3: '{{ bs.img3 | img_url: 'master' }}',
-          video: '{{ bs.video }}',
-          likes: '{{ bs.likes | default: 0 }}',
-          comment: '{{ bs.comment | escape }}',
-          date: '{{ bs.date }}'
-        }
-        {% unless forloop.last %},{% endunless %}
+          img1: {% if bs.img1 %}"{{ bs.img1 | img_url: 'master' }}"{% else %}null{% endif %},
+          img2: {% if bs.img2 %}"{{ bs.img2 | img_url: 'master' }}"{% else %}null{% endif %},
+          img3: {% if bs.img3 %}"{{ bs.img3 | img_url: 'master' }}"{% else %}null{% endif %},
+          video: {% if bs.video %}"{{ bs.video }}"{% else %}null{% endif %},
+          likes: {% if bs.likes %}{{ bs.likes }}{% else %}0{% endif %},
+          comment: {% if bs.comment %}"{{ bs.comment | escape }}"{% else %}null{% endif %},
+          date: {% if bs.date %}"{{ bs.date }}"{% else %}null{% endif %}
+        }{% unless forloop.last %},{% endunless %}
       {% endfor %}
     ];
 
