@@ -270,9 +270,9 @@
         const $card = $(cardElement);
         $card.find('.card__media img').attr('src', matchedVariant.featured_image.src);
 
-        if(matchedVariant.compare_at_price){
-          $card.find('.compare-price').text(currency + (matchedVariant.compare_at_price / 100).toFixed(2));
-        }
+        // if(matchedVariant.compare_at_price){
+        //   $card.find('.compare-price').text(currency + (matchedVariant.compare_at_price / 100).toFixed(2));
+        // }
         $card.find('.price').text(currency + (matchedVariant.price / 100).toFixed(2));
         
       }
