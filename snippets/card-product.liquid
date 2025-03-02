@@ -669,8 +669,81 @@
 {%- endif -%}
 
 <script type="application/json" data-product-variant>
-  {{ card_product.variants | json }}
+  
 </script>
 <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 获取产品变体数据
+    const variantData = {{ card_product.variants | json }};
+    const productCard = document.querySelector('.card-options').closest('.card');
+    const productImage = productCard.querySelector('.card__media img');
+    const priceElement = productCard.querySelector('.price');
+    
+    // 当前选择的选项
+    let currentOptions = {
+      Metal: '',
+      Clarity: ''
+    };
 
+    // 处理 Metal 选项点击
+    document.querySelectorAll('.option-button[data-option="Metal"]').forEach(button => {
+      button.addEventListener('click', function() {
+        // 移除其他按钮的活跃状态
+        this.closest('.option-wrapper').querySelectorAll('.option-button').forEach(btn => {
+          btn.classList.remove('active');
+        });
+        // 添加当前按钮的活跃状态
+        this.classList.add('active');
+        
+        currentOptions.Metal = this.getAttribute('data-value');
+        updateVariant();
+      });
+    });
+
+    // 处理 Clarity 选项点击
+    document.querySelectorAll('.option-button[data-option="Clarity"]').forEach(button => {
+      button.addEventListener('click', function() {
+        // 移除其他按钮的活跃状态
+        this.closest('.option-wrapper').querySelectorAll('.option-button').forEach(btn => {
+          btn.classList.remove('active');
+        });
+        // 添加当前按钮的活跃状态
+        this.classList.add('active');
+        
+        currentOptions.Clarity = this.getAttribute('data-value');
+        updateVariant();
+      });
+    });
+
+    // 更新变体信息
+    function updateVariant() {
+      // 查找匹配的变体
+      const matchingVariant = variantData.find(variant => {
+        return variant.options[0] === currentOptions.Metal && 
+              variant.options[1] === currentOptions.Clarity;
+      });
+
+      if (matchingVariant) {
+        // 更新图片
+        if (currentOptions.Metal && matchingVariant.featured_image) {
+          productImage.src = matchingVariant.featured_image.src;
+          productImage.srcset = matchingVariant.featured_image.src;
+        }
+
+        // 更新价格
+        if (currentOptions.Clarity) {
+          // 格式化价格
+          const formattedPrice = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD'
+          }).format(matchingVariant.price / 100);
+          
+          // 更新价格显示
+          if (priceElement) {
+            priceElement.querySelector('.price__regular .price-item').textContent = formattedPrice;
+          }
+        }
+      }
+    }
+  });
 </script>
