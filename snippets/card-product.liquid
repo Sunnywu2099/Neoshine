@@ -677,70 +677,36 @@
     const priceElement = productCard.querySelector('.price');
     
     // 当前选择的选项
-    let currentOptions = {
-      Metal: '',
-      Clarity: ''
-    };
+    let currentOptions = [];
 
-    // 处理 Metal 选项点击
-    document.querySelectorAll('.option-button[data-option="Metal"]').forEach(button => {
-      button.addEventListener('click', function() {
-        console.log('Metal 选项点击');
-        console.log(variantData);
-        // 移除其他按钮的活跃状态
-        this.closest('.option-wrapper').querySelectorAll('.option-button').forEach(btn => {
-          btn.classList.remove('active');
-        });
-        // 添加当前按钮的活跃状态
-        this.classList.add('active');
-        
-        currentOptions.Metal = this.getAttribute('data-value');
-        updateVariant();
-      });
+    $('.option-button[data-option="Metal"]').on('click', function() {
+      // 更新按钮状态
+      $(this).addClass('active').siblings().removeClass('active');
+      checkVariant();
     });
 
-    // 处理 Clarity 选项点击
-    document.querySelectorAll('.option-button[data-option="Clarity"]').forEach(button => {
-      button.addEventListener('click', function() {
-        // 移除其他按钮的活跃状态
-        this.closest('.option-wrapper').querySelectorAll('.option-button').forEach(btn => {
-          btn.classList.remove('active');
-        });
-        // 添加当前按钮的活跃状态
-        this.classList.add('active');
-        
-        currentOptions.Clarity = this.getAttribute('data-value');
-        updateVariant();
-      });
+    // 点击 Clarity 选项
+    $('.option-button[data-option="Clarity"]').on('click', function() {
+      // 更新按钮状态
+      $(this).addClass('active').siblings().removeClass('active');
+      checkVariant();
     });
 
-    // 更新变体信息
-    function updateVariant() {
-      // 查找匹配的变体
-      const matchingVariant = variantData.find(variant => {
-        return variant.options[0] === currentOptions.Metal && 
-              variant.options[1] === currentOptions.Clarity;
-      });
+    // 检查变体匹配
+    function checkVariant() {
+      const selectedMetal = $('.option-button[data-option="Metal"].active').data('value');
+      const selectedClarity = $('.option-button[data-option="Clarity"].active').data('value');
 
-      if (matchingVariant) {
-        // 更新图片
-        if (currentOptions.Metal && matchingVariant.featured_image) {
-          productImage.src = matchingVariant.featured_image.src;
-          productImage.srcset = matchingVariant.featured_image.src;
-        }
+      // 如果两个选项都已选择
+      if (selectedMetal && selectedClarity) {
+        // 查找匹配的变体
+        const matchingVariant = variantData.find(variant => {
+          return variant.options.includes(selectedMetal) && 
+                variant.options.includes(selectedClarity);
+        });
 
-        // 更新价格
-        if (currentOptions.Clarity) {
-          // 格式化价格
-          const formattedPrice = new Intl.NumberFormat('en-US', {
-            style: 'currency',
-            currency: 'USD'
-          }).format(matchingVariant.price / 100);
-          
-          // 更新价格显示
-          if (priceElement) {
-            priceElement.querySelector('.price__regular .price-item').textContent = formattedPrice;
-          }
+        if (matchingVariant) {
+          console.log('ok'); // 找到匹配的变体
         }
       }
     }
