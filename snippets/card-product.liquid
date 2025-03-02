@@ -672,9 +672,6 @@
   document.addEventListener('DOMContentLoaded', function() {
     // 获取产品变体数据
     const variantData = {{ card_product.variants | json }};
-    const productCard = document.querySelector('.card-options').closest('.card');
-    const productImage = productCard.querySelector('.card__media img');
-    const priceElement = productCard.querySelector('.price');
     
     // 当前选择的选项
     let currentOptions = [];
@@ -682,14 +679,14 @@
     $('.option-button[data-option="Metal"]').on('click', function() {
       // 更新按钮状态
       $(this).addClass('active').siblings().removeClass('active');
-      checkVariant();
+      
     });
 
     // 点击 Clarity 选项
     $('.option-button[data-option="Clarity"]').on('click', function() {
       // 更新按钮状态
       $(this).addClass('active').siblings().removeClass('active');
-      checkVariant();
+      
     });
 
     // 检查变体匹配
