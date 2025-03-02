@@ -1,7 +1,11 @@
 .product-card-wrapper .card__heading{
   font-size:16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-
 .product-card-wrapper .options-box{
   display: flex;
   /* flex-wrap: wrap; */
