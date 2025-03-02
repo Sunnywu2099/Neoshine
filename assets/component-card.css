@@ -14,7 +14,7 @@
 .product-card-wrapper .option-button{
   background: transparent;
   border: 1px solid #eee;
-  border-radius: 10px;
+  border-radius: 3px;
   padding: 3px 8px;
   font-family: 'Lato';
   cursor: pointer;
