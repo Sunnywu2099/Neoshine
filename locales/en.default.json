@@ -197,7 +197,7 @@
       "clear": "Clear",
       "clear_all": "Remove all",
       "from": "From",
-      "filter_and_sort": "Filter and sort",
+      "filter_and_sort": "FILTER & SORT",
       "filter_by_label": "FILTERS",
       "filter_button": "FILTERS",
       "filters_selected": {
@@ -218,7 +218,7 @@
       },
       "reset": "Reset",
       "sort_button": "Sort",
-      "sort_by_label": "SORT BY",
+      "sort_by_label": "Sort",
       "to": "To",
       "clear_filter": "Remove filter"
     }
