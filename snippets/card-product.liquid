@@ -693,30 +693,12 @@
     });
 
     // 更新图片
-    function updateImage() {
+    function updateInfo() {
       const selectedMetal = $('.option-button[data-option="Metal"].active').data('value');
       const selectedClarity = $('.option-button[data-option="Clarity"].active').data('value');
-
+      currentOptions = [selectedMetal, selectedClarity];
       
     }
 
-    // 检查变体匹配
-    function checkVariant() {
-      const selectedMetal = $('.option-button[data-option="Metal"].active').data('value');
-      const selectedClarity = $('.option-button[data-option="Clarity"].active').data('value');
-
-      // 如果两个选项都已选择
-      if (selectedMetal && selectedClarity) {
-        // 查找匹配的变体
-        const matchingVariant = variantData.find(variant => {
-          return variant.options.includes(selectedMetal) && 
-                variant.options.includes(selectedClarity);
-        });
-
-        if (matchingVariant) {
-          console.log('ok'); // 找到匹配的变体
-        }
-      }
-    }
   });
 </script>
