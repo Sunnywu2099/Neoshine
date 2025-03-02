@@ -136,13 +136,13 @@
       // 使用 Shopify 标准货币格式
       const formatPrice = (price) => ('$' +  price );
 
-      if (variant.compare_at_price > variant.price) {
-        $regular.show().html(formatPrice(variant.compare_at_price));
-        $sale.show().html(formatPrice(variant.price));
-      } else {
-        $regular.hide();
-        $sale.html(formatPrice(variant.price));
-      }
+      // if (variant.compare_at_price > variant.price) {
+      //   $regular.show().html(formatPrice(variant.compare_at_price));
+      //   $sale.show().html(formatPrice(variant.price));
+      // } else {
+      //   $regular.hide();
+      //   $sale.html(formatPrice(variant.price));
+      // }
     }
 
     // 刷新所有卡片
