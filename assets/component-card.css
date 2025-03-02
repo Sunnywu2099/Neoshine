@@ -124,6 +124,7 @@
 
 .card-information {
   text-align: left;
+  margin-top: 10px;
 }
 span#parcelator{
   display: none!important;
