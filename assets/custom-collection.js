@@ -134,15 +134,12 @@
       const $sale = $card.find(SELECTORS.salePrice);
       
       // 使用 Shopify 标准货币格式
-      const formatPrice = (price) => ('$' +  price );
+      const formatPrice = (price) => '$' + (price / 100).toFixed(2);
 
-      if (variant.compare_at_price > variant.price) {
-        $regular.show().html(formatPrice(variant.compare_at_price));
-        $sale.show().html(formatPrice(variant.price));
-      } else {
-        $regular.hide();
-        $sale.html(formatPrice(variant.price));
+      if (variant.compare_at_price) {
+        $regular.text(formatPrice(variant.compare_at_price));
       }
+      $sale.text(formatPrice(variant.price));
     }
 
     // 刷新所有卡片
