@@ -162,7 +162,13 @@
                 {%- if forloop.index > 2 -%}
                   {%- assign lazy_load = true -%}
                 {%- endif -%}
-                
+                {% if forloop.index == 4 and section.settings.event_image != blank %}
+                  <li class="grid__item event-banner">
+                    <a href="{{ section.settings.url }}">
+                      <img loading="lazy" src="{{ section.settings.event_image | img_url: 'master'}}">
+                    </a>
+                  </li>
+                {% endif %}
                 <li
                   class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                   {% if settings.animations_reveal_on_scroll %}
