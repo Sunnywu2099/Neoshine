@@ -84,7 +84,6 @@
                 {%- if block.settings.heading != blank -%}
                   <h2 class="footer-block__heading inline-richtext">
                     {{- block.settings.heading -}}
-                    <span class="svg-wrapper medium-hide large-up-hide">{{- 'icon-caret.svg' | inline_asset_content -}}</span>
                   </h2>
                 {%- endif -%}
 
@@ -359,7 +358,7 @@
   {% endcomment %}
   
 </footer>
-  
+
 {% schema %}
 {
   "name": "t:sections.footer.name",
