@@ -27,7 +27,7 @@
 
 .card {
   text-decoration: none;
-  text-align: var(--text-alignment);
+  text-align: left;
 }
 
 .card:not(.ratio) {
