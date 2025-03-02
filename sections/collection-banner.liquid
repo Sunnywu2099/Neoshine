@@ -1,0 +1,75 @@
+<style>
+  #shopify-section-{{section.id}} .shapes-wrapper{
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+    flex-wrap: wrap;
+  }
+
+  @media screen and (max-width: 1200px) {
+
+  }
+  @media screen and (max-width: 749px) {
+
+  }
+</style>
+
+
+<div class="page-width section-pt">
+  <div class="content-wrapper">
+    {% if section.settings.title != blank %}
+      <h2 class="section-title">{{ section.settings.title }}</h2>
+    {% endif %}
+    {% if section.settings.content != blank %}
+      <h2 class="section-content">{{ section.settings.content }}</h2>
+    {% endif %}
+  </div>
+  <div class="img-wrapper">
+    {% render 'responsive-image',
+      sid: section.id,
+      image_desktop: section.settings.pc_image,
+      image_mobile: section.settings.mobile_image,
+      alt: section.settings.title,
+      lazy: false,
+      preload: true
+    %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collection banner",
+  "tag": "section",
+  "class": "collection-banner",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "title",
+      "default": "Engagement Ring Settings"
+    },
+    {
+      "type": "textarea",
+      "id": "content",
+      "label": "content",
+      "default": "Our selection of engagement ring settings includes every metal and every style. Yellow gold, white gold, platinum, and rose gold."
+    },
+    {
+      "type": "image_picker",
+      "id": "pc_image",
+      "label": "pc image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "mobile image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection banner"
+    }
+  ]
+}
+{% endschema %}
