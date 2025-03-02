@@ -53,7 +53,7 @@
       "
       style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
     >
-      <div
+      <a href="{{ card_product.url | default: '#' }}" class="full-unstyled-link">
         class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}"
         style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
       >
@@ -149,7 +149,7 @@
             {%- endif -%}
           </div>
         </div>
-      </div>
+      </a>
       <div class="card__content sunny">
         <div class="card__information">
           <h3
