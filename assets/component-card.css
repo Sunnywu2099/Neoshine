@@ -4,11 +4,11 @@
 
 .product-card-wrapper .options-box{
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   align-items: center;
   gap: 5px;
   justify-content: center;
-  margin: 8px;
+  /* margin: 8px; */
 }
 
 .product-card-wrapper .option-button{
@@ -221,6 +221,12 @@ span#parcelator{
   font-weight: 400;
   line-height: 16px;
   margin: 0 10px 0 0;
+  flex-shrink: 0;
+}
+.option-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 @media screen and (min-width: 990px) {
   .grid--6-col-desktop .card__content quick-add-bulk .quantity {
