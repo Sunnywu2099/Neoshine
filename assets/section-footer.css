@@ -281,9 +281,6 @@
     width: 100% !important;
   }
 
-  .footer-block__details-content {
-    display: none;
-  }
   .footer-block__details-content.active {
     display: block;
   }
