@@ -681,7 +681,7 @@
       let currentMetal = $(this).data('value');
       // 更新按钮状态
       $(this).addClass('active').siblings().removeClass('active');
-      
+      updateInfo();
     });
 
     // 点击 Clarity 选项
@@ -689,7 +689,7 @@
       let currentClarity = $(this).data('value');
       // 更新按钮状态
       $(this).addClass('active').siblings().removeClass('active');
-      
+      updateInfo();
     });
 
     // 更新图片
@@ -697,6 +697,7 @@
       const selectedMetal = $('.option-button[data-option="Metal"].active').data('value');
       const selectedClarity = $('.option-button[data-option="Clarity"].active').data('value');
       currentOptions = [selectedMetal, selectedClarity];
+      console.log(currentOptions);
       
     }
 
