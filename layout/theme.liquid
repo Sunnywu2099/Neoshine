@@ -62,10 +62,6 @@
     <script src="{{ 'search-form.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'swiper-min-js.js' | asset_url }}" defer="defer"></script>
 
-    {% if template.name == 'collection' %}
-      <script src="{{ 'custom-collection.js' | asset_url }}" async="async"></script>
-    {% endif %}
-
     {%- if settings.animations_reveal_on_scroll -%}
       <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
