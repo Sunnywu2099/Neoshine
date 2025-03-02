@@ -175,9 +175,12 @@
                 {%- for option in card_product.options_with_values -%}
                   {% if option.name == 'Metal' or option.name == 'Clarity' %}
                     <div class="options-box">
-                      {%- for value in option.values -%}
-                        <button class="option-button" data-option="{{ option.name }}" data-value="{{ value }}">{{ value }}</button>
-                      {%- endfor -%}
+                      <h5 class="option-name">{{ option.name }}</h5>
+                      <div class="option-wrapper">
+                        {%- for value in option.values -%}
+                          <button class="option-button" data-option="{{ option.name }}" data-value="{{ value }}">{{ value }}</button>
+                        {%- endfor -%}
+                      </div>
                     </div>
                   {% endif %}
                 {%- endfor %}
