@@ -178,7 +178,7 @@
                       <h5 class="option-name">{{ option.name }}</h5>
                       <div class="option-wrapper">
                         {%- for value in option.values -%}
-                          <button style="background-image: url('{{ value.swatch.image | image_url: width: 50 }}')" class="option-button" data-option="{{ option.name }}" data-value="{{ value }}">{{ value }}</button>
+                          <button style="background-image: url('{{ value.swatch.image | image_url: width: 50 }}')" class="option-button" data-option="{{ option.name }}" data-value="{{ value }}"></button>
                         {%- endfor -%}
                       </div>
                     </div>
