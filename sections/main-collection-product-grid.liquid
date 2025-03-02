@@ -245,11 +245,14 @@
         state.currentOptions.Clarity
       ];
 
-      // 查找匹配的变体
-      const matchedVariant = variants.find(v => 
-        v.options[0] === selectedOptions[0] && 
-        v.options[2] === selectedOptions[1]
-      );
+      // 查找匹配的变体（改进版）
+      const matchedVariant = variants.find(v => {
+        const optionValues = new Set(v.options);
+        return (
+          optionValues.has(selectedOptions[0]) && 
+          optionValues.has(selectedOptions[1])
+        );
+      });
 
       if (matchedVariant) {
         // 更新当前卡片内容
