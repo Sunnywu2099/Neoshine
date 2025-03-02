@@ -215,6 +215,12 @@ span#parcelator{
 .options-box{
   display: flex;
 }
+.option-name{
+  color: #787878;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
 @media screen and (min-width: 990px) {
   .grid--6-col-desktop .card__content quick-add-bulk .quantity {
     width: auto;
