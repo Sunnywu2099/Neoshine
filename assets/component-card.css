@@ -249,6 +249,14 @@ span#parcelator{
   flex-wrap: wrap;
   gap: 5px;
 }
+.event-banner a{
+  display: block;
+  height: 100%;
+}
+.event-banner img{
+  height: 100%;
+  object-fit: cover;
+}
 @media screen and (min-width: 990px) {
   .grid--6-col-desktop .card__content quick-add-bulk .quantity {
     width: auto;
