@@ -25,9 +25,6 @@
   cursor: pointer;
   font-size: 12px;
 }
-.product-card-wrapper .option-button.active{
-  border: 1px solid #121212;
-}
 .product-card-wrapper .option-button.option-swatch{
   border: 1px solid #eee;
   border-radius: 50%;
@@ -36,6 +33,9 @@
   width: 28px;
   height: 28px;
   cursor: pointer;
+}
+.product-card-wrapper .option-button.option-swatch.active{
+  border: 1px solid #121212;
 }
 
 .card-wrapper {
