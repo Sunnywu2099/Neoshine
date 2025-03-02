@@ -326,11 +326,11 @@ class FacetFiltersForm extends HTMLElement {
           
 
           if (matchingVariant.compare_at_price) {
-            const formattedComparePrice = `${currency} ${(matchingVariant.compare_at_price / 100).toFixed(2)}`;
+            const formattedComparePrice = `${currency}${(matchingVariant.compare_at_price / 100).toFixed(2)}`;
             $currentCard.find('.price-item--regular').text(formattedComparePrice);
           }
           if (matchingVariant.price) {
-            const formattedPrice = `${currency} ${(matchingVariant.price / 100).toFixed(2)}`;
+            const formattedPrice = `${currency}${(matchingVariant.price / 100).toFixed(2)}`;
             $currentCard.find('.price-item--sale').text(formattedPrice);
           }
 
