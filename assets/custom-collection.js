@@ -1,5 +1,5 @@
 
-    let currency = {{ cart.currency.symbol | json }};
+    let currency = '$';
     // 在文档加载时初始化
     document.addEventListener('DOMContentLoaded', initProductCards);
 
