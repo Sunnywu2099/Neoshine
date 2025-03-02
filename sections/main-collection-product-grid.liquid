@@ -245,9 +245,6 @@
         state.currentOptions.Clarity
       ];
 
-      // 在控制台显示当前卡片状态
-      console.log('Current options for card:', cardElement, selectedOptions);
-
       // 查找匹配的变体
       const matchedVariant = variants.find(v => 
         v.options[0] === selectedOptions[0] && 
@@ -257,7 +254,7 @@
       if (matchedVariant) {
         // 更新当前卡片内容
         const $card = $(cardElement);
-        $card.find('.product-image').attr('src', matchedVariant.featured_image.src);
+        $card.find('.card__media img').attr('src', matchedVariant.featured_image.src);
         $card.find('.price').text('¥' + (matchedVariant.price / 100).toFixed(2));
         $card.find('.compare-price').text('¥' + (matchedVariant.compare_at_price / 100).toFixed(2));
       }
