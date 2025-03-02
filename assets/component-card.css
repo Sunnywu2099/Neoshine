@@ -110,7 +110,7 @@
 }
 
 .card-information {
-  text-align: var(--text-alignment);
+  text-align: left;
 }
 
 .card__media,
