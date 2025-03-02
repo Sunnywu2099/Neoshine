@@ -1,11 +1,19 @@
 <style>
-  #shopify-section-{{section.id}} .shapes-wrapper{
+  #shopify-section-{{section.id}} .collection-banner .page-width{
     display: flex;
-    justify-content: center;
-    gap: 36px;
-    flex-wrap: wrap;
+    padding-right: 0;
+    padding-top: 40px;
+    padding-bottom: 100px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
   }
-
+  #shopify-section-{{section.id}} .collection-banner .img-wrapper{
+    width: 62.5%;
+  }
+  #shopify-section-{{section.id}} .collection-banner .content-wrapper{
+    width: calc(100% - 62.5%);
+  }
   @media screen and (max-width: 1200px) {
 
   }
@@ -15,7 +23,7 @@
 </style>
 
 
-<div class="page-width section-pb">
+<div class="page-width">
   <div class="content-wrapper">
     {% if section.settings.title != blank %}
       <h2 class="section-title">{{ section.settings.title }}</h2>
