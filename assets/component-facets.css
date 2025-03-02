@@ -52,6 +52,8 @@
   font-size: 1.4rem;
   margin: 0 2rem 0 0;
   font-weight: 700;
+  padding-right: 2rem;
+  border-right: 1px solid #121212;
 }
 
 .facet-filters__summary {
