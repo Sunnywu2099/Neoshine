@@ -134,7 +134,7 @@
       const $sale = $card.find(SELECTORS.salePrice);
       
       // 使用 Shopify 标准货币格式
-      const formatPrice = (price) => Shopify.formatMoney(price, {{ shop.money_format | json }});
+      const formatPrice = (price) => Shopify.formatMoney(price, '$');
 
       if (variant.compare_at_price > variant.price) {
         $regular.show().html(formatPrice(variant.compare_at_price));
