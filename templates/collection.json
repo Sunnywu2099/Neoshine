@@ -9,6 +9,15 @@
  */
 {
   "sections": {
+    "collection_banner_end3Uz": {
+      "type": "collection-banner",
+      "settings": {
+        "title": "Engagement Ring Settings",
+        "content": "Our selection of engagement ring settings includes every metal and every style. Yellow gold, white gold, platinum, and rose gold.",
+        "pc_image": "shopify://shop_images/image_12.png",
+        "mobile_image": "shopify://shop_images/image_13.png"
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "custom_css": [],
@@ -33,6 +42,7 @@
     }
   },
   "order": [
+    "collection_banner_end3Uz",
     "product-grid"
   ]
 }
