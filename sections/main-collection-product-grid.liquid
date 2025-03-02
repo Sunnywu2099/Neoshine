@@ -262,12 +262,10 @@
         const $card = $(cardElement);
         $card.find('.card__media img').attr('src', matchedVariant.featured_image.src);
         if(matchedVariant.compare_at_price){
-          let p = {{ matchedVariant.compare_at_price | money }}
-          $card.find('.price-item--regular').text(p);
+          $card.find('.price-item--regular').text(currency + (matchedVariant.price / 100).toFixed(2));
         }
-
-        // $card.find('.price').text('¥' + (matchedVariant.price / 100).toFixed(2));
-        // $card.find('.compare-price').text('¥' + (matchedVariant.compare_at_price / 100).toFixed(2));
+        $card.find('.price-item--sale').text(currency + (matchedVariant.compare_at_price / 100).toFixed(2));
+        
       }
     }
   });
