@@ -200,10 +200,8 @@
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  
     let currency = {{ cart.currency.symbol | json }};
-    console.log(currency);
-    
     // 为每个产品卡片创建独立的作用域
     $('.card-wrapper').each(function() {
       const $card = $(this);
@@ -268,7 +266,7 @@
         
       }
     }
-  });
+
 </script>
 
 {% schema %}
