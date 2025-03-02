@@ -59,7 +59,7 @@
         style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
       >
         {%- if card_product.featured_media -%}
-          <a class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
+          <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
             {% unless card_product.metafields.custom.sale_tag_text == blank %}
                 <div class="card__content">
                     <div class="card__badge top left">
@@ -112,7 +112,7 @@
                 >
               {%- endif -%}
             </div>
-          </a>
+          </div>
         {%- endif -%}
         <div class="card__content">
           <div class="card__information">
