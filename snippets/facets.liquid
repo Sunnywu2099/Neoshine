@@ -415,7 +415,7 @@
               </div>
             </div>
           {%- endif -%}
-          <div class="product-count light" role="status">
+          {% comment %} <div class="product-count light" role="status">
             <h2 class="product-count__text text-body">
               <span id="ProductCountDesktop">
                 {%- if results.results_count -%}
@@ -431,7 +431,7 @@
               </span>
             </h2>
             {%- render 'loading-spinner' -%}
-          </div>
+          </div> {% endcomment %}
         {%- endif -%}
       </form>
     </facet-filters-form>
