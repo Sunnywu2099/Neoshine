@@ -21,9 +21,9 @@
   border: 1px solid #eee;
   border-radius: 3px;
   padding: 3px 8px;
-  font-family: 'Lato';
   cursor: pointer;
   font-size: 12px;
+  color: #121212;
 }
 .product-card-wrapper .option-button.option-swatch{
   border: 1px solid #eee;
