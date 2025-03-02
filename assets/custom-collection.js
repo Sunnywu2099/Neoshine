@@ -142,10 +142,5 @@
     setTimeout(() => $(SELECTORS.cardWrapper).each((i, c) => new ProductCardManager().initialized.add(c)), 500);
   });
 
-  // Shopify事件兼容
-  if (typeof Shopify === 'object') {
-    document.addEventListener('shopify:section:load', () => {
-      new ProductCardManager().safeInitialize();
-    });
-  }
+
 })();
