@@ -163,7 +163,11 @@
                   {%- assign lazy_load = true -%}
                 {%- endif -%}
                 {% if forloop.index == 4 %}
-                  <li class="grid__item">123</li>
+                  <li class="grid__item">
+                    <a href="{{ section.settings.url }}">
+                      <img loading="lazy" src="{{ section.settings.event_image | img_url: 'master'}}">
+                    </a>
+                  </li>
                 {% endif %}
                 <li
                   class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
