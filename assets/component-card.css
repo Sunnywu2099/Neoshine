@@ -112,7 +112,9 @@
 .card-information {
   text-align: left;
 }
-
+span#parcelator{
+  display: none!important;
+}
 .card__media,
 .card .media {
   bottom: 0;
