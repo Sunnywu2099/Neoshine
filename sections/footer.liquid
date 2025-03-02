@@ -359,21 +359,7 @@
   {% endcomment %}
   
 </footer>
-
-
-<script>
-  if (window.innerWidth < 749) {
-    document.querySelectorAll('.footer-block__heading').forEach(heading => {
-        heading.addEventListener('click', function() {
-            const detailsContent = this.nextElementSibling;
-            detailsContent.classList.toggle('active');
-            heading.classList.toggle('active');
-        });
-    });
-  }
-</script>
-
-        
+  
 {% schema %}
 {
   "name": "t:sections.footer.name",
