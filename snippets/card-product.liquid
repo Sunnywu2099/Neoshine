@@ -196,17 +196,13 @@
                 {%- endfor %}
               </div>
             {% endif %}
-            <script type="application/json" data-product-variant>
-              {{ card_product | json }}
-            </script>
-            
             
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
               <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>
             {%- endif -%}
 
-            
+
             <span class="caption-large light">{{ block.settings.description | escape }}</span>
 
             {%- if show_rating and card_product.metafields.reviews.rating.value != blank -%}
@@ -671,3 +667,10 @@
     </div>
   </div>
 {%- endif -%}
+
+<script type="application/json" data-product-variant>
+  {{ card_product.variants | json }}
+</script>
+<script>
+  
+</script>
