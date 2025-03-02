@@ -673,10 +673,6 @@
     // 获取产品变体数据
     const variantData = {{ card_product.variants | json }};
     
-    // 当前选择的选项
-    let currentOptions = [];
-    
-
     $('.option-button[data-option="Metal"]').on('click', function() {
       let currentMetal = $(this).data('value');
       // 更新按钮状态
@@ -696,7 +692,7 @@
     function updateInfo() {
       const selectedMetal = $('.option-button[data-option="Metal"].active').data('value');
       const selectedClarity = $('.option-button[data-option="Clarity"].active').data('value');
-      currentOptions = [selectedMetal, selectedClarity];
+      let currentOptions = [selectedMetal, selectedClarity];
       console.log(currentOptions);
       
     }
