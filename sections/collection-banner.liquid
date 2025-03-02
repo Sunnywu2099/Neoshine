@@ -1,0 +1,120 @@
+<style>
+  #shopify-section-{{section.id}}.collection-banner .page-width{
+    display: flex;
+    padding-right: 0;
+    padding-top: 40px;
+    padding-bottom: 100px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+  }
+  #shopify-section-{{section.id}}.collection-banner .img-wrapper{
+    width: 62.5%;
+  }
+  #shopify-section-{{section.id}}.collection-banner .content-wrapper{
+    width: calc(100% - 62.5%);
+  }
+  #shopify-section-{{section.id}}.collection-banner .section-title{
+    text-align: left;
+  }
+  #shopify-section-{{section.id}}.collection-banner .section-content{
+    text-align: left;
+    color: #787878;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 0;
+  }
+  @media screen and (max-width: 1200px) {
+    #shopify-section-{{section.id}}.collection-banner .page-width{
+      padding-top: 20px;
+      padding-bottom: 50px;
+      gap: 50px;
+    }
+  }
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{section.id}}.collection-banner .page-width{
+      flex-direction: column-reverse;
+      padding-top: 0;
+      padding-left: 0;
+      gap: 0;
+    }
+    #shopify-section-{{section.id}}.collection-banner .img-wrapper{
+      width: 100%;
+    }
+    #shopify-section-{{section.id}}.collection-banner .content-wrapper{
+      width: 100%;
+      width: 100%;
+      padding: 34px 17px 0;
+    }
+    #shopify-section-{{section.id}}.collection-banner .section-title{
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    #shopify-section-{{section.id}}.collection-banner .section-content{
+      text-align: center;
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+</style>
+
+
+<div class="page-width">
+  <div class="content-wrapper">
+    {% if section.settings.title != blank %}
+      <h2 class="section-title">{{ section.settings.title }}</h2>
+    {% endif %}
+    {% if section.settings.content != blank %}
+      <h2 class="section-content">{{ section.settings.content }}</h2>
+    {% endif %}
+  </div>
+  <div class="img-wrapper">
+    {% render 'responsive-image',
+      sid: section.id,
+      image_desktop: section.settings.pc_image,
+      image_mobile: section.settings.mobile_image,
+      alt: section.settings.title,
+      lazy: false,
+      preload: true
+    %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collection banner",
+  "tag": "section",
+  "class": "collection-banner",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "title",
+      "default": "Engagement Ring Settings"
+    },
+    {
+      "type": "textarea",
+      "id": "content",
+      "label": "content",
+      "default": "Our selection of engagement ring settings includes every metal and every style. Yellow gold, white gold, platinum, and rose gold."
+    },
+    {
+      "type": "image_picker",
+      "id": "pc_image",
+      "label": "pc image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "mobile image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection banner"
+    }
+  ]
+}
+{% endschema %}

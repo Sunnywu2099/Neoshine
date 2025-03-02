@@ -40,7 +40,7 @@
       assign ratio = 1
     endif
   -%}
-  <div class="card-wrapper product-card-wrapper underline-links-hover">
+  <div class="card-wrapper product-card-wrapper underline-links-hover" data-variants="{{ card_product.variants | json | escape }}">
     <div
       class="
         card card--{{ settings.card_style }}
@@ -53,31 +53,24 @@
       "
       style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
     >
-      <div
+      <div 
+        href="{{ card_product.url | default: '#' }}"
         class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}"
         style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
       >
         {%- if card_product.featured_media -%}
           <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
-           {% unless card_product.metafields.custom.sale_tag_text == blank %}
-    <div class="card__content">
-        <div class="card__badge top left">
-        <span class="badge badge--bottom-left{% if product.metafields.custom.sale_tag_color == blank %} color-{{ settings.sale_badge_color_scheme }}{% endif %}" style="position: absolute; z-index: 9; background-color: {{ card_product.metafields.custom.sale_tag_color }};">{{ card_product.metafields.custom.sale_tag_text }}</span>
-        </div>
-    </div>
-{% endunless %}
+            {% unless card_product.metafields.custom.sale_tag_text == blank %}
+                <div class="card__content">
+                    <div class="card__badge top left">
+                    <span class="badge badge--bottom-left{% if product.metafields.custom.sale_tag_color == blank %} color-{{ settings.sale_badge_color_scheme }}{% endif %}" style="position: absolute; z-index: 9; background-color: {{ card_product.metafields.custom.sale_tag_color }};">{{ card_product.metafields.custom.sale_tag_text }}</span>
+                    </div>
+                </div>
+            {% endunless %}
             <div class="media media--transparent media--hover-effect">
               {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
               <img
-                srcset="
-                  {%- if card_product.featured_media.width >= 165 -%}{{ card_product.featured_media | image_url: width: 165 }} 165w,{%- endif -%}
-                  {%- if card_product.featured_media.width >= 360 -%}{{ card_product.featured_media | image_url: width: 360 }} 360w,{%- endif -%}
-                  {%- if card_product.featured_media.width >= 533 -%}{{ card_product.featured_media | image_url: width: 533 }} 533w,{%- endif -%}
-                  {%- if card_product.featured_media.width >= 720 -%}{{ card_product.featured_media | image_url: width: 720 }} 720w,{%- endif -%}
-                  {%- if card_product.featured_media.width >= 940 -%}{{ card_product.featured_media | image_url: width: 940 }} 940w,{%- endif -%}
-                  {%- if card_product.featured_media.width >= 1066 -%}{{ card_product.featured_media | image_url: width: 1066 }} 1066w,{%- endif -%}
-                  {{ card_product.featured_media | image_url }} {{ card_product.featured_media.width }}w
-                "
+                
                 src="{{ card_product.featured_media | image_url: width: 533 }}"
                 sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
                 alt="{{ card_product.featured_media.alt | escape }}"
@@ -150,7 +143,7 @@
           </div>
         </div>
       </div>
-      <div class="card__content">
+      <div class="card__content sunny">
         <div class="card__information">
           <h3
             class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
@@ -168,24 +161,39 @@
             </a>
           </h3>
           <div class="card-information">
-            
-            {% if card_product.has_only_default_variant == false and false%}
-            <div class="card-options" data-has_only_default_variant="{{ card_product.selected_or_first_available_variant }}">
-              {%- for option in card_product.options_with_values -%}
-              <div class="options-box">
-                {%- for value in option.values -%}
-                  <button class="option-button" data-option="{{ option.name }}" data-value="{{ value }}">{{ value }}</button>
-                {%- endfor -%}
+             
+            {% if card_product.has_only_default_variant == false%}
+              <div class="card-options">
+                {%- for option in card_product.options_with_values -%}
+                  {% if option.name == 'Metal' %}
+                    <div class="options-box">
+                      <h5 class="option-name">{{ option.name }}</h5>
+                      <div class="option-wrapper">
+                        {%- for value in option.values -%}
+                          <button style="background-image: url('{{ value.swatch.image | image_url: width: 50 }}')" class="option-button option-swatch {% if forloop.first %}active{% endif %}" data-option="{{ option.name }}" data-value="{{ value }}" data-value-id="{{ value.id }}"></button>
+                        {%- endfor -%}
+                      </div>
+                    </div>
+                  {% endif %}
+                  {% if option.name == 'Clarity' %}
+                    <div class="options-box">
+                      <h5 class="option-name">{{ option.name }}</h5>
+                      <div class="option-wrapper">
+                        {%- for value in option.values -%}
+                          <button class="option-button {% if forloop.first %}active{% endif %}" data-option="{{ option.name }}" data-value="{{ value }}">{{ value }}</button>
+                        {%- endfor -%}
+                      </div>
+                    </div>
+                  {% endif %}
+                {%- endfor %}
               </div>
-              {%- endfor %}
-            </div>
             {% endif %}
-            
             
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
               <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>
             {%- endif -%}
+
 
             <span class="caption-large light">{{ block.settings.description | escape }}</span>
 
