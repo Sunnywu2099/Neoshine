@@ -173,7 +173,7 @@
             {% if card_product.has_only_default_variant == false%}
               <div class="card-options">
                 {%- for option in card_product.options_with_values -%}
-                  {% if option.name == 'Metal' or option.name == 'Clarity' %}
+                  {% if option.name == 'Metal' %}
                     <div class="options-box">
                       <h5 class="option-name">{{ option.name }}</h5>
                       <div class="option-wrapper">
