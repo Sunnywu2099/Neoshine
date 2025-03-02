@@ -18,6 +18,7 @@
   padding: 3px 8px;
   font-family: 'Lato';
   cursor: pointer;
+  font-size: 12px;
 }
 .product-card-wrapper .option-button.option-swatch{
   border: 1px solid #eee;
