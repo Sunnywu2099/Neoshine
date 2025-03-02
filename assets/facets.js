@@ -295,7 +295,7 @@ class FacetFiltersForm extends HTMLElement {
   }
 
   static initVariantSelectors() {
-    let currency = document.querySelector('[data-currency]')?.dataset.currency || '$';
+    let currency = '$';
 
     $('.card-wrapper').each(function() {
       const $card = $(this);
@@ -323,14 +323,15 @@ class FacetFiltersForm extends HTMLElement {
         );
 
         if (matchingVariant) {
-          if (matchingVariant.price) {
-            const formattedPrice = `${currency}${(matchingVariant.price / 100).toFixed(2)}`;
-            $currentCard.find('.price').text(formattedPrice);
-          }
+          
 
           if (matchingVariant.compare_at_price) {
-            const formattedComparePrice = `${currency}${(matchingVariant.compare_at_price / 100).toFixed(2)}`;
-            $currentCard.find('.compare-price').text(formattedComparePrice);
+            const formattedComparePrice = `${currency} ${(matchingVariant.compare_at_price / 100).toFixed(2)}`;
+            $currentCard.find('.price-item--regular').text(formattedComparePrice);
+          }
+          if (matchingVariant.price) {
+            const formattedPrice = `${currency} ${(matchingVariant.price / 100).toFixed(2)}`;
+            $currentCard.find('.price-item--sale').text(formattedPrice);
           }
 
           if (matchingVariant.featured_image && matchingVariant.featured_image.src) {
