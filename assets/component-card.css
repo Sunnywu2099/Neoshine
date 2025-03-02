@@ -145,7 +145,7 @@ span#parcelator{
 }
 
 .card__content {
-  display: grid;
+  display: block;
   grid-template-rows: minmax(0, 1fr) max-content minmax(0, 1fr) max-content max-content;
   padding: 1rem;
   width: 100%;
