@@ -39,7 +39,7 @@
       // 使用一次性事件委托
       $(document).off('click.productCards').on('click.productCards', SELECTORS.optionButton, e => {
         const $btn = $(e.target);
-        if ($btn.hasClass('active') return;
+        if ($btn.hasClass('active')) return;
 
         this.updateLock = true;
         try {
