@@ -668,9 +668,6 @@
   </div>
 {%- endif -%}
 
-<script type="application/json" data-product-variant>
-  
-</script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     // 获取产品变体数据
@@ -688,6 +685,8 @@
     // 处理 Metal 选项点击
     document.querySelectorAll('.option-button[data-option="Metal"]').forEach(button => {
       button.addEventListener('click', function() {
+        console.log('Metal 选项点击');
+        console.log(variantData);
         // 移除其他按钮的活跃状态
         this.closest('.option-wrapper').querySelectorAll('.option-button').forEach(btn => {
           btn.classList.remove('active');
