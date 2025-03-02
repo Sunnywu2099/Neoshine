@@ -41,6 +41,9 @@
     endif
   -%}
   <div class="card-wrapper product-card-wrapper underline-links-hover" data-variants="{{ card_product.variants | json | escape }}">
+    <script type="application/json" data-product-variant>
+      {{ card_product.variants | json }}
+    </script>
     <div
       class="
         card card--{{ settings.card_style }}
