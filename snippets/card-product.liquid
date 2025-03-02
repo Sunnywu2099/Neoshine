@@ -171,13 +171,15 @@
           <div class="card-information">
              
             {% if card_product.has_only_default_variant == false%}
-              <div class="card-options" data-has_only_default_variant="{{ card_product.selected_or_first_available_variant }}">
+              <div class="card-options">
                 {%- for option in card_product.options_with_values -%}
-                <div class="options-box">
-                  {%- for value in option.values -%}
-                    <button class="option-button" data-option="{{ option.name }}" data-value="{{ value }}">{{ value }}</button>
-                  {%- endfor -%}
-                </div>
+                  {% if option.name == 'Metal' or option.name == 'Clarity' %}
+                    <div class="options-box">
+                      {%- for value in option.values -%}
+                        <button class="option-button" data-option="{{ option.name }}" data-value="{{ value }}">{{ value }}</button>
+                      {%- endfor -%}
+                    </div>
+                  {% endif %}
                 {%- endfor %}
               </div>
             {% endif %}
