@@ -281,6 +281,7 @@
 @media screen and (max-width: 989px) {
   .footer__blocks-wrapper{
     flex-direction: column;
+    gap: 55px;
   }
   .footer-logo-wrapper{
     max-width: 170px;
