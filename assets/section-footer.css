@@ -43,6 +43,13 @@
 .footer__blocks-wrapper {
   display: flex;
 }
+.footer__blocks-wrapper .footer-block__newsletter{
+  max-width: 462px;
+  margin: 0;
+}
+.footer__blocks-wrapper .list-wrapper{
+  flex: 1;
+}
 
 @media screen and (max-width: 749px) {
   .footer .grid {
