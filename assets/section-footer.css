@@ -281,7 +281,7 @@
   /* Pushes other components to the right of the flexbox */
   .footer-block__newsletter:not(:only-child) {
     text-align: left;
-    margin-right: auto;
+    /* margin-right: auto; */
   }
 
   .footer-block__newsletter:not(:only-child) .footer__newsletter {
