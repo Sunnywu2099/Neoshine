@@ -72,14 +72,14 @@
         "link_list_paXjBt": {
           "type": "link_list",
           "settings": {
-            "heading": "<strong> INSIGHTS</strong>",
+            "heading": "INSIGHTS",
             "menu": "jewelry-insights"
           }
         },
         "link_list_aP48mA": {
           "type": "link_list",
           "settings": {
-            "heading": "<strong>SPECIAL OFFERS</strong>",
+            "heading": "SPECIAL OFFERS",
             "menu": "special-offers"
           }
         }
