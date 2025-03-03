@@ -592,6 +592,10 @@
     width: 100%;
     margin-bottom: 8px;
   }
+  .copyright{
+    font-size: 12px;
+    line-height: 1.4;
+  }
 }
 
 @media screen and (min-width: 750px) {
