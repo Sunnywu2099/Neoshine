@@ -51,7 +51,7 @@
         const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
   
         // 格式化输出
-        countdownElem.innerHTML = `<div><span class="time">${hours.toString().padStart(2, "0")}</span><span class="name">HRS</span><div> : 
+        countdownElem.innerHTML = `<div><span class="time">${hours.toString().padStart(2, "0")}</span><span class="name">HRS</span></div> : 
 <div><span class="time">${minutes.toString().padStart(2, "0")}</span><span class="name">MIN</span></div> : <div><span class="time">${seconds.toString().padStart(2, "0")}</span><span class="name">SEC</span></div>`;
       } else {
         document.querySelector(".countdown-wrapper").textContent = "Event Ended";
