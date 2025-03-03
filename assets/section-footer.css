@@ -311,6 +311,7 @@
   }
   .footer__blocks-wrapper .footer-block{
     width: calc((100% - 30px) / 2);
+    flex: auto;
   }
 }
 
