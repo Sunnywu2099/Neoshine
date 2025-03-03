@@ -94,6 +94,7 @@
       "custom_css": [],
       "settings": {
         "color_scheme": "scheme-4",
+        "logo": "shopify://shop_images/Group_1000001816.png",
         "newsletter_enable": true,
         "newsletter_heading": "",
         "enable_follow_on_shop": true,
