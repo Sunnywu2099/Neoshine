@@ -583,6 +583,9 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
     font-size: 12px;
+    font-size: 12px;
+    width: 50%;
+    border-right: 0;
   }
 }
 
