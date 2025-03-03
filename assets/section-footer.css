@@ -282,6 +282,14 @@
   .footer__blocks-wrapper{
     flex-direction: column;
   }
+  .footer-logo-wrapper{
+    max-width: 170px;
+    object-fit: cover;
+    margin-bottom: 32px;
+  }
+  .footer-logo-wrapper img{
+    height: 100%;
+  }
 }
 
 .footer__list-social:empty,
