@@ -99,6 +99,12 @@
 .social-wrapper .list-social{
   gap: 20px;
 }
+.footer__bottom{
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
 @media screen and (max-width: 749px) {
   .footer .grid {
     display: block;
