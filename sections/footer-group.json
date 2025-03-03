@@ -72,27 +72,15 @@
         "link_list_paXjBt": {
           "type": "link_list",
           "settings": {
-            "heading": "<strong> INSIGHTS</strong>",
+            "heading": "INSIGHTS",
             "menu": "jewelry-insights"
           }
         },
         "link_list_aP48mA": {
           "type": "link_list",
           "settings": {
-            "heading": "<strong>SPECIAL OFFERS</strong>",
+            "heading": "SPECIAL OFFERS",
             "menu": "special-offers"
-          }
-        },
-        "brand_information_RLV4JM": {
-          "type": "brand_information",
-          "settings": {
-            "show_social": false,
-            "place_img": "shopify://shop_images/Pin_Icon_4e30878c-b855-44e9-8e0e-ff829f563c37.svg",
-            "place_txt": "RM C13 4/F, KAISER ESTATE PHASE I 41 MAN YUE STREET HUNG HOM Hong Kong",
-            "relation_img": "shopify://shop_images/Phone_Icon_8682a635-2e64-40d1-8970-3dd32d1dbe21.svg",
-            "relation_txt": "+852 8402 3651",
-            "mailbox_img": "shopify://shop_images/Email_Icon_54ff0c75-8949-4560-bd75-b9e99bcbe8e6.svg",
-            "mailbox_txt": "Hello@Neoshine.com"
           }
         }
       },
@@ -101,15 +89,16 @@
         "link_list_T34QUW",
         "link_list_Ly7AyG",
         "link_list_paXjBt",
-        "link_list_aP48mA",
-        "brand_information_RLV4JM"
+        "link_list_aP48mA"
       ],
       "custom_css": [],
       "settings": {
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-4",
+        "logo": "shopify://shop_images/Group_1000001816.png",
+        "p_menu": "last-footer-menu",
         "newsletter_enable": true,
         "newsletter_heading": "",
-        "enable_follow_on_shop": false,
+        "enable_follow_on_shop": true,
         "show_social": true,
         "enable_country_selector": false,
         "enable_language_selector": false,
