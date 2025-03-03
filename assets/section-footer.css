@@ -57,6 +57,10 @@
 .footer__blocks-wrapper .footer-block{
   flex: 0 0 30%;
 }
+.footer-logo-wrapper {
+  max-width: 300px;
+  display: block;
+}
 @media screen and (max-width: 749px) {
   .footer .grid {
     display: block;
