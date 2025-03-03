@@ -118,7 +118,7 @@
   padding-left: 0px;
 }
 .pay-wrapper .list-menu__item--link:last-of-type{
-  padding-left: 0px;
+  padding-right: 0px;
   border-right: 0;
 }
 @media screen and (max-width: 749px) {
