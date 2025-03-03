@@ -61,6 +61,10 @@
   max-width: 300px;
   display: block;
 }
+.custom-input-box{
+  display: flex;
+  gap: 7px;
+}
 @media screen and (max-width: 749px) {
   .footer .grid {
     display: block;
