@@ -74,6 +74,7 @@
 .footer-logo-wrapper {
   max-width: 300px;
   display: block;
+  margin-bottom: 90px;
 }
 .custom-input-box{
   display: flex;
