@@ -467,7 +467,7 @@
 
 .footer-block__details-content .list-menu__item--active {
   transition: text-decoration-thickness var(--duration-short) ease;
-  color: rgb(var(--color-foreground));
+  color: #79a88b;
 }
 
 .footer-ul{
