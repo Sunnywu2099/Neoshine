@@ -281,7 +281,7 @@
           </div>
 
           <div class="footer__bottom">
-            <div class="copyright"> @2024 Neoshine</div>
+            <div class="copyright">&copy; {{ 'now' | date: '%Y' }} {{ shop.name | link_to: routes.root_url -}}</div>
             <div class="pay-wrapper">
               <div class="payments">
                 <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
