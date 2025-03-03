@@ -105,6 +105,9 @@
   justify-content: space-between;
   align-items: end;
 }
+.pay-wrapper .footer-block__details-content{
+  margin-top: 15px;
+}
 @media screen and (max-width: 749px) {
   .footer .grid {
     display: block;
