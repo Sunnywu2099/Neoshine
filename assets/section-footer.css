@@ -108,6 +108,10 @@
 .pay-wrapper .footer-block__details-content{
   margin-top: 15px;
 }
+.pay-wrapper .list-menu__item--link{
+  padding-left: 18px;
+  padding-right: 18px;
+}
 @media screen and (max-width: 749px) {
   .footer .grid {
     display: block;
