@@ -94,6 +94,9 @@
 .social-wrapper .list-social__link{
   padding: 0;
 }
+.social-wrapper .list-social{
+  gap: 40px;
+}
 @media screen and (max-width: 749px) {
   .footer .grid {
     display: block;
