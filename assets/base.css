@@ -2256,7 +2256,7 @@ input[type='checkbox'] {
 }
 
 .announcement-bar__link:hover {
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 .announcement-bar__link .icon-arrow {
