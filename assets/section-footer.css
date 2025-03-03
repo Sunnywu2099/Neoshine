@@ -318,15 +318,6 @@
     flex-direction: column-reverse;
     align-items: flex-start;
   }
-  .list-payment{
-    justify-content: flex-start;
-    gap: 4px;
-    margin: 0;
-    padding: 0;
-  }
-  .list-payment__item{
-    padding: 0;
-  }
 }
 
 .footer__list-social:empty,
