@@ -61,13 +61,12 @@
       if (timeLeft > 0) {
         // 计算总小时数（包括天数）
         const totalHours = Math.floor(timeLeft / (1000 * 60 * 60));
-        const hours = totalHours % 24; // 获取剩余小时数
         const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
   
         // 格式化输出
         countdownElem.innerHTML = `
-          <div><span class="time">${hours.toString().padStart(2, "0")}</span><span class="name">HRS</span></div> : 
+          <div><span class="time">${totalHours.toString().padStart(2, "0")}</span><span class="name">HRS</span></div> : 
           <div><span class="time">${minutes.toString().padStart(2, "0")}</span><span class="name">MIN</span></div> : 
           <div><span class="time">${seconds.toString().padStart(2, "0")}</span><span class="name">SEC</span></div>
         `;
