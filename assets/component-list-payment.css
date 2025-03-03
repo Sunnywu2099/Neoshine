@@ -7,9 +7,10 @@
   padding-left: 0;
 }
 
+
 @media screen and (min-width: 750px) {
   .list-payment {
-    justify-content: flex-end;
+    justify-content: flex-start;
     margin: -0.5rem;
     padding-top: 0;
   }
@@ -19,4 +20,16 @@
   align-items: center;
   display: flex;
   padding: 0.5rem;
+}
+
+@media screen and (max-width: 989px) {
+  .list-payment{
+    justify-content: flex-start;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+  }
+  .list-payment__item{
+    padding: 0;
+  }
 }
