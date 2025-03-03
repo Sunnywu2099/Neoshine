@@ -111,11 +111,15 @@
   flex-wrap: wrap;
 }
 .pay-wrapper .list-menu__item--link{
-  padding-left: 18px;
-  padding-right: 18px;
+  border-right: 1px solid #999;
+  padding: 0 18px;
 }
 .pay-wrapper .list-menu__item--link:first-of-type{
   padding-left: 0px;
+}
+.pay-wrapper .list-menu__item--link:last-of-type{
+  padding-left: 0px;
+  border-right: 0;
 }
 @media screen and (max-width: 749px) {
   .footer .grid {
