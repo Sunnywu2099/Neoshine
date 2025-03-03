@@ -78,17 +78,19 @@
                 {% assign full_width = '100vw' %}
                 {% assign sizes = full_width %}
                 {% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
-                  {{
-                    section.settings.logo
-                    | image_url: width: section.settings.logo.width
-                    | image_tag:
-                      width: section.settings.logo.width,
-                      height: section.settings.logo.height,
-                      class: 'footer_logo',
-                      sizes: sizes,
-                      widths: widths,
-                      loading: 'lazy'
-                  }}
+                  <a class="footer-logo-wrapper" href="/">
+                    {{
+                      section.settings.logo
+                      | image_url: width: section.settings.logo.width
+                      | image_tag:
+                        width: section.settings.logo.width,
+                        height: section.settings.logo.height,
+                        class: 'footer-logo',
+                        sizes: sizes,
+                        widths: widths,
+                        loading: 'lazy'
+                    }}
+                  </a>
                   <h2 class="footer-block__heading inline-richtext">
                     Newsletter
                     <span class="svg-wrapper medium-hide large-up-hide">{{- 'icon-caret.svg' | inline_asset_content -}}</span>
