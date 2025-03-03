@@ -17,7 +17,7 @@
         "announcement_6jBHwE": {
           "type": "announcement",
           "settings": {
-            "text": "Valentine’s Day Special! | 10% Off 1 Carat Lab Grown Diamond Ring with Code NEOLOVE10",
+            "text": "Limited Time Offer! | 1 Carat Lab Grown Diamond Ring for $999",
             "link": "shopify://products/1ct-lab-created-diamond-engagement-ring"
           }
         }
@@ -26,6 +26,7 @@
         "announcement_6jBHwE"
       ],
       "settings": {
+        "end": "2025-03-04 00:00:00",
         "color_scheme": "scheme-c982c334-bf1a-40f0-9476-edb97c52c8ee",
         "show_line_separator": false,
         "show_social": false,
@@ -1270,7 +1271,8 @@
       "settings": {
         "logo_position": "top-center",
         "menu": "main-menu",
-        "leftmenu": "<p>test</p>",
+        "url": "/",
+        "url_name": "Track my order",
         "menu_type_desktop": "mega",
         "sticky_header_type": "reduce-logo-size",
         "show_line_separator": true,
