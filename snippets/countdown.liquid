@@ -39,12 +39,10 @@
 </style>
 
 {% liquid
-  assign title = title
   assign end = end
 %}
 
 <div id="product-countdown" data-end="{{ end }}">
-  <div class="event-name">{{ title }}</div>
   <div class="countdown-wrapper">
     <p class="countdown-text">Ends in</p>
     <div id="countdown"></div>
