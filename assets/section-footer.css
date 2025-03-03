@@ -40,6 +40,9 @@
   /* padding-bottom: 5rem;
   display: block; */
 }
+.footer__blocks-wrapper {
+  display: flex;
+}
 
 @media screen and (max-width: 749px) {
   .footer .grid {
