@@ -115,7 +115,7 @@
   padding-right: 18px;
 }
 .pay-wrapper .list-menu__item--link:first-of-type{
-  padding-left: 18px;
+  padding-left: 0px;
 }
 @media screen and (max-width: 749px) {
   .footer .grid {
