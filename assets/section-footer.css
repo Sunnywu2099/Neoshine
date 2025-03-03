@@ -313,6 +313,11 @@
     width: calc((100% - 30px) / 2);
     flex: auto;
   }
+  .footer__bottom{
+    margin-top: 40px;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
 }
 
 .footer__list-social:empty,
