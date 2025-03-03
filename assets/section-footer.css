@@ -95,7 +95,7 @@
   padding: 0;
 }
 .social-wrapper .list-social{
-  gap: 40px;
+  gap: 20px;
 }
 @media screen and (max-width: 749px) {
   .footer .grid {
