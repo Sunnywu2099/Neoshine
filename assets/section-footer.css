@@ -28,7 +28,7 @@
   }
   .footer .custom-input:focus-visible{
     outline: none;
-    box-shadow: 0;
+    box-shadow: none;
   }
 
   .footer .newsletter-form__field-wrapper .field__label{
