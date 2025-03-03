@@ -2525,9 +2525,7 @@ input[type='checkbox'] {
     justify-self: center;
     text-align: center;
   }
-  .header__icons{
-    padding-right: 8rem;
-  }
+  
 }
 
 /* Header icons */
@@ -2683,6 +2681,9 @@ menu-drawer + .header__search {
   .header:not(.header--top-center) > .header__search,
   .header--top-center * > .header__search {
     /* display: none; */
+  }
+  .header__icons{
+    padding-right: 8rem;
   }
 }
 
