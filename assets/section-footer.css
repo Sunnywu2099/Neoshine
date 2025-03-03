@@ -301,6 +301,9 @@
     padding: 8px 8px;
     width: fit-content;
   }
+  .social-wrapper{
+    margin-top: 0;
+  }
 }
 
 .footer__list-social:empty,
