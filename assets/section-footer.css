@@ -299,6 +299,7 @@
   }
   .footer .newsletter-form__button{
     padding: 8px 8px;
+    width: fit-content;
   }
 }
 
