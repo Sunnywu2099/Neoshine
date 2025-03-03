@@ -290,6 +290,13 @@
   .footer-logo-wrapper img{
     height: 100%;
   }
+  .custom-text{
+    text-align: left;
+    margin-bottom: 7px;
+    font-size: 12px;
+    line-height: 18px;
+    opacity: .8;
+  }
 }
 
 .footer__list-social:empty,
