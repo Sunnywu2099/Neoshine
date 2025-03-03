@@ -24,6 +24,11 @@
     background: transparent;
     border: 1px solid #fff;
     padding: 0 13px;
+    color: #fff;
+  }
+  .footer .custom-input:focus{
+    outline: none;
+    box-shadow: 0;
   }
 
   .footer .newsletter-form__field-wrapper .field__label{
