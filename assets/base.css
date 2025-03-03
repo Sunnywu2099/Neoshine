@@ -2645,7 +2645,9 @@ menu-drawer + .header__search {
 
 .left-menu{
   display: flex;
-  gap: 26px;
+  gap:10px;
+  padding-left: 8rem;
+  width: fit-content;
 }
 
 .left-menu p{
