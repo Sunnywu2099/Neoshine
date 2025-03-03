@@ -278,6 +278,12 @@
   }
 }
 
+@media screen and (max-width: 989px) {
+  .footer__blocks-wrapper{
+    flex-direction: column;
+  }
+}
+
 .footer__list-social:empty,
 .footer-block--newsletter:empty {
   display: none;
