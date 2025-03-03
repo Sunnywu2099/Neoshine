@@ -153,7 +153,12 @@
 
 
     <div class="left-menu small-hide">
-      
+      {% if section.settings.url != blank %}
+        <a href="{{ section.settings.url }}" class="header__heading-link link link--text focus-inset">
+          <span>{% render 'track-icon' %}</span>
+          <span>{{ section.settings.url_name }}</span>
+        </a>
+      {% endif %}
     </div>
 
     {%- if section.settings.logo_position != 'middle-center' -%}
