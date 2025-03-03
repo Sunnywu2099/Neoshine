@@ -1270,7 +1270,8 @@
       "settings": {
         "logo_position": "top-center",
         "menu": "main-menu",
-        "leftmenu": "<p>test</p>",
+        "url": "/",
+        "url_name": "Track my order",
         "menu_type_desktop": "mega",
         "sticky_header_type": "reduce-logo-size",
         "show_line_separator": true,
