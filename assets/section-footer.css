@@ -598,6 +598,7 @@
   }
   .pay-wrapper .list-menu__item--link{
     width: 50%;
+    padding-left: 0;
   }
 }
 
