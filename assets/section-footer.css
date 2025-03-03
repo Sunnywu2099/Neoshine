@@ -122,6 +122,9 @@
   border-right: 0;
 }
 @media screen and (max-width: 749px) {
+  .footer .page-width{
+    padding: 0 1.5rem;
+  }
   .footer .grid {
     display: block;
   }
