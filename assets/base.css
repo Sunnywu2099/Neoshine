@@ -2686,7 +2686,7 @@ menu-drawer + .header__search {
     padding-right: 8rem;
   }
   .track-order-wrapper{
-    display: none;
+    display: flex;
   }
 }
 
