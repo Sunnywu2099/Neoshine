@@ -305,6 +305,13 @@
   .social-wrapper{
     margin-top: 0;
   }
+  .footer__blocks-wrapper .list-wrapper{
+    row-gap: 30px;
+    column-gap: 30px;
+  }
+  .footer__blocks-wrapper .footer-block{
+    width: calc((100% - 30px) / 2);
+  }
 }
 
 .footer__list-social:empty,
