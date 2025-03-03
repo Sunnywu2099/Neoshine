@@ -577,6 +577,7 @@
   .footer-block__details-content .list-menu__item--link {
     padding-top: 1rem;
     padding-bottom: 1rem;
+    font-size: 12px;
   }
 }
 
