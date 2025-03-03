@@ -15,8 +15,15 @@
     margin-top: 0px;
     padding: 13px 26px;
     color: #fff;
-    font-size: 12px;
+    font-size: 15px;
     border-radius: 3px;
+  }
+  .footer .custom-input{
+    flex: 1;
+    border-radius: 3px;
+    background: transparent;
+    border: 1px solid #fff;
+    padding: 0 13px;
   }
 
   .footer .newsletter-form__field-wrapper .field__label{
