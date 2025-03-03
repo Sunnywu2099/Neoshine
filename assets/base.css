@@ -2685,6 +2685,9 @@ menu-drawer + .header__search {
   .header__icons{
     padding-right: 8rem;
   }
+  .track-order-wrapper{
+    display: none;
+  }
 }
 
 details[open] > .search-modal {
