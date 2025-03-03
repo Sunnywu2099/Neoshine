@@ -232,7 +232,7 @@
   font-size: 16px;
   line-height: 26px;
   color: #f5f5f5;
-  font-weight: 500;
+  font-weight: 400;
   text-decoration: underline;
 }
 
@@ -240,7 +240,7 @@
   .footer-block__heading {
     color: #f5f5f5;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 26px;
   }
 }
