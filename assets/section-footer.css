@@ -76,6 +76,14 @@
   display: block;
   margin-bottom: 90px;
 }
+.custom-text{
+  margin-bottom: 28px;
+  color: #F5F5F5;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; 
+}
 .custom-input-box{
   display: flex;
   gap: 7px;
