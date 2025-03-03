@@ -82,18 +82,6 @@
             "heading": "<strong>SPECIAL OFFERS</strong>",
             "menu": "special-offers"
           }
-        },
-        "brand_information_RLV4JM": {
-          "type": "brand_information",
-          "settings": {
-            "show_social": false,
-            "place_img": "shopify://shop_images/Pin_Icon_4e30878c-b855-44e9-8e0e-ff829f563c37.svg",
-            "place_txt": "RM C13 4/F, KAISER ESTATE PHASE I 41 MAN YUE STREET HUNG HOM Hong Kong",
-            "relation_img": "shopify://shop_images/Phone_Icon_8682a635-2e64-40d1-8970-3dd32d1dbe21.svg",
-            "relation_txt": "+852 8402 3651",
-            "mailbox_img": "shopify://shop_images/Email_Icon_54ff0c75-8949-4560-bd75-b9e99bcbe8e6.svg",
-            "mailbox_txt": "Hello@Neoshine.com"
-          }
         }
       },
       "block_order": [
@@ -101,8 +89,7 @@
         "link_list_T34QUW",
         "link_list_Ly7AyG",
         "link_list_paXjBt",
-        "link_list_aP48mA",
-        "brand_information_RLV4JM"
+        "link_list_aP48mA"
       ],
       "custom_css": [],
       "settings": {
