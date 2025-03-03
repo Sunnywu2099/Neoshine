@@ -26,10 +26,13 @@
 
 <div id="product-countdown" data-end="{{ end }}">
   <div class="countdown-wrapper">
-    <div id="countdown"></div>
+    <div id="countdown">
+      <div><span class="time">01</span><span class="name">HRS</span></div> : 
+<div><span class="time">02</span><span class="name">MIN</span></div> : <div><span class="time">03</span><span class="name">SEC</span></div>
+    </div>
   </div>
 </div>
-
+{% comment %}
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const end = document.getElementById("product-countdown").getAttribute("data-end");
@@ -64,3 +67,4 @@
     const intervalId = setInterval(updateCountdown, 1000);
   });
 </script>
+{% endcomment %}
