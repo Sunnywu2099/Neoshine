@@ -17,7 +17,7 @@
         "announcement_6jBHwE": {
           "type": "announcement",
           "settings": {
-            "text": "Limited Time Offer! | 1 Carat Lab Grown Diamond Ring for $999 | Learn More",
+            "text": "Limited Time Offer! | 1 Carat Lab Grown Diamond Ring for $999",
             "link": "shopify://products/1ct-lab-created-diamond-engagement-ring"
           }
         }
@@ -26,6 +26,7 @@
         "announcement_6jBHwE"
       ],
       "settings": {
+        "end": "2021-11-30 00:00:00",
         "color_scheme": "scheme-c982c334-bf1a-40f0-9476-edb97c52c8ee",
         "show_line_separator": false,
         "show_social": false,
