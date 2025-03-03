@@ -26,7 +26,7 @@
     padding: 0 13px;
     color: #fff;
   }
-  .footer .custom-input:focus{
+  .footer .custom-input:focus-visible{
     outline: none;
     box-shadow: 0;
   }
