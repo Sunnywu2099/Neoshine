@@ -107,6 +107,8 @@
 }
 .pay-wrapper .footer-block__details-content{
   margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
 }
 .pay-wrapper .list-menu__item--link{
   padding-left: 18px;
