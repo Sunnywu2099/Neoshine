@@ -22,6 +22,16 @@
   .product-perfection .logo-wrapper p{
     font-size: 14px;
   }
+  .product-perfection-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 50px;
+  }
+  .product-perfection-grid .product-perfection-item{
+    display: flex;
+    gap: 10px;
+  }
   @media screen and (max-width: 1200px) {
     #shopify-section-{{section.id}}.product-perfection{
       padding: 60px 0 60px;
