@@ -178,14 +178,14 @@
         "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "contain",
-        "gallery_layout": "thumbnail",
+        "gallery_layout": "thumbnail_slider",
         "media_position": "left",
         "image_zoom": "lightbox",
         "mobile_thumbnails": "hide",
         "hide_variants": false,
         "enable_video_looping": false,
         "padding_top": 36,
-        "padding_bottom": 12
+        "padding_bottom": 100
       }
     },
     "1735551360a540ddb7": {
@@ -199,13 +199,141 @@
       "block_order": [
         "judge_me_reviews_review_widget_9EGGzR"
       ],
+      "disabled": true,
       "settings": {
         "include_margins": true
+      }
+    },
+    "product_returns_zEfxJK": {
+      "type": "product-returns",
+      "settings": {
+        "title": "30-Day Free Returns",
+        "content": "At Neoshine, we offer a 30-day free return policy for eligible U.S. orders, with free returns through UPS, ensuring that your purchase is perfect. If for any reason you are not completely satisfied with your order, return it within 30 days of shipment. Returns are accepted for defective products only.",
+        "bg": "shopify://shop_images/Group_1000002354.png",
+        "bg_m": "shopify://shop_images/Group_1000002354.png"
+      }
+    },
+    "product_trusted_DwUEYM": {
+      "type": "product-trusted",
+      "blocks": {
+        "item_TKDVVg": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/1_1.png",
+            "title": "Certified IGI Quality",
+            "content": "Superior diamonds with authentic certification."
+          }
+        },
+        "item_YfcfCT": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/1_2.png",
+            "title": "Lifetime Sparkle Guarantee",
+            "content": "We promise brilliance for a lifetime with our warranty."
+          }
+        },
+        "item_TpQAdB": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/1.png",
+            "title": "Shop with Confidence",
+            "content": "Enjoy 30-Day Free Returns for peace of mind."
+          }
+        },
+        "item_dxPgpN": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/1_3.png",
+            "title": "Loved by Over 8,200 Customers",
+            "content": "Join the Neoshine family of happy customers."
+          }
+        },
+        "item_kNCcJm": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/1_4.png",
+            "title": "Craftsmanship That Shines",
+            "content": "Over 1,000 hours of expert craftsmanship in every diamond."
+          }
+        },
+        "item_aBHJVT": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/1_5.png",
+            "title": "Instant Support Anytime",
+            "content": "Whether through live chat or email, we’re always here to assist you."
+          }
+        }
+      },
+      "block_order": [
+        "item_TKDVVg",
+        "item_YfcfCT",
+        "item_TpQAdB",
+        "item_dxPgpN",
+        "item_kNCcJm",
+        "item_aBHJVT"
+      ],
+      "settings": {
+        "title": "Your Trusted Online Jeweler for Lab-Grown Diamonds",
+        "bg": "shopify://shop_images/Vector.png"
+      }
+    },
+    "product_perfection_gKPBbR": {
+      "type": "product-perfection",
+      "blocks": {
+        "item_3G3WqX": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Logo_a2e240df-e045-4adc-892b-8599384d9695.png",
+            "title": "Unmatched Brilliance",
+            "content": "Only of diamonds achieve H&A, offering unmatched light reflection."
+          }
+        },
+        "item_Vgekj9": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Logo_1.png",
+            "title": "Flawless Symmetry",
+            "content": "Precision cut with <br>\n8 perfect hearts and arrows."
+          }
+        },
+        "item_qdBb8f": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Logo_2.png",
+            "title": "Exclusive Craftsmanship",
+            "content": "150 hours of meticulous craftsmanship."
+          }
+        },
+        "item_A4mijW": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Logo_3.png",
+            "title": "Rare and Valuable",
+            "content": "Only 3 diamonds per 1000 carats meet the H&A standard."
+          }
+        }
+      },
+      "block_order": [
+        "item_3G3WqX",
+        "item_Vgekj9",
+        "item_qdBb8f",
+        "item_A4mijW"
+      ],
+      "settings": {
+        "title": "Hearts and Arrows: The Pinnacle of Diamond Perfection",
+        "icon": "shopify://shop_images/Group.png",
+        "text": "AUTHENTICITY<br>\nHEARTS AND ARROWS<br>\nDIAMOND",
+        "img_pc": "shopify://shop_images/copy.png",
+        "img_m": "shopify://shop_images/copy.png"
       }
     }
   },
   "order": [
     "main",
-    "1735551360a540ddb7"
+    "1735551360a540ddb7",
+    "product_returns_zEfxJK",
+    "product_trusted_DwUEYM",
+    "product_perfection_gKPBbR"
   ]
 }
