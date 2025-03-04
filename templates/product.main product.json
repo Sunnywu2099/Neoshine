@@ -212,11 +212,76 @@
         "bg": "shopify://shop_images/Group_1000002354.png",
         "bg_m": "shopify://shop_images/Group_1000002354.png"
       }
+    },
+    "product_trusted_DwUEYM": {
+      "type": "product-trusted",
+      "blocks": {
+        "item_TKDVVg": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/1_1.png",
+            "title": "Certified IGI Quality",
+            "content": "Superior diamonds with authentic certification."
+          }
+        },
+        "item_YfcfCT": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/1_2.png",
+            "title": "Lifetime Sparkle Guarantee",
+            "content": "We promise brilliance for a lifetime with our warranty."
+          }
+        },
+        "item_TpQAdB": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/1.png",
+            "title": "Shop with Confidence",
+            "content": "Enjoy 30-Day Free Returns for peace of mind."
+          }
+        },
+        "item_dxPgpN": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/1_3.png",
+            "title": "Loved by Over 8,200 Customers",
+            "content": "Join the Neoshine family of happy customers."
+          }
+        },
+        "item_kNCcJm": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/1_4.png",
+            "title": "Craftsmanship That Shines",
+            "content": "Over 1,000 hours of expert craftsmanship in every diamond."
+          }
+        },
+        "item_aBHJVT": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/1_5.png",
+            "title": "Instant Support Anytime",
+            "content": "Whether through live chat or email, we’re always here to assist you."
+          }
+        }
+      },
+      "block_order": [
+        "item_TKDVVg",
+        "item_YfcfCT",
+        "item_TpQAdB",
+        "item_dxPgpN",
+        "item_kNCcJm",
+        "item_aBHJVT"
+      ],
+      "settings": {
+        "title": "Your Trusted Online Jeweler for Lab-Grown Diamonds"
+      }
     }
   },
   "order": [
     "main",
     "1735551360a540ddb7",
-    "product_returns_zEfxJK"
+    "product_returns_zEfxJK",
+    "product_trusted_DwUEYM"
   ]
 }
