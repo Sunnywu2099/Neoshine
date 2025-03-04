@@ -19,9 +19,39 @@
 {% assign full_width = '100vw' %}
 {% assign sizes = full_width %}
 {% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
-<div class="product-perfection-wrapper">
-  <h2 class="section-title">{{section.settings.title}}</h2>
-  <div class="product-perfection-grid">
+<div class="product-perfection-wrapper page-width">
+  <div class="top-wrapper">
+    <div class="title-wrapper">
+      <h2 class="title">{{section.settings.title}}</h2>
+      <div class="logo-wrapper">
+        <div class="logo">
+          {{
+            section.settings.icon
+              | image_url: width: 3840
+              | image_tag:
+                width: section.settings.icon.width,
+                height: section.settings.icon.height,
+                class: '',
+                sizes: sizes,
+                widths: widths,
+                loading: 'lazy'
+          }}
+        </div>
+        <p>{{section.settings.text}}</p>
+      </div>
+    </div>
+    <div class="image-wrapper">
+      {% render 'responsive-image',
+        sid: section.id,
+        image_desktop: section.settings.img_pc,
+        image_mobile: section.settings.img_pc,
+        alt: section.settings.title,
+        lazy: true,
+        preload: false
+      %}
+    </div>
+  </div>
+  {% comment %} <div class="product-perfection-grid">
     {% for block in section.blocks %}
       <div class="product-perfection-item">
         {{
@@ -42,7 +72,7 @@
       </div>
     {% endfor %}
 
-  </div>
+  </div> {% endcomment %}
 </div>
 
 {% schema %}
