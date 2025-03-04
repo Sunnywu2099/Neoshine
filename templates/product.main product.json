@@ -202,32 +202,10 @@
       "settings": {
         "include_margins": true
       }
-    },
-    "related-products": {
-      "type": "related-products",
-      "custom_css": [
-        "h2 {font-family: \"Lato\", sans-serif; font-size: 30px;}"
-      ],
-      "settings": {
-        "heading": "You May Also be Interested In",
-        "heading_size": "h2",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 28
-      }
     }
   },
   "order": [
     "main",
-    "1735551360a540ddb7",
-    "related-products"
+    "1735551360a540ddb7"
   ]
 }
