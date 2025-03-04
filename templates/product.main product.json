@@ -284,29 +284,33 @@
         "item_3G3WqX": {
           "type": "item",
           "settings": {
-            "title": "",
-            "content": ""
+            "icon": "shopify://shop_images/Logo_a2e240df-e045-4adc-892b-8599384d9695.png",
+            "title": "Unmatched Brilliance",
+            "content": "Only of diamonds achieve H&A, offering unmatched light reflection."
           }
         },
         "item_Vgekj9": {
           "type": "item",
           "settings": {
-            "title": "",
-            "content": ""
+            "icon": "shopify://shop_images/Logo_1.png",
+            "title": "Flawless Symmetry",
+            "content": "Precision cut with <br>\n8 perfect hearts and arrows."
           }
         },
         "item_qdBb8f": {
           "type": "item",
           "settings": {
-            "title": "",
-            "content": ""
+            "icon": "shopify://shop_images/Logo_2.png",
+            "title": "Exclusive Craftsmanship",
+            "content": "150 hours of meticulous craftsmanship."
           }
         },
         "item_A4mijW": {
           "type": "item",
           "settings": {
-            "title": "",
-            "content": ""
+            "icon": "shopify://shop_images/Logo_3.png",
+            "title": "Rare and Valuable",
+            "content": "Only 3 diamonds per 1000 carats meet the H&A standard."
           }
         }
       },
