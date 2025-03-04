@@ -1,0 +1,111 @@
+<style>
+  #shopify-section-{{section.id}}.product-perfection{
+    padding: 100px 0 0;
+  }
+  #shopify-section-{{section.id}} .product-perfection-wrapper{
+
+  }
+
+  @media screen and (max-width: 1200px) {
+
+  }
+  @media screen and (max-width: 749px) {
+
+
+  }
+</style>
+
+{% assign full_width = '100vw' %}
+{% assign sizes = full_width %}
+{% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
+<div class="product-perfection-wrapper">
+  <h2 class="section-title">{{section.settings.title}}</h2>
+  <div class="product-perfection-grid">
+    {% for block in section.blocks %}
+      <div class="product-perfection-item">
+        {{
+              block.settings.icon
+              | image_url: width: 3840
+              | image_tag:
+                width: block.settings.icon.width,
+                height: block.settings.icon.height,
+                class: '',
+                sizes: sizes,
+                widths: widths,
+                loading: 'lazy'
+        }}
+        <div class="content-box">
+          <h3 class="item-title">{{block.settings.title}}</h3>
+          <p class="item-text">{{block.settings.content}}</p>
+        </div>
+      </div>
+    {% endfor %}
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Diamond Perfection",
+  "tag": "section",
+  "class": "product-perfection",
+  "limit": 1,
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "title",
+      "default": "Hearts and Arrows: The Pinnacle of Diamond Perfection"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "image(logo)"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "text"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_pc",
+      "label": "image pc(main)"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_m",
+      "label": "image mobile(main)"
+    }
+  ],
+  "blocks": [
+      {
+        "type": "item",
+        "name": "Item",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "icon"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "title"
+          },
+          {
+            "type": "textarea",
+            "id": "content",
+            "label": "content"
+          }
+        ]
+      }
+  ],
+  "presets": [
+    {
+      "name": "Diamond Perfection"
+    }
+  ]
+}
+{% endschema %}
