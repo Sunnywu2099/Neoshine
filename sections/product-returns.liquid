@@ -1,6 +1,14 @@
 <style>
   #shopify-section-{{section.id}} .product-returns{
-
+    background-image: url({{section.settings.bg | img_url:'master'}});
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 40px 20px;
+  }
+  #shopify-section-{{section.id}} .product-returns-wrapper{
+    max-width: 1180px;
+    margin: 0 auto;
   }
   @media screen and (max-width: 1200px) {
 
