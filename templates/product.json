@@ -149,163 +149,6 @@
         "padding_bottom": 36
       }
     },
-    "iconbar_H9GefL": {
-      "type": "iconbar",
-      "blocks": {
-        "icon_tL4NPW": {
-          "type": "icon",
-          "settings": {
-            "image": "shopify://shop_images/SVG.svg",
-            "text": "Round",
-            "link": "shopify://collections/round-engagement-rings-timeless-beauty-for-your-proposal"
-          }
-        },
-        "icon_hEKJ7W": {
-          "type": "icon",
-          "settings": {
-            "image": "shopify://shop_images/SVG_1.svg",
-            "text": "Oval",
-            "link": "shopify://collections/oval-engagement-rings-elegant-designs-for-proposals"
-          }
-        },
-        "icon_fNwirG": {
-          "type": "icon",
-          "settings": {
-            "image": "shopify://shop_images/SVG_2.svg",
-            "text": "Radiant",
-            "link": "shopify://collections/radiant-engagement-rings-brilliant-sparkle-for-proposals"
-          }
-        },
-        "icon_Piy69h": {
-          "type": "icon",
-          "settings": {
-            "image": "shopify://shop_images/SVG_9.svg",
-            "text": "Pear",
-            "link": "shopify://collections/pear-shaped-engagement-rings-elegant-unique-for-proposals"
-          }
-        },
-        "icon_HJbEXp": {
-          "type": "icon",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/SVG_3.svg",
-            "text": "Cushion",
-            "link": "shopify://collections/cushion-engagement-rings-vintage-charm-for-proposals"
-          }
-        },
-        "icon_4pKxB8": {
-          "type": "icon",
-          "settings": {
-            "image": "shopify://shop_images/SVG_4.svg",
-            "text": "Princess",
-            "link": "shopify://collections/princess-cut-engagement-rings-modern-sparkle-for-your-proposal"
-          }
-        },
-        "icon_JzNdJz": {
-          "type": "icon",
-          "settings": {
-            "image": "shopify://shop_images/SVG_5.svg",
-            "text": "Emerald",
-            "link": "shopify://collections/emerald-cut-engagement-rings-timeless-elegance-for-proposals"
-          }
-        },
-        "icon_NU4QHV": {
-          "type": "icon",
-          "settings": {
-            "image": "shopify://shop_images/SVG_6.svg",
-            "text": "Marquise",
-            "link": "shopify://collections/marquise-engagement-rings-unique-diamonds-for-proposals"
-          }
-        },
-        "icon_6iNEbT": {
-          "type": "icon",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/SVG_7.svg",
-            "text": "Heart",
-            "link": "shopify://collections/heart-engagement-rings-romantic-diamonds-for-proposals"
-          }
-        }
-      },
-      "block_order": [
-        "icon_tL4NPW",
-        "icon_hEKJ7W",
-        "icon_fNwirG",
-        "icon_Piy69h",
-        "icon_HJbEXp",
-        "icon_4pKxB8",
-        "icon_JzNdJz",
-        "icon_NU4QHV",
-        "icon_6iNEbT"
-      ],
-      "settings": {
-        "heading": "Shop Other Shape",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "image_with_text_jgNBrf": {
-      "type": "image-with-text",
-      "blocks": {
-        "text_9pxbNr": {
-          "type": "text",
-          "settings": {
-            "text": "<h2><strong>Every Neoshine Diamond is Certified by IGI</strong></h2><p>Experience the assurance of excellence with every diamond we provide, each meticulously tested and certified by the prestigious IGI, ensuring the finest quality reaches your hands.</p>",
-            "text_style": "body"
-          }
-        },
-        "button_KGr6cV": {
-          "type": "button",
-          "settings": {
-            "button_label": "Learn More",
-            "button_link": "https://neoshine.com/pages/igi-information",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "text_9pxbNr",
-        "button_KGr6cV"
-      ],
-      "custom_css": [
-        "h2 {color: #2a2a2a;}"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/neoshine-landingpage-_finally8.jpg",
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "section_color_scheme": "",
-        "color_scheme": "scheme-573e710e-1577-42b2-8f6e-3c4a032567f6",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "padding_top": 60,
-        "padding_bottom": 60,
-        "padding_top_mob": 0,
-        "padding_bottom_mob": 0
-      }
-    },
-    "image_module_1_wPrDpR": {
-      "type": "image-module-1",
-      "settings": {
-        "image": "shopify://shop_images/neoshine-landingpage-_finally9_82ce02bb-94b3-4bcf-baad-4841b1a42751.jpg",
-        "mobile_image": "shopify://shop_images/neoshine-landingpage-_finally9_82ce02bb-94b3-4bcf-baad-4841b1a42751.jpg",
-        "tap": "",
-        "title": "",
-        "datalist": "",
-        "location": "left",
-        "btn_txt_1": "",
-        "url_1": "",
-        "btn_txt_2": "",
-        "url_2": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "related-products": {
       "type": "related-products",
       "custom_css": [
@@ -326,22 +169,12 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
-    },
-    "1729588730b6fc7607": {
-      "type": "apps",
-      "settings": {
-        "include_margins": true
-      }
     }
   },
   "order": [
     "main",
     "1735626212295392e1",
     "line_gp9rHP",
-    "iconbar_H9GefL",
-    "image_with_text_jgNBrf",
-    "image_module_1_wPrDpR",
-    "related-products",
-    "1729588730b6fc7607"
+    "related-products"
   ]
 }
