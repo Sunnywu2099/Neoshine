@@ -17,7 +17,10 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     row-gap: 40px;
+  }
+  .trusted-grid .trusted-item{
     gap: 18px;
+    display: flex;
   }
   .trusted-grid .trusted-item img{
     max-width: 80px;
@@ -49,8 +52,10 @@
                 widths: widths,
                 loading: 'lazy'
         }}
-        <h3>{{block.settings.title}}</h3>
-        <p>{{block.settings.content}}</p>
+        <div class="content-box">
+          <h3 class="item-title">{{block.settings.title}}</h3>
+          <p class="item-text">{{block.settings.content}}</p>
+        </div>
       </div>
     {% endfor %}
 
