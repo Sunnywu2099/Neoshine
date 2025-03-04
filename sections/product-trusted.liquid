@@ -1,0 +1,92 @@
+<style>
+  #shopify-section-{{section.id}}.product-trusted{
+
+  }
+  #shopify-section-{{section.id}} .product-trusted-wrapper{
+
+  }
+  @media screen and (max-width: 1200px) {
+
+  }
+  @media screen and (max-width: 749px) {
+
+  }
+</style>
+
+{% assign full_width = '100vw' %}
+{% assign sizes = full_width %}
+{% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
+<div class="product-trusted-wrapper">
+  <h2 class="section-title">{{section.settings.title}}</h2>
+  <div class="trusted-grid">
+    {% for block in section.blocks %}
+      <div class="trusted-item">
+        {{
+              block.settings.icon
+              | image_url: width: 3840
+              | image_tag:
+                width: block.settings.icon.width,
+                height: block.settings.icon.height,
+                class: '',
+                sizes: sizes,
+                widths: widths,
+                loading: 'lazy'
+        }}
+        <h3>{{block.settings.title}}</h3>
+        <p>{{block.settings.content}}</p>
+      </div>
+    {% endfor %}
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Trusted Online Jeweler",
+  "tag": "section",
+  "class": "product-trusted",
+  "limit": 1,
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "title",
+      "default": "Your Trusted Online Jeweler for Lab-Grown Diamonds"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg",
+      "label": "image pc"
+    }
+  ],
+  "blocks": [
+      {
+        "type": "item",
+        "name": "Item",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "icon"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "title"
+          },
+          {
+            "type": "textarea",
+            "id": "content",
+            "label": "content"
+          }
+        ]
+      }
+  ],
+  "presets": [
+    {
+      "name": "Trusted Online Jeweler"
+    }
+  ]
+}
+{% endschema %}
