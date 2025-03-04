@@ -188,57 +188,6 @@
         "padding_bottom": 12
       }
     },
-    "line_BCPngT": {
-      "type": "line",
-      "settings": {
-        "color_scheme": "scheme-5e2cef8e-310e-410f-81e4-feb4c9906b1e",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "rich_text_QVfrbC": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_L3CQhg": {
-          "type": "heading",
-          "settings": {
-            "heading": "Exceptional Packaging, Unforgettable Experience",
-            "heading_size": "h1"
-          }
-        }
-      },
-      "block_order": [
-        "heading_L3CQhg"
-      ],
-      "custom_css": [
-        ".h1 {font-size: 30px;}"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 12,
-        "padding_bottom": 32
-      }
-    },
-    "image_module_1_8LyLE4": {
-      "type": "image-module-1",
-      "settings": {
-        "image": "shopify://shop_images/neoshine-landingpage-_finally9_82ce02bb-94b3-4bcf-baad-4841b1a42751.jpg",
-        "mobile_image": "shopify://shop_images/neoshine-landingpage-_finally9_82ce02bb-94b3-4bcf-baad-4841b1a42751.jpg",
-        "tap": "",
-        "title": "",
-        "datalist": "",
-        "location": "left",
-        "btn_txt_1": "",
-        "url_1": "",
-        "btn_txt_2": "",
-        "url_2": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "1735551360a540ddb7": {
       "type": "apps",
       "blocks": {
@@ -274,21 +223,11 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
-    },
-    "1729588730b6fc7607": {
-      "type": "apps",
-      "settings": {
-        "include_margins": true
-      }
     }
   },
   "order": [
     "main",
-    "line_BCPngT",
-    "rich_text_QVfrbC",
-    "image_module_1_8LyLE4",
     "1735551360a540ddb7",
-    "related-products",
-    "1729588730b6fc7607"
+    "related-products"
   ]
 }
