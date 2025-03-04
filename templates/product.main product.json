@@ -274,7 +274,8 @@
         "item_aBHJVT"
       ],
       "settings": {
-        "title": "Your Trusted Online Jeweler for Lab-Grown Diamonds"
+        "title": "Your Trusted Online Jeweler for Lab-Grown Diamonds",
+        "bg": "shopify://shop_images/Vector.png"
       }
     }
   },
