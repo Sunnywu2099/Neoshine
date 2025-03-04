@@ -1,0 +1,54 @@
+<style>
+  #shopify-section-{{section.id}} .product-returns{
+
+  }
+  @media screen and (max-width: 1200px) {
+
+  }
+  @media screen and (max-width: 749px) {
+
+  }
+</style>
+
+
+<div class="shapes section-pt">
+
+</div>
+
+{% schema %}
+{
+  "name": "30-Day Free",
+  "tag": "section",
+  "class": "product-returns",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "title",
+      "default": "30-Day Free Returns"
+    },
+    {
+      "type": "textarea",
+      "id": "content",
+      "label": "content",
+      "default": "At Neoshine, we offer a 30-day free return policy for eligible U.S. orders, with free returns through UPS, ensuring that your purchase is perfect. If for any reason you are not completely satisfied with your order, return it within 30 days of shipment. Returns are accepted for defective products only."
+    },
+    {
+      "type": "image_picker",
+      "id": "bg",
+      "label": "image pc"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_m",
+      "label": "image mobile"
+    }
+  ],
+  "presets": [
+    {
+      "name": "30-Day Free"
+    }
+  ]
+}
+{% endschema %}
