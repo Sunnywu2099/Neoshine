@@ -17,14 +17,14 @@
           "settings": {}
         },
         "judge_me_reviews_preview_badge_gEq9hC": {
-          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {}
         },
         "custom_liquid_zjmHEg": {
           "type": "custom_liquid",
           "disabled": true,
           "settings": {
-            "custom_liquid": "<section class=\"upgrade-landing\">\n  <div class=\"container\">\n    <div class=\"image-wrapper\">\n      <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0897\/6921\/4241\/files\/upgrade-landding_page_second.svg?v=1735614575\" alt=\"Upgrade Landing Page\" \/>\n    <\/div>\n  <\/div>\n<\/section>"
+            "custom_liquid": "<section class=\"upgrade-landing\">\n  <div class=\"container\">\n    <div class=\"image-wrapper\">\n      <img src=\"https://cdn.shopify.com/s/files/1/0897/6921/4241/files/upgrade-landding_page_second.svg?v=1735614575\" alt=\"Upgrade Landing Page\" />\n    </div>\n  </div>\n</section>"
           }
         },
         "icon_with_text_UXVahk": {
@@ -32,13 +32,13 @@
           "settings": {
             "layout": "vertical",
             "icon_1": "check_mark",
-            "image_1": "shopify:\/\/shop_images\/landding_page_second_product_promise-54.svg",
+            "image_1": "shopify://shop_images/landding_page_second_product_promise-54.svg",
             "heading_1": "Each Stone Guaranteed 1.0CT+",
             "icon_2": "check_mark",
-            "image_2": "shopify:\/\/shop_images\/landding_page_second_product_promise-55.svg",
+            "image_2": "shopify://shop_images/landding_page_second_product_promise-55.svg",
             "heading_2": "IGI Certification & Heart and Arrow Guarantee",
             "icon_3": "check_mark",
-            "image_3": "shopify:\/\/shop_images\/landding_page_second_product_promise-56.svg",
+            "image_3": "shopify://shop_images/landding_page_second_product_promise-56.svg",
             "heading_3": "Grade VS1 or Above"
           }
         },
@@ -49,7 +49,7 @@
         "custom_liquid_kKWzTU": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div class=\"valentines-promo\" style=\"text-align: center; padding: 10px 20px; background-color: #ffe6e6; border-radius: 8px;\">\n  <h2 style=\"color: #ff3366; font-size: 1.4em; margin: 0 0 10px;\">♥ Valentine’s Day 10% Off!<\/h2>\n  <p style=\"color: #333; font-size: 0.9em; margin: 0 0 10px;\">Use code <strong>NEOLOVE10<\/strong> to enjoy 10% off your favorite items.<\/p>\n  <button \n    class=\"copy-code-btn\" \n    style=\"padding: 8px 16px; background-color: #ff3366; color: #fff; border: none; border-radius: 4px; font-size: 0.9em; cursor: pointer;\" \n    onclick=\"copyDiscountCode()\"\n  >\n    Copy Code\n  <\/button>\n<\/div>\n\n<script>\n  function copyDiscountCode() {\n    \/\/ Create a temporary input element to hold the code\n    const discountCode = \"NEOLOVE10\";\n    const tempInput = document.createElement('input');\n    document.body.appendChild(tempInput);\n    tempInput.value = discountCode;\n    tempInput.select();\n    tempInput.setSelectionRange(0, 99999); \/\/ For mobile compatibility\n    document.execCommand('copy');\n    document.body.removeChild(tempInput);\n\n    \/\/ Notify the user\n    alert(\"Discount code copied: \" + discountCode);\n  }\n<\/script>"
+            "custom_liquid": "<div class=\"valentines-promo\" style=\"text-align: center; padding: 10px 20px; background-color: #ffe6e6; border-radius: 8px;\">\n  <h2 style=\"color: #ff3366; font-size: 1.4em; margin: 0 0 10px;\">♥ Valentine’s Day 10% Off!</h2>\n  <p style=\"color: #333; font-size: 0.9em; margin: 0 0 10px;\">Use code <strong>NEOLOVE10</strong> to enjoy 10% off your favorite items.</p>\n  <button \n    class=\"copy-code-btn\" \n    style=\"padding: 8px 16px; background-color: #ff3366; color: #fff; border: none; border-radius: 4px; font-size: 0.9em; cursor: pointer;\" \n    onclick=\"copyDiscountCode()\"\n  >\n    Copy Code\n  </button>\n</div>\n\n<script>\n  function copyDiscountCode() {\n    // Create a temporary input element to hold the code\n    const discountCode = \"NEOLOVE10\";\n    const tempInput = document.createElement('input');\n    document.body.appendChild(tempInput);\n    tempInput.value = discountCode;\n    tempInput.select();\n    tempInput.setSelectionRange(0, 99999); // For mobile compatibility\n    document.execCommand('copy');\n    document.body.removeChild(tempInput);\n\n    // Notify the user\n    alert(\"Discount code copied: \" + discountCode);\n  }\n</script>"
           }
         },
         "icon_with_text_aXXAxj": {
@@ -59,7 +59,7 @@
             "icon_1": "plane",
             "heading_1": "Free Nationwide Shipping",
             "icon_2": "lightning_bolt",
-            "heading_2": "Ready to Ship - Sizes 4\/5\/6\/7\/8 Available!",
+            "heading_2": "Ready to Ship - Sizes 4/5/6/7/8 Available!",
             "icon_3": "heart",
             "heading_3": "Lifetime Warranty & Value Guarantee"
           }
@@ -68,7 +68,7 @@
           "type": "custom_liquid",
           "disabled": true,
           "settings": {
-            "custom_liquid": "<section class=\"free-gift-promo\" style=\"margin: 10px auto; max-width: 800px; border: 1px solid #83A78D; border-radius: 5px; padding: 10px; background-color: #fff;\">\n  <style>\n    .free-gift-promo {\n      display: flex;\n      align-items: center;\n      justify-content: flex-start;\n      gap: 10px;\n    }\n\n    .free-gift-promo .promo-image img {\n      width: 100px; \n      height: auto;\n      border-radius: 4px;\n      border: 1px solid #ddd; \n    }\n\n    .free-gift-promo .promo-content {\n      flex: 1;\n      display: flex;\n      flex-direction: column;\n      justify-content: center;\n    }\n\n    .free-gift-promo .promo-content h2 {\n      font-size: 16px;\n      font-weight: 700;\n      color: #83a78d;\n      margin: 0 0 5px;\n    }\n\n    .free-gift-promo .promo-content p {\n      font-size: 12px;\n      color: #333;\n      line-height: 1.5;\n      margin: 0;\n    }\n\n    .free-gift-promo .promo-content .btn-link {\n      font-size: 10px;\n      color: #a9a9a9;\n      text-decoration: none;\n      font-weight: normal;\n      margin-top: 5px;\n    }\n\n    .free-gift-promo .promo-content .btn-link:hover {\n      color: #555;\n    }\n  <\/style>\n\n  <div class=\"promo-image\">\n    <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0897\/6921\/4241\/files\/1211-earring-3-right-silver.jpg?v=1733907688\" alt=\"Bezel Diamond Earrings\" \/>\n  <\/div>\n  <div class=\"promo-content\">\n    <h2>FREE GIFT<\/h2>\n    <p><strong>Free Pair of Bezel Diamond Earrings - 0.3CT Lab-Grown Diamonds with a Purchase of $999 or More.<\/strong><\/p>\n    <a href=\"https:\/\/neoshine.com\/pages\/free-pair-of-bezel-diamond-earrings-terms\" class=\"btn-link\">See Terms<\/a>\n  <\/div>\n<\/section>"
+            "custom_liquid": "<section class=\"free-gift-promo\" style=\"margin: 10px auto; max-width: 800px; border: 1px solid #83A78D; border-radius: 5px; padding: 10px; background-color: #fff;\">\n  <style>\n    .free-gift-promo {\n      display: flex;\n      align-items: center;\n      justify-content: flex-start;\n      gap: 10px;\n    }\n\n    .free-gift-promo .promo-image img {\n      width: 100px; \n      height: auto;\n      border-radius: 4px;\n      border: 1px solid #ddd; \n    }\n\n    .free-gift-promo .promo-content {\n      flex: 1;\n      display: flex;\n      flex-direction: column;\n      justify-content: center;\n    }\n\n    .free-gift-promo .promo-content h2 {\n      font-size: 16px;\n      font-weight: 700;\n      color: #83a78d;\n      margin: 0 0 5px;\n    }\n\n    .free-gift-promo .promo-content p {\n      font-size: 12px;\n      color: #333;\n      line-height: 1.5;\n      margin: 0;\n    }\n\n    .free-gift-promo .promo-content .btn-link {\n      font-size: 10px;\n      color: #a9a9a9;\n      text-decoration: none;\n      font-weight: normal;\n      margin-top: 5px;\n    }\n\n    .free-gift-promo .promo-content .btn-link:hover {\n      color: #555;\n    }\n  </style>\n\n  <div class=\"promo-image\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0897/6921/4241/files/1211-earring-3-right-silver.jpg?v=1733907688\" alt=\"Bezel Diamond Earrings\" />\n  </div>\n  <div class=\"promo-content\">\n    <h2>FREE GIFT</h2>\n    <p><strong>Free Pair of Bezel Diamond Earrings - 0.3CT Lab-Grown Diamonds with a Purchase of $999 or More.</strong></p>\n    <a href=\"https://neoshine.com/pages/free-pair-of-bezel-diamond-earrings-terms\" class=\"btn-link\">See Terms</a>\n  </div>\n</section>"
           }
         },
         "icon_with_text_Fq7BeK": {
@@ -76,10 +76,10 @@
           "settings": {
             "layout": "vertical",
             "icon_1": "none",
-            "image_1": "shopify:\/\/shop_images\/calendar-03.svg",
+            "image_1": "shopify://shop_images/calendar-03.svg",
             "heading_1": "",
             "icon_2": "lock",
-            "image_2": "shopify:\/\/shop_images\/security-check.svg",
+            "image_2": "shopify://shop_images/security-check.svg",
             "heading_2": "Our Price includes Metal & Stones",
             "icon_3": "none",
             "heading_3": ""
@@ -89,35 +89,35 @@
           "type": "shape",
           "disabled": true,
           "settings": {
-            "link-1": "shopify:\/\/policies\/privacy-policy",
-            "image-1": "shopify:\/\/shop_images\/SVG_9.svg",
+            "link-1": "shopify://policies/privacy-policy",
+            "image-1": "shopify://shop_images/SVG_9.svg",
             "text-1": "pear",
             "link-2": "",
-            "image-2": "shopify:\/\/shop_images\/SVG_4.svg",
+            "image-2": "shopify://shop_images/SVG_4.svg",
             "text-2": "princess",
             "link-3": "",
-            "image-3": "shopify:\/\/shop_images\/SVG_7.svg",
+            "image-3": "shopify://shop_images/SVG_7.svg",
             "text-3": "heart",
             "link-4": "",
-            "image-4": "shopify:\/\/shop_images\/SVG_5.svg",
+            "image-4": "shopify://shop_images/SVG_5.svg",
             "text-4": "emerald",
             "link-5": "",
-            "image-5": "shopify:\/\/shop_images\/SVG_6.svg",
+            "image-5": "shopify://shop_images/SVG_6.svg",
             "text-5": "marquise",
             "link-6": "",
-            "image-6": "shopify:\/\/shop_images\/SVG_1.svg",
+            "image-6": "shopify://shop_images/SVG_1.svg",
             "text-6": "oval",
             "link-7": "",
-            "image-7": "shopify:\/\/shop_images\/SVG_2.svg",
+            "image-7": "shopify://shop_images/SVG_2.svg",
             "text-7": "radiant",
             "link-8": "",
-            "image-8": "shopify:\/\/shop_images\/SVG.svg",
+            "image-8": "shopify://shop_images/SVG.svg",
             "text-8": "round",
             "link-9": "",
-            "image-9": "shopify:\/\/shop_images\/SVG_8.svg",
+            "image-9": "shopify://shop_images/SVG_8.svg",
             "text-9": "asscher",
             "link-10": "",
-            "image-10": "shopify:\/\/shop_images\/SVG_3.svg",
+            "image-10": "shopify://shop_images/SVG_3.svg",
             "text-10": "cushion"
           }
         },
@@ -131,13 +131,13 @@
         "custom_liquid_AUhJqQ": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<section class=\"landing-page-image\" style=\"text-align: center; padding: 0 0;\">\n  <div class=\"container\" style=\"max-width: 800px; margin: 0 auto;\">\n    <div class=\"image-wrapper\">\n      <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0897\/6921\/4241\/files\/product-4c.svg?v=1735633837\" \n           alt=\"Landing Page SVG\" \n           style=\"max-width: 100%; height: auto;\" \/>\n    <\/div>\n  <\/div>\n<\/section>"
+            "custom_liquid": "<section class=\"landing-page-image\" style=\"text-align: center; padding: 0 0;\">\n  <div class=\"container\" style=\"max-width: 800px; margin: 0 auto;\">\n    <div class=\"image-wrapper\">\n      <img src=\"https://cdn.shopify.com/s/files/1/0897/6921/4241/files/product-4c.svg?v=1735633837\" \n           alt=\"Landing Page SVG\" \n           style=\"max-width: 100%; height: auto;\" />\n    </div>\n  </div>\n</section>"
           }
         },
         "custom_liquid_zUjC6V": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div style=\"display: flex; align-items: flex-start; padding: 15px; background-color: #f9f9f9; border-radius: 5px; border: 1px solid #e6e6e6; font-size: 14px; color: #83a78d;\">\n  <div style=\"line-height: 1.6;\">\n    <div style=\"font-weight: bold;\">Available for Immediate Shipping<\/div>\n    <div>Sizes 4 to 8<\/div>\n    <div>Crafted with a ring setting in 14K gold or platinum<\/div>\n  <\/div>\n<\/div>"
+            "custom_liquid": "<div style=\"display: flex; align-items: flex-start; padding: 15px; background-color: #f9f9f9; border-radius: 5px; border: 1px solid #e6e6e6; font-size: 14px; color: #83a78d;\">\n  <div style=\"line-height: 1.6;\">\n    <div style=\"font-weight: bold;\">Available for Immediate Shipping</div>\n    <div>Sizes 4 to 8</div>\n    <div>Crafted with a ring setting in 14K gold or platinum</div>\n  </div>\n</div>"
           }
         },
         "buy_buttons": {
@@ -188,226 +188,11 @@
         "padding_bottom": 12
       }
     },
-    "line_gp9rHP": {
-      "type": "line",
-      "settings": {
-        "color_scheme": "scheme-5e2cef8e-310e-410f-81e4-feb4c9906b1e",
-        "padding_top": 12,
-        "padding_bottom": 12
-      }
-    },
-    "iconbar_H9GefL": {
-      "type": "iconbar",
-      "blocks": {
-        "icon_tL4NPW": {
-          "type": "icon",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/SVG.svg",
-            "text": "Round",
-            "link": "shopify:\/\/collections\/round-engagement-rings-timeless-beauty-for-your-proposal"
-          }
-        },
-        "icon_hEKJ7W": {
-          "type": "icon",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/SVG_1.svg",
-            "text": "Oval",
-            "link": "shopify:\/\/collections\/oval-engagement-rings-elegant-designs-for-proposals"
-          }
-        },
-        "icon_fNwirG": {
-          "type": "icon",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/SVG_2.svg",
-            "text": "Radiant",
-            "link": "shopify:\/\/collections\/radiant-engagement-rings-brilliant-sparkle-for-proposals"
-          }
-        },
-        "icon_Piy69h": {
-          "type": "icon",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/SVG_9.svg",
-            "text": "Pear",
-            "link": "shopify:\/\/collections\/pear-shaped-engagement-rings-elegant-unique-for-proposals"
-          }
-        },
-        "icon_HJbEXp": {
-          "type": "icon",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/SVG_3.svg",
-            "text": "Cushion",
-            "link": "shopify:\/\/collections\/cushion-engagement-rings-vintage-charm-for-proposals"
-          }
-        },
-        "icon_4pKxB8": {
-          "type": "icon",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/SVG_4.svg",
-            "text": "Princess",
-            "link": "shopify:\/\/collections\/princess-cut-engagement-rings-modern-sparkle-for-your-proposal"
-          }
-        },
-        "icon_JzNdJz": {
-          "type": "icon",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/SVG_5.svg",
-            "text": "Emerald",
-            "link": "shopify:\/\/collections\/emerald-cut-engagement-rings-timeless-elegance-for-proposals"
-          }
-        },
-        "icon_NU4QHV": {
-          "type": "icon",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/SVG_6.svg",
-            "text": "Marquise",
-            "link": "shopify:\/\/collections\/marquise-engagement-rings-unique-diamonds-for-proposals"
-          }
-        },
-        "icon_6iNEbT": {
-          "type": "icon",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/SVG_7.svg",
-            "text": "Heart",
-            "link": "shopify:\/\/collections\/heart-engagement-rings-romantic-diamonds-for-proposals"
-          }
-        }
-      },
-      "block_order": [
-        "icon_tL4NPW",
-        "icon_hEKJ7W",
-        "icon_fNwirG",
-        "icon_Piy69h",
-        "icon_HJbEXp",
-        "icon_4pKxB8",
-        "icon_JzNdJz",
-        "icon_NU4QHV",
-        "icon_6iNEbT"
-      ],
-      "settings": {
-        "heading": "Shop Other Shape",
-        "color_scheme": "",
-        "padding_top": 20,
-        "padding_bottom": 36
-      }
-    },
-    "pagefly_section_ym4yAm": {
-      "type": "pagefly-section",
-      "settings": {
-        "section_id": "pf-c2e068c5"
-      }
-    },
-    "multicolumn_wQxiAe": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_Fd8ikh": {
-          "type": "column",
-          "settings": {
-            "title": "Eco-Friendly Luxury",
-            "text": "<p>Made with minimal environmental impact, so you can feel good about your purchase.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_RhtiLK": {
-          "type": "column",
-          "settings": {
-            "title": "Conflict-Free Assurance",
-            "text": "<p>Unlike traditional mined diamonds, lab-grown diamonds are guaranteed to be conflict-free.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_jrPBTz": {
-          "type": "column",
-          "settings": {
-            "title": "Exceptional Quality",
-            "text": "<p>Offer the same sparkle and brilliance as natural diamonds, thanks to advanced technology.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_Fd8ikh",
-        "column_RhtiLK",
-        "column_jrPBTz"
-      ],
-      "settings": {
-        "title": "<strong>Why Choose a Lab Grown Diamond?<\/strong>",
-        "heading_size": "h1",
-        "title_align": "left",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "left",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "line_BCPngT": {
-      "type": "line",
-      "settings": {
-        "color_scheme": "scheme-5e2cef8e-310e-410f-81e4-feb4c9906b1e",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "rich_text_QVfrbC": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_L3CQhg": {
-          "type": "heading",
-          "settings": {
-            "heading": "Exceptional Packaging, Unforgettable Experience",
-            "heading_size": "h1"
-          }
-        }
-      },
-      "block_order": [
-        "heading_L3CQhg"
-      ],
-      "custom_css": [
-        ".h1 {font-size: 30px;}"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 12,
-        "padding_bottom": 32
-      }
-    },
-    "image_module_1_8LyLE4": {
-      "type": "image-module-1",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/neoshine-landingpage-_finally9_82ce02bb-94b3-4bcf-baad-4841b1a42751.jpg",
-        "mobile_image": "shopify:\/\/shop_images\/neoshine-landingpage-_finally9_82ce02bb-94b3-4bcf-baad-4841b1a42751.jpg",
-        "tap": "",
-        "title": "",
-        "datalist": "",
-        "location": "left",
-        "btn_txt_1": "",
-        "url_1": "",
-        "btn_txt_2": "",
-        "url_2": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "1735551360a540ddb7": {
       "type": "apps",
       "blocks": {
         "judge_me_reviews_review_widget_9EGGzR": {
-          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {}
         }
       },
@@ -438,25 +223,11 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
-    },
-    "1729588730b6fc7607": {
-      "type": "apps",
-      "settings": {
-        "include_margins": true
-      }
     }
   },
   "order": [
     "main",
-    "line_gp9rHP",
-    "iconbar_H9GefL",
-    "pagefly_section_ym4yAm",
-    "multicolumn_wQxiAe",
-    "line_BCPngT",
-    "rich_text_QVfrbC",
-    "image_module_1_8LyLE4",
     "1735551360a540ddb7",
-    "related-products",
-    "1729588730b6fc7607"
+    "related-products"
   ]
 }
