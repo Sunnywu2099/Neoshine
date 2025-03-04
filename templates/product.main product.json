@@ -277,12 +277,59 @@
         "title": "Your Trusted Online Jeweler for Lab-Grown Diamonds",
         "bg": "shopify://shop_images/Vector.png"
       }
+    },
+    "product_perfection_gKPBbR": {
+      "type": "product-perfection",
+      "blocks": {
+        "item_3G3WqX": {
+          "type": "item",
+          "settings": {
+            "title": "",
+            "content": ""
+          }
+        },
+        "item_Vgekj9": {
+          "type": "item",
+          "settings": {
+            "title": "",
+            "content": ""
+          }
+        },
+        "item_qdBb8f": {
+          "type": "item",
+          "settings": {
+            "title": "",
+            "content": ""
+          }
+        },
+        "item_A4mijW": {
+          "type": "item",
+          "settings": {
+            "title": "",
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_3G3WqX",
+        "item_Vgekj9",
+        "item_qdBb8f",
+        "item_A4mijW"
+      ],
+      "settings": {
+        "title": "Hearts and Arrows: The Pinnacle of Diamond Perfection",
+        "icon": "shopify://shop_images/Group.png",
+        "text": "AUTHENTICITY<br>\nHEARTS AND ARROWS<br>\nDIAMOND",
+        "img_pc": "shopify://shop_images/image_155.png",
+        "img_m": "shopify://shop_images/image_155.png"
+      }
     }
   },
   "order": [
     "main",
     "1735551360a540ddb7",
     "product_returns_zEfxJK",
-    "product_trusted_DwUEYM"
+    "product_trusted_DwUEYM",
+    "product_perfection_gKPBbR"
   ]
 }
