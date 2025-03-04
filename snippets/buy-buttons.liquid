@@ -44,7 +44,7 @@
         data-type: 'add-to-cart-form'
       -%}
 
-{% if product.template_suffix != 'normal' or product.template_suffix != 'jewelry' %}
+{% if product.template_suffix != 'normal' and product.template_suffix != 'jewelry' %}
         
 <fieldset class="product-form__input product-form__input--dropdown line-item-property__field">
   <legend class="form__label">Ring Size</legend>
