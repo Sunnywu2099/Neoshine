@@ -13,6 +13,21 @@
 
 <div class="product-igi-wrapper page-width section-pt section-pb">
   <h2 class="section-title">{{section.settings.title}}</h2>
+  <div class="trigger-wrapper">
+    <div class="media-box">
+      {% render 'responsive-image',
+        sid: section.id,
+        image_desktop: section.settings.image_pc,
+        image_mobile: section.settings.image_m,
+        alt: section.settings.title,
+        lazy: true,
+        preload: false
+      %}
+    </div>
+    <div class="info-box">
+      
+    </div>
+  </div>
 </div>
 
 {% schema %}
