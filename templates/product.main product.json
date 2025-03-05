@@ -327,6 +327,43 @@
         "img_pc": "shopify://shop_images/copy.png",
         "img_m": "shopify://shop_images/copy.png"
       }
+    },
+    "product_igi_dRMei8": {
+      "type": "product-igi",
+      "blocks": {
+        "item1_Rj8AHW": {
+          "type": "item1",
+          "settings": {
+            "title_main": "",
+            "title1": "",
+            "content1": "",
+            "title2": "",
+            "content2": "",
+            "title3": "",
+            "content3": "",
+            "title4": "",
+            "content4": ""
+          }
+        },
+        "item2_bqgmVQ": {
+          "type": "item2",
+          "settings": {
+            "title": "Unique Diamond ID",
+            "content": "Every diamond comes with a unique identification code, ensuring its provenance and exclusivity."
+          }
+        }
+      },
+      "block_order": [
+        "item1_Rj8AHW",
+        "item2_bqgmVQ"
+      ],
+      "settings": {
+        "title": "IGI Certified Diamonds: Trusted, Precise, Transparent",
+        "image_pc": "shopify://shop_images/image_a9db3c1e-ae98-41ce-84dd-1d3d3110a4b2.png",
+        "image_m": "shopify://shop_images/image_a9db3c1e-ae98-41ce-84dd-1d3d3110a4b2.png",
+        "url": "shopify://pages/igi-information",
+        "btn_name": "LEARN MORE"
+      }
     }
   },
   "order": [
@@ -334,6 +371,7 @@
     "1735551360a540ddb7",
     "product_returns_zEfxJK",
     "product_trusted_DwUEYM",
-    "product_perfection_gKPBbR"
+    "product_perfection_gKPBbR",
+    "product_igi_dRMei8"
   ]
 }
