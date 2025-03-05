@@ -1,165 +1,18 @@
 <style>
-  #shopify-section-{{section.id}}.product-perfection{
-    padding: 100px 0 60px;
-    background-color: #f5f5f5;
+  #shopify-section-{{section.id}}.product-igi{
+
   }
-  #shopify-section-{{section.id}}.product-perfection img{
-    width: auto;
-    flex-shrink: 0;
-  }
-  .product-perfection .top-wrapper{
-    display: flex;
-  }
-  .product-perfection .section-title{
-    margin-bottom: 50px;
-    text-align: left;
-  }
-  .product-perfection .logo-wrapper{
-    display: flex;
-    gap: 12px;
-    font-weight: 500;
-    align-items: center;
-  }
-  .product-perfection .logo-wrapper p{
-    font-size: 14px;
-  }
-  .product-perfection-grid{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    gap: 50px;
-    margin-top: 65px;
-    padding-top: 38px;
-    border-top: 1px solid #121212;
-  }
-  .product-perfection-grid .product-perfection-item{
-    display: flex;
-    gap: 16px;
-  }
-  .item-title{
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 26px;
-    margin: 0 0 12px;
-  }
-  .item-text{
-    font-size: 15px;
-    line-height: 1.4;
-    margin: 0;
-  }
-  @media screen and (max-width: 1200px) {
-    #shopify-section-{{section.id}}.product-perfection{
-      padding: 60px 0 60px;
-    }
-    .product-perfection .section-title{
-      margin-bottom: 25px;
-    }
-    #shopify-section-{{section.id}}.product-perfection .logo-wrapper img{
-      width: 55px;
-      height: auto;
-    }
-    .product-perfection .logo-wrapper p{
-      font-size: 14px;
-      line-height: 1.4;
-    }
-    .item-title{
-      font-size: 16px;
-      line-height: 20px;
-      margin: 0 0 8px;
-    }
-    .item-text{
-      font-size: 12px;
-    }
-  }
+
   @media screen and (max-width: 1024px){
-    .product-perfection-grid{
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-    }
+
   }
   @media screen and (max-width: 749px) {
-    .product-perfection .top-wrapper{
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .product-perfection-grid .product-perfection-item{
-      gap: 12px;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    .item-title{
-      font-size: 12px;
-      line-height: 1.4;
-    }
-    .item-content{
-      font-size: 10px;
-      line-height: 1.4;
-    }
-    .product-perfection-grid .product-perfection-item img{
-      height: 54px;
-      object-fit: contain;
-    }
+
   }
 </style>
 
-{% assign full_width = '100vw' %}
-{% assign sizes = full_width %}
-{% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
-<div class="product-perfection-wrapper page-width">
-  <div class="top-wrapper">
-    <div class="title-box">
-      <h2 class="section-title">{{section.settings.title}}</h2>
-      <div class="logo-wrapper">
-        <div class="logo">
-          {{
-            section.settings.icon
-              | image_url: width: 3840
-              | image_tag:
-                width: section.settings.icon.width,
-                height: section.settings.icon.height,
-                class: '',
-                sizes: sizes,
-                widths: widths,
-                loading: 'lazy'
-          }}
-        </div>
-        <p style="margin: 0;">{{section.settings.text}}</p>
-      </div>
-    </div>
-    <div class="image-wrapper">
-      {% render 'responsive-image',
-        sid: section.id,
-        image_desktop: section.settings.img_pc,
-        image_mobile: section.settings.img_pc,
-        alt: section.settings.title,
-        lazy: true,
-        preload: false
-      %}
-    </div>
-  </div>
-  <div class="product-perfection-grid">
-    {% for block in section.blocks %}
-      <div class="product-perfection-item">
-        {{
-              block.settings.icon
-              | image_url: width: 3840
-              | image_tag:
-                width: block.settings.icon.width,
-                height: block.settings.icon.height,
-                class: '',
-                sizes: sizes,
-                widths: widths,
-                loading: 'lazy'
-        }}
-        <div class="content-box">
-          <h3 class="item-title">{{block.settings.title}}</h3>
-          <p class="item-text">{{block.settings.content}}</p>
-        </div>
-      </div>
-    {% endfor %}
-
-  </div>
+<div class="product-igi-wrapper page-width section-pt section-pb">
+  <h2 class="section-title">{{section.settings.title}}</h2>
 </div>
 
 {% schema %}
