@@ -334,15 +334,19 @@
         "item1_Rj8AHW": {
           "type": "item1",
           "settings": {
-            "title_main": "",
-            "title1": "",
-            "content1": "",
-            "title2": "",
-            "content2": "",
-            "title3": "",
-            "content3": "",
-            "title4": "",
-            "content4": ""
+            "title_main": "Certified by IGI",
+            "icon1": "shopify://shop_images/Logo_2d4824f6-a216-43be-889b-bd5bae003877.png",
+            "title1": "Global Authority",
+            "content1": "Trusted by jewelers worldwide since            , IGI sets the industry standard.",
+            "icon2": "shopify://shop_images/Logo_1_5fbbb22b-6a5c-4854-957b-19cb174adf7a.png",
+            "title2": "Cutting-Edge Technology",
+            "content2": "0.02mm precision with Sarine DiaMension HD ensures flawless symmetry.",
+            "icon3": "shopify://shop_images/Logo_2_f4e86913-27e6-4897-ae7f-22bc602ba55f.png",
+            "title3": "Unmatched Detail",
+            "content3": "57 parameters of analysis, 42% more data than traditional certificates.",
+            "icon4": "shopify://shop_images/Logo_3_efc4d426-44c0-4342-9687-9096c32d8c10.png",
+            "title4": "Guaranteed Authenticity",
+            "content4": "Each diamond is protected with a unique hologram and global re-check options."
           }
         },
         "item2_bqgmVQ": {
