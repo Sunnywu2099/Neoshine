@@ -128,6 +128,10 @@
           </div>
         {% endif %}
       {% endfor %}
+
+      {% if section.settings.url != blank %}
+        <a href="{{ section.settings.url }}" class="view-more" target="_blank">{{ section.settings.btn_name }}</a>
+      {% endif %}
     </div>
   </div>
 </div>
