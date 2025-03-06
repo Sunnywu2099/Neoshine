@@ -157,34 +157,46 @@
   </div>
 </div>
 
+<script src="https://cdn.shopify.com/s/files/1/0897/6921/4241/files/gsap.min.js?v=1741231092" defer></script>
+<script src="https://cdn.shopify.com/s/files/1/0897/6921/4241/files/ScrollTrigger.min.js?v=1741231096" defer></script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    const section = document.querySelector('.product-igi-wrapper');
-    const itemsWithoutIcons = document.querySelectorAll('.item-without-icons');
-    
-    window.addEventListener('scroll', function() {
-      const sectionTop = section.getBoundingClientRect().top;
+    gsap.registerPlugin(ScrollTrigger);
+    let t1;
+    const container = $('.product-igi');
+    const endPoint = window.innerHeight*0.5;
+    const width = window.innerWidth;
 
-      // 固定section
-      if (sectionTop <= 0) {
-        section.classList.add('fixed');
-      } else {
-        section.classList.remove('fixed');
+    handleScroll();
+    function handleScroll(){
+      ScrollTrigger.matchMedia({
+        "(min-width: 750px)": function () {
+            if(t1) t1.revert();
+            t1 = gsap.timeline({
+              scrollTrigger:{
+                trigger: container,
+                start: 'top',
+                end: ()=>`+=${endPoint}`,
+                pin: true,
+                scrub: true,
+                // markers:true,
+                invalidateOnRefresh: true,
+              }
+            });
+      
+            t1.to(banner,{
+              "width":"100%",
+            })
+          }
+      })
+    };
+
+    $(window).resize(function() {
+      if(t1) {
+        t1.revert();
+        t1.clear();
       }
-
-      // 遍历每个item-without-icons，添加active类名
-      itemsWithoutIcons.forEach(item => {
-        const itemTop = item.getBoundingClientRect().top;
-        const titleMain = item.querySelector('.title-main');
-
-        if (itemTop <= 0) {
-          item.classList.add('active');
-          titleMain.classList.add('active');
-        } else {
-          item.classList.remove('active');
-          titleMain.classList.remove('active');
-        }
-      });
+      handleScroll();
     });
   });
 </script>
