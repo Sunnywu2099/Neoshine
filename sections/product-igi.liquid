@@ -265,15 +265,9 @@
     const itemsWithIcons = document.querySelectorAll('.item-with-icons');
     const itemsWithoutIcons = document.querySelectorAll('.item-without-icons');
     const endPoint = window.innerHeight * 0.8;
+    let swiperInstance;
 
-    if(window.innerWidth >= 750){
-      handleScroll();
-    }else{
-      initSwiper();
-    }
-    
-
-    function handleScroll() {
+    function initScrollTrigger() {
       ScrollTrigger.create({
         trigger: container,
         start: 'top top',
@@ -300,22 +294,39 @@
     }
 
     function initSwiper() {
-      const info_swiper = new Swiper('.product-igi-wrapper .info-box-swiper', {
+      swiperInstance = new Swiper('.product-igi-wrapper .info-box-swiper', {
         slidesPerView: 1,
         spaceBetween: 8,
         loop: false,
         pagination: {
           el: '.info-box-swiper .swiper-pagination',
-          type : 'progressbar'
+          type: 'progressbar'
         },
-      })
+      });
     }
 
-    window.addEventListener('resize', () => {
-      if(window.innerWidth >= 750){
-        handleScroll();
+    function destroySwiper() {
+      if (swiperInstance) {
+        swiperInstance.destroy(true, true);
+        swiperInstance = null;
       }
-    });
+    }
+
+    function handleResize() {
+      if (window.innerWidth >= 750) {
+        destroySwiper();
+        initScrollTrigger();
+      } else {
+        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        initSwiper();
+      }
+    }
+
+    // 初始加载时根据窗口大小选择初始化
+    handleResize();
+
+    // 监听窗口大小变化
+    window.addEventListener('resize', handleResize);
   });
 </script>
 
