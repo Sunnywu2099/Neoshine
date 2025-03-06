@@ -162,10 +162,11 @@
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     gsap.registerPlugin(ScrollTrigger);
-    let t1;
+
     const container = $('.product-igi');
     const endPoint = window.innerHeight*0.5;
-    const width = window.innerWidth;
+    const itemsWithIcons = document.querySelectorAll('.item-with-icons');
+    const itemsWithoutIcons = document.querySelectorAll('.item-without-icons');
 
     handleScroll();
     function handleScroll(){
@@ -179,14 +180,17 @@
                 end: ()=>`+=${endPoint}`,
                 pin: true,
                 scrub: true,
-                // markers:true,
                 invalidateOnRefresh: true,
+                onEnter: () => {
+                  itemWithIcons.classList.remove('active');
+                  itemWithoutIcons.classList.add('active');
+                },
+                onLeaveBack: () => {
+                  itemWithIcons.classList.add('active');
+                  itemWithoutIcons.classList.remove('active');
+                },
               }
             });
-      
-            t1.to(banner,{
-              "width":"100%",
-            })
           }
       })
     };
