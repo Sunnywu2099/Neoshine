@@ -220,6 +220,7 @@
             </div>
           {% endfor %}
         </div>
+        <div class="swiper-pagination"></div>
       </div>
     </div>
   </div>
@@ -236,6 +237,10 @@
       slidesPerView: 2,
       spaceBetween: 10,
       loop: false,
+      pagination: {
+        el: '.swiper-pagination',
+        type: '.media-swiper .progressbar',
+      },
       breakpoints: {
         750: {
           slidesPerView: 5,
