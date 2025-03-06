@@ -132,6 +132,18 @@
       $(this).toggleClass('close');
       $(this).next('.content-box').slideToggle();
     })
+
+    const loop_swiper = new Swiper('#shopify-section-{{section.id}} .media-swiper', {
+      slidesPerView: 5,
+      spaceBetween: 0,
+      loop: false,
+      breakpoints: {
+        749: {
+          slidesPerView: 2,
+          spaceBetween: 0
+        }
+      }
+    })
   })
 </script>
 
