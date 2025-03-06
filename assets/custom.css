@@ -17,6 +17,10 @@ a{
   text-decoration: none;
   color: inherit;
 }
+.brand-color{
+  color: #83A78D;
+  font-weight: 700;
+}
 .section-title{
   margin: 0 0 40px;
   color: #121212;
