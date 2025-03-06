@@ -112,6 +112,15 @@
   </div>
 </div>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    $('.title-box').click(function () {
+      $(this).toggleClass('active');
+      $(this).next('.content-box').slideToggle(300);
+    })
+  })
+</script>
+
 {% schema %}
 {
   "name": "Product Toggle",
