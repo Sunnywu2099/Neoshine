@@ -19,6 +19,20 @@
     width: auto;
     margin: 0 auto;
   }
+  .title-main{
+    color: #787878;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26px;
+    text-transform: capitalize;
+    margin-bottom: 18px;
+  }
+  .title-main.active{
+    color: #79A88B;
+  }
+  .trigger-box p{
+    margin: 0;
+  }
   @media screen and (max-width: 1024px){
 
   }
@@ -44,7 +58,7 @@
       {% for block in section.blocks %} 
         {% if block.type == 'item1' %}
           <div class="item item-with-icons">
-            <h3>{{ block.settings.title_main }}</h3>
+            <h3 class="title-main active">{{ block.settings.title_main }}</h3>
             <div class="flex">
               <div class="icon-box">
                 <img src="{{ block.settings.icon1 | img_url: 'master' }}" alt="block.settings.title_main" loading="lazy" width="" height="">
@@ -84,7 +98,7 @@
           </div>
         {% else %}
           <div class="item item-without-icons">
-            <h3>{{ block.settings.title }}</h3>
+            <h3 class="title-main">{{ block.settings.title }}</h3>
             <p>{{ block.settings.content }}</p>
           </div>
         {% endif %}
