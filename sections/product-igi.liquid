@@ -166,7 +166,7 @@
     const container = document.querySelector('.product-igi-wrapper');
     const itemsWithIcons = document.querySelectorAll('.item-with-icons');
     const itemsWithoutIcons = document.querySelectorAll('.item-without-icons');
-    const endPoint = window.innerHeight * 0.8; // 调整滚动结束点
+    const endPoint = window.innerHeight * 0.8;
 
     handleScroll();
 
@@ -174,9 +174,11 @@
       ScrollTrigger.create({
         trigger: container,
         start: 'top top',
-        end: () => `+=${endPoint * itemsWithIcons.length}`, // 延长滚动时间
+        end: () => `+=${endPoint * itemsWithIcons.length}`,
         pin: true,
-        scrub: 0.5, // 调整scrub以实现平滑过渡
+        pinSpacing: true,
+        scrub: 0.5,
+        anticipatePin: 1,
         invalidateOnRefresh: true,
         onUpdate: self => {
           const progress = self.progress * itemsWithIcons.length;
@@ -194,7 +196,6 @@
       });
     }
 
-    // 监听窗口大小变化
     window.addEventListener('resize', () => {
       ScrollTrigger.refresh();
     });
