@@ -1,12 +1,12 @@
 <style>
-  .product-toggle{
+  .product-toggle-drag{
     margin-bottom: 40px;
   }
-  .product-toggle .toggle-wrapper{
+  .product-toggle-drag .toggle-wrapper-drag{
     border-radius: 3px;
     box-shadow: 0px 8px 8px 0px rgba(147, 147, 147, 0.20);
   }
-  .product-toggle .title-box{
+  .product-toggle-drag .title-box{
     background: #fafafa;
     display: flex;
     justify-content: space-between;
@@ -14,15 +14,15 @@
     cursor: pointer;
     padding: 30px 150px 30px 60px;
   }
-  .product-toggle .title-box .toggle-btn{
+  .product-toggle-drag .title-box .toggle-btn{
     transform: rotate(180deg);
     transition: all 0.3s ease-in-out;
   }
-  .product-toggle .title-box.close .toggle-btn{
+  .product-toggle-drag .title-box.close .toggle-btn{
     transform: rotate(00deg);
     transition: all 0.3s ease-in-out;
   }
-  .product-toggle .toggle-title{
+  .product-toggle-drag .toggle-title{
     display: flex;
     align-items: center;
     gap: 12px;
@@ -32,64 +32,64 @@
     line-height: 26px;
     text-transform: capitalize;
   }
-  .product-toggle svg{
+  .product-toggle-drag svg{
     display: block;
     width: 100%;
   }
-  .product-toggle .content-box{
+  .product-toggle-drag .content-box{
     padding: 60px 100px;
     display: flex;
     gap: 90px;
     justify-content: space-between;
   }
-  .product-toggle .content-box .media-box{
+  .product-toggle-drag .content-box .media-box{
     width: 43%;
     flex-shrink: 0;
   }
-  .product-toggle .content{
+  .product-toggle-drag .content{
     color: #505050;
     font-size: 15px;
     font-weight: 400;
     line-height: 20px;
   }
   @media screen and (max-width: 1200px) {
-    .product-toggle .title-box{
+    .product-toggle-drag .title-box{
       padding: 10px 26px;
     }
-    .product-toggle .content-box{
+    .product-toggle-drag .content-box{
       padding: 40px 26px;
       gap: 20px;
     }
   }
   @media screen and (max-width: 749px) {
-    .product-toggle{
+    .product-toggle-drag{
       margin-bottom: 30px;
     }
-    .product-toggle .content-box{
+    .product-toggle-drag .content-box{
       flex-direction: column;
     }
-    .product-toggle .content-box .media-box{
+    .product-toggle-drag .content-box .media-box{
       width: 100%;
     }
-    .product-toggle .toggle-title{
+    .product-toggle-drag .toggle-title{
       font-size: 12px;
       line-height: 18px;
     }
-    .product-toggle .content{
+    .product-toggle-drag .content{
       font-size: 12px;
       line-height: 18px;
     }
-    .product-toggle .title-icon{
+    .product-toggle-drag .title-icon{
       width: 20px;
     }
-    .product-toggle .toggle-btn{
+    .product-toggle-drag .toggle-btn{
       width: 14px;
     }
   }
 </style>
 
 <div class="page-width">
-  <div class="toggle-wrapper">
+  <div class="toggle-wrapper-drag">
     <div class="title-box">
       <div class="toggle-title">
         <span class="title-icon">{% render 'toggle-icon' %}</span>
