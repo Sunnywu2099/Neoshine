@@ -80,7 +80,7 @@
     background-color: #121212;
     color: #fff;
   }
-  @media screen and (max-width: 1024px){
+  @media screen and (min-width: 750px) {
 
   }
   @media screen and (max-width: 749px) {
@@ -102,55 +102,58 @@
       %}
     </div>
     <div class="info-box">
-      {% for block in section.blocks %} 
-        {% if block.type == 'item1' %}
-          <div class="item item-with-icons active">
-            <h3 class="title-main">{{ block.settings.title_main }}</h3>
-            <div class="flex">
-              <div class="icon-box">
-                <img src="{{ block.settings.icon1 | img_url: 'master' }}" alt="block.settings.title_main" loading="lazy" width="" height="">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %} 
+            {% if block.type == 'item1' %}
+              <div class="item item-with-icons active swiper-slide">
+                <h3 class="title-main">{{ block.settings.title_main }}</h3>
+                <div class="flex">
+                  <div class="icon-box">
+                    <img src="{{ block.settings.icon1 | img_url: 'master' }}" alt="block.settings.title_main" loading="lazy" width="" height="">
+                  </div>
+                  <div>
+                    <div class="icon-title">{{ block.settings.title1 }}</div>
+                    <p class="icon-content">{{ block.settings.content1}}</p>
+                  </div>
+                </div>
+                <div class="flex">
+                  <div class="icon-box">
+                    <img src="{{ block.settings.icon2 | img_url: 'master' }}" alt="block.settings.title_main" loading="lazy" width="" height="">
+                  </div>
+                  <div>
+                    <div class="icon-title">{{ block.settings.title2 }}</div>
+                    <p class="icon-content">{{ block.settings.content2}}</p>
+                  </div>
+                </div>
+                <div class="flex">
+                  <div class="icon-box">
+                    <img src="{{ block.settings.icon3 | img_url: 'master' }}" alt="block.settings.title_main" loading="lazy" width="" height="">
+                  </div>
+                  <div>
+                    <div class="icon-title">{{ block.settings.title3 }}</div>
+                    <p class="icon-content">{{ block.settings.content3}}</p>
+                  </div>
+                </div>
+                <div class="flex">
+                  <div class="icon-box">
+                    <img src="{{ block.settings.icon4 | img_url: 'master' }}" alt="block.settings.title_main" loading="lazy" width="" height="">
+                  </div>
+                  <div>
+                    <div class="icon-title">{{ block.settings.title4 }}</div>
+                    <p class="icon-content">{{ block.settings.content4}}</p>
+                  </div>
+                </div>
               </div>
-              <div>
-                <div class="icon-title">{{ block.settings.title1 }}</div>
-                <p class="icon-content">{{ block.settings.content1}}</p>
+            {% else %}
+              <div class="item item-without-icons swiper-slide">
+                <h3 class="title-main">{{ block.settings.title }}</h3>
+                <p class="icon-content">{{ block.settings.content }}</p>
               </div>
-            </div>
-            <div class="flex">
-              <div class="icon-box">
-                <img src="{{ block.settings.icon2 | img_url: 'master' }}" alt="block.settings.title_main" loading="lazy" width="" height="">
-              </div>
-              <div>
-                <div class="icon-title">{{ block.settings.title2 }}</div>
-                <p class="icon-content">{{ block.settings.content2}}</p>
-              </div>
-            </div>
-            <div class="flex">
-              <div class="icon-box">
-                <img src="{{ block.settings.icon3 | img_url: 'master' }}" alt="block.settings.title_main" loading="lazy" width="" height="">
-              </div>
-              <div>
-                <div class="icon-title">{{ block.settings.title3 }}</div>
-                <p class="icon-content">{{ block.settings.content3}}</p>
-              </div>
-            </div>
-            <div class="flex">
-              <div class="icon-box">
-                <img src="{{ block.settings.icon4 | img_url: 'master' }}" alt="block.settings.title_main" loading="lazy" width="" height="">
-              </div>
-              <div>
-                <div class="icon-title">{{ block.settings.title4 }}</div>
-                <p class="icon-content">{{ block.settings.content4}}</p>
-              </div>
-            </div>
-          </div>
-        {% else %}
-          <div class="item item-without-icons">
-            <h3 class="title-main">{{ block.settings.title }}</h3>
-            <p class="icon-content">{{ block.settings.content }}</p>
-          </div>
-        {% endif %}
-      {% endfor %}
-
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
       {% if section.settings.url != blank %}
         <a href="{{ section.settings.url }}" class="view-more" target="_blank">{{ section.settings.btn_name }}</a>
       {% endif %}
