@@ -111,7 +111,9 @@
         <div class="swiper-wrapper">
           {% for block in section.blocks %}
             <div class="item swiper-slide">
-              <div class="top"></div>
+              <div class="top">
+                <img src="{{block.settings.img | img_url: 'master'}}" alt="{{block.settings.title}}" width="" height="">
+              </div>
               <div class="bottom">
                 <div class="item-title">{{block.settings.title}}</div>
                 <p class="item-content">{{block.settings.content}}</p>
