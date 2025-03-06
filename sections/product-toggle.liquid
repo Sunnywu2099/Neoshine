@@ -114,10 +114,10 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    $('.product-toggle .title-box').click(function () {
+    $('.page-width').on('click', '.product-toggle .title-box', function () {
       $(this).toggleClass('active');
-      $(this).next('.content-box').slideToggle();
-    })
+      $(this).next('.content-box').slideToggle(300);
+    });
   })
 </script>
 
