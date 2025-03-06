@@ -164,43 +164,40 @@
     gsap.registerPlugin(ScrollTrigger);
 
     const container = $('.product-igi');
-    const endPoint = window.innerHeight*0.5;
     const itemsWithIcons = document.querySelectorAll('.item-with-icons');
     const itemsWithoutIcons = document.querySelectorAll('.item-without-icons');
+    const endPoint = window.innerHeight * 0.5;
 
     handleScroll();
-    function handleScroll(){
+
+    function handleScroll() {
       ScrollTrigger.matchMedia({
         "(min-width: 750px)": function () {
-            if(t1) t1.revert();
-            t1 = gsap.timeline({
-              scrollTrigger:{
-                trigger: container,
-                start: 'top',
-                end: ()=>`+=${endPoint}`,
-                pin: true,
-                scrub: true,
-                invalidateOnRefresh: true,
-                onEnter: () => {
-                  itemWithIcons.classList.remove('active');
-                  itemWithoutIcons.classList.add('active');
-                },
-                onLeaveBack: () => {
-                  itemWithIcons.classList.add('active');
-                  itemWithoutIcons.classList.remove('active');
-                },
-              }
+          itemsWithIcons.forEach((itemWithIcons, index) => {
+            const itemWithoutIcons = itemsWithoutIcons[index];
+
+            ScrollTrigger.create({
+              trigger: itemWithIcons,
+              start: 'top center',
+              end: 'bottom center',
+              onEnter: () => {
+                itemWithIcons.classList.remove('active');
+                itemWithoutIcons.classList.add('active');
+              },
+              onLeaveBack: () => {
+                itemWithIcons.classList.add('active');
+                itemWithoutIcons.classList.remove('active');
+              },
+              scrub: true,
+              invalidateOnRefresh: true,
             });
-          }
-      })
-    };
+          });
+        }
+      });
+    }
 
     $(window).resize(function() {
-      if(t1) {
-        t1.revert();
-        t1.clear();
-      }
-      handleScroll();
+      ScrollTrigger.refresh();
     });
   });
 </script>
