@@ -135,7 +135,6 @@
   const observersasdsd = new MutationObserver((mutationsList) => {
 for (const mutation of mutationsList) {
   if (mutation.type === 'childList') {
-        console.log('子节点发生了变化');
         explain();
     }
 }
