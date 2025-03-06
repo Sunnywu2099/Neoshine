@@ -261,61 +261,124 @@
   document.addEventListener('DOMContentLoaded', function() {
     gsap.registerPlugin(ScrollTrigger);
 
-    const container = document.querySelector('.product-igi-wrapper');
-    const itemsWithIcons = document.querySelectorAll('.item-with-icons');
-    const itemsWithoutIcons = document.querySelectorAll('.item-without-icons');
-    const endPoint = window.innerHeight * 0.8;
-
-    if(window.innerWidth >= 750){
-      handleScroll();
-    }else{
-      initSwiper();
-    }
+    // 实例存储变量
+    let scrollTriggerInstance = null;
+    let swiperInstance = null;
     
+    // 防抖函数
+    const debounce = (func, delay) => {
+      let timeout;
+      return () => {
+        clearTimeout(timeout);
+        timeout = setTimeout(func, delay);
+      };
+    };
 
-    function handleScroll() {
-      ScrollTrigger.create({
-        trigger: container,
-        start: 'top top',
-        end: () => `+=${endPoint * itemsWithIcons.length}`,
-        pin: true,
-        pinSpacing: true,
-        scrub: 0.5,
-        anticipatePin: 1,
-        invalidateOnRefresh: true,
-        onUpdate: self => {
-          const progress = self.progress * itemsWithIcons.length;
-          itemsWithIcons.forEach((itemWithIcons, index) => {
-            const itemWithoutIcons = itemsWithoutIcons[index];
-            if (progress > index + 0.5) {
-              itemWithIcons.classList.remove('active');
-              itemWithoutIcons.classList.add('active');
-            } else {
-              itemWithIcons.classList.add('active');
-              itemWithoutIcons.classList.remove('active');
-            }
-          });
-        }
-      });
-    }
+    // 元素缓存
+    const elements = {
+      container: document.querySelector('.product-igi-wrapper'),
+      itemsWithIcons: document.querySelectorAll('.item-with-icons'),
+      itemsWithoutIcons: document.querySelectorAll('.item-with-out-icons'),
+      swiperContainer: document.querySelector('.product-igi-wrapper .info-box-swiper')
+    };
 
-    function initSwiper() {
-      const info_swiper = new Swiper('.product-igi-wrapper .info-box-swiper', {
-        slidesPerView: 1,
-        spaceBetween: 8,
-        loop: false,
-        pagination: {
-          el: '.info-box-swiper .swiper-pagination',
-          type : 'progressbar'
-        },
-      })
-    }
-
-    window.addEventListener('resize', () => {
-      if(window.innerWidth >= 750){
-        handleScroll();
+    // 销毁ScrollTrigger
+    const destroyScrollTrigger = () => {
+      if (scrollTriggerInstance) {
+        scrollTriggerInstance.kill();
+        scrollTriggerInstance = null;
       }
-    });
+    };
+
+    // 销毁Swiper
+    const destroySwiper = () => {
+      if (swiperInstance) {
+        swiperInstance.destroy(true, true);
+        swiperInstance = null;
+      }
+    };
+
+    // 桌面端处理
+    const handleDesktop = () => {
+      destroySwiper(); // 先销毁移动端实例
+      if (!scrollTriggerInstance) {
+        const endPoint = window.innerHeight * 0.8;
+        
+        scrollTriggerInstance = ScrollTrigger.create({
+          trigger: elements.container,
+          start: 'top top',
+          end: () => `+=${endPoint * elements.itemsWithIcons.length}`,
+          pin: true,
+          pinSpacing: true,
+          scrub: 0.5,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+          onUpdate: self => {
+            const progress = self.progress * elements.itemsWithIcons.length;
+            elements.itemsWithIcons.forEach((itemWithIcons, index) => {
+              const itemWithoutIcons = elements.itemsWithoutIcons[index];
+              const className = 'active';
+              
+              itemWithIcons.classList.toggle(className, progress <= index + 0.5);
+              itemWithoutIcons.classList.toggle(className, progress > index + 0.5);
+            });
+          }
+        });
+      }
+    };
+
+    // 移动端处理
+    const handleMobile = () => {
+      destroyScrollTrigger(); // 先销毁桌面端实例
+      if (!swiperInstance && elements.swiperContainer) {
+        swiperInstance = new Swiper(elements.swiperContainer, {
+          slidesPerView: 1,
+          spaceBetween: 8,
+          loop: false,
+          pagination: {
+            el: '.info-box-swiper .swiper-pagination',
+            type: 'progressbar'
+          },
+          observer: true,
+          observeParents: true
+        });
+      }
+    };
+
+    // 初始化检测
+    const checkViewport = () => {
+      const isDesktop = window.innerWidth >= 750;
+      isDesktop ? handleDesktop() : handleMobile();
+    };
+
+    // 优化后的resize处理
+    const handleResize = debounce(() => {
+      // 先销毁所有实例
+      destroyScrollTrigger();
+      destroySwiper();
+      
+      // 重新初始化
+      checkViewport();
+      
+      // 强制刷新ScrollTrigger
+      ScrollTrigger.refresh();
+    }, 300);
+
+    // 初始检测
+    checkViewport();
+
+    // 事件监听
+    window.addEventListener('resize', handleResize);
+    
+    // 清理函数
+    const cleanup = () => {
+      window.removeEventListener('resize', handleResize);
+      destroyScrollTrigger();
+      destroySwiper();
+    };
+
+    // 页面卸载时清理
+    window.addEventListener('beforeunload', cleanup);
   });
 </script>
 
