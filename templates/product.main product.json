@@ -449,6 +449,14 @@
         "title": "Clarity: What You Can and Can't See",
         "content": "Clarity measures how many internal or external imperfections (inclusions and blemishes) exist inside a diamond. The fewer, the better—\n<br>but here's the secret: most inclusions are microscopic."
       }
+    },
+    "product_toggle_drag_eHHahV": {
+      "type": "product-toggle-drag",
+      "settings": {
+        "title": "your Diamond Size: 1 Carat",
+        "sub_title": "Understanding Diamond Carat Weight",
+        "content": "A diamond's carat weight is determined by its size, with larger diamonds weighing more. However, it's important to note that carat weight is not the same as size, as other factors such as depth and shape can also impact how large a diamond appears."
+      }
     }
   },
   "order": [
@@ -461,6 +469,7 @@
     "section_title_DjEHRB",
     "product_toggle_jWNF6R",
     "product_toggle_Lji3Kf",
-    "product_toggle_swiper_9JF8G6"
+    "product_toggle_swiper_9JF8G6",
+    "product_toggle_drag_eHHahV"
   ]
 }
