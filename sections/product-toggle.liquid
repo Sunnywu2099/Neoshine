@@ -1,0 +1,50 @@
+<style>
+  .product-toggle{
+    margin-bottom: 100px;
+  }
+  @media screen and (max-width: 749px) {
+
+  }
+</style>
+
+<div class="page-width">
+  <h2 class="section-title">{{section.settings.title}}</h2>
+  <p class="section-content">{{section.settings.content}}</p>
+</div>
+
+{% schema %}
+{
+  "name": "Product Toggle",
+  "tag": "section",
+  "class": "product-toggle",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "title",
+      "default": "Cut: The Single Most Important Factor in Brilliance"
+    },
+    {
+      "type": "textarea",
+      "id": "content",
+      "label": "content",
+      "default": "Choosing a diamond is more than just picking a carat weight.The 4C's—Cut, Color, Clarity, and Carat—work together to define its beauty and value. Each plays a role, but some matter more than others."
+    },
+    {
+      "type": "image_picker",
+      "id": "img_pc",
+      "label": "image pc"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_m",
+      "label": "image m"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Toggle"
+    }
+  ]
+}
+{% endschema %}
