@@ -25,7 +25,54 @@
       %}
     </div>
     <div class="info-box">
-      
+      {% for block in section.blocks %} 
+        {% if block.type == 'item1' %}
+          <div class="item item-with-icons">
+            <h3>{{ block.settings.title_main }}</h3>
+            <div>
+              <div class="icon-box">
+                <img src="{{ block.settings.icon1 | img_url: 'master' }}" alt="block.settings.title_main" loading="lazy" width="" height="">
+              </div>
+              <div>
+                <div class="icon-title">{{ block.settings.title1 }}</div>
+                <p class="icon-content">{{ block.settings.content1}}</p>
+              </div>
+            </div>
+            <div>
+              <div class="icon-box">
+                <img src="{{ block.settings.icon2 | img_url: 'master' }}" alt="block.settings.title_main" loading="lazy" width="" height="">
+              </div>
+              <div>
+                <div class="icon-title">{{ block.settings.title2 }}</div>
+                <p class="icon-content">{{ block.settings.content2}}</p>
+              </div>
+            </div>
+            <div>
+              <div class="icon-box">
+                <img src="{{ block.settings.icon4 | img_url: 'master' }}" alt="block.settings.title_main" loading="lazy" width="" height="">
+              </div>
+              <div>
+                <div class="icon-title">{{ block.settings.title3 }}</div>
+                <p class="icon-content">{{ block.settings.content3}}</p>
+              </div>
+            </div>
+            <div>
+              <div class="icon-box">
+                <img src="{{ block.settings.icon4 | img_url: 'master' }}" alt="block.settings.title_main" loading="lazy" width="" height="">
+              </div>
+              <div>
+                <div class="icon-title">{{ block.settings.title4 }}</div>
+                <p class="icon-content">{{ block.settings.content4}}</p>
+              </div>
+            </div>
+          </div>
+        {% else %}
+          <div class="item item-without-icons">
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.content }}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
     </div>
   </div>
 </div>
