@@ -261,73 +261,152 @@
   document.addEventListener('DOMContentLoaded', function() {
     gsap.registerPlugin(ScrollTrigger);
 
-    const container = document.querySelector('.product-igi-wrapper');
-    const itemsWithIcons = document.querySelectorAll('.item-with-icons');
-    const itemsWithoutIcons = document.querySelectorAll('.item-without-icons');
-    const endPoint = window.innerHeight * 0.8;
-    let swiperInstance;
+    // 状态管理对象
+    const state = {
+      scrollTrigger: null,
+      swiper: null,
+      isMobile: null
+    };
 
-    function initScrollTrigger() {
-      ScrollTrigger.create({
-        trigger: container,
-        start: 'top top',
-        end: () => `+=${endPoint * itemsWithIcons.length}`,
+    // 防抖优化（300ms）
+    const debounce = (func, delay) => {
+      let timeout;
+      return () => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func(), delay);
+      };
+    };
+
+    // 获取动态元素引用
+    const getElements = () => ({
+      container: document.querySelector('.product-igi-wrapper'),
+      itemsWithIcons: document.querySelectorAll('.item-with-icons'),
+      itemsWithoutIcons: document.querySelectorAll('.item-without-icons'),
+      swiperContainer: document.querySelector('.product-igi-wrapper .info-box-swiper')
+    });
+
+    // 完全销毁ScrollTrigger
+    const destroyScrollTrigger = () => {
+      if (state.scrollTrigger) {
+        // 清理ScrollTrigger生成的样式
+        document.querySelectorAll('.sticky-placeholder').forEach(el => el.remove());
+        state.scrollTrigger.kill();
+        state.scrollTrigger = null;
+        
+        // 重置元素状态
+        const { itemsWithIcons, itemsWithoutIcons } = getElements();
+        itemsWithIcons.forEach(el => el.classList.remove('active'));
+        itemsWithoutIcons.forEach(el => el.classList.remove('active'));
+      }
+    };
+
+    // 完全销毁Swiper
+    const destroySwiper = () => {
+      if (state.swiper) {
+        // 清理Swiper生成的DOM
+        const pagination = state.swiper.pagination.el;
+        if (pagination) pagination.innerHTML = '';
+        
+        state.swiper.destroy(true, true);
+        state.swiper = null;
+      }
+    };
+
+    // 桌面端逻辑
+    const initDesktop = () => {
+      const elements = getElements();
+      if (!elements.container) return;
+
+      const endPoint = window.innerHeight * 0.8;
+      
+      state.scrollTrigger = ScrollTrigger.create({
+        trigger: elements.container,
+        start: () => `top ${window.innerHeight * 0.1}`, // 动态计算起始位置
+        end: () => `+=${endPoint * elements.itemsWithIcons.length}`,
         pin: true,
         pinSpacing: true,
         scrub: 0.5,
         anticipatePin: 1,
         invalidateOnRefresh: true,
         onUpdate: self => {
-          const progress = self.progress * itemsWithIcons.length;
-          itemsWithIcons.forEach((itemWithIcons, index) => {
-            const itemWithoutIcons = itemsWithoutIcons[index];
-            if (progress > index + 0.5) {
-              itemWithIcons.classList.remove('active');
-              itemWithoutIcons.classList.add('active');
-            } else {
-              itemWithIcons.classList.add('active');
-              itemWithoutIcons.classList.remove('active');
-            }
+          const progress = self.progress * elements.itemsWithIcons.length;
+          elements.itemsWithIcons.forEach((item, index) => {
+            const target = elements.itemsWithoutIcons[index];
+            const active = progress > index + 0.5;
+            item.classList.toggle('active', !active);
+            target.classList.toggle('active', active);
           });
+        },
+        onRefresh: self => {
+          // 窗口变化后重新计算位置
+          self.vars.start = `top ${window.innerHeight * 0.1}`;
+          self.vars.end = `+=${endPoint * elements.itemsWithIcons.length}`;
         }
       });
-    }
+    };
 
-    function initSwiper() {
-      swiperInstance = new Swiper('.product-igi-wrapper .info-box-swiper', {
+    // 移动端逻辑
+    const initMobile = () => {
+      const elements = getElements();
+      if (!elements.swiperContainer) return;
+
+      state.swiper = new Swiper(elements.swiperContainer, {
         slidesPerView: 1,
         spaceBetween: 8,
         loop: false,
         pagination: {
-          el: '.info-box-swiper .swiper-pagination',
-          type: 'progressbar'
+          el: '.swiper-pagination',
+          type: 'progressbar',
         },
+        observer: true,
+        observeParents: true,
+        observeSlideChildren: true
       });
-    }
+    };
 
-    function destroySwiper() {
-      if (swiperInstance) {
-        swiperInstance.destroy(true, true);
-        swiperInstance = null;
-      }
-    }
-
-    function handleResize() {
-      if (window.innerWidth >= 750) {
-        destroySwiper();
+    // 视口检测
+    const checkViewport = () => {
+      const currentIsMobile = window.innerWidth < 750;
+      
+      // 状态未变化时跳过
+      if (currentIsMobile === state.isMobile) return;
+      
+      state.isMobile = currentIsMobile;
+      
+      // 完全清理旧实例
+      destroyScrollTrigger();
+      destroySwiper();
+      
+      // 延迟初始化确保DOM更新
+      requestAnimationFrame(() => {
+        state.isMobile ? initMobile() : initDesktop();
         ScrollTrigger.refresh();
-        initScrollTrigger();
-      } else {
-        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-        initSwiper();
-      }
-    }
+      });
+    };
 
-    // 初始加载时根据窗口大小选择初始化
-    handleResize();
+    // 优化resize处理
+    const handleResize = debounce(() => {
+      checkViewport();
+    }, 300);
 
-    // 监听窗口大小变化
+    // 初始检测
+    checkViewport();
+
+    // 事件监听
     window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleResize);
+
+    // 清理函数
+    const cleanup = () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('orientationchange', handleResize);
+      destroyScrollTrigger();
+      destroySwiper();
+    };
+
+    // 页面卸载清理
+    window.addEventListener('beforeunload', cleanup);
+    window.addEventListener('unload', cleanup);
   });
 </script>
 
