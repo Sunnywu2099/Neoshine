@@ -22,6 +22,9 @@
   .product-toggle svg{
     display: block;
   }
+  .product-toggle .content-box{
+    padding: 60px 100px;
+  }
   @media screen and (max-width: 749px) {
 
   }
@@ -41,7 +44,21 @@
 
       </div>
     </div>
-    <div class="content-box"></div>
+    <div class="content-box">
+      <div class="content">
+        {{ section.settings.content }}
+      </div>
+      <div class="media-box">
+            {% render 'responsive-image',
+              sid: section.id,
+              image_desktop: section.settings.pc_image,
+              image_mobile: section.settings.mobile_image,
+              alt: section.settings.title,
+              lazy: true,
+              preload: false
+            %}
+      </div>
+    </div>
   </div>
 </div>
 
