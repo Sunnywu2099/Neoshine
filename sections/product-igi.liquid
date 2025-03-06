@@ -171,7 +171,7 @@
     ScrollTrigger.create({
       trigger: container,
       start: 'top top',
-      end: 'bottom bottom',
+      end: () => `+=${container.offsetHeight * 2}`,
       pin: true,
       pinSpacing: false,
       scrub: true,
