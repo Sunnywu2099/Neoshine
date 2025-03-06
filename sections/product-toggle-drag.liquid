@@ -88,8 +88,6 @@
   }
 </style>
 
-{% assign hand_img = 'https://cdn.shopify.com/s/files/1/0897/6921/4241/files/Rectangle_12564.png' %}
-
 <div class="page-width">
   <div class="toggle-wrapper-drag">
     <div class="title-box">
@@ -114,8 +112,8 @@
         <div class="image-box">
           {% render 'responsive-image',
               sid: section.id,
-              image_desktop: hand_img,
-              image_mobile: hand_img,
+              image_desktop: section.settings.img_pc,
+              image_mobile: section.settings.img_m,
               alt: section.settings.title,
               lazy: true,
               preload: false
@@ -165,6 +163,16 @@
       "id": "content",
       "label": "content",
       "default": "A diamond's carat weight is determined by its size, with larger diamonds weighing more. However, it's important to note that carat weight is not the same as size, as other factors such as depth and shape can also impact how large a diamond appears."
+    },
+    {
+      "type": "image_picker",
+      "id": "img_pc",
+      "label": "image pc"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_m",
+      "label": "image m"
     }
   ],
   "presets": [
