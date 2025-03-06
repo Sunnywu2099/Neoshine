@@ -120,7 +120,6 @@
     list.forEach(item => {
       const explain = item.querySelector(".explain");
       const itemer = item.querySelector("input[type=radio]:checked+label");
-       console.log("55555",explain)
       if(explain){
         explain.textContent  = itemer.getAttribute("data-explain");
       }
