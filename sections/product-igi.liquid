@@ -30,8 +30,19 @@
   .title-main.active{
     color: #79A88B;
   }
-  .trigger-box p{
+  .trigger-box .icon-content{
     margin: 0;
+    color: #787878;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px; /* 133.333% */
+  }
+  .trigger-box .icon-title{
+    color: #121212;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    margin-bottom: 3px;
   }
   @media screen and (max-width: 1024px){
 
@@ -99,7 +110,7 @@
         {% else %}
           <div class="item item-without-icons">
             <h3 class="title-main">{{ block.settings.title }}</h3>
-            <p>{{ block.settings.content }}</p>
+            <p class="icon-content">{{ block.settings.content }}</p>
           </div>
         {% endif %}
       {% endfor %}
