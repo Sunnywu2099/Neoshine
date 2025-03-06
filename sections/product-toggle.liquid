@@ -26,6 +26,7 @@
   }
   .product-toggle svg{
     display: block;
+    width: 100%;
   }
   .product-toggle .content-box{
     padding: 60px 100px;
@@ -67,6 +68,12 @@
       font-size: 12px;
       line-height: 18px;
     }
+    .product-toggle .title-icon{
+      width: 20px;
+    }
+    .product-toggle .toggle-btn{
+      width: 14px;
+    }
   }
 </style>
 
@@ -74,7 +81,7 @@
   <div class="toggle-wrapper">
     <div class="title-box">
       <div class="toggle-title">
-        <span>{% render 'toggle-icon' %}</span>
+        <span class="title-icon">{% render 'toggle-icon' %}</span>
         <span>{{ section.settings.title }}</span>
       </div>
       <div class="toggle-btn">
