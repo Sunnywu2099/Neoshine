@@ -315,6 +315,7 @@
     function handleResize() {
       if (window.innerWidth >= 750) {
         destroySwiper();
+        ScrollTrigger.refresh();
         initScrollTrigger();
       } else {
         ScrollTrigger.getAll().forEach(trigger => trigger.kill());
