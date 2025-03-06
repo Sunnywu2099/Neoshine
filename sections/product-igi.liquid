@@ -168,7 +168,10 @@
     const itemsWithoutIcons = document.querySelectorAll('.item-without-icons');
     const endPoint = window.innerHeight * 0.8;
 
-    handleScroll();
+    if(window.innerWidth >= 750){
+      handleScroll();
+    }
+    
 
     function handleScroll() {
       ScrollTrigger.create({
@@ -197,7 +200,9 @@
     }
 
     window.addEventListener('resize', () => {
-      ScrollTrigger.refresh();
+      if(window.innerWidth >= 750){
+        ScrollTrigger.refresh();
+      }
     });
   });
 </script>
