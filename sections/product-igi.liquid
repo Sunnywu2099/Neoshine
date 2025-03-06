@@ -158,7 +158,35 @@
 </div>
 
 <script>
-  
+  document.addEventListener('DOMContentLoaded', function() {
+    const section = document.querySelector('.product-igi-wrapper');
+    const itemsWithoutIcons = document.querySelectorAll('.item-without-icons');
+    
+    window.addEventListener('scroll', function() {
+      const sectionTop = section.getBoundingClientRect().top;
+
+      // 固定section
+      if (sectionTop <= 0) {
+        section.classList.add('fixed');
+      } else {
+        section.classList.remove('fixed');
+      }
+
+      // 遍历每个item-without-icons，添加active类名
+      itemsWithoutIcons.forEach(item => {
+        const itemTop = item.getBoundingClientRect().top;
+        const titleMain = item.querySelector('.title-main');
+
+        if (itemTop <= 0) {
+          item.classList.add('active');
+          titleMain.classList.add('active');
+        } else {
+          item.classList.remove('active');
+          titleMain.classList.remove('active');
+        }
+      });
+    });
+  });
 </script>
 
 {% schema %}
