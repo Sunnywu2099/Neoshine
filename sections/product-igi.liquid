@@ -162,31 +162,41 @@
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     gsap.registerPlugin(ScrollTrigger);
+
     const container = document.querySelector('.product-igi-wrapper');
     const itemsWithIcons = document.querySelectorAll('.item-with-icons');
     const itemsWithoutIcons = document.querySelectorAll('.item-without-icons');
-    const endPoint = window.innerHeight*0.8;
+    const endPoint = window.innerHeight * 0.8; // 调整滚动结束点
 
     handleScroll();
-    function handleScroll(){
+
+    function handleScroll() {
       ScrollTrigger.create({
-      trigger: 'container',
-      start: 'top top',
-      end: ()=>`+=${endPoint}`,
-      pin: true,
-      scrub: 0.1,
-      invalidateOnRefresh: true,
-      animation:
-        // gsap.timeline()
-        //   .fromTo('.scroll-banner img',{ width: '100%',height: '100%' },{ width: '800%',height: '800%' },"-=80%" )
-        //   .set('.scroll-banner img',{ opacity: '0', scale: 1.8,  transition: 'all .2s linear' })
-        //   .fromTo('.scroll-video .content-box',{ opacity: '0' },{ opacity: '1' } )
-      })
-    };
+        trigger: container,
+        start: 'top top',
+        end: () => `+=${endPoint * itemsWithIcons.length}`, // 延长滚动时间
+        pin: true,
+        scrub: 0.5, // 调整scrub以实现平滑过渡
+        invalidateOnRefresh: true,
+        onUpdate: self => {
+          const progress = self.progress * itemsWithIcons.length;
+          itemsWithIcons.forEach((itemWithIcons, index) => {
+            const itemWithoutIcons = itemsWithoutIcons[index];
+            if (progress > index + 0.5) {
+              itemWithIcons.classList.remove('active');
+              itemWithoutIcons.classList.add('active');
+            } else {
+              itemWithIcons.classList.add('active');
+              itemWithoutIcons.classList.remove('active');
+            }
+          });
+        }
+      });
+    }
 
     // 监听窗口大小变化
     window.addEventListener('resize', () => {
-      handleScroll();
+      ScrollTrigger.refresh();
     });
   });
 </script>
