@@ -375,6 +375,15 @@
         "title": "The 4C's: What Really Matters in Your Diamond",
         "content": "Choosing a diamond is more than just picking a carat weight. <span class=\"brand-color\">The 4C's—Cut, Color, Clarity, and Carat—work together to define its beauty and value.</span> Each plays a role, but some matter more than others."
       }
+    },
+    "product_toggle_jWNF6R": {
+      "type": "product-toggle",
+      "settings": {
+        "title": "Cut: The Single Most Important Factor in Brilliance",
+        "content": "Choosing a diamond is more than just picking a carat weight.The 4C's—Cut, Color, Clarity, and Carat—work together to define its beauty and value. Each plays a role, but some matter more than others.",
+        "img_pc": "shopify://shop_images/Group_1000002455.png",
+        "img_m": "shopify://shop_images/Group_1000002456_1.png"
+      }
     }
   },
   "order": [
@@ -384,6 +393,7 @@
     "product_trusted_DwUEYM",
     "product_perfection_gKPBbR",
     "product_igi_dRMei8",
-    "section_title_DjEHRB"
+    "section_title_DjEHRB",
+    "product_toggle_jWNF6R"
   ]
 }
