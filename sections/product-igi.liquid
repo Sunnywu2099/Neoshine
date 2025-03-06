@@ -31,9 +31,7 @@
     text-transform: capitalize;
     margin: 0 0 18px;
   }
-  .title-main.active{
-    color: #79A88B;
-  }
+  
   .trigger-box .icon-content{
     margin: 0;
     color: #787878;
@@ -57,6 +55,9 @@
   }
   .info-box .item.active{
     border-left: 4px solid #79A88B;
+  }
+  .info-box .item.active .title-main{
+    color: #79A88B;
   }
   .product-igi-wrapper .view-more{
     margin: 50px 0 0;
@@ -104,7 +105,7 @@
       {% for block in section.blocks %} 
         {% if block.type == 'item1' %}
           <div class="item item-with-icons active">
-            <h3 class="title-main active">{{ block.settings.title_main }}</h3>
+            <h3 class="title-main">{{ block.settings.title_main }}</h3>
             <div class="flex">
               <div class="icon-box">
                 <img src="{{ block.settings.icon1 | img_url: 'master' }}" alt="block.settings.title_main" loading="lazy" width="" height="">
