@@ -162,7 +162,6 @@
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     gsap.registerPlugin(ScrollTrigger);
-    let t1;
     const container = document.querySelector('.product-igi-wrapper');
     const itemsWithIcons = document.querySelectorAll('.item-with-icons');
     const itemsWithoutIcons = document.querySelectorAll('.item-without-icons');
@@ -170,33 +169,23 @@
 
     handleScroll();
     function handleScroll(){
-      ScrollTrigger.matchMedia({
-        "(min-width: 750px)": function () {
-            if(t1) t1.revert();
-            t1 = gsap.timeline({
-              scrollTrigger:{
-                trigger: container,
-                start: 'top top',
-                end: ()=>`+=${endPoint}`,
-                pin: true,
-                scrub: true,
-                invalidateOnRefresh: true,
-              }
-            });
-      
-            t1.to(banner,{
-              // "width":"100%",
-            })
-          }
+      ScrollTrigger.create({
+      trigger: 'container',
+      start: 'top top',
+      end: ()=>`+=${endPoint}`,
+      pin: true,
+      scrub: 0.1,
+      invalidateOnRefresh: true,
+      animation:
+        // gsap.timeline()
+        //   .fromTo('.scroll-banner img',{ width: '100%',height: '100%' },{ width: '800%',height: '800%' },"-=80%" )
+        //   .set('.scroll-banner img',{ opacity: '0', scale: 1.8,  transition: 'all .2s linear' })
+        //   .fromTo('.scroll-video .content-box',{ opacity: '0' },{ opacity: '1' } )
       })
     };
 
     // 监听窗口大小变化
     window.addEventListener('resize', () => {
-      if(t1) {
-        t1.revert();
-        t1.clear();
-      }
       handleScroll();
     });
   });
