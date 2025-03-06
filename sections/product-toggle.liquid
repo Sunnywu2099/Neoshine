@@ -7,9 +7,20 @@
   }
 </style>
 
-<div class="page-width">
-  <h2 class="section-title">{{section.settings.title}}</h2>
-  <p class="section-content">{{section.settings.content}}</p>
+<div class="toggle-wrapper page-width">
+  <div class="title-box">
+    <div class="title">
+      <span>{% render 'toggle-icon' %}</span>
+      <span>{{ section.settings.title }}</span>
+    </div>
+    <div class="toggle-btn">
+      <svg width="28" height="18" viewBox="0 0 28 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 0.999998L14.0008 16.7623L27 1" stroke="#121212" style="stroke:#121212;stroke:color(display-p3 0.0706 0.0706 0.0706);stroke-opacity:1;" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+
+    </div>
+  </div>
+  <div class="content-box"></div>
 </div>
 
 {% schema %}
