@@ -163,40 +163,35 @@
   document.addEventListener('DOMContentLoaded', function() {
     gsap.registerPlugin(ScrollTrigger);
 
-    const container = $('.product-igi');
+    const container = document.querySelector('.product-igi-wrapper');
     const itemsWithIcons = document.querySelectorAll('.item-with-icons');
     const itemsWithoutIcons = document.querySelectorAll('.item-without-icons');
-    const endPoint = window.innerHeight * 0.5;
 
-    handleScroll();
+    // 固定section并实现过渡效果
+    ScrollTrigger.create({
+      trigger: container,
+      start: 'top top',
+      end: 'bottom bottom',
+      pin: true,
+      pinSpacing: false,
+      scrub: true,
+      onUpdate: self => {
+        const progress = self.progress;
+        itemsWithIcons.forEach((itemWithIcons, index) => {
+          const itemWithoutIcons = itemsWithoutIcons[index];
+          if (progress > 0.5) {
+            itemWithIcons.classList.remove('active');
+            itemWithoutIcons.classList.add('active');
+          } else {
+            itemWithIcons.classList.add('active');
+            itemWithoutIcons.classList.remove('active');
+          }
+        });
+      }
+    });
 
-    function handleScroll() {
-      ScrollTrigger.matchMedia({
-        "(min-width: 750px)": function () {
-          itemsWithIcons.forEach((itemWithIcons, index) => {
-            const itemWithoutIcons = itemsWithoutIcons[index];
-
-            ScrollTrigger.create({
-              trigger: itemWithIcons,
-              start: 'top center',
-              end: 'bottom center',
-              onEnter: () => {
-                itemWithIcons.classList.remove('active');
-                itemWithoutIcons.classList.add('active');
-              },
-              onLeaveBack: () => {
-                itemWithIcons.classList.add('active');
-                itemWithoutIcons.classList.remove('active');
-              },
-              scrub: true,
-              invalidateOnRefresh: true,
-            });
-          });
-        }
-      });
-    }
-
-    $(window).resize(function() {
+    // 监听窗口大小变化
+    window.addEventListener('resize', () => {
       ScrollTrigger.refresh();
     });
   });
