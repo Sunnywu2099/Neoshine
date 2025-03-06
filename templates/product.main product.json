@@ -327,6 +327,72 @@
         "img_pc": "shopify://shop_images/copy.png",
         "img_m": "shopify://shop_images/copy.png"
       }
+    },
+    "product_igi_dRMei8": {
+      "type": "product-igi",
+      "blocks": {
+        "item1_Rj8AHW": {
+          "type": "item1",
+          "settings": {
+            "title_main": "Certified by IGI",
+            "icon1": "shopify://shop_images/Logo_2d4824f6-a216-43be-889b-bd5bae003877.png",
+            "title1": "Global Authority",
+            "content1": "Trusted by jewelers worldwide since            , IGI sets the industry standard.",
+            "icon2": "shopify://shop_images/Logo_1_5fbbb22b-6a5c-4854-957b-19cb174adf7a.png",
+            "title2": "Cutting-Edge Technology",
+            "content2": "0.02mm precision with Sarine DiaMension HD ensures flawless symmetry.",
+            "icon3": "shopify://shop_images/Logo_2_f4e86913-27e6-4897-ae7f-22bc602ba55f.png",
+            "title3": "Unmatched Detail",
+            "content3": "57 parameters of analysis, 42% more data than traditional certificates.",
+            "icon4": "shopify://shop_images/Logo_3_efc4d426-44c0-4342-9687-9096c32d8c10.png",
+            "title4": "Guaranteed Authenticity",
+            "content4": "Each diamond is protected with a unique hologram and global re-check options."
+          }
+        },
+        "item2_bqgmVQ": {
+          "type": "item2",
+          "settings": {
+            "title": "Unique Diamond ID",
+            "content": "Every diamond comes with a unique identification code, ensuring its provenance and exclusivity."
+          }
+        }
+      },
+      "block_order": [
+        "item1_Rj8AHW",
+        "item2_bqgmVQ"
+      ],
+      "settings": {
+        "title": "IGI Certified Diamonds: Trusted, Precise, Transparent",
+        "image_pc": "shopify://shop_images/image_a9db3c1e-ae98-41ce-84dd-1d3d3110a4b2.png",
+        "image_m": "shopify://shop_images/image_a9db3c1e-ae98-41ce-84dd-1d3d3110a4b2.png",
+        "url": "shopify://pages/igi-information",
+        "btn_name": "LEARN MORE"
+      }
+    },
+    "section_title_DjEHRB": {
+      "type": "section-title",
+      "settings": {
+        "title": "The 4C's: What Really Matters in Your Diamond",
+        "content": "Choosing a diamond is more than just picking a carat weight. <span class=\"brand-color\">The 4C's—Cut, Color, Clarity, and Carat—work together to define its beauty and value.</span> Each plays a role, but some matter more than others."
+      }
+    },
+    "product_toggle_jWNF6R": {
+      "type": "product-toggle",
+      "settings": {
+        "title": "Cut: The Single Most Important Factor in Brilliance",
+        "content": "large or flawless, will look dull. A well-cut diamond will sparkle brilliantly, reflecting light in a way that makes it appear even larger and more vibrant.\nWhen a gemologist inspects a diamond, they focus on specific values—depth percentage, table size, crown angles, and symmetry—all of which determine how light moves through the stone. Too shallow, and light leaks out of the bottom. Too deep, and it escapes through the sides.\nFor round diamonds, look for Excellent or Ideal cuts, as these maximize brilliance. Fancy shapes, like ovals or emerald cuts, have different proportions, so their ideal measurements vary. No matter the shape, a well-cut diamond will always outshine a poorly cut one.",
+        "img_pc": "shopify://shop_images/Group_1000002455.png",
+        "img_m": "shopify://shop_images/Group_1000002456_1.png"
+      }
+    },
+    "product_toggle_Lji3Kf": {
+      "type": "product-toggle",
+      "settings": {
+        "title": "Color：What You See vs. What You Pay For",
+        "content": "Color in diamonds isn’t about bold hues—it’s about how white or yellow a diamond appears. The highest color grades, D-F, are completely colorless and the most sought after. But many buyers prefer G-J diamonds because they appear nearly identical to the untrained eye yet cost significantly less.\nOne overlooked factor? Fluorescence. Diamonds with medium to strong fluorescence may look whiter than their grade suggests, especially in natural sunlight. A well-chosen H or I color diamond with fluorescence can look as bright as a D-F diamond while costing much less.",
+        "img_pc": "shopify://shop_images/Group_1000002456.png",
+        "img_m": "shopify://shop_images/Group_1000002457_1.png"
+      }
     }
   },
   "order": [
@@ -334,6 +400,10 @@
     "1735551360a540ddb7",
     "product_returns_zEfxJK",
     "product_trusted_DwUEYM",
-    "product_perfection_gKPBbR"
+    "product_perfection_gKPBbR",
+    "product_igi_dRMei8",
+    "section_title_DjEHRB",
+    "product_toggle_jWNF6R",
+    "product_toggle_Lji3Kf"
   ]
 }
