@@ -55,6 +55,9 @@
     padding-left: 20px;
     border-left: 4px solid #e9e9e9;
   }
+  .info-box .item.active{
+    border-left: 4px solid #79A88B;
+  }
   @media screen and (max-width: 1024px){
 
   }
@@ -79,7 +82,7 @@
     <div class="info-box">
       {% for block in section.blocks %} 
         {% if block.type == 'item1' %}
-          <div class="item item-with-icons">
+          <div class="item item-with-icons active">
             <h3 class="title-main active">{{ block.settings.title_main }}</h3>
             <div class="flex">
               <div class="icon-box">
