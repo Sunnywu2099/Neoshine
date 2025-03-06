@@ -401,7 +401,7 @@
           "type": "item",
           "settings": {
             "img": "shopify://shop_images/image_01a99643-01f6-4706-a866-ebbc33580ae9.png",
-            "title": "Flawless (FL) andInternally Flawless (IF)",
+            "title": "Flawless (FL) and<br>\nInternally Flawless (IF)",
             "content": "diamonds are exceptionally rare and command high premiums."
           }
         },
@@ -409,7 +409,7 @@
           "type": "item",
           "settings": {
             "img": "shopify://shop_images/image_01a99643-01f6-4706-a866-ebbc33580ae9.png",
-            "title": "VVS1-VVS2(Very, Very Slightly Included)",
+            "title": "VVS1-VVS2<br>\n(Very, Very Slightly Included)",
             "content": "Inclusions are almost impossible to spot even under 10x magnification."
           }
         },
@@ -417,7 +417,7 @@
           "type": "item",
           "settings": {
             "img": "shopify://shop_images/Rectangle_12586.png",
-            "title": "VS1-VS2(Very Slightly Included)",
+            "title": "VS1-VS2<br>\n(Very Slightly Included)",
             "content": "Inclusions are minor and almost always invisible to the naked eye."
           }
         },
@@ -425,7 +425,7 @@
           "type": "item",
           "settings": {
             "img": "shopify://shop_images/Rectangle_12586.png",
-            "title": "SI1-SI2(Slightly Included)",
+            "title": "SI1-SI2<br>\n(Slightly Included)",
             "content": "Some inclusions may be visible without magnification, but a well-selected SI1 can still appear eye-clean."
           }
         },
@@ -433,7 +433,7 @@
           "type": "item",
           "settings": {
             "img": "shopify://shop_images/Rectangle_12586.png",
-            "title": "I1-I3(Included)",
+            "title": "I1-I3<br>\n(Included)",
             "content": "Inclusions are visible and can impact durability."
           }
         }
