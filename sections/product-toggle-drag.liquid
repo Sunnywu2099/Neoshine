@@ -1,12 +1,12 @@
 <style>
-  .product-toggle-drag{
+  .product-toggle-drag {
     margin-bottom: 40px;
   }
-  .product-toggle-drag .toggle-wrapper-drag{
+  .product-toggle-drag .toggle-wrapper-drag {
     border-radius: 3px;
-    box-shadow: 0px 8px 8px 0px rgba(147, 147, 147, 0.20);
+    box-shadow: 0 8px 8px 0 rgba(147, 147, 147, 0.20);
   }
-  .product-toggle-drag .title-box{
+  .product-toggle-drag .title-box {
     background: #fafafa;
     display: flex;
     justify-content: space-between;
@@ -14,15 +14,15 @@
     cursor: pointer;
     padding: 30px 150px 30px 60px;
   }
-  .product-toggle-drag .title-box .toggle-btn{
+  .product-toggle-drag .title-box .toggle-btn {
     transform: rotate(180deg);
     transition: all 0.3s ease-in-out;
   }
-  .product-toggle-drag .title-box.close .toggle-btn{
-    transform: rotate(00deg);
+  .product-toggle-drag .title-box.close .toggle-btn {
+    transform: rotate(0deg);
     transition: all 0.3s ease-in-out;
   }
-  .product-toggle-drag .toggle-title{
+  .product-toggle-drag .toggle-title {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -32,58 +32,106 @@
     line-height: 26px;
     text-transform: capitalize;
   }
-  .product-toggle-drag svg{
+  .product-toggle-drag svg {
     display: block;
     width: 100%;
   }
-  .product-toggle-drag .content-box{
+  .product-toggle-drag .content-box {
     padding: 60px 100px;
     display: flex;
     gap: 90px;
     justify-content: space-between;
     align-items: center;
   }
-  .product-toggle-drag .content-box .media-box{
+  .product-toggle-drag .content-box .media-box {
     width: 43%;
     flex-shrink: 0;
   }
-  .product-toggle-drag .content{
+  .product-toggle-drag .content {
     color: #505050;
     font-size: 15px;
     font-weight: 400;
     line-height: 20px;
   }
+  #slider {
+    position: relative;
+    width: 500px;
+    height: 10px;
+    background-color: #ddd;
+    margin: 50px;
+  }
+
+  #progress {
+    position: absolute;
+    height: 10px;
+    background-color: #00f;
+    width: 0;
+  }
+
+  #handle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #f00;
+    border-radius: 50%;
+    top: -5px;
+    cursor: pointer;
+  }
+
+  .tick {
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background-color: #000;
+    top: -5px;
+  }
+
+  #output {
+    margin-top: 20px;
+  }
+
+  #diamond {
+    position: absolute;
+    top: 100px;
+    /* 根据需要调整位置 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    /* 初始宽度 */
+    transition: width 0.2s;
+    /* 平滑过渡 */
+  }
   @media screen and (max-width: 1200px) {
-    .product-toggle-drag .title-box{
+    .product-toggle-drag .title-box {
       padding: 10px 26px;
     }
-    .product-toggle-drag .content-box{
+    .product-toggle-drag .content-box {
       padding: 40px 26px;
       gap: 20px;
     }
   }
   @media screen and (max-width: 749px) {
-    .product-toggle-drag{
+    .product-toggle-drag {
       margin-bottom: 30px;
     }
-    .product-toggle-drag .content-box{
+    .product-toggle-drag .content-box {
       flex-direction: column;
     }
-    .product-toggle-drag .content-box .media-box{
+    .product-toggle-drag .content-box .media-box {
       width: 100%;
     }
-    .product-toggle-drag .toggle-title{
+    .product-toggle-drag .toggle-title {
       font-size: 12px;
       line-height: 18px;
     }
-    .product-toggle-drag .content{
+    .product-toggle-drag .content {
       font-size: 12px;
       line-height: 18px;
     }
-    .product-toggle-drag .title-icon{
+    .product-toggle-drag .title-icon {
       width: 20px;
     }
-    .product-toggle-drag .toggle-btn{
+    .product-toggle-drag .toggle-btn {
       width: 14px;
     }
   }
@@ -97,8 +145,19 @@
         <span>{{ section.settings.title }}</span>
       </div>
       <div class="toggle-btn">
-        <svg width="28" height="18" viewBox="0 0 28 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M1 0.999998L14.0008 16.7623L27 1" stroke="#121212" style="stroke:#121212;stroke:color(display-p3 0.0706 0.0706 0.0706);stroke-opacity:1;" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg
+          width="28"
+          height="18"
+          viewBox="0 0 28 18"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M1 0.999998L14.0008 16.7623L27 1"
+            stroke="#121212"
+            style="stroke:#121212;stroke:color(display-p3 0.0706 0.0706 0.0706);stroke-opacity:1;"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round" />
         </svg>
 
       </div>
@@ -112,13 +171,24 @@
       <div class="media-box">
         <div class="image-box">
           {% render 'responsive-image',
-              sid: section.id,
-              image_desktop: section.settings.img_pc,
-              image_mobile: section.settings.img_m,
-              alt: section.settings.title,
-              lazy: true,
-              preload: false
-            %}
+            sid: section.id,
+            image_desktop: section.settings.img_pc,
+            image_mobile: section.settings.img_m,
+            alt: section.settings.title,
+            lazy: true,
+            preload: false
+          %}
+        </div>
+        <p>Actual diamond size on size 1 hand</p>
+        <div id="slider">
+          <div id="progress"></div>
+          <div id="handle"></div>
+          <div class="tick" style="left: 0%"></div>
+          <div class="tick" style="left: 20%"></div>
+          <div class="tick" style="left: 40%"></div>
+          <div class="tick" style="left: 60%"></div>
+          <div class="tick" style="left: 80%"></div>
+          <div class="tick" style="left: 100%"></div>
         </div>
       </div>
     </div>
@@ -131,55 +201,96 @@
       $(this).toggleClass('close');
       $(this).next('.content-box').slideToggle();
     })
-
+  
     $('.product-toggle-drag .chat-btn').on('click', function () {
       tidioChatApi.open()
     })
     $('.product-toggle-drag .chat-btn').on('touchstend', function () {
       tidioChatApi.open()
     })
+
+    // 拖动条实现
+    const handle = document.getElementById('handle');
+    const slider = document.getElementById('slider');
+    const progress = document.getElementById('progress');
+    const output = document.getElementById('output');
+    const diamond = document.getElementById('diamond');
+    let isDragging = false;
+
+    function startDrag(event) {
+        isDragging = true;
+        event.preventDefault();
+    }
+
+    function stopDrag() {
+        isDragging = false;
+    }
+
+    function drag(event) {
+        if (isDragging) {
+            event.preventDefault();
+            let rect = slider.getBoundingClientRect();
+            let offsetX = (event.touches ? event.touches[0].clientX : event.clientX) - rect.left;
+            if (offsetX < 0) offsetX = 0;
+            if (offsetX > rect.width - handle.offsetWidth) offsetX = rect.width - handle.offsetWidth;
+            handle.style.left = offsetX + 'px';
+            progress.style.width = offsetX + 'px';
+            output.textContent = '拖动距离: ' + Math.round((offsetX / (rect.width - handle.offsetWidth)) * 5);
+
+            // 根据拖动距离调整钻石大小
+            const diamondSize = 50 + (offsetX / (rect.width - handle.offsetWidth)) * 50; // 50到100之间变化
+            diamond.style.width = diamondSize + 'px';
+        }
+    }
+
+    handle.addEventListener('mousedown', startDrag);
+    document.addEventListener('mouseup', stopDrag);
+    document.addEventListener('mousemove', drag);
+
+    handle.addEventListener('touchstart', startDrag);
+    document.addEventListener('touchend', stopDrag);
+    document.addEventListener('touchmove', drag);
   })
 </script>
 
 {% schema %}
-{
-  "name": "Product Toggle Drag",
-  "tag": "section",
-  "class": "product-toggle-drag",
-  "settings": [
-    {
-      "type": "textarea",
-      "id": "title",
-      "label": "title",
-      "default": "your Diamond Size: 1 Carat"
-    },
-    {
-      "type": "textarea",
-      "id": "sub_title",
-      "label": "sub title",
-      "default": "Understanding Diamond Carat Weight"
-    },
-    {
-      "type": "textarea",
-      "id": "content",
-      "label": "content",
-      "default": "A diamond's carat weight is determined by its size, with larger diamonds weighing more. However, it's important to note that carat weight is not the same as size, as other factors such as depth and shape can also impact how large a diamond appears."
-    },
-    {
-      "type": "image_picker",
-      "id": "img_pc",
-      "label": "image pc"
-    },
-    {
-      "type": "image_picker",
-      "id": "img_m",
-      "label": "image m"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Product Toggle Drag"
-    }
-  ]
-}
+  {
+    "name": "Product Toggle Drag",
+    "tag": "section",
+    "class": "product-toggle-drag",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "title",
+        "label": "title",
+        "default": "your Diamond Size: 1 Carat"
+      },
+      {
+        "type": "textarea",
+        "id": "sub_title",
+        "label": "sub title",
+        "default": "Understanding Diamond Carat Weight"
+      },
+      {
+        "type": "textarea",
+        "id": "content",
+        "label": "content",
+        "default": "A diamond's carat weight is determined by its size, with larger diamonds weighing more. However, it's important to note that carat weight is not the same as size, as other factors such as depth and shape can also impact how large a diamond appears."
+      },
+      {
+        "type": "image_picker",
+        "id": "img_pc",
+        "label": "image pc"
+      }, {
+        "type": "image_picker",
+        "id": "img_m",
+        "label": "image m"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Toggle Drag"
+      }
+    ]
+  }
 {% endschema %}
