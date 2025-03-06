@@ -1,0 +1,170 @@
+<style>
+  .product-toggle-loop{
+    margin-bottom: 40px;
+  }
+  .product-toggle-loop .toggle-wrapper{
+    border-radius: 3px;
+    box-shadow: 0px 8px 8px 0px rgba(147, 147, 147, 0.20);
+  }
+  .product-toggle-loop .title-box{
+    background: #fafafa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 30px 150px 30px 60px;
+  }
+  .product-toggle-loop .title-box .toggle-btn{
+    transform: rotate(180deg);
+    transition: all 0.3s ease-in-out;
+  }
+  .product-toggle-loop .title-box.close .toggle-btn{
+    transform: rotate(00deg);
+    transition: all 0.3s ease-in-out;
+  }
+  .product-toggle-loop .toggle-title{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #505050;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26px;
+    text-transform: capitalize;
+  }
+  .product-toggle-loop svg{
+    display: block;
+    width: 100%;
+  }
+  .product-toggle-loop .content-box{
+    padding: 60px 100px;
+    display: flex;
+    gap: 90px;
+    justify-content: space-between;
+  }
+  .product-toggle-loop .content-box .media-box{
+    width: 43%;
+    flex-shrink: 0;
+  }
+  .product-toggle-loop .content{
+    color: #505050;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  @media screen and (max-width: 1200px) {
+    .product-toggle-loop .title-box{
+      padding: 10px 26px;
+    }
+    .product-toggle-loop .content-box{
+      padding: 40px 26px;
+      gap: 20px;
+    }
+  }
+  @media screen and (max-width: 749px) {
+    .product-toggle-loop{
+      margin-bottom: 30px;
+    }
+    .product-toggle-loop .content-box{
+      flex-direction: column;
+    }
+    .product-toggle-loop .content-box .media-box{
+      width: 100%;
+    }
+    .product-toggle-loop .toggle-title{
+      font-size: 12px;
+      line-height: 18px;
+    }
+    .product-toggle-loop .content{
+      font-size: 12px;
+      line-height: 18px;
+    }
+    .product-toggle-loop .title-icon{
+      width: 20px;
+    }
+    .product-toggle-loop .toggle-btn{
+      width: 14px;
+    }
+  }
+</style>
+
+<div class="page-width">
+  <div class="toggle-wrapper">
+    <div class="title-box">
+      <div class="toggle-title">
+        <span class="title-icon">{% render 'toggle-icon' %}</span>
+        <span>{{ section.settings.title }}</span>
+      </div>
+      <div class="toggle-btn">
+        <svg width="28" height="18" viewBox="0 0 28 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 0.999998L14.0008 16.7623L27 1" stroke="#121212" style="stroke:#121212;stroke:color(display-p3 0.0706 0.0706 0.0706);stroke-opacity:1;" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+      </div>
+    </div>
+    <div class="content-box">
+      <div class="content">
+        {{ section.settings.content }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    $('#shopify-section-{{section.id}}.product-toggle-loop .title-box').click(function () {
+      $(this).toggleClass('close');
+      $(this).next('.content-box').slideToggle();
+    })
+  })
+</script>
+
+{% schema %}
+{
+  "name": "Product Toggle with loop",
+  "tag": "section",
+  "class": "product-toggle-loop",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "title",
+      "default": "Clarity: What You Can and Can't See"
+    },
+    {
+      "type": "textarea",
+      "id": "content",
+      "label": "content",
+      "default": "Clarity measures how many internal or external imperfections (inclusions and blemishes) exist inside a diamond. The fewer, the better—but here's the secret: most inclusions are microscopic."
+    }
+  ],
+  "blocks": [
+    {
+        "type": "item",
+        "name": "Item",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "img",
+            "label": "image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "title"
+          },
+          {
+            "type": "textarea",
+            "id": "content",
+            "label": "content"
+          }
+        ]
+      }
+  ],
+  "presets": [
+    {
+      "name": "Product Toggle with loop"
+    }
+  ]
+}
+{% endschema %}
