@@ -1,0 +1,44 @@
+<style>
+  .section-introduce{
+
+  }
+  
+
+  @media screen and (max-width: 749px) {
+    .section-introduce{
+      
+    }
+  }
+</style>
+
+<div class="page-width">
+  <h2 class="section-title">{{section.settings.title}}</h2>
+  <p class="section-content">{{section.settings.content}}</p>
+</div>
+
+{% schema %}
+{
+  "name": "Section introduce",
+  "tag": "section",
+  "class": "section-introduce",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "title",
+      "default": "The 4C's: What Really Matters in Your Diamond"
+    },
+    {
+      "type": "textarea",
+      "id": "content",
+      "label": "title",
+      "default": "Choosing a diamond is more than just picking a carat weight.The 4C's—Cut, Color, Clarity, and Carat—work together to define its beauty and value. Each plays a role, but some matter more than others."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Section introduce"
+    }
+  ]
+}
+{% endschema %}
