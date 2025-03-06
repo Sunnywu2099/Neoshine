@@ -88,6 +88,8 @@
   }
 </style>
 
+{% assign hand_img = 'https://cdn.shopify.com/s/files/1/0897/6921/4241/files/Rectangle_12564.png' %}
+
 <div class="page-width">
   <div class="toggle-wrapper-drag">
     <div class="title-box">
@@ -109,7 +111,16 @@
         <div class="chat-btn">Get an expert opinion on this diamond</div>
       </div>
       <div class="media-box">
-            
+        <div class="image-box">
+          {% render 'responsive-image',
+              sid: section.id,
+              image_desktop: hand_img,
+              image_mobile: hand_img,
+              alt: section.settings.title,
+              lazy: true,
+              preload: false
+            %}
+        </div>
       </div>
     </div>
   </div>
