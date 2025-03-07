@@ -327,13 +327,16 @@
       if (!elements.container) return;
 
       const endPoint = window.innerHeight * 0.8;
+      // 确保容器的高度固定
+      const containerHeight = elements.container.offsetHeight;
+      elements.container.style.minHeight = `${containerHeight}px`;
       
       state.scrollTrigger = ScrollTrigger.create({
         trigger: elements.container,
         start: () => `top ${window.innerHeight * 0.1}`, // 动态计算起始位置
         end: () => `+=${endPoint * elements.itemsWithIcons.length}`,
         pin: true,
-        pinSpacing: true,
+        pinSpacing: false,
         scrub: 0.5,
         anticipatePin: 1,
         invalidateOnRefresh: true,
@@ -345,6 +348,13 @@
             item.classList.toggle('active', !active);
             target.classList.toggle('active', active);
           });
+
+          // 切换图片
+          const imgSecond = document.querySelector('.img-second');
+          if (imgSecond) {
+            const imgActive = progress > 0.5;
+            imgSecond.style.transform = imgActive ? 'translateX(0%)' : 'translateX(100%)';
+          }
         },
         onRefresh: self => {
           // 窗口变化后重新计算位置
