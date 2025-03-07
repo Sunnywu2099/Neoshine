@@ -1,0 +1,313 @@
+<style>
+  .product-toggle-loop{
+    margin-bottom: 40px;
+  }
+  .product-toggle-loop .toggle-wrapper{
+    border-radius: 3px;
+    box-shadow: 0px 8px 8px 0px rgba(147, 147, 147, 0.20);
+  }
+  .product-toggle-loop .title-box{
+    background: #fafafa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 30px 150px 30px 60px;
+  }
+  .product-toggle-loop .title-box .toggle-btn{
+    transform: rotate(180deg);
+    transition: all 0.3s ease-in-out;
+  }
+  .product-toggle-loop .title-box.close .toggle-btn{
+    transform: rotate(00deg);
+    transition: all 0.3s ease-in-out;
+  }
+  .product-toggle-loop .toggle-title{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #505050;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26px;
+    text-transform: capitalize;
+  }
+  .product-toggle-loop svg{
+    display: block;
+    width: 100%;
+  }
+  .product-toggle-loop .content-box{
+    padding: 60px 100px;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .product-toggle-loop .content-box .media-box{
+    width: 43%;
+    flex-shrink: 0;
+  }
+  .product-toggle-loop .content{
+    color: #505050;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  .product-toggle-loop .item .item-title{
+    color: #505050;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    text-transform: capitalize;
+    margin-bottom: 16px;
+  }
+  .product-toggle-loop .item .item-content{
+    color: #787878;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  .product-toggle-loop .item.active .item-title{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26px;
+  }
+  .product-toggle-loop .item.active .item-content{
+    color: #505050;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  .product-toggle-loop .top{
+    min-height: 216px;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 25px;
+    margin-bottom: 22px;
+    border-bottom: 5px solid #e7e7e7;
+  }
+  .product-toggle-loop .item-wrapper .item.active .top{
+    border-bottom: 5px solid #79A88B;
+  }
+  .product-toggle-loop .top img{
+    width: auto;
+    max-width: 100%;
+  }
+  .product-toggle-loop .item-wrapper{
+    display: flex;
+    /* justify-content: space-between; */
+    /* gap: 18px; */
+  }
+  .product-toggle-loop .item-wrapper .item{
+    width: 18%;
+  }
+  .product-toggle-loop .item-wrapper .item.active{
+    width: 22.5%;
+  }
+  .product-toggle-loop .item-wrapper .item img{
+    max-width: 95%;
+  }
+  @media screen and (max-width: 1200px) {
+    .product-toggle-loop .title-box{
+      padding: 10px 26px;
+    }
+    .product-toggle-loop .content-box{
+      padding: 40px 26px;
+      gap: 20px;
+    }
+  }
+  @media screen and (min-width: 750px){
+    .product-toggle-loop .media-swiper{
+      display: none;
+    }
+  }
+  @media screen and (max-width: 749px) {
+    .product-toggle-loop{
+      margin-bottom: 30px;
+    }
+    .product-toggle-loop .content-box{
+      flex-direction: column;
+      padding-right: 0;
+    }
+    .product-toggle-loop .content-box .media-box{
+      width: 100%;
+    }
+    .product-toggle-loop .toggle-title{
+      font-size: 12px;
+      line-height: 18px;
+    }
+    .product-toggle-loop .content{
+      font-size: 12px;
+      line-height: 18px;
+    }
+    .product-toggle-loop .title-icon{
+      width: 20px;
+    }
+    .product-toggle-loop .toggle-btn{
+      width: 14px;
+    }
+    .product-toggle-loop .item-wrapper{
+      display: none;
+    }
+    .product-toggle-loop .top{
+      min-height: 122px;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 0px;
+      margin-bottom: 20px;
+      border-bottom: 0;
+    }
+    .product-toggle-loop .item .item-title,
+    .product-toggle-loop .item.active .item-title{
+      color: #79A88B;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 18px; /* 150% */
+      margin-bottom: 13px;
+    }
+    .product-toggle-loop .item.active .item-content,
+    .product-toggle-loop .item .item-content{
+      color: #505050;
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 16px;
+    }
+    .product-toggle-loop .swiper-pagination{
+      position: static;
+      height: 2px;
+      width: calc(100% - 26px);
+      background: #e9e9e9;
+    }
+    .product-toggle-loop .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+      background: #121212;
+    }
+  }
+</style>
+
+<div class="page-width">
+  <div class="toggle-wrapper">
+    <div class="title-box">
+      <div class="toggle-title">
+        <span class="title-icon">{% render 'toggle-icon' %}</span>
+        <span>{{ section.settings.title }}</span>
+      </div>
+      <div class="toggle-btn">
+        <svg width="28" height="18" viewBox="0 0 28 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 0.999998L14.0008 16.7623L27 1" stroke="#121212" style="stroke:#121212;stroke:color(display-p3 0.0706 0.0706 0.0706);stroke-opacity:1;" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+      </div>
+    </div>
+    <div class="content-box">
+      <div class="content">
+        {{ section.settings.content }}
+      </div>
+      <div class="item-wrapper">
+        {% for block in section.blocks %}
+          <div class="item {% if forloop.index0 < 2 %}active{% endif %}">
+            <div class="top">
+              <img src="{{block.settings.img | img_url: 'master'}}" alt="{{block.settings.title}}" width="" height="">
+            </div>
+            <div class="bottom">
+              <div class="item-title">{{block.settings.title}}</div>
+              <p class="item-content">{{block.settings.content}}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="media-swiper swiper" style="width: 100%;">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="item swiper-slide {% if forloop.index0 < 2 %}active{% endif %}">
+              <div class="top">
+                <img src="{{block.settings.img | img_url: 'master'}}" alt="{{block.settings.title}}" width="" height="">
+              </div>
+              <div class="bottom">
+                <div class="item-title">{{block.settings.title}}</div>
+                <p class="item-content">{{block.settings.content}}</p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    $('#shopify-section-{{section.id}}.product-toggle-loop .title-box').click(function () {
+      $(this).toggleClass('close');
+      $(this).next('.content-box').slideToggle();
+    })
+
+    const loop_swiper = new Swiper('#shopify-section-{{section.id}} .media-swiper', {
+      slidesPerView: 2,
+      spaceBetween: 10,
+      loop: false,
+      pagination: {
+        el: '.media-swiper .swiper-pagination',
+        type: 'progressbar',
+      },
+      breakpoints: {
+        750: {
+          slidesPerView: 5,
+          spaceBetween: 10,
+        }
+      }
+    })
+  })
+</script>
+
+{% schema %}
+{
+  "name": "Product Toggle with loop",
+  "tag": "section",
+  "class": "product-toggle-loop",
+  "limit": 1,
+  "max_blocks": 5,
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "title",
+      "default": "Clarity: What You Can and Can't See"
+    },
+    {
+      "type": "textarea",
+      "id": "content",
+      "label": "content",
+      "default": "Clarity measures how many internal or external imperfections (inclusions and blemishes) exist inside a diamond. The fewer, the better—but here's the secret: most inclusions are microscopic."
+    }
+  ],
+  "blocks": [
+    {
+        "type": "item",
+        "name": "Item",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "img",
+            "label": "image"
+          },
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "title"
+          },
+          {
+            "type": "textarea",
+            "id": "content",
+            "label": "content"
+          }
+        ]
+      }
+  ],
+  "presets": [
+    {
+      "name": "Product Toggle with loop"
+    }
+  ]
+}
+{% endschema %}
