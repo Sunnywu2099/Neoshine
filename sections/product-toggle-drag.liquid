@@ -133,17 +133,21 @@
   #output {
     margin-top: 20px;
   }
-
+  .product-toggle-drag .image-box{
+    position: relative;
+  }
   #diamond {
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 1px 1px #0000001a;
+    z-index: 3;
+    transform: translate(-50%,-50%);
     position: absolute;
     top: 100px;
-    /* 根据需要调整位置 */
     left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    /* 初始宽度 */
-    transition: width 0.2s;
-    /* 平滑过渡 */
+    width: 3.285mm;
+    height: 3.285mm;
+    transition: all 0.2s;
   }
   @media screen and (max-width: 1200px) {
     .product-toggle-drag .title-box {
@@ -252,6 +256,7 @@
             lazy: true,
             preload: false
           %}
+          <div id="diamond"></div>
         </div>
         <p>Actual diamond size on size 1 hand</p>
         <div id="slider">
