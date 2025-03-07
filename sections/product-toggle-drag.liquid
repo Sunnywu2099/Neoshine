@@ -130,14 +130,20 @@
     bottom: -10px;
   }
 
-  .output {
-    width: fit-content;
+  #output {
+    /* width: fit-content;
     background: #ededed;
     border-radius: 4px;
     padding: 2px 10px;
     font-size: 12px;
     font-weight: 600;
-    cursor: pointer;
+    cursor: pointer; */
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 8px 9px 8px;
+    background-color: #ededed;
+    top: 24px;
   }
   .product-toggle-drag .image-box{
     position: relative;
@@ -279,7 +285,8 @@
           <div class="tick" style="left: 58%">3</div>
           <div class="tick" style="left: 78%">4</div>
           <div class="tick" style="left: 96%">5</div>
-          <div class="output">your diamond size: <span id="output">1</span>ct</div>
+          {% comment %} your diamond size: <span id="output">1</span>ct {% endcomment %}
+          <div id="output"></div>
         </div>
       </div>
     </div>
@@ -316,6 +323,7 @@
         const initialOffsetX = rect.width * 0.165; // 1克拉的位置在20%
         handle.style.left = initialOffsetX + 'px';
         progress.style.width = initialOffsetX + 'px';
+        output.style.left = initialOffsetX + 'px';
 
         const diamondSize = caratSizes[1]; // 1克拉对应的大小
         diamond.style.width = diamondSize + 'mm';
