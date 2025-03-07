@@ -80,6 +80,21 @@
     background-color: #121212;
     color: #fff;
   }
+  .product-igi-wrapper .media-box{
+    /* max-width: 900px; */
+    position: relative;
+    overflow: hidden;
+  }
+  .product-igi-wrapper .media-box .img-second{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(100%);
+    transition: all .2s;
+  }
+  .product-igi-wrapper .media-box .img-second.active{
+    transform: translateX(0%);
+  }
   @media screen and (min-width: 750px) {
     .info-box-swiper{
       display: none;
@@ -134,14 +149,8 @@
   <h2 class="section-title">{{section.settings.title}}</h2>
   <div class="trigger-box">
     <div class="media-box">
-      {% render 'responsive-image',
-        sid: section.id,
-        image_desktop: section.settings.image_pc,
-        image_mobile: section.settings.image_m,
-        alt: section.settings.title,
-        lazy: true,
-        preload: false
-      %}
+      <img class="img-first" src="{{ section.settings.image_1 | img_url: 'master' }}" alt="section.settings.title" loading="lazy" width="900" height="">
+      <img class="img-second" src="{{ section.settings.image_2 | img_url: 'master' }}" alt="section.settings.title" loading="lazy" width="" height=""> 
     </div>
     <div class="info-box">
       {% for block in section.blocks %} 
@@ -318,11 +327,14 @@
       if (!elements.container) return;
 
       const endPoint = window.innerHeight * 0.8;
+      // 确保容器的高度固定
+      // const containerHeight = elements.container.offsetHeight;
+      // elements.container.style.minHeight = `${containerHeight}px`;
       
       state.scrollTrigger = ScrollTrigger.create({
         trigger: elements.container,
         start: () => `top ${window.innerHeight * 0.1}`, // 动态计算起始位置
-        end: () => `+=${endPoint * elements.itemsWithIcons.length}`,
+        end: () => `+=${endPoint}`,
         pin: true,
         pinSpacing: true,
         scrub: 0.5,
@@ -336,6 +348,13 @@
             item.classList.toggle('active', !active);
             target.classList.toggle('active', active);
           });
+
+          // 切换图片
+          const imgSecond = document.querySelector('.img-second');
+          if (imgSecond) {
+            const imgActive = progress > 0.5;
+            imgSecond.style.transform = imgActive ? 'translateX(0%)' : 'translateX(100%)';
+          }
         },
         onRefresh: self => {
           // 窗口变化后重新计算位置
@@ -360,7 +379,18 @@
         },
         observer: true,
         observeParents: true,
-        observeSlideChildren: true
+        observeSlideChildren: true,
+
+        on: {
+                slideChange: function () {
+                    // 新增：根据当前幻灯片切换图片
+                    const imgSecond = document.querySelector('.img-second');
+                    if (imgSecond) {
+                        const imgActive = this.activeIndex === 1; // 假设第二张图片在第二个幻灯片
+                        imgSecond.style.transform = imgActive ? 'translateX(0%)' : 'translateX(100%)';
+                    }
+                }
+            }
       });
     };
 
@@ -426,13 +456,13 @@
     },
     {
       "type": "image_picker",
-      "id": "image_pc",
-      "label": "image pc"
+      "id": "image_1",
+      "label": "image 1"
     },
     {
       "type": "image_picker",
-      "id": "image_m",
-      "label": "image mobile"
+      "id": "image_2",
+      "label": "image 2"
     },
     {
       "type": "url",
