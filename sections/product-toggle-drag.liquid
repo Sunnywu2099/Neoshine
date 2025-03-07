@@ -298,14 +298,16 @@
     const diamond = document.getElementById('diamond');
     let isDragging = false;
 
+    const caratSizes = [3.285, 5.394, 6.3, 7.1, 8.1, 9.9];
+
     function setInitialPosition() {
         const rect = slider.getBoundingClientRect();
         const initialOffsetX = rect.width * 0.165; // 1克拉的位置在20%
         handle.style.left = initialOffsetX + 'px';
         progress.style.width = initialOffsetX + 'px';
 
-        const diamondSize = 50 + (initialOffsetX / (rect.width - handle.offsetWidth)) * 50;
-        diamond.style.width = diamondSize + 'px';
+        const diamondSize = caratSizes[1]; // 1克拉对应的大小
+        diamond.style.width = diamondSize + 'mm';
     }
     setInitialPosition();
 
@@ -332,8 +334,14 @@
             // output.textContent = '拖动距离: ' + Math.round((offsetX / (rect.width - handle.offsetWidth)) * 5);
 
             // 根据拖动距离调整钻石大小
-            const diamondSize = 50 + (offsetX / (rect.width - handle.offsetWidth)) * 50; // 50到100之间变化
-            diamond.style.width = diamondSize + 'px';
+            // 计算所在区间
+            const lowerIndex = Math.floor(caratIndex);
+            const upperIndex = Math.min(lowerIndex + 1, caratSizes.length - 1);
+            const lowerSize = caratSizes[lowerIndex];
+            const upperSize = caratSizes[upperIndex];
+            const intervalFraction = caratIndex - lowerIndex;
+            const diamondSize = lowerSize + (upperSize - lowerSize) * intervalFraction;
+            diamond.style.width = diamondSize + 'mm';
         }
     }
 
