@@ -324,9 +324,9 @@
     document.addEventListener('mouseup', stopDrag);
     document.addEventListener('mousemove', drag);
 
-    handle.addEventListener('touchstart', startDrag);
-    document.addEventListener('touchend', stopDrag);
-    document.addEventListener('touchmove', drag);
+    handle.addEventListener('touchstart', startDrag, { passive: false });
+    document.addEventListener('touchend', stopDrag, { passive: false });
+    document.addEventListener('touchmove', drag, { passive: false });
   })
 </script>
 
