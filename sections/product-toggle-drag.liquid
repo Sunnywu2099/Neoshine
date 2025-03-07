@@ -320,6 +320,7 @@
     const slider = document.getElementById('slider');
     const progress = document.getElementById('progress');
     const output = document.getElementById('output');
+    const output_btn = document.querySelector('#output .output');
     const diamond = document.getElementById('diamond');
     let isDragging = false;
 
@@ -373,6 +374,10 @@
             diamond.style.height = diamondSize + 'mm';
         }
     }
+
+    output_btn.addEventListener('click', function() {
+      setInitialPosition();
+    })
 
     handle.addEventListener('mousedown', startDrag);
     document.addEventListener('mouseup', stopDrag);
