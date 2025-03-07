@@ -81,7 +81,7 @@
     border: 2px solid #fff;
     border-radius: 50%;
     top: -5px;
-    cursor: pointer;
+    cursor: grab;
   }
 
   .tick {
@@ -218,6 +218,7 @@
     $('.product-toggle-drag .chat-btn').on('click', function () {
       tidioChatApi.open()
     })
+    
     $('.product-toggle-drag .chat-btn').on('touchstend', function () {
       tidioChatApi.open()
     })
@@ -232,11 +233,13 @@
 
     function startDrag(event) {
         isDragging = true;
+        handle.style.cursor = 'grabbing';
         event.preventDefault();
     }
 
     function stopDrag() {
         isDragging = false;
+        handle.style.cursor = 'grab';
     }
 
     function drag(event) {
