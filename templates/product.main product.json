@@ -393,6 +393,72 @@
         "img_pc": "shopify://shop_images/Group_1000002456.png",
         "img_m": "shopify://shop_images/Group_1000002457_1.png"
       }
+    },
+    "product_toggle_swiper_9JF8G6": {
+      "type": "product-toggle-swiper",
+      "blocks": {
+        "item_4BFyLw": {
+          "type": "item",
+          "settings": {
+            "img": "shopify://shop_images/image_01a99643-01f6-4706-a866-ebbc33580ae9.png",
+            "title": "Flawless (FL) and<br>\nInternally Flawless (IF)",
+            "content": "diamonds are exceptionally rare and command high premiums."
+          }
+        },
+        "item_jRqTKd": {
+          "type": "item",
+          "settings": {
+            "img": "shopify://shop_images/image_01a99643-01f6-4706-a866-ebbc33580ae9.png",
+            "title": "VVS1-VVS2<br>\n(Very, Very Slightly Included)",
+            "content": "Inclusions are almost impossible to spot even under 10x magnification."
+          }
+        },
+        "item_8d3hg3": {
+          "type": "item",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_12586.png",
+            "title": "VS1-VS2<br>\n(Very Slightly Included)",
+            "content": "Inclusions are minor and almost always invisible to the naked eye."
+          }
+        },
+        "item_33VFpq": {
+          "type": "item",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_12586.png",
+            "title": "SI1-SI2<br>\n(Slightly Included)",
+            "content": "Some inclusions may be visible without magnification, but a well-selected SI1 can still appear eye-clean."
+          }
+        },
+        "item_JqU8QU": {
+          "type": "item",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_12586.png",
+            "title": "I1-I3<br>\n(Included)",
+            "content": "Inclusions are visible and can impact durability."
+          }
+        }
+      },
+      "block_order": [
+        "item_4BFyLw",
+        "item_jRqTKd",
+        "item_8d3hg3",
+        "item_33VFpq",
+        "item_JqU8QU"
+      ],
+      "settings": {
+        "title": "Clarity: What You Can and Can't See",
+        "content": "Clarity measures how many internal or external imperfections (inclusions and blemishes) exist inside a diamond. The fewer, the better—\n<br>but here's the secret: most inclusions are microscopic."
+      }
+    },
+    "product_toggle_drag_eHHahV": {
+      "type": "product-toggle-drag",
+      "settings": {
+        "title": "your Diamond Size: 1 Carat",
+        "sub_title": "Understanding Diamond Carat Weight",
+        "content": "A diamond's carat weight is determined by its size, with larger diamonds weighing more. However, it's important to note that carat weight is not the same as size, as other factors such as depth and shape can also impact how large a diamond appears.",
+        "img_pc": "shopify://shop_images/Rectangle_12564.png",
+        "img_m": "shopify://shop_images/Rectangle_12564_1.png"
+      }
     }
   },
   "order": [
@@ -404,6 +470,8 @@
     "product_igi_dRMei8",
     "section_title_DjEHRB",
     "product_toggle_jWNF6R",
-    "product_toggle_Lji3Kf"
+    "product_toggle_Lji3Kf",
+    "product_toggle_swiper_9JF8G6",
+    "product_toggle_drag_eHHahV"
   ]
 }
