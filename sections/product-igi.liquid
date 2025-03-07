@@ -334,7 +334,7 @@
       state.scrollTrigger = ScrollTrigger.create({
         trigger: elements.container,
         start: () => `top ${window.innerHeight * 0.1}`, // 动态计算起始位置
-        end: () => `+=${endPoint * elements.itemsWithIcons.length}`,
+        end: () => `+=${endPoint}`,
         pin: true,
         pinSpacing: false,
         scrub: 0.5,
