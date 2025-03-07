@@ -272,180 +272,172 @@
 
     // 状态管理对象
     const state = {
-        scrollTrigger: null,
-        swiper: null,
-        isMobile: null,
-        elements: null,
-        raf: null
+      scrollTrigger: null,
+      swiper: null,
+      isMobile: null
     };
 
-    // 缓存元素引用
-    const cacheElements = () => {
-        state.elements = {
-            container: document.querySelector('.product-igi-wrapper'),
-            itemsWithIcons: document.querySelectorAll('.item-with-icons'),
-            itemsWithoutIcons: document.querySelectorAll('.item-without-icons'),
-            swiperContainer: document.querySelector('.product-igi-wrapper .info-box-swiper'),
-            imgSecond: document.querySelector('.img-second')
-        };
+    // 防抖优化（300ms）
+    const debounce = (func, delay) => {
+      let timeout;
+      return () => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func(), delay);
+      };
     };
 
-    // 防抖优化（使用requestAnimationFrame）
-    const optimizedResize = (func) => {
-        let ticking = false;
-        return () => {
-            if (!ticking) {
-                state.raf = requestAnimationFrame(() => {
-                    func();
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        };
-    };
+    // 获取动态元素引用
+    const getElements = () => ({
+      container: document.querySelector('.product-igi-wrapper'),
+      itemsWithIcons: document.querySelectorAll('.item-with-icons'),
+      itemsWithoutIcons: document.querySelectorAll('.item-without-icons'),
+      swiperContainer: document.querySelector('.product-igi-wrapper .info-box-swiper')
+    });
 
-    // 完全清理逻辑
-    const fullCleanup = () => {
-        // 清理动画资源
-        if (state.scrollTrigger) {
-            ScrollTrigger.getAll().forEach(instance => instance.kill());
-            state.scrollTrigger = null;
-        }
-
-        // 清理Swiper
-        if (state.swiper) {
-            state.swiper.destroy(true, true);
-            state.swiper = null;
-        }
-
-        // 清理RAF
-        if (state.raf) {
-            cancelAnimationFrame(state.raf);
-            state.raf = null;
-        }
-
+    // 完全销毁ScrollTrigger
+    const destroyScrollTrigger = () => {
+      if (state.scrollTrigger) {
+        // 清理ScrollTrigger生成的样式
+        document.querySelectorAll('.sticky-placeholder').forEach(el => el.remove());
+        state.scrollTrigger.kill();
+        state.scrollTrigger = null;
+        
         // 重置元素状态
-        if (state.elements) {
-            state.elements.itemsWithIcons.forEach(el => {
-                el.classList.remove('active');
-                el.style.removeProperty('will-change');
-            });
-            state.elements.itemsWithoutIcons.forEach(el => {
-                el.classList.remove('active');
-                el.style.removeProperty('will-change');
-            });
-            if (state.elements.imgSecond) {
-                state.elements.imgSecond.style.removeProperty('transform');
-            }
-        }
+        const { itemsWithIcons, itemsWithoutIcons } = getElements();
+        itemsWithIcons.forEach(el => el.classList.remove('active'));
+        itemsWithoutIcons.forEach(el => el.classList.remove('active'));
+      }
+    };
+
+    // 完全销毁Swiper
+    const destroySwiper = () => {
+      if (state.swiper) {
+        // 清理Swiper生成的DOM
+        const pagination = state.swiper.pagination.el;
+        if (pagination) pagination.innerHTML = '';
+        
+        state.swiper.destroy(true, true);
+        state.swiper = null;
+      }
     };
 
     // 桌面端逻辑
     const initDesktop = () => {
-        if (!state.elements.container) return;
+      const elements = getElements();
+      if (!elements.container) return;
 
-        // 显式设置容器高度（防止坍塌核心）
-        const containerHeight = state.elements.container.scrollHeight;
-        state.elements.container.style.minHeight = `${containerHeight}px`;
+      const endPoint = window.innerHeight * 0.8;
+      // 确保容器的高度固定
+      // const containerHeight = elements.container.offsetHeight;
+      // elements.container.style.minHeight = `${containerHeight}px`;
+      
+      state.scrollTrigger = ScrollTrigger.create({
+        trigger: elements.container,
+        start: () => `top ${window.innerHeight * 0.1}`, // 动态计算起始位置
+        end: () => `+=${endPoint}`,
+        pin: true,
+        pinSpacing: true,
+        scrub: 0.5,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+        onUpdate: self => {
+          const progress = self.progress * elements.itemsWithIcons.length;
+          elements.itemsWithIcons.forEach((item, index) => {
+            const target = elements.itemsWithoutIcons[index];
+            const active = progress > index + 0.5;
+            item.classList.toggle('active', !active);
+            target.classList.toggle('active', active);
+          });
 
-        // 优化性能设置
-        state.elements.itemsWithIcons.forEach(el => el.style.willChange = 'opacity');
-        state.elements.itemsWithoutIcons.forEach(el => el.style.willChange = 'opacity');
-
-        state.scrollTrigger = ScrollTrigger.create({
-            trigger: state.elements.container,
-            start: () => `top ${window.innerHeight * 0.1}`,
-            end: () => `+=${containerHeight * 0.8}`,
-            pin: true,
-            pinSpacing: true,
-            scrub: 0.5,
-            anticipatePin: 1,
-            invalidateOnRefresh: true,
-            onUpdate: self => {
-                const progress = self.progress * state.elements.itemsWithIcons.length;
-                state.elements.itemsWithIcons.forEach((item, index) => {
-                    const active = progress > index + 0.5;
-                    item.classList.toggle('active', !active);
-                    state.elements.itemsWithoutIcons[index].classList.toggle('active', active);
-                });
-
-                // 图片切换逻辑
-                if (state.elements.imgSecond) {
-                    const imgActive = progress > 0.5;
-                    state.elements.imgSecond.style.transform = imgActive 
-                        ? 'translateX(0%)' 
-                        : 'translateX(100%)';
-                }
-            },
-            onRefresh: self => {
-                // 动态更新容器高度
-                const newHeight = state.elements.container.scrollHeight;
-                state.elements.container.style.minHeight = `${newHeight}px`;
-                self.end = `+=${newHeight * 0.8}`;
-            }
-        });
+          // 切换图片
+          const imgSecond = document.querySelector('.img-second');
+          if (imgSecond) {
+            const imgActive = progress > 0.5;
+            imgSecond.style.transform = imgActive ? 'translateX(0%)' : 'translateX(100%)';
+          }
+        },
+        onRefresh: self => {
+          // 窗口变化后重新计算位置
+          self.vars.start = `top ${window.innerHeight * 0.1}`;
+          self.vars.end = `+=${endPoint * elements.itemsWithIcons.length}`;
+        }
+      });
     };
 
     // 移动端逻辑
     const initMobile = () => {
-        if (!state.elements.swiperContainer) return;
+      const elements = getElements();
+      if (!elements.swiperContainer) return;
 
-        state.swiper = new Swiper(state.elements.swiperContainer, {
-            slidesPerView: 1,
-            spaceBetween: 8,
-            loop: false,
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'progressbar',
-            },
-            observer: true,
-            observeParents: true,
-            observeSlideChildren: true,
-            on: {
-                slideChange: function() {
-                    if (state.elements.imgSecond) {
-                        const imgActive = this.activeIndex === 1;
-                        state.elements.imgSecond.style.transform = imgActive 
-                            ? 'translateX(0%)' 
-                            : 'translateX(100%)';
+      state.swiper = new Swiper(elements.swiperContainer, {
+        slidesPerView: 1,
+        spaceBetween: 8,
+        loop: false,
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'progressbar',
+        },
+        observer: true,
+        observeParents: true,
+        observeSlideChildren: true,
+
+        on: {
+                slideChange: function () {
+                    // 新增：根据当前幻灯片切换图片
+                    const imgSecond = document.querySelector('.img-second');
+                    if (imgSecond) {
+                        const imgActive = this.activeIndex === 1; // 假设第二张图片在第二个幻灯片
+                        imgSecond.style.transform = imgActive ? 'translateX(0%)' : 'translateX(100%)';
                     }
                 }
             }
-        });
+      });
     };
 
-    // 视口检测逻辑
+    // 视口检测
     const checkViewport = () => {
-        const currentIsMobile = window.innerWidth < 750;
-        if (currentIsMobile === state.isMobile) return;
-
-        state.isMobile = currentIsMobile;
-        fullCleanup();
-        cacheElements();
-
-        // 确保DOM更新后执行
-        state.raf = requestAnimationFrame(() => {
-            state.isMobile ? initMobile() : initDesktop();
-            ScrollTrigger.refresh();
-        });
+      const currentIsMobile = window.innerWidth < 750;
+      
+      // 状态未变化时跳过
+      if (currentIsMobile === state.isMobile) return;
+      
+      state.isMobile = currentIsMobile;
+      
+      // 完全清理旧实例
+      destroyScrollTrigger();
+      destroySwiper();
+      
+      // 延迟初始化确保DOM更新
+      requestAnimationFrame(() => {
+        state.isMobile ? initMobile() : initDesktop();
+        ScrollTrigger.refresh();
+      });
     };
 
-    // 初始化流程
-    const init = () => {
-        cacheElements();
-        checkViewport();
-        
-        const resizeHandler = optimizedResize(checkViewport);
-        window.addEventListener('resize', resizeHandler, { passive: true });
-        window.addEventListener('orientationchange', resizeHandler, { passive: true });
+    // 优化resize处理
+    const handleResize = debounce(() => {
+      checkViewport();
+    }, 300);
 
-        // 清理事件监听
-        window.addEventListener('beforeunload', fullCleanup);
-        window.addEventListener('unload', fullCleanup);
+    // 初始检测
+    checkViewport();
+
+    // 事件监听
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleResize);
+
+    // 清理函数
+    const cleanup = () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('orientationchange', handleResize);
+      destroyScrollTrigger();
+      destroySwiper();
     };
 
-    init();
-});
+    // 页面卸载清理
+    window.addEventListener('beforeunload', cleanup);
+    window.addEventListener('unload', cleanup);
+  });
 </script>
 
 {% schema %}
