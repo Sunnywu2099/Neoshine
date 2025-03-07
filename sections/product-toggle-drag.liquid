@@ -312,7 +312,7 @@
             if (offsetX > rect.width - handle.offsetWidth) offsetX = rect.width - handle.offsetWidth;
             handle.style.left = offsetX + 'px';
             progress.style.width = offsetX + 'px';
-            output.textContent = '拖动距离: ' + Math.round((offsetX / (rect.width - handle.offsetWidth)) * 5);
+            // output.textContent = '拖动距离: ' + Math.round((offsetX / (rect.width - handle.offsetWidth)) * 5);
 
             // 根据拖动距离调整钻石大小
             const diamondSize = 50 + (offsetX / (rect.width - handle.offsetWidth)) * 50; // 50到100之间变化
