@@ -308,6 +308,7 @@
 
         const diamondSize = caratSizes[1]; // 1克拉对应的大小
         diamond.style.width = diamondSize + 'mm';
+        diamond.style.height = diamondSize + 'mm';
     }
     setInitialPosition();
 
@@ -343,6 +344,7 @@
             const intervalFraction = caratIndex - lowerIndex;
             const diamondSize = lowerSize + (upperSize - lowerSize) * intervalFraction;
             diamond.style.width = diamondSize + 'mm';
+            diamond.style.height = diamondSize + 'mm';
         }
     }
 
