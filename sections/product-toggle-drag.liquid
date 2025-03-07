@@ -146,6 +146,11 @@
     top: 24px;
     position: relative;
   }
+  #output .output{
+    width: fit-content;
+    position: absolute;
+    top: 100%;
+  }
   .product-toggle-drag .image-box{
     position: relative;
   }
@@ -286,8 +291,9 @@
           <div class="tick" style="left: 58%">3</div>
           <div class="tick" style="left: 78%">4</div>
           <div class="tick" style="left: 96%">5</div>
-          {% comment %} your diamond size: <span id="output">1</span>ct {% endcomment %}
-          <div id="output"></div>
+          <div id="output">
+            <div class="output">your diamond size: <span id="output">1</span>ct</div>
+          </div>
         </div>
       </div>
     </div>
