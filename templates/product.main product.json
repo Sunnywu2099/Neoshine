@@ -363,8 +363,8 @@
       ],
       "settings": {
         "title": "IGI Certified Diamonds: Trusted, Precise, Transparent",
-        "image_pc": "shopify://shop_images/image_a9db3c1e-ae98-41ce-84dd-1d3d3110a4b2.png",
-        "image_m": "shopify://shop_images/image_a9db3c1e-ae98-41ce-84dd-1d3d3110a4b2.png",
+        "image_1": "shopify://shop_images/image_a9db3c1e-ae98-41ce-84dd-1d3d3110a4b2.png",
+        "image_2": "shopify://shop_images/image_1_d6e18e1e-9c88-497d-85d5-173202bd2f86.png",
         "url": "shopify://pages/igi-information",
         "btn_name": "LEARN MORE"
       }
