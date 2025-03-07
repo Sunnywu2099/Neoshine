@@ -294,7 +294,7 @@
 
     function setInitialPosition() {
         const rect = slider.getBoundingClientRect();
-        const initialOffsetX = rect.width * 0.2; // 1克拉的位置在20%
+        const initialOffsetX = rect.width * 0.165; // 1克拉的位置在20%
         handle.style.left = initialOffsetX + 'px';
         progress.style.width = initialOffsetX + 'px';
 
@@ -302,7 +302,7 @@
         // diamond.style.width = diamondSize + 'px';
     }
     setInitialPosition();
-    
+
     function startDrag(event) {
         isDragging = true;
         handle.style.cursor = 'grabbing';
