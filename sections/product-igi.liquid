@@ -136,8 +136,16 @@
     <div class="media-box">
       {% render 'responsive-image',
         sid: section.id,
-        image_desktop: section.settings.image_pc,
-        image_mobile: section.settings.image_m,
+        image_desktop: section.settings.image_1,
+        image_mobile: section.settings.image_1,
+        alt: section.settings.title,
+        lazy: true,
+        preload: false
+      %}
+      {% render 'responsive-image',
+        sid: section.id,
+        image_desktop: section.settings.image_2,
+        image_mobile: section.settings.image_2,
         alt: section.settings.title,
         lazy: true,
         preload: false
@@ -426,13 +434,13 @@
     },
     {
       "type": "image_picker",
-      "id": "image_pc",
-      "label": "image pc"
+      "id": "image_1",
+      "label": "image 1"
     },
     {
       "type": "image_picker",
-      "id": "image_m",
-      "label": "image mobile"
+      "id": "image_2",
+      "label": "image 2"
     },
     {
       "type": "url",
