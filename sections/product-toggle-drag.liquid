@@ -270,7 +270,7 @@
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
+  $(document).ready(function () {
     $('#shopify-section-{{section.id}}.product-toggle-drag .title-box').click(function () {
       $(this).toggleClass('close');
       $(this).next('.content-box').slideToggle();
