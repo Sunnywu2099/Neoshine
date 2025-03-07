@@ -14,6 +14,25 @@
     cursor: pointer;
     padding: 30px 150px 30px 60px;
   }
+  .product-toggle-drag .item-subtitle{
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 500;
+  }
+  .product-toggle-drag .item-content{
+    margin: 20px 0 60px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+  .product-toggle-drag .chat-btn{
+    width: fit-content;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    border: 1px solid #121212;
+    cursor: pointer;
+    padding: 5px 25px;
+  }
   .product-toggle-drag .title-box .toggle-btn {
     transform: rotate(180deg);
     transition: all 0.3s ease-in-out;
@@ -218,7 +237,7 @@
     $('.product-toggle-drag .chat-btn').on('click', function () {
       tidioChatApi.open()
     })
-    
+
     $('.product-toggle-drag .chat-btn').on('touchstend', function () {
       tidioChatApi.open()
     })
