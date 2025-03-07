@@ -379,7 +379,18 @@
         },
         observer: true,
         observeParents: true,
-        observeSlideChildren: true
+        observeSlideChildren: true,
+
+        on: {
+                slideChange: function () {
+                    // 新增：根据当前幻灯片切换图片
+                    const imgSecond = document.querySelector('.img-second');
+                    if (imgSecond) {
+                        const imgActive = this.activeIndex === 1; // 假设第二张图片在第二个幻灯片
+                        imgSecond.style.transform = imgActive ? 'translateX(0%)' : 'translateX(100%)';
+                    }
+                }
+            }
       });
     };
 
