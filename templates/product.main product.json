@@ -20,17 +20,10 @@
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {}
         },
-        "custom_liquid_zjmHEg": {
-          "type": "custom_liquid",
-          "disabled": true,
-          "settings": {
-            "custom_liquid": "<section class=\"upgrade-landing\">\n  <div class=\"container\">\n    <div class=\"image-wrapper\">\n      <img src=\"https://cdn.shopify.com/s/files/1/0897/6921/4241/files/upgrade-landding_page_second.svg?v=1735614575\" alt=\"Upgrade Landing Page\" />\n    </div>\n  </div>\n</section>"
-          }
-        },
         "icon_with_text_UXVahk": {
           "type": "icon-with-text",
           "settings": {
-            "layout": "vertical",
+            "layout": "horizontal",
             "icon_1": "check_mark",
             "image_1": "shopify://shop_images/landding_page_second_product_promise-54.svg",
             "heading_1": "Each Stone Guaranteed 1.0CT+",
@@ -157,7 +150,6 @@
       "block_order": [
         "title",
         "judge_me_reviews_preview_badge_gEq9hC",
-        "custom_liquid_zjmHEg",
         "icon_with_text_UXVahk",
         "price",
         "custom_liquid_kKWzTU",
