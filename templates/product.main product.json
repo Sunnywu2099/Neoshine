@@ -39,12 +39,6 @@
           "type": "price",
           "settings": {}
         },
-        "custom_liquid_kKWzTU": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<div class=\"valentines-promo\" style=\"text-align: center; padding: 10px 20px; background-color: #ffe6e6; border-radius: 8px;\">\n  <h2 style=\"color: #ff3366; font-size: 1.4em; margin: 0 0 10px;\">♥ Valentine’s Day 10% Off!</h2>\n  <p style=\"color: #333; font-size: 0.9em; margin: 0 0 10px;\">Use code <strong>NEOLOVE10</strong> to enjoy 10% off your favorite items.</p>\n  <button \n    class=\"copy-code-btn\" \n    style=\"padding: 8px 16px; background-color: #ff3366; color: #fff; border: none; border-radius: 4px; font-size: 0.9em; cursor: pointer;\" \n    onclick=\"copyDiscountCode()\"\n  >\n    Copy Code\n  </button>\n</div>\n\n<script>\n  function copyDiscountCode() {\n    // Create a temporary input element to hold the code\n    const discountCode = \"NEOLOVE10\";\n    const tempInput = document.createElement('input');\n    document.body.appendChild(tempInput);\n    tempInput.value = discountCode;\n    tempInput.select();\n    tempInput.setSelectionRange(0, 99999); // For mobile compatibility\n    document.execCommand('copy');\n    document.body.removeChild(tempInput);\n\n    // Notify the user\n    alert(\"Discount code copied: \" + discountCode);\n  }\n</script>"
-          }
-        },
         "icon_with_text_aXXAxj": {
           "type": "icon-with-text",
           "settings": {
@@ -59,7 +53,6 @@
         },
         "custom_liquid_UaQmkh": {
           "type": "custom_liquid",
-          "disabled": true,
           "settings": {
             "custom_liquid": "<section class=\"free-gift-promo\" style=\"margin: 10px auto; max-width: 800px; border: 1px solid #83A78D; border-radius: 5px; padding: 10px; background-color: #fff;\">\n  <style>\n    .free-gift-promo {\n      display: flex;\n      align-items: center;\n      justify-content: flex-start;\n      gap: 10px;\n    }\n\n    .free-gift-promo .promo-image img {\n      width: 100px; \n      height: auto;\n      border-radius: 4px;\n      border: 1px solid #ddd; \n    }\n\n    .free-gift-promo .promo-content {\n      flex: 1;\n      display: flex;\n      flex-direction: column;\n      justify-content: center;\n    }\n\n    .free-gift-promo .promo-content h2 {\n      font-size: 16px;\n      font-weight: 700;\n      color: #83a78d;\n      margin: 0 0 5px;\n    }\n\n    .free-gift-promo .promo-content p {\n      font-size: 12px;\n      color: #333;\n      line-height: 1.5;\n      margin: 0;\n    }\n\n    .free-gift-promo .promo-content .btn-link {\n      font-size: 10px;\n      color: #a9a9a9;\n      text-decoration: none;\n      font-weight: normal;\n      margin-top: 5px;\n    }\n\n    .free-gift-promo .promo-content .btn-link:hover {\n      color: #555;\n    }\n  </style>\n\n  <div class=\"promo-image\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0897/6921/4241/files/1211-earring-3-right-silver.jpg?v=1733907688\" alt=\"Bezel Diamond Earrings\" />\n  </div>\n  <div class=\"promo-content\">\n    <h2>FREE GIFT</h2>\n    <p><strong>Free Pair of Bezel Diamond Earrings - 0.3CT Lab-Grown Diamonds with a Purchase of $999 or More.</strong></p>\n    <a href=\"https://neoshine.com/pages/free-pair-of-bezel-diamond-earrings-terms\" class=\"btn-link\">See Terms</a>\n  </div>\n</section>"
           }
@@ -80,7 +73,6 @@
         },
         "shape_NcGPcx": {
           "type": "shape",
-          "disabled": true,
           "settings": {
             "link-1": "shopify://policies/privacy-policy",
             "image-1": "shopify://shop_images/SVG_9.svg",
@@ -121,29 +113,11 @@
             "swatch_shape": "circle"
           }
         },
-        "custom_liquid_AUhJqQ": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<section class=\"landing-page-image\" style=\"text-align: center; padding: 0 0;\">\n  <div class=\"container\" style=\"max-width: 800px; margin: 0 auto;\">\n    <div class=\"image-wrapper\">\n      <img src=\"https://cdn.shopify.com/s/files/1/0897/6921/4241/files/product-4c.svg?v=1735633837\" \n           alt=\"Landing Page SVG\" \n           style=\"max-width: 100%; height: auto;\" />\n    </div>\n  </div>\n</section>"
-          }
-        },
-        "custom_liquid_zUjC6V": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<div style=\"display: flex; align-items: flex-start; padding: 15px; background-color: #f9f9f9; border-radius: 5px; border: 1px solid #e6e6e6; font-size: 14px; color: #83a78d;\">\n  <div style=\"line-height: 1.6;\">\n    <div style=\"font-weight: bold;\">Available for Immediate Shipping</div>\n    <div>Sizes 4 to 8</div>\n    <div>Crafted with a ring setting in 14K gold or platinum</div>\n  </div>\n</div>"
-          }
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": true,
             "show_gift_card_recipient": false
-          }
-        },
-        "custom_liquid_wLP6Vp": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": ""
           }
         }
       },
@@ -152,16 +126,12 @@
         "judge_me_reviews_preview_badge_gEq9hC",
         "icon_with_text_UXVahk",
         "price",
-        "custom_liquid_kKWzTU",
         "icon_with_text_aXXAxj",
         "custom_liquid_UaQmkh",
         "icon_with_text_Fq7BeK",
         "shape_NcGPcx",
         "variant_picker",
-        "custom_liquid_AUhJqQ",
-        "custom_liquid_zUjC6V",
-        "buy_buttons",
-        "custom_liquid_wLP6Vp"
+        "buy_buttons"
       ],
       "custom_css": [],
       "settings": {
