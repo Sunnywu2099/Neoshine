@@ -71,41 +71,6 @@
             "heading_3": ""
           }
         },
-        "shape_NcGPcx": {
-          "type": "shape",
-          "settings": {
-            "link-1": "shopify://policies/privacy-policy",
-            "image-1": "shopify://shop_images/SVG_9.svg",
-            "text-1": "pear",
-            "link-2": "",
-            "image-2": "shopify://shop_images/SVG_4.svg",
-            "text-2": "princess",
-            "link-3": "",
-            "image-3": "shopify://shop_images/SVG_7.svg",
-            "text-3": "heart",
-            "link-4": "",
-            "image-4": "shopify://shop_images/SVG_5.svg",
-            "text-4": "emerald",
-            "link-5": "",
-            "image-5": "shopify://shop_images/SVG_6.svg",
-            "text-5": "marquise",
-            "link-6": "",
-            "image-6": "shopify://shop_images/SVG_1.svg",
-            "text-6": "oval",
-            "link-7": "",
-            "image-7": "shopify://shop_images/SVG_2.svg",
-            "text-7": "radiant",
-            "link-8": "",
-            "image-8": "shopify://shop_images/SVG.svg",
-            "text-8": "round",
-            "link-9": "",
-            "image-9": "shopify://shop_images/SVG_8.svg",
-            "text-9": "asscher",
-            "link-10": "",
-            "image-10": "shopify://shop_images/SVG_3.svg",
-            "text-10": "cushion"
-          }
-        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -129,7 +94,6 @@
         "icon_with_text_aXXAxj",
         "custom_liquid_UaQmkh",
         "icon_with_text_Fq7BeK",
-        "shape_NcGPcx",
         "variant_picker",
         "buy_buttons"
       ],
