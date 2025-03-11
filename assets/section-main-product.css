@@ -347,6 +347,10 @@ a.product__text {
 .ns-price .product__info-container .price--on-sale .price-item--regular{
   font-size: 18px;
 }
+#parcelator p{
+  font-size: 15px;
+  color: #121212;
+}
 @media(min-width:750px){
   .product__title {
     word-break: break-word;
