@@ -121,6 +121,10 @@ product-info {
     max-width: 45%;
     width: calc(45% - var(--grid-desktop-horizontal-spacing) / 2);
   }
+
+  .product--medium:not(.product--no-media) .product__info-wrapper{
+    padding-top: 55px;
+  }
 }
 .ring-size-dropdown {
   width: 100%;
