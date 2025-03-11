@@ -327,7 +327,7 @@ a.product__text {
   .product__title h1{
     font-size: 36px;
     font-weight: 400;
-    line-height: 20px;
+    line-height: 1.2;
   }
   .product__info-wrapper .price__regular .price-item--regular{
     font-size: 30px;
