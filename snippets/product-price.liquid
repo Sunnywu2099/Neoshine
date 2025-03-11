@@ -40,10 +40,7 @@
     assign money_price_max = price_max | money_with_currency
   endif
 
-  # 获取基准价格和对比价格
-  assign price = product.price | default: 0
-  assign compare_at_price = product.compare_at_price | default: price
-  
+
   # 计算有效折扣
   assign discount_percentage = 0
   if compare_at_price > price
