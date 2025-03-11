@@ -112,7 +112,7 @@
               {%- when 'price' -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }} 
                    data-origin="{{ product.metafields.custom.show_price_tag }}" >
-                  {%- render 'price',
+                  {%- render 'product-price',
                     product: product,
                     use_variant: true,
                     show_badges: product.metafields.custom.show_price_tag,
