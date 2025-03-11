@@ -107,19 +107,19 @@
       <div class="price__sale">
         <div class="sale-box">
           {%- unless product.price_varies == false and product.compare_at_price_varies %}
-            <span>-{{ discount_percentage }}%</span>
+            <span class="discount-percentage">-{{ discount_percentage }}%</span>
           {%- endunless -%}
           <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
           <span class="price-item price-item--sale price-item--last">
             {{ money_price }}
           </span>
           {%- unless product.price_varies == false and product.compare_at_price_varies %}
-            <span>Limited time deal</span>
+            <span class="limit-badge">Limited time deal</span>
           {%- endunless -%}
         </div>
         <div class="del-box">
           {%- unless product.price_varies == false and product.compare_at_price_varies %}
-            <span>Typical:</span>
+            <span class="typical-text">Typical:</span>
             <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
             <span>
               <s class="price-item price-item--regular">
