@@ -20,56 +20,9 @@
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {}
         },
-        "icon_with_text_UXVahk": {
-          "type": "icon-with-text",
-          "settings": {
-            "layout": "horizontal",
-            "icon_1": "check_mark",
-            "image_1": "shopify://shop_images/landding_page_second_product_promise-54.svg",
-            "heading_1": "Each Stone Guaranteed 1.0CT+",
-            "icon_2": "check_mark",
-            "image_2": "shopify://shop_images/landding_page_second_product_promise-55.svg",
-            "heading_2": "IGI Certification & Heart and Arrow Guarantee",
-            "icon_3": "check_mark",
-            "image_3": "shopify://shop_images/landding_page_second_product_promise-56.svg",
-            "heading_3": "Grade VS1 or Above"
-          }
-        },
         "price": {
           "type": "price",
           "settings": {}
-        },
-        "icon_with_text_aXXAxj": {
-          "type": "icon-with-text",
-          "settings": {
-            "layout": "horizontal",
-            "icon_1": "plane",
-            "heading_1": "Free Nationwide Shipping",
-            "icon_2": "lightning_bolt",
-            "heading_2": "Ready to Ship - Sizes 4/5/6/7/8 Available!",
-            "icon_3": "heart",
-            "heading_3": "Lifetime Warranty & Value Guarantee"
-          }
-        },
-        "custom_liquid_UaQmkh": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<section class=\"free-gift-promo\" style=\"margin: 10px auto; max-width: 800px; border: 1px solid #83A78D; border-radius: 5px; padding: 10px; background-color: #fff;\">\n  <style>\n    .free-gift-promo {\n      display: flex;\n      align-items: center;\n      justify-content: flex-start;\n      gap: 10px;\n    }\n\n    .free-gift-promo .promo-image img {\n      width: 100px; \n      height: auto;\n      border-radius: 4px;\n      border: 1px solid #ddd; \n    }\n\n    .free-gift-promo .promo-content {\n      flex: 1;\n      display: flex;\n      flex-direction: column;\n      justify-content: center;\n    }\n\n    .free-gift-promo .promo-content h2 {\n      font-size: 16px;\n      font-weight: 700;\n      color: #83a78d;\n      margin: 0 0 5px;\n    }\n\n    .free-gift-promo .promo-content p {\n      font-size: 12px;\n      color: #333;\n      line-height: 1.5;\n      margin: 0;\n    }\n\n    .free-gift-promo .promo-content .btn-link {\n      font-size: 10px;\n      color: #a9a9a9;\n      text-decoration: none;\n      font-weight: normal;\n      margin-top: 5px;\n    }\n\n    .free-gift-promo .promo-content .btn-link:hover {\n      color: #555;\n    }\n  </style>\n\n  <div class=\"promo-image\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0897/6921/4241/files/1211-earring-3-right-silver.jpg?v=1733907688\" alt=\"Bezel Diamond Earrings\" />\n  </div>\n  <div class=\"promo-content\">\n    <h2>FREE GIFT</h2>\n    <p><strong>Free Pair of Bezel Diamond Earrings - 0.3CT Lab-Grown Diamonds with a Purchase of $999 or More.</strong></p>\n    <a href=\"https://neoshine.com/pages/free-pair-of-bezel-diamond-earrings-terms\" class=\"btn-link\">See Terms</a>\n  </div>\n</section>"
-          }
-        },
-        "icon_with_text_Fq7BeK": {
-          "type": "icon-with-text",
-          "settings": {
-            "layout": "vertical",
-            "icon_1": "none",
-            "image_1": "shopify://shop_images/calendar-03.svg",
-            "heading_1": "",
-            "icon_2": "lock",
-            "image_2": "shopify://shop_images/security-check.svg",
-            "heading_2": "Our Price includes Metal & Stones",
-            "icon_3": "none",
-            "heading_3": ""
-          }
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -89,11 +42,7 @@
       "block_order": [
         "title",
         "judge_me_reviews_preview_badge_gEq9hC",
-        "icon_with_text_UXVahk",
         "price",
-        "icon_with_text_aXXAxj",
-        "custom_liquid_UaQmkh",
-        "icon_with_text_Fq7BeK",
         "variant_picker",
         "buy_buttons"
       ],
