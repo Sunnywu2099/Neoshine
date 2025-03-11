@@ -371,6 +371,10 @@ a.product__text {
 }
 
 @media(max-width:749px){
+  .page-width{
+    padding-left: 5px;
+    padding-right: 5px;
+  }
   .product__title {
     word-break: break-word;
     margin-bottom: 1.5rem;
