@@ -334,6 +334,12 @@ a.product__text {
   font-size: 20px;
   line-height: 1.2;
 }
+.ns-price .limit-badge{
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #cc0b39;
+}
 @media(min-width:750px){
   .product__title {
     word-break: break-word;
