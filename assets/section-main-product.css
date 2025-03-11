@@ -340,6 +340,10 @@ a.product__text {
   line-height: 1.2;
   color: #cc0b39;
 }
+.ns-price .typical-text{
+  font-size: 18px;
+  color: #787878;
+}
 .ns-price .product__info-container .price--on-sale .price-item--regular{
   font-size: 18px;
 }
