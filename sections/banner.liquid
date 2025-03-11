@@ -101,7 +101,7 @@
 </style>
 
 <div class="banner">
-  <div class="swiper">
+  <div class="swiper-container">
     <div class="swiper-wrapper">
       {% for block in section.blocks %} 
       <a class="swiper-slide item" {% if block.settings.url != blank %}href="{{ block.settings.url }}"{% endif %}>
@@ -137,7 +137,7 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const banner_swiper = new Swiper('.banner .swiper', {
+    const banner_swiper = new Swiper('.banner .swiper-container', {
       loop: true,
       // effect: 'fade',
       effect : 'fade',
