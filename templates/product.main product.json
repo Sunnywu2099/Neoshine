@@ -24,6 +24,13 @@
           "type": "price",
           "settings": {}
         },
+        "ns_instock_zVbD4U": {
+          "type": "NS-instock",
+          "settings": {
+            "title": "Your Diamond Upgrade Awaits - But Not For Long",
+            "number_left": 28
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "disabled": true,
@@ -56,6 +63,7 @@
         "title",
         "judge_me_reviews_preview_badge_gEq9hC",
         "price",
+        "ns_instock_zVbD4U",
         "variant_picker",
         "buy_buttons",
         "ns_icons_Lhkxj4"
