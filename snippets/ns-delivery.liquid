@@ -5,6 +5,10 @@
     gap: 15px;
     padding: 0 30px;
   }
+  #ns-delivery .delivery-text {
+    font-size: 18px;
+    color: #505050
+  }
 </style>
 
 {% liquid 
@@ -16,6 +20,6 @@
 
 
 <div id="ns-delivery" data-section="{{ section.id }}" {{ block.shopify_attributes }}>
-  <div class="delivery-title">{{ icon_svg }}</div>
-  <div class="delivery-progress">{{ delivery_date }}</div>
+  <div class="delivery-icon">{{ icon_svg }}</div>
+  <div class="delivery-text">{{ delivery_date }}</div>
 </div>
