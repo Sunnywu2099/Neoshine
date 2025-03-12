@@ -10,6 +10,10 @@
     gap: 15px;
     padding: 25px 18px;
   }
+  #ns-free .gift-img{
+    border-radius: 3px;
+    border: 1px solid #79A88B;
+  }
 </style>
 
 {% liquid 
@@ -22,7 +26,7 @@
 
 <div id="ns-free" data-section="{{ section.id }}" {{ block.shopify_attributes }}>
   <div class>
-    <img src="{{ product.featured_image.src | img_url: '100x' }}" alt="{{ title }}" loading="lazy" width="100" height="100" />
+    <img class="gift-img" src="{{ product.featured_image.src | img_url: '93x' }}" alt="{{ title }}" loading="lazy" width="93" height="93" />
   </div>
   <form method="post" action="/cart/add">
     <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
