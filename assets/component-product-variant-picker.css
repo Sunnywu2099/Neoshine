@@ -1,5 +1,9 @@
 variant-selects {
   display: block;
+  border-radius: 3px;
+  background: #FAFAFA;
+  box-shadow: 0px 8px 8px 0px rgba(147, 147, 147, 0.20);
+  padding: 14px 30px;
 }
 
 .product--no-media .product-form__input--pill,
