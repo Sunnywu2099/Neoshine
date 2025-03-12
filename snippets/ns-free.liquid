@@ -6,9 +6,10 @@
     padding: 14px 30px;
 
     display: flex;
-    /* align-items: center; */
+    align-items: center;
     gap: 15px;
     padding: 25px 18px;
+    justify-content: space-between;
   }
   #ns-free .gift-img{
     border-radius: 3px;
@@ -63,8 +64,8 @@
   </div>
   <div class="gift-post">
     <div class="price-compare">
-      <span class="gift-price">{{ product.price | money }}</span>
-      <span class="free-prict">$ 0.00</span>
+      <span class="compare-price">{{ product.price | money }}</span>
+      <span class="free-price">$ 0.00</span>
     </div>
     <form method="post" action="/cart/add">
       <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
