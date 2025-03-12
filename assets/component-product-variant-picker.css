@@ -16,6 +16,10 @@ variant-selects {
   border-top: 1px solid #787878;
   padding: 10px 0;
 }
+.value-wrapper{
+  display: flex;
+  flex-direction: column;
+}
 .product--no-media .product-form__input--pill,
 .product--no-media .product-form__input--swatch,
 .product--no-media .product-form__input--dropdown {
