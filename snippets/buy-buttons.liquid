@@ -46,7 +46,7 @@
 
 {% if product.template_suffix != 'normal' and product.template_suffix != 'jewelry' %}
         
-<fieldset class="product-form__input product-form__input--dropdown line-item-property__field">
+{% comment %} <fieldset class="product-form__input product-form__input--dropdown line-item-property__field">
   <legend class="form__label">Ring Size</legend>
   <select id="ring-size" name="properties[Ring Size]" class="ring-size-dropdown">
     <option value="4">4</option>
@@ -59,7 +59,7 @@
     <option value="11">11</option>
     <option value="12">12</option>
       </select>
-</fieldset>
+</fieldset> {% endcomment %}
   
 {% endif %}
         <input
