@@ -129,41 +129,25 @@
           .safe-checkout {
             display: flex;
             align-items: center;
-            gap: 10px;
+            flex-wrap: wrap;
+            gap: 16px;
             width: 100%;
             overflow: hidden; 
-            flex-direction: row;
           }
 
           .safe-checkout-text {
             font-size: 14px;
-            font-weight: bold;
-            color: #333;
+            color: #121212;
             flex-shrink: 0;
           }
-
-          .payment_img {
-            max-width: 100%;
-            width:325px;
-            height: auto;
-            object-fit: contain;
-            display: block; 
-          }
-
           @media (max-width: 768px) {
             .safe-checkout {
               flex-direction: column; 
               align-items: center; 
               width: 100%; 
             }
-
             .safe-checkout-text {
               font-size: 12px; 
-            }
-
-            .payment_img {
-              max-width: 80%; 
-              margin: 0 auto; 
             }
           }
         </style>
