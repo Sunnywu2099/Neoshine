@@ -53,6 +53,15 @@
             "show_gift_card_recipient": false
           }
         },
+        "ns_expert_3UTpzK": {
+          "type": "NS-expert",
+          "settings": {
+            "expert_img": "shopify://shop_images/Group_1000002153.png",
+            "expert_title": "Got Questions? Chat with an Expert!",
+            "expert_text": "Our team is here to help you make the perfect choice. Click below to chat with one of our jewelry experts now!",
+            "expert_btn": "Chat with an Expert"
+          }
+        },
         "ns_icons_Lhkxj4": {
           "type": "NS-icons",
           "settings": {
@@ -73,6 +82,7 @@
         "variant_picker",
         "ns_delivery_HH8Rjb",
         "buy_buttons",
+        "ns_expert_3UTpzK",
         "ns_icons_Lhkxj4"
       ],
       "custom_css": [],
