@@ -51,12 +51,14 @@
                 {{- option.selected_value -}}
               </span>
             </legend>
-            {% render 'product-variant-options',
-              product: product,
-              option: option,
-              block: block,
-              picker_type: picker_type
-            %}
+            <div class="value-wrapper">
+              {% render 'product-variant-options',
+                product: product,
+                option: option,
+                block: block,
+                picker_type: picker_type
+              %}
+            </div>
           </fieldset>
         {%- elsif picker_type == 'button' -%}
           <fieldset class="js product-form__input product-form__input--pill">
