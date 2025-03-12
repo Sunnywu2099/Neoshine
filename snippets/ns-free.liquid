@@ -20,6 +20,26 @@
     align-items: center;
     gap: 20px;
   }
+  #ns-free .gift-title{
+    color: #79A88B;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 26px;
+    text-transform: capitalize;
+    margin-bottom: 16px;
+    margin-right: 8px;
+  }
+  .gift-price{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26px;
+    color: #79A88B;
+  }
+  .gift-name{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26px;
+  }
 </style>
 
 {% liquid 
@@ -34,7 +54,7 @@
   <div class="gift-wrapper">
     <img class="gift-img" src="{{ product.featured_image.src | img_url: '93x' }}" alt="{{ title }}" loading="lazy" width="93" height="93" />
     <div class="gift-info">
-      <div class=""gift-title>{{ title }}</div>
+      <div class="gift-title">{{ title }}</div>
       <div>
         <span class="gift-price">{{ product.price | money }}</span>
         <span class="gift-name">Diamond Earrings</span>
