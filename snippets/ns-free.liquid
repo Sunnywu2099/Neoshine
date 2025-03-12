@@ -13,6 +13,12 @@
   #ns-free .gift-img{
     border-radius: 3px;
     border: 1px solid #79A88B;
+    width: auto;
+  }
+  #ns-free .gift-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 20px;
   }
 </style>
 
@@ -25,11 +31,14 @@
 
 
 <div id="ns-free" data-section="{{ section.id }}" {{ block.shopify_attributes }}>
-  <div class>
+  <div class="gift-wrapper">
     <img class="gift-img" src="{{ product.featured_image.src | img_url: '93x' }}" alt="{{ title }}" loading="lazy" width="93" height="93" />
     <div class="gift-info">
-      <span class="gift-price">{{ product.price | money }}</span>
-      <span class="gift-name">Diamond Earrings</span>
+      <div class=""gift-title>{{ title }}</div>
+      <div>
+        <span class="gift-price">{{ product.price | money }}</span>
+        <span class="gift-name">Diamond Earrings</span>
+      </div>
     </div>
   </div>
   <form method="post" action="/cart/add">
