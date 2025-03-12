@@ -730,6 +730,8 @@
                 {% render 'ns-delivery', block: block %}
               {%- when 'NS-expert' -%}
                 {% render 'ns-expert', block: block %}
+              {%- when 'NS-expert' -%}
+                {% render 'ns-free', block: block %}
               {%- endcase -%}
           {%- endfor -%}
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
@@ -2412,6 +2414,23 @@
           "id": "expert_btn",
           "label": "expert button text",
           "default": "Chat with an Expert"
+        }
+      ]
+    },
+    {
+      "type": "NS-free",
+      "name": "NS free gift",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "product"
+        },
+        {
+          "type": "text", 
+          "id": "title",
+          "label": "title",
+          "default": "Free Gift"
         }
       ]
     }
