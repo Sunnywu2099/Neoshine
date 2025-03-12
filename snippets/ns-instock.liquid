@@ -14,6 +14,14 @@
     text-transform: capitalize;
     margin-bottom: 15px;
   }
+  #ns-instock .instock-text{
+    font-size: 15px;
+    line-height: 20px;
+    color: var(---brand-color, color(display-p3 0.5137 0.6549 0.5529));
+  }
+  #ns-instock .instock-progress-bar {
+    
+  }
 </style>
 
 {% liquid 
@@ -26,10 +34,10 @@
 
 <div id="ns-instock" data-section="{{ section.id }}" {{ block.shopify_attributes }}>
   <div class="instock-title">{{ title }}</div>
-  <div class="progress">
+  <div class="instock-progress">
     <span class="instock-text">Only {{ number_left }} left</span>
-    <div class="progress-bar">
-      <div class="progress-bar-inner" style="width: {{ number_left | times: 100 | divided_by: number_total}}%;"></div>
+    <div class="instock-progress-bar">
+      <div class="instock-progress-bar-inner" style="width: {{ number_left | times: 100 | divided_by: number_total}}%;"></div>
     </div>
   </div>
 </div>
