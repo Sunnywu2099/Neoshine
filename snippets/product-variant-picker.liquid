@@ -28,6 +28,7 @@
     data-section="{{ section.id }}"
     {{ block.shopify_attributes }}
   >
+    <div>Over 328 Customers Have Chosen the  Good-Level</div>
     {%- for option in product.options_with_values -%}
       {%- liquid
         assign swatch_count = option.values | map: 'swatch' | compact | size
