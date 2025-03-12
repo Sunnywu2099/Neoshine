@@ -27,6 +27,10 @@
 <div id="ns-free" data-section="{{ section.id }}" {{ block.shopify_attributes }}>
   <div class>
     <img class="gift-img" src="{{ product.featured_image.src | img_url: '93x' }}" alt="{{ title }}" loading="lazy" width="93" height="93" />
+    <div class="gift-info">
+      <span class="gift-price">{{ product.price | money }}</span>
+      <span class="gift-name">Diamond Earrings</span>
+    </div>
   </div>
   <form method="post" action="/cart/add">
     <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
