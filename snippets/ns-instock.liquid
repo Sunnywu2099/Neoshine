@@ -106,7 +106,7 @@
     // 设置最终宽度
     setTimeout(function() {
       progressBarInner.style.width = widthPercentage + '%';
-      leftText.innerText = widthPercentage + '%';
+      leftText.innerText = widthPercentage.toFixed(0) + '%';
     }, 1000); // 延迟以确保过渡效果 
 
 </script>
