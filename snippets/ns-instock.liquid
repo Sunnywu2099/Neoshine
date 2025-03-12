@@ -35,6 +35,10 @@
     max-width: 300px;
     padding: 3px;
     text-align: center; 
+    position: relative;
+  }
+  #ns-instock .inner-text{
+    position: absolute;
   }
   #ns-instock .instock-progress-bar-inner{
     border-radius: 24px;
@@ -74,8 +78,10 @@
   <div class="instock-progress">
     <span class="instock-text">Only {{ number_left }} left</span>
     <div class="instock-progress-bar">
-      {{ number_left | times: 100 | divided_by: number_total}}%
-      <div class="instock-progress-bar-inner"></div>
+      
+      <div class="instock-progress-bar-inner">
+        <span class="inner-text">{{ number_left | times: 100 | divided_by: number_total}}%</span>
+      </div>
     </div>
   </div>
 </div>
