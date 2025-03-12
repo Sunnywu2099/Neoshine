@@ -12,6 +12,10 @@ variant-selects {
   line-height: 26px;
   margin-bottom: 23px;
 }
+.v-wrapper{
+  border-top: 1px solid #787878;
+  padding: 10px 0;
+}
 .product--no-media .product-form__input--pill,
 .product--no-media .product-form__input--swatch,
 .product--no-media .product-form__input--dropdown {
