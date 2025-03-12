@@ -44,13 +44,15 @@
   #ns-instock .instock-progress-bar-inner::before{
     content: '';
     display: block;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     position: absolute;
     right: 0;
+    top: 50%;
+    transform: translateY(-50%);
     background: var(---brand-color, color(display-p3 0.5137 0.6549 0.5529));
     border-radius: 50%;
-    border: 15px solid #fff;
+    border: 5px solid #fff;
     box-sizing: border-box;
   }
 </style>
