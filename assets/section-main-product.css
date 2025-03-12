@@ -290,7 +290,9 @@ product-info {
 .product__info-container > * + * {
   margin: 30px 0;
 }
-
+.product__info-container > *:nth-child(2) {
+  margin: 10px 0 20px;
+}
 .product__info-container iframe {
   max-width: 100%;
 }
