@@ -1,0 +1,45 @@
+<style>
+  #ns-expert {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0 30px;
+  }
+  #ns-expert svg{
+    display: block;
+  }
+  #ns-expert .delivery-text {
+    font-size: 18px;
+    color: #505050
+  }
+</style>
+
+{% liquid 
+  assign block = block
+  assign bs = block.settings
+  assign expert_img = bs.expert_img
+  assign expert_title = bs.expert_title
+  assign expert_text = bs.expert_text
+  assign expert_btn = bs.expert_btn
+%}
+
+
+<div id="ns-expert" data-section="{{ section.id }}" {{ block.shopify_attributes }}>
+  <div class="expert-icon">
+    {% if expert_img != blank %}
+      <img src="{{ expert_img | img_url: 'master' }}" alt="{{ expert_title }}" loading="lazy" width="170" height="84">
+    {% endif %}
+  </div>
+  <div class="expert-content">
+    <div class="exert_title">{{ expert_title }}</div>
+    <div class="exert_text">{{ expert_text }}</div>
+    <div class="exert_btn">
+      <span class="exert_btn_icon">
+        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M23.463 24.5703C23.4034 24.5703 23.3437 24.5584 23.2841 24.5385L18.3003 22.7805C16.407 23.9538 14.2314 24.5703 11.996 24.5703C5.38151 24.5703 0 19.1848 0 12.5703C0 5.9558 5.38151 0.570312 12 0.570312C18.6185 0.570312 24 5.95182 24 12.5703C24 14.1971 23.6778 15.7761 23.0414 17.2677L23.992 23.9578C24.0199 24.1447 23.9443 24.3277 23.8011 24.447C23.7057 24.5266 23.5824 24.5663 23.463 24.5663V24.5703ZM12 1.64025C5.97415 1.64025 1.06994 6.54446 1.06994 12.5703C1.06994 18.5962 5.97415 23.5004 12 23.5004C14.116 23.5004 16.1724 22.8918 17.9463 21.7423C18.0855 21.6509 18.2605 21.631 18.4156 21.6867L22.8107 23.2379L21.9596 17.2717C21.9437 17.1722 21.9596 17.0728 21.9993 16.9813C22.6158 15.5852 22.9261 14.1016 22.9261 12.5743C22.9261 6.54844 18.0219 1.64423 11.996 1.64423L12 1.64025Z" fill="#787878"/>
+        </svg>
+      </span>
+      <span class="exert_btn_text">{{ expert_btn }}</span>
+    </div>
+  </div>
+</div>
