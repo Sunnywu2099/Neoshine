@@ -30,6 +30,8 @@ variant-selects {
   padding-top: 10px;
   padding-left: 104px;
   padding-right: 30px;
+  max-height: 100px;
+  overflow-y: scroll;
 }
 .form__label{
   margin-bottom: 0;
