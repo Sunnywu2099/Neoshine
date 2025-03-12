@@ -1,0 +1,18 @@
+<style>
+  #ns-delivery {
+    
+  }
+</style>
+
+{% liquid 
+  assign block = block
+  assign bs = block.settings
+  assign icon_svg = bs.icon_svg
+  assign delivery_date = bs.delivery_date
+%}
+
+
+<div id="ns-delivery" data-section="{{ section.id }}" {{ block.shopify_attributes }}>
+  <div class="delivery-title">{{ icon_svg }}</div>
+  <div class="delivery-progress">{{ delivery_date }}</div>
+</div>
