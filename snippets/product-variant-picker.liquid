@@ -61,7 +61,7 @@
             </div>
           </fieldset>
         {%- elsif picker_type == 'button' -%}
-          < class="js product-form__input product-form__input--pill">
+          <fieldset class="js product-form__input product-form__input--pill">
             <legend class="form__label">
               <span class="option_name">{{ option.name }}: </span>
               <span data-selected-value>
@@ -69,12 +69,12 @@
               </span>
             </legend>
             <div class="value-wrapper">
-            {% render 'product-variant-options',
-              product: product,
-              option: option,
-              block: block,
-              picker_type: picker_type
-            %}
+              {% render 'product-variant-options',
+                product: product,
+                option: option,
+                block: block,
+                picker_type: picker_type
+              %}
             </div>
             {% comment %} {% if option.name == "Clarity" %}
               <p class="explain"></p>
