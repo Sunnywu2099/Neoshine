@@ -28,6 +28,7 @@ variant-selects {
   display: flex;
   flex-direction: column;
   padding-top: 10px;
+  padding-left: 100px;
 }
 .form__label{
   margin-bottom: 0;
