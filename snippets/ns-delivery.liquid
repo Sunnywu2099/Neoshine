@@ -1,0 +1,28 @@
+<style>
+  #ns-delivery {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0 30px;
+  }
+  #ns-delivery svg{
+    display: block;
+  }
+  #ns-delivery .delivery-text {
+    font-size: 18px;
+    color: #505050
+  }
+</style>
+
+{% liquid 
+  assign block = block
+  assign bs = block.settings
+  assign icon_svg = bs.icon_svg
+  assign delivery_date = bs.delivery_date
+%}
+
+
+<div id="ns-delivery" data-section="{{ section.id }}" {{ block.shopify_attributes }}>
+  <div class="delivery-icon">{{ icon_svg }}</div>
+  <div class="delivery-text">{{ delivery_date }}</div>
+</div>

@@ -724,7 +724,15 @@
                 {% render 'icon-with-text', block: block %}
               {%- when 'NS-icons' -%}
                 {% render 'ns-icons', block: block %}
-            {%- endcase -%}
+              {%- when 'NS-instock' -%}
+                {% render 'ns-instock', block: block %}
+              {%- when 'NS-delivery' -%}
+                {% render 'ns-delivery', block: block %}
+              {%- when 'NS-expert' -%}
+                {% render 'ns-expert', block: block %}
+              {%- when 'NS-free' -%}
+                {% render 'ns-free', block: block %}
+              {%- endcase -%}
           {%- endfor -%}
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
             {{ 'products.product.view_full_details' | t }}
@@ -2342,6 +2350,87 @@
           "type": "textarea",
           "id": "text_3",
           "label": "text 3"
+        }
+      ]
+    },
+    {
+      "type": "NS-instock",
+      "name": "NS in-stock",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "title",
+          "label": "title",
+          "default": "Your Diamond Upgrade Awaits - But Not For Long"
+        },
+        {
+          "type": "number",
+          "id": "number_left",
+          "label": "remaining quantity",
+          "default": 28
+        }
+      ]
+    },
+    {
+      "type": "NS-delivery",
+      "name": "NS delivery",
+      "settings": [
+        {
+          "type": "html",
+          "id": "icon_svg",
+          "label": "icon svg"
+        },
+        {
+          "type": "text", 
+          "id": "delivery_date",
+          "label": "delivery date",
+          "default": "Est.Delivery: Tuesday,March 4,2025"
+        }
+      ]
+    },
+    {
+      "type": "NS-expert",
+      "name": "NS expert",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "expert_img",
+          "label": "expert image"
+        },
+        {
+          "type": "text", 
+          "id": "expert_title",
+          "label": "expert title",
+          "default": "Got Questions? Chat with an Expert!"
+        },
+        {
+          "type": "textarea", 
+          "id": "expert_text",
+          "label": "expert text",
+          "default": "Our team is here to help you make the perfect choice. Click below to chat with one of our jewelry experts now!"
+        },
+        {
+          "type": "text", 
+          "id": "expert_btn",
+          "label": "expert button text",
+          "default": "Chat with an Expert"
+        }
+      ]
+    },
+    {
+      "type": "NS-free",
+      "name": "NS free gift",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "product"
+        },
+        {
+          "type": "text", 
+          "id": "title",
+          "label": "title",
+          "default": "Free Gift"
         }
       ]
     }

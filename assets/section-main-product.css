@@ -288,9 +288,14 @@ product-info {
 /* Product info */
 
 .product__info-container > * + * {
-  margin: 1.5rem 0;
+  margin: 30px 0;
 }
-
+.product__info-container > *:nth-child(2) {
+  margin: 10px 0;
+}
+.product__info-container > *:nth-child(3) {
+  margin: 10px 0;
+}
 .product__info-container iframe {
   max-width: 100%;
 }
@@ -1146,7 +1151,8 @@ a.product__text {
   }
 
   .thumbnail-list.slider--tablet-up .thumbnail-list__item.slider__slide {
-    width: calc(20% - 0.8rem);
+    /* width: calc(20% - 0.8rem); */
+    width: calc(13% - 12px);
   }
 }
 
