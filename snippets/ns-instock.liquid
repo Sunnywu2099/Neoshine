@@ -39,6 +39,19 @@
     border-radius: 24px;
     height: 100%;
     background: var(---brand-color, color(display-p3 0.5137 0.6549 0.5529));
+    position: relative;
+  }
+  #ns-instock .instock-progress-bar-inner::before{
+    content: '';
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    background: var(---brand-color, color(display-p3 0.5137 0.6549 0.5529));
+    border-radius: 50%;
+    border: 15px solid #fff;
+    box-sizing: border-box;
   }
 </style>
 
@@ -49,6 +62,7 @@
   assign number_left = bs.number_left | default: 28
   assign number_total = 120
 %}
+
 
 <div id="ns-instock" data-section="{{ section.id }}" {{ block.shopify_attributes }}>
   <div class="instock-title">{{ title }}</div>
