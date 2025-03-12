@@ -1,0 +1,33 @@
+<style>
+  #ns-free {
+    border-radius: 3px;
+    background: #FAFAFA;
+    box-shadow: 0px 8px 8px 0px rgba(147, 147, 147, 0.20);
+    padding: 14px 30px;
+
+    display: flex;
+    /* align-items: center; */
+    gap: 15px;
+    padding: 25px 18px;
+  }
+</style>
+
+{% liquid 
+  assign block = block
+  assign bs = block.settings
+  assign product = bs.product
+  assign title = bs.title
+%}
+
+
+<div id="ns-free" data-section="{{ section.id }}" {{ block.shopify_attributes }}>
+  <form method="post" action="/cart/add">
+    <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+    <input min="1" type="number" id="quantity" name="quantity" value="1"/>
+    <input type="submit" value="Add to cart" class="btn" />
+  </form>
+</div>
+
+<script>
+  
+</script>
