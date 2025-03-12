@@ -54,6 +54,7 @@
     border-radius: 50%;
     border: 5px solid #fff;
     box-sizing: border-box;
+    transition: width 1s ease;
   }
 </style>
 
@@ -71,7 +72,23 @@
   <div class="instock-progress">
     <span class="instock-text">Only {{ number_left }} left</span>
     <div class="instock-progress-bar">
-      <div class="instock-progress-bar-inner" style="width: {{ number_left | times: 100 | divided_by: number_total}}%;"></div>
+      <div class="instock-progress-bar-inner"></div>
     </div>
   </div>
 </div>
+
+<script>
+    let progressBarInner = document.querySelector('.instock-progress-bar-inner');
+    let numberLeft = {{ number_left }};
+    let numberTotal = {{ number_total }};
+    let widthPercentage = (numberLeft * 100) / numberTotal;
+
+    // 初始宽度为0
+    progressBarInner.style.width = '0%';
+
+    // 设置最终宽度
+    setTimeout(function() {
+      progressBarInner.style.width = widthPercentage + '%';
+    }, 100); // 延迟以确保过渡效果
+    
+</script>
