@@ -115,55 +115,39 @@
           {%- endif -%}
         
           <div class="safe-checkout">
-          <span class="safe-checkout-text">Safe Checkout:</span>
-          <img
-            class="payment_img"
-            src="https://cdn.shopify.com/s/files/1/0897/6921/4241/files/safe_checkout.svg?v=1735524908"
-            alt="Safe Checkout"
-            width="300"
-            height="100"
-          />
-        </div>
+            <span class="safe-checkout-text">Safe Checkout</span>
+            <ul class="list list-payment" role="list">
+              {%- for type in shop.enabled_payment_types -%}
+                  <li class="list-payment__item">
+                    {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                  </li>
+              {%- endfor -%}
+            </ul>
+          </div>
 
         <style>
           .safe-checkout {
             display: flex;
             align-items: center;
-            gap: 10px;
+            flex-wrap: wrap;
+            gap: 16px;
             width: 100%;
             overflow: hidden; 
-            flex-direction: row;
           }
 
           .safe-checkout-text {
             font-size: 14px;
-            font-weight: bold;
-            color: #333;
+            color: #121212;
             flex-shrink: 0;
           }
-
-          .payment_img {
-            max-width: 100%;
-            width:325px;
-            height: auto;
-            object-fit: contain;
-            display: block; 
-          }
-
           @media (max-width: 768px) {
             .safe-checkout {
               flex-direction: column; 
               align-items: center; 
               width: 100%; 
             }
-
             .safe-checkout-text {
               font-size: 12px; 
-            }
-
-            .payment_img {
-              max-width: 80%; 
-              margin: 0 auto; 
             }
           }
         </style>

@@ -237,7 +237,7 @@ product-info {
 .product-form__input {
   flex: 0 0 100%;
   padding: 0;
-  margin: 0 0 1rem 0;
+  /* margin: 0 0 1rem 0; */
   max-width: 44rem;
   min-width: fit-content;
   border: none;
@@ -245,10 +245,10 @@ product-info {
 
 .product-form__input .form__label {
   padding-left: 0;
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 500;
   line-height: 1.3;
-  margin: 1rem 0 !important;
+  letter-spacing: 0;
 }
 
 .product-form__input .select {
@@ -261,6 +261,11 @@ product-info {
 
 .product-form__submit {
   margin-bottom: 1rem;
+  margin-bottom: 1rem;
+  height: 46px;
+  background: #121212;
+  color: #fff;
+  text-transform: uppercase;
 }
 
 .product-form__submit[aria-disabled='true'] + .shopify-payment-button .shopify-payment-button__button[disabled],
@@ -509,7 +514,7 @@ a.product__text {
 }
 
 .product-form__buttons {
-  max-width: 44rem;
+  /* max-width: 44rem; */
 }
 
 .product--no-media .product__info-container > modal-opener {

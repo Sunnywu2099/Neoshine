@@ -28,6 +28,7 @@
     data-section="{{ section.id }}"
     {{ block.shopify_attributes }}
   >
+    <div class="variant-title">Over 328 Customers Have Chosen the &nbsp;&nbsp;<span style="text-decoration: underline;">Good-Level</span></div>
     {%- for option in product.options_with_values -%}
       {%- liquid
         assign swatch_count = option.values | map: 'swatch' | compact | size
@@ -41,67 +42,78 @@
           endif
         endif
       -%}
-      {%- if picker_type == 'swatch' -%}
-        <fieldset class="js product-form__input product-form__input--swatch">
-          <legend class="form__label">
-            {{ option.name }}:
-            <span data-selected-value>
-              {{- option.selected_value -}}
-            </span>
-          </legend>
-          {% render 'product-variant-options',
-            product: product,
-            option: option,
-            block: block,
-            picker_type: picker_type
-          %}
-        </fieldset>
-      {%- elsif picker_type == 'button' -%}
-        <fieldset class="js product-form__input product-form__input--pill">
-          <legend class="form__label">{{ option.name }}</legend>
-          {% render 'product-variant-options',
-            product: product,
-            option: option,
-            block: block,
-            picker_type: picker_type
-          %}
-          {% if option.name == "Clarity" %}
-            <p class="explain"></p>
-          {% endif %}
-        </fieldset>
-      {%- else -%}
-        <div class="product-form__input product-form__input--dropdown">
-          <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
-            {{ option.name }}
-          </label>
-          <div class="select">
-            {%- if picker_type == 'swatch_dropdown' -%}
-              <span
-                data-selected-value
-                class="dropdown-swatch"
-              >
-                {% render 'swatch', swatch: option.selected_value.swatch, shape: block.settings.swatch_shape %}
+      <div class="v-wrapper">
+        {%- if picker_type == 'swatch' -%}
+          <fieldset class="js product-form__input product-form__input--swatch">
+            <legend class="form__label">
+              <span class="option_name">{{ option.name }}: </span>
+              <span data-selected-value>
+                {{- option.selected_value -}}
               </span>
-            {%- endif -%}
-            <select
-              id="Option-{{ section.id }}-{{ forloop.index0 }}"
-              class="select__select"
-              name="options[{{ option.name | escape }}]"
-              form="{{ product_form_id }}"
-            >
+            </legend>
+            <div class="value-wrapper">
               {% render 'product-variant-options',
                 product: product,
                 option: option,
                 block: block,
                 picker_type: picker_type
               %}
-            </select>
-            <span class="svg-wrapper">
-              {{- 'icon-caret.svg' | inline_asset_content -}}
-            </span>
+            </div>
+          </fieldset>
+        {%- elsif picker_type == 'button' -%}
+          <fieldset class="js product-form__input product-form__input--pill">
+            <legend class="form__label">
+              <span class="option_name">{{ option.name }}: </span>
+              <span data-selected-value>
+                {{- option.selected_value -}}
+              </span>
+            </legend>
+            <div class="value-wrapper">
+              {% render 'product-variant-options',
+                product: product,
+                option: option,
+                block: block,
+                picker_type: picker_type
+              %}
+            </div>
+            {% comment %} {% if option.name == "Clarity" %}
+              <p class="explain"></p>
+            {% endif %} {% endcomment %}
+          </fieldset>
+        {%- else -%}
+          <div class="product-form__input product-form__input--dropdown">
+            <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
+              {{ option.name }}
+            </label>
+            <div class="select">
+              {%- if picker_type == 'swatch_dropdown' -%}
+                <span
+                  data-selected-value
+                  class="dropdown-swatch"
+                >
+                  {% render 'swatch', swatch: option.selected_value.swatch, shape: block.settings.swatch_shape %}
+                </span>
+              {%- endif -%}
+              <select
+                id="Option-{{ section.id }}-{{ forloop.index0 }}"
+                class="select__select"
+                name="options[{{ option.name | escape }}]"
+                form="{{ product_form_id }}"
+              >
+                {% render 'product-variant-options',
+                  product: product,
+                  option: option,
+                  block: block,
+                  picker_type: picker_type
+                %}
+              </select>
+              <span class="svg-wrapper">
+                {{- 'icon-caret.svg' | inline_asset_content -}}
+              </span>
+            </div>
           </div>
-        </div>
-      {%- endif -%}
+        {%- endif -%}
+      </div>
     {%- endfor -%}
 
     <script type="application/json" data-selected-variant>
@@ -111,47 +123,37 @@
 {%- endunless -%}
 
 
-<script>
-
-   
-     function explain(){
-    let list = document.querySelectorAll(".product-form__input--pill");
-
-    list.forEach(item => {
-      const explain = item.querySelector(".explain");
-      const itemer = item.querySelector("input[type=radio]:checked+label");
-      if(explain){
-        explain.textContent  = itemer.getAttribute("data-explain");
-      }
-      
-    })
-     }
-  
-
-
-  //常用观察器
-
-  const targetNode = document.querySelector('.product__info-container');
-  const observersasdsd = new MutationObserver((mutationsList) => {
-for (const mutation of mutationsList) {
-  if (mutation.type === 'childList') {
-        explain();
+{% comment %} <script>
+    function explain(){
+      let list = document.querySelectorAll(".product-form__input--pill");
+      list.forEach(item => {
+        const explain = item.querySelector(".explain");
+        const itemer = item.querySelector("input[type=radio]:checked+label");
+        if(explain){
+          explain.textContent  = itemer.getAttribute("data-explain");
+        }
+        
+      })
     }
-}
-});
-// 配置观察选项
-const config = {
-    attributes: true,
-   childList: true,    // 监听子节点的添加或删除
-    subtree: true, 
-};
-
-// 开始观察目标节点
-if (targetNode) {
-    observersasdsd.observe(targetNode, config);
-}
-
-  
-</script>
+    //常用观察器
+    const targetNode = document.querySelector('.product__info-container');
+    const observersasdsd = new MutationObserver((mutationsList) => {
+      for (const mutation of mutationsList) {
+        if (mutation.type === 'childList') {
+              explain();
+          }
+      }
+    });
+    // 配置观察选项
+    const config = {
+        attributes: true,
+      childList: true,    // 监听子节点的添加或删除
+        subtree: true, 
+    };
+    // 开始观察目标节点
+    if (targetNode) {
+        observersasdsd.observe(targetNode, config);
+    }
+</script> {% endcomment %}
 
 
