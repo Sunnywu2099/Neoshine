@@ -10,6 +10,7 @@
   assign bs = block.settings
   assign title = bs.title
   assign number_left = bs.number_left | default: 28
+  assign number_total = 120
 %}
 
 <div id="ns-instock" data-section="{{ section.id }}" {{ block.shopify_attributes }}>
@@ -17,7 +18,7 @@
   <div class="progress">
     <span class="instock-text">Only {{ number_left }} left</span>
     <div class="progress-bar">
-      <div class="progress-bar-inner" style="width: {{ number_left | times: 100 | divided_by: 100 }}%;"></div>
+      <div class="progress-bar-inner" style="width: {{ number_left | times: 100 | divided_by: number_total}}%;"></div>
     </div>
   </div>
 </div>
