@@ -5,7 +5,8 @@
     box-shadow: 0px 8px 8px 0px rgba(147, 147, 147, 0.20);
     padding: 14px 30px;
   }
-  #ns-instock div:empty{
+  #ns-instock div:empty,
+  #ns-instock span:empty{
     display: block;
   }
   #ns-instock .instock-title {
@@ -87,7 +88,7 @@
     <div class="instock-progress-bar">
       
       <div class="instock-progress-bar-inner">
-        <span class="inner-text">{{ number_left | times: 100 | divided_by: number_total}}%</span>
+        <span class="inner-text"></span>
       </div>
     </div>
   </div>
@@ -98,13 +99,14 @@
     let numberLeft = {{ number_left }};
     let numberTotal = {{ number_total }};
     let widthPercentage = (numberLeft * 100) / numberTotal;
-
+    let leftText = document.querySelector('.inner-text');
     // 初始宽度为0
     progressBarInner.style.width = '0%';
 
     // 设置最终宽度
     setTimeout(function() {
       progressBarInner.style.width = widthPercentage + '%';
-    }, 1000); // 延迟以确保过渡效果
+      leftText.innerText = widthPercentage + '%';
+    }, 1000); // 延迟以确保过渡效果 
 
 </script>
