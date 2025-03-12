@@ -726,6 +726,9 @@
                 {% render 'ns-icons', block: block %}
               {%- when 'NS-instock' -%}
                 {% render 'ns-instock', block: block %}
+              {%- when 'NS-delivery' -%}
+                {% render 'ns-delivery', block: block %}
+                
               {%- endcase -%}
           {%- endfor -%}
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
@@ -2362,6 +2365,23 @@
           "id": "number_left",
           "label": "remaining quantity",
           "default": 28
+        }
+      ]
+    },
+    {
+      "type": "NS-delivery",
+      "name": "NS delivery",
+      "settings": [
+        {
+          "type": "html",
+          "id": "icon_svg",
+          "label": "icon svg"
+        },
+        {
+          "type": "text", 
+          "id": "delivery_date",
+          "label": "delivery date",
+          "default": "Est.Delivery: Tuesday,March 4,2025"
         }
       ]
     }
