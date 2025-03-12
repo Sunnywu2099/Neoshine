@@ -1,0 +1,18 @@
+<style>
+  #ns-instock {
+    
+  }
+
+</style>
+
+{% liquid 
+  assign block = block
+  assign bs = block.settings
+  assign title = bs.title
+  assign number_left = bs.number_left
+%}
+
+<div id="ns-instock" data-section="{{ section.id }}" {{ block.shopify_attributes }}>
+  
+  
+</div>
