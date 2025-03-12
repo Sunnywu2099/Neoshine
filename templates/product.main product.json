@@ -79,6 +79,31 @@
             "svg_3": "<svg width=\"70\" height=\"81\" viewbox=\"0 0 70 81\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M1.32715 16.412V32.555C1.32715 53.3141 14.4002 71.8225 33.992 78.8039L35.0004 79.1658L36.0087 78.8039C55.6006 71.8225 68.6736 53.3053 68.6736 32.555V16.412L35.0004 2.00781L1.32715 16.412Z\" stroke=\"#83A78D\" style=\"stroke:#83A78D;stroke:color(display-p3 0.5137 0.6549 0.5529);stroke-opacity:1;\" stroke-width=\"1.5\" stroke-miterlimit=\"10\"></path>\n<path d=\"M16.5894 25.1196L36.8475 34.0243H36.853C37.0886 34.1349 37.2365 34.3793 37.231 34.647V57.6885C37.231 58.1541 36.7708 58.5149 36.3052 58.253L16.0361 47.8701C15.8115 47.7595 15.6855 47.5209 15.6855 47.2706V25.7016C15.6855 25.2069 16.1841 24.8985 16.5894 25.1196ZM36.0039 35.0719L16.9236 26.6852V46.8691L35.9984 56.6409V35.0719H36.0039Z\" fill=\"#83A78D\" style=\"fill:#83A78D;fill:color(display-p3 0.5137 0.6549 0.5529);fill-opacity:1;\"></path>\n<path d=\"M18.0997 25.7843L36.6267 33.9323L53.4938 26.7853L36.0625 19.6965L18.0997 25.7843ZM36.3857 35.2418L16.1221 26.3256C15.514 26.0869 15.5907 25.2605 16.1221 25.0801L35.8433 18.3987C35.9858 18.3347 36.1556 18.3288 36.309 18.3929H36.3035L55.3893 26.151C55.9535 26.3721 55.9371 27.1695 55.4276 27.3848H55.4221L36.9006 35.2186C36.7527 35.3059 36.561 35.3233 36.3912 35.2418H36.3857Z\" fill=\"#83A78D\" style=\"fill:#83A78D;fill:color(display-p3 0.5137 0.6549 0.5529);fill-opacity:1;\"></path>\n<path d=\"M54.5674 27.7346L37.2347 35.0736V56.6543L54.5674 47.9301V27.7346ZM36.3856 34.026L54.9071 26.1864C55.3837 25.9595 55.8055 26.3261 55.8055 26.7684V48.3375C55.811 48.5877 55.6795 48.8322 55.4494 48.9427L36.9224 58.2664C36.4623 58.5167 36.0021 58.1558 36.0021 57.6902V34.6488C35.9966 34.381 36.1445 34.1308 36.3856 34.026Z\" fill=\"#83A78D\" style=\"fill:#83A78D;fill:color(display-p3 0.5137 0.6549 0.5529);fill-opacity:1;\"></path>\n<path d=\"M24.085 23.7552L41.8999 31.6937L46.9178 29.5752L29.6398 21.8754L24.0796 23.7552H24.085ZM41.6588 33.0032L22.102 24.2848C21.5158 24.0462 21.5815 23.2314 22.1184 23.0394H22.1239L29.4317 20.5658C29.5796 20.5018 29.7494 20.496 29.9138 20.5658L48.753 28.9583C49.3172 29.1853 49.2789 29.9768 48.7749 30.1863L42.1738 32.9741C42.0204 33.0614 41.8341 33.0789 41.6534 32.9974H41.6588V33.0032Z\" fill=\"#83A78D\" style=\"fill:#83A78D;fill:color(display-p3 0.5137 0.6549 0.5529);fill-opacity:1;\"></path>\n<path d=\"M42.5084 32.8401L42.492 38.5437L44.6832 34.848C44.8859 34.5105 45.3077 34.429 45.6145 34.7142L47.9043 36.6406L47.9263 30.547L42.5029 32.8401H42.5084ZM41.2594 40.8077L41.2868 32.456C41.2649 32.1824 41.3689 31.9438 41.6264 31.8332L41.6702 31.7925L48.2659 28.9989C48.7425 28.7719 49.1698 29.1386 49.1643 29.5867L49.1369 37.9384C49.1588 38.5787 48.5288 38.8347 48.1344 38.503L45.3625 36.1575L42.4153 41.1104C42.0756 41.7389 41.2539 41.4596 41.2539 40.8019H41.2594V40.8077Z\" fill=\"#83A78D\" style=\"fill:#83A78D;fill:color(display-p3 0.5137 0.6549 0.5529);fill-opacity:1;\"></path>\n<path d=\"M28.8132 49.9709C28.5119 49.8137 28.1393 49.9534 27.9914 50.2793C27.8435 50.6052 27.9695 50.9952 28.2818 51.1523L33.2395 53.6957C33.5408 53.847 33.9133 53.7131 34.0612 53.3872C34.2091 53.0555 34.0776 52.6714 33.7709 52.5142L28.8132 49.9709Z\" fill=\"#83A78D\" style=\"fill:#83A78D;fill:color(display-p3 0.5137 0.6549 0.5529);fill-opacity:1;\"></path>\n<path d=\"M28.8132 46.3576C28.5119 46.2004 28.1393 46.3401 27.9914 46.666C27.8435 46.992 27.9695 47.3819 28.2818 47.539L33.2395 50.0824C33.5408 50.2395 33.9133 50.0999 34.0612 49.7739C34.2091 49.4422 34.0776 49.0581 33.7709 48.9009L28.8132 46.3576Z\" fill=\"#83A78D\" style=\"fill:#83A78D;fill:color(display-p3 0.5137 0.6549 0.5529);fill-opacity:1;\"></path>\n</svg>",
             "text_3": "Free delivery service provided"
           }
+        },
+        "wishlist_plus_wishlist_pdp_button_CGRLYB": {
+          "type": "shopify://apps/wishlist-plus/blocks/wishlist-pdp-button/80c3b1fc-3a8f-407e-8367-ffdeebb8b612",
+          "settings": {
+            "swym_atw_button_icon": "heart",
+            "swym_atw_display_btn_text": true,
+            "swym_button_position": "default",
+            "swym_atw_button_vertical_offset": 0,
+            "swym_atw_full_width": true,
+            "swym_atw_button_alignment": "center",
+            "swym_add_to_wishlist_color": "#000000",
+            "swym_added_to_wishlist_color": "#222222",
+            "swym_button_text_color": "#fff",
+            "swym_atw_border_color": "#000",
+            "swym_atw_border_thickness": 0,
+            "swym_atw_button_border_radius": 0,
+            "swym_enable_hover_customization": false,
+            "swym_hover_add_to_wishlist_color": "#000000",
+            "swym_hover_added_to_wishlist_color": "#222222",
+            "swym_hover_button_text_color": "#fff",
+            "swym_hover_atw_border_color": "#000",
+            "swym_hover_atw_border_thickness": 0,
+            "swym_hover_atw_button_border_radius": 0,
+            "swym_custom_css": ""
+          }
         }
       },
       "block_order": [
@@ -91,7 +116,8 @@
         "buy_buttons",
         "ns_free_Wp7mD6",
         "ns_expert_3UTpzK",
-        "ns_icons_Lhkxj4"
+        "ns_icons_Lhkxj4",
+        "wishlist_plus_wishlist_pdp_button_CGRLYB"
       ],
       "custom_css": [],
       "settings": {
