@@ -61,11 +61,18 @@
       </div>
     </div>
   </div>
-  <form method="post" action="/cart/add">
-    <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
-    {% comment %} <input min="1" type="number" id="quantity" name="quantity" value="1"/> {% endcomment %}
-    <input type="submit" value="Add to cart" class="btn" />
-  </form>
+  <div class="gift-post">
+    <div class="price-compare">
+      <span class="gift-price">{{ product.price | money }}</span>
+      <span class="free-prict">$ 0.00</span>
+    </div>
+    <form method="post" action="/cart/add">
+      <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+      {% comment %} <input min="1" type="number" id="quantity" name="quantity" value="1"/> {% endcomment %}
+      <input type="submit" value="Add to cart" class="btn" />
+    </form>
+  </div>
+  
 </div>
 
 <script>
