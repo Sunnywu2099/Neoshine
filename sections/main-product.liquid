@@ -9,9 +9,10 @@
     data-zoom-on-hover
   {% endif %}
 >
+  
+  {{ 'component-price.css' | asset_url | stylesheet_tag }}
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
   {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
-  {{ 'component-price.css' | asset_url | stylesheet_tag }}
   {{ 'component-slider.css' | asset_url | stylesheet_tag }}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
   {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
@@ -108,11 +109,11 @@
                     </h2>
                   </a>
                 </div>
+
               {%- when 'price' -%}
-              {%- assign show_price_tag = product.metafields.custom.show_price_tag -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }} 
                    data-origin="{{ product.metafields.custom.show_price_tag }}" >
-                  {%- render 'price',
+                  {%- render 'product-price',
                     product: product,
                     use_variant: true,
                     show_badges: product.metafields.custom.show_price_tag,
@@ -124,6 +125,7 @@
                     <span>{{ 'products.product.volume_pricing.note' | t }}</span>
                   </div>
                 {%- endif -%}
+                {%  comment  %} 
                 {%- if cart.taxes_included or cart.duties_included or shop.shipping_policy.body != blank -%}
                   <div class="product__tax caption rte">
                     {%- if cart.duties_included and cart.taxes_included -%}
@@ -138,6 +140,7 @@
                     {%- endif -%}
                   </div>
                 {%- endif -%}
+                 {% endcomment %}
                 <div {{ block.shopify_attributes }}>
                   {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
                   {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
@@ -145,6 +148,7 @@
                     {{ form | payment_terms }}
                   {%- endform -%}
                 </div>
+
               {%- when 'inventory' -%}
                 <p
                   class="product__inventory{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
@@ -718,6 +722,8 @@
                 </product-recommendations>
               {%- when 'icon-with-text' -%}
                 {% render 'icon-with-text', block: block %}
+              {%- when 'NS-icons' -%}
+                {% render 'ns-icons', block: block %}
             {%- endcase -%}
           {%- endfor -%}
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
@@ -2300,6 +2306,42 @@
           "default": "t:sections.main-product.blocks.icon_with_text.settings.heading_3.default",
           "label": "t:sections.main-product.blocks.icon_with_text.settings.heading_3.label",
           "info": "t:sections.main-product.blocks.icon_with_text.settings.heading.info"
+        }
+      ]
+    },
+    {
+      "type": "NS-icons",
+      "name": "NS icons",
+      "settings": [
+        {
+          "type": "html",
+          "id": "svg_1",
+          "label": "svg 1"
+        },
+        {
+          "type": "textarea",
+          "id": "text_1",
+          "label": "text 1"
+        },
+        {
+          "type": "html",
+          "id": "svg_2",
+          "label": "svg 2"
+        },
+        {
+          "type": "textarea",
+          "id": "text_2",
+          "label": "text 2"
+        },
+        {
+          "type": "html",
+          "id": "svg_3",
+          "label": "svg 3"
+        },
+        {
+          "type": "textarea",
+          "id": "text_3",
+          "label": "text 3"
         }
       ]
     }
