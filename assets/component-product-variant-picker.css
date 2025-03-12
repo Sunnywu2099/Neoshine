@@ -29,6 +29,7 @@ variant-selects {
   flex-direction: column;
   padding-top: 10px;
   padding-left: 100px;
+  padding-right: 30px;
 }
 .form__label{
   margin-bottom: 0;
