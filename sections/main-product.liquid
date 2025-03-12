@@ -724,7 +724,9 @@
                 {% render 'icon-with-text', block: block %}
               {%- when 'NS-icons' -%}
                 {% render 'ns-icons', block: block %}
-            {%- endcase -%}
+              {%- when 'NS-instock' -%}
+                {% render 'ns-instock', block: block %}
+              {%- endcase -%}
           {%- endfor -%}
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
             {{ 'products.product.view_full_details' | t }}
@@ -2342,6 +2344,23 @@
           "type": "textarea",
           "id": "text_3",
           "label": "text 3"
+        }
+      ]
+    },
+    {
+      "type": "NS-instock",
+      "name": "NS in-stock",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "title",
+          "label": "title"
+        },
+        {
+          "type": "number",
+          "id": "number_left",
+          "label": "remaining quantity",
+          "default": 28
         }
       ]
     }
