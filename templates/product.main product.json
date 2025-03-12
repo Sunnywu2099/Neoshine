@@ -20,56 +20,9 @@
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {}
         },
-        "icon_with_text_UXVahk": {
-          "type": "icon-with-text",
-          "settings": {
-            "layout": "horizontal",
-            "icon_1": "check_mark",
-            "image_1": "shopify://shop_images/landding_page_second_product_promise-54.svg",
-            "heading_1": "Each Stone Guaranteed 1.0CT+",
-            "icon_2": "check_mark",
-            "image_2": "shopify://shop_images/landding_page_second_product_promise-55.svg",
-            "heading_2": "IGI Certification & Heart and Arrow Guarantee",
-            "icon_3": "check_mark",
-            "image_3": "shopify://shop_images/landding_page_second_product_promise-56.svg",
-            "heading_3": "Grade VS1 or Above"
-          }
-        },
         "price": {
           "type": "price",
           "settings": {}
-        },
-        "icon_with_text_aXXAxj": {
-          "type": "icon-with-text",
-          "settings": {
-            "layout": "horizontal",
-            "icon_1": "plane",
-            "heading_1": "Free Nationwide Shipping",
-            "icon_2": "lightning_bolt",
-            "heading_2": "Ready to Ship - Sizes 4/5/6/7/8 Available!",
-            "icon_3": "heart",
-            "heading_3": "Lifetime Warranty & Value Guarantee"
-          }
-        },
-        "custom_liquid_UaQmkh": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<section class=\"free-gift-promo\" style=\"margin: 10px auto; max-width: 800px; border: 1px solid #83A78D; border-radius: 5px; padding: 10px; background-color: #fff;\">\n  <style>\n    .free-gift-promo {\n      display: flex;\n      align-items: center;\n      justify-content: flex-start;\n      gap: 10px;\n    }\n\n    .free-gift-promo .promo-image img {\n      width: 100px; \n      height: auto;\n      border-radius: 4px;\n      border: 1px solid #ddd; \n    }\n\n    .free-gift-promo .promo-content {\n      flex: 1;\n      display: flex;\n      flex-direction: column;\n      justify-content: center;\n    }\n\n    .free-gift-promo .promo-content h2 {\n      font-size: 16px;\n      font-weight: 700;\n      color: #83a78d;\n      margin: 0 0 5px;\n    }\n\n    .free-gift-promo .promo-content p {\n      font-size: 12px;\n      color: #333;\n      line-height: 1.5;\n      margin: 0;\n    }\n\n    .free-gift-promo .promo-content .btn-link {\n      font-size: 10px;\n      color: #a9a9a9;\n      text-decoration: none;\n      font-weight: normal;\n      margin-top: 5px;\n    }\n\n    .free-gift-promo .promo-content .btn-link:hover {\n      color: #555;\n    }\n  </style>\n\n  <div class=\"promo-image\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0897/6921/4241/files/1211-earring-3-right-silver.jpg?v=1733907688\" alt=\"Bezel Diamond Earrings\" />\n  </div>\n  <div class=\"promo-content\">\n    <h2>FREE GIFT</h2>\n    <p><strong>Free Pair of Bezel Diamond Earrings - 0.3CT Lab-Grown Diamonds with a Purchase of $999 or More.</strong></p>\n    <a href=\"https://neoshine.com/pages/free-pair-of-bezel-diamond-earrings-terms\" class=\"btn-link\">See Terms</a>\n  </div>\n</section>"
-          }
-        },
-        "icon_with_text_Fq7BeK": {
-          "type": "icon-with-text",
-          "settings": {
-            "layout": "vertical",
-            "icon_1": "none",
-            "image_1": "shopify://shop_images/calendar-03.svg",
-            "heading_1": "",
-            "icon_2": "lock",
-            "image_2": "shopify://shop_images/security-check.svg",
-            "heading_2": "Our Price includes Metal & Stones",
-            "icon_3": "none",
-            "heading_3": ""
-          }
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -84,18 +37,26 @@
             "show_dynamic_checkout": true,
             "show_gift_card_recipient": false
           }
+        },
+        "ns_icons_Lhkxj4": {
+          "type": "NS-icons",
+          "settings": {
+            "svg_1": "<svg width=\"70\" height=\"81\" viewbox=\"0 0 70 81\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M1.32715 16.412V32.555C1.32715 53.3141 14.4002 71.8225 33.992 78.8039L35.0004 79.1658L36.0087 78.8039C55.6006 71.8225 68.6736 53.3052 68.6736 32.555V16.412L35.0004 2.00781L1.32715 16.412Z\" stroke=\"#83A78D\" style=\"stroke:#83A78D;stroke:color(display-p3 0.5137 0.6549 0.5529);stroke-opacity:1;\" stroke-width=\"1.5\" stroke-miterlimit=\"10\"></path>\n<path d=\"M16.3887 46.9579L23.6862 44.4898C24.0035 44.3812 24.3452 44.3861 24.6576 44.4898L34.6886 47.9551C35.7381 48.3154 36.275 49.4952 35.865 50.5368C35.4794 51.5092 34.4104 52.0078 33.4292 51.6622L26.7126 49.3175\" stroke=\"#83A78D\" style=\"stroke:#83A78D;stroke:color(display-p3 0.5137 0.6549 0.5529);stroke-opacity:1;\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M21.6953 55.5185L22.1981 55.2322C22.4958 55.0643 22.8375 55.0002 23.1743 55.0495L31.8533 56.3725C32.1901 56.4218 32.5366 56.3577 32.8344 56.1849L45.8284 48.6619C46.8729 48.0548 47.1658 46.6627 46.4483 45.6804C45.8723 44.8906 44.8228 44.629 43.9491 45.0535L36.0023 48.9334\" stroke=\"#83A78D\" style=\"stroke:#83A78D;stroke:color(display-p3 0.5137 0.6549 0.5529);stroke-opacity:1;\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M14.0814 46.002L11.3112 47.7785C10.8513 48.0734 10.7149 48.6895 11.0066 49.1546L17.3326 59.2431C17.6243 59.7082 18.2335 59.8461 18.6934 59.5512L21.4636 57.7747C21.9235 57.4798 22.0599 56.8637 21.7682 56.3986L15.4422 46.3101C15.1505 45.8451 14.5413 45.7071 14.0814 46.002Z\" stroke=\"#83A78D\" style=\"stroke:#83A78D;stroke:color(display-p3 0.5137 0.6549 0.5529);stroke-opacity:1;\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M55.6103 29.1849L48.3128 31.6531C47.9955 31.7617 47.6538 31.7567 47.3414 31.6531L37.3104 28.1878C36.2609 27.8274 35.724 26.6476 36.134 25.6061C36.5196 24.6336 37.5886 24.135 38.5698 24.4806L45.2864 26.8253\" stroke=\"#83A78D\" style=\"stroke:#83A78D;stroke:color(display-p3 0.5137 0.6549 0.5529);stroke-opacity:1;\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M50.3048 20.6201L49.802 20.9064C49.5043 21.0743 49.1626 21.1384 48.8258 21.0891L40.1469 19.7661C39.8101 19.7168 39.4635 19.781 39.1657 19.9537L26.1718 27.4767C25.1272 28.0838 24.8343 29.4759 25.5519 30.4582C26.1278 31.248 27.1773 31.5096 28.0511 31.0851L35.9978 27.2052\" stroke=\"#83A78D\" style=\"stroke:#83A78D;stroke:color(display-p3 0.5137 0.6549 0.5529);stroke-opacity:1;\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M57.9205 30.1425L60.6907 28.366C61.1506 28.0711 61.287 27.455 60.9954 26.9899L54.6693 16.9015C54.3777 16.4364 53.7685 16.2984 53.3086 16.5934L50.5384 18.3698C50.0785 18.6647 49.9421 19.2808 50.2337 19.7459L56.5598 29.8344C56.8514 30.2995 57.4606 30.4374 57.9205 30.1425Z\" stroke=\"#83A78D\" style=\"stroke:#83A78D;stroke:color(display-p3 0.5137 0.6549 0.5529);stroke-opacity:1;\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M35.3536 44.4072C35.0021 44.4072 34.6653 44.269 34.4066 44.0222L30.116 39.9053C29.335 39.1599 28.8566 37.9653 28.8664 36.7904V36.6522C28.8859 34.5049 30.6139 32.7822 32.7372 32.797C33.7476 32.8068 34.719 33.2166 35.4317 33.9471C36.3152 33.0734 37.5599 32.6834 38.7754 32.8957C40.6254 33.2215 41.9677 34.8554 41.9531 36.751V36.8892C41.9433 38.064 41.4454 39.2537 40.6546 39.9842L36.3005 44.032C36.0418 44.2739 35.7001 44.4072 35.3487 44.4023L35.3536 44.4072Z\" stroke=\"#83A78D\" style=\"stroke:#83A78D;stroke:color(display-p3 0.5137 0.6549 0.5529);stroke-opacity:1;\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M46.209 34.2109C46.292 34.4578 46.3701 34.7095 46.4384 34.9613\" stroke=\"#83A78D\" style=\"stroke:#83A78D;stroke:color(display-p3 0.5137 0.6549 0.5529);stroke-opacity:1;\" stroke-width=\"1.3\" stroke-miterlimit=\"10\" stroke-linecap=\"square\"></path>\n<path d=\"M46.8387 37.7852C46.8583 38.8711 46.7265 39.9423 46.4531 40.9691\" stroke=\"#83A78D\" style=\"stroke:#83A78D;stroke:color(display-p3 0.5137 0.6549 0.5529);stroke-opacity:1;\" stroke-width=\"1.3\" stroke-miterlimit=\"10\" stroke-linecap=\"square\" stroke-dasharray=\"3.62 5.79\"></path>\n<path d=\"M46.0087 42.3281C45.9111 42.57 45.8086 42.8119 45.6914 43.0439\" stroke=\"#83A78D\" style=\"stroke:#83A78D;stroke:color(display-p3 0.5137 0.6549 0.5529);stroke-opacity:1;\" stroke-width=\"1.3\" stroke-miterlimit=\"10\" stroke-linecap=\"square\"></path>\n<path d=\"M24.6142 41.7855C24.5654 41.6473 24.4824 41.3906 24.3945 41.0352\" stroke=\"#83A78D\" style=\"stroke:#83A78D;stroke:color(display-p3 0.5137 0.6549 0.5529);stroke-opacity:1;\" stroke-width=\"1.3\" stroke-miterlimit=\"10\" stroke-linecap=\"square\"></path>\n<path d=\"M24.0283 38.1987C24.0283 37.9026 24.0283 37.5916 24.0527 37.2707C24.1064 36.4118 24.248 35.6467 24.4091 35\" stroke=\"#83A78D\" style=\"stroke:#83A78D;stroke:color(display-p3 0.5137 0.6549 0.5529);stroke-opacity:1;\" stroke-width=\"1.3\" stroke-miterlimit=\"10\" stroke-linecap=\"square\" stroke-dasharray=\"3.63 5.81\"></path>\n<path d=\"M24.8438 33.6259C24.9755 33.2853 25.0878 33.0434 25.1513 32.9102\" stroke=\"#83A78D\" style=\"stroke:#83A78D;stroke:color(display-p3 0.5137 0.6549 0.5529);stroke-opacity:1;\" stroke-width=\"1.3\" stroke-miterlimit=\"10\" stroke-linecap=\"square\"></path>\n</svg>",
+            "text_1": "Free 30 Day Returns, Free Lifetime Warranty.",
+            "svg_2": "<svg width=\"72\" height=\"81\" viewbox=\"0 0 72 81\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M36.9874 53.5841H20.0247C18.6357 53.5841 17.5078 52.4595 17.5078 51.0745V21.1307C17.5078 19.7457 18.6357 18.6211 20.0247 18.6211H50.0552C51.4443 18.6211 52.5721 19.7457 52.5721 21.1307V38.6206\" stroke=\"#83A78D\" style=\"stroke:#83A78D;stroke:color(display-p3 0.5137 0.6549 0.5529);stroke-opacity:1;\" stroke-width=\"1.5\" stroke-miterlimit=\"10\"></path>\n<path d=\"M30.6318 18.6211V29.1914L35.2545 26.1223L40.0883 29.1914V18.6211\" stroke=\"#83A78D\" style=\"stroke:#83A78D;stroke:color(display-p3 0.5137 0.6549 0.5529);stroke-opacity:1;\" stroke-width=\"1.5\" stroke-miterlimit=\"10\"></path>\n<path d=\"M22.2764 43.1367H29.1992\" stroke=\"#83A78D\" style=\"stroke:#83A78D;stroke:color(display-p3 0.5137 0.6549 0.5529);stroke-opacity:1;\" stroke-width=\"1.5\" stroke-miterlimit=\"10\"></path>\n<path d=\"M22.2764 48.6367H26.9824\" stroke=\"#83A78D\" style=\"stroke:#83A78D;stroke:color(display-p3 0.5137 0.6549 0.5529);stroke-opacity:1;\" stroke-width=\"1.5\" stroke-miterlimit=\"10\"></path>\n<path d=\"M43.6053 55.8075C49.6534 55.8075 54.5563 50.9187 54.5563 44.8881C54.5563 38.8575 49.6534 33.9688 43.6053 33.9688C37.5572 33.9688 32.6543 38.8575 32.6543 44.8881C32.6543 50.9187 37.5572 55.8075 43.6053 55.8075Z\" stroke=\"#83A78D\" style=\"stroke:#83A78D;stroke:color(display-p3 0.5137 0.6549 0.5529);stroke-opacity:1;\" stroke-width=\"1.5\" stroke-miterlimit=\"10\"></path>\n<path d=\"M53.0598 50.7266L57.6102 55.2638C58.3491 56.0007 58.2102 57.3358 57.2935 58.2444C56.3823 59.1529 55.0433 59.297 54.3043 58.5601L49.7539 54.0229\" stroke=\"#83A78D\" style=\"stroke:#83A78D;stroke:color(display-p3 0.5137 0.6549 0.5529);stroke-opacity:1;\" stroke-width=\"1.5\" stroke-miterlimit=\"10\"></path>\n<path d=\"M40.0869 44.51L42.726 46.4601L48.2988 40.7539\" stroke=\"#83A78D\" style=\"stroke:#83A78D;stroke:color(display-p3 0.5137 0.6549 0.5529);stroke-opacity:1;\" stroke-width=\"1.5\" stroke-miterlimit=\"10\"></path>\n<path d=\"M2.82617 16.7839V32.6758C2.82617 53.1083 15.7088 71.3342 35.006 78.2035L36.0031 78.5597L37.0002 78.2035C56.2974 71.3342 69.18 53.1083 69.18 32.6758V16.7839L35.9977 2.60938L2.82617 16.7839Z\" stroke=\"#83A78D\" style=\"stroke:#83A78D;stroke:color(display-p3 0.5137 0.6549 0.5529);stroke-opacity:1;\" stroke-width=\"1.5\" stroke-miterlimit=\"10\"></path>\n</svg>",
+            "text_2": "We inspect & verify authenticity before shipping.",
+            "svg_3": "<svg width=\"70\" height=\"81\" viewbox=\"0 0 70 81\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M1.32715 16.412V32.555C1.32715 53.3141 14.4002 71.8225 33.992 78.8039L35.0004 79.1658L36.0087 78.8039C55.6006 71.8225 68.6736 53.3053 68.6736 32.555V16.412L35.0004 2.00781L1.32715 16.412Z\" stroke=\"#83A78D\" style=\"stroke:#83A78D;stroke:color(display-p3 0.5137 0.6549 0.5529);stroke-opacity:1;\" stroke-width=\"1.5\" stroke-miterlimit=\"10\"></path>\n<path d=\"M16.5894 25.1196L36.8475 34.0243H36.853C37.0886 34.1349 37.2365 34.3793 37.231 34.647V57.6885C37.231 58.1541 36.7708 58.5149 36.3052 58.253L16.0361 47.8701C15.8115 47.7595 15.6855 47.5209 15.6855 47.2706V25.7016C15.6855 25.2069 16.1841 24.8985 16.5894 25.1196ZM36.0039 35.0719L16.9236 26.6852V46.8691L35.9984 56.6409V35.0719H36.0039Z\" fill=\"#83A78D\" style=\"fill:#83A78D;fill:color(display-p3 0.5137 0.6549 0.5529);fill-opacity:1;\"></path>\n<path d=\"M18.0997 25.7843L36.6267 33.9323L53.4938 26.7853L36.0625 19.6965L18.0997 25.7843ZM36.3857 35.2418L16.1221 26.3256C15.514 26.0869 15.5907 25.2605 16.1221 25.0801L35.8433 18.3987C35.9858 18.3347 36.1556 18.3288 36.309 18.3929H36.3035L55.3893 26.151C55.9535 26.3721 55.9371 27.1695 55.4276 27.3848H55.4221L36.9006 35.2186C36.7527 35.3059 36.561 35.3233 36.3912 35.2418H36.3857Z\" fill=\"#83A78D\" style=\"fill:#83A78D;fill:color(display-p3 0.5137 0.6549 0.5529);fill-opacity:1;\"></path>\n<path d=\"M54.5674 27.7346L37.2347 35.0736V56.6543L54.5674 47.9301V27.7346ZM36.3856 34.026L54.9071 26.1864C55.3837 25.9595 55.8055 26.3261 55.8055 26.7684V48.3375C55.811 48.5877 55.6795 48.8322 55.4494 48.9427L36.9224 58.2664C36.4623 58.5167 36.0021 58.1558 36.0021 57.6902V34.6488C35.9966 34.381 36.1445 34.1308 36.3856 34.026Z\" fill=\"#83A78D\" style=\"fill:#83A78D;fill:color(display-p3 0.5137 0.6549 0.5529);fill-opacity:1;\"></path>\n<path d=\"M24.085 23.7552L41.8999 31.6937L46.9178 29.5752L29.6398 21.8754L24.0796 23.7552H24.085ZM41.6588 33.0032L22.102 24.2848C21.5158 24.0462 21.5815 23.2314 22.1184 23.0394H22.1239L29.4317 20.5658C29.5796 20.5018 29.7494 20.496 29.9138 20.5658L48.753 28.9583C49.3172 29.1853 49.2789 29.9768 48.7749 30.1863L42.1738 32.9741C42.0204 33.0614 41.8341 33.0789 41.6534 32.9974H41.6588V33.0032Z\" fill=\"#83A78D\" style=\"fill:#83A78D;fill:color(display-p3 0.5137 0.6549 0.5529);fill-opacity:1;\"></path>\n<path d=\"M42.5084 32.8401L42.492 38.5437L44.6832 34.848C44.8859 34.5105 45.3077 34.429 45.6145 34.7142L47.9043 36.6406L47.9263 30.547L42.5029 32.8401H42.5084ZM41.2594 40.8077L41.2868 32.456C41.2649 32.1824 41.3689 31.9438 41.6264 31.8332L41.6702 31.7925L48.2659 28.9989C48.7425 28.7719 49.1698 29.1386 49.1643 29.5867L49.1369 37.9384C49.1588 38.5787 48.5288 38.8347 48.1344 38.503L45.3625 36.1575L42.4153 41.1104C42.0756 41.7389 41.2539 41.4596 41.2539 40.8019H41.2594V40.8077Z\" fill=\"#83A78D\" style=\"fill:#83A78D;fill:color(display-p3 0.5137 0.6549 0.5529);fill-opacity:1;\"></path>\n<path d=\"M28.8132 49.9709C28.5119 49.8137 28.1393 49.9534 27.9914 50.2793C27.8435 50.6052 27.9695 50.9952 28.2818 51.1523L33.2395 53.6957C33.5408 53.847 33.9133 53.7131 34.0612 53.3872C34.2091 53.0555 34.0776 52.6714 33.7709 52.5142L28.8132 49.9709Z\" fill=\"#83A78D\" style=\"fill:#83A78D;fill:color(display-p3 0.5137 0.6549 0.5529);fill-opacity:1;\"></path>\n<path d=\"M28.8132 46.3576C28.5119 46.2004 28.1393 46.3401 27.9914 46.666C27.8435 46.992 27.9695 47.3819 28.2818 47.539L33.2395 50.0824C33.5408 50.2395 33.9133 50.0999 34.0612 49.7739C34.2091 49.4422 34.0776 49.0581 33.7709 48.9009L28.8132 46.3576Z\" fill=\"#83A78D\" style=\"fill:#83A78D;fill:color(display-p3 0.5137 0.6549 0.5529);fill-opacity:1;\"></path>\n</svg>",
+            "text_3": "Free delivery service provided"
+          }
         }
       },
       "block_order": [
         "title",
         "judge_me_reviews_preview_badge_gEq9hC",
-        "icon_with_text_UXVahk",
         "price",
-        "icon_with_text_aXXAxj",
-        "custom_liquid_UaQmkh",
-        "icon_with_text_Fq7BeK",
         "variant_picker",
-        "buy_buttons"
+        "buy_buttons",
+        "ns_icons_Lhkxj4"
       ],
       "custom_css": [],
       "settings": {
@@ -110,7 +71,7 @@
         "mobile_thumbnails": "hide",
         "hide_variants": false,
         "enable_video_looping": false,
-        "padding_top": 36,
+        "padding_top": 0,
         "padding_bottom": 100
       }
     },
