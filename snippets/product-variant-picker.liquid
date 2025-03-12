@@ -65,9 +65,9 @@
             block: block,
             picker_type: picker_type
           %}
-          {% if option.name == "Clarity" %}
+          {% comment %} {% if option.name == "Clarity" %}
             <p class="explain"></p>
-          {% endif %}
+          {% endif %} {% endcomment %}
         </fieldset>
       {%- else -%}
         <div class="product-form__input product-form__input--dropdown">
@@ -111,47 +111,37 @@
 {%- endunless -%}
 
 
-<script>
-
-   
-     function explain(){
-    let list = document.querySelectorAll(".product-form__input--pill");
-
-    list.forEach(item => {
-      const explain = item.querySelector(".explain");
-      const itemer = item.querySelector("input[type=radio]:checked+label");
-      if(explain){
-        explain.textContent  = itemer.getAttribute("data-explain");
-      }
-      
-    })
-     }
-  
-
-
-  //常用观察器
-
-  const targetNode = document.querySelector('.product__info-container');
-  const observersasdsd = new MutationObserver((mutationsList) => {
-for (const mutation of mutationsList) {
-  if (mutation.type === 'childList') {
-        explain();
+{% comment %} <script>
+    function explain(){
+      let list = document.querySelectorAll(".product-form__input--pill");
+      list.forEach(item => {
+        const explain = item.querySelector(".explain");
+        const itemer = item.querySelector("input[type=radio]:checked+label");
+        if(explain){
+          explain.textContent  = itemer.getAttribute("data-explain");
+        }
+        
+      })
     }
-}
-});
-// 配置观察选项
-const config = {
-    attributes: true,
-   childList: true,    // 监听子节点的添加或删除
-    subtree: true, 
-};
-
-// 开始观察目标节点
-if (targetNode) {
-    observersasdsd.observe(targetNode, config);
-}
-
-  
-</script>
+    //常用观察器
+    const targetNode = document.querySelector('.product__info-container');
+    const observersasdsd = new MutationObserver((mutationsList) => {
+      for (const mutation of mutationsList) {
+        if (mutation.type === 'childList') {
+              explain();
+          }
+      }
+    });
+    // 配置观察选项
+    const config = {
+        attributes: true,
+      childList: true,    // 监听子节点的添加或删除
+        subtree: true, 
+    };
+    // 开始观察目标节点
+    if (targetNode) {
+        observersasdsd.observe(targetNode, config);
+    }
+</script> {% endcomment %}
 
 
