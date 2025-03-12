@@ -53,6 +53,13 @@
             "show_gift_card_recipient": false
           }
         },
+        "ns_free_Wp7mD6": {
+          "type": "NS-free",
+          "settings": {
+            "product": "bezel-diamond-earrings",
+            "title": "Free Gift"
+          }
+        },
         "ns_expert_3UTpzK": {
           "type": "NS-expert",
           "settings": {
@@ -82,6 +89,7 @@
         "variant_picker",
         "ns_delivery_HH8Rjb",
         "buy_buttons",
+        "ns_free_Wp7mD6",
         "ns_expert_3UTpzK",
         "ns_icons_Lhkxj4"
       ],
