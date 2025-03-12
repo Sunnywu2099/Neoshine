@@ -21,6 +21,9 @@
 
 
 <div id="ns-free" data-section="{{ section.id }}" {{ block.shopify_attributes }}>
+  <div class>
+    <img src="{{ product.featured_image.src | img_url: '100x' }}" alt="{{ title }}" loading="lazy" width="100" height="100" />
+  </div>
   <form method="post" action="/cart/add">
     <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
     {% comment %} <input min="1" type="number" id="quantity" name="quantity" value="1"/> {% endcomment %}
