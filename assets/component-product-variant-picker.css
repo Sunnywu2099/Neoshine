@@ -24,9 +24,6 @@ variant-selects {
   min-width: 100px;
   display: inline-block;
 }
-.product-form__input.active{
-
-}
 .value-wrapper{
   display: flex;
   flex-direction: column;
