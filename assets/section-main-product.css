@@ -1741,4 +1741,7 @@ a.product__text {
   #parcelator p{
     font-size: 12px;
   }
+  variant-selects{
+    padding: 26px 18px;
+  }
 }
