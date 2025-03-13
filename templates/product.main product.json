@@ -35,7 +35,10 @@
           "type": "variant_picker",
           "settings": {
             "picker_type": "button",
-            "swatch_shape": "circle"
+            "swatch_shape": "circle",
+            "find_size": "How can I find my ring size",
+            "popup_img": "shopify://shop_images/Group_1000002462.png",
+            "popup_img_m": "shopify://shop_images/Group_1000002462.png"
           }
         },
         "ns_delivery_HH8Rjb": {
