@@ -387,6 +387,7 @@ if (!customElements.get('product-info')) {
 
       updateStickyAddToCart(variant) {
           let price = variant.price;
+          currency + (matchedVariant.compare_at_price / 100).toFixed(2)
           let del_price = variant.compare_at_price;
           let variantTitle = variant.public_title;
           let image = variant.featured_image.src;
@@ -397,10 +398,10 @@ if (!customElements.get('product-info')) {
           const del_priceElement = stickyCart.querySelector('.compare-price');
           const variantElement = stickyCart.querySelector('.variant-item');
           if (del_price) {
-            del_priceElement.textContent = del_price;
+            del_priceElement.textContent = $`(${del_price} / 100).toFixed(2)`;
           }
           if (price) {
-            priceElement.textContent = price;
+            priceElement.textContent = $`(${price} / 100).toFixed(2)`;;
           }
           if (variantTitle) {
               variantElement.textContent = variantTitle;
