@@ -1075,13 +1075,15 @@ class VariantSelects extends HTMLElement {
     })
 
     $('.find-size').on('click', function(){
-      $('#popup-window').css('display','flex');
+      // $('#popup-window').css('display','flex');
+      $('#popup-window').css({'visibility': 'visible', 'opacity': '1'});
       $('body,html').addClass('social-popup-open');
 
       $('#popup-window .popup-content').css('height', '80%');
     })
     $('.toggle-popup').on('click', function(){
-      $('#popup-window').css('display','none');
+      // $('#popup-window').css('display','none');
+      $('#popup-window').css({'visibility': 'hidden', 'opacity': '0'});
       $('#popup-window .popup-content').css('height', '0%');
       $('body,html').removeClass('social-popup-open');
     })
