@@ -30,6 +30,8 @@ variant-selects {
   padding-top: 10px;
   padding-left: 104px;
   padding-right: 30px;
+}
+.value-wrapper.has_level{
   max-height: 100px;
   overflow-y: scroll;
 }
