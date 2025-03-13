@@ -35,10 +35,11 @@ variant-selects {
 .product-form__input .form__label.active+.value-wrapper{
   display: flex;
 }
-.level_icon{
+.level_icon svg{
   transition: all 0.3s ease-in-out;
+  transform-origin: center center;
 }
-.product-form__input .form__label.active .level_icon{
+.product-form__input .form__label.active .level_icon svg{
   transform: rotate(180deg);
   transition: all 0.3s ease-in-out;
 }
