@@ -387,6 +387,8 @@ a.product__text {
   background: rgba(0, 0, 0, .8);
 
   /* display: none; */
+  visibility: hidden; /* 初始不可见 */
+  opacity: 0; /* 初始透明 */
 }
 #popup-window .popup-content{
   background: #fff;
