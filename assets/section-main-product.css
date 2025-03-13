@@ -1744,12 +1744,4 @@ a.product__text {
   variant-selects{
     padding: 26px 18px;
   }
-  .variant-title{
-    font-size: 13px;
-    line-height: 1.2;
-  }
-  .variant-title span{
-    font-size: 16px;
-    line-height: 1.2;
-  }
 }
