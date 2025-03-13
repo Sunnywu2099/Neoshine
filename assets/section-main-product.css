@@ -1704,6 +1704,11 @@ a.product__text {
   left: 0;
   z-index: 99;
 }
+#StickyAddToCart .sticky-product-info{
+  max-width: 1400px;
+  padding: 13px 20px;
+  margin: 0 auto;
+}
 @media screen and (forced-colors: active) {
   .recipient-fields > hr {
     border-top: 0.1rem solid rgb(var(--color-background));
