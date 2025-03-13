@@ -1749,5 +1749,10 @@ a.product__text {
 @media screen and (max-width: 768px){
   .product__title h1{
     font-size: 26px;
+    padding: 0 18px;
+  }
+  .price--large{
+    padding: 0 18px;
+    line-height: inherit;
   }
 }
