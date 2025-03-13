@@ -54,7 +54,7 @@
                 <span style="background-image: url('{{ option.selected_value.swatch.image | image_url: width: 50 }}')" class="swatch"></span>
               </div>
             </legend>
-            <div class="value-wrapper" data-size="{{ option.values.size }}">
+            <div class="value-wrapper {% if option.values.size > 3 %}has-level{% endif %}">
               {% render 'product-variant-options',
                 product: product,
                 option: option,
@@ -71,7 +71,7 @@
                 {{- option.selected_value -}}
               </span>
             </legend>
-            <div class="value-wrapper">
+            <div class="value-wrapper {% if option.values.size > 3 %}has-level{% endif %}">
               {% render 'product-variant-options',
                 product: product,
                 option: option,
