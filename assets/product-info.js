@@ -79,7 +79,6 @@ if (!customElements.get('product-info')) {
             : this.handleUpdateProductInfo(productUrl),
         });
 
-        this.initializeStickyAddToCart();
       }
 
       resetProductFormState() {
@@ -381,8 +380,10 @@ if (!customElements.get('product-info')) {
 
       initializeStickyAddToCart() {
         const defaultVariant = this.getSelectedVariant(this);
+        console.log(defaultVariant);
+        
         if (defaultVariant) {
-            this.updateStickyAddToCart(defaultVariant);
+            // this.updateStickyAddToCart(defaultVariant);
         }
       }
 
