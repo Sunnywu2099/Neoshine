@@ -1726,4 +1726,7 @@ a.product__text {
   .ns-price .limit-badge{
     font-size: 12px;
   }
+  .product__info-container>*+*{
+    margin: 20px 0;
+  }
 }
