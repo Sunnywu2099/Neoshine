@@ -821,6 +821,15 @@
           </div>
           <div class="item variant-item"></div>
           <div class="item btn-item">
+            <div class="p-info">
+              <h4 class="h5">{{ product.title }}</h4>
+              <div class="price-wrapper">
+                {% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}
+                  <s class="compare-price">{{ product.selected_or_first_available_variant.compare_at_price | money }}</s>
+                {% endif %}
+                <span class="price">{{ product.selected_or_first_available_variant.price | money }}</span>
+                </div>
+              </div>
             {%- render 'sticky-buy-button',
                     block: block,
                     product: product,
