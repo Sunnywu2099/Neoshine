@@ -125,6 +125,8 @@
       </div>
     {%- endfor -%}
 
+    <div class="find-size" style="text-decoration: underline;">{{ block.settings.find_size }}</div>
+
     <script type="application/json" data-selected-variant>
       {{ product.selected_or_first_available_variant | json }}
     </script>
