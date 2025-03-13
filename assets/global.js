@@ -1077,9 +1077,12 @@ class VariantSelects extends HTMLElement {
     $('.find-size').on('click', function(){
       $('#popup-window').css('display','flex');
       $('body,html').addClass('social-popup-open');
+
+      $('#popup-window .popup-content').css('max-height', '80%');
     })
     $('.toggle-popup').on('click', function(){
       $('#popup-window').css('display','none');
+      $('#popup-window .popup-content').css('max-height', '0%');
       $('body,html').removeClass('social-popup-open');
     })
   }
