@@ -1713,6 +1713,13 @@ a.product__text {
   align-items: center;
   gap: 10vw;
 }
+#StickyAddToCart .info-item{
+  display: flex;
+  align-items: center;
+}
+#StickyAddToCart .info-item img{
+  width: 60px;
+}
 @media screen and (forced-colors: active) {
   .recipient-fields > hr {
     border-top: 0.1rem solid rgb(var(--color-background));
