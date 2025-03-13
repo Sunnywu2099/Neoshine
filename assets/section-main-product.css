@@ -1812,7 +1812,8 @@ a.product__text {
   .product__info-container>*:nth-child(2){
     padding: 0 18px;
   }
-  #StickyAddToCart .info-item,
+  #StickyAddToCart .info-item img,
+  #StickyAddToCart .info-item .h5,
   #StickyAddToCart .variant-item{
     display: none;
   }
