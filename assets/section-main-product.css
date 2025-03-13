@@ -1726,6 +1726,11 @@ a.product__text {
   font-weight: 500;
   margin: 0 0 5px;
 }
+#StickyAddToCart .price-wrapper{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 @media screen and (forced-colors: active) {
   .recipient-fields > hr {
     border-top: 0.1rem solid rgb(var(--color-background));
