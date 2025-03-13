@@ -27,6 +27,7 @@ if (!customElements.get('product-info')) {
 
         this.initQuantityHandlers();
         this.dispatchEvent(new CustomEvent('product-info:loaded', { bubbles: true }));
+        this.initializeStickyAddToCart();
       }
 
       addPreProcessCallback(callback) {
@@ -374,6 +375,30 @@ if (!customElements.get('product-info')) {
             current.innerHTML = updated.innerHTML;
           }
         }
+      }
+
+      initializeStickyAddToCart() {
+        const defaultVariant = this.getSelectedVariant(this);
+        if (defaultVariant) {
+            this.updateStickyAddToCart(defaultVariant);
+        }
+      }
+
+      updateStickyAddToCart(variant) {
+          const stickyCart = document.getElementById('StickyAddToCart');
+          if (!stickyCart) return;
+      
+          // 更新价格
+          const priceElement = stickyCart.querySelector('.price');
+          if (priceElement && variant) {
+              priceElement.textContent = variant.price; // 假设 variant 对象中有价格信息
+          }
+      
+          // 更新变体信息
+          const variantElement = stickyCart.querySelector('.variant-item');
+          if (variantElement && variant) {
+              variantElement.textContent = variant.title; // 假设 variant 对象中有变体标题信息
+          }
       }
 
       get productForm() {
