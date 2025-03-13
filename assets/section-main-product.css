@@ -1696,7 +1696,14 @@ a.product__text {
 .recipient-form .error-message::first-letter {
   text-transform: capitalize;
 }
-
+#StickyAddToCart{
+  background: #f9f9f9;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  z-index: 99;
+}
 @media screen and (forced-colors: active) {
   .recipient-fields > hr {
     border-top: 0.1rem solid rgb(var(--color-background));
