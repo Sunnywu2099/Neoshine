@@ -387,7 +387,6 @@ if (!customElements.get('product-info')) {
 
       updateStickyAddToCart(variant) {
           let price = variant.price;
-          currency + (matchedVariant.compare_at_price / 100).toFixed(2)
           let del_price = variant.compare_at_price;
           let variantTitle = variant.public_title;
           let image = variant.featured_image.src;
