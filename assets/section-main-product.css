@@ -385,6 +385,8 @@ a.product__text {
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, .8);
+  
+  display: none;
 }
 #popup-window .popup-content{
   background: #fff;
