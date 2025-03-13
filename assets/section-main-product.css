@@ -1711,3 +1711,9 @@ a.product__text {
     border: none;
   }
 }
+
+@media screen and (max-width: 1200px) {
+  .product__title h1{
+    font-size: 24px;
+  }
+}
