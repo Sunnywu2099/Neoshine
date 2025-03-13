@@ -254,6 +254,7 @@ product-info {
   letter-spacing: 0;
   width: 100%;
   position: relative;
+  cursor: pointer;
 }
 .product-form__input .form__label .level_icon{
   position: absolute;
