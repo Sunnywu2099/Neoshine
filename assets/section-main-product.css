@@ -253,6 +253,13 @@ product-info {
   line-height: 1.3;
   letter-spacing: 0;
   width: 100%;
+  position: relative;
+}
+.product-form__input .form__label .level_icon{
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .product-form__input .select {
