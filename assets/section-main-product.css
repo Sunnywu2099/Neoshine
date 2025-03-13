@@ -92,6 +92,9 @@ product-info {
   .product--right .product__media-wrapper {
     order: 2;
   }
+  .product--medium:not(.product--no-media) .product__info-wrapper{
+    padding-top: 55px;
+  }
 }
 
 @media screen and (min-width: 990px) {
@@ -122,9 +125,7 @@ product-info {
     width: calc(45% - var(--grid-desktop-horizontal-spacing) / 2);
   }
 
-  .product--medium:not(.product--no-media) .product__info-wrapper{
-    padding-top: 55px;
-  }
+  
 }
 .ring-size-dropdown {
   width: 100%;
