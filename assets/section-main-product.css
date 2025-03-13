@@ -1745,3 +1745,9 @@ a.product__text {
     padding: 26px 18px;
   }
 }
+
+@media screen and (max-width: 768px){
+  .product__title h1{
+    font-size: 26px;
+  }
+}
