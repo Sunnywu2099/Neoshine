@@ -1073,6 +1073,15 @@ class VariantSelects extends HTMLElement {
     $('.product-form__input .form__label').click(function(){
       $(this).toggleClass('active');
     })
+
+    $('.find-size').on('click', function(){
+      $('#popup-window').css('display','flex');
+      $('body,html').addClass('social-popup-open');
+    })
+    $('.toggle-popup').on('click', function(){
+      $('#popup-window').css('display','none');
+      $('body,html').removeClass('social-popup-open');
+    })
   }
 
   updateSelectionMetadata({ target }) {
