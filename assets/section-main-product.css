@@ -397,6 +397,9 @@ a.product__text {
   overflow-y: scroll;
   transition: all 1s ease-in-out;
 }
+#popup-window .popup-content img{
+  transition: all 1s ease-in-out;
+}
 #popup-window .popup-content img.pc{
   display: block;
 }
