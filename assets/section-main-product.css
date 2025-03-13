@@ -394,11 +394,13 @@ a.product__text {
   width: 80%;
   max-width: 80%;
   max-height: 0%;
+  height: 0%;
   overflow-y: scroll;
-  transition: max-height 1s ease-in-out;
+  transition: all 1s linear;
+  will-change: height;
 }
 #popup-window .popup-content img{
-  transition: all 1s ease-in-out;
+  transition: height 1s linear;
 }
 #popup-window .popup-content img.pc{
   display: block;
