@@ -106,13 +106,6 @@
             "swym_hover_atw_button_border_radius": 0,
             "swym_custom_css": ""
           }
-        },
-        "popup_ReGhz8": {
-          "type": "popup",
-          "settings": {
-            "text": "Pop-up link text",
-            "page": "about-us"
-          }
         }
       },
       "block_order": [
@@ -126,8 +119,7 @@
         "ns_free_Wp7mD6",
         "ns_expert_3UTpzK",
         "ns_icons_Lhkxj4",
-        "wishlist_plus_wishlist_pdp_button_CGRLYB",
-        "popup_ReGhz8"
+        "wishlist_plus_wishlist_pdp_button_CGRLYB"
       ],
       "custom_css": [],
       "settings": {
