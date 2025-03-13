@@ -396,7 +396,7 @@ a.product__text {
   max-height: 80%;
   height: 0%;
   overflow-y: scroll;
-  transition: all 1s linear;
+  transition: height 1s linear;
   will-change: height;
 }
 #popup-window .popup-content img{
