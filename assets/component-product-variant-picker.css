@@ -24,14 +24,19 @@ variant-selects {
   min-width: 100px;
   display: inline-block;
 }
+.product-form__input.active{
+
+}
 .value-wrapper{
   display: flex;
   flex-direction: column;
   padding-top: 10px;
   padding-left: 104px;
   padding-right: 30px;
-
   display: none;
+}
+.product-form__input.active .value-wrapper{
+  display: flex;
 }
 .value-wrapper.has-level{
   max-height: 100px;
