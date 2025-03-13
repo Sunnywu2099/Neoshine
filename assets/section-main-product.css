@@ -1817,4 +1817,9 @@ a.product__text {
   #StickyAddToCart .variant-item{
     display: none;
   }
+  #StickyAddToCart .sticky-product-info{
+    gap: 2px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
