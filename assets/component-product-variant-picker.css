@@ -257,5 +257,10 @@ variant-selects {
   variant-selects{
     padding: 26px 18px;
   }
+  .v-wrapper .option_name{
+    font-size: 12px;
+    line-height: 18px;
+    min-width: 60px;
+  }
 }
 /* End custom styles for Swatch display type */
