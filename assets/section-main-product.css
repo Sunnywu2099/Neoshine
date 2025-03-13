@@ -1708,6 +1708,10 @@ a.product__text {
   max-width: 1400px;
   padding: 13px 20px;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10vw;
 }
 @media screen and (forced-colors: active) {
   .recipient-fields > hr {
