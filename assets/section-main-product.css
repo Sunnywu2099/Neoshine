@@ -1729,4 +1729,16 @@ a.product__text {
   .product__info-container>*+*{
     margin: 20px 0;
   }
+  .price--large{
+    line-height: 1.2;
+  }
+  .ns-price .typical-text{
+    font-size: 14px;
+  }
+  .product__info-container .price--on-sale .price-item--regular{
+    font-size: 14px;
+  }
+  #parcelator p{
+    font-size: 12px;
+  }
 }
