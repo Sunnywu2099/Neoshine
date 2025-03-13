@@ -35,6 +35,14 @@ variant-selects {
 .product-form__input .form__label.active+.value-wrapper{
   display: flex;
 }
+.level_icon{
+  transition: all 0.3s ease-in-out;
+}
+.product-form__input .form__label.active .level_icon{
+  transform: rotate(180deg);
+  transition: all 0.3s ease-in-out;
+}
+
 .value-wrapper.has-level{
   max-height: 100px;
   overflow-y: scroll;
