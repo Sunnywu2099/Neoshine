@@ -34,6 +34,26 @@ variant-selects {
 .value-wrapper.has-level{
   max-height: 100px;
   overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+/* 针对 Webkit 浏览器的滚动条样式 */
+.value-wrapper.has-level::-webkit-scrollbar {
+  width: 8px; /* 滚动条宽度 */
+}
+
+.value-wrapper.has-level::-webkit-scrollbar-track {
+  background: #f1f1f1; /* 滚动条轨道颜色 */
+}
+
+.value-wrapper.has-level::-webkit-scrollbar-thumb {
+  background-color: #888; /* 滚动条滑块颜色 */
+  border-radius: 10px; /* 滑块圆角 */
+  border: 2px solid #f1f1f1; /* 滑块边框 */
+}
+
+.value-wrapper.has-level::-webkit-scrollbar-button {
+  display: none; /* 隐藏滚动条的上下箭头 */
 }
 .form__label{
   margin-bottom: 0;
