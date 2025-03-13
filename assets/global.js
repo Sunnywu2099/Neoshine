@@ -1071,7 +1071,7 @@ class VariantSelects extends HTMLElement {
     });
 
     $('.product-form__input .form__label').click(function(){
-      $(this).next().toggle();
+      $(this).toggleClass('active');
     })
   }
 
