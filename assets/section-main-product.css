@@ -1755,4 +1755,7 @@ a.product__text {
     padding: 0 18px;
     line-height: inherit;
   }
+  .product__info-container>*:nth-child(2){
+    padding: 0 18px;
+  }
 }
