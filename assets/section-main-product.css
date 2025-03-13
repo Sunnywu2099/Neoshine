@@ -385,7 +385,7 @@ a.product__text {
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, .8);
-  
+
   display: none;
 }
 #popup-window .popup-content{
@@ -393,8 +393,9 @@ a.product__text {
   padding: 20px;
   width: 80%;
   max-width: 80%;
-  max-height: 80%;
+  max-height: 0%;
   overflow-y: scroll;
+  transition: all .3s ease-in-out;
 }
 #popup-window .popup-content img.pc{
   display: block;
