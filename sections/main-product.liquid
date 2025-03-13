@@ -806,10 +806,10 @@
         <div class="sticky-product-info">
           <h4 class="h5">{{ product.title }}</h4>
           <div class="price-wrapper">
-            <span class="price">{{ product.selected_or_first_available_variant.price | money }}</span>
             {% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}
               <s class="compare-price">{{ product.selected_or_first_available_variant.compare_at_price | money }}</s>
             {% endif %}
+            <span class="price">{{ product.selected_or_first_available_variant.price | money }}</span>
           </div>
         </div>
         <button
