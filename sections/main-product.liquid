@@ -804,12 +804,20 @@
     {% if product.available %}
       <div class="sticky-add-to-cart" id="StickyAddToCart">
         <div class="sticky-product-info">
-          <h4 class="h5">{{ product.title }}</h4>
-          <div class="price-wrapper">
+          <div class="item">
+            {% if product.selected_or_first_available_variant.featured_media != null %}
+              {% assign featured_media = product.selected_or_first_available_variant.featured_media %}
+              <img class="lazyload" src="{{ featured_media | img_url: '60x' }}" alt="{{ featured_media.alt | escape }}" width="60" height="60">
+            {% endif %}
+          </div>
+          <div class="item">
+            <h4 class="h5">{{ product.title }}</h4>
+            <div class="price-wrapper">
             {% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}
               <s class="compare-price">{{ product.selected_or_first_available_variant.compare_at_price | money }}</s>
             {% endif %}
             <span class="price">{{ product.selected_or_first_available_variant.price | money }}</span>
+            </div>
           </div>
         </div>
         <div>
