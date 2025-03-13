@@ -397,10 +397,10 @@ if (!customElements.get('product-info')) {
           const del_priceElement = stickyCart.querySelector('.compare-price');
           const variantElement = stickyCart.querySelector('.variant-item');
           if (del_price) {
-            del_priceElement.textContent = $`(${del_price} / 100).toFixed(2)`;
+            del_priceElement.textContent = '$'+(del_price / 100).toFixed(2);
           }
           if (price) {
-            priceElement.textContent = $`(${price} / 100).toFixed(2)`;;
+            priceElement.textContent = '$'+(price / 100).toFixed(2);
           }
           if (variantTitle) {
               variantElement.textContent = variantTitle;
