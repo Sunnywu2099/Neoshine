@@ -840,7 +840,33 @@
 </product-info>
 
 <script>
-  
+  $(document).ready(function() {
+    function checkVisibility() {
+      const productInfo = $('product-info');
+      const stickyCart = $('#StickyAddToCart');
+
+      if (!productInfo.length || !stickyCart.length) return;
+
+      const productInfoTop = productInfo.offset().top;
+      const productInfoBottom = productInfoTop + productInfo.outerHeight();
+      const windowTop = $(window).scrollTop();
+      const windowBottom = windowTop + $(window).height();
+
+      if (productInfoBottom < windowTop || productInfoTop > windowBottom) {
+        stickyCart.addClass('active');
+      } else {
+        stickyCart.removeClass('active');
+      }
+    }
+
+    // Initial check
+    checkVisibility();
+
+    // Check on scroll
+    $(window).on('scroll', function() {
+      checkVisibility();
+    });
+  });
 </script>
 
 {% schema %}
