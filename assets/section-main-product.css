@@ -395,7 +395,7 @@ a.product__text {
   max-width: 80%;
   max-height: 0%;
   overflow-y: scroll;
-  transition: all .3s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 #popup-window .popup-content img.pc{
   display: block;
