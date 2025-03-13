@@ -254,5 +254,8 @@ variant-selects {
     font-size: 16px;
     line-height: 1.2;
   }
+  variant-selects{
+    padding: 26px 18px;
+  }
 }
 /* End custom styles for Swatch display type */
