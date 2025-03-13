@@ -380,28 +380,24 @@ if (!customElements.get('product-info')) {
 
       initializeStickyAddToCart() {
         const defaultVariant = this.getSelectedVariant(this);
-        console.log(defaultVariant);
-        
         if (defaultVariant) {
-            // this.updateStickyAddToCart(defaultVariant);
+            this.updateStickyAddToCart(defaultVariant);
         }
       }
 
       updateStickyAddToCart(variant) {
+          let price = defaultVariant.price;
+          let del_price = defaultVariant.compare_at_price;
+          let variantTitle = defaultVariant.public_title;
+          let image = defaultVariant.featured_image.src;
           const stickyCart = document.getElementById('StickyAddToCart');
           if (!stickyCart) return;
       
           // 更新价格
-          const priceElement = stickyCart.querySelector('.price');
-          if (priceElement && variant) {
-              priceElement.textContent = variant.price; // 假设 variant 对象中有价格信息
-          }
+          
       
           // 更新变体信息
-          const variantElement = stickyCart.querySelector('.variant-item');
-          if (variantElement && variant) {
-              variantElement.textContent = variant.title; // 假设 variant 对象中有变体标题信息
-          }
+          
       }
 
       get productForm() {
