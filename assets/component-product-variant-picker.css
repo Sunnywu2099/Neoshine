@@ -38,21 +38,21 @@ variant-selects {
   scrollbar-color: #888 #f1f1f1;
 }
 /* 针对 Webkit 浏览器的滚动条样式 */
-.value-wrapper.has-level::-webkit-scrollbar {
+.value-wrapper::-webkit-scrollbar {
   width: 2px; /* 滚动条宽度 */
 }
 
-.value-wrapper.has-level::-webkit-scrollbar-track {
+.value-wrapper::-webkit-scrollbar-track {
   background: #e7e7e7; /* 滚动条轨道颜色 */
 }
 
-.value-wrapper.has-level::-webkit-scrollbar-thumb {
+.value-wrapper::-webkit-scrollbar-thumb {
   background-color: #121212; /* 滚动条滑块颜色 */
   border-radius: 10px; /* 滑块圆角 */
   border: 2px solid #121212; /* 滑块边框 */
 }
 
-.value-wrapper.has-level::-webkit-scrollbar-button {
+.value-wrapper::-webkit-scrollbar-button {
   display: none; /* 隐藏滚动条的上下箭头 */
 }
 .form__label{
