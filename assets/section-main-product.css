@@ -1721,6 +1721,7 @@ a.product__text {
 }
 #StickyAddToCart .info-item img{
   width: 60px;
+  flex-shrink: 0;
 }
 #StickyAddToCart .info-item .h5{
   font-size: 20px;
@@ -1794,6 +1795,9 @@ a.product__text {
   variant-selects{
     padding: 26px 18px;
   }
+  #StickyAddToCart .sticky-product-info{
+    gap: 0;
+  }
 }
 
 @media screen and (max-width: 768px){
@@ -1807,5 +1811,9 @@ a.product__text {
   }
   .product__info-container>*:nth-child(2){
     padding: 0 18px;
+  }
+  #StickyAddToCart .info-item,
+  #StickyAddToCart .variant-item{
+    display: none;
   }
 }
