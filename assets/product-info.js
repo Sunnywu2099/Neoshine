@@ -392,10 +392,13 @@ if (!customElements.get('product-info')) {
           let image = variant.featured_image.src;
           const stickyCart = document.getElementById('StickyAddToCart');
           if (!stickyCart) return;
-      
+          const imageElement = stickyCart.querySelector('.info-item img');
           const priceElement = stickyCart.querySelector('.price');
           const del_priceElement = stickyCart.querySelector('.compare-price');
           const variantElement = stickyCart.querySelector('.variant-item');
+          if (image) {
+            imageElement.attr('src', image);
+          }
           if (del_price) {
             del_priceElement.textContent = '$'+(del_price / 100).toFixed(2);
           }
