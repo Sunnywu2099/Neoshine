@@ -1822,4 +1822,10 @@ a.product__text {
     flex-direction: column;
     align-items: flex-start;
   }
+  #StickyAddToCart .product-form__submit{
+    font-size: 12px;
+    line-height: 1.2;
+    background: #121212;
+    color: #fff;
+  }
 }
