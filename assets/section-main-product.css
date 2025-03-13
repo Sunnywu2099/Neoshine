@@ -1716,6 +1716,7 @@ a.product__text {
 #StickyAddToCart .info-item{
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 #StickyAddToCart .info-item img{
   width: 60px;
