@@ -1732,6 +1732,15 @@ a.product__text {
   align-items: center;
   gap: 8px;
 }
+#StickyAddToCart .product-form__submit{
+  height: auto;
+    font-size: 20px;
+    line-height: 26px;
+    background: transparent;
+    color: #79A88B;
+    margin-bottom: 0;
+    font-weight: 700;
+}
 @media screen and (forced-colors: active) {
   .recipient-fields > hr {
     border-top: 0.1rem solid rgb(var(--color-background));
