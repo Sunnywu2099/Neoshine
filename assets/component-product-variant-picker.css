@@ -79,6 +79,18 @@ variant-selects {
   justify-content: space-between;
   gap: 18px;
 }
+.find-size{
+  text-decoration: underline;
+  font-size: 15px;
+  line-height: 20px;
+  color: #79A88B;
+  cursor: pointer;
+}
+
+
+
+
+
 .product--no-media .product-form__input--pill,
 .product--no-media .product-form__input--swatch,
 .product--no-media .product-form__input--dropdown {
