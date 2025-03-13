@@ -39,7 +39,7 @@ variant-selects {
 }
 /* 针对 Webkit 浏览器的滚动条样式 */
 .value-wrapper.has-level::-webkit-scrollbar {
-  width: 8px; /* 滚动条宽度 */
+  width: 2px; /* 滚动条宽度 */
 }
 
 .value-wrapper.has-level::-webkit-scrollbar-track {
