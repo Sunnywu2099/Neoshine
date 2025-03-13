@@ -400,6 +400,18 @@ a.product__text {
 #popup-window .popup-content img.m{
   display: none;
 }
+#popup-window .toggle-popup{
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  color: #fff;
+  font-size: 24px;
+  top: 17px;
+  right: 24px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+}
 @media(min-width:750px){
   .product__title {
     word-break: break-word;
