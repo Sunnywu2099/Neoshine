@@ -241,6 +241,9 @@ product-info {
   max-width: 44rem;
   min-width: fit-content;
   border: none;
+
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .product-form__input .form__label {
