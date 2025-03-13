@@ -1720,6 +1720,12 @@ a.product__text {
 #StickyAddToCart .info-item img{
   width: 60px;
 }
+#StickyAddToCart .info-item .h5{
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 500;
+  margin: 0 0 5px;
+}
 @media screen and (forced-colors: active) {
   .recipient-fields > hr {
     border-top: 0.1rem solid rgb(var(--color-background));
