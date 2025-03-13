@@ -397,7 +397,7 @@ if (!customElements.get('product-info')) {
           const del_priceElement = stickyCart.querySelector('.compare-price');
           const variantElement = stickyCart.querySelector('.variant-item');
           if (image) {
-            imageElement.attr('src', image);
+            imageElement.setAttribute("src", image);
           }
           if (del_price) {
             del_priceElement.textContent = '$'+(del_price / 100).toFixed(2);
