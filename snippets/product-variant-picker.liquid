@@ -131,17 +131,6 @@
       {{ product.selected_or_first_available_variant | json }}
     </script>
 
-    <script>
-      $('.find-size').on('click', function(){
-        $('#popup-window').css('display','flex');
-        $('body,html').addClass('social-popup-open');
-      })
-      $('.toggle-popup').on('click', function(){
-        $('#popup-window').css('display','none');
-        $('body,html').removeClass('social-popup-open');
-      })
-    </script>
-
   </variant-selects>
 {%- endunless -%}
 
