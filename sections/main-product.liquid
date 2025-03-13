@@ -770,6 +770,23 @@
       </modal-dialog>
     {%- endfor -%}
 
+    {% assign findsize = section.blocks | where: 'type', 'variant_picker' %}
+    {%- for block in findsize -%}
+      <div id="popup-window">
+        <span class="toggle-popup">✕</span>
+        <div class="popup-content">
+          {% render 'responsive-image',
+            sid: section.id,
+            image_desktop: block.settings.popup_img,
+            image_mobile: block.settings.popup_img_m,
+            alt: 'find my size',
+            lazy: true,
+            preload: false
+          %}
+        </div>
+    </div>
+    {% endfor %}
+
     {%- if product.media.size > 0 -%}
       <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
       <script src="{{ 'media-gallery.js' | asset_url }}" defer="defer"></script>
