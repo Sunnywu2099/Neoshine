@@ -50,7 +50,7 @@
               <span data-selected-value>
                 {{- option.selected_value -}}
               </span>
-              <span style="background-image: url('{{ option.selected_value.swatch.image | image_url: width: 50 }}')" class="option-button option-swatch"></span>
+              <span style="background-image: url('{{ option.selected_value.swatch.image | image_url: width: 50 }}')" class="swatch"></span>
             </legend>
             <div class="value-wrapper">
               {% render 'product-variant-options',
