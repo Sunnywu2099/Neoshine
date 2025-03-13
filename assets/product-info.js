@@ -27,6 +27,7 @@ if (!customElements.get('product-info')) {
 
         this.initQuantityHandlers();
         this.dispatchEvent(new CustomEvent('product-info:loaded', { bubbles: true }));
+        this.initializeStickyAddToCart();
       }
 
       addPreProcessCallback(callback) {
@@ -77,6 +78,7 @@ if (!customElements.get('product-info')) {
             ? this.handleSwapProduct(productUrl, shouldFetchFullPage)
             : this.handleUpdateProductInfo(productUrl),
         });
+        this.initializeStickyAddToCart();
       }
 
       resetProductFormState() {
@@ -169,7 +171,7 @@ if (!customElements.get('product-info')) {
           this.updateOptionValues(html);
           this.updateURL(productUrl, variant?.id);
           this.updateVariantInputs(variant?.id);
-
+          this.initializeStickyAddToCart();
           if (!variant) {
             this.setUnavailable();
             return;
@@ -374,6 +376,38 @@ if (!customElements.get('product-info')) {
             current.innerHTML = updated.innerHTML;
           }
         }
+      }
+
+      initializeStickyAddToCart() {
+        const defaultVariant = this.getSelectedVariant(this);
+        if (defaultVariant) {
+            this.updateStickyAddToCart(defaultVariant);
+        }
+      }
+
+      updateStickyAddToCart(variant) {
+          let price = variant.price;
+          let del_price = variant.compare_at_price;
+          let variantTitle = variant.public_title;
+          let image = variant.featured_image.src;
+          const stickyCart = document.getElementById('StickyAddToCart');
+          if (!stickyCart) return;
+          const imageElement = stickyCart.querySelector('.info-item img');
+          const priceElement = stickyCart.querySelector('.price');
+          const del_priceElement = stickyCart.querySelector('.compare-price');
+          const variantElement = stickyCart.querySelector('.variant-item');
+          if (image) {
+            imageElement.setAttribute("src", image);
+          }
+          if (del_price) {
+            del_priceElement.textContent = '$'+(del_price / 100).toFixed(2);
+          }
+          if (price) {
+            priceElement.textContent = '$'+(price / 100).toFixed(2);
+          }
+          if (variantTitle) {
+              variantElement.textContent = variantTitle;
+          }
       }
 
       get productForm() {

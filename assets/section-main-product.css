@@ -1696,7 +1696,67 @@ a.product__text {
 .recipient-form .error-message::first-letter {
   text-transform: capitalize;
 }
+#StickyAddToCart{
+  background: #f9f9f9;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  z-index: 99;
+  box-shadow: 0px -8px 10px 0px rgba(0, 0, 0, 0.05);
 
+  transition: all .3s linear;
+  opacity: 0;
+  visibility: hidden;
+}
+#StickyAddToCart.active{
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+#StickyAddToCart .sticky-product-info{
+  max-width: 1400px;
+  padding: 13px 20px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10vw;
+}
+#StickyAddToCart .info-item{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#StickyAddToCart .info-item img{
+  width: 60px;
+  flex-shrink: 0;
+}
+#StickyAddToCart .info-item .h5{
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 500;
+  margin: 0 0 5px;
+}
+#StickyAddToCart .price-wrapper{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+#StickyAddToCart .product-form__submit{
+  height: auto;
+    font-size: 20px;
+    line-height: 26px;
+    background: transparent;
+    color: #79A88B;
+    margin-bottom: 0;
+    font-weight: 700;
+}
+#StickyAddToCart .variant-item{
+  font-size: 15px;
+  line-height: 20px;
+  color: var(---gray-3, color(display-p3 0.4725 0.4725 0.4725));
+}
 @media screen and (forced-colors: active) {
   .recipient-fields > hr {
     border-top: 0.1rem solid rgb(var(--color-background));
@@ -1744,6 +1804,9 @@ a.product__text {
   variant-selects{
     padding: 26px 18px;
   }
+  #StickyAddToCart .sticky-product-info{
+    gap: 0;
+  }
 }
 
 @media screen and (max-width: 768px){
@@ -1757,5 +1820,21 @@ a.product__text {
   }
   .product__info-container>*:nth-child(2){
     padding: 0 18px;
+  }
+  #StickyAddToCart .info-item img,
+  #StickyAddToCart .info-item .h5,
+  #StickyAddToCart .variant-item{
+    display: none;
+  }
+  #StickyAddToCart .sticky-product-info{
+    gap: 2px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #StickyAddToCart .product-form__submit{
+    font-size: 12px;
+    line-height: 1.2;
+    background: #121212;
+    color: #fff;
   }
 }
