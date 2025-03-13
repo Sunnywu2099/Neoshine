@@ -130,6 +130,20 @@
     <script type="application/json" data-selected-variant>
       {{ product.selected_or_first_available_variant | json }}
     </script>
+
+    <div id="popup-window">
+      <span class="toggle-popup">✕</span>
+      <div class="popup-content">
+        {% render 'responsive-image',
+          sid: section.id,
+          image_desktop: block.settings.popup_img,
+          image_mobile: block.settings.popup_img_m,
+          alt: 'find my size',
+          lazy: true,
+          preload: false
+        %}
+      </div>
+    </div>
   </variant-selects>
 {%- endunless -%}
 
