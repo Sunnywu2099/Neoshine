@@ -775,8 +775,8 @@
       <div id="popup-window">
         <span class="toggle-popup">✕</span>
         <div class="popup-content">
-          <img class="pc" loading="lazy" src="{{ block.settings.popup_img | img_url: 'master' }}" alt="find my size" width="" height="">
-          <img class="m" loading="lazy" src="{{ block.settings.popup_img_m | img_url: 'master' }}" alt="find my size" width="" height="">
+          {% comment %} <img class="pc" loading="lazy" src="{{ block.settings.popup_img | img_url: 'master' }}" alt="find my size" width="" height="">
+          <img class="m" loading="lazy" src="{{ block.settings.popup_img_m | img_url: 'master' }}" alt="find my size" width="" height=""> {% endcomment %}
         </div>
     </div>
     {% endfor %}
