@@ -171,7 +171,7 @@ if (!customElements.get('product-info')) {
           this.updateOptionValues(html);
           this.updateURL(productUrl, variant?.id);
           this.updateVariantInputs(variant?.id);
-
+          this.initializeStickyAddToCart();
           if (!variant) {
             this.setUnavailable();
             return;
