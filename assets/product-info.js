@@ -78,6 +78,8 @@ if (!customElements.get('product-info')) {
             ? this.handleSwapProduct(productUrl, shouldFetchFullPage)
             : this.handleUpdateProductInfo(productUrl),
         });
+
+        this.initializeStickyAddToCart();
       }
 
       resetProductFormState() {
