@@ -819,15 +819,15 @@
             <span class="price">{{ product.selected_or_first_available_variant.price | money }}</span>
             </div>
           </div>
-        </div>
-        <div>
-          {%- render 'sticky-buy-button',
-                  block: block,
-                  product: product,
-                  product_form_id: product_form_id,
-                  section_id: section.id,
-                  show_pickup_availability: true
-                -%}
+          <div class="item">
+            {%- render 'sticky-buy-button',
+                    block: block,
+                    product: product,
+                    product_form_id: product_form_id,
+                    section_id: section.id,
+                    show_pickup_availability: true
+                  -%}
+          </div>
         </div>
       </div>
     {% endif %}
