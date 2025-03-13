@@ -20,7 +20,11 @@
 </style>
 
 
-
+{% capture level_icon %} 
+  <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M3.62891 6.19629L5.65771 0.988769L7.05664 0.988769L4.28809 7.24365L3.43115 7.24365L3.62891 6.19629ZM1.8418 0.988769L3.91455 6.21094L4.06836 7.24365L3.21875 7.24365L0.442871 0.988769L1.8418 0.988769Z" fill="#505050" style="fill:#505050;fill:color(display-p3 0.3146 0.3146 0.3146);fill-opacity:1;"/>
+  </svg>
+{% endcapture %}
 
 {%- unless product.has_only_default_variant -%}
   <variant-selects
@@ -53,6 +57,7 @@
                 </span>
                 <span style="background-image: url('{{ option.selected_value.swatch.image | image_url: width: 50 }}')" class="swatch"></span>
               </div>
+              <span class="level_icon">{{ level_icon }}</span>
             </legend>
             <div class="value-wrapper {% if option.values.size > 3 %}has-level{% endif %}">
               {% render 'product-variant-options',
@@ -70,6 +75,7 @@
               <span data-selected-value>
                 {{- option.selected_value -}}
               </span>
+              <span class="level_icon">{{ level_icon }}</span>
             </legend>
             <div class="value-wrapper{% if option.values.size > 3 %} has-level{% endif %}">
               {% render 'product-variant-options',
