@@ -394,10 +394,20 @@ if (!customElements.get('product-info')) {
           if (!stickyCart) return;
       
           // 更新价格
-          
+          const priceElement = stickyCart.querySelector('.price');
+          const del_priceElement = stickyCart.querySelector('.compare-price');
+          if (del_price) {
+            del_priceElement.textContent = del_price;
+          }
+          if (price) {
+            priceElement.textContent = price;
+          }
       
           // 更新变体信息
-          
+          const variantElement = stickyCart.querySelector('.variant-item');
+          if (variantTitle) {
+              variantElement.textContent = variantTitle;
+          }
       }
 
       get productForm() {
