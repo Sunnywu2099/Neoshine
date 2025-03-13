@@ -386,10 +386,10 @@ if (!customElements.get('product-info')) {
       }
 
       updateStickyAddToCart(variant) {
-          let price = defaultVariant.price;
-          let del_price = defaultVariant.compare_at_price;
-          let variantTitle = defaultVariant.public_title;
-          let image = defaultVariant.featured_image.src;
+          let price = variant.price;
+          let del_price = variant.compare_at_price;
+          let variantTitle = variant.public_title;
+          let image = variant.featured_image.src;
           const stickyCart = document.getElementById('StickyAddToCart');
           if (!stickyCart) return;
       
