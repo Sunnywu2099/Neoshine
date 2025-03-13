@@ -812,13 +812,15 @@
             <span class="price">{{ product.selected_or_first_available_variant.price | money }}</span>
           </div>
         </div>
-        <button
-          type="button"
-          class="button sticky-add-to-cart-button"
-          aria-label="{{ 'products.product.add_to_cart' | t }}"
-        >
-          {{ 'products.product.add_to_cart' | t }}
-        </button>
+        <div>
+          {%- render 'buy-buttons',
+                  block: block,
+                  product: product,
+                  product_form_id: product_form_id,
+                  section_id: section.id,
+                  show_pickup_availability: true
+                -%}
+        </div>
       </div>
     {% endif %}
     
