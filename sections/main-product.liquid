@@ -775,14 +775,8 @@
       <div id="popup-window">
         <span class="toggle-popup">✕</span>
         <div class="popup-content">
-          {% render 'responsive-image',
-            sid: section.id,
-            image_desktop: block.settings.popup_img,
-            image_mobile: block.settings.popup_img_m,
-            alt: 'find my size',
-            lazy: true,
-            preload: false
-          %}
+          <img class="pc" loading="lazy" src="{{ block.settings.popup_img | img_url: 'master' }}" alt="find my size" width="" height="">
+          <img class="m" loading="lazy" src="{{ block.settings.popup_img_m | img_url: 'master' }}" alt="find my size" width="" height="">
         </div>
     </div>
     {% endfor %}
