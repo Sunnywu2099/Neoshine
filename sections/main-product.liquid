@@ -770,6 +770,17 @@
       </modal-dialog>
     {%- endfor -%}
 
+    {% assign findsize = section.blocks | where: 'type', 'variant_picker' %}
+    {%- for block in findsize -%}
+      <div id="popup-window">
+        <span class="toggle-popup">✕</span>
+        <div class="popup-content">
+          <img class="pc" loading="lazy" src="{{ block.settings.popup_img | img_url: 'master' }}" alt="find my size" width="" height="">
+          <img class="m" loading="lazy" src="{{ block.settings.popup_img_m | img_url: 'master' }}" alt="find my size" width="" height="">
+        </div>
+    </div>
+    {% endfor %}
+
     {%- if product.media.size > 0 -%}
       <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
       <script src="{{ 'media-gallery.js' | asset_url }}" defer="defer"></script>
@@ -1133,6 +1144,22 @@
             }
           ],
           "default": "circle"
+        },
+        {
+          "type": "text",
+          "id": "find_size",
+          "label": "find size",
+          "default": "How can I find my ring size"
+        },
+        {
+          "type": "image_picker",
+          "id": "popup_img",
+          "label": "popup img pc"
+        },
+        {
+          "type": "image_picker",
+          "id": "popup_img_m",
+          "label": "popup img mobile"
         }
       ]
     },

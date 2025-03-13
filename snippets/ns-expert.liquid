@@ -38,7 +38,38 @@
   #ns-expert svg{
     display: block;
   }
+  @media (max-width: 1200px){
+    #ns-expert{
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0px 18px 23px;
+      gap: 0;
+    }
+    #ns-expert .exert_title{
+      font-size: 16px;
+      line-height: 22px;
+    }
+    #ns-expert .exert_text{
+      font-size: 12px;
+      line-height: 18px;
+      color: #787878;
+      margin-bottom: 10px;
+    }
+    #ns-expert .exert_btn{
+      justify-content: center;
+      font-size: 12px;
+    }
+    #ns-expert .expert-icon{
+      width: 100px;
+    }
+    #ns-expert .expert-icon img{
+      width: 100%;
+      object-fit: contain;
+    }
+  }
 </style>
+
 
 {% liquid 
   assign block = block

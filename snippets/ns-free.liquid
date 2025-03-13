@@ -73,6 +73,49 @@
     align-items: flex-end;
     gap: 10px;
   }
+  @media (max-width: 1200px) {
+    #ns-free{
+      padding: 13px 18px;
+    }
+    #ns-free .gift-img{
+      width: 58px;
+      height: 58px;
+    }
+    #ns-free .gift-wrapper{
+      gap: 8px;
+    }
+    #ns-free .gift-title{
+      font-size: 16px;
+      line-height: 20px;
+      margin-bottom: 2px;
+    }
+    .gift-price,
+    .gift-name{
+      font-size: 12px;
+      line-height: 1.2;
+    }
+    .flex-box{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+    }
+    .free-price{
+      font-size: 16px;
+      line-height: 1.2;
+    }
+    .compare-price{
+      font-size: 12px;
+      line-height: 1.2;
+    }
+    .free-btn{
+      width: auto;
+      padding: 0 10px;
+      font-size: 12px;
+      line-height: 18px;
+      color: #121212;
+      border: 1px solid #121212;
+    }
+  }
 </style>
 
 {% liquid 
@@ -88,7 +131,7 @@
     <img class="gift-img" src="{{ product.featured_image.src | img_url: '93x' }}" alt="{{ title }}" loading="lazy" width="93" height="93" />
     <div class="gift-info">
       <div class="gift-title">{{ title }}</div>
-      <div>
+      <div class="flex-box">
         <span class="gift-price">{{ product.price | money }}</span>
         <span class="gift-name">Diamond Earrings</span>
       </div>

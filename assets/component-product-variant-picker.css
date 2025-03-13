@@ -3,14 +3,14 @@ variant-selects {
   border-radius: 3px;
   background: #FAFAFA;
   box-shadow: 0px 8px 8px 0px rgba(147, 147, 147, 0.20);
-  padding: 14px 30px;
+  padding: 30px 30px;
 }
 .variant-title{
   color: var(---brand-color, #79A88B);
   font-size: 20px;
   font-weight: 500;
   line-height: 26px;
-  margin-bottom: 10px;
+  margin-bottom: 23px;
 }
 .v-wrapper{
   border-top: 1px solid #787878;
@@ -30,8 +30,40 @@ variant-selects {
   padding-top: 10px;
   padding-left: 104px;
   padding-right: 30px;
+  display: none;
+}
+.product-form__input .form__label.active+.value-wrapper{
+  display: flex;
+}
+.level_icon svg{
+  transition: all 0.3s ease-in-out;
+  transform-origin: center center;
+}
+.product-form__input .form__label.active .level_icon svg{
+  transform: rotate(180deg);
+  transition: all 0.3s ease-in-out;
+}
+
+.value-wrapper.has-level{
   max-height: 100px;
   overflow-y: scroll;
+}
+/* 针对 Webkit 浏览器的滚动条样式 */
+.value-wrapper::-webkit-scrollbar {
+  width: 2px; /* 滚动条宽度 */
+}
+
+.value-wrapper::-webkit-scrollbar-track {
+  background: #e7e7e7; /* 滚动条轨道颜色 */
+}
+
+.value-wrapper::-webkit-scrollbar-thumb {
+  background-color: #121212; /* 滚动条滑块颜色 */
+  border-radius: 10px; /* 滑块圆角 */
+}
+
+.value-wrapper::-webkit-scrollbar-button {
+  display: none; /* 隐藏滚动条的上下箭头 */
 }
 .form__label{
   margin-bottom: 0;
@@ -42,6 +74,23 @@ variant-selects {
   font-weight: 400;
   line-height: 20px;
 }
+.custom-option{
+  display: inline-flex;
+  justify-content: space-between;
+  gap: 18px;
+}
+.find-size{
+  text-decoration: underline;
+  font-size: 15px;
+  line-height: 20px;
+  color: #79A88B;
+  cursor: pointer;
+}
+
+
+
+
+
 .product--no-media .product-form__input--pill,
 .product--no-media .product-form__input--swatch,
 .product--no-media .product-form__input--dropdown {
@@ -109,10 +158,14 @@ variant-selects {
   /* font-size: 1.2rem; */
   /* letter-spacing: 0.1rem; */
   line-height: 1;
-  text-align: center;
+  text-align: left;
   transition: border var(--duration-short) ease;
   cursor: pointer;
   position: relative;
+  color: #787878;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
 }
 
 .product-form__input--pill input[type='radio'] + label:before {
@@ -188,6 +241,33 @@ variant-selects {
 @media screen and (min-width: 750px) {
   .product-form__input--swatch .swatch-input__input + .swatch-input__label {
     --swatch-input--size: 2.8rem;
+  }
+}
+
+
+@media screen and (max-width: 1200px) {
+  .variant-title{
+    font-size: 13px;
+    line-height: 1.2;
+  }
+  .variant-title span{
+    font-size: 16px;
+    line-height: 1.2;
+  }
+  variant-selects{
+    padding: 26px 18px;
+  }
+  .v-wrapper .option_name{
+    font-size: 12px;
+    line-height: 18px;
+    min-width: 60px;
+  }
+  .value-wrapper{
+    padding-left: 62px;
+    padding-right: 20px;
+  }
+  .swatch-input__input+.swatch-input__label{
+    gap: 14px;
   }
 }
 /* End custom styles for Swatch display type */
