@@ -243,4 +243,16 @@ variant-selects {
     --swatch-input--size: 2.8rem;
   }
 }
+
+
+@media screen and (max-width: 1200px) {
+  .variant-title{
+    font-size: 13px;
+    line-height: 1.2;
+  }
+  .variant-title span{
+    font-size: 16px;
+    line-height: 1.2;
+  }
+}
 /* End custom styles for Swatch display type */
