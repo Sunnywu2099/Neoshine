@@ -10,28 +10,36 @@
 {
   "sections": {
     "cart-items": {
-      "type": "main-cart-items_2",
+      "type": "main-cart-items",
       "settings": {
         "color_scheme": "scheme-1",
         "padding_top": 36,
-        "padding_bottom": 60
+        "padding_bottom": 36
       }
     },
     "cart-footer": {
-      "type": "main-cart-footer_2",
+      "type": "main-cart-footer",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "padding_top": 20,
+        "padding_bottom": 40
+      },
       "blocks": {
         "subtotal": {
           "type": "subtotal",
-          "settings": {}
+          "settings": {
+          }
         },
         "buttons": {
           "type": "buttons",
-          "settings": {}
+          "settings": {
+          }
         }
       },
       "block_order": [
         "subtotal",
         "buttons"
+<<<<<<< HEAD
       ],
       "custom_css": [
         ".Need_help{display:none;}"
@@ -41,10 +49,17 @@
         "padding_top": 20,
         "padding_bottom": 100
       }
+=======
+      ]
+>>>>>>> ac58e0e7fa1191563a92d7f2157c30fff8e8fe56
     }
   },
   "order": [
     "cart-items",
     "cart-footer"
   ]
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> ac58e0e7fa1191563a92d7f2157c30fff8e8fe56

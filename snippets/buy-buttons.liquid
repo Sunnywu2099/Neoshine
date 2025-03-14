@@ -44,19 +44,20 @@
         data-type: 'add-to-cart-form'
       -%}
 
-  {% comment %} {% if product.template_suffix != 'normal' and product.template_suffix != 'jewelry' %}
-    <fieldset class="product-form__input product-form__input--dropdown line-item-property__field">
-      <legend class="form__label">Ring Size</legend>
-      <select id="ring-size" name="properties[Ring Size]" class="ring-size-dropdown">
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6" selected>6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
+{% if product.template_suffix != 'normal' and product.template_suffix != 'jewelry' %}
+        
+<fieldset class="product-form__input product-form__input--dropdown line-item-property__field">
+  <legend class="form__label">Ring Size</legend>
+  <select id="ring-size" name="properties[Ring Size]" class="ring-size-dropdown">
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6" selected>6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
       </select>
     </fieldset>
   {% endif %} {% endcomment %}
