@@ -11,418 +11,376 @@
   "sections": {
     "banner_zKz8Ld": {
       "type": "banner",
-      "settings": {
-        "pc_image": "shopify://shop_images/hpb.webp",
-        "mobile_image": "shopify://shop_images/hpb-m.webp",
-        "title": "<h1> <strong>Redefine Luxury with </strong></h1><h1><strong>Lab-Grown  Diamonds</strong></h1>",
-        "details": "",
-        "btn": "Explore Now",
-        "url": "shopify://pages/lab-grown-diamond",
-        "padding_top": 0,
-        "padding_bottom": 36
-      }
-    },
-    "index_type_EFYE7V": {
-      "type": "index-type",
       "blocks": {
-        "type_jWqwXj": {
-          "type": "type",
+        "item_AdMd3F": {
+          "type": "item",
           "settings": {
-            "image": "shopify://shop_images/0120-home_page_banner-Valentine_s_Day_2_b4e886bf-8180-4d9c-8a30-f4f584fe9984.jpg",
-            "tap": "Valentine's Day Special",
-            "title": "1 CT Lab  Diamond Ring for <em><strong>$999</strong></em>",
-            "text": "SHOP NOW",
-            "link": "shopify://products/14k-1ct-lab-created-diamond-ring"
+            "pc_image": "shopify://shop_images/image_14.png",
+            "mobile_image": "shopify://shop_images/image_16.png",
+            "title": "Get 10% Off & a Welcome Gift on Your First Purchase",
+            "content": "Enjoy 10% off your first purchase, plus a complimentary pair of 1/2 carat diamond studs as a welcome gift.",
+            "url": ""
           }
         },
-        "type_4UGprT": {
-          "type": "type",
+        "item_bP9zFX": {
+          "type": "item",
           "settings": {
-            "image": "shopify://shop_images/earring--post-4.jpg",
-            "tap": "",
-            "title": "Diamond Earring Stud",
-            "text": "SHOP NOW",
-            "link": "shopify://products/stud-earrings"
+            "pc_image": "shopify://shop_images/image_17.png",
+            "mobile_image": "shopify://shop_images/image_16.png",
+            "title": "Get 10% Off & a Welcome Gift on Your First Purchase",
+            "content": "Enjoy 10% off your first purchase, plus a complimentary pair of 1/2 carat diamond studs as a welcome gift.",
+            "url": ""
           }
         }
       },
       "block_order": [
-        "type_jWqwXj",
-        "type_4UGprT"
+        "item_AdMd3F",
+        "item_bP9zFX"
       ],
-      "settings": {
-        "color_scheme": "",
-        "padding_top": 24,
-        "padding_bottom": 24
-      }
+      "settings": {}
     },
-    "iconbar_RDDLdc": {
-      "type": "iconbar",
+    "index_grid_BkrBKz": {
+      "type": "index-grid",
       "blocks": {
-        "icon_FLdLd8": {
-          "type": "icon",
+        "item_wK7AKk": {
+          "type": "item",
           "settings": {
-            "image": "shopify://shop_images/round.png",
-            "text": "Round",
-            "link": "shopify://collections/round-engagement-rings-timeless-beauty-for-your-proposal"
+            "pc_image": "shopify://shop_images/image_18.png",
+            "mobile_image": "shopify://shop_images/Group_1000002174.png",
+            "title": "Hearts & Arrows Diamonds",
+            "content": "14K 1CT Lab Created Diamond Ring",
+            "product": "14k-1ct-lab-created-diamond-ring"
           }
         },
-        "icon_UzyAwM": {
-          "type": "icon",
+        "item_yqtDTK": {
+          "type": "item",
           "settings": {
-            "image": "shopify://shop_images/oval.png",
-            "text": "Oval",
-            "link": "shopify://collections/oval-engagement-rings-elegant-designs-for-proposals"
+            "pc_image": "shopify://shop_images/image_21.png",
+            "mobile_image": "shopify://shop_images/image_2.png",
+            "title": "",
+            "content": "",
+            "product": "1ct-diamond-solitaire-engagement-ring"
           }
         },
-        "icon_Kmf3F8": {
-          "type": "icon",
+        "item_NHHFyn": {
+          "type": "item",
           "settings": {
-            "image": "shopify://shop_images/radiant.png",
-            "text": "Radiant",
-            "link": "shopify://collections/radiant-engagement-rings-brilliant-sparkle-for-proposals"
+            "pc_image": "shopify://shop_images/image_20.png",
+            "mobile_image": "shopify://shop_images/image_2.png",
+            "title": "",
+            "content": "",
+            "product": "14k-1ct-lab-created-diamond-ring"
           }
         },
-        "icon_JTgqf6": {
-          "type": "icon",
+        "item_ybdwJx": {
+          "type": "item",
           "settings": {
-            "image": "shopify://shop_images/pear.png",
-            "text": "Pear",
-            "link": "shopify://collections/pear-shaped-engagement-rings-elegant-unique-for-proposals"
-          }
-        },
-        "icon_WgFa3G": {
-          "type": "icon",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Cushion.png",
-            "text": "Cushion",
-            "link": "shopify://collections/cushion-engagement-rings-vintage-charm-for-proposals"
-          }
-        },
-        "icon_WwPqmA": {
-          "type": "icon",
-          "settings": {
-            "image": "shopify://shop_images/Princess.png",
-            "text": "Princess",
-            "link": "shopify://collections/princess-cut-engagement-rings-modern-sparkle-for-your-proposal"
-          }
-        },
-        "icon_kf69wy": {
-          "type": "icon",
-          "settings": {
-            "image": "shopify://shop_images/Emerald.png",
-            "text": "Emerald",
-            "link": "shopify://collections/emerald-cut-engagement-rings-timeless-elegance-for-proposals"
-          }
-        },
-        "icon_jKRFRa": {
-          "type": "icon",
-          "settings": {
-            "image": "shopify://shop_images/marquise.png",
-            "text": "Marquise",
-            "link": "shopify://collections/marquise-engagement-rings-unique-diamonds-for-proposals"
-          }
-        },
-        "icon_rmV9rN": {
-          "type": "icon",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/heart.png",
-            "text": "Heart",
-            "link": "shopify://collections/heart-engagement-rings-romantic-diamonds-for-proposals"
-          }
-        },
-        "icon_dhLF73": {
-          "type": "icon",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Asscher.png",
-            "text": "Ass",
-            "link": ""
+            "pc_image": "shopify://shop_images/image_19.png",
+            "mobile_image": "shopify://shop_images/image_b02ea5e5-0bb8-45ef-87d8-db41559d5278.png",
+            "title": "",
+            "content": "",
+            "product": "bezel-diamond-earrings"
           }
         }
       },
       "block_order": [
-        "icon_FLdLd8",
-        "icon_UzyAwM",
-        "icon_Kmf3F8",
-        "icon_JTgqf6",
-        "icon_WgFa3G",
-        "icon_WwPqmA",
-        "icon_kf69wy",
-        "icon_jKRFRa",
-        "icon_rmV9rN",
-        "icon_dhLF73"
+        "item_wK7AKk",
+        "item_yqtDTK",
+        "item_NHHFyn",
+        "item_ybdwJx"
       ],
-      "custom_css": [],
-      "settings": {
-        "heading": "Shop by Diamond Shape",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 36
-      }
+      "settings": {}
     },
-    "index_style_b7eeFi": {
-      "type": "index-style",
+    "index_guarantee_HiiMc7": {
+      "type": "index-guarantee",
       "blocks": {
-        "type_W4HrjB": {
-          "type": "type",
+        "item_QhchYk": {
+          "type": "item",
           "settings": {
-            "image": "shopify://shop_images/neoshine-diamond-ring-style-solitaire.jpg",
-            "title": "Solitaire",
-            "link": "shopify://collections/solitaire-engagement-rings-classic-elegance-for-proposals"
+            "pc_image": "shopify://shop_images/image_4.png",
+            "mobile_image": "shopify://shop_images/image_6.png",
+            "title": "NeoShine 100% Guarantee, 0% Risk",
+            "url": "/",
+            "btn_name": "View More",
+            "icon_name1": "20000+loved<br>\nBy customers",
+            "icon_svg1": "<svg width=\"64\" height=\"74\" viewbox=\"0 0 64 74\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_3857_2514)\">\n<path d=\"M28.0441 52.464L21.534 49.7749L22.022 45.0922L20.8384 43.6282H15.6366L13.3939 38.1876L17.0798 34.917V32.612L13.3108 29.5698L15.7196 23.6724L20.4646 24.0254L22.0843 22.5095V17.3907L28.0337 15.0234L31.1382 18.8339H32.9967L36.1946 15.0961L41.7391 17.318V22.5199L43.2653 23.9942L48.0207 23.3297L50.6579 29.6114L46.6709 32.4978V34.8339L50.5541 38.1772L48.301 43.6282H43.1927L41.791 45.0403L42.3724 49.7852L36.1531 52.3498L33.3289 48.7262H30.8059L28.0648 52.4744L28.0441 52.464ZM24.0155 48.2901L27.255 49.6295L29.6119 46.4004H34.4399L36.8799 49.5257L39.839 48.3109L39.3302 44.1993L42.2063 41.3024H46.7228L47.7403 38.8313L44.314 35.893V31.3141L47.7715 28.8119L46.5359 25.8735L42.4243 26.4446L39.3821 23.5062V18.8962L36.8383 17.8787L34.0246 21.1701H30.0064L27.2757 17.8268L24.3582 18.9793V23.527L21.2744 26.4238L17.2044 26.1227L16.083 28.8638L19.364 31.5114V35.9657L16.1349 38.8313L17.1628 41.3232H21.9182L24.4101 44.3862L24.0051 48.3005L24.0155 48.2901ZM31.948 43.0987C26.7877 43.0987 22.5827 38.8936 22.5827 33.7333C22.5827 28.5731 26.7877 24.368 31.948 24.368C37.1083 24.368 41.3134 28.5731 41.3134 33.7333C41.3134 38.8936 37.1083 43.0987 31.948 43.0987ZM31.948 26.6834C28.0648 26.6834 24.8981 29.8502 24.8981 33.7333C24.8981 37.6165 28.0648 40.7833 31.948 40.7833C35.8312 40.7833 38.998 37.6165 38.998 33.7333C38.998 29.8502 35.8312 26.6834 31.948 26.6834Z\" fill=\"white\" style=\"fill:white;fill-opacity:1;\"></path>\n<path d=\"M31.9481 73.1888L30.6294 72.7215C12.3141 66.1803 0 48.706 0 29.2485V13.695L31.9481 0L63.8961 13.695V29.2485C63.8961 48.706 51.582 66.1803 33.2563 72.7215L31.9377 73.1888H31.9481ZM2.31538 15.2213V29.2485C2.31538 47.73 14.0065 64.3218 31.4185 70.5411L31.9584 70.728L32.4983 70.5411C49.9 64.3218 61.6015 47.73 61.6015 29.2485V15.2213L31.9481 2.52303L2.31538 15.2213Z\" fill=\"white\" style=\"fill:white;fill-opacity:1;\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_3857_2514\">\n<rect width=\"63.8961\" height=\"73.1888\" fill=\"white\" style=\"fill:white;fill-opacity:1;\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "icon_url1": "",
+            "icon_name2": "Guaranteed<br>\nfor life",
+            "icon_svg2": "<svg width=\"64\" height=\"74\" viewbox=\"0 0 64 74\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_3857_2514)\">\n<path d=\"M28.0441 52.464L21.534 49.7749L22.022 45.0922L20.8384 43.6282H15.6366L13.3939 38.1876L17.0798 34.917V32.612L13.3108 29.5698L15.7196 23.6724L20.4646 24.0254L22.0843 22.5095V17.3907L28.0337 15.0234L31.1382 18.8339H32.9967L36.1946 15.0961L41.7391 17.318V22.5199L43.2653 23.9942L48.0207 23.3297L50.6579 29.6114L46.6709 32.4978V34.8339L50.5541 38.1772L48.301 43.6282H43.1927L41.791 45.0403L42.3724 49.7852L36.1531 52.3498L33.3289 48.7262H30.8059L28.0648 52.4744L28.0441 52.464ZM24.0155 48.2901L27.255 49.6295L29.6119 46.4004H34.4399L36.8799 49.5257L39.839 48.3109L39.3302 44.1993L42.2063 41.3024H46.7228L47.7403 38.8313L44.314 35.893V31.3141L47.7715 28.8119L46.5359 25.8735L42.4243 26.4446L39.3821 23.5062V18.8962L36.8383 17.8787L34.0246 21.1701H30.0064L27.2757 17.8268L24.3582 18.9793V23.527L21.2744 26.4238L17.2044 26.1227L16.083 28.8638L19.364 31.5114V35.9657L16.1349 38.8313L17.1628 41.3232H21.9182L24.4101 44.3862L24.0051 48.3005L24.0155 48.2901ZM31.948 43.0987C26.7877 43.0987 22.5827 38.8936 22.5827 33.7333C22.5827 28.5731 26.7877 24.368 31.948 24.368C37.1083 24.368 41.3134 28.5731 41.3134 33.7333C41.3134 38.8936 37.1083 43.0987 31.948 43.0987ZM31.948 26.6834C28.0648 26.6834 24.8981 29.8502 24.8981 33.7333C24.8981 37.6165 28.0648 40.7833 31.948 40.7833C35.8312 40.7833 38.998 37.6165 38.998 33.7333C38.998 29.8502 35.8312 26.6834 31.948 26.6834Z\" fill=\"white\" style=\"fill:white;fill-opacity:1;\"></path>\n<path d=\"M31.9481 73.1888L30.6294 72.7215C12.3141 66.1803 0 48.706 0 29.2485V13.695L31.9481 0L63.8961 13.695V29.2485C63.8961 48.706 51.582 66.1803 33.2563 72.7215L31.9377 73.1888H31.9481ZM2.31538 15.2213V29.2485C2.31538 47.73 14.0065 64.3218 31.4185 70.5411L31.9584 70.728L32.4983 70.5411C49.9 64.3218 61.6015 47.73 61.6015 29.2485V15.2213L31.9481 2.52303L2.31538 15.2213Z\" fill=\"white\" style=\"fill:white;fill-opacity:1;\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_3857_2514\">\n<rect width=\"63.8961\" height=\"73.1888\" fill=\"white\" style=\"fill:white;fill-opacity:1;\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "icon_url2": "",
+            "icon_name3": "Guaranteed<br>\nfor life",
+            "icon_svg3": "<svg width=\"64\" height=\"74\" viewbox=\"0 0 64 74\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_3857_2514)\">\n<path d=\"M28.0441 52.464L21.534 49.7749L22.022 45.0922L20.8384 43.6282H15.6366L13.3939 38.1876L17.0798 34.917V32.612L13.3108 29.5698L15.7196 23.6724L20.4646 24.0254L22.0843 22.5095V17.3907L28.0337 15.0234L31.1382 18.8339H32.9967L36.1946 15.0961L41.7391 17.318V22.5199L43.2653 23.9942L48.0207 23.3297L50.6579 29.6114L46.6709 32.4978V34.8339L50.5541 38.1772L48.301 43.6282H43.1927L41.791 45.0403L42.3724 49.7852L36.1531 52.3498L33.3289 48.7262H30.8059L28.0648 52.4744L28.0441 52.464ZM24.0155 48.2901L27.255 49.6295L29.6119 46.4004H34.4399L36.8799 49.5257L39.839 48.3109L39.3302 44.1993L42.2063 41.3024H46.7228L47.7403 38.8313L44.314 35.893V31.3141L47.7715 28.8119L46.5359 25.8735L42.4243 26.4446L39.3821 23.5062V18.8962L36.8383 17.8787L34.0246 21.1701H30.0064L27.2757 17.8268L24.3582 18.9793V23.527L21.2744 26.4238L17.2044 26.1227L16.083 28.8638L19.364 31.5114V35.9657L16.1349 38.8313L17.1628 41.3232H21.9182L24.4101 44.3862L24.0051 48.3005L24.0155 48.2901ZM31.948 43.0987C26.7877 43.0987 22.5827 38.8936 22.5827 33.7333C22.5827 28.5731 26.7877 24.368 31.948 24.368C37.1083 24.368 41.3134 28.5731 41.3134 33.7333C41.3134 38.8936 37.1083 43.0987 31.948 43.0987ZM31.948 26.6834C28.0648 26.6834 24.8981 29.8502 24.8981 33.7333C24.8981 37.6165 28.0648 40.7833 31.948 40.7833C35.8312 40.7833 38.998 37.6165 38.998 33.7333C38.998 29.8502 35.8312 26.6834 31.948 26.6834Z\" fill=\"white\" style=\"fill:white;fill-opacity:1;\"></path>\n<path d=\"M31.9481 73.1888L30.6294 72.7215C12.3141 66.1803 0 48.706 0 29.2485V13.695L31.9481 0L63.8961 13.695V29.2485C63.8961 48.706 51.582 66.1803 33.2563 72.7215L31.9377 73.1888H31.9481ZM2.31538 15.2213V29.2485C2.31538 47.73 14.0065 64.3218 31.4185 70.5411L31.9584 70.728L32.4983 70.5411C49.9 64.3218 61.6015 47.73 61.6015 29.2485V15.2213L31.9481 2.52303L2.31538 15.2213Z\" fill=\"white\" style=\"fill:white;fill-opacity:1;\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_3857_2514\">\n<rect width=\"63.8961\" height=\"73.1888\" fill=\"white\" style=\"fill:white;fill-opacity:1;\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "icon_url3": "",
+            "icon_name4": "Guaranteed<br>\nfor life",
+            "icon_svg4": "<svg width=\"64\" height=\"74\" viewbox=\"0 0 64 74\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_3857_2514)\">\n<path d=\"M28.0441 52.464L21.534 49.7749L22.022 45.0922L20.8384 43.6282H15.6366L13.3939 38.1876L17.0798 34.917V32.612L13.3108 29.5698L15.7196 23.6724L20.4646 24.0254L22.0843 22.5095V17.3907L28.0337 15.0234L31.1382 18.8339H32.9967L36.1946 15.0961L41.7391 17.318V22.5199L43.2653 23.9942L48.0207 23.3297L50.6579 29.6114L46.6709 32.4978V34.8339L50.5541 38.1772L48.301 43.6282H43.1927L41.791 45.0403L42.3724 49.7852L36.1531 52.3498L33.3289 48.7262H30.8059L28.0648 52.4744L28.0441 52.464ZM24.0155 48.2901L27.255 49.6295L29.6119 46.4004H34.4399L36.8799 49.5257L39.839 48.3109L39.3302 44.1993L42.2063 41.3024H46.7228L47.7403 38.8313L44.314 35.893V31.3141L47.7715 28.8119L46.5359 25.8735L42.4243 26.4446L39.3821 23.5062V18.8962L36.8383 17.8787L34.0246 21.1701H30.0064L27.2757 17.8268L24.3582 18.9793V23.527L21.2744 26.4238L17.2044 26.1227L16.083 28.8638L19.364 31.5114V35.9657L16.1349 38.8313L17.1628 41.3232H21.9182L24.4101 44.3862L24.0051 48.3005L24.0155 48.2901ZM31.948 43.0987C26.7877 43.0987 22.5827 38.8936 22.5827 33.7333C22.5827 28.5731 26.7877 24.368 31.948 24.368C37.1083 24.368 41.3134 28.5731 41.3134 33.7333C41.3134 38.8936 37.1083 43.0987 31.948 43.0987ZM31.948 26.6834C28.0648 26.6834 24.8981 29.8502 24.8981 33.7333C24.8981 37.6165 28.0648 40.7833 31.948 40.7833C35.8312 40.7833 38.998 37.6165 38.998 33.7333C38.998 29.8502 35.8312 26.6834 31.948 26.6834Z\" fill=\"white\" style=\"fill:white;fill-opacity:1;\"></path>\n<path d=\"M31.9481 73.1888L30.6294 72.7215C12.3141 66.1803 0 48.706 0 29.2485V13.695L31.9481 0L63.8961 13.695V29.2485C63.8961 48.706 51.582 66.1803 33.2563 72.7215L31.9377 73.1888H31.9481ZM2.31538 15.2213V29.2485C2.31538 47.73 14.0065 64.3218 31.4185 70.5411L31.9584 70.728L32.4983 70.5411C49.9 64.3218 61.6015 47.73 61.6015 29.2485V15.2213L31.9481 2.52303L2.31538 15.2213Z\" fill=\"white\" style=\"fill:white;fill-opacity:1;\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_3857_2514\">\n<rect width=\"63.8961\" height=\"73.1888\" fill=\"white\" style=\"fill:white;fill-opacity:1;\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "icon_url4": ""
           }
         },
-        "type_PKb8bB": {
-          "type": "type",
+        "item_9ANJLx": {
+          "type": "item",
           "settings": {
-            "image": "shopify://shop_images/neoshine-diamond-ring-style-pave.jpg",
-            "title": "Pave",
-            "link": "shopify://collections/pave-engagement-rings-sparkling-diamonds-for-your-proposal"
-          }
-        },
-        "type_xnndFj": {
-          "type": "type",
-          "settings": {
-            "image": "shopify://shop_images/neoshine-diamond-ring-style-halo.jpg",
-            "title": "Halo",
-            "link": "shopify://collections/halo-engagement-rings-brilliant-diamonds-in-a-perfect-setting"
-          }
-        },
-        "type_xy6Bhd": {
-          "type": "type",
-          "settings": {
-            "image": "shopify://shop_images/neoshine-diamond-ring-style-hidden-halo.jpg",
-            "title": "Hidden Halo",
-            "link": "shopify://collections/hidden-halo-engagement-rings-subtle-sparkle-stunning-beauty"
-          }
-        },
-        "type_dCCyyp": {
-          "type": "type",
-          "settings": {
-            "image": "shopify://shop_images/neoshine-diamond-ring-style-Bezel.jpg",
-            "title": "Bezel",
-            "link": "shopify://collections/bezel-engagement-rings-sleek-modern-diamond-settings"
+            "pc_image": "shopify://shop_images/image_5.png",
+            "mobile_image": "shopify://shop_images/image_6.png",
+            "title": "NeoShine 100% Guarantee, 0% Risk",
+            "url": "/",
+            "btn_name": "View More",
+            "icon_name1": "20000+loved<br>\nBy customers",
+            "icon_svg1": "<svg width=\"64\" height=\"74\" viewbox=\"0 0 64 74\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_3857_2514)\">\n<path d=\"M28.0441 52.464L21.534 49.7749L22.022 45.0922L20.8384 43.6282H15.6366L13.3939 38.1876L17.0798 34.917V32.612L13.3108 29.5698L15.7196 23.6724L20.4646 24.0254L22.0843 22.5095V17.3907L28.0337 15.0234L31.1382 18.8339H32.9967L36.1946 15.0961L41.7391 17.318V22.5199L43.2653 23.9942L48.0207 23.3297L50.6579 29.6114L46.6709 32.4978V34.8339L50.5541 38.1772L48.301 43.6282H43.1927L41.791 45.0403L42.3724 49.7852L36.1531 52.3498L33.3289 48.7262H30.8059L28.0648 52.4744L28.0441 52.464ZM24.0155 48.2901L27.255 49.6295L29.6119 46.4004H34.4399L36.8799 49.5257L39.839 48.3109L39.3302 44.1993L42.2063 41.3024H46.7228L47.7403 38.8313L44.314 35.893V31.3141L47.7715 28.8119L46.5359 25.8735L42.4243 26.4446L39.3821 23.5062V18.8962L36.8383 17.8787L34.0246 21.1701H30.0064L27.2757 17.8268L24.3582 18.9793V23.527L21.2744 26.4238L17.2044 26.1227L16.083 28.8638L19.364 31.5114V35.9657L16.1349 38.8313L17.1628 41.3232H21.9182L24.4101 44.3862L24.0051 48.3005L24.0155 48.2901ZM31.948 43.0987C26.7877 43.0987 22.5827 38.8936 22.5827 33.7333C22.5827 28.5731 26.7877 24.368 31.948 24.368C37.1083 24.368 41.3134 28.5731 41.3134 33.7333C41.3134 38.8936 37.1083 43.0987 31.948 43.0987ZM31.948 26.6834C28.0648 26.6834 24.8981 29.8502 24.8981 33.7333C24.8981 37.6165 28.0648 40.7833 31.948 40.7833C35.8312 40.7833 38.998 37.6165 38.998 33.7333C38.998 29.8502 35.8312 26.6834 31.948 26.6834Z\" fill=\"white\" style=\"fill:white;fill-opacity:1;\"></path>\n<path d=\"M31.9481 73.1888L30.6294 72.7215C12.3141 66.1803 0 48.706 0 29.2485V13.695L31.9481 0L63.8961 13.695V29.2485C63.8961 48.706 51.582 66.1803 33.2563 72.7215L31.9377 73.1888H31.9481ZM2.31538 15.2213V29.2485C2.31538 47.73 14.0065 64.3218 31.4185 70.5411L31.9584 70.728L32.4983 70.5411C49.9 64.3218 61.6015 47.73 61.6015 29.2485V15.2213L31.9481 2.52303L2.31538 15.2213Z\" fill=\"white\" style=\"fill:white;fill-opacity:1;\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_3857_2514\">\n<rect width=\"63.8961\" height=\"73.1888\" fill=\"white\" style=\"fill:white;fill-opacity:1;\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "icon_url1": "",
+            "icon_name2": "Guaranteed<br>\nfor life",
+            "icon_svg2": "<svg width=\"64\" height=\"74\" viewbox=\"0 0 64 74\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_3857_2514)\">\n<path d=\"M28.0441 52.464L21.534 49.7749L22.022 45.0922L20.8384 43.6282H15.6366L13.3939 38.1876L17.0798 34.917V32.612L13.3108 29.5698L15.7196 23.6724L20.4646 24.0254L22.0843 22.5095V17.3907L28.0337 15.0234L31.1382 18.8339H32.9967L36.1946 15.0961L41.7391 17.318V22.5199L43.2653 23.9942L48.0207 23.3297L50.6579 29.6114L46.6709 32.4978V34.8339L50.5541 38.1772L48.301 43.6282H43.1927L41.791 45.0403L42.3724 49.7852L36.1531 52.3498L33.3289 48.7262H30.8059L28.0648 52.4744L28.0441 52.464ZM24.0155 48.2901L27.255 49.6295L29.6119 46.4004H34.4399L36.8799 49.5257L39.839 48.3109L39.3302 44.1993L42.2063 41.3024H46.7228L47.7403 38.8313L44.314 35.893V31.3141L47.7715 28.8119L46.5359 25.8735L42.4243 26.4446L39.3821 23.5062V18.8962L36.8383 17.8787L34.0246 21.1701H30.0064L27.2757 17.8268L24.3582 18.9793V23.527L21.2744 26.4238L17.2044 26.1227L16.083 28.8638L19.364 31.5114V35.9657L16.1349 38.8313L17.1628 41.3232H21.9182L24.4101 44.3862L24.0051 48.3005L24.0155 48.2901ZM31.948 43.0987C26.7877 43.0987 22.5827 38.8936 22.5827 33.7333C22.5827 28.5731 26.7877 24.368 31.948 24.368C37.1083 24.368 41.3134 28.5731 41.3134 33.7333C41.3134 38.8936 37.1083 43.0987 31.948 43.0987ZM31.948 26.6834C28.0648 26.6834 24.8981 29.8502 24.8981 33.7333C24.8981 37.6165 28.0648 40.7833 31.948 40.7833C35.8312 40.7833 38.998 37.6165 38.998 33.7333C38.998 29.8502 35.8312 26.6834 31.948 26.6834Z\" fill=\"white\" style=\"fill:white;fill-opacity:1;\"></path>\n<path d=\"M31.9481 73.1888L30.6294 72.7215C12.3141 66.1803 0 48.706 0 29.2485V13.695L31.9481 0L63.8961 13.695V29.2485C63.8961 48.706 51.582 66.1803 33.2563 72.7215L31.9377 73.1888H31.9481ZM2.31538 15.2213V29.2485C2.31538 47.73 14.0065 64.3218 31.4185 70.5411L31.9584 70.728L32.4983 70.5411C49.9 64.3218 61.6015 47.73 61.6015 29.2485V15.2213L31.9481 2.52303L2.31538 15.2213Z\" fill=\"white\" style=\"fill:white;fill-opacity:1;\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_3857_2514\">\n<rect width=\"63.8961\" height=\"73.1888\" fill=\"white\" style=\"fill:white;fill-opacity:1;\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "icon_url2": "",
+            "icon_name3": "Guaranteed<br>\nfor life",
+            "icon_svg3": "<svg width=\"64\" height=\"74\" viewbox=\"0 0 64 74\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_3857_2514)\">\n<path d=\"M28.0441 52.464L21.534 49.7749L22.022 45.0922L20.8384 43.6282H15.6366L13.3939 38.1876L17.0798 34.917V32.612L13.3108 29.5698L15.7196 23.6724L20.4646 24.0254L22.0843 22.5095V17.3907L28.0337 15.0234L31.1382 18.8339H32.9967L36.1946 15.0961L41.7391 17.318V22.5199L43.2653 23.9942L48.0207 23.3297L50.6579 29.6114L46.6709 32.4978V34.8339L50.5541 38.1772L48.301 43.6282H43.1927L41.791 45.0403L42.3724 49.7852L36.1531 52.3498L33.3289 48.7262H30.8059L28.0648 52.4744L28.0441 52.464ZM24.0155 48.2901L27.255 49.6295L29.6119 46.4004H34.4399L36.8799 49.5257L39.839 48.3109L39.3302 44.1993L42.2063 41.3024H46.7228L47.7403 38.8313L44.314 35.893V31.3141L47.7715 28.8119L46.5359 25.8735L42.4243 26.4446L39.3821 23.5062V18.8962L36.8383 17.8787L34.0246 21.1701H30.0064L27.2757 17.8268L24.3582 18.9793V23.527L21.2744 26.4238L17.2044 26.1227L16.083 28.8638L19.364 31.5114V35.9657L16.1349 38.8313L17.1628 41.3232H21.9182L24.4101 44.3862L24.0051 48.3005L24.0155 48.2901ZM31.948 43.0987C26.7877 43.0987 22.5827 38.8936 22.5827 33.7333C22.5827 28.5731 26.7877 24.368 31.948 24.368C37.1083 24.368 41.3134 28.5731 41.3134 33.7333C41.3134 38.8936 37.1083 43.0987 31.948 43.0987ZM31.948 26.6834C28.0648 26.6834 24.8981 29.8502 24.8981 33.7333C24.8981 37.6165 28.0648 40.7833 31.948 40.7833C35.8312 40.7833 38.998 37.6165 38.998 33.7333C38.998 29.8502 35.8312 26.6834 31.948 26.6834Z\" fill=\"white\" style=\"fill:white;fill-opacity:1;\"></path>\n<path d=\"M31.9481 73.1888L30.6294 72.7215C12.3141 66.1803 0 48.706 0 29.2485V13.695L31.9481 0L63.8961 13.695V29.2485C63.8961 48.706 51.582 66.1803 33.2563 72.7215L31.9377 73.1888H31.9481ZM2.31538 15.2213V29.2485C2.31538 47.73 14.0065 64.3218 31.4185 70.5411L31.9584 70.728L32.4983 70.5411C49.9 64.3218 61.6015 47.73 61.6015 29.2485V15.2213L31.9481 2.52303L2.31538 15.2213Z\" fill=\"white\" style=\"fill:white;fill-opacity:1;\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_3857_2514\">\n<rect width=\"63.8961\" height=\"73.1888\" fill=\"white\" style=\"fill:white;fill-opacity:1;\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "icon_url3": "",
+            "icon_name4": "Guaranteed<br>\nfor life",
+            "icon_svg4": "<svg width=\"64\" height=\"74\" viewbox=\"0 0 64 74\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_3857_2514)\">\n<path d=\"M28.0441 52.464L21.534 49.7749L22.022 45.0922L20.8384 43.6282H15.6366L13.3939 38.1876L17.0798 34.917V32.612L13.3108 29.5698L15.7196 23.6724L20.4646 24.0254L22.0843 22.5095V17.3907L28.0337 15.0234L31.1382 18.8339H32.9967L36.1946 15.0961L41.7391 17.318V22.5199L43.2653 23.9942L48.0207 23.3297L50.6579 29.6114L46.6709 32.4978V34.8339L50.5541 38.1772L48.301 43.6282H43.1927L41.791 45.0403L42.3724 49.7852L36.1531 52.3498L33.3289 48.7262H30.8059L28.0648 52.4744L28.0441 52.464ZM24.0155 48.2901L27.255 49.6295L29.6119 46.4004H34.4399L36.8799 49.5257L39.839 48.3109L39.3302 44.1993L42.2063 41.3024H46.7228L47.7403 38.8313L44.314 35.893V31.3141L47.7715 28.8119L46.5359 25.8735L42.4243 26.4446L39.3821 23.5062V18.8962L36.8383 17.8787L34.0246 21.1701H30.0064L27.2757 17.8268L24.3582 18.9793V23.527L21.2744 26.4238L17.2044 26.1227L16.083 28.8638L19.364 31.5114V35.9657L16.1349 38.8313L17.1628 41.3232H21.9182L24.4101 44.3862L24.0051 48.3005L24.0155 48.2901ZM31.948 43.0987C26.7877 43.0987 22.5827 38.8936 22.5827 33.7333C22.5827 28.5731 26.7877 24.368 31.948 24.368C37.1083 24.368 41.3134 28.5731 41.3134 33.7333C41.3134 38.8936 37.1083 43.0987 31.948 43.0987ZM31.948 26.6834C28.0648 26.6834 24.8981 29.8502 24.8981 33.7333C24.8981 37.6165 28.0648 40.7833 31.948 40.7833C35.8312 40.7833 38.998 37.6165 38.998 33.7333C38.998 29.8502 35.8312 26.6834 31.948 26.6834Z\" fill=\"white\" style=\"fill:white;fill-opacity:1;\"></path>\n<path d=\"M31.9481 73.1888L30.6294 72.7215C12.3141 66.1803 0 48.706 0 29.2485V13.695L31.9481 0L63.8961 13.695V29.2485C63.8961 48.706 51.582 66.1803 33.2563 72.7215L31.9377 73.1888H31.9481ZM2.31538 15.2213V29.2485C2.31538 47.73 14.0065 64.3218 31.4185 70.5411L31.9584 70.728L32.4983 70.5411C49.9 64.3218 61.6015 47.73 61.6015 29.2485V15.2213L31.9481 2.52303L2.31538 15.2213Z\" fill=\"white\" style=\"fill:white;fill-opacity:1;\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_3857_2514\">\n<rect width=\"63.8961\" height=\"73.1888\" fill=\"white\" style=\"fill:white;fill-opacity:1;\"></rect>\n</clippath>\n</defs>\n</svg>",
+            "icon_url4": ""
           }
         }
       },
       "block_order": [
-        "type_W4HrjB",
-        "type_PKb8bB",
-        "type_xnndFj",
-        "type_xy6Bhd",
-        "type_dCCyyp"
+        "item_QhchYk",
+        "item_9ANJLx"
       ],
-      "settings": {
-        "title": "Shop by Style",
-        "color_scheme": "scheme-1b6298aa-dfb9-4e2d-85fc-52d5fd933d3c",
-        "padding_top": 32,
-        "padding_bottom": 60
-      }
+      "settings": {}
     },
-    "image_with_text_ai6BHE": {
-      "type": "image-with-text",
+    "index_shape_33hB7Q": {
+      "type": "index-shape",
       "blocks": {
-        "heading_XJGxby": {
-          "type": "heading",
+        "item_PMQaRw": {
+          "type": "item",
           "settings": {
-            "heading": "Celebrate Love, Shine Brighter",
-            "heading_size": "h2"
+            "image": "shopify://shop_images/round_1.png",
+            "content": "Round",
+            "url": "shopify://collections/round-engagement-rings-timeless-beauty-for-your-proposal"
           }
         },
-        "text_rPamRC": {
-          "type": "text",
+        "item_UkKgCp": {
+          "type": "item",
           "settings": {
-            "text": "<p>At NeoShine, we believe love deserves to shine without compromise. Our ethically crafted lab-grown diamonds offer brilliance and beauty at an accessible price, making your special moments unforgettable. Discover the perfect symbol of your love, crafted with passion and precision.</p>",
-            "text_style": "body"
+            "image": "shopify://shop_images/oval_1.png",
+            "content": "Oval",
+            "url": "shopify://collections/oval-engagement-rings-elegant-designs-for-proposals"
           }
         },
-        "button_D3448z": {
-          "type": "button",
+        "item_inbkpF": {
+          "type": "item",
           "settings": {
-            "button_label": "About NeoShine",
-            "button_link": "shopify://pages/about-us",
-            "button_style_secondary": false
+            "image": "shopify://shop_images/radiant_1.png",
+            "content": "Radiant",
+            "url": "shopify://collections/radiant-engagement-rings-brilliant-sparkle-for-proposals"
+          }
+        },
+        "item_ykaDwa": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/pear_1.png",
+            "content": "Pear",
+            "url": "shopify://collections/pear-shaped-engagement-rings-elegant-unique-for-proposals"
+          }
+        },
+        "item_YGHEW8": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Princess_1.png",
+            "content": "Princess",
+            "url": "shopify://collections/princess-cut-engagement-rings-modern-sparkle-for-your-proposal"
+          }
+        },
+        "item_XPXrgj": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Emerald_1.png",
+            "content": "Emerald",
+            "url": "shopify://collections/emerald-cut-engagement-rings-timeless-elegance-for-proposals"
+          }
+        },
+        "item_HUBdWe": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/marquise_1.png",
+            "content": "Marquise",
+            "url": "shopify://collections/marquise-engagement-rings-unique-diamonds-for-proposals"
           }
         }
       },
       "block_order": [
-        "heading_XJGxby",
-        "text_rPamRC",
-        "button_D3448z"
+        "item_PMQaRw",
+        "item_UkKgCp",
+        "item_inbkpF",
+        "item_ykaDwa",
+        "item_YGHEW8",
+        "item_XPXrgj",
+        "item_HUBdWe"
       ],
-      "custom_css": [],
       "settings": {
-        "image": "shopify://shop_images/home_page_post.jpg",
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "section_color_scheme": "scheme-12ceca98-4848-4696-8216-19292799d7df",
-        "color_scheme": "scheme-12ceca98-4848-4696-8216-19292799d7df",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "padding_top_mob": 36,
-        "padding_bottom_mob": 36
+        "title": "Shop by Diamond Shape"
       }
     },
-    "image_8kVDJG": {
-      "type": "image",
-      "settings": {
-        "pc_image": "shopify://shop_images/neoshine-homepage-diamond-ring-Brand-story.jpg",
-        "mobile_image": "shopify://shop_images/post.jpg",
-        "title": "<h2><strong>Every Gem Tells a Story</strong></h2><h2><strong>Make It Yours with Neoshine</strong></h2><h2></h2>",
-        "details": "<p>Ethically crafted diamonds and vibrant gemstones that reflect your love, values, and life’s milestones.</p>",
-        "btn": "Explore Neoshine Today",
-        "url": "shopify://pages/about-us",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "custom_ugc_V7exNB": {
-      "type": "custom-ugc",
+    "index_styles_M88mTB": {
+      "type": "index-styles",
       "blocks": {
-        "image_gFNTnp": {
-          "type": "image",
+        "item_kFfAPK": {
+          "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ugc1.jpg"
+            "image": "shopify://shop_images/image_f1f238ff-2aa9-45f9-b8b6-c84281d37e9b.png",
+            "content": "Solitaire",
+            "url": "shopify://collections/solitaire-engagement-rings-classic-elegance-for-proposals"
           }
         },
-        "image_GeJkeB": {
-          "type": "image",
+        "item_YPXJtA": {
+          "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ugc2.jpg"
+            "image": "shopify://shop_images/image_1_3d56eb7e-9f69-4132-91c7-e34b79e1c938.png",
+            "content": "Halo",
+            "url": "shopify://collections/halo-engagement-rings-brilliant-diamonds-in-a-perfect-setting"
           }
         },
-        "image_a6ekt6": {
-          "type": "image",
+        "item_NRhzir": {
+          "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ugc3.jpg"
+            "image": "shopify://shop_images/image_2_c0bf53b7-db6e-421d-8123-a8409f26194d.png",
+            "content": "pave",
+            "url": "shopify://collections/pave-engagement-rings-sparkling-diamonds-for-your-proposal"
           }
         },
-        "image_Bcf4jw": {
-          "type": "image",
+        "item_FXqXk3": {
+          "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ugc4.jpg"
-          }
-        },
-        "image_gKChMV": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/ugc5.jpg"
-          }
-        },
-        "image_jatF3G": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/ugc6.jpg"
-          }
-        },
-        "video_MJBtCp": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/Milana-whitegold-$999(1).mov"
-          }
-        },
-        "video_AjrBxC": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/Neoshine-lab created-UGC.mp4"
-          }
-        },
-        "video_ErR7Fi": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/copy_EBB34B69-D33F-4E47-B111-4465018F6F30(1).mov"
+            "image": "shopify://shop_images/image_3.png",
+            "content": "Three Stone",
+            "url": "shopify://collections/three-stone-engagement-rings-symbolize-your-past-present-future"
           }
         }
       },
       "block_order": [
-        "image_gFNTnp",
-        "image_GeJkeB",
-        "image_a6ekt6",
-        "image_Bcf4jw",
-        "image_gKChMV",
-        "image_jatF3G",
-        "video_MJBtCp",
-        "video_AjrBxC",
-        "video_ErR7Fi"
+        "item_kFfAPK",
+        "item_YPXJtA",
+        "item_NRhzir",
+        "item_FXqXk3"
       ],
       "settings": {
-        "title": "Neoshine on the Instagram @Neoshine_jewelry",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "title": "Shop by style"
       }
     },
-    "custom_warranty_EBJnGK": {
-      "type": "custom-warranty",
+    "index_service_DxpMrh": {
+      "type": "index-service",
       "blocks": {
-        "image_Lj7hYT": {
-          "type": "image",
+        "item_DaH7t6": {
+          "type": "item",
           "settings": {
-            "image": "shopify://shop_images/landding_page_second_product_promise-55.svg",
-            "text": "IGI-certified for superior quality and authenticity."
+            "pc_image": "shopify://shop_images/Group_2.png",
+            "mb_image": "shopify://shop_images/Group_1000002205.png",
+            "btn_name": "Call on us anytime!"
           }
         },
-        "image_mwPdYb": {
-          "type": "image",
+        "item_XNCtwD": {
+          "type": "item",
           "settings": {
-            "image": "shopify://shop_images/landding_page_second_first_icon-design.svg",
-            "text": "Designed for ultimate brilliance and symmetry."
-          }
-        },
-        "image_GT4qid": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/landding_page_second_first_icon-Guaranteed.svg",
-            "text": "Guaranteed lifetime sparkle with our warranty."
-          }
-        },
-        "image_NgFtRB": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/landding_page_second_first_icon-30_day.svg",
-            "text": "Shop confidently with 30-day free returns."
+            "pc_image": "shopify://shop_images/Group_1.png",
+            "mb_image": "shopify://shop_images/Group_1000002204.png",
+            "btn_name": "Find Your Perfect Fit: Try It On Virtually"
           }
         }
       },
       "block_order": [
-        "image_Lj7hYT",
-        "image_mwPdYb",
-        "image_GT4qid",
-        "image_NgFtRB"
+        "item_DaH7t6",
+        "item_XNCtwD"
+      ],
+      "settings": {}
+    },
+    "index_social_tGqR6F": {
+      "type": "index-social",
+      "blocks": {
+        "item_M7rXGi": {
+          "type": "item",
+          "settings": {
+            "pc_image": "shopify://shop_images/image_8_9db72e00-1609-46e8-a90b-a68d21a499a5.png",
+            "user_img": "shopify://shop_images/Ellipse_1697.png",
+            "user_name": "Anastasia Petrova",
+            "color": "#ffffff",
+            "img1": "shopify://shop_images/image_10_d5d2a130-d1a1-48aa-b02c-481e047d68dd.png",
+            "img2": "shopify://shop_images/image_16.png",
+            "likes": "999",
+            "comment": "From passing by in the school halls to years later swiping right - these two lovebirds have been head over heels ever since! Nicole said YES to Will and sealed the deal with her gorgeous Petra",
+            "date": "2.22"
+          }
+        },
+        "item_3UmhRL": {
+          "type": "item",
+          "settings": {
+            "pc_image": "shopify://shop_images/image_9.png",
+            "user_img": "shopify://shop_images/Ellipse_1697.png",
+            "user_name": "Anastasia Petrova",
+            "color": "#121212",
+            "video": "shopify://files/videos/Milana-whitegold-$999(1).mov",
+            "likes": "999",
+            "comment": "From passing by in the school halls to years later swiping right - these two lovebirds have been head over heels ever since! Nicole said YES to Will and sealed the deal with her gorgeous Petra",
+            "date": "2.22"
+          }
+        },
+        "item_UV7Qh7": {
+          "type": "item",
+          "settings": {
+            "pc_image": "shopify://shop_images/image_10_d5d2a130-d1a1-48aa-b02c-481e047d68dd.png",
+            "user_img": "shopify://shop_images/Ellipse_1697.png",
+            "user_name": "Anastasia Petrova",
+            "color": "#121212",
+            "img1": "shopify://shop_images/image_10_d5d2a130-d1a1-48aa-b02c-481e047d68dd.png",
+            "likes": "999",
+            "comment": "From passing by in the school halls to years later swiping right - these two lovebirds have been head over heels ever since! Nicole said YES to Will and sealed the deal with her gorgeous Petra",
+            "date": "2.22"
+          }
+        },
+        "item_ax9AmB": {
+          "type": "item",
+          "settings": {
+            "pc_image": "shopify://shop_images/image_11.png",
+            "user_img": "shopify://shop_images/Ellipse_1697.png",
+            "user_name": "Anastasia Petrova",
+            "color": "#ffffff",
+            "video": "shopify://files/videos/Milana-whitegold-$999(1).mov",
+            "likes": "999",
+            "comment": "From passing by in the school halls to years later swiping right - these two lovebirds have been head over heels ever since! Nicole said YES to Will and sealed the deal with her gorgeous Petra",
+            "date": "2.22"
+          }
+        },
+        "item_BNNpqg": {
+          "type": "item",
+          "settings": {
+            "pc_image": "shopify://shop_images/image_8_9db72e00-1609-46e8-a90b-a68d21a499a5.png",
+            "user_img": "shopify://shop_images/Ellipse_1697.png",
+            "user_name": "Anastasia Petrova",
+            "color": "#ffffff",
+            "video": "shopify://files/videos/Milana-whitegold-$999(1).mov",
+            "likes": "999",
+            "comment": "From passing by in the school halls to years later swiping right - these two lovebirds have been head over heels ever since! Nicole said YES to Will and sealed the deal with her gorgeous Petra",
+            "date": "2.22"
+          }
+        }
+      },
+      "block_order": [
+        "item_M7rXGi",
+        "item_3UmhRL",
+        "item_UV7Qh7",
+        "item_ax9AmB",
+        "item_BNNpqg"
       ],
       "settings": {
-        "title": "IGI Certified Diamonds with Full Assurance",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "swiper_blog_PNYrrB": {
-      "type": "swiper-blog",
-      "settings": {
-        "color_scheme": "",
-        "title": "<p>Our Blog</p>",
-        "blog": "news",
-        "padding_top": 40,
-        "padding_bottom": 36
+        "title": "As Seen On@neoshine_jewelry",
+        "btn_name": "VIEW MORE",
+        "btn_url": ""
       }
     }
   },
   "order": [
     "banner_zKz8Ld",
-    "index_type_EFYE7V",
-    "iconbar_RDDLdc",
-    "index_style_b7eeFi",
-    "image_with_text_ai6BHE",
-    "image_8kVDJG",
-    "custom_ugc_V7exNB",
-    "custom_warranty_EBJnGK",
-    "swiper_blog_PNYrrB"
+    "index_grid_BkrBKz",
+    "index_guarantee_HiiMc7",
+    "index_shape_33hB7Q",
+    "index_styles_M88mTB",
+    "index_service_DxpMrh",
+    "index_social_tGqR6F"
   ]
 }

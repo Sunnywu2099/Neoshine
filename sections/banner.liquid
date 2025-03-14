@@ -1,217 +1,200 @@
 <style>
-#shopify-section-{{section.id}} .banner{
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  width:100%;
-  display: block;
-  position: relative;
-}
-  #shopify-section-{{section.id}} .banner:after{
-    display:none;
+  #shopify-section-{{section.id}} .banner .swiper-button-prev{
+    left: 70px;
   }
-
-#shopify-section-{{section.id}} .banner img{
-  width:100%;
-  
-}
-  #shopify-section-{{section.id}} .banner img.mobile{
-    display:none;
+  #shopify-section-{{section.id}} .banner .swiper-button-next{
+    right: 70px;
   }
-  
-#shopify-section-{{section.id}} .banner .centent{
-  position: absolute;
-  display:flex;
-  justify-content: center;
-  flex-direction: column;
-  width:100%;
-  height: 100%;
-  top:0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-  #shopify-section-{{section.id}} .banner .centent .title{
-    margin:0;
-  }
-  #shopify-section-{{section.id}} .banner .centent .title *{
-     margin:0;
-  }
-  #shopify-section-{{section.id}} .banner .centent .title h1{
-    font-size:3rem;
-   
-  }
-  #shopify-section-{{section.id}} .banner .centent .datalist{
-    font-size:26px;
-    
-  }
-  #shopify-section-{{section.id}} .banner .centent .btn{
+  #shopify-section-{{section.id}} .banner-wrapper{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     display: flex;
     align-items: center;
+  }
+  #shopify-section-{{section.id}} .banner-wrapper .banner-container{
+    text-align: center;
+    max-width: 32%;
+    margin-left: 10vw;
+  }
+  #shopify-section-{{section.id}} .banner-title{
+    font-size: 36px;
+    line-height: 48px;
+    /* font-weight: 700; */
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #fff;
+  }
+  #shopify-section-{{section.id}} .banner-content{
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 400;
+    margin: 0;
+    color: #fff;
+  }
+  #shopify-section-{{section.id}} .banner .swiper-pagination{
+    bottom: 37px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
     justify-content: center;
-    /* padding:0 30px; */
-    /* font-size:20px; */
-     background: #83a78d;
-    color:#fff;
-     width: fit-content;
-    margin-top: 10px;
-    text-decoration: none;
-    border-color:#fff;
-    /* min-height: 35px; */
+    gap: 20px;
   }
-  #shopify-section-{{section.id}} .banner .centent .btn:after{
-    display:none;
+  #shopify-section-{{section.id}} .banner .swiper-pagination-bullet{
+    width: 12px;
+    height: 12px;
+    background: transparent;
+    border: 1px solid #fff;
+    opacity: 1;
   }
-  #shopify-section-{{section.id}} .banner .centent .btn:before{
-    display:none;
+  #shopify-section-{{section.id}} .banner .swiper-pagination-bullet.swiper-pagination-bullet-active{
+    background: #fff;
+    border: 1px solid #fff;
   }
-  @media screen and (max-width: 750px) {
-    #shopify-section-{{section.id}} .banner img.pc{
-      display:none;
+  @media screen and (max-width: 1200px) {
+    #shopify-section-{{section.id}} .banner-title{
+      font-size: 30px;
+      line-height: 42px;
     }
-     #shopify-section-{{section.id}} .banner img.mobile{
-      display:block;
-    }
-    #shopify-section-{{section.id}} .banner .centent{
-      bottom: 0;
-        top: unset;
-        margin-left: 0;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        padding-bottom: 5rem;
-    }
-    #shopify-section-{{section.id}} .banner .centent .title *{
-      font-size:2rem;
-    }
-    #shopify-section-{{section.id}} .banner .centent .datalist{
-      font-size:1.2rem;
-    }
-    #shopify-section-{{section.id}} .banner .centent .btn{
-      margin-top: 20px;
+    #shopify-section-{{section.id}} .banner-wrapper .banner-container{
+      max-width: 40%;
     }
   }
-  
-
-  
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{section.id}} .banner .swiper-button-prev{
+      display: none;
+    }
+    #shopify-section-{{section.id}} .banner .swiper-button-next{
+      display: none;
+    }
+    #shopify-section-{{section.id}} .banner-title{
+      font-size: 26px;
+      line-height: 32px;
+      margin-bottom: 16px;
+    }
+    #shopify-section-{{section.id}} .banner-content{
+      font-size: 12px;
+      line-height: 18px;
+    }
+    #shopify-section-{{section.id}} .banner-wrapper .banner-container{
+      text-align: left;
+      max-width: 100%;
+      margin-left: 0;
+    }
+    #shopify-section-{{section.id}} .banner-wrapper{
+      align-items: flex-end;
+      padding-bottom: 70px;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    #shopify-section-{{section.id}} .banner .swiper-pagination-bullet{
+      width: 8px;
+      height: 8px;
+    }
+    #shopify-section-{{section.id}} .banner .swiper-pagination{
+      bottom: 17px;
+      gap: 14px;
+    }
+  }
 </style>
 
 <div class="banner">
-  {% comment %} <div class="img-container">
-            {% assign full_width = '100vw' %}
-            {% assign sizes = full_width %}
-            {% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
-            {% assign fetch_priority = 'high' %}
-
-            {{
-              section.settings.pc_image
-              | image_url: width: section.settings.pc_image.width
-              | image_tag:
-                width: section.settings.pc_image.width,
-                height: 'auto',
-                class: 'pc',
-                sizes: sizes,
-                widths: widths,
-                loading: 'eager',
-                preload: true,
-                fetchpriority: fetch_priority,
-                alt: section.settings.title | escape
-            }}
-            {{
-              section.settings.mobile_image
-              | image_url: width: section.settings.mobile_image.width
-              | image_tag:
-                width: section.settings.mobile_image.width,
-                height: 'auto',
-                class: 'mobile',
-                sizes: sizes,
-                widths: widths,
-                loading: 'eager',
-                preload: true,
-                fetchpriority: fetch_priority,
-                alt: section.settings.title | escape
-            }}
-  </div> {% endcomment %}
-  <div class="img-wrapper">
-    {% render 'responsive-image',
-      sid: section.id,
-      image_desktop: section.settings.pc_image,
-      image_mobile: section.settings.mobile_image,
-      alt: "Product Banner",
-      lazy: false,
-      preload: true
-
-    %}
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %} 
+      <a class="swiper-slide item" {% if block.settings.url != blank %}href="{{ block.settings.url }}"{% endif %}>
+          <div class="img-wrapper">
+            {% render 'responsive-image',
+              sid: section.id,
+              image_desktop: block.settings.pc_image,
+              image_mobile: block.settings.mobile_image,
+              alt: block.settings.title,
+              lazy: false,
+              preload: true
+            %}
+          </div>
+          <div class="banner-wrapper page-width">
+            <div class="banner-container">
+              <h2 class="banner-title">{{ block.settings.title }}</h2>
+              <p class="banner-content">{{ block.settings.content }}</p>
+            </div>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+    <div class="swiper-button-prev">
+      {% render 'banner-prev' %}
+    </div>
+    <div class="swiper-button-next">
+      {% render 'banner-next' %}
+    </div>
+    <div class="swiper-pagination"></div>
   </div>
-  <div class="centent page-width">
-    <div class="title">{{ section.settings.title }}</div>
-    <div class="datalist">{{ section.settings.details }}</div>
-
-    <a href="{{ section.settings.url }}" class="button btn">{{ section.settings.btn }}</a>
-  </div>
+  
 </div>
+
+<script>
+  
+    const banner_swiper = new Swiper('.banner .swiper-container', {
+      loop: true,
+      navigation: {
+        nextEl: '.banner .swiper-container .swiper-button-next',
+        prevEl: '.banner .swiper-container .swiper-button-prev',
+      },
+      pagination: {
+        el: '.banner .swiper-pagination',
+        clickable: true,
+      },
+    })
+
+</script>
 
 {% schema %}
 {
-  "name": "banner",
-  "settings": [
+  "name": "Home banner",
+  "tag": "section",
+  "class": "home-banner",
+  "limit": 1,
+  "max_blocks": 3,
+  "settings": [],
+  "blocks": [
     {
-      "type": "image_picker",
-      "id": "pc_image",
-      "label": "pc_image"
-    },
-    {
-      "type": "image_picker",
-      "id": "mobile_image",
-      "label": "mobile_image"
-    },
-    {
-      "type": "richtext",
-      "id": "title",
-      "label": "title"
-    },
-    {
-      "type": "richtext",
-      "id": "details",
-      "label": "details"
-    },
-    {
-        "type": "text",
-        "id": "btn",
-        "label": "btn"
-      },
-      {
-        "type": "url",
-        "id": "url",
-        "label": "url"
-      },
-    {
-    "type": "header",
-    "content": "t:sections.all.padding.section_padding_heading"
-  },
-  {
-    "type": "range",
-    "id": "padding_top",
-    "min": 0,
-    "max": 100,
-    "step": 4,
-    "unit": "px",
-    "label": "t:sections.all.padding.padding_top",
-    "default": 36
-  },
-  {
-    "type": "range",
-    "id": "padding_bottom",
-    "min": 0,
-    "max": 100,
-    "step": 4,
-    "unit": "px",
-    "label": "t:sections.all.padding.padding_bottom",
-    "default": 36
-  }
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "pc_image",
+          "label": "pc_image"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "mobile_image"
+        },
+        {
+          "type": "textarea",
+          "id": "title",
+          "label": "title"
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "content"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "url"
+        }
+      ]
+    }
   ],
   "presets": [
     {
-      "name": "banner"
+      "name": "Home banner"
     }
   ]
 }

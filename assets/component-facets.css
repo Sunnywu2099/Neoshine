@@ -2,7 +2,8 @@
   display: grid;
   grid-template-columns: repeat(2, auto);
   grid-template-rows: repeat(2, auto);
-  padding-top: 1rem;
+  /* padding-top: 1rem; */
+  border-bottom: 1px solid #121212;
 }
 
 .active-facets-mobile {
@@ -34,7 +35,7 @@
 .facet-filters {
   align-items: flex-start;
   display: flex;
-  grid-column: 2;
+  grid-column: 3;
   grid-row: 1;
   padding-left: 2.5rem;
 }
@@ -50,6 +51,9 @@
   color: rgba(var(--color-foreground), 0.85);
   font-size: 1.4rem;
   margin: 0 2rem 0 0;
+  font-weight: 700;
+  padding-right: 2rem;
+  border-right: 1px solid #121212;
 }
 
 .facet-filters__summary {
@@ -182,6 +186,8 @@
   color: rgba(var(--color-foreground), 0.85);
   font-size: 1.4rem;
   margin: -1.5rem 2rem 0 0;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .facets__reset {
@@ -189,14 +195,16 @@
 }
 
 .facets__disclosure {
-  margin-right: 3.5rem;
+  /* margin-right: 3.5rem; */
 }
 
 .facets__summary {
   color: rgba(var(--color-foreground), 0.75);
   font-size: 1.4rem;
-  padding: 0 1.75rem 0 0;
+  padding: 0 3rem 0 0;
   margin-bottom: 1.5rem;
+  border-left: 1px solid #121212;
+  padding-left: 1.75rem;
 }
 
 .facets__summary .svg-wrapper {
@@ -261,7 +269,7 @@
 }
 
 .facets__summary .icon-caret {
-  right: 0;
+  /* right: 0; */
 }
 
 .facets__display {

@@ -4,10 +4,15 @@
   .shopify-section-header-sticky{
     top:38px;
   }
-  @media(max-width:990px){
-      .shopify-section-header-sticky{
-        top:44px;
-      }
+  @media screen and (max-width: 989px) {
+    .more-btn{
+      display: none;
+    }
+  }
+  @media screen and (max-width: 552px) {
+    .shopify-section-header-sticky{
+      top:51.19px;
+    }
   }
 </style>
 {%- liquid
@@ -51,9 +56,11 @@
           {%- endif -%}
           <p class="announcement-bar__message h5">
             <span>{{ section.blocks.first.settings.text | escape }}</span>
-            {%- if section.blocks.first.settings.link != blank -%}
+            <span>{% render 'countdown', end: section.settings.end %}</span>
+            <span class="more-btn">LEARN MORE</span>
+            {% comment %} {%- if section.blocks.first.settings.link != blank -%}
               {{- 'icon-arrow.svg' | inline_asset_content -}}
-            {%- endif -%}
+            {%- endif -%} {% endcomment %}
           </p>
           {%- if section.blocks.first.settings.link != blank -%}
             </a>
@@ -182,6 +189,13 @@
     "groups": ["header"]
   },
   "settings": [
+    {
+      "type": "text",
+      "id": "end",
+      "label": "End date",
+      "default": "2021-11-30 00:00:00",
+      "info": "Format: YYYY-MM-DD HH:MM:SS"
+    },
     {
       "type": "color_scheme",
       "id": "color_scheme",

@@ -39,11 +39,27 @@
       "block_order": [
         "subtotal",
         "buttons"
+<<<<<<< HEAD
       ]
+=======
+      ],
+      "custom_css": [
+        ".Need_help{display:none;}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2ec5f158-f621-4e92-a50f-d532f953ec1b",
+        "padding_top": 20,
+        "padding_bottom": 100
+      }
+>>>>>>> dev
     }
   },
   "order": [
     "cart-items",
     "cart-footer"
   ]
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> dev

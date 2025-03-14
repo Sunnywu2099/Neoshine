@@ -1,0 +1,167 @@
+<style>
+  .product-toggle{
+    margin-bottom: 40px;
+  }
+  .product-toggle .toggle-wrapper{
+    border-radius: 3px;
+    box-shadow: 0px 8px 8px 0px rgba(147, 147, 147, 0.20);
+  }
+  .product-toggle .title-box{
+    background: #fafafa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 30px 150px 30px 60px;
+  }
+  .product-toggle .title-box .toggle-btn{
+    transform: rotate(180deg);
+    transition: all 0.3s ease-in-out;
+  }
+  .product-toggle .title-box.close .toggle-btn{
+    transform: rotate(00deg);
+    transition: all 0.3s ease-in-out;
+  }
+  .product-toggle .toggle-title{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #505050;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26px;
+    text-transform: capitalize;
+  }
+  .product-toggle svg{
+    display: block;
+    width: 100%;
+  }
+  .product-toggle .content-box{
+    padding: 60px 100px;
+    display: flex;
+    gap: 90px;
+    justify-content: space-between;
+  }
+  .product-toggle .content-box .media-box{
+    width: 43%;
+    flex-shrink: 0;
+  }
+  .product-toggle .content{
+    color: #505050;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  @media screen and (max-width: 1200px) {
+    .product-toggle .title-box{
+      padding: 10px 26px;
+    }
+    .product-toggle .content-box{
+      padding: 40px 26px;
+      gap: 20px;
+    }
+  }
+  @media screen and (max-width: 749px) {
+    .product-toggle{
+      margin-bottom: 30px;
+    }
+    .product-toggle .content-box{
+      flex-direction: column;
+    }
+    .product-toggle .content-box .media-box{
+      width: 100%;
+    }
+    .product-toggle .toggle-title{
+      font-size: 12px;
+      line-height: 18px;
+    }
+    .product-toggle .content{
+      font-size: 12px;
+      line-height: 18px;
+    }
+    .product-toggle .title-icon{
+      width: 20px;
+    }
+    .product-toggle .toggle-btn{
+      width: 14px;
+    }
+  }
+</style>
+
+<div class="page-width">
+  <div class="toggle-wrapper">
+    <div class="title-box">
+      <div class="toggle-title">
+        <span class="title-icon">{% render 'toggle-icon' %}</span>
+        <span>{{ section.settings.title }}</span>
+      </div>
+      <div class="toggle-btn">
+        <svg width="28" height="18" viewBox="0 0 28 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 0.999998L14.0008 16.7623L27 1" stroke="#121212" style="stroke:#121212;stroke:color(display-p3 0.0706 0.0706 0.0706);stroke-opacity:1;" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+      </div>
+    </div>
+    <div class="content-box">
+      <div class="content">
+        {{ section.settings.content }}
+      </div>
+      <div class="media-box">
+            {% render 'responsive-image',
+              sid: section.id,
+              image_desktop: section.settings.img_pc,
+              image_mobile: section.settings.img_m,
+              alt: section.settings.title,
+              lazy: true,
+              preload: false
+            %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    $('#shopify-section-{{section.id}}.product-toggle .title-box').click(function () {
+      $(this).toggleClass('close');
+      $(this).next('.content-box').slideToggle();
+    })
+  })
+</script>
+
+{% schema %}
+{
+  "name": "Product Toggle",
+  "tag": "section",
+  "class": "product-toggle",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "title",
+      "default": "Cut: The Single Most Important Factor in Brilliance"
+    },
+    {
+      "type": "textarea",
+      "id": "content",
+      "label": "content",
+      "default": "Choosing a diamond is more than just picking a carat weight.The 4C's—Cut, Color, Clarity, and Carat—work together to define its beauty and value. Each plays a role, but some matter more than others."
+    },
+    {
+      "type": "image_picker",
+      "id": "img_pc",
+      "label": "image pc"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_m",
+      "label": "image m"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Toggle"
+    }
+  ]
+}
+{% endschema %}

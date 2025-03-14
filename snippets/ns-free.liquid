@@ -1,0 +1,156 @@
+<style>
+  #ns-free {
+    border-radius: 3px;
+    background: #FAFAFA;
+    box-shadow: 0px 8px 8px 0px rgba(147, 147, 147, 0.20);
+    padding: 14px 30px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 25px 18px;
+    justify-content: space-between;
+  }
+  #ns-free .gift-img{
+    border-radius: 3px;
+    border: 1px solid #79A88B;
+    width: auto;
+    flex-shrink: 0;
+  }
+  #ns-free .gift-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  #ns-free .gift-title{
+    color: #79A88B;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 26px;
+    text-transform: capitalize;
+    margin-bottom: 16px;
+    margin-right: 8px;
+  }
+  .gift-price{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #79A88B;
+  }
+  .gift-name{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+  .compare-price{
+    color: #787878;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    text-decoration-line: line-through;
+  }
+  .free-price{
+    color: #121212;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26px;
+    text-transform: capitalize;
+  }
+  .free-btn{
+    width: 180px;
+    padding: 4px 0;
+    text-align: center;
+    background: transparent;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+  }
+  .gift-post{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+  }
+  @media (max-width: 1200px) {
+    #ns-free{
+      padding: 13px 18px;
+    }
+    #ns-free .gift-img{
+      width: 58px;
+      height: 58px;
+    }
+    #ns-free .gift-wrapper{
+      gap: 8px;
+    }
+    #ns-free .gift-title{
+      font-size: 16px;
+      line-height: 20px;
+      margin-bottom: 2px;
+    }
+    .gift-price,
+    .gift-name{
+      font-size: 12px;
+      line-height: 1.2;
+    }
+    .flex-box{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+    }
+    .free-price{
+      font-size: 16px;
+      line-height: 1.2;
+    }
+    .compare-price{
+      font-size: 12px;
+      line-height: 1.2;
+    }
+    .free-btn{
+      width: auto;
+      padding: 0 10px;
+      font-size: 12px;
+      line-height: 18px;
+      color: #121212;
+      border: 1px solid #121212;
+    }
+  }
+</style>
+
+{% liquid 
+  assign block = block
+  assign bs = block.settings
+  assign product = bs.product
+  assign title = bs.title
+%}
+
+
+<div id="ns-free" data-section="{{ section.id }}" {{ block.shopify_attributes }}>
+  <div class="gift-wrapper">
+    <img class="gift-img" src="{{ product.featured_image.src | img_url: '93x' }}" alt="{{ title }}" loading="lazy" width="93" height="93" />
+    <div class="gift-info">
+      <div class="gift-title">{{ title }}</div>
+      <div class="flex-box">
+        <span class="gift-price">{{ product.price | money }}</span>
+        <span class="gift-name">Diamond Earrings</span>
+      </div>
+    </div>
+  </div>
+  <div class="gift-post">
+    <div class="price-compare">
+      <span class="compare-price">{{ product.price | money }}</span>
+      <span class="free-price">$0.00</span>
+    </div>
+    <form method="post" action="/cart/add">
+      <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+      {% comment %} <input min="1" type="number" id="quantity" name="quantity" value="1"/> {% endcomment %}
+      <input type="submit" value="ADD FREE GIFT" class="btn free-btn" />
+    </form>
+  </div>
+  
+</div>
+
+<script>
+  
+</script>

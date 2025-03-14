@@ -90,6 +90,8 @@ class FacetFiltersForm extends HTMLElement {
       .forEach((element) => {
         element.classList.add('scroll-trigger--cancel');
       });
+
+    this.initVariantSelectors();
   }
 
   static renderProductCount(html) {
@@ -291,6 +293,61 @@ class FacetFiltersForm extends HTMLElement {
         : event.currentTarget.href.slice(event.currentTarget.href.indexOf('?') + 1);
     FacetFiltersForm.renderPage(url);
   }
+
+  static initVariantSelectors() {
+    let currency = '$';
+
+    $('.card-wrapper').each(function() {
+      const $card = $(this);
+      const variantData = JSON.parse($card.find('[data-product-variant]').text());
+      
+      $card.find('.option-button[data-option="Metal"]').on('click', function() {
+        $(this).addClass('active').siblings().removeClass('active');
+        updateVariantInfo($card);
+      });
+
+      $card.find('.option-button[data-option="Clarity"]').on('click', function() {
+        $(this).addClass('active').siblings().removeClass('active');
+        updateVariantInfo($card);
+      });
+
+      function updateVariantInfo($currentCard) {
+        const selectedMetal = $currentCard.find('.option-button[data-option="Metal"].active').data('value');
+        const selectedClarity = $currentCard.find('.option-button[data-option="Clarity"].active').data('value');
+
+        if (!selectedMetal || !selectedClarity) return null;
+
+        const matchingVariant = variantData.find(variant => 
+          variant.options.includes(selectedMetal) && 
+          variant.options.includes(selectedClarity)
+        );
+
+        if (matchingVariant) {
+          
+
+          if (matchingVariant.compare_at_price) {
+            const formattedComparePrice = `${currency}${(matchingVariant.compare_at_price / 100).toFixed(2)}`;
+            $currentCard.find('.price-item--regular').text(formattedComparePrice);
+          }
+          if (matchingVariant.price) {
+            const formattedPrice = `${currency}${(matchingVariant.price / 100).toFixed(2)}`;
+            $currentCard.find('.price-item--sale').text(formattedPrice);
+          }
+
+          if (matchingVariant.featured_image && matchingVariant.featured_image.src) {
+            $currentCard.find('.card__media img').attr('src', matchingVariant.featured_image.src);
+          }
+
+          return {
+            status: 'ok',
+            variant: matchingVariant
+          };
+        }
+
+        return null;
+      }
+    });
+  }
 }
 
 FacetFiltersForm.filterData = [];
@@ -363,3 +420,7 @@ class FacetRemove extends HTMLElement {
 }
 
 customElements.define('facet-remove', FacetRemove);
+
+document.addEventListener('DOMContentLoaded', function() {
+  FacetFiltersForm.initVariantSelectors();
+});

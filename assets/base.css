@@ -2256,7 +2256,7 @@ input[type='checkbox'] {
 }
 
 .announcement-bar__link:hover {
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 .announcement-bar__link .icon-arrow {
@@ -2434,7 +2434,7 @@ input[type='checkbox'] {
   }
 
   .header:not(.header--middle-left, .header--middle-center) .header__inline-menu {
-    margin-top: 16px;
+    /* margin-top: 16px; */
   }
 }
 
@@ -2459,7 +2459,9 @@ input[type='checkbox'] {
 
 .header__heading-link {
   display: inline-block;
-  padding: 0.75rem;
+  /* padding: 0.75rem; */
+  padding: 27px 0;
+
   text-decoration: none;
   word-break: break-word;
 }
@@ -2523,6 +2525,7 @@ input[type='checkbox'] {
     justify-self: center;
     text-align: center;
   }
+  
 }
 
 /* Header icons */
@@ -2530,7 +2533,7 @@ input[type='checkbox'] {
   display: flex;
   grid-area: icons;
   justify-self: end;
-  padding-right: 0.8rem;
+  padding-right: .8rem;
 }
 
 .header__icons .shopify-app-block {
@@ -2643,7 +2646,9 @@ menu-drawer + .header__search {
 
 .left-menu{
   display: flex;
-  gap: 26px;
+  gap:10px;
+  padding-left: 8rem;
+  width: fit-content;
 }
 
 .left-menu p{
@@ -2677,6 +2682,10 @@ menu-drawer + .header__search {
   .header--top-center * > .header__search {
     /* display: none; */
   }
+  .header__icons{
+    padding-right: 8rem;
+  }
+
 }
 
 details[open] > .search-modal {

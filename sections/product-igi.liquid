@@ -1,0 +1,574 @@
+<style>
+  #shopify-section-{{section.id}}.product-igi{
+
+  }
+  #shopify-section-{{section.id}}.product-igi .flex{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  #shopify-section-{{section.id}}.product-igi .flex:not(:last-of-type){
+    margin-bottom: 16px;
+  }
+  .trigger-box{
+    display: flex;
+    gap: 70px;
+    justify-content: space-between;
+  }
+  .trigger-box .item-with-icons .icon-box{
+    width: 38px;
+    flex-shrink: 0;
+  }
+  .trigger-box .item-with-icons .icon-box img{
+    width: auto;
+    margin: 0 auto;
+  }
+  .title-main{
+    color: #787878;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26px;
+    text-transform: capitalize;
+    margin: 0 0 18px;
+  }
+  
+  .trigger-box .icon-content{
+    margin: 0;
+    color: #787878;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px; /* 133.333% */
+  }
+  .trigger-box .icon-title{
+    color: #121212;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    margin-bottom: 3px;
+  }
+  .item-with-icons{
+    margin-bottom: 50px;
+  }
+  .info-box .item{
+    padding-left: 20px;
+    border-left: 4px solid #e9e9e9;
+  }
+  .info-box .item.active{
+    border-left: 4px solid #79A88B;
+  }
+  .info-box .item.active .title-main{
+    color: #79A88B;
+  }
+  .product-igi-wrapper .view-more{
+    margin: 50px 0 0;
+    display: flex;
+    width: 190px;
+    height: 42px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 3px;
+    border: 1px solid #121212;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    transition: all .3s ease-in-out;
+  }
+  .product-igi-wrapper .view-more:hover{
+    background-color: #121212;
+    color: #fff;
+  }
+  .product-igi-wrapper .media-box{
+    /* max-width: 900px; */
+    position: relative;
+    overflow: hidden;
+  }
+  .product-igi-wrapper .media-box .img-second{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(100%);
+    transition: all .2s;
+  }
+  .product-igi-wrapper .media-box .img-second.active{
+    transform: translateX(0%);
+  }
+  @media screen and (min-width: 750px) {
+    .info-box-swiper{
+      display: none;
+    }
+  }
+  @media screen and (max-width: 749px) {
+    .trigger-box{
+      flex-direction: column;
+      gap: 24px;
+      overflow: hidden;
+    }
+    .info-box{
+      display: none;
+    }
+    .info-box-swiper{
+      width: 100%;
+    }
+    .info-box-swiper .item .title-main{
+      color: #79A88B;
+      font-size: 18px;
+    }
+    .item-with-icons{
+      margin-bottom: 0;
+    }
+    .trigger-box .icon-title{
+      font-size: 12px;
+    }
+    .trigger-box .icon-content{
+      line-height: 20px;
+      font-size: 12px;
+    }
+    .product-igi-wrapper .view-more{
+      margin: 24px auto 0;
+      font-size: 14px;
+      line-height: 22px;
+      height: 30px;
+    }
+    .product-igi-wrapper .swiper-pagination-progressbar{
+      position: static;
+      margin: 24px auto 0;
+      width: 170px;
+      height: 2px;
+      background: #F5F5F5;
+    }
+    .product-igi-wrapper .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+      background: #121212;
+    }
+  }
+</style>
+
+<div class="product-igi-wrapper page-width section-pt section-pb">
+  <h2 class="section-title">{{section.settings.title}}</h2>
+  <div class="trigger-box">
+    <div class="media-box">
+      <img class="img-first" src="{{ section.settings.image_1 | img_url: 'master' }}" alt="section.settings.title" loading="lazy" width="900" height="">
+      <img class="img-second" src="{{ section.settings.image_2 | img_url: 'master' }}" alt="section.settings.title" loading="lazy" width="" height=""> 
+    </div>
+    <div class="info-box">
+      {% for block in section.blocks %} 
+          {% if block.type == 'item1' %}
+            <div class="item item-with-icons active">
+              <h3 class="title-main">{{ block.settings.title_main }}</h3>
+              <div class="flex">
+                <div class="icon-box">
+                  <img src="{{ block.settings.icon1 | img_url: 'master' }}" alt="block.settings.title_main" loading="lazy" width="" height="">
+                </div>
+                <div>
+                  <div class="icon-title">{{ block.settings.title1 }}</div>
+                  <p class="icon-content">{{ block.settings.content1}}</p>
+                </div>
+              </div>
+              <div class="flex">
+                <div class="icon-box">
+                  <img src="{{ block.settings.icon2 | img_url: 'master' }}" alt="block.settings.title_main" loading="lazy" width="" height="">
+                </div>
+                <div>
+                  <div class="icon-title">{{ block.settings.title2 }}</div>
+                  <p class="icon-content">{{ block.settings.content2}}</p>
+                </div>
+              </div>
+              <div class="flex">
+                <div class="icon-box">
+                  <img src="{{ block.settings.icon3 | img_url: 'master' }}" alt="block.settings.title_main" loading="lazy" width="" height="">
+                </div>
+                <div>
+                  <div class="icon-title">{{ block.settings.title3 }}</div>
+                  <p class="icon-content">{{ block.settings.content3}}</p>
+                </div>
+              </div>
+              <div class="flex">
+                <div class="icon-box">
+                  <img src="{{ block.settings.icon4 | img_url: 'master' }}" alt="block.settings.title_main" loading="lazy" width="" height="">
+                </div>
+                <div>
+                  <div class="icon-title">{{ block.settings.title4 }}</div>
+                  <p class="icon-content">{{ block.settings.content4}}</p>
+                </div>
+              </div>
+            </div>
+          {% else %}
+            <div class="item item-without-icons">
+              <h3 class="title-main">{{ block.settings.title }}</h3>
+              <p class="icon-content">{{ block.settings.content }}</p>
+            </div>
+          {% endif %}
+      {% endfor %}
+      {% if section.settings.url != blank %}
+        <a href="{{ section.settings.url }}" class="view-more" target="_blank">{{ section.settings.btn_name }}</a>
+      {% endif %}
+    </div>
+    <div class="info-box-swiper swiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %} 
+            {% if block.type == 'item1' %}
+              <div class="item item-with-icons swiper-slide">
+                <h3 class="title-main">{{ block.settings.title_main }}</h3>
+                <div class="flex">
+                  <div class="icon-box">
+                    <img src="{{ block.settings.icon1 | img_url: 'master' }}" alt="block.settings.title_main" loading="lazy" width="" height="">
+                  </div>
+                  <div>
+                    <div class="icon-title">{{ block.settings.title1 }}</div>
+                    <p class="icon-content">{{ block.settings.content1}}</p>
+                  </div>
+                </div>
+                <div class="flex">
+                  <div class="icon-box">
+                    <img src="{{ block.settings.icon2 | img_url: 'master' }}" alt="block.settings.title_main" loading="lazy" width="" height="">
+                  </div>
+                  <div>
+                    <div class="icon-title">{{ block.settings.title2 }}</div>
+                    <p class="icon-content">{{ block.settings.content2}}</p>
+                  </div>
+                </div>
+                <div class="flex">
+                  <div class="icon-box">
+                    <img src="{{ block.settings.icon3 | img_url: 'master' }}" alt="block.settings.title_main" loading="lazy" width="" height="">
+                  </div>
+                  <div>
+                    <div class="icon-title">{{ block.settings.title3 }}</div>
+                    <p class="icon-content">{{ block.settings.content3}}</p>
+                  </div>
+                </div>
+                <div class="flex">
+                  <div class="icon-box">
+                    <img src="{{ block.settings.icon4 | img_url: 'master' }}" alt="block.settings.title_main" loading="lazy" width="" height="">
+                  </div>
+                  <div>
+                    <div class="icon-title">{{ block.settings.title4 }}</div>
+                    <p class="icon-content">{{ block.settings.content4}}</p>
+                  </div>
+                </div>
+              </div>
+            {% else %}
+              <div class="item item-without-icons swiper-slide">
+                <h3 class="title-main">{{ block.settings.title }}</h3>
+                <p class="icon-content">{{ block.settings.content }}</p>
+              </div>
+            {% endif %}
+        {% endfor %}
+      </div>
+      {% if section.settings.url != blank %}
+        <a href="{{ section.settings.url }}" class="view-more" target="_blank">{{ section.settings.btn_name }}</a>
+      {% endif %}
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.shopify.com/s/files/1/0897/6921/4241/files/gsap.min.js?v=1741231092" defer></script>
+<script src="https://cdn.shopify.com/s/files/1/0897/6921/4241/files/ScrollTrigger.min.js?v=1741231096" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // 状态管理对象
+    const state = {
+      scrollTrigger: null,
+      swiper: null,
+      isMobile: null
+    };
+
+    // 防抖优化（300ms）
+    const debounce = (func, delay) => {
+      let timeout;
+      return () => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func(), delay);
+      };
+    };
+
+    // 获取动态元素引用
+    const getElements = () => ({
+      container: document.querySelector('.product-igi-wrapper'),
+      itemsWithIcons: document.querySelectorAll('.item-with-icons'),
+      itemsWithoutIcons: document.querySelectorAll('.item-without-icons'),
+      swiperContainer: document.querySelector('.product-igi-wrapper .info-box-swiper')
+    });
+
+    // 完全销毁ScrollTrigger
+    const destroyScrollTrigger = () => {
+      if (state.scrollTrigger) {
+        // 清理ScrollTrigger生成的样式
+        document.querySelectorAll('.sticky-placeholder').forEach(el => el.remove());
+        state.scrollTrigger.kill();
+        state.scrollTrigger = null;
+        
+        // 重置元素状态
+        const { itemsWithIcons, itemsWithoutIcons } = getElements();
+        itemsWithIcons.forEach(el => el.classList.remove('active'));
+        itemsWithoutIcons.forEach(el => el.classList.remove('active'));
+      }
+    };
+
+    // 完全销毁Swiper
+    const destroySwiper = () => {
+      if (state.swiper) {
+        // 清理Swiper生成的DOM
+        const pagination = state.swiper.pagination.el;
+        if (pagination) pagination.innerHTML = '';
+        
+        state.swiper.destroy(true, true);
+        state.swiper = null;
+      }
+    };
+
+    // 桌面端逻辑
+    const initDesktop = () => {
+      const elements = getElements();
+      if (!elements.container) return;
+
+      const endPoint = window.innerHeight * 0.8;
+      // 确保容器的高度固定
+      // const containerHeight = elements.container.offsetHeight;
+      // elements.container.style.minHeight = `${containerHeight}px`;
+      
+      state.scrollTrigger = ScrollTrigger.create({
+        trigger: elements.container,
+        start: () => `top ${window.innerHeight * 0.1}`, // 动态计算起始位置
+        end: () => `+=${endPoint}`,
+        pin: true,
+        pinSpacing: true,
+        scrub: 0.5,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+        onUpdate: self => {
+          const progress = self.progress * elements.itemsWithIcons.length;
+          elements.itemsWithIcons.forEach((item, index) => {
+            const target = elements.itemsWithoutIcons[index];
+            const active = progress > index + 0.5;
+            item.classList.toggle('active', !active);
+            target.classList.toggle('active', active);
+          });
+
+          // 切换图片
+          const imgSecond = document.querySelector('.img-second');
+          if (imgSecond) {
+            const imgActive = progress > 0.5;
+            imgSecond.style.transform = imgActive ? 'translateX(0%)' : 'translateX(100%)';
+          }
+        },
+        onRefresh: self => {
+          // 窗口变化后重新计算位置
+          self.vars.start = `top ${window.innerHeight * 0.1}`;
+          self.vars.end = `+=${endPoint * elements.itemsWithIcons.length}`;
+        }
+      });
+    };
+
+    // 移动端逻辑
+    const initMobile = () => {
+      const elements = getElements();
+      if (!elements.swiperContainer) return;
+
+      state.swiper = new Swiper(elements.swiperContainer, {
+        slidesPerView: 1,
+        spaceBetween: 8,
+        loop: false,
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'progressbar',
+        },
+        observer: true,
+        observeParents: true,
+        observeSlideChildren: true,
+
+        on: {
+                slideChange: function () {
+                    // 新增：根据当前幻灯片切换图片
+                    const imgSecond = document.querySelector('.img-second');
+                    if (imgSecond) {
+                        const imgActive = this.activeIndex === 1; // 假设第二张图片在第二个幻灯片
+                        imgSecond.style.transform = imgActive ? 'translateX(0%)' : 'translateX(100%)';
+                    }
+                }
+            }
+      });
+    };
+
+    // 视口检测
+    const checkViewport = () => {
+      const currentIsMobile = window.innerWidth < 750;
+      
+      // 状态未变化时跳过
+      if (currentIsMobile === state.isMobile) return;
+      
+      state.isMobile = currentIsMobile;
+      
+      // 完全清理旧实例
+      destroyScrollTrigger();
+      destroySwiper();
+      
+      // 延迟初始化确保DOM更新
+      requestAnimationFrame(() => {
+        state.isMobile ? initMobile() : initDesktop();
+        ScrollTrigger.refresh();
+      });
+    };
+
+    // 优化resize处理
+    const handleResize = debounce(() => {
+      checkViewport();
+    }, 300);
+
+    // 初始检测
+    checkViewport();
+
+    // 事件监听
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleResize);
+
+    // 清理函数
+    const cleanup = () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('orientationchange', handleResize);
+      destroyScrollTrigger();
+      destroySwiper();
+    };
+
+    // 页面卸载清理
+    window.addEventListener('beforeunload', cleanup);
+    window.addEventListener('unload', cleanup);
+  });
+</script>
+
+{% schema %}
+{
+  "name": "IGI Certified Diamonds",
+  "tag": "section",
+  "class": "product-igi",
+  "limit": 1,
+  "max_blocks": 2,
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "title",
+      "default": "IGI Certified Diamonds: Trusted, Precise, Transparent"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "image 2"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "url"
+    },
+    {
+      "type": "text",
+      "id": "btn_name",
+      "label": "button name",
+      "default": "LEARN MORE"
+    }
+  ],
+  "blocks": [
+      {
+        "type": "item1",
+        "name": "Item with icons",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title_main",
+            "label": "main title"
+          },
+          {
+            "type": "image_picker",
+            "id": "icon1",
+            "label": "icon 1"
+          },
+          {
+            "type": "text",
+            "id": "title1",
+            "label": "title 1"
+          },
+          {
+            "type": "textarea",
+            "id": "content1",
+            "label": "content 1"
+          },
+          {
+            "type": "image_picker",
+            "id": "icon2",
+            "label": "icon 2"
+          },
+          {
+            "type": "text",
+            "id": "title2",
+            "label": "title 2"
+          },
+          {
+            "type": "textarea",
+            "id": "content2",
+            "label": "content 2"
+          },
+          {
+            "type": "image_picker",
+            "id": "icon3",
+            "label": "icon 3"
+          },
+          {
+            "type": "text",
+            "id": "title3",
+            "label": "title 3"
+          },
+          {
+            "type": "textarea",
+            "id": "content3",
+            "label": "content 3"
+          },
+          {
+            "type": "image_picker",
+            "id": "icon4",
+            "label": "icon 4"
+          },
+          {
+            "type": "text",
+            "id": "title4",
+            "label": "title 4"
+          },
+          {
+            "type": "textarea",
+            "id": "content4",
+            "label": "content 4"
+          }
+        ]
+      },
+      {
+        "type": "item2",
+        "name": "Item without icons",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "title"
+          },
+          {
+            "type": "textarea",
+            "id": "content",
+            "label": "content"
+          }
+        ]
+      }
+  ],
+  "presets": [
+    {
+      "name": "IGI Certified Diamonds"
+    }
+  ]
+}
+{% endschema %}
