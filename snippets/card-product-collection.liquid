@@ -550,7 +550,7 @@
             </div>
           {% endif %}
         {% endif %}
-        <div class="card__badge {{ settings.badge_position }}">
+        {% comment %} <div class="card__badge {{ settings.badge_position }}">
           {%- if card_product.available == false -%}
             <span
               id="Badge-{{ section_id }}-{{ card_product.id }}"
@@ -566,7 +566,7 @@
               {{- 'products.product.on_sale' | t -}}
             </span>
           {%- endif -%}
-        </div>
+        </div> {% endcomment %}
       </div>
     </div>
   </div>
