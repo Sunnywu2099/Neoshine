@@ -5,6 +5,7 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  min-height: 41.58px;
 }
 .product-card-wrapper .options-box{
   display: flex;
