@@ -210,7 +210,9 @@
         {% if block.settings.product != blank %}
           <div>
             <div class="price-box">
-              <span class="price-del">{{ block.settings.product.compare_at_price | money }}</span>
+              {% if block.settings.product.compare_at_price > block.settings.product.price %}
+                <span class="price-del">{{ block.settings.product.compare_at_price | money }}</span>
+              {% endif %}
               <span class="price">{{ block.settings.product.price | money }}</span>
             </div>
             <div class="shop-btn">SHOP NOW</div>
