@@ -5,7 +5,6 @@
   #shopify-section-{{section.id}} .guarantee .banner-wrapper{
     padding: 40px;
     position: absolute;
-    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
@@ -13,6 +12,7 @@
     align-items: flex-start;
     justify-content: flex-end;
     flex-direction: column;
+    height: fit-content;
   }
   #shopify-section-{{section.id}} .guarantee .icon-box{
     display: flex;
@@ -107,6 +107,16 @@
       height: 50px;
     }
   }
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{section.id}} .guarantee .banner-wrapper{
+      opacity: 0;
+      transition: all .3s ease-in-out;
+    }
+    #shopify-section-{{section.id}} .guarantee .swiper-slide-active .banner-wrapper{
+      opacity: 1;
+      transition: all .3s ease-in-out;
+    }
+  }
   @media screen and (max-width: 749px) {
     #shopify-section-{{section.id}} .guarantee .banner-title{
       font-size: 26px;
@@ -123,11 +133,12 @@
     #shopify-section-{{section.id}} .guarantee .banner-wrapper{
       position: static;
       padding: 28px;
+      background-color: #F6F6F6;
     }
     #shopify-section-{{section.id}} .guarantee .icon-box{
       flex-wrap: wrap;
-      column-gap: 55px;
-      row-gap: 20px;
+      gap: 14px;
+      width: 100%;
     }
     #shopify-section-{{section.id}} .guarantee .icon-box p{
       color: #121212;
@@ -137,9 +148,9 @@
     }
     #shopify-section-{{section.id}} .guarantee .icon-item{
       display: flex;
-      flex-direction: row;
+      /* flex-direction: row; */
       gap: 10px;
-      width: calc((100% - 55px) / 2);
+      width: calc((100% - 44px) / 4);
       /* justify-content: center; */
       align-items: center;
     }
@@ -153,7 +164,7 @@
     }
     #shopify-section-{{section.id}} .guarantee .swiper-button-next,
     #shopify-section-{{section.id}} .guarantee .swiper-button-prev{
-      top: 32%;
+      top: 38%;
     }
     #shopify-section-{{section.id}} .guarantee .swiper-pagination-progressbar{
       display: block;
@@ -167,17 +178,17 @@
       {% for block in section.blocks %} 
         <div class="swiper-slide item">
           <div class="img-wrapper">
-            <div style="position: relative;">
-            {% render 'responsive-image',
-              sid: section.id,
-              image_desktop: block.settings.pc_image,
-              image_mobile: block.settings.mobile_image,
-              alt: block.settings.title,
-              lazy: true,
-              preload: false
-            %}
+            <a style="position: relative;" href="{{ block.settings.url }}">
+              {% render 'responsive-image',
+                sid: section.id,
+                image_desktop: block.settings.pc_image,
+                image_mobile: block.settings.mobile_image,
+                alt: block.settings.title,
+                lazy: true,
+                preload: false
+              %}
             <h2 class="banner-title pc-hidden">{{ block.settings.title }}</h2>
-            </div>
+            </a>
             
             <div class="banner-wrapper">
               <h2 class="banner-title">{{ block.settings.title }}</h2>
@@ -209,7 +220,6 @@
               </div>
             </div>
           </div>
-          <a class="view-more" href="{{ block.settings.url }}">{{ block.settings.btn_name }}</a>
         </div>
       {% endfor %}
     </div>
