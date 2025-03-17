@@ -241,8 +241,9 @@ span#parcelator{
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
-  margin: 0 10px 0 0;
+  margin: 5px 10px 0 0;
   flex-shrink: 0;
+  height: fit-content;
 }
 .option-wrapper{
   display: flex;
