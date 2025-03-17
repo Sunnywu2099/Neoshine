@@ -3,6 +3,11 @@
   src: url('https://cdn.shopify.com/s/files/1/0897/6921/4241/files/ZCOOLXiaoWei-Regular.ttf?v=1726659035')  format('truetype') /* Safari, Android, iOS */
 }
 
+@font-face {
+  font-family: 'BarlowCondensed';
+  src: url('https://cdn.shopify.com/s/files/1/0897/6921/4241/files/BarlowCondensed-Regular.ttf?v=1742206498')  format('truetype'); /* Safari, Android, iOS */
+  font-display: swap;
+}
 
 :root {
   --alpha-button-background: 1;
