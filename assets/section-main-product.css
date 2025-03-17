@@ -1721,7 +1721,7 @@ a.product__text {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  gap: 10vw;
+  gap: 3vw;
 }
 #StickyAddToCart .info-item{
   display: flex;
