@@ -208,11 +208,13 @@
           </div>
         {% endif %}
         {% if block.settings.product != blank %}
-          <div class="price-box">
-            <span class="price-del">{{ block.settings.product.compare_at_price | money }}</span>
-            <span class="price">{{ block.settings.product.price | money }}</span>
+          <div>
+            <div class="price-box">
+              <span class="price-del">{{ block.settings.product.compare_at_price | money }}</span>
+              <span class="price">{{ block.settings.product.price | money }}</span>
+            </div>
+            <div class="shop-btn">SHOP NOW</div>
           </div>
-          <div class="shop-btn">SHOP NOW</div>
         {% endif %}
       </div>
     </a>
