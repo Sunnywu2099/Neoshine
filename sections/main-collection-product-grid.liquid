@@ -163,14 +163,14 @@
                   {%- assign lazy_load = true -%}
                 {%- endif -%}
                 {% if forloop.index == 3 and section.settings.event_image != blank %}
-                  <li class="grid__item event-banner">
+                  <li class="grid__item event-banner event-banner-mb">
                     <a href="{{ section.settings.url }}">
                       <img loading="lazy" src="{{ section.settings.event_image | img_url: 'master'}}">
                     </a>
                   </li>
                 {% endif %}
                 {% if forloop.index == 4 and section.settings.event_image != blank %}
-                  <li class="grid__item event-banner">
+                  <li class="grid__item event-banner event-banner-pc">
                     <a href="{{ section.settings.url }}">
                       <img loading="lazy" src="{{ section.settings.event_image | img_url: 'master'}}">
                     </a>
