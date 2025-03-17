@@ -329,6 +329,10 @@ span#parcelator{
   .grid--2-col-tablet-down .card__content quick-add-bulk .quantity {
     width: auto;
   }
+
+  .option-wrapper{
+    min-height: 61px;
+  }
 }
 
 .card-information quantity-popover volume-pricing {
