@@ -9,7 +9,7 @@
 .product-card-wrapper .options-box{
   display: flex;
   /* flex-wrap: wrap; */
-  align-items: center;
+  /* align-items: center; */
   gap: 5px;
   margin-bottom: 10px;
   /* justify-content: center; */
