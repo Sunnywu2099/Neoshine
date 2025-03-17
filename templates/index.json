@@ -180,6 +180,14 @@
             "url": "shopify://collections/pear-shaped-engagement-rings-elegant-unique-for-proposals"
           }
         },
+        "item_QhGhdg": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/marquise_1_b9cbc885-a4b5-4613-b476-9ebbb66e13d3.png",
+            "content": "Cushion",
+            "url": "shopify://collections/cushion-engagement-rings-vintage-charm-for-proposals"
+          }
+        },
         "item_YGHEW8": {
           "type": "item",
           "settings": {
@@ -210,6 +218,7 @@
         "item_UkKgCp",
         "item_inbkpF",
         "item_ykaDwa",
+        "item_QhGhdg",
         "item_YGHEW8",
         "item_XPXrgj",
         "item_HUBdWe"
