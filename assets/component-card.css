@@ -1,7 +1,7 @@
 .product-card-wrapper .card__heading{
   font-size:16px;
   display: -webkit-box;
-  -webkit-line-clamp: 1;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
