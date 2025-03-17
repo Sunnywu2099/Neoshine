@@ -107,6 +107,16 @@
       height: 50px;
     }
   }
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{section.id}} .guarantee .banner-wrapper{
+      opacity: 0;
+      transition: all .3s ease-in-out;
+    }
+    #shopify-section-{{section.id}} .guarantee .swiper-slide-active .banner-wrapper{
+      opacity: 1;
+      transition: all .3s ease-in-out;
+    }
+  }
   @media screen and (max-width: 749px) {
     #shopify-section-{{section.id}} .guarantee .banner-title{
       font-size: 26px;
