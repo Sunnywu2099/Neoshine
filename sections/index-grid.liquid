@@ -58,11 +58,20 @@
     flex-direction: column;
   }
   #shopify-section-{{ section.id }} .index-grid .price-box{
-    margin-bottom: 32px;
+    margin-bottom: 10px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 8px;
+  }
+  #shopify-section-{{ section.id }} .index-grid .shop-btn{
+    text-align: center;
+    border: 1px solid #121212;
+    border-radius: 3px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 600;
   }
   #shopify-section-{{ section.id }} .index-grid .price-box .price-del{
     color: #787878;
@@ -83,7 +92,17 @@
     font-weight: 500;
     line-height: 32px;
     letter-spacing: 0.48px;
+    text-align: center;
     margin: 0 0 20px;
+  }
+  #shopify-section-{{ section.id }} .index-grid .item-2 .content-wrapper .item-title,
+  #shopify-section-{{ section.id }} .index-grid .item-3 .content-wrapper .item-title{
+    color: #121212;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: normal;
+    margin: 40px 0 0;
   }
   #shopify-section-{{ section.id }} .index-grid .content-wrapper .item-content{
     font-size: 20px;
@@ -107,8 +126,26 @@
       line-height: 1.2;
     }
     #shopify-section-{{ section.id }} .index-grid .price-box{
-      margin-bottom: 10px;
+      /* margin-bottom: 2px; */
       justify-content: center;
+    }
+    #shopify-section-{{ section.id }} .index-grid .item-2 .content-wrapper .item-title,
+    #shopify-section-{{ section.id }} .index-grid .item-3 .content-wrapper .item-title{
+      margin: 10px 0 0;
+    }
+    #shopify-section-{{ section.id }} .index-grid .shop-btn{
+      margin-bottom: 10px;
+      font-size: 18px;
+      line-height: 22px;
+    }
+    #shopify-section-{{ section.id }} .index-grid .item-2 .price-box .price,
+    #shopify-section-{{ section.id }} .index-grid .item-3 .price-box .price{
+      font-size: 14px;
+    }
+    #shopify-section-{{ section.id }} .index-grid .item-2 .price-box .price-del,
+    #shopify-section-{{ section.id }} .index-grid .item-3 .price-box .price-del{
+      font-size: 12px;
+      line-height: 1.2;
     }
   }
   @media screen and (max-width: 749px) {
@@ -154,14 +191,24 @@
       gap: 8px;
     }
     #shopify-section-{{ section.id }} .index-grid .price-box .price{
-      font-size: 16px;
-      line-height: 18px;
-      font-weight: 400;
+      font-size: 20px;
+      line-height: 1.2;
     }
     #shopify-section-{{ section.id }} .index-grid .price-box .price-del{
       font-size: 12px;
       line-height: 16px;
       font-weight: 400;
+    }
+    #shopify-section-{{ section.id }} .index-grid .shop-btn{
+      font-size: 12px;
+      line-height: 18px;
+    }
+    #shopify-section-{{ section.id }} .index-grid .item-2 .content-wrapper .item-title,
+    #shopify-section-{{ section.id }} .index-grid .item-3 .content-wrapper .item-title{
+      margin: 20px 0 0;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 14px;
     }
   }
 </style>
@@ -201,14 +248,21 @@
 
       </div>
       <div class="content-wrapper">
-        <div class="text-box">
-          <h2 class="item-title">{{ block.settings.title }}</h2>
-          <p class="item-content">{{ block.settings.content }}</p>
-        </div>
+        {% if block.settings.title != blank or block.settings.content != blank %}
+          <div class="text-box">
+            <h2 class="item-title">{{ block.settings.title }}</h2>
+            <p class="item-content">{{ block.settings.content }}</p>
+          </div>
+        {% endif %}
         {% if block.settings.product != blank %}
-          <div class="price-box">
-            <span class="price-del">{{ block.settings.product.compare_at_price | money }}</span>
-            <span class="price">{{ block.settings.product.price | money }}</span>
+          <div>
+            <div class="price-box">
+              {% if block.settings.product.compare_at_price > block.settings.product.price %}
+                <span class="price-del">{{ block.settings.product.compare_at_price | money }}</span>
+              {% endif %}
+              <span class="price">{{ block.settings.product.price | money }}</span>
+            </div>
+            <div class="shop-btn">SHOP NOW</div>
           </div>
         {% endif %}
       </div>
