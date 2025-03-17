@@ -167,17 +167,17 @@
       {% for block in section.blocks %} 
         <div class="swiper-slide item">
           <div class="img-wrapper">
-            <div style="position: relative;">
-            {% render 'responsive-image',
-              sid: section.id,
-              image_desktop: block.settings.pc_image,
-              image_mobile: block.settings.mobile_image,
-              alt: block.settings.title,
-              lazy: true,
-              preload: false
-            %}
+            <a style="position: relative;" href="{{ block.settings.url }}">
+              {% render 'responsive-image',
+                sid: section.id,
+                image_desktop: block.settings.pc_image,
+                image_mobile: block.settings.mobile_image,
+                alt: block.settings.title,
+                lazy: true,
+                preload: false
+              %}
             <h2 class="banner-title pc-hidden">{{ block.settings.title }}</h2>
-            </div>
+            </a>
             
             <div class="banner-wrapper">
               <h2 class="banner-title">{{ block.settings.title }}</h2>
@@ -209,7 +209,6 @@
               </div>
             </div>
           </div>
-          <a class="view-more" href="{{ block.settings.url }}">{{ block.settings.btn_name }}</a>
         </div>
       {% endfor %}
     </div>
