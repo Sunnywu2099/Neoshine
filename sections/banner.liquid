@@ -101,7 +101,7 @@
 </style>
 
 <div class="banner">
-  <div class="swiper-container">
+  <div class="swiper">
     <div class="swiper-wrapper">
       {% for block in section.blocks %} 
       <a class="swiper-slide item" {% if block.settings.url != blank %}href="{{ block.settings.url }}"{% endif %}>
@@ -137,11 +137,11 @@
 
 <script>
   
-    const banner_swiper = new Swiper('.banner .swiper-container', {
+    const banner_swiper = new Swiper('.banner .swiper', {
       loop: true,
       navigation: {
-        nextEl: '.banner .swiper-container .swiper-button-next',
-        prevEl: '.banner .swiper-container .swiper-button-prev',
+        nextEl: '.banner .swiper .swiper-button-next',
+        prevEl: '.banner .swiper .swiper-button-prev',
       },
       pagination: {
         el: '.banner .swiper-pagination',
