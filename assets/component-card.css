@@ -249,6 +249,12 @@ span#parcelator{
   flex-wrap: wrap;
   gap: 5px;
 }
+.event-banner-pc{
+  display: list-item;
+}
+.event-banner-mb{
+  display: none;
+}
 .event-banner a{
   display: block;
   height: 100%;
@@ -277,6 +283,15 @@ span#parcelator{
     .card__information-volume-pricing-note--button
     + .global-settings-popup.quantity-popover__info {
     width: calc(100% + var(--border-width) + 1rem);
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .event-banner-pc{
+    display: none;
+  }
+  .event-banner-mb{
+    display: list-item;
   }
 }
 
@@ -327,6 +342,14 @@ span#parcelator{
 
   .card-information quantity-popover volume-pricing {
     margin-top: 4.2rem;
+  }
+  .event-banner-pc{
+    display: none;
+  }
+  .event-banner-mb{
+    display: list-item;
+    width: 100% !important;
+    max-width: 100%;
   }
 }
 
