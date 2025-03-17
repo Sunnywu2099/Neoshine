@@ -57,7 +57,7 @@
           "settings": {
             "pc_image": "shopify://shop_images/image_21.png",
             "mobile_image": "shopify://shop_images/image_2.png",
-            "title": "",
+            "title": "14K White Gold 0.5 CT Stud Earrings",
             "content": "",
             "product": "1ct-diamond-solitaire-engagement-ring"
           }
@@ -67,7 +67,7 @@
           "settings": {
             "pc_image": "shopify://shop_images/image_20.png",
             "mobile_image": "shopify://shop_images/image_2.png",
-            "title": "",
+            "title": "0.3CT Bezel Diamond Earrings",
             "content": "",
             "product": "14k-1ct-lab-created-diamond-ring"
           }
@@ -180,6 +180,14 @@
             "url": "shopify://collections/pear-shaped-engagement-rings-elegant-unique-for-proposals"
           }
         },
+        "item_QhGhdg": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/marquise_1_b9cbc885-a4b5-4613-b476-9ebbb66e13d3.png",
+            "content": "Cushion",
+            "url": "shopify://collections/cushion-engagement-rings-vintage-charm-for-proposals"
+          }
+        },
         "item_YGHEW8": {
           "type": "item",
           "settings": {
@@ -210,6 +218,7 @@
         "item_UkKgCp",
         "item_inbkpF",
         "item_ykaDwa",
+        "item_QhGhdg",
         "item_YGHEW8",
         "item_XPXrgj",
         "item_HUBdWe"
