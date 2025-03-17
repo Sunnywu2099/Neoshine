@@ -12,7 +12,7 @@
     "block_chinese_broswer": false,
     "jump_url": "https://www.google.com",
     "logo": "shopify://shop_images/Logo.png",
-    "logo_width": 160,
+    "logo_width": 300,
     "favicon": "shopify://shop_images/neoshine-logo_2.svg",
     "type_header_font": "roboto_n7",
     "heading_scale": 100,
