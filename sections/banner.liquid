@@ -241,12 +241,12 @@
             <div class="banner-container">
               <div>
                 <h2 class="banner-title">{{ block.settings.title }}</h2>
-                <p class="banner-content">
+                <div class="banner-content">
                   <span>{{ block.settings.content }}</span>
                   {% if block.settings.end != blank%}
                     {% render 'countdown-banner', end: block.settings.end %}
                   {% endif %}
-                </p>
+                </div>
               </div>
               {% if block.settings.url != blank %}
                 <a href="{{ block.settings.url }}" class="banner-btn">{{block.settings.btn_name}}</a>
