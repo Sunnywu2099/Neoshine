@@ -130,6 +130,7 @@
       bottom: 0;
       left: 0;
       right: 0;
+      top: unset;
       text-align: center;
       width: 100%;
     }
@@ -181,7 +182,7 @@
       {% for block in section.blocks %} 
         <div class="swiper-slide item">
           <div class="img-wrapper">
-            <a style="position: relative;" href="{{ block.settings.url }}">
+            <a style="position: relative;display:block;" href="{{ block.settings.url }}">
               {% render 'responsive-image',
                 sid: section.id,
                 image_desktop: block.settings.pc_image,
