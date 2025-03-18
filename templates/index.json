@@ -82,7 +82,7 @@
           "type": "item",
           "settings": {
             "pc_image": "shopify://shop_images/home_page-_549_earring-righjt.webp",
-            "mobile_image": "shopify://shop_images/image_2.png",
+            "mobile_image": "shopify://shop_images/home_page-_549_earring-righjt.webp",
             "title": "0.3CT Bezel Diamond Earrings",
             "content": "",
             "product": "14k-1ct-lab-created-diamond-ring"
@@ -92,7 +92,7 @@
           "type": "item",
           "settings": {
             "pc_image": "shopify://shop_images/home_page-_549_earring_photo.webp",
-            "mobile_image": "shopify://shop_images/image_b02ea5e5-0bb8-45ef-87d8-db41559d5278.png",
+            "mobile_image": "shopify://shop_images/home_page-_549_earring_photo.webp",
             "title": "",
             "content": "",
             "product": "bezel-diamond-earrings"
@@ -304,7 +304,7 @@
           "type": "item",
           "settings": {
             "pc_image": "shopify://shop_images/home_page-_AR-2_8161159e-a4ff-4055-9f5b-30c6f6519f50.webp",
-            "mb_image": "shopify://shop_images/Group_1000002204.png",
+            "mb_image": "shopify://shop_images/home_page-_AR-2_8161159e-a4ff-4055-9f5b-30c6f6519f50.webp",
             "btn_name": "Find Your Perfect Fit: Try It On Virtually"
           }
         }
