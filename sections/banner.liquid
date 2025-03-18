@@ -243,6 +243,9 @@
                 <h2 class="banner-title">{{ block.settings.title }}</h2>
                 <p class="banner-content">
                   <span>{{ block.settings.content }}</span>
+                  {% if block.settings.end != blank%}
+                    <span>{% render 'countdown-banner', end: block.settings.end %}</span>
+                  {% endif %}
                 </p>
               </div>
               {% if block.settings.url != blank %}
@@ -370,6 +373,13 @@
           "type": "textarea",
           "id": "icon_text2",
           "label": "icon text 2"
+        },
+        {
+          "type": "text",
+          "id": "end",
+          "label": "End date",
+          "default": "2021-11-30 00:00:00",
+          "info": "Format: YYYY-MM-DD HH:MM:SS"
         }
       ]
     }
