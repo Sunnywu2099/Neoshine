@@ -295,8 +295,8 @@
         "item_DaH7t6": {
           "type": "item",
           "settings": {
-            "pc_image": "shopify://shop_images/Group_2.png",
-            "mb_image": "shopify://shop_images/Group_1000002205.png",
+            "pc_image": "shopify://shop_images/home-page--AI_Support.webp",
+            "mb_image": "shopify://shop_images/home-page--AI_Support.webp",
             "btn_name": "Call on us anytime!"
           }
         },
