@@ -1,99 +1,93 @@
 {%- comment -%}
-  Adaptive Image Component v2
-  核心特性：
-  - 自动读取图片元数据保持原始比例
-  - 原生CSS aspect-ratio支持
-  - 自动响应式断点检测
-  - 基于视口的动态尺寸计算
+  Optimized Adaptive Image Component v3
+  优化要点：
+  1. 增加高清尺寸支持（最高支持3x Retina）
+  2. 添加WebP格式支持
+  3. 优化图片质量参数
+  4. 更智能的响应式尺寸计算
 {%- endcomment -%}
 
 {%- liquid
-  # 优先使用图片自身宽高比
-  assign sid = sid
-  assign desktop_aspect = image_desktop.aspect_ratio | default: 1.7777
-  assign mobile_aspect = image_mobile.aspect_ratio | default: desktop_aspect
+  # 增强尺寸配置
+  assign desktop_breakpoint = 750
+  assign max_desktop_width = 2000  # 支持大屏显示器
+  assign max_mobile_width = 1000   # 支持高DPI移动设备
 
-  # 智能尺寸计算
-  assign desktop_width = image_desktop.width | default: 2000
-  assign mobile_width = image_mobile.width | default: 1000
+  # 高级质量参数
+  assign quality_webp = 85         # WebP压缩质量
+  assign quality_jpeg = 90         # JPEG压缩质量
 
-  # 响应式尺寸生成
-  capture desktop_srcset
-    echo image_desktop | img_url: '400x' | append: ' 400w,'
-    echo image_desktop | img_url: '600x' | append: ' 600w,'
-    echo image_desktop | img_url: '800x' | append: ' 800w,'
-    echo image_desktop | img_url: '1000x' | append: ' 1000w,'
-    echo image_desktop | img_url: '1200x' | append: ' 1200w,'
-    echo image_desktop | img_url: '1400x' | append: ' 1400w'
+  # 生成增强的srcset（包含WebP和JPEG）
+  capture desktop_srcset_webp
+    echo image_desktop | img_url: '400x', format: 'webp', crop: 'center' | append: ' 400w,'
+    echo image_desktop | img_url: '800x', format: 'webp', crop: 'center' | append: ' 800w,'
+    echo image_desktop | img_url: '1200x', format: 'webp', crop: 'center' | append: ' 1200w,'
+    echo image_desktop | img_url: '1600x', format: 'webp', crop: 'center' | append: ' 1600w,'
+    echo image_desktop | img_url: '2000x', format: 'webp', crop: 'center' | append: ' 2000w'
   endcapture
 
-  capture mobile_srcset
-    echo image_mobile | img_url: '300x' | append: ' 300w,'
-    echo image_mobile | img_url: '450x' | append: ' 450w,'
-    echo image_mobile | img_url: '600x' | append: ' 600w'
+  capture desktop_srcset_jpeg
+    echo image_desktop | img_url: '400x', format: 'pjpg', crop: 'center' | append: ' 400w,'
+    echo image_desktop | img_url: '800x', format: 'pjpg', crop: 'center' | append: ' 800w,'
+    echo image_desktop | img_url: '1200x', format: 'pjpg', crop: 'center' | append: ' 1200w,'
+    echo image_desktop | img_url: '1600x', format: 'pjpg', crop: 'center' | append: ' 1600w,'
+    echo image_desktop | img_url: '2000x', format: 'pjpg', crop: 'center' | append: ' 2000w'
   endcapture
+
+  capture mobile_srcset_webp
+    echo image_mobile | img_url: '300x', format: 'webp', crop: 'center' | append: ' 300w,'
+    echo image_mobile | img_url: '600x', format: 'webp', crop: 'center' | append: ' 600w,'
+    echo image_mobile | img_url: '1000x', format: 'webp', crop: 'center' | append: ' 1000w'
+  endcapture
+
+  capture mobile_srcset_jpeg
+    echo image_mobile | img_url: '300x', format: 'pjpg', crop: 'center' | append: ' 300w,'
+    echo image_mobile | img_url: '600x', format: 'pjpg', crop: 'center' | append: ' 600w,'
+    echo image_mobile | img_url: '1000x', format: 'pjpg', crop: 'center' | append: ' 1000w'
+  endcapture
+
+  # 智能sizes配置
+  assign desktop_sizes = "(min-width: 1600px) 1600px, (min-width: 1200px) 1200px, (min-width: 990px) 1000px, (min-width: 750px) 800px, 100vw"
+  assign mobile_sizes = "(max-width: 749px) 100vw, (max-width: 999px) 50vw, 400px"
 -%}
 
-<style>
-  #shopify-section-{{sid}} .adaptive-image{
-    position: relative;
-    display: block;
-    margin: 0 auto;
-  }
-
-  #shopify-section-{{sid}} .adaptive-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: opacity 0.3s ease;
-  }
-
-  /* 原生宽高比支持 */
-  #shopify-section-{{sid}} .adaptive-image--desktop {
-    aspect-ratio: {{ desktop_aspect }};
-  }
-
-  #shopify-section-{{sid}} .adaptive-image--mobile {
-    aspect-ratio: {{ mobile_aspect }};
-  }
-
-  @media (min-width: 750px) {
-    #shopify-section-{{sid}} .adaptive-image--mobile {
-      display: none !important;
-    }
-  }
-
-  @media (max-width: 749px) {
-    #shopify-section-{{sid}} .adaptive-image--desktop {
-      display: none !important;
-    }
-  }
-</style>
-
-<div class="adaptive-image adaptive-image--desktop">
-  <img 
-    srcset="{{ desktop_srcset }}" 
-    sizes="(min-width: 1600px) 1400px, (min-width: 1200px) 1200px, (min-width: 990px) 1000px, (min-width: 750px) 800px, 100vw"
-    src="{{ image_desktop | img_url: '800x' }}"
+<picture>
+  <!-- 桌面版WebP -->
+  <source 
+    media="(min-width: {{ desktop_breakpoint }}px)"
+    srcset="{{ desktop_srcset_webp }}"
+    sizes="{{ desktop_sizes }}"
+    type="image/webp"
+  >
+  <!-- 桌面版JPEG -->
+  <source 
+    media="(min-width: {{ desktop_breakpoint }}px)"
+    srcset="{{ desktop_srcset_jpeg }}"
+    sizes="{{ desktop_sizes }}"
+    type="image/jpeg"
+  >
+  <!-- 移动版WebP -->
+  <source
+    srcset="{{ mobile_srcset_webp }}"
+    sizes="{{ mobile_sizes }}"
+    type="image/webp"
+  >
+  <!-- 移动版JPEG -->
+  <source
+    srcset="{{ mobile_srcset_jpeg }}"
+    sizes="{{ mobile_sizes }}"
+    type="image/jpeg"
+  >
+  <!-- 兼容性回退 -->
+  <img
+    src="{{ image_desktop | img_url: '1600x', format: 'pjpg', crop: 'center' }}"
     alt="{{ alt | escape }}"
     loading="{% if lazy %}lazy{% else %}eager{% endif %}"
     decoding="async"
-    width="{{ desktop_width }}"
-    height="{{ desktop_width | divided_by: desktop_aspect }}"
+    width="{{ image_desktop.width }}"
+    height="{{ image_desktop.height }}"
     {% if preload %}fetchpriority="high"{% endif %}
+    class="adaptive-image"
+    style="aspect-ratio: {{ image_desktop.aspect_ratio }}; width: 100%; height: auto;"
   >
-</div>
-
-<div class="adaptive-image adaptive-image--mobile">
-  <img 
-    srcset="{{ mobile_srcset }}" 
-    sizes="(max-width: 749px) 100vw, 50vw"
-    src="{{ image_mobile | img_url: '600x' }}"
-    alt="{{ alt | escape }}"
-    loading="{% if lazy %}lazy{% else %}eager{% endif %}"
-    decoding="async"
-    width="{{ mobile_width }}"
-    height="{{ mobile_width | divided_by: mobile_aspect }}"
-    {% if preload %}fetchpriority="high"{% endif %}
-  >
-</div>
+</picture>
