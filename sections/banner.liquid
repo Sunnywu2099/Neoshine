@@ -175,7 +175,22 @@
               {% if block.settings.url != blank %}
                 <a href="{{ block.settings.url }}" class="banner-btn">{{block.settings.btn_name}}</a>
               {% endif %}
-
+              {% if block.settings.svg1 != blank or block.settings.svg2 != blank %}
+                <div class="icon-wrapper">
+                  {% if block.settings.svg1 != blank %}
+                    <div class="icon-item">
+                      <span>{{ block.settings.svg1 }}</span>
+                      <span>{{ block.settings.icon_text1 }}</span>
+                    </div>
+                  {% endif %}
+                  {% if block.settings.svg2 != blank %}
+                    <div class="icon-item">
+                      <span>{{ block.settings.svg2 }}</span>
+                      <span>{{ block.settings.icon_text2 }}</span>
+                    </div>
+                  {% endif %}
+                </div>
+              {% endif %}
             </div>
             </div>
           </div>
