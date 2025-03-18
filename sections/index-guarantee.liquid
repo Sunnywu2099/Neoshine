@@ -19,7 +19,6 @@
     gap: 45px;
   }
   #shopify-section-{{section.id}} .guarantee .icon-box p{
-    color: #fff;
     text-align: center;
     font-size: 18px;
     font-weight: 400;
@@ -39,7 +38,6 @@
     line-height: 48px;
     margin-top: 0;
     margin-bottom: 25px;
-    color: #fff;
   }
   #shopify-section-{{section.id}} .guarantee .view-more{
     margin: 50px 0 0 50px;
@@ -90,7 +88,7 @@
     }
     #shopify-section-{{section.id}} .guarantee .icon-box{
       display: flex;
-      gap: 20px;
+      gap: 10px;
     }
     #shopify-section-{{section.id}} .guarantee .icon-box p{
       color: #fff;
@@ -101,6 +99,7 @@
     #shopify-section-{{section.id}} .guarantee .icon-item{
       display: flex;
       flex-direction: column;
+      flex: 1;
     }
     #shopify-section-{{section.id}} .guarantee .icon-box svg{
       width: 45px;
@@ -127,8 +126,13 @@
     #shopify-section-{{section.id}} .guarantee .banner-title.pc-hidden{
       display: block;
       position: absolute;
-      padding: 30px;
+      padding: 0px;
       bottom: 0;
+      left: 0;
+      right: 0;
+      top: unset;
+      text-align: center;
+      width: 100%;
     }
     #shopify-section-{{section.id}} .guarantee .banner-wrapper{
       position: static;
@@ -141,7 +145,7 @@
       width: 100%;
     }
     #shopify-section-{{section.id}} .guarantee .icon-box p{
-      color: #121212;
+      color: #121212!important;
       font-size: 12px;
       line-height: 16px; 
       margin-top: 0px;
@@ -155,7 +159,7 @@
       align-items: center;
     }
     #shopify-section-{{section.id}} .guarantee .icon-box svg path{
-      fill: #121212!important;
+      stroke: #121212!important;
     }
     #shopify-section-{{section.id}} .guarantee .view-more{
       margin: 0 auto;
@@ -178,7 +182,7 @@
       {% for block in section.blocks %} 
         <div class="swiper-slide item">
           <div class="img-wrapper">
-            <a style="position: relative;" href="{{ block.settings.url }}">
+            <a style="position: relative;display:block;" href="{{ block.settings.url }}">
               {% render 'responsive-image',
                 sid: section.id,
                 image_desktop: block.settings.pc_image,
@@ -187,34 +191,34 @@
                 lazy: true,
                 preload: false
               %}
-            <h2 class="banner-title pc-hidden">{{ block.settings.title }}</h2>
+            <h2 class="banner-title pc-hidden" style="color:#fff;">{{ block.settings.title }}</h2>
             </a>
             
             <div class="banner-wrapper">
-              <h2 class="banner-title">{{ block.settings.title }}</h2>
+              <h2 class="banner-title" style="color:{{block.settings.color}};">{{ block.settings.title }}</h2>
               <div class="icon-box">
                 {% if block.settings.icon_svg1 != blank %}
                   <a class="icon-item" href="{{block.settings.icon_url1}}">
                     <span>{{ block.settings.icon_svg1 }}</span>
-                    <p>{{block.settings.icon_name1}}</p>
+                    <p style="color:{{block.settings.color}};">{{block.settings.icon_name1}}</p>
                   </a>
                 {% endif %}
                 {% if block.settings.icon_svg2 != blank %}
                   <a class="icon-item" href="{{block.settings.icon_url2}}">
                     <span>{{ block.settings.icon_svg2 }}</span>
-                    <p>{{block.settings.icon_name2}}</p>
+                    <p style="color:{{block.settings.color}};">{{block.settings.icon_name2}}</p>
                   </a>
                 {% endif %}
                 {% if block.settings.icon_svg3 != blank %}
                   <a class="icon-item" href="{{block.settings.icon_url3}}">
                     <span>{{ block.settings.icon_svg3 }}</span>
-                    <p>{{block.settings.icon_name3}}</p>
+                    <p style="color:{{block.settings.color}};">{{block.settings.icon_name3}}</p>
                   </a>
                 {% endif %}
                 {% if block.settings.icon_svg4 != blank %}
                   <a class="icon-item" href="{{block.settings.icon_url4}}">
                     <span>{{ block.settings.icon_svg4 }}</span>
-                    <p>{{block.settings.icon_name4}}</p>
+                    <p style="color:{{block.settings.color}};">{{block.settings.icon_name4}}</p>
                   </a>
                 {% endif %}
               </div>
@@ -299,6 +303,12 @@
           "type": "text",
           "id": "btn_name",
           "label": "button name"
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "color",
+          "default": "#000000"
         },
         {
           "type": "header",
