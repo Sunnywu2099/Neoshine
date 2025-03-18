@@ -19,18 +19,18 @@
 
   # 响应式尺寸生成
   capture desktop_srcset
-    echo image_desktop | img_url: '400x' | append: ' 400w,'
-    echo image_desktop | img_url: '600x' | append: ' 600w,'
-    echo image_desktop | img_url: '800x' | append: ' 800w,'
-    echo image_desktop | img_url: '1000x' | append: ' 1000w,'
-    echo image_desktop | img_url: '1200x' | append: ' 1200w,'
-    echo image_desktop | img_url: '1400x' | append: ' 1400w'
+    echo image_desktop | img_url: 'master' | append: ' 400w,'
+    echo image_desktop | img_url: 'master' | append: ' 600w,'
+    echo image_desktop | img_url: 'master' | append: ' 800w,'
+    echo image_desktop | img_url: 'master' | append: ' 1000w,'
+    echo image_desktop | img_url: 'master' | append: ' 1200w,'
+    echo image_desktop | img_url: 'master' | append: ' 1400w'
   endcapture
 
   capture mobile_srcset
-    echo image_mobile | img_url: '300x' | append: ' 300w,'
-    echo image_mobile | img_url: '450x' | append: ' 450w,'
-    echo image_mobile | img_url: '600x' | append: ' 600w'
+    echo image_mobile | img_url: 'master' | append: ' 300w,'
+    echo image_mobile | img_url: 'master' | append: ' 450w,'
+    echo image_mobile | img_url: 'master' | append: ' 600w'
   endcapture
 -%}
 
@@ -74,7 +74,7 @@
   <img 
     srcset="{{ desktop_srcset }}" 
     sizes="(min-width: 1600px) 1400px, (min-width: 1200px) 1200px, (min-width: 990px) 1000px, (min-width: 750px) 800px, 100vw"
-    src="{{ image_desktop | img_url: '800x' }}"
+    src="{{ image_desktop | img_url: 'master' }}"
     alt="{{ alt | escape }}"
     loading="{% if lazy %}lazy{% else %}eager{% endif %}"
     decoding="async"
@@ -88,7 +88,7 @@
   <img 
     srcset="{{ mobile_srcset }}" 
     sizes="(max-width: 749px) 100vw, 50vw"
-    src="{{ image_mobile | img_url: '600x' }}"
+    src="{{ image_mobile | img_url: 'master' }}"
     alt="{{ alt | escape }}"
     loading="{% if lazy %}lazy{% else %}eager{% endif %}"
     decoding="async"

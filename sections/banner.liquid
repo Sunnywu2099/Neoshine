@@ -15,24 +15,55 @@
     align-items: center;
   }
   #shopify-section-{{section.id}} .banner-wrapper .banner-container{
-    text-align: center;
-    max-width: 32%;
-    margin-left: 10vw;
+    max-width: 60%;
   }
   #shopify-section-{{section.id}} .banner-title{
-    font-size: 36px;
-    line-height: 48px;
-    /* font-weight: 700; */
+    font-size: 50px;
+    line-height: 60px;
+    font-weight: 500;
     margin-top: 0;
     margin-bottom: 25px;
     color: #fff;
   }
+  #shopify-section-{{section.id}} .banner-wrapper.m-center .banner-title{
+    color: #121212;
+  }
   #shopify-section-{{section.id}} .banner-content{
-    font-size: 15px;
-    line-height: 20px;
-    font-weight: 400;
+    font-size: 23px;
+    line-height: 35px;
+    font-weight: 500;
     margin: 0;
     color: #fff;
+  }
+  #shopify-section-{{section.id}} .banner-wrapper.m-center .banner-content{
+    color: #2D5C20;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  #shopify-section-{{section.id}} .banner-btn{
+    color: #fff;
+    margin-top: 80px;
+    display: inline-block;
+    min-width: 306px;
+    text-align: center;
+    border: 2px solid #ffff;
+    padding: 8px;
+    border-radius: 3px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    text-transform: uppercase;
+    transition: all .3s ease;
+  }
+  #shopify-section-{{section.id}} .banner-wrapper.m-center .banner-btn{
+    color: #2D5C20;
+    border: 2px solid #2D5C20;
+  }
+  #shopify-section-{{section.id}} .banner-btn:hover{
+    background: #121212;
+    color: #fff!important;
+    border: 2px solid #121212;
   }
   #shopify-section-{{section.id}} .banner .swiper-pagination{
     bottom: 37px;
@@ -46,29 +77,69 @@
     width: 12px;
     height: 12px;
     background: transparent;
-    border: 1px solid #fff;
+    border: 1px solid #C9DECF;
     opacity: 1;
   }
   #shopify-section-{{section.id}} .banner .swiper-pagination-bullet.swiper-pagination-bullet-active{
-    background: #fff;
-    border: 1px solid #fff;
+    background: #C9DECF;
+    border: 1px solid #C9DECF;
   }
-  @media screen and (max-width: 1200px) {
-    #shopify-section-{{section.id}} .banner-title{
-      font-size: 30px;
-      line-height: 42px;
-    }
-    #shopify-section-{{section.id}} .banner-wrapper .banner-container{
-      max-width: 40%;
-    }
+  #shopify-section-{{section.id}} .slogan{
+    font-size: 4.5vw;
+    background: rgba(255, 255, 255, .5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    font-weight: 700;
   }
-  @media screen and (max-width: 749px) {
+  #shopify-section-{{section.id}} .icon-wrapper{
+    display: flex;
+    gap: 3vw;
+    margin-top: 40px;
+  }
+  #shopify-section-{{section.id}} .icon-item{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 24px;
+    line-height: 26px;
+  }
+  #shopify-section-{{section.id}} .icon-item svg{
+    display: block;
+  }
+
+  @media screen and (max-width: 1900px) {
     #shopify-section-{{section.id}} .banner .swiper-button-prev{
-      display: none;
+      left: 12px;
     }
     #shopify-section-{{section.id}} .banner .swiper-button-next{
-      display: none;
+      right: 12px;
     }
+    #shopify-section-{{section.id}} .slogan{
+      font-size: 6vw;
+    }
+  }
+  @media screen and (max-width: 1400px) {
+    #shopify-section-{{section.id}} .banner-title{
+      font-size: 36px;
+      line-height: 42px;
+      margin-bottom: 25px;
+    }
+    #shopify-section-{{section.id}} .banner-content{
+      font-size: 18px;
+      line-height: 24px;
+    }
+    #shopify-section-{{section.id}} .icon-wrapper{
+      margin-top: 25px;
+    }
+    #shopify-section-{{section.id}} .icon-item{
+      gap: 20px;
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+  @media screen and (max-width: 1200px) {
     #shopify-section-{{section.id}} .banner-title{
       font-size: 26px;
       line-height: 32px;
@@ -78,16 +149,64 @@
       font-size: 12px;
       line-height: 18px;
     }
+    #shopify-section-{{section.id}} .banner-btn{
+      font-size: 14px;
+      line-height: 22px;
+      min-width: 200px;
+      margin-top: 40px;
+    }
+    #shopify-section-{{section.id}} .banner-wrapper .banner-container{
+      max-width: 60%;
+    }
+    #shopify-section-{{section.id}} .icon-item{
+      font-size: 14px;
+      line-height: 22px;
+    }
+    #shopify-section-{{section.id}} .icon-item svg{
+      width: 55px;
+    }
+    #shopify-section-{{section.id}} .icon-item:first-of-type svg{
+      width: 150px;
+    }
+    #shopify-section-{{section.id}} .icon-wrapper{
+      margin-top: 0px;
+    }
+  }
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{section.id}} .banner .swiper-button-prev{
+      display: none;
+    }
+    #shopify-section-{{section.id}} .banner .swiper-button-next{
+      display: none;
+    }
+    
     #shopify-section-{{section.id}} .banner-wrapper .banner-container{
       text-align: left;
       max-width: 100%;
       margin-left: 0;
     }
     #shopify-section-{{section.id}} .banner-wrapper{
-      align-items: flex-end;
-      padding-bottom: 70px;
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
+      align-items: flex-start;
+      padding: 45px 30px 0 30px;
+    }
+    #shopify-section-{{section.id}} .banner-wrapper.m-center{
+      align-items: flex-start;
+      padding: 45px 10px 0 10px;
+      text-align: center;
+    }
+    #shopify-section-{{section.id}} .banner-wrapper.m-center .banner-btn{
+      margin-top: 10px;
+    }
+    #shopify-section-{{section.id}} .banner-wrapper.m-center .banner-container{
+      text-align: center;
+    }
+    #shopify-section-{{section.id}} .banner-wrapper.m-center .icon-wrapper{
+      justify-content: center;
+      text-align: left;
+      margin-top: 45%;
+    }
+    #shopify-section-{{section.id}} .banner-wrapper.m-center .banner-content{
+      justify-content: center;
     }
     #shopify-section-{{section.id}} .banner .swiper-pagination-bullet{
       width: 8px;
@@ -97,6 +216,14 @@
       bottom: 17px;
       gap: 14px;
     }
+    #shopify-section-{{section.id}} .banner-title{
+      font-size: 22px;
+      line-height: 26px;
+      margin-bottom: 8px;
+    }
+    #shopify-section-{{section.id}} .banner-btn{
+      margin-top: 30px;
+    }
   }
 </style>
 
@@ -104,7 +231,7 @@
   <div class="swiper">
     <div class="swiper-wrapper">
       {% for block in section.blocks %} 
-      <a class="swiper-slide item" {% if block.settings.url != blank %}href="{{ block.settings.url }}"{% endif %}>
+      <div class="swiper-slide item">
           <div class="img-wrapper">
             {% render 'responsive-image',
               sid: section.id,
@@ -115,13 +242,44 @@
               preload: true
             %}
           </div>
-          <div class="banner-wrapper page-width">
+          <div class="banner-wrapper page-width {% if block.settings.slogan != blank %}m-center{% endif %}">
+            <div style="width: 100%;">
+            {% if block.settings.slogan != blank %}
+              <div class="slogan">{{ block.settings.slogan}}</div>
+            {% endif %}
             <div class="banner-container">
-              <h2 class="banner-title">{{ block.settings.title }}</h2>
-              <p class="banner-content">{{ block.settings.content }}</p>
+              <div>
+                <h2 class="banner-title">{{ block.settings.title }}</h2>
+                <div class="banner-content">
+                  <span>{{ block.settings.content }}</span>
+                  {% if block.settings.end != blank%}
+                    {% render 'countdown-banner', end: block.settings.end %}
+                  {% endif %}
+                </div>
+              </div>
+              {% if block.settings.url != blank %}
+                <a href="{{ block.settings.url }}" class="banner-btn">{{block.settings.btn_name}}</a>
+              {% endif %}
+              {% if block.settings.svg1 != blank or block.settings.svg2 != blank %}
+                <div class="icon-wrapper">
+                  {% if block.settings.svg1 != blank %}
+                    <div class="icon-item">
+                      <span>{{ block.settings.svg1 }}</span>
+                      <span>{{ block.settings.icon_text1 }}</span>
+                    </div>
+                  {% endif %}
+                  {% if block.settings.svg2 != blank %}
+                    <div class="icon-item">
+                      <span>{{ block.settings.svg2 }}</span>
+                      <span>{{ block.settings.icon_text2 }}</span>
+                    </div>
+                  {% endif %}
+                </div>
+              {% endif %}
+            </div>
             </div>
           </div>
-        </a>
+        </div>
       {% endfor %}
     </div>
     <div class="swiper-button-prev">
@@ -138,7 +296,12 @@
 <script>
   
     const banner_swiper = new Swiper('.banner .swiper', {
-      loop: true,
+      loop: false,
+      // autoplay: {
+      //   delay: 5000,
+      //   stopOnLastSlide: false,
+      //   disableOnInteraction: false,
+      // },
       navigation: {
         nextEl: '.banner .swiper .swiper-button-next',
         prevEl: '.banner .swiper .swiper-button-prev',
@@ -188,6 +351,49 @@
           "type": "url",
           "id": "url",
           "label": "url"
+        },
+        {
+          "type": "text",
+          "id": "btn_name",
+          "label": "btn_name"
+        },
+        {
+          "type": "text",
+          "id": "slogan",
+          "label": "slogan"
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "html",
+          "id": "svg1",
+          "label": "icon 1"
+        },
+        {
+          "type": "textarea",
+          "id": "icon_text1",
+          "label": "icon text 1"
+        },
+        {
+          "type": "html",
+          "id": "svg2",
+          "label": "icon 2"
+        },
+        {
+          "type": "textarea",
+          "id": "icon_text2",
+          "label": "icon text 2"
+        },
+        {
+          "type": "text",
+          "id": "end",
+          "label": "End date",
+          "default": "2021-11-30 00:00:00",
+          "info": "Format: YYYY-MM-DD HH:MM:SS"
         }
       ]
     }
