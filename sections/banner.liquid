@@ -235,7 +235,9 @@
             <div class="banner-container">
               <div>
                 <h2 class="banner-title">{{ block.settings.title }}</h2>
-                <p class="banner-content">{{ block.settings.content }}</p>
+                <p class="banner-content">
+                  <span>{{ block.settings.content }}</span>
+                </p>
               </div>
               {% if block.settings.url != blank %}
                 <a href="{{ block.settings.url }}" class="banner-btn">{{block.settings.btn_name}}</a>
