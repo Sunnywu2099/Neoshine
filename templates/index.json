@@ -12,6 +12,19 @@
     "banner_zKz8Ld": {
       "type": "banner",
       "blocks": {
+        "item_bP9zFX": {
+          "type": "item",
+          "settings": {
+            "pc_image": "shopify://shop_images/home-page--banner--activity-7.webp",
+            "mobile_image": "shopify://shop_images/home-page--banner--lab-diamond-phone.webp",
+            "title": "Get 10% OFF & Free 0.3CT  Earring",
+            "content": "Clearance Collection – Special Deals",
+            "url": "/",
+            "btn_name": "Shop Now",
+            "slogan": "LAB-GROWN BRILLIANCE SALE",
+            "color": "#121212"
+          }
+        },
         "item_AdMd3F": {
           "type": "item",
           "settings": {
@@ -24,24 +37,11 @@
             "slogan": "",
             "color": "#ffffff"
           }
-        },
-        "item_bP9zFX": {
-          "type": "item",
-          "settings": {
-            "pc_image": "shopify://shop_images/home-page--banner--activity-7.webp",
-            "mobile_image": "shopify://shop_images/home-page--banner--lab-diamond-phone.webp",
-            "title": "Get 10% OFF & Free 0.3CT  Earring",
-            "content": "Clearance Collection – Special Deals",
-            "url": "/",
-            "btn_name": "Shop Now",
-            "slogan": "LAB-GROWN BRILLIANCE SALE",
-            "color": "#ffffff"
-          }
         }
       },
       "block_order": [
-        "item_AdMd3F",
-        "item_bP9zFX"
+        "item_bP9zFX",
+        "item_AdMd3F"
       ],
       "settings": {}
     },
