@@ -25,9 +25,6 @@
     margin-bottom: 25px;
     color: #fff;
   }
-  #shopify-section-{{section.id}} .banner-wrapper:not(.m-center) .banner-title{
-    font-size: 40px;
-  }
   #shopify-section-{{section.id}} .banner-wrapper.m-center .banner-title{
     color: #121212;
   }
@@ -37,9 +34,6 @@
     font-weight: 400;
     margin: 0;
     color: #fff;
-  }
-  #shopify-section-{{section.id}} .banner-wrapper:not(.m-center) .banner-content{
-    font-size: 18px;
   }
   #shopify-section-{{section.id}} .banner-wrapper.m-center .banner-content{
     color: #2D5C20;
@@ -126,6 +120,15 @@
       font-size: 6vw;
     }
   }
+  @media (min-width: 1401px) {
+    #shopify-section-{{section.id}} .banner-wrapper:not(.m-center) .banner-title{
+      font-size: 40px;
+    }
+    #shopify-section-{{section.id}} .banner-wrapper:not(.m-center) .banner-content{
+      font-size: 18px;
+    }
+  }
+
   @media screen and (max-width: 1400px) {
     #shopify-section-{{section.id}} .banner-title{
       font-size: 36px;
