@@ -249,7 +249,7 @@
         "item_kFfAPK": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/image_f1f238ff-2aa9-45f9-b8b6-c84281d37e9b.png",
+            "image": "shopify://shop_images/home_page-_Solitaire.webp",
             "content": "Solitaire",
             "url": "shopify://collections/solitaire-engagement-rings-classic-elegance-for-proposals"
           }
@@ -257,7 +257,7 @@
         "item_YPXJtA": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/image_1_3d56eb7e-9f69-4132-91c7-e34b79e1c938.png",
+            "image": "shopify://shop_images/home_page-_halo.webp",
             "content": "Halo",
             "url": "shopify://collections/halo-engagement-rings-brilliant-diamonds-in-a-perfect-setting"
           }
@@ -265,7 +265,7 @@
         "item_NRhzir": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/image_2_c0bf53b7-db6e-421d-8123-a8409f26194d.png",
+            "image": "shopify://shop_images/home_page-_pave.webp",
             "content": "pave",
             "url": "shopify://collections/pave-engagement-rings-sparkling-diamonds-for-your-proposal"
           }
@@ -273,7 +273,7 @@
         "item_FXqXk3": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/image_3.png",
+            "image": "shopify://shop_images/home_page-_three_stone.webp",
             "content": "Three Stone",
             "url": "shopify://collections/three-stone-engagement-rings-symbolize-your-past-present-future"
           }
