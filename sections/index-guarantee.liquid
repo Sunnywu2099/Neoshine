@@ -19,7 +19,6 @@
     gap: 45px;
   }
   #shopify-section-{{section.id}} .guarantee .icon-box p{
-    color: #fff;
     text-align: center;
     font-size: 18px;
     font-weight: 400;
@@ -39,7 +38,6 @@
     line-height: 48px;
     margin-top: 0;
     margin-bottom: 25px;
-    color: #fff;
   }
   #shopify-section-{{section.id}} .guarantee .view-more{
     margin: 50px 0 0 50px;
@@ -187,7 +185,7 @@
                 lazy: true,
                 preload: false
               %}
-            <h2 class="banner-title pc-hidden">{{ block.settings.title }}</h2>
+            <h2 class="banner-title pc-hidden" style="color:{{block.settings.color}};">{{ block.settings.title }}</h2>
             </a>
             
             <div class="banner-wrapper">
@@ -196,25 +194,25 @@
                 {% if block.settings.icon_svg1 != blank %}
                   <a class="icon-item" href="{{block.settings.icon_url1}}">
                     <span>{{ block.settings.icon_svg1 }}</span>
-                    <p>{{block.settings.icon_name1}}</p>
+                    <p style="color:{{block.settings.color}};">{{block.settings.icon_name1}}</p>
                   </a>
                 {% endif %}
                 {% if block.settings.icon_svg2 != blank %}
                   <a class="icon-item" href="{{block.settings.icon_url2}}">
                     <span>{{ block.settings.icon_svg2 }}</span>
-                    <p>{{block.settings.icon_name2}}</p>
+                    <p style="color:{{block.settings.color}};">{{block.settings.icon_name2}}</p>
                   </a>
                 {% endif %}
                 {% if block.settings.icon_svg3 != blank %}
                   <a class="icon-item" href="{{block.settings.icon_url3}}">
                     <span>{{ block.settings.icon_svg3 }}</span>
-                    <p>{{block.settings.icon_name3}}</p>
+                    <p style="color:{{block.settings.color}};">{{block.settings.icon_name3}}</p>
                   </a>
                 {% endif %}
                 {% if block.settings.icon_svg4 != blank %}
                   <a class="icon-item" href="{{block.settings.icon_url4}}">
                     <span>{{ block.settings.icon_svg4 }}</span>
-                    <p>{{block.settings.icon_name4}}</p>
+                    <p style="color:{{block.settings.color}};">{{block.settings.icon_name4}}</p>
                   </a>
                 {% endif %}
               </div>
@@ -299,6 +297,12 @@
           "type": "text",
           "id": "btn_name",
           "label": "button name"
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "color",
+          "default": "#000000"
         },
         {
           "type": "header",
