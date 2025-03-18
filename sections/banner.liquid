@@ -104,7 +104,7 @@
   <div class="swiper">
     <div class="swiper-wrapper">
       {% for block in section.blocks %} 
-      <a class="swiper-slide item" {% if block.settings.url != blank %}href="{{ block.settings.url }}"{% endif %}>
+      <div class="swiper-slide item">
           <div class="img-wrapper">
             {% render 'responsive-image',
               sid: section.id,
@@ -121,7 +121,7 @@
               <p class="banner-content">{{ block.settings.content }}</p>
             </div>
           </div>
-        </a>
+        </div>
       {% endfor %}
     </div>
     <div class="swiper-button-prev">
