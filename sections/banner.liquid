@@ -244,7 +244,7 @@
                 <p class="banner-content">
                   <span>{{ block.settings.content }}</span>
                   {% if block.settings.end != blank%}
-                    <span>{% render 'countdown-banner', end: block.settings.end %}</span>
+                    {% render 'countdown-banner', end: block.settings.end %}
                   {% endif %}
                 </p>
               </div>
