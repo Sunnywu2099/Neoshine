@@ -157,11 +157,11 @@
             %}
           </div>
           <div class="banner-wrapper page-width">
+            {% if block.settings.slogan != blank %}
+              <div class="slogan">{{ block.settings.slogan}}</div>
+            {% endif %}
             <div class="banner-container">
               <div>
-                {% if block.settings.slogan != blank %}
-                  <div class="slogan">{{ block.settings.slogan}}</div>
-                {% endif %}
                 <h2 class="banner-title">{{ block.settings.title }}</h2>
                 <p class="banner-content">{{ block.settings.content }}</p>
               </div>
