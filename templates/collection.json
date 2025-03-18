@@ -48,8 +48,8 @@
         "item_M7rXGi": {
           "type": "item",
           "settings": {
-            "pc_image": "shopify://shop_images/image_8_9db72e00-1609-46e8-a90b-a68d21a499a5.png",
-            "user_img": "shopify://shop_images/Ellipse_1697.png",
+            "pc_image": "shopify://shop_images/anasttasty_PFP_photo.webp",
+            "user_img": "shopify://shop_images/anasttasty-PFP.png",
             "user_name": "Anastasia Petrova",
             "color": "#ffffff",
             "img1": "shopify://shop_images/image_10_d5d2a130-d1a1-48aa-b02c-481e047d68dd.png",
@@ -62,9 +62,9 @@
         "item_3UmhRL": {
           "type": "item",
           "settings": {
-            "pc_image": "shopify://shop_images/image_9.png",
-            "user_img": "shopify://shop_images/Ellipse_1697.png",
-            "user_name": "Anastasia Petrova",
+            "pc_image": "shopify://shop_images/Milana_PFP-photo.webp",
+            "user_img": "shopify://shop_images/Milana-PFP.png",
+            "user_name": "Milana",
             "color": "#121212",
             "video": "shopify://files/videos/Milana-whitegold-$999(1).mov",
             "likes": "999",
@@ -75,9 +75,9 @@
         "item_UV7Qh7": {
           "type": "item",
           "settings": {
-            "pc_image": "shopify://shop_images/image_10_d5d2a130-d1a1-48aa-b02c-481e047d68dd.png",
-            "user_img": "shopify://shop_images/Ellipse_1697.png",
-            "user_name": "Anastasia Petrova",
+            "pc_image": "shopify://shop_images/jane.akhmetova_PFP-photo.webp",
+            "user_img": "shopify://shop_images/jane.akhmetova-PFP.png",
+            "user_name": "Jane",
             "color": "#121212",
             "img1": "shopify://shop_images/image_10_d5d2a130-d1a1-48aa-b02c-481e047d68dd.png",
             "likes": "999",
@@ -88,22 +88,9 @@
         "item_ax9AmB": {
           "type": "item",
           "settings": {
-            "pc_image": "shopify://shop_images/image_11.png",
-            "user_img": "shopify://shop_images/Ellipse_1697.png",
-            "user_name": "Anastasia Petrova",
-            "color": "#ffffff",
-            "video": "shopify://files/videos/Milana-whitegold-$999(1).mov",
-            "likes": "999",
-            "comment": "From passing by in the school halls to years later swiping right - these two lovebirds have been head over heels ever since! Nicole said YES to Will and sealed the deal with her gorgeous Petra",
-            "date": "2.22"
-          }
-        },
-        "item_BNNpqg": {
-          "type": "item",
-          "settings": {
-            "pc_image": "shopify://shop_images/image_8_9db72e00-1609-46e8-a90b-a68d21a499a5.png",
-            "user_img": "shopify://shop_images/Ellipse_1697.png",
-            "user_name": "Anastasia Petrova",
+            "pc_image": "shopify://shop_images/valentinavalmonti_PFP-photo.webp",
+            "user_img": "shopify://shop_images/valentinavalmonti-PFP.png",
+            "user_name": "valentinavalmonti",
             "color": "#ffffff",
             "video": "shopify://files/videos/Milana-whitegold-$999(1).mov",
             "likes": "999",
@@ -116,8 +103,7 @@
         "item_M7rXGi",
         "item_3UmhRL",
         "item_UV7Qh7",
-        "item_ax9AmB",
-        "item_BNNpqg"
+        "item_ax9AmB"
       ],
       "settings": {
         "title": "As Seen On@neoshine_jewelry",
