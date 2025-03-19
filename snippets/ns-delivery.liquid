@@ -34,10 +34,19 @@
   assign bs = block.settings
   assign icon_svg = bs.icon_svg
   assign delivery_date = bs.delivery_date
+
+  assign icon_svg2 = bs.icon_svg2
+  assign delivery_2 = bs.delivery_2
 %}
 
 
 <div id="ns-delivery" data-section="{{ section.id }}" {{ block.shopify_attributes }}>
-  <div class="delivery-icon">{{ icon_svg }}</div>
-  <div class="delivery-text">{{ delivery_date }}</div>
+  <div class="item">
+    <span class="delivery-icon">{{ icon_svg }}</span>
+    <span class="delivery-text">{{ delivery_date }}</span>
+  </div>
+  <div class="item">
+    <span class="delivery-icon">{{ icon_svg2 }}</span>
+    <span class="delivery-text">{{ delivery_2 }}</span>
+  </div>
 </div>
