@@ -230,56 +230,6 @@
         "bg": "shopify://shop_images/Vector.png"
       }
     },
-    "product_perfection_gKPBbR": {
-      "type": "product-perfection",
-      "blocks": {
-        "item_3G3WqX": {
-          "type": "item",
-          "settings": {
-            "icon": "shopify://shop_images/Logo_a2e240df-e045-4adc-892b-8599384d9695.png",
-            "title": "Unmatched Brilliance",
-            "content": "Only of diamonds achieve H&A, offering unmatched light reflection."
-          }
-        },
-        "item_Vgekj9": {
-          "type": "item",
-          "settings": {
-            "icon": "shopify://shop_images/Logo_1.png",
-            "title": "Flawless Symmetry",
-            "content": "Precision cut with <br>\n8 perfect hearts and arrows."
-          }
-        },
-        "item_qdBb8f": {
-          "type": "item",
-          "settings": {
-            "icon": "shopify://shop_images/Logo_2.png",
-            "title": "Exclusive Craftsmanship",
-            "content": "150 hours of meticulous craftsmanship."
-          }
-        },
-        "item_A4mijW": {
-          "type": "item",
-          "settings": {
-            "icon": "shopify://shop_images/Logo_3.png",
-            "title": "Rare and Valuable",
-            "content": "Only 3 diamonds per 1000 carats meet the H&A standard."
-          }
-        }
-      },
-      "block_order": [
-        "item_3G3WqX",
-        "item_Vgekj9",
-        "item_qdBb8f",
-        "item_A4mijW"
-      ],
-      "settings": {
-        "title": "Hearts and Arrows: The Pinnacle of Diamond Perfection",
-        "icon": "shopify://shop_images/Group.png",
-        "text": "AUTHENTICITY<br>\nHEARTS AND ARROWS<br>\nDIAMOND",
-        "img_pc": "shopify://shop_images/copy.png",
-        "img_m": "shopify://shop_images/copy.png"
-      }
-    },
     "product_igi_dRMei8": {
       "type": "product-igi",
       "blocks": {
@@ -411,6 +361,56 @@
         "img_pc": "shopify://shop_images/Rectangle_12564.png",
         "img_m": "shopify://shop_images/Rectangle_12564_1.png"
       }
+    },
+    "product_perfection_gKPBbR": {
+      "type": "product-perfection",
+      "blocks": {
+        "item_3G3WqX": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Logo_a2e240df-e045-4adc-892b-8599384d9695.png",
+            "title": "Unmatched Brilliance",
+            "content": "Only of diamonds achieve H&A, offering unmatched light reflection."
+          }
+        },
+        "item_Vgekj9": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Logo_1.png",
+            "title": "Flawless Symmetry",
+            "content": "Precision cut with <br>\n8 perfect hearts and arrows."
+          }
+        },
+        "item_qdBb8f": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Logo_2.png",
+            "title": "Exclusive Craftsmanship",
+            "content": "150 hours of meticulous craftsmanship."
+          }
+        },
+        "item_A4mijW": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Logo_3.png",
+            "title": "Rare and Valuable",
+            "content": "Only 3 diamonds per 1000 carats meet the H&A standard."
+          }
+        }
+      },
+      "block_order": [
+        "item_3G3WqX",
+        "item_Vgekj9",
+        "item_qdBb8f",
+        "item_A4mijW"
+      ],
+      "settings": {
+        "title": "Hearts and Arrows: The Pinnacle of Diamond Perfection",
+        "icon": "shopify://shop_images/Group.png",
+        "text": "AUTHENTICITY<br>\nHEARTS AND ARROWS<br>\nDIAMOND",
+        "img_pc": "shopify://shop_images/copy.png",
+        "img_m": "shopify://shop_images/copy.png"
+      }
     }
   },
   "order": [
@@ -418,12 +418,12 @@
     "1735551360a540ddb7",
     "product_returns_zEfxJK",
     "product_trusted_DwUEYM",
-    "product_perfection_gKPBbR",
     "product_igi_dRMei8",
     "section_title_DjEHRB",
     "product_toggle_jWNF6R",
     "product_toggle_Lji3Kf",
     "product_toggle_swiper_9JF8G6",
-    "product_toggle_drag_eHHahV"
+    "product_toggle_drag_eHHahV",
+    "product_perfection_gKPBbR"
   ]
 }
