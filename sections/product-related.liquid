@@ -26,8 +26,8 @@
             skip_styles: false,
             quick_add: false,
             section_id: section.id,
-            horizontal_class: true,
-            horizontal_quick_add: true
+            horizontal_class: false,
+            horizontal_quick_add: false
           %}
         </div>
       {% endfor %}
@@ -57,7 +57,7 @@
       }
     });
 
-    
+
     let currency = '$';
     // 为每个产品卡片创建独立的作用域
     $('.card-wrapper').each(function() {
