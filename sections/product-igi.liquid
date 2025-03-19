@@ -132,16 +132,6 @@
       line-height: 22px;
       height: 30px;
     }
-    .product-igi-wrapper .swiper-pagination-progressbar{
-      position: static;
-      margin: 24px auto 0;
-      width: 170px;
-      height: 2px;
-      background: #F5F5F5;
-    }
-    .product-igi-wrapper .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
-      background: #121212;
-    }
   }
 </style>
 
@@ -259,7 +249,6 @@
       {% if section.settings.url != blank %}
         <a href="{{ section.settings.url }}" class="view-more" target="_blank">{{ section.settings.btn_name }}</a>
       {% endif %}
-      <div class="swiper-pagination"></div>
     </div>
   </div>
 </div>
@@ -291,7 +280,6 @@
       container: document.querySelector('.product-igi-wrapper'),
       itemsWithIcons: document.querySelectorAll('.item-with-icons'),
       itemsWithoutIcons: document.querySelectorAll('.item-without-icons'),
-      swiperContainer: document.querySelector('.product-igi-wrapper .info-box-swiper')
     });
 
     // 完全销毁ScrollTrigger
@@ -306,18 +294,6 @@
         const { itemsWithIcons, itemsWithoutIcons } = getElements();
         itemsWithIcons.forEach(el => el.classList.remove('active'));
         itemsWithoutIcons.forEach(el => el.classList.remove('active'));
-      }
-    };
-
-    // 完全销毁Swiper
-    const destroySwiper = () => {
-      if (state.swiper) {
-        // 清理Swiper生成的DOM
-        const pagination = state.swiper.pagination.el;
-        if (pagination) pagination.innerHTML = '';
-        
-        state.swiper.destroy(true, true);
-        state.swiper = null;
       }
     };
 
@@ -364,36 +340,6 @@
       });
     };
 
-    // 移动端逻辑
-    const initMobile = () => {
-      const elements = getElements();
-      if (!elements.swiperContainer) return;
-
-      state.swiper = new Swiper(elements.swiperContainer, {
-        slidesPerView: 1,
-        spaceBetween: 8,
-        loop: false,
-        pagination: {
-          el: '.swiper-pagination',
-          type: 'progressbar',
-        },
-        observer: true,
-        observeParents: true,
-        observeSlideChildren: true,
-
-        on: {
-                slideChange: function () {
-                    // 新增：根据当前幻灯片切换图片
-                    const imgSecond = document.querySelector('.img-second');
-                    if (imgSecond) {
-                        const imgActive = this.activeIndex === 1; // 假设第二张图片在第二个幻灯片
-                        imgSecond.style.transform = imgActive ? 'translateX(0%)' : 'translateX(100%)';
-                    }
-                }
-            }
-      });
-    };
-
     // 视口检测
     const checkViewport = () => {
       const currentIsMobile = window.innerWidth < 750;
@@ -405,11 +351,10 @@
       
       // 完全清理旧实例
       destroyScrollTrigger();
-      destroySwiper();
       
       // 延迟初始化确保DOM更新
       requestAnimationFrame(() => {
-        state.isMobile ? initMobile() : initDesktop();
+        state.isMobile ? destroyScrollTrigger() : initDesktop();
         ScrollTrigger.refresh();
       });
     };
@@ -431,7 +376,6 @@
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('orientationchange', handleResize);
       destroyScrollTrigger();
-      destroySwiper();
     };
 
     // 页面卸载清理
