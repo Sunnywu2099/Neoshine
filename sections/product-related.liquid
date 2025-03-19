@@ -60,8 +60,19 @@
       }
     });
 
+    function formatPrice(price) {
+        // 将价格除以100以恢复小数点
+        const formattedPrice = price / 100;
+      
+        // 使用toLocaleString方法格式化价格
+        return formattedPrice.toLocaleString('en-US', {
+          style: 'currency',
+          currency: 'USD',
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        });
+    }
 
-    let currency = '$';
     // 为每个产品卡片创建独立的作用域
     $('.card-wrapper').each(function() {
       const $card = $(this);
@@ -123,9 +134,9 @@
         $card.find('.card__media img').attr('src', matchedVariant.featured_image.src);
 
         if(matchedVariant.compare_at_price){
-          $card.find('.price-item--regular').text(currency + (matchedVariant.compare_at_price / 100).toFixed(2));
+          $card.find('.price-item--regular').text(formatPrice(matchedVariant.compare_at_price));
         }
-        $card.find('.price-item--sale').text(currency + (matchedVariant.price / 100).toFixed(2));
+        $card.find('.price-item--sale').text(formatPrice(matchedVariant.price));
         
       }
     }
