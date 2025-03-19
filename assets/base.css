@@ -2583,7 +2583,8 @@ input[type='checkbox'] {
   transform: scale(1.07);
 }
 
-.header__icon .icon {
+.header__icon .icon,
+.header__icon svg {
   height: 1.6rem;
   width: 1.6rem;
   fill: none;
