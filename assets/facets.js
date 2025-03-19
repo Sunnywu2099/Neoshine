@@ -295,6 +295,9 @@ class FacetFiltersForm extends HTMLElement {
   }
 
   static initVariantSelectors() {
+    const currencyCode = Shopify.currency;
+    console.log("currencyCode",currencyCode);
+    
     let currency = '$';
     
     $('.card-wrapper').each(function() {
