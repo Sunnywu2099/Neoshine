@@ -35,6 +35,28 @@
   </div>
 </div>
 
+<script>
+  const loop_swiper = new Swiper('#shopify-section-{{section.id}} .swiper-related', {
+      slidesPerView: 2,
+      spaceBetween: 10,
+      loop: false,
+      pagination: {
+        el: '.media-swiper .swiper-pagination',
+        type: 'progressbar',
+      },
+      breakpoints: {
+        750: {
+          slidesPerView: 3,
+          spaceBetween: 10,
+        },
+        1200: {
+          slidesPerView: 4,
+          spaceBetween: 8,
+        }
+      }
+    })
+</script>
+
 {% schema %}
 {
   "name": "Product related",
