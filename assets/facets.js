@@ -342,12 +342,12 @@ class FacetFiltersForm extends HTMLElement {
         if (matchingVariant) {
           if (matchingVariant.compare_at_price) {
             // const formattedComparePrice = `${currency}${(matchingVariant.compare_at_price / 100).toFixed(2)}`;
-            const formattedComparePrice = formatPrice(compare_at_price);
+            const formattedComparePrice = formatPrice(matchingVariant.compare_at_price);
             $currentCard.find('.price-item--regular').text(formattedComparePrice);
           }
           if (matchingVariant.price) {
             // const formattedPrice = `${currency}${(matchingVariant.price / 100).toFixed(2)}`;
-            const formattedPrice = formatPrice(price);
+            const formattedPrice = formatPrice(matchingVariant.price);
             $currentCard.find('.price-item--sale').text(formattedPrice);
           }
 
