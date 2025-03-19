@@ -201,6 +201,9 @@
         <a href="{{ section.settings.url }}" class="view-more" target="_blank">{{ section.settings.btn_name }}</a>
       {% endif %}
     </div>
+    <div class="media-box-m">
+      <img class="img-second" src="{{ section.settings.image_2 | img_url: 'master' }}" alt="section.settings.title" loading="lazy" width="" height=""> 
+    </div>
     <div class="info-box-swiper">
         {% for block in section.blocks %} 
             {% if block.type == 'item1' %}
