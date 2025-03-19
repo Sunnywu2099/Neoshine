@@ -2575,10 +2575,11 @@ input[type='checkbox'] {
 }
 
 .header__icon::after {
-  content: none;
+  content: none;s
 }
 
 .header__icon:hover .icon,
+.header__icon:hover svg,
 .modal__close-button:hover .icon {
   transform: scale(1.07);
 }
