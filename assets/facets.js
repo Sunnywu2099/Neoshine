@@ -323,6 +323,7 @@ class FacetFiltersForm extends HTMLElement {
         );
 
         if (matchingVariant) {
+          console.log(matchingVariant);
           
 
           if (matchingVariant.compare_at_price) {
