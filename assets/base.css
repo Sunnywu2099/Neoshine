@@ -2575,7 +2575,7 @@ input[type='checkbox'] {
 }
 
 .header__icon::after {
-  content: none;s
+  content: none;
 }
 
 .header__icon:hover .icon,
