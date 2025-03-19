@@ -540,6 +540,7 @@
 .footer-block__details-content .list-menu__item--link,
 .copyright__content a {
   color: #f5f5f5;
+  font-weight: 400;
 }
 
 .footer-block__details-content .list-menu__item--active {
