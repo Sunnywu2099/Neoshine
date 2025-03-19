@@ -2578,11 +2578,13 @@ input[type='checkbox'] {
 }
 
 .header__icon:hover .icon,
+.header__icon:hover svg,
 .modal__close-button:hover .icon {
   transform: scale(1.07);
 }
 
-.header__icon .icon {
+.header__icon .icon,
+.header__icon svg {
   height: 1.6rem;
   width: 1.6rem;
   fill: none;
