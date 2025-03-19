@@ -42,11 +42,11 @@
               {%- if customer and customer.has_avatar? -%}
                 {{ customer | avatar }}
               {%- else -%}
-                <span class="svg-wrapper">{{ 'icon-account.svg' | inline_asset_content }}</span>
+                <span class="svg-wrapper">{{ 'icon-account2.svg' | inline_asset_content }}</span>
               {%- endif -%}
             </account-icon>
           {%- else -%}
-            <span class="svg-wrapper">{{ 'icon-account.svg' | inline_asset_content }}</span>
+            <span class="svg-wrapper">{{ 'icon-account2.svg' | inline_asset_content }}</span>
           {%- endif -%}
           <span class="visually-hidden">
             {%- liquid
@@ -69,16 +69,14 @@
 
       <a href="#swym-wishlist" class="swym-wishlist header__icon">
         <span style="display: none;">wishlist</span>
-        <svg class="icon" width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <style>svg{
-            width:100%;height:100%;display: block;}</style>
-          <path d="M16.0737 2.08829C15.665 1.67949 15.1799 1.35521 14.646 1.13395C14.112 0.912704 13.5397 0.798828 12.9617 0.798828C12.3837 0.798828 11.8113 0.912704 11.2773 1.13395C10.7434 1.35521 10.2583 1.67949 9.84966 2.08829L9.00166 2.93629L8.15366 2.08829C7.3283 1.26294 6.20888 0.799255 5.04166 0.799255C3.87443 0.799255 2.75501 1.26294 1.92966 2.08829C1.1043 2.91364 0.640625 4.03306 0.640625 5.20029C0.640625 6.36751 1.1043 7.48694 1.92966 8.31229L2.77766 9.16029L9.00166 15.3843L15.2257 9.16029L16.0737 8.31229C16.4825 7.90368 16.8067 7.41854 17.028 6.88458C17.2493 6.35061 17.3631 5.77828 17.3631 5.20029C17.3631 4.6223 17.2493 4.04997 17.028 3.516C16.8067 2.98204 16.4825 2.4969 16.0737 2.08829Z" stroke="#121212" style="stroke:#121212;stroke:color(display-p3 0.0706 0.0706 0.0706);stroke-opacity:1;" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg class="icon" width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.0737 2.08829C16.665 1.67949 16.1799 1.35521 15.646 1.13395C15.112 0.912704 14.5397 0.798828 13.9617 0.798828C13.3837 0.798828 12.8113 0.912704 12.2773 1.13395C11.7434 1.35521 11.2583 1.67949 10.8497 2.08829L10.0017 2.93629L9.15366 2.08829C8.3283 1.26294 7.20888 0.799255 6.04166 0.799255C4.87443 0.799255 3.75501 1.26294 2.92966 2.08829C2.1043 2.91364 1.64062 4.03306 1.64062 5.20029C1.64062 6.36751 2.1043 7.48694 2.92966 8.31229L3.77766 9.16029L10.0017 15.3843L16.2257 9.16029L17.0737 8.31229C17.4825 7.90368 17.8067 7.41854 18.028 6.88458C18.2493 6.35061 18.3631 5.77828 18.3631 5.20029C18.3631 4.6223 18.2493 4.04997 18.028 3.516C17.8067 2.98204 17.4825 2.4969 17.0737 2.08829Z" stroke="#121212" style="stroke:#121212;stroke:color(display-p3 0.0706 0.0706 0.0706);stroke-opacity:1;" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </a> 
       
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
           {% if cart == empty %}
-            <span class="svg-wrapper">{{'icon-cart-empty.svg' | inline_asset_content }}</span>
+            <span class="svg-wrapper">{{'icon-cart-empty2.svg' | inline_asset_content }}</span>
           {% else %}
             <span class="svg-wrapper">{{'icon-cart.svg' | inline_asset_content }}</span>
           {% endif %}
