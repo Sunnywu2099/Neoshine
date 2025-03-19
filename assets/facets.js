@@ -315,6 +315,19 @@ class FacetFiltersForm extends HTMLElement {
         updateVariantInfo($card);
       });
 
+      function formatPrice(price) {
+        // 将价格除以100以恢复小数点
+        const formattedPrice = price / 100;
+      
+        // 使用toLocaleString方法格式化价格
+        return formattedPrice.toLocaleString('en-US', {
+          style: 'currency',
+          currency: 'USD',
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        });
+      }
+
       function updateVariantInfo($currentCard) {
         const selectedMetal = $currentCard.find('.option-button[data-option="Metal"].active').data('value');
         const selectedClarity = $currentCard.find('.option-button[data-option="Clarity"].active').data('value');
@@ -328,11 +341,13 @@ class FacetFiltersForm extends HTMLElement {
 
         if (matchingVariant) {
           if (matchingVariant.compare_at_price) {
-            const formattedComparePrice = `${currency}${(matchingVariant.compare_at_price / 100).toFixed(2)}`;
+            // const formattedComparePrice = `${currency}${(matchingVariant.compare_at_price / 100).toFixed(2)}`;
+            const formattedComparePrice = formatPrice(compare_at_price);
             $currentCard.find('.price-item--regular').text(formattedComparePrice);
           }
           if (matchingVariant.price) {
-            const formattedPrice = `${currency}${(matchingVariant.price / 100).toFixed(2)}`;
+            // const formattedPrice = `${currency}${(matchingVariant.price / 100).toFixed(2)}`;
+            const formattedPrice = formatPrice(price);
             $currentCard.find('.price-item--sale').text(formattedPrice);
           }
 
