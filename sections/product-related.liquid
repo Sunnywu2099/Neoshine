@@ -18,7 +18,17 @@
       {% assign col = section.settings.collection.products %}
       {% for product in col %}
         <div class="swiper-slide item">
-          
+          {% render 'card-product',
+            card_product: product,
+            media_aspect_ratio: 'square',
+            show_secondary_image: false,
+            lazy_load: true,
+            skip_styles: false,
+            quick_add: false,
+            section_id: section.id,
+            horizontal_class: true,
+            horizontal_quick_add: true
+          %}
         </div>
       {% endfor %}
     </div>
