@@ -313,7 +313,7 @@
       {%- endfor -%}
 
       <a href="/pages/swym-share-wishlist" class="header__icon link"><span style="display: none;">wishlist</span>
-      <svg class="icon" width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="icon" width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M17.0737 2.08829C16.665 1.67949 16.1799 1.35521 15.646 1.13395C15.112 0.912704 14.5397 0.798828 13.9617 0.798828C13.3837 0.798828 12.8113 0.912704 12.2773 1.13395C11.7434 1.35521 11.2583 1.67949 10.8497 2.08829L10.0017 2.93629L9.15366 2.08829C8.3283 1.26294 7.20888 0.799255 6.04166 0.799255C4.87443 0.799255 3.75501 1.26294 2.92966 2.08829C2.1043 2.91364 1.64062 4.03306 1.64062 5.20029C1.64062 6.36751 2.1043 7.48694 2.92966 8.31229L3.77766 9.16029L10.0017 15.3843L16.2257 9.16029L17.0737 8.31229C17.4825 7.90368 17.8067 7.41854 18.028 6.88458C18.2493 6.35061 18.3631 5.77828 18.3631 5.20029C18.3631 4.6223 18.2493 4.04997 18.028 3.516C17.8067 2.98204 17.4825 2.4969 17.0737 2.08829Z" stroke="#121212" style="stroke:#121212;stroke:color(display-p3 0.0706 0.0706 0.0706);stroke-opacity:1;" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </a>
@@ -321,7 +321,7 @@
       
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
           {% if cart == empty %}
-            <span class="svg-wrapper">{{'icon-cart-empty.svg' | inline_asset_content }}</span>
+            <span class="svg-wrapper">{{'icon-cart-empty2.svg' | inline_asset_content }}</span>
           {% else %}
             <span class="svg-wrapper">{{'icon-cart.svg' | inline_asset_content }}</span>
           {% endif %}
