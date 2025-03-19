@@ -1086,6 +1086,7 @@ input.mobile-facets__checkbox {
 
 .mobile-facets__sort .select {
   width: auto;
+  align-items: center;
 }
 
 .mobile-facets__sort .select .icon-caret {
