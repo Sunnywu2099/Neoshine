@@ -99,6 +99,9 @@
     .info-box-swiper{
       display: none;
     }
+    .media-box-m{
+      display: none;
+    }
   }
   @media screen and (max-width: 749px) {
     .trigger-box{
@@ -106,11 +109,17 @@
       gap: 24px;
       overflow: hidden;
     }
+    .product-igi-wrapper .media-box{
+      display: none;
+    }
     .info-box{
       display: none;
     }
     .info-box-swiper{
       width: 100%;
+    }
+    .info-box-swiper .item{
+      padding: 30px;
     }
     .info-box-swiper .item .title-main{
       color: #79A88B;
@@ -127,20 +136,10 @@
       font-size: 12px;
     }
     .product-igi-wrapper .view-more{
-      margin: 24px auto 0;
+      margin: 0 auto 0;
       font-size: 14px;
       line-height: 22px;
       height: 30px;
-    }
-    .product-igi-wrapper .swiper-pagination-progressbar{
-      position: static;
-      margin: 24px auto 0;
-      width: 170px;
-      height: 2px;
-      background: #F5F5F5;
-    }
-    .product-igi-wrapper .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
-      background: #121212;
     }
   }
 </style>
@@ -205,11 +204,13 @@
         <a href="{{ section.settings.url }}" class="view-more" target="_blank">{{ section.settings.btn_name }}</a>
       {% endif %}
     </div>
-    <div class="info-box-swiper swiper">
-      <div class="swiper-wrapper">
+    <div class="info-box-swiper">
         {% for block in section.blocks %} 
             {% if block.type == 'item1' %}
-              <div class="item item-with-icons swiper-slide">
+              <div class="media-box-m">
+                <img class="img-first" src="{{ section.settings.image_1 | img_url: 'master' }}" alt="section.settings.title" loading="lazy" width="" height=""> 
+              </div>
+              <div class="item item-with-icons">
                 <h3 class="title-main">{{ block.settings.title_main }}</h3>
                 <div class="flex">
                   <div class="icon-box">
@@ -249,17 +250,18 @@
                 </div>
               </div>
             {% else %}
-              <div class="item item-without-icons swiper-slide">
+              <div class="media-box-m">
+                <img class="img-second" src="{{ section.settings.image_2 | img_url: 'master' }}" alt="section.settings.title" loading="lazy" width="" height=""> 
+              </div>
+              <div class="item item-without-icons">
                 <h3 class="title-main">{{ block.settings.title }}</h3>
                 <p class="icon-content">{{ block.settings.content }}</p>
               </div>
             {% endif %}
         {% endfor %}
-      </div>
       {% if section.settings.url != blank %}
         <a href="{{ section.settings.url }}" class="view-more" target="_blank">{{ section.settings.btn_name }}</a>
       {% endif %}
-      <div class="swiper-pagination"></div>
     </div>
   </div>
 </div>
@@ -291,7 +293,6 @@
       container: document.querySelector('.product-igi-wrapper'),
       itemsWithIcons: document.querySelectorAll('.item-with-icons'),
       itemsWithoutIcons: document.querySelectorAll('.item-without-icons'),
-      swiperContainer: document.querySelector('.product-igi-wrapper .info-box-swiper')
     });
 
     // 完全销毁ScrollTrigger
@@ -309,24 +310,12 @@
       }
     };
 
-    // 完全销毁Swiper
-    const destroySwiper = () => {
-      if (state.swiper) {
-        // 清理Swiper生成的DOM
-        const pagination = state.swiper.pagination.el;
-        if (pagination) pagination.innerHTML = '';
-        
-        state.swiper.destroy(true, true);
-        state.swiper = null;
-      }
-    };
-
     // 桌面端逻辑
     const initDesktop = () => {
       const elements = getElements();
       if (!elements.container) return;
 
-      const endPoint = window.innerHeight * 0.8;
+      const endPoint = window.innerHeight * 0.4;
       // 确保容器的高度固定
       // const containerHeight = elements.container.offsetHeight;
       // elements.container.style.minHeight = `${containerHeight}px`;
@@ -364,36 +353,6 @@
       });
     };
 
-    // 移动端逻辑
-    const initMobile = () => {
-      const elements = getElements();
-      if (!elements.swiperContainer) return;
-
-      state.swiper = new Swiper(elements.swiperContainer, {
-        slidesPerView: 1,
-        spaceBetween: 8,
-        loop: false,
-        pagination: {
-          el: '.swiper-pagination',
-          type: 'progressbar',
-        },
-        observer: true,
-        observeParents: true,
-        observeSlideChildren: true,
-
-        on: {
-                slideChange: function () {
-                    // 新增：根据当前幻灯片切换图片
-                    const imgSecond = document.querySelector('.img-second');
-                    if (imgSecond) {
-                        const imgActive = this.activeIndex === 1; // 假设第二张图片在第二个幻灯片
-                        imgSecond.style.transform = imgActive ? 'translateX(0%)' : 'translateX(100%)';
-                    }
-                }
-            }
-      });
-    };
-
     // 视口检测
     const checkViewport = () => {
       const currentIsMobile = window.innerWidth < 750;
@@ -405,11 +364,10 @@
       
       // 完全清理旧实例
       destroyScrollTrigger();
-      destroySwiper();
       
       // 延迟初始化确保DOM更新
       requestAnimationFrame(() => {
-        state.isMobile ? initMobile() : initDesktop();
+        state.isMobile ? destroyScrollTrigger() : initDesktop();
         ScrollTrigger.refresh();
       });
     };
@@ -431,7 +389,6 @@
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('orientationchange', handleResize);
       destroyScrollTrigger();
-      destroySwiper();
     };
 
     // 页面卸载清理

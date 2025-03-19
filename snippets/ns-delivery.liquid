@@ -1,15 +1,23 @@
 <style>
   #ns-delivery {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 15px;
     padding: 0 30px;
   }
   #ns-delivery svg{
     display: block;
+    min-width: 36px;
+  }
+  #ns-delivery .item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
   #ns-delivery .delivery-text {
     font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
     color: #505050
   }
   @media screen and (max-width: 1200px){
@@ -19,6 +27,7 @@
     }
     #ns-delivery .delivery-text{
       font-size: 12px;
+      line-height: 18px;
     }
     #ns-delivery svg{
       width: 29px;
@@ -31,10 +40,19 @@
   assign bs = block.settings
   assign icon_svg = bs.icon_svg
   assign delivery_date = bs.delivery_date
+
+  assign icon_svg2 = bs.icon_svg2
+  assign delivery_2 = bs.delivery_2
 %}
 
 
 <div id="ns-delivery" data-section="{{ section.id }}" {{ block.shopify_attributes }}>
-  <div class="delivery-icon">{{ icon_svg }}</div>
-  <div class="delivery-text">{{ delivery_date }}</div>
+  <div class="item">
+    <span class="delivery-icon">{{ icon_svg }}</span>
+    <span class="delivery-text">{{ delivery_date }}</span>
+  </div>
+  <div class="item">
+    <span class="delivery-icon">{{ icon_svg2 }}</span>
+    <span class="delivery-text">{{ delivery_2 }}</span>
+  </div>
 </div>

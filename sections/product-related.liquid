@@ -1,0 +1,206 @@
+<style>
+  #shopify-section-{{section.id}}.related{
+    padding: 100px 0;
+  }
+  .card__heading a:after{
+    display: none;
+  }
+  .product-card-wrapper .option-button{
+    height: 18px;
+  }
+  @media screen and (max-width: 1200px) {
+    #shopify-section-{{section.id}}.related{
+      padding: 60px 0;
+    }
+  }
+  @media screen and (min-width: 750px) {
+    .product-related .swiper-pagination{
+      display: none;
+    }
+  }
+  @media screen and (max-width: 749px) {
+    .product-related .swiper-pagination{
+      position: static;
+      height: 2px;
+      width: calc(100% - 52px);
+      margin: 40px auto 0;
+      background: #e9e9e9;
+    }
+    .product-related .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+      background: #121212;
+    }
+    .product-related .swiper-button-prev,
+    .product-related .swiper-button-next{
+      display: none;
+    }
+  }
+</style>
+
+
+<div class="product-related page-width">
+  <h2 class="section-title">{{section.settings.title}}</h2>
+  <div class="swiper-related swiper">
+    <div class="swiper-wrapper">
+      {% assign col = section.settings.collection.products %}
+      {% for product in col %}
+        <div class="swiper-slide item">
+          {% render 'card-product-2',
+            card_product: product,
+            media_aspect_ratio: 'square',
+            show_secondary_image: false,
+            lazy_load: true,
+            skip_styles: false,
+            quick_add: false,
+            section_id: section.id,
+            horizontal_class: false,
+            horizontal_quick_add: false
+          %}
+        </div>
+      {% endfor %}
+    </div>
+    <div class="swiper-button-prev">
+      {% render 'banner-prev-2' %}
+    </div>
+    <div class="swiper-button-next">
+      {% render 'banner-next-2' %}
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function(){
+    const loop_swiper = new Swiper('#shopify-section-{{section.id}} .swiper-related', {
+      slidesPerView: 2,
+      spaceBetween: 10,
+      loop: false,
+      navigation: {
+        nextEl: '.swiper-related .swiper-button-next',
+        prevEl: '.swiper-related .swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-related .swiper-pagination',
+        type: 'progressbar',
+      },
+      breakpoints: {
+        750: {
+          slidesPerView: 3,
+          spaceBetween: 10,
+        },
+        1200: {
+          slidesPerView: 4,
+          spaceBetween: 8,
+        }
+      }
+    });
+
+    function formatPrice(price) {
+        // 将价格除以100以恢复小数点
+        const formattedPrice = price / 100;
+      
+        // 使用toLocaleString方法格式化价格
+        return formattedPrice.toLocaleString('en-US', {
+          style: 'currency',
+          currency: 'USD',
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        });
+    }
+
+    // 为每个产品卡片创建独立的作用域
+    $('.card-wrapper').each(function() {
+      const $card = $(this);
+      // 从卡片元素获取变体数据
+      const variantData = $card.data('variants');
+      
+      // 为每个卡片创建独立的状态对象
+      const state = {
+        currentOptions: {
+          Metal: '',
+          Clarity: ''
+        }
+      };
+
+      // 初始化选项按钮事件（使用事件委托）
+      $card.on('click', '.option-button[data-option="Metal"]', function() {
+        const $btn = $(this);
+        state.currentOptions.Metal = $btn.data('value');
+        $btn.addClass('active').siblings().removeClass('active');
+        updateCardInfo($card, state, variantData);
+      });
+
+      $card.on('click', '.option-button[data-option="Clarity"]', function() {
+        const $btn = $(this);
+        state.currentOptions.Clarity = $btn.data('value');
+        $btn.addClass('active').siblings().removeClass('active');
+        updateCardInfo($card, state, variantData);
+      });
+
+      // 初始化默认选项
+      const defaultMetal = $card.find('.option-button[data-option="Metal"]:first').data('value');
+      const defaultClarity = $card.find('.option-button[data-option="Clarity"]:first').data('value');
+      state.currentOptions.Metal = defaultMetal;
+      state.currentOptions.Clarity = defaultClarity;
+      updateCardInfo($card, state, variantData);
+    });
+
+    // 独立更新每个卡片的信息
+    function updateCardInfo(cardElement, state, variants) {
+      const selectedOptions = [
+        state.currentOptions.Metal,
+        state.currentOptions.Clarity
+      ];
+
+      // 查找匹配的变体（改进版）
+      const matchedVariant = variants.find(v => {
+        const optionValues = new Set(v.options);
+        return (
+          optionValues.has(selectedOptions[0]) && 
+          optionValues.has(selectedOptions[1])
+        );
+      });
+
+      if (matchedVariant) {
+        console.log(matchedVariant);
+        
+        // 更新当前卡片内容
+        const $card = $(cardElement);
+        $card.find('.card__media img').attr('src', matchedVariant.featured_image.src);
+
+        if(matchedVariant.compare_at_price){
+          $card.find('.price-item--regular').text(formatPrice(matchedVariant.compare_at_price));
+        }
+        $card.find('.price-item--sale').text(formatPrice(matchedVariant.price));
+        
+      }
+    }
+  })
+  
+</script>
+
+{% schema %}
+{
+  "name": "Product related",
+  "tag": "section",
+  "class": "related",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "title",
+      "default": "Related Products"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "collection"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product related"
+    }
+  ]
+}
+{% endschema %}
