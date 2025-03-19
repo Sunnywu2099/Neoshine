@@ -195,8 +195,7 @@
         <a href="{{ section.settings.url }}" class="view-more" target="_blank">{{ section.settings.btn_name }}</a>
       {% endif %}
     </div>
-    <div class="info-box-swiper swiper">
-      <div class="swiper-wrapper">
+    <div class="info-box-swiper">
         {% for block in section.blocks %} 
             {% if block.type == 'item1' %}
               <div class="item item-with-icons swiper-slide">
@@ -245,7 +244,6 @@
               </div>
             {% endif %}
         {% endfor %}
-      </div>
       {% if section.settings.url != blank %}
         <a href="{{ section.settings.url }}" class="view-more" target="_blank">{{ section.settings.btn_name }}</a>
       {% endif %}
