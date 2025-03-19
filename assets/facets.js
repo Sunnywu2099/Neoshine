@@ -296,7 +296,7 @@ class FacetFiltersForm extends HTMLElement {
 
   static initVariantSelectors() {
     let currency = '$';
-
+    
     $('.card-wrapper').each(function() {
       const $card = $(this);
       const variantData = JSON.parse($card.find('[data-product-variant]').text());
