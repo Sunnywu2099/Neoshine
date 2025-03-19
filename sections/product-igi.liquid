@@ -207,7 +207,10 @@
     <div class="info-box-swiper">
         {% for block in section.blocks %} 
             {% if block.type == 'item1' %}
-              <div class="item item-with-icons swiper-slide">
+              <div class="media-box-m">
+                <img class="img-first" src="{{ section.settings.image_1 | img_url: 'master' }}" alt="section.settings.title" loading="lazy" width="" height=""> 
+              </div>
+              <div class="item item-with-icons">
                 <h3 class="title-main">{{ block.settings.title_main }}</h3>
                 <div class="flex">
                   <div class="icon-box">
@@ -247,7 +250,10 @@
                 </div>
               </div>
             {% else %}
-              <div class="item item-without-icons swiper-slide">
+              <div class="media-box-m">
+                <img class="img-second" src="{{ section.settings.image_2 | img_url: 'master' }}" alt="section.settings.title" loading="lazy" width="" height=""> 
+              </div>
+              <div class="item item-without-icons">
                 <h3 class="title-main">{{ block.settings.title }}</h3>
                 <p class="icon-content">{{ block.settings.content }}</p>
               </div>
