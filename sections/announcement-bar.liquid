@@ -57,7 +57,7 @@
           <p class="announcement-bar__message h5">
             <span>{{ section.blocks.first.settings.text | escape }}</span>
             <span>{% render 'countdown', end: section.settings.end %}</span>
-            <span class="more-btn">LEARN MORE</span>
+            <span class="more-btn" style="text-decoration: underline;">LEARN MORE</span>
             {% comment %} {%- if section.blocks.first.settings.link != blank -%}
               {{- 'icon-arrow.svg' | inline_asset_content -}}
             {%- endif -%} {% endcomment %}

@@ -9,6 +9,12 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'RobotoSlab';
+  src: url('https://cdn.shopify.com/s/files/1/0897/6921/4241/files/RobotoSlab-Medium.ttf?v=1742349293')  format('truetype'); /* Safari, Android, iOS */
+  font-display: swap;
+}
+
 
 :root {
   --alpha-button-background: 1;
@@ -2573,11 +2579,13 @@ input[type='checkbox'] {
 }
 
 .header__icon:hover .icon,
+.header__icon:hover svg,
 .modal__close-button:hover .icon {
   transform: scale(1.07);
 }
 
-.header__icon .icon {
+.header__icon .icon,
+.header__icon svg {
   height: 1.6rem;
   width: 1.6rem;
   fill: none;
@@ -3670,9 +3678,6 @@ details-disclosure > details {
 }
 /*swym Css*/
 a.swym-wishlist {
-    width: 20px;
-    height: 20px;
-    scale: 0.85;
     position: relative;
 }
 
