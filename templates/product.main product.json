@@ -50,18 +50,18 @@
             "delivery_2": "Free 30 Day Returns, Free Lifetime Warranty."
           }
         },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": false
-          }
-        },
         "ns_free_Wp7mD6": {
           "type": "NS-free",
           "settings": {
             "product": "bezel-diamond-earrings",
             "title": "Free Gift"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
           }
         },
         "ns_expert_3UTpzK": {
@@ -117,8 +117,8 @@
         "ns_instock_zVbD4U",
         "variant_picker",
         "ns_delivery_HH8Rjb",
-        "buy_buttons",
         "ns_free_Wp7mD6",
+        "buy_buttons",
         "ns_expert_3UTpzK",
         "ns_icons_Lhkxj4",
         "wishlist_plus_wishlist_pdp_button_CGRLYB"
