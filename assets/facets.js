@@ -327,9 +327,6 @@ class FacetFiltersForm extends HTMLElement {
         );
 
         if (matchingVariant) {
-          console.log(matchingVariant);
-          
-
           if (matchingVariant.compare_at_price) {
             const formattedComparePrice = `${currency}${(matchingVariant.compare_at_price / 100).toFixed(2)}`;
             $currentCard.find('.price-item--regular').text(formattedComparePrice);
