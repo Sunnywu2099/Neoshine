@@ -411,6 +411,13 @@
         "img_pc": "shopify://shop_images/copy.png",
         "img_m": "shopify://shop_images/copy.png"
       }
+    },
+    "product_related_RGMnXE": {
+      "type": "product-related",
+      "settings": {
+        "title": "Related Products",
+        "collection": "wedding-ring-your-dream-ring-awaits-to-mark-a-lifetime-of-love"
+      }
     }
   },
   "order": [
@@ -424,6 +431,7 @@
     "product_toggle_Lji3Kf",
     "product_toggle_swiper_9JF8G6",
     "product_toggle_drag_eHHahV",
-    "product_perfection_gKPBbR"
+    "product_perfection_gKPBbR",
+    "product_related_RGMnXE"
   ]
 }
