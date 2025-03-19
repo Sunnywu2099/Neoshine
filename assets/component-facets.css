@@ -82,6 +82,7 @@
 
 .facet-filters__field .select {
   width: auto;
+  align-items: center;
 }
 
 .facet-filters__field .select:after,
