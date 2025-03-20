@@ -109,7 +109,7 @@
                 loading: 'lazy'
             }}
           </div>
-    <div class="service-name" {% if forloop.first %}data-event="chat"{% endif %}>{{ block.settings.btn_name }}</div>
+    <div class="ns-button" {% if forloop.first %}data-event="chat"{% endif %}>{{ block.settings.btn_name }}</div>
       </div>
     {% endfor %}
   </div>
@@ -117,10 +117,10 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    $('.service-name[data-event="chat"]').on('click', function () {
+    $('.ns-button[data-event="chat"]').on('click', function () {
       tidioChatApi.open()
     })
-    $('.service-name[data-event="chat"]').on('touchstend', function () {
+    $('.ns-button[data-event="chat"]').on('touchstend', function () {
       tidioChatApi.open()
     })
   })
