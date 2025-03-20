@@ -87,6 +87,7 @@
     flex-direction: column;
     gap: 15px;
     font-weight: 400;
+    line-height: 1.2;
   }
   #shopify-section-{{section.id}} .guarantee .button-prev{
     position: absolute;
@@ -283,6 +284,13 @@
         el: '.guarantee .swiper-pagination',
         type : 'progressbar',
       },
+    })
+
+    $('.guarantee .button-prev').click(function () {
+      guarantee_swiper.slidePrev();
+    })
+    $('.guarantee .button-next').click(function () {
+      guarantee_swiper.slideNext();
     })
   })
 </script>
