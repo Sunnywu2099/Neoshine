@@ -48,7 +48,7 @@ a{
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     cursor: pointer;
-    margin: 10px auto 30px;
+    margin: 40px auto 30px;
     border-radius: 3px;
     border: 1px solid #121212;
     transition: all .3s ease-in-out;
