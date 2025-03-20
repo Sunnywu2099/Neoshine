@@ -75,7 +75,11 @@
 
       animate(timestamp) {
         if (!this.startTime) this.startTime = timestamp;
-        if (this.isPaused) return;
+        if (this.isPaused) {
+          // 如果暂停，继续请求下一帧但不更新位置
+          this.animationFrame = requestAnimationFrame(this.animate.bind(this));
+          return;
+        }
         
         const elapsed = timestamp - this.startTime;
         this.position = (elapsed * config.baseSpeed) % this.track.scrollWidth;
@@ -83,11 +87,15 @@
         // 使用3D变换触发GPU加速
         this.track.style.transform = `translate3d(-${this.position}px, 0, 0)`;
         
-        requestAnimationFrame(this.animate.bind(this));
+        // 确保继续请求动画帧
+        this.animationFrame = requestAnimationFrame(this.animate.bind(this));
       }
 
       startAnimation() {
-        requestAnimationFrame(this.animate.bind(this));
+        if (!this.animationFrame) {
+          this.startTime = null; // 重置开始时间
+          this.animationFrame = requestAnimationFrame(this.animate.bind(this));
+        }
       }
 
       addEventListeners() {
@@ -104,8 +112,19 @@
         window.addEventListener('resize', () => {
           clearTimeout(resizeTimer);
           resizeTimer = setTimeout(() => {
-            this.track.innerHTML = ''; // 清空现有内容
-            this.items.forEach(item => this.track.appendChild(item));
+            // 保存原始项目
+            const originalItems = this.items.map(item => item.cloneNode(true));
+            
+            // 清空现有内容
+            this.track.innerHTML = '';
+            
+            // 重新添加原始项目
+            originalItems.forEach(item => this.track.appendChild(item));
+            
+            // 重新初始化
+            this.items = Array.from(this.track.children);
+            this.position = 0;
+            this.startTime = null;
             this.initClones();
           }, 200);
         });
@@ -114,7 +133,10 @@
 
     // 初始化
     document.addEventListener('DOMContentLoaded', () => {
-      new Marquee(document.getElementById('marqueeTrack'));
+      const marqueeContainer = document.querySelector('.marquee-container');
+      if (marqueeContainer) {
+        new Marquee(marqueeContainer);
+      }
     });
   })();
 </script>
