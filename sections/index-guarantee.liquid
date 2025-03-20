@@ -135,7 +135,7 @@
       opacity: 0;
       transition: all .3s ease-in-out;
     }
-    #shopify-section-{{section.id}} .guarantee .swiper-slide-active .banner-wrapper{
+    #shopify-section-{{section.id}} .guarantee .item.active .banner-wrapper{
       opacity: 1;
       transition: all .3s ease-in-out;
     }
@@ -204,7 +204,7 @@
   <div class="swiper">
     <div class="swiper-wrapper">
       {% for block in section.blocks %} 
-        <div class="swiper-slide item">
+        <div class="swiper-slide item {% if forloop.first %}active{% endif %}">
           <div class="img-wrapper">
             <a style="position: relative;display:block;" href="{{ block.settings.url }}">
               {% render 'responsive-image',
