@@ -260,6 +260,11 @@
         }
       }
     })
+
+    if($(window).width() < 749){
+      $('#shopify-section-{{section.id}}.product-toggle-loop .title-box').addClass('close');
+      $('#shopify-section-{{section.id}}.product-toggle-loop .content-box').hide();
+    }
   })
 </script>
 
