@@ -339,7 +339,7 @@ class FacetFiltersForm extends HTMLElement {
           variant.options.includes(selectedClarity)
         );
 
-        console.log(matchingVariant);
+        console.log(variantData);
         
 
         if (matchingVariant) {
