@@ -82,10 +82,14 @@
     position: absolute;
     bottom: 80px;
     z-index: 3;
+    cursor: pointer;
   }
   #shopify-section-{{section.id}} .guarantee .button-prev{
     position: absolute;
     left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
   }
   #shopify-section-{{section.id}} .guarantee .button-next{
     position: absolute;
@@ -250,7 +254,7 @@
       <span>{% render 'gur-prev' %}</span>
     </div>
     <div class="button-next custom-b">
-      <span>Shop with<br>Confidence</span>
+      <span style="color: #fff;">Shop with<br>Confidence</span>
       <span>{% render 'gur-next' %}</span>
     </div>
   </div>
