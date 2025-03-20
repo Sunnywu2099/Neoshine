@@ -2,12 +2,24 @@
   #shopify-section-{{section.id}}.home-logo .logo-wrapper{
     position: relative;
   }
+  .logo-container {
+    overflow: hidden;
+  }
 
+  .logo-item {
+    width: auto;  /* 或设置固定宽度 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-track {
+    width: 100%;
+  }
   @media screen and (max-width: 749px) {
 
   }
 </style>
-
 <div class="logo-container section-pt">
     <div class="logo-track swiper">
       <div class="swiper-wrapper">
@@ -23,16 +35,19 @@
 <script>
   $(document).ready(function() {
     const logo_swiper = new Swiper('.logo-container .logo-track', {
+      slidesPerView: 'auto',  // 自动计算每屏显示的slide数量
       spaceBetween: 50,
       loop: true,
-      freeMode: true,
+      speed: 3000,  // 设置过渡速度更慢，使效果更平滑
       autoplay: {
-        delay: 1000,
+        delay: 0,  // 设置为0，实现无缝滚动
         disableOnInteraction: false
-      }
+      },
+      allowTouchMove: false  // 禁用触摸滑动
     })
   });
 </script>
+
 
 {% schema %}
 {
