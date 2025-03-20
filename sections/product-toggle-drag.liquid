@@ -306,6 +306,11 @@
       $(this).toggleClass('close');
       $(this).next('.content-box').slideToggle();
     })
+
+    if($(window).width() < 749){
+      $('#shopify-section-{{section.id}}.product-toggle-drag .title-box').addClass('close');
+      $('#shopify-section-{{section.id}}.product-toggle-drag .content-box').hide();
+    }
   
     $('.product-toggle-drag .chat-btn').on('click', function () {
       tidioChatApi.open()

@@ -33,6 +33,30 @@ a{
 .social-popup-open{
   overflow: hidden;
 }
+.ns-button{
+  color: #121212;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    width: 280px;
+    height: 42px;
+    line-height: 42px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    cursor: pointer;
+    margin: 40px auto 30px;
+    border-radius: 3px;
+    border: 1px solid #121212;
+    transition: all .3s ease-in-out;
+}
+.ns-button:hover{
+  background-color: #121212;
+  color: #fff;
+}
 @media (max-width: 1200px){
   .section-title{
     font-size: 24px;
@@ -56,6 +80,15 @@ a{
   .page-width{
     /* padding-left: 5px;
     padding-right: 5px; */
+  }
+  .ns-button{
+      font-size: 14px;
+      text-transform: uppercase;
+      width: 130px;
+      height: 28px;
+      line-height: 28px;
+      cursor: pointer;
+      margin: 20px auto 0px;
   }
   img.pc {
     display: none !important;

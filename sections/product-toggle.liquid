@@ -126,6 +126,11 @@
       $(this).toggleClass('close');
       $(this).next('.content-box').slideToggle();
     })
+
+    if($(window).width() < 749){
+      $('#shopify-section-{{section.id}}.product-toggle .title-box').addClass('close');
+      $('#shopify-section-{{section.id}}.product-toggle .content-box').hide();
+    }
   })
 </script>
 
