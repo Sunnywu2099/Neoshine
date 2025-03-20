@@ -39,84 +39,84 @@
 
 <script>
   (function() {
-  // 配置参数
-  const config = {
-    baseSpeed: 0.5,    // 基准滚动速度(px/ms)
-    cloneThreshold: 2, // 克隆次数阈值
-    pauseOnHover: true
-  };
+    // 配置参数
+    const config = {
+      baseSpeed: 0.5,    // 基准滚动速度(px/ms)
+      cloneThreshold: 2, // 克隆次数阈值
+      pauseOnHover: true
+    };
 
-  class Marquee {
-    constructor(container) {
-      this.track = container.querySelector('.marquee-track');
-      this.items = Array.from(this.track.children);
-      this.animationFrame = null;
-      this.isPaused = false;
-      this.position = 0;
-      
-      this.initClones();
-      this.startAnimation();
-      this.addEventListeners();
-    }
+    class Marquee {
+      constructor(container) {
+        this.track = container.querySelector('.marquee-track');
+        this.items = Array.from(this.track.children);
+        this.animationFrame = null;
+        this.isPaused = false;
+        this.position = 0;
+        
+        this.initClones();
+        this.startAnimation();
+        this.addEventListeners();
+      }
 
-    initClones() {
-      // 动态计算所需克隆次数
-      const containerWidth = this.track.parentElement.offsetWidth;
-      const contentWidth = this.items.reduce((sum, item) => sum + item.offsetWidth, 0);
-      const cloneTimes = Math.ceil(containerWidth * config.cloneThreshold / contentWidth);
-      
-      // 添加克隆元素
-      for (let i = 0; i < cloneTimes; i++) {
-        this.items.forEach(item => {
-          this.track.appendChild(item.cloneNode(true));
+      initClones() {
+        // 动态计算所需克隆次数
+        const containerWidth = this.track.parentElement.offsetWidth;
+        const contentWidth = this.items.reduce((sum, item) => sum + item.offsetWidth, 0);
+        const cloneTimes = Math.ceil(containerWidth * config.cloneThreshold / contentWidth);
+        
+        // 添加克隆元素
+        for (let i = 0; i < cloneTimes; i++) {
+          this.items.forEach(item => {
+            this.track.appendChild(item.cloneNode(true));
+          });
+        }
+      }
+
+      animate(timestamp) {
+        if (!this.startTime) this.startTime = timestamp;
+        if (this.isPaused) return;
+        
+        const elapsed = timestamp - this.startTime;
+        this.position = (elapsed * config.baseSpeed) % this.track.scrollWidth;
+        
+        // 使用3D变换触发GPU加速
+        this.track.style.transform = `translate3d(-${this.position}px, 0, 0)`;
+        
+        requestAnimationFrame(this.animate.bind(this));
+      }
+
+      startAnimation() {
+        requestAnimationFrame(this.animate.bind(this));
+      }
+
+      addEventListeners() {
+        if (config.pauseOnHover) {
+          this.track.parentElement.addEventListener('mouseenter', () => this.isPaused = true);
+          this.track.parentElement.addEventListener('mouseleave', () => {
+            this.isPaused = false;
+            this.startAnimation();
+          });
+        }
+
+        // 响应式重置
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(() => {
+            this.track.innerHTML = ''; // 清空现有内容
+            this.items.forEach(item => this.track.appendChild(item));
+            this.initClones();
+          }, 200);
         });
       }
     }
 
-    animate(timestamp) {
-      if (!this.startTime) this.startTime = timestamp;
-      if (this.isPaused) return;
-      
-      const elapsed = timestamp - this.startTime;
-      this.position = (elapsed * config.baseSpeed) % this.track.scrollWidth;
-      
-      // 使用3D变换触发GPU加速
-      this.track.style.transform = `translate3d(-${this.position}px, 0, 0)`;
-      
-      requestAnimationFrame(this.animate.bind(this));
-    }
-
-    startAnimation() {
-      requestAnimationFrame(this.animate.bind(this));
-    }
-
-    addEventListeners() {
-      if (config.pauseOnHover) {
-        this.track.parentElement.addEventListener('mouseenter', () => this.isPaused = true);
-        this.track.parentElement.addEventListener('mouseleave', () => {
-          this.isPaused = false;
-          this.startAnimation();
-        });
-      }
-
-      // 响应式重置
-      let resizeTimer;
-      window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => {
-          this.track.innerHTML = ''; // 清空现有内容
-          this.items.forEach(item => this.track.appendChild(item));
-          this.initClones();
-        }, 200);
-      });
-    }
-  }
-
-  // 初始化
-  document.addEventListener('DOMContentLoaded', () => {
-    new Marquee(document.getElementById('marqueeTrack'));
-  });
-})();
+    // 初始化
+    document.addEventListener('DOMContentLoaded', () => {
+      new Marquee(document.getElementById('marqueeTrack'));
+    });
+  })();
 </script>
 
 
