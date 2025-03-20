@@ -304,13 +304,8 @@ class FacetFiltersForm extends HTMLElement {
     $('.card-wrapper').each(function() {
       const $card = $(this);
       const variantData = JSON.parse($card.find('[data-product-variant]').text());
-      
-      $card.find('.option-button[data-option="Metal"]').on('click', function() {
-        $(this).addClass('active').siblings().removeClass('active');
-        updateVariantInfo($card);
-      });
-
-      $card.find('.option-button[data-option="Clarity"]').on('click', function() {
+      updateVariantInfo($card);
+      $card.find('.option-button').on('click', function() {
         $(this).addClass('active').siblings().removeClass('active');
         updateVariantInfo($card);
       });
@@ -329,14 +324,21 @@ class FacetFiltersForm extends HTMLElement {
       }
 
       function updateVariantInfo($currentCard) {
-        const selectedMetal = $currentCard.find('.option-button[data-option="Metal"].active').data('value');
-        const selectedClarity = $currentCard.find('.option-button[data-option="Clarity"].active').data('value');
+        console.log(variantData);
+        const selectedOptions = {};
+        // const selectedMetal = $currentCard.find('.option-button[data-option="Metal"].active').data('value');
+        // const selectedClarity = $currentCard.find('.option-button[data-option="Clarity"].active').data('value');
 
-        if (!selectedMetal || !selectedClarity) return null;
-
+        // if (!selectedMetal || !selectedClarity) return null;
+        $currentCard.find('.option-button.active').each(function() {
+          const optionType = $(this).data('option');
+          const optionValue = $(this).data('value');
+          selectedOptions[optionType] = optionValue;
+        });
         const matchingVariant = variantData.find(variant => 
-          variant.options.includes(selectedMetal) && 
-          variant.options.includes(selectedClarity)
+          Object.entries(selectedOptions).every(([key, value]) => 
+            variant.options.includes(value)
+          )
         );
 
         if (matchingVariant) {
