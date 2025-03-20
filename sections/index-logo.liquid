@@ -2,95 +2,34 @@
   #shopify-section-{{section.id}}.home-logo .logo-wrapper{
     position: relative;
   }
-  .logo-container {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    --logo-speed: 80s; /* 控制滚动速度，数值越大越慢 */
-  }
 
-  .logo-track {
-    display: inline-flex;
-    align-items: center;
-    white-space: nowrap;
-    animation: scroll var(--logo-speed) linear infinite;
-  }
-
-  .logo-track:hover {
-    animation-play-state: paused;
-  }
-
-  .logo-item {
-    flex-shrink: 0;
-    margin: 0 40px;
-    opacity: 0.8;
-    transition: opacity 0.3s;
-  }
-
-  .logo-item:hover {
-    opacity: 1;
-  }
-
-  .logo-item img {
-    height: 40px;
-    display: block;
-    max-width: 150px;
-  }
-
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-
-  /* 优化性能属性 */
-  .logo-container {
-    will-change: contents;
-    backface-visibility: hidden;
-  }
-  .logo-track {
-    will-change: transform;
-  }
   @media screen and (max-width: 749px) {
 
   }
 </style>
 
 <div class="logo-container section-pt">
-    <div class="logo-track">
-      {% for block in section.blocks %}
-        <div class="logo-item">
-          {{ block.settings.icon_svg }}
-        </div>
-      {% endfor %}
+    <div class="logo-track swiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="logo-item swiper-slide">
+            {{ block.settings.icon_svg }}
+          </div>
+        {% endfor %}
+      </div>
     </div>
 </div>
 
 <script>
   $(document).ready(function() {
-    // 自动克隆内容保证无缝滚动
-    function initScroll() {
-      const $track = $('.logo-track');
-      const $original = $track.children().clone();
-      
-      // 清空并重新填充
-      $track.empty()
-        .append($original.clone())
-        .append($original.clone());
-    }
-
-    // 初始化时执行
-    initScroll();
-    
-    // 窗口resize时重新初始化
-    let resizeTimer;
-    $(window).on('resize', function() {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(initScroll, 100);
-    });
+    const logo_swiper = new Swiper('.logo-container .logo-track', {
+      spaceBetween: 50,
+      loop: true,
+      autoplay: {
+        delay: 1000,
+        disableOnInteraction: false
+      }
+    })
   });
 </script>
 
