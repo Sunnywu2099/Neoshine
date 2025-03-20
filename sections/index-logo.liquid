@@ -6,18 +6,66 @@
 
   }
 </style>
-<div class="marquee-container section-pt">
-  <div class="marquee-track"  id="marqueeTrack">
-    <!-- 原始内容 -->
-    {% for block in section.blocks %}
-      <div class="logo-item">{{ block.settings.icon_svg }}</div>
-    {% endfor %}
-    <!-- 克隆内容实现无缝衔接 -->
+<div class="grid-wrapper">
+  <div class="grid-splide splide">
+    <div class="splide__track">
+      <ul class="splide__list">
+        {% for block in section.blocks %}
+            <div class="splide__slide">
+              {{ block.settings.icon_svg }}
+            </div>
+        {% endfor %}
+      </ul>
+    </div>
   </div>
 </div>
 
 <script>
-  
+  document.addEventListener('DOMContentLoaded', function() {
+    const gridSplide_{{section.index}} = new Splide('#shopify-section-{{section.id}} .grid-splide', {
+      type: 'loop',
+      drag: true,          
+      arrows: false,        
+      pagination: false,    
+      gap: 16,
+      perPage: 4,
+      // direction: 'ltr',
+      autoScroll: {
+        speed: 0.4,          
+        pauseOnHover: true,
+      },
+      breakpoints: {
+        699: {
+          gap: 8,
+        }
+      }
+    });
+    gridSplide_{{section.index}}.mount(window.splide.Extensions);
+
+    function adjustItemWidth() {
+      const screenWidth = window.innerWidth;
+      const splideTrack = document.querySelector('#shopify-section-{{section.id}} .splide__track');
+      const splideSlides = splideTrack.querySelectorAll('.splide__slide');
+      
+      if (screenWidth <= 699) {
+        // 在屏幕宽度小于等于 699px 时，每个项的宽度设置为50%
+        splideSlides.forEach(slide => {
+          slide.style.flex = '0 0 70%';  // 设置每个项宽度为50%
+        });
+      }else {
+        // 否则恢复默认宽度
+        splideSlides.forEach(slide => {
+          slide.style.flex = '0 0 25%';  // 恢复每个项的默认宽度为100%
+        });
+      }
+    }
+
+    // 初始调用
+    adjustItemWidth();
+
+    // 监听窗口大小变化
+    window.addEventListener('resize', adjustItemWidth);
+  });
 </script>
 
 
