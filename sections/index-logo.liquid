@@ -1,59 +1,95 @@
 <style>
   #shopify-section-{{section.id}}.home-logo .logo-wrapper{
-    position: relative;
+    /* position: relative; */
   }
-  .logo-container {
+  .marquee-container {
     overflow: hidden;
-    width: 100%;
+    width: 100vw; /* 跨越整个视口 */
   }
 
-  .logo-item {
-    width: auto;  /* 或设置固定宽度 */
+  .swiper-wrapper {
+    transition-timing-function: linear !important;
+    will-change: transform; /* 启用GPU加速 */
+  }
+
+  .swiper-slide {
     flex-shrink: 0;
-    transition: transform 0.3s ease;
+    width: auto !important; /* 根据内容自适应宽度 */
+    margin: 0 50px; /* 项目间距 */
   }
-  .home-logo .swiper-wrapper {
-    transition-timing-function: linear !important; /* 使用线性过渡，确保匀速滚动 */
-  }
-  .logo-track {
-    width: 100%;
-  }
-  @media screen and (max-width: 749px) {
 
+  @media (max-width: 749px) {
+    .swiper-slide {
+      margin: 0 20px;
+    }
   }
 </style>
-<div class="logo-container section-pt">
-    <div class="logo-track swiper">
-      <div class="swiper-wrapper">
-        {% for block in section.blocks %}
-          <div class="logo-item swiper-slide">
-            {{ block.settings.icon_svg }}
-          </div>
-        {% endfor %}
-      </div>
-    </div>
+<div class="marquee-container swiper section-pt">
+  <div class="swiper-wrapper">
+    <!-- 原始内容 -->
+    {% for block in section.blocks %}
+    <div class="swiper-slide">{{ block.settings.icon_svg }}</div>
+    {% endfor %}
+    <!-- 克隆内容实现无缝衔接 -->
+    {% for block in section.blocks %}
+    <div class="swiper-slide clone">{{ block.settings.icon_svg }}</div>
+    {% endfor %}
+  </div>
 </div>
 
 <script>
   $(document).ready(function() {
-    const logo_swiper = new Swiper('.logo-container .logo-track', {
-      slidesPerView: 'auto',  // 自动计算每屏显示的slide数量
-      spaceBetween: 50,
-      loop: true,
-      speed: 3000,  // 设置过渡速度更慢，使效果更平滑
+    const logo_swiper = new Swiper('.marquee-container', {
+      speed: 8000,        // 完整循环周期(ms)
+      loop: false,        // 禁用虚拟循环
       freeMode: {
-        enabled: true,
-        momentum: false,
-        pauseOnMouseEnter: false
+        enabled: true,    // 自由滚动模式
+        momentum: false   // 禁用惯性
       },
       autoplay: {
-        delay: 0,  // 设置为0，实现无缝滚动
+        delay: 0,         // 立即开始
         disableOnInteraction: false
       },
-      allowTouchMove: false,
-      cssMode: true 
-    })
+      slidesPerView: 'auto', // 自适应显示数量
+      breakpoints: {
+        320: { spaceBetween: 20 }, // 移动端间距
+        1024: { spaceBetween: 50 } // PC端间距
+      },
+      on: {
+        reachEnd: function() {
+          this.slideTo(0, 0); // 物理重置位置
+        }
+      }
+    });
+
+    // 速度适配逻辑
+    function getBaseSpeed() {
+      return window.innerWidth >= 1024 ? 150 : 100;
+    }
+
+    // 悬停暂停功能
+    const container = document.querySelector('.marquee-container');
+    container.addEventListener('mouseenter', () => swiper.autoplay.stop());
+    container.addEventListener('mouseleave', () => swiper.autoplay.start());
   });
+
+
+  // 动态计算所需克隆数量
+  function initMarquee() {
+    const container = document.querySelector('.marquee-container');
+    const slides = container.querySelectorAll('.swiper-slide:not(.clone)');
+    
+    // 动态计算所需克隆数量
+    const containerWidth = container.offsetWidth;
+    const contentWidth = Array.from(slides).reduce((sum, slide) => 
+      sum + slide.offsetWidth, 0);
+    
+    const cloneCount = Math.ceil(containerWidth / contentWidth) + 1;
+    // 动态添加克隆节点...
+  }
+
+  // 初始化
+  initMarquee();
 </script>
 
 
