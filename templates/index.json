@@ -113,8 +113,8 @@
         "item_QhchYk": {
           "type": "item",
           "settings": {
-            "pc_image": "shopify://shop_images/home_page-lab_education.webp",
-            "mobile_image": "shopify://shop_images/home_page-lab_education-phone.webp",
+            "pc_image": "shopify://shop_images/home_page-lab_education-2.webp",
+            "mobile_image": "shopify://shop_images/img_v3_02ki_ce577717-2b79-485b-96fb-db6c9fcc3efg.webp",
             "title": "Shop with Confidence<br>\nYour Satisfaction is Our Priority",
             "url": "/",
             "btn_name": "View More",
@@ -136,8 +136,8 @@
         "item_9ANJLx": {
           "type": "item",
           "settings": {
-            "pc_image": "shopify://shop_images/home_page-lab_education-2.webp",
-            "mobile_image": "shopify://shop_images/img_v3_02ki_ce577717-2b79-485b-96fb-db6c9fcc3efg.webp",
+            "pc_image": "shopify://shop_images/image_5.png",
+            "mobile_image": "shopify://shop_images/home_page-brand_trust-phone.webp",
             "title": "Why We Bring You<br>\nLab-Grown Diamonds",
             "url": "/",
             "btn_name": "View More",
