@@ -41,9 +41,9 @@
   (function() {
     // 配置参数
     const config = {
-      baseSpeed: 0.5,    // 基准滚动速度(px/ms)
-      cloneThreshold: 2, // 克隆次数阈值
-      pauseOnHover: true
+      baseSpeed: 0.2,    // 调整后的基准滚动速度(px/ms)
+      cloneThreshold: 3, // 增加克隆次数阈值以避免空白
+      pauseOnHover: false
     };
 
     class Marquee {
@@ -63,7 +63,7 @@
         // 动态计算所需克隆次数
         const containerWidth = this.track.parentElement.offsetWidth;
         const contentWidth = this.items.reduce((sum, item) => sum + item.offsetWidth, 0);
-        const cloneTimes = Math.ceil(containerWidth * config.cloneThreshold / contentWidth);
+        const cloneTimes = Math.ceil((containerWidth + contentWidth) * config.cloneThreshold / contentWidth);
         
         // 添加克隆元素
         for (let i = 0; i < cloneTimes; i++) {
