@@ -294,6 +294,19 @@ class FacetFiltersForm extends HTMLElement {
     FacetFiltersForm.renderPage(url);
   }
 
+  formatPrice(price) {
+    // 将价格除以100以恢复小数点
+    const formattedPrice = price / 100;
+  
+    // 使用toLocaleString方法格式化价格
+    return formattedPrice.toLocaleString('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+  }
+
   static initVariantSelectors() {
     const currencyCode = Shopify.currency;
     let currency = '';
@@ -305,66 +318,79 @@ class FacetFiltersForm extends HTMLElement {
       const $card = $(this);
       const variantData = JSON.parse($card.find('[data-product-variant]').text());
       
-      $card.find('.option-button[data-option="Metal"]').on('click', function() {
-        $(this).addClass('active').siblings().removeClass('active');
-        updateVariantInfo($card);
-      });
-
-      $card.find('.option-button[data-option="Clarity"]').on('click', function() {
-        $(this).addClass('active').siblings().removeClass('active');
-        updateVariantInfo($card);
-      });
-
-      function formatPrice(price) {
-        // 将价格除以100以恢复小数点
-        const formattedPrice = price / 100;
-      
-        // 使用toLocaleString方法格式化价格
-        return formattedPrice.toLocaleString('en-US', {
-          style: 'currency',
-          currency: 'USD',
-          minimumFractionDigits: 2,
-          maximumFractionDigits: 2
-        });
-      }
-
-      function updateVariantInfo($currentCard) {
-        console.log(variantData);
-        const selectedMetal = $currentCard.find('.option-button[data-option="Metal"].active').data('value');
-        const selectedClarity = $currentCard.find('.option-button[data-option="Clarity"].active').data('value');
-
-        if (!selectedMetal || !selectedClarity) return null;
-
-        const matchingVariant = variantData.find(variant => 
-          variant.options.includes(selectedMetal) || 
-          variant.options.includes(selectedClarity)
-        );
-
-        if (matchingVariant) {
-          if (matchingVariant.compare_at_price) {
-            // const formattedComparePrice = `${currency}${(matchingVariant.compare_at_price / 100).toFixed(2)}`;
-            const formattedComparePrice = formatPrice(matchingVariant.compare_at_price);
-            $currentCard.find('.price-item--regular').text(formattedComparePrice);
-          }
-          if (matchingVariant.price) {
-            // const formattedPrice = `${currency}${(matchingVariant.price / 100).toFixed(2)}`;
-            const formattedPrice = formatPrice(matchingVariant.price);
-            $currentCard.find('.price-item--sale').text(formattedPrice);
-          }
-
-          if (matchingVariant.featured_image && matchingVariant.featured_image.src) {
-            $currentCard.find('.card__media img').attr('src', matchingVariant.featured_image.src);
-          }
-
-          return {
-            status: 'ok',
-            variant: matchingVariant
-          };
+      // 获取卡片中的所有选项类型（去重）
+      const optionTypes = [...new Set($card.find('.option-button').map((i, el) => $(el).data('option'))];
+    
+      // 自动初始化选项状态
+      optionTypes.forEach(optionType => {
+        const $buttons = $card.find(`.option-button[data-option="${optionType}"]`);
+        if (!$buttons.filter('.active').length) {
+          $buttons.first().addClass('active');
         }
-
-        return null;
-      }
+      });
+    
+      // 自动绑定所有选项类型的点击事件
+      optionTypes.forEach(optionType => {
+        $card.find(`.option-button[data-option="${optionType}"]`).on('click', function() {
+          $(this).addClass('active')
+                 .siblings(`[data-option="${optionType}"]`)
+                 .removeClass('active');
+          updateVariantInfo($card, optionTypes, variantData);
+        });
+      });
+    
+      // 初始更新
+      updateVariantInfo($card, optionTypes, variantData);
     });
+    
+    function updateVariantInfo($currentCard, optionTypes, variantData) {
+      // 收集所有选中的选项值
+      const selectedOptions = {};
+      optionTypes.forEach(optionType => {
+        const $active = $currentCard.find(`.option-button[data-option="${optionType}"].active`);
+        selectedOptions[optionType] = $active.data('value');
+      });
+    
+      // 查找匹配的变体（严格匹配所有选项）
+      const matchingVariant = variantData.find(variant => {
+        return optionTypes.every(optionType => {
+          const optionIndex = getOptionIndex(variant, optionType);
+          return optionIndex !== -1 && 
+                 variant.options[optionIndex] === selectedOptions[optionType];
+        });
+      });
+    
+      if (matchingVariant) {
+        // 更新价格
+        if (matchingVariant.compare_at_price) {
+          $currentCard.find('.price-item--regular').text(formatPrice(matchingVariant.compare_at_price));
+        }
+        $currentCard.find('.price-item--sale').text(formatPrice(matchingVariant.price));
+    
+        // 更新图片
+        if (matchingVariant.featured_image?.src) {
+          $currentCard.find('.card__media img').attr('src', matchingVariant.featured_image.src);
+        }
+    
+        return matchingVariant;
+      }
+    
+      return null;
+    }
+    
+    // 辅助函数：获取选项类型在变体中的索引位置
+    function getOptionIndex(variant, optionType) {
+      // 这里假设你的变体数据包含option_position映射
+      // 如果没有的话需要根据你的数据结构调整
+      if (variant.option_positions) {
+        return variant.option_positions[optionType];
+      }
+      
+      // 备用方法：根据选项名称匹配位置
+      // 注意：这需要你的选项名称与Shopify后台设置完全一致
+      const optionNames = variant.option_names || [];
+      return optionNames.findIndex(name => name.toLowerCase() === optionType.toLowerCase());
+    }
   }
 }
 
