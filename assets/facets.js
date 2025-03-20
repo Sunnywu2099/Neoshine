@@ -304,7 +304,7 @@ class FacetFiltersForm extends HTMLElement {
     $('.card-wrapper').each(function() {
       const $card = $(this);
       const variantData = JSON.parse($card.find('[data-product-variant]').text());
-
+      updateVariantInfo($card);
       $card.find('.option-button').on('click', function() {
         $(this).addClass('active').siblings().removeClass('active');
         updateVariantInfo($card);
