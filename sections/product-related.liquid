@@ -42,7 +42,7 @@
   <div class="swiper-related swiper">
     <div class="swiper-wrapper">
       {% assign col = section.settings.collection.products %}
-      {% for product in col %}
+      {% for product in col limit: 8 %}
         <div class="swiper-slide item">
           {% render 'card-product-2',
             card_product: product,
