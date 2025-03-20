@@ -196,7 +196,7 @@
                 lazy: true,
                 preload: false
               %}
-            <h2 class="banner-title pc-hidden" style="color:#fff;">{{ block.settings.title }}</h2>
+            <h2 class="banner-title pc-hidden" {% if forloop.first %}style="color:#121212;"{% else %}style="color:#fff;"{% endif %}>{{ block.settings.title }}</h2>
             </a>
             
             <div class="banner-wrapper">
