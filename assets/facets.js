@@ -339,6 +339,9 @@ class FacetFiltersForm extends HTMLElement {
           variant.options.includes(selectedClarity)
         );
 
+        console.log(matchingVariant);
+        
+
         if (matchingVariant) {
           if (matchingVariant.compare_at_price) {
             // const formattedComparePrice = `${currency}${(matchingVariant.compare_at_price / 100).toFixed(2)}`;
