@@ -204,7 +204,7 @@
   <div class="swiper">
     <div class="swiper-wrapper">
       {% for block in section.blocks %}
-        <div class="swiper-slide item {% if forloop.first %}active{% endif %}">
+        <div class="swiper-slide item {% if forloop.first %}first{% else %}second{% endif %}">
           <div class="img-wrapper">
             <a style="position: relative;display:block;" href="{{ block.settings.url }}">
               {% render 'responsive-image',
@@ -285,12 +285,15 @@
         type : 'progressbar',
       },
     })
-
     $('.guarantee .button-prev').click(function () {
       guarantee_swiper.slidePrev();
+      $('.guarantee .item.first').addClass('active');
+      $('.guarantee .item.second').removeClass('active');
     })
     $('.guarantee .button-next').click(function () {
       guarantee_swiper.slideNext();
+      $('.guarantee .item.first').removeClass('active');
+      $('.guarantee .item.second').addClass('active');
     })
   })
 </script>
