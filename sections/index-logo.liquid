@@ -4,15 +4,17 @@
   }
   .logo-container {
     overflow: hidden;
+    width: 100%;
   }
 
   .logo-item {
     width: auto;  /* 或设置固定宽度 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
   }
-
+  .home-logo .swiper-wrapper {
+    transition-timing-function: linear !important; /* 使用线性过渡，确保匀速滚动 */
+  }
   .logo-track {
     width: 100%;
   }
@@ -39,11 +41,17 @@
       spaceBetween: 50,
       loop: true,
       speed: 3000,  // 设置过渡速度更慢，使效果更平滑
+      freeMode: {
+        enabled: true,
+        momentum: false,
+        pauseOnMouseEnter: false
+      },
       autoplay: {
         delay: 0,  // 设置为0，实现无缝滚动
         disableOnInteraction: false
       },
-      allowTouchMove: false  // 禁用触摸滑动
+      allowTouchMove: false,
+      cssMode: false 
     })
   });
 </script>
