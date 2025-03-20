@@ -232,12 +232,6 @@
         </div>
       {% endfor %}
     </div>
-    <div class="swiper-button-prev">
-      {% render 'banner-prev' %}
-    </div>
-    <div class="swiper-button-next">
-      {% render 'banner-next' %}
-    </div>
   </div>
   <div class="swiper-pagination"></div>
 </div>
@@ -248,10 +242,6 @@
       slidesPerView: 1,
       spaceBetween: 0,
       loop: false,
-      navigation: {
-        nextEl: '.guarantee .swiper-button-next',
-        prevEl: '.guarantee .swiper-button-prev',
-      },
       breakpoints: { 
         750: {  //当屏幕宽度大于等于768 
           slidesPerView: 1.2,
