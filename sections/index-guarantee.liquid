@@ -78,6 +78,10 @@
   #shopify-section-{{section.id}} .guarantee .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
     background: #121212;
   }
+  #shopify-section-{{section.id}} .guarantee .custom-b{
+    position: absolute;
+    bottom: 0;
+  }
   @media screen and (max-width: 1200px) {
     #shopify-section-{{section.id}} .guarantee .banner-title{
       font-size: 30px;
@@ -232,11 +236,11 @@
         </div>
       {% endfor %}
     </div>
-    <div class="button-prev">
+    <div class="button-prev custom-b">
       <span>Lab-Grown<br>Diamonds</span>
       <span>{% render 'gur-prev' %}</span>
     </div>
-    <div class="button-next">
+    <div class="button-next custom-b">
       <span>Shop with<br>Confidence</span>
       <span>{% render 'gur-next' %}</span>
     </div>
