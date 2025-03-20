@@ -336,7 +336,7 @@ class FacetFiltersForm extends HTMLElement {
         if (!selectedMetal || !selectedClarity) return null;
 
         const matchingVariant = variantData.find(variant => 
-          variant.options.includes(selectedMetal) || 
+          variant.options.includes(selectedMetal) && 
           variant.options.includes(selectedClarity)
         );
 
