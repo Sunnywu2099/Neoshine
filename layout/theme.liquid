@@ -61,6 +61,10 @@
     <script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'search-form.js' | asset_url }}" defer="defer"></script>
+    {% if template.name == 'index' %}
+      <script type="module" src="https://cdn.shopify.com/s/files/1/0897/6921/4241/files/splide.min.js?v=1742458051"></script>
+      <script type="module" src="https://cdn.shopify.com/s/files/1/0897/6921/4241/files/splide-extension-auto-scroll.js?v=1742458050"></script>
+    {% endif %}
     
 
     {%- if settings.animations_reveal_on_scroll -%}
@@ -288,6 +292,10 @@
     {{ 'swiper-min-css.css' | asset_url | stylesheet_tag }}
     {{ 'custom.css' | asset_url | stylesheet_tag }}
     <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
+
+    {% if template.name == 'index' %}
+      <link rel="stylesheet" href="https://cdn.shopify.com/s/files/1/0897/6921/4241/files/splide.min.css?v=1742458051">
+    {% endif %}
 
     {%- if settings.cart_type == 'drawer' -%}
       {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
