@@ -78,6 +78,32 @@
   #shopify-section-{{section.id}} .guarantee .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
     background: #121212;
   }
+  #shopify-section-{{section.id}} .guarantee .custom-b{
+    position: absolute;
+    bottom: 80px;
+    z-index: 3;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-weight: 400;
+    line-height: 1.2;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease-in-out;
+  }
+  #shopify-section-{{section.id}} .guarantee .custom-b.active{
+    opacity: 1;
+    visibility: visible;
+  }
+  #shopify-section-{{section.id}} .guarantee .button-prev{
+    position: absolute;
+    left: 20px;
+  }
+  #shopify-section-{{section.id}} .guarantee .button-next{
+    position: absolute;
+    right: 20px;
+  }
   @media screen and (max-width: 1200px) {
     #shopify-section-{{section.id}} .guarantee .banner-title{
       font-size: 30px;
@@ -113,12 +139,14 @@
   }
   @media screen and (min-width: 750px) {
     #shopify-section-{{section.id}} .guarantee .banner-wrapper{
+      transform: translate(30%, 60%);
       opacity: 0;
-      transition: all .3s ease-in-out;
+      transition: all .6s ease-in-out;
     }
-    #shopify-section-{{section.id}} .guarantee .swiper-slide-active .banner-wrapper{
+    #shopify-section-{{section.id}} .guarantee .item.active .banner-wrapper{
+      transform: translate(0%, 0%);
       opacity: 1;
-      transition: all .3s ease-in-out;
+      transition: all .6s ease-in-out;
     }
   }
   @media screen and (max-width: 749px) {
@@ -178,14 +206,17 @@
     #shopify-section-{{section.id}} .guarantee .swiper-pagination-progressbar{
       display: block;
     }
+    #shopify-section-{{section.id}} .guarantee .custom-b{
+      display: none;
+    }
   }
 </style>
 
 <div class="guarantee section-pt page-width">
   <div class="swiper">
     <div class="swiper-wrapper">
-      {% for block in section.blocks %} 
-        <div class="swiper-slide item">
+      {% for block in section.blocks %}
+        <div class="swiper-slide item {% if forloop.first %}first active{% else %}second{% endif %}">
           <div class="img-wrapper">
             <a style="position: relative;display:block;" href="{{ block.settings.url }}">
               {% render 'responsive-image',
@@ -196,7 +227,7 @@
                 lazy: true,
                 preload: false
               %}
-            <h2 class="banner-title pc-hidden" style="color:#fff;">{{ block.settings.title }}</h2>
+            <h2 class="banner-title pc-hidden" {% if forloop.first %}style="color:#121212;"{% else %}style="color:#fff;"{% endif %}>{{ block.settings.title }}</h2>
             </a>
             
             <div class="banner-wrapper">
@@ -232,13 +263,16 @@
         </div>
       {% endfor %}
     </div>
-    <div class="swiper-button-prev">
-      {% render 'banner-prev' %}
+    <div class="button-prev custom-b">
+      <span>Lab-Grown<br>Diamonds</span>
+      <span>{% render 'gur-prev' %}</span>
     </div>
-    <div class="swiper-button-next">
-      {% render 'banner-next' %}
+    <div class="button-next custom-b active">
+      <span style="color: #fff;">Shop with<br>Confidence</span>
+      <span>{% render 'gur-next' %}</span>
     </div>
   </div>
+  
   <div class="swiper-pagination"></div>
 </div>
 
@@ -247,25 +281,38 @@
     const guarantee_swiper = new Swiper('.guarantee .swiper', {
       slidesPerView: 1,
       spaceBetween: 0,
-      loop: true,
-      navigation: {
-        nextEl: '.guarantee .swiper-button-next',
-        prevEl: '.guarantee .swiper-button-prev',
-      },
+      loop: false,
+      speed:1000,
       breakpoints: { 
         750: {  //当屏幕宽度大于等于768 
           slidesPerView: 1.2,
-          spaceBetween: 15
+          spaceBetween: 15,
+          allowTouchMove: false,
         },
         1200: {  //当屏幕宽度大于等于1280
           slidesPerView: 1.2,
-          spaceBetween: 24
+          spaceBetween: 24,
+          allowTouchMove: false,
         }
       },
       pagination: {
         el: '.guarantee .swiper-pagination',
         type : 'progressbar',
       },
+    })
+    $('.guarantee .button-prev').click(function () {
+      $(this).removeClass('active');
+      guarantee_swiper.slidePrev();
+      $('.guarantee .item.first').addClass('active');
+      $('.guarantee .item.second').removeClass('active');
+      $('.guarantee .button-next').addClass('active'); 
+    })
+    $('.guarantee .button-next').click(function () {
+      $(this).removeClass('active');
+      guarantee_swiper.slideNext();
+      $('.guarantee .item.first').removeClass('active');
+      $('.guarantee .item.second').addClass('active');
+      $('.guarantee .button-prev').addClass('active');
     })
   })
 </script>
@@ -276,7 +323,7 @@
   "tag": "section",
   "class": "home-guarantee",
   "limit": 1,
-  "max_blocks": 4,
+  "max_blocks": 2,
   "settings": [
   ],
   "blocks": [
