@@ -2,6 +2,36 @@
   #shopify-section-{{section.id}}.home-logo .logo-wrapper{
     position: relative;
   }
+  .logo-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+  }
+
+  .logo-track {
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+  }
+
+  .logo-item {
+    display: inline-block;
+    margin: 0 40px;
+    vertical-align: middle;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+  }
+
+  .logo-item:hover {
+    opacity: 1;
+  }
+
+  .logo-item img {
+    height: 40px;
+    display: block;
+    max-width: 150px;
+  }
   @media screen and (max-width: 749px) {
 
   }
