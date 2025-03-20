@@ -329,6 +329,7 @@ class FacetFiltersForm extends HTMLElement {
       }
 
       function updateVariantInfo($currentCard) {
+        console.log(variantData);
         const selectedMetal = $currentCard.find('.option-button[data-option="Metal"].active').data('value');
         const selectedClarity = $currentCard.find('.option-button[data-option="Clarity"].active').data('value');
 
@@ -338,9 +339,6 @@ class FacetFiltersForm extends HTMLElement {
           variant.options.includes(selectedMetal) && 
           variant.options.includes(selectedClarity)
         );
-
-        console.log(matchingVariant);
-        
 
         if (matchingVariant) {
           if (matchingVariant.compare_at_price) {
