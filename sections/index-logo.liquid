@@ -1,0 +1,90 @@
+<style>
+  #shopify-section-{{section.id}}.home-logo .logo-wrapper{
+    position: relative;
+  }
+  @media screen and (max-width: 749px) {
+
+  }
+</style>
+
+<div class="logo-container section-pt">
+    <div class="logo-track">
+      {% for block in section.blocks %}
+        <div class="logo-item">
+          
+        </div>
+      {% endfor %}
+    </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    // 克隆内容实现无缝滚动
+    $('.logo-track').html($('.logo-track').html() + $('.logo-track').html());
+    
+    const track = $('.logo-track');
+    const container = $('.logo-container');
+    let animationFrameId;
+    let direction = -1; // 滚动方向：-1 向左，1 向右
+    let speed = 1; // 滚动速度（像素/帧）
+
+    function animate() {
+      const currentPosition = parseInt(track.css('left'), 10) || 0;
+      const contentWidth = track.width() / 2; // 原始内容宽度
+      
+      // 重置位置实现无限滚动
+      if (direction === -1 && currentPosition <= -contentWidth) {
+        track.css('left', 0);
+      } else if (direction === 1 && currentPosition >= 0) {
+        track.css('left', -contentWidth);
+      }
+      
+      const newPosition = currentPosition + (direction * speed);
+      track.css('left', newPosition + 'px');
+      
+      animationFrameId = requestAnimationFrame(animate);
+    }
+
+    // 开始动画
+    animate();
+
+    // 悬停暂停
+    container.hover(
+      function() {
+        cancelAnimationFrame(animationFrameId);
+      },
+      function() {
+        animate();
+      }
+    );
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Home logo",
+  "tag": "section",
+  "class": "home-logo",
+  "limit": 1,
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "html",
+          "id": "icon_svg",
+          "label": "icon svg"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home logo"
+    }
+  ]
+}
+{% endschema %}
