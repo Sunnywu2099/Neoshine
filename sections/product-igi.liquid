@@ -275,7 +275,6 @@
     // 状态管理对象
     const state = {
       scrollTrigger: null,
-      swiper: null,
       isMobile: null
     };
 
@@ -284,7 +283,7 @@
       let timeout;
       return () => {
         clearTimeout(timeout);
-        timeout = setTimeout(() => func(), delay);
+        timeout = setTimeout(func, delay);
       };
     };
 
@@ -298,12 +297,10 @@
     // 完全销毁ScrollTrigger
     const destroyScrollTrigger = () => {
       if (state.scrollTrigger) {
-        // 清理ScrollTrigger生成的样式
         document.querySelectorAll('.sticky-placeholder').forEach(el => el.remove());
         state.scrollTrigger.kill();
         state.scrollTrigger = null;
         
-        // 重置元素状态
         const { itemsWithIcons, itemsWithoutIcons } = getElements();
         itemsWithIcons.forEach(el => el.classList.remove('active'));
         itemsWithoutIcons.forEach(el => el.classList.remove('active'));
@@ -316,17 +313,12 @@
       if (!elements.container) return;
 
       const endPoint = window.innerHeight * 0.4;
-      // 确保容器的高度固定
-      // const containerHeight = elements.container.offsetHeight;
-      // elements.container.style.minHeight = `${containerHeight}px`;
-      
+
       state.scrollTrigger = ScrollTrigger.create({
         trigger: elements.container,
-        start: () => `top ${window.innerHeight * 0.1}`, // 动态计算起始位置
+        start: () => `top ${window.innerHeight * 0.1}`,
         end: () => `+=${endPoint}`,
         pin: true,
-        pinSpacing: true,
-        scrub: 0.5,
         anticipatePin: 1,
         invalidateOnRefresh: true,
         onUpdate: self => {
@@ -341,12 +333,10 @@
           // 切换图片
           const imgSecond = document.querySelector('.img-second');
           if (imgSecond) {
-            const imgActive = progress > 0.5;
-            imgSecond.style.transform = imgActive ? 'translateX(0%)' : 'translateX(100%)';
+            imgSecond.style.transform = progress > 0.5 ? 'translateX(0%)' : 'translateX(100%)';
           }
         },
         onRefresh: self => {
-          // 窗口变化后重新计算位置
           self.vars.start = `top ${window.innerHeight * 0.1}`;
           self.vars.end = `+=${endPoint * elements.itemsWithIcons.length}`;
         }
@@ -356,16 +346,11 @@
     // 视口检测
     const checkViewport = () => {
       const currentIsMobile = window.innerWidth < 750;
-      
-      // 状态未变化时跳过
       if (currentIsMobile === state.isMobile) return;
       
       state.isMobile = currentIsMobile;
-      
-      // 完全清理旧实例
       destroyScrollTrigger();
       
-      // 延迟初始化确保DOM更新
       requestAnimationFrame(() => {
         state.isMobile ? destroyScrollTrigger() : initDesktop();
         ScrollTrigger.refresh();
@@ -373,9 +358,7 @@
     };
 
     // 优化resize处理
-    const handleResize = debounce(() => {
-      checkViewport();
-    }, 300);
+    const handleResize = debounce(checkViewport, 300);
 
     // 初始检测
     checkViewport();
