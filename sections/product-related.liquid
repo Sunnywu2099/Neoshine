@@ -157,8 +157,6 @@
       });
 
       if (matchedVariant) {
-        console.log(matchedVariant);
-        
         // 更新当前卡片内容
         const $card = $(cardElement);
         $card.find('.card__media img').attr('src', matchedVariant.featured_image.src);
