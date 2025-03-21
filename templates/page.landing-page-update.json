@@ -1,1 +1,512 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"padding_top":28,"padding_bottom":28}},"image_banner_JMBdjX":{"type":"image-banner","blocks":{"heading_CtYAct":{"type":"heading","settings":{"heading":"Neoshine Lab-Grown Diamonds","heading_size":"h1"}},"text_bA67Lx":{"type":"text","settings":{"text":"A Diamond That Shines as Bright as Your Love","text_style":"body"}},"buttons_tpx88X":{"type":"buttons","settings":{"button_label_1":"SHOP NOW","button_link_1":"shopify:\/\/products\/1ct-lab-created-diamond-engagement-ring","button_style_secondary_1":false,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["heading_CtYAct","text_bA67Lx","buttons_tpx88X"],"settings":{"pagewidth":false,"image":"shopify:\/\/shop_images\/landding_page_second_banner.jpg","image_overlay_opacity":20,"image_height":"medium","desktop_content_position":"bottom-left","show_text_box":true,"desktop_content_alignment":"left","color_scheme":"scheme-5ab15dbc-6e60-4eea-b433-3fbced42c35b","image_behavior":"none","mobile_content_alignment":"center","stack_images_on_mobile":true,"show_text_below":false}},"rich_text_Aprq7G":{"type":"rich-text","blocks":{"heading_7YanYx":{"type":"heading","disabled":true,"settings":{"heading":"IGI-certified, Heart & Arrow Diamonds","heading_size":"h2"}},"caption_dFXrxg":{"type":"caption","disabled":true,"settings":{"caption":"Ethically crafted, offering timeless beauty at an unbeatable price.","text_style":"subtitle","text_size":"medium"}}},"block_order":["heading_7YanYx","caption_dFXrxg"],"disabled":true,"settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"","full_width":true,"padding_top":20,"padding_bottom":20}},"pagefly_section_9fnFKn":{"type":"pagefly-section","custom_css":[],"settings":{"section_id":"pf-9283f479"}},"rich_text_qCkT8m":{"type":"rich-text","blocks":{"heading_mdjJXc":{"type":"heading","settings":{"heading":"NeoCollection","heading_size":"h1"}}},"block_order":["heading_mdjJXc"],"settings":{"desktop_content_position":"left","content_alignment":"left","color_scheme":"","full_width":true,"padding_top":20,"padding_bottom":20}},"featured_collection_GAh3nt":{"type":"featured-collection","settings":{"title":"NeoSolo","heading_size":"h2","description":"<p>Solitaire Engagement Rings<\/p>","show_description":false,"description_style":"subtitle","collection":"solitaire-engagement-rings-classic-elegance-for-proposals","products_to_show":4,"columns_desktop":4,"full_width":false,"show_view_all":true,"view_all_style":"link","enable_desktop_slider":false,"color_scheme":"","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":true,"enable_shop_now_button":true,"quick_add":"none","columns_mobile":"2","swipe_on_mobile":true,"padding_top":12,"padding_bottom":12}},"featured_collection_xPDYQQ":{"type":"featured-collection","settings":{"title":"NeoGlow","heading_size":"h2","description":"<p>Pave Engagement Rings<\/p>","show_description":false,"description_style":"subtitle","collection":"pave-engagement-rings-sparkling-diamonds-for-your-proposal","products_to_show":4,"columns_desktop":4,"full_width":false,"show_view_all":true,"view_all_style":"outline","enable_desktop_slider":false,"color_scheme":"","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":true,"enable_shop_now_button":true,"quick_add":"none","columns_mobile":"2","swipe_on_mobile":true,"padding_top":12,"padding_bottom":12}},"featured_collection_8rRLHN":{"type":"featured-collection","settings":{"title":"NeoChic","heading_size":"h2","description":"<p>Stylish Engagement Rings<\/p>","show_description":false,"description_style":"subtitle","collection":"beautiful-rings-under-2000","products_to_show":4,"columns_desktop":4,"full_width":false,"show_view_all":true,"view_all_style":"link","enable_desktop_slider":false,"color_scheme":"","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"enable_shop_now_button":true,"quick_add":"none","columns_mobile":"2","swipe_on_mobile":true,"padding_top":12,"padding_bottom":12}},"custom_liquid_RVCezV":{"type":"custom-liquid","custom_css":[".button-container {display: flex; justify-content: center; align-items: center;}",".center-button {background-color: #83a78d; color: white; padding: 7px 10px; text-decoration: none; border-radius: 4px; font-size: 16px; text-align: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: background-color 0.3s ease;}",".center-button:hover {background-color: #333;}"],"settings":{"custom_liquid":"<div class=\"button-container\">\n  <a href=\"https:\/\/neoshine.com\/collections\/all\" class=\"center-button\">\n    Explore the Full Collection\n  <\/a>\n<\/div>","color_scheme":"","padding_top":20,"padding_bottom":20}},"multicolumn_UNUW74":{"type":"multicolumn","blocks":{"column_LPaecC":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/IMG_3280.jpg","title":"","text":"","link_label":"","link":""}},"column_rRkUAX":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/IMG_3270.jpg","title":"","text":"","link_label":"","link":""}},"column_rqApjt":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/IMG_9586.jpg","title":"","text":"","link_label":"","link":""}},"column_ExeWcr":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/IMG_5816.heic","title":"","text":"","link_label":"","link":""}}},"block_order":["column_LPaecC","column_rRkUAX","column_rqApjt","column_ExeWcr"],"custom_css":[".h1 {font-size: 30px;}"],"settings":{"title":"Discover How Our Diamonds Shine in Real Life","heading_size":"h2","title_align":"center","image_width":"full","image_ratio":"adapt","columns_desktop":4,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","color_scheme":"","columns_mobile":"2","swipe_on_mobile":false,"padding_top":36,"padding_bottom":36}},"multicolumn_mCPjPz":{"type":"multicolumn","blocks":{"column_3GeW34":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/IMG_3257.jpg","title":"","text":"","link_label":"","link":""}},"column_HG9wbr":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/IMG_3276.jpg","title":"","text":"","link_label":"","link":""}},"column_PdJM6y":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/IMG_9583.jpg","title":"","text":"","link_label":"","link":""}},"column_KBYAAU":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/IMG_0527.jpg","title":"","text":"","link_label":"","link":""}}},"block_order":["column_3GeW34","column_HG9wbr","column_PdJM6y","column_KBYAAU"],"settings":{"title":"","heading_size":"h1","title_align":"center","image_width":"full","image_ratio":"adapt","columns_desktop":4,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","color_scheme":"","columns_mobile":"2","swipe_on_mobile":false,"padding_top":36,"padding_bottom":36}},"pagefly_section_rhp6MN":{"type":"pagefly-section","settings":{"section_id":"pf-83f47942"}},"image_banner_cFT6hU":{"type":"image-banner","settings":{"pagewidth":false,"image":"shopify:\/\/shop_images\/neoshine-landingpage-_finally9_6435b799-f805-426f-9be6-fd26984921f1.jpg","image_overlay_opacity":0,"image_height":"adapt","desktop_content_position":"middle-center","show_text_box":true,"desktop_content_alignment":"center","color_scheme":"","image_behavior":"none","mobile_content_alignment":"center","stack_images_on_mobile":true,"show_text_below":true}},"multicolumn_DDChWT":{"type":"multicolumn","blocks":{"column_GmFmKV":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/home_page_icon_c8eec1e4-bdef-41df-a782-ddfac22ab992.png","title":"<strong>Quality Certified<\/strong>","text":"<p>Each diamond is individually certified by IGI for purity and quality.<\/p>","link_label":"","link":""}},"column_VfArYp":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/home_page_icon-2.png","title":"<strong>Elegant Packaging <\/strong>","text":"<p>Unwrap an unforgettable experience with every purchase.<\/p>","link_label":"","link":""}},"column_C3htMP":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/1202-neoshine-page_icon-07.svg","title":"<strong>Free Ring Sizer Service<\/strong>","text":"<p><\/p><p>If you're unsure of your size, we offer a free sizing tool to help you get the perfect fit.<\/p>","link_label":"","link":""}},"column_g7CbQk":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/1202-neoshine-page_icon-08.svg","title":"<strong>Lifetime Warranty<\/strong>","text":"<p>Our lifetime warranty pledges enduring quality for your cherished affection.<\/p>","link_label":"","link":""}},"column_VeMTTj":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/1202-neoshine-page_icon-09.svg","title":"<strong>Free 30-day Returns<\/strong>","text":"<p>We provide free returns and exchanges for up to 30 days.<\/p>","link_label":"","link":""}}},"block_order":["column_GmFmKV","column_VfArYp","column_C3htMP","column_g7CbQk","column_VeMTTj"],"disabled":true,"settings":{"title":"","heading_size":"h1","title_align":"center","image_width":"third","image_ratio":"portrait","columns_desktop":5,"column_alignment":"center","background_style":"primary","button_label":"","button_link":"","color_scheme":"","columns_mobile":"2","swipe_on_mobile":true,"padding_top":36,"padding_bottom":36}},"173347511270a45481":{"type":"apps","blocks":{"judge_me_reviews_review_widget_homepage_iB3wpE":{"type":"shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget_homepage\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8","settings":{"product":"1ct-lab-created-diamond-engagement-ring"}}},"block_order":["judge_me_reviews_review_widget_homepage_iB3wpE"],"settings":{"include_margins":true}}},"order":["main","image_banner_JMBdjX","rich_text_Aprq7G","pagefly_section_9fnFKn","rich_text_qCkT8m","featured_collection_GAh3nt","featured_collection_xPDYQQ","featured_collection_8rRLHN","custom_liquid_RVCezV","multicolumn_UNUW74","multicolumn_mCPjPz","pagefly_section_rhp6MN","image_banner_cFT6hU","multicolumn_DDChWT","173347511270a45481"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "image_banner_JMBdjX": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_CtYAct": {
+          "type": "heading",
+          "settings": {
+            "heading": "Neoshine Lab-Grown Diamonds",
+            "heading_size": "h1"
+          }
+        },
+        "text_bA67Lx": {
+          "type": "text",
+          "settings": {
+            "text": "A Diamond That Shines as Bright as Your Love",
+            "text_style": "body"
+          }
+        },
+        "buttons_tpx88X": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "SHOP NOW",
+            "button_link_1": "shopify://products/1ct-lab-created-diamond-engagement-ring",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_CtYAct",
+        "text_bA67Lx",
+        "buttons_tpx88X"
+      ],
+      "settings": {
+        "pagewidth": false,
+        "image": "shopify://shop_images/landding_page_second_banner.jpg",
+        "image_overlay_opacity": 20,
+        "image_height": "medium",
+        "desktop_content_position": "bottom-left",
+        "show_text_box": true,
+        "desktop_content_alignment": "left",
+        "color_scheme": "scheme-5ab15dbc-6e60-4eea-b433-3fbced42c35b",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
+      }
+    },
+    "rich_text_Aprq7G": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_7YanYx": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "IGI-certified, Heart & Arrow Diamonds",
+            "heading_size": "h2"
+          }
+        },
+        "caption_dFXrxg": {
+          "type": "caption",
+          "disabled": true,
+          "settings": {
+            "caption": "Ethically crafted, offering timeless beauty at an unbeatable price.",
+            "text_style": "subtitle",
+            "text_size": "medium"
+          }
+        }
+      },
+      "block_order": [
+        "heading_7YanYx",
+        "caption_dFXrxg"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "pagefly_section_9fnFKn": {
+      "type": "pagefly-section",
+      "custom_css": [],
+      "settings": {
+        "section_id": "pf-9283f479"
+      }
+    },
+    "rich_text_qCkT8m": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_mdjJXc": {
+          "type": "heading",
+          "settings": {
+            "heading": "NeoCollection",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_mdjJXc"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "featured_collection_GAh3nt": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "NeoSolo",
+        "heading_size": "h2",
+        "description": "<p>Solitaire Engagement Rings</p>",
+        "show_description": false,
+        "description_style": "subtitle",
+        "collection": "solitaire-engagement-rings-classic-elegance-for-proposals",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "link",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_shop_now_button": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
+    "featured_collection_xPDYQQ": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "NeoGlow",
+        "heading_size": "h2",
+        "description": "<p>Pave Engagement Rings</p>",
+        "show_description": false,
+        "description_style": "subtitle",
+        "collection": "pave-engagement-rings-sparkling-diamonds-for-your-proposal",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "outline",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": true,
+        "enable_shop_now_button": true,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
+    "featured_collection_8rRLHN": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "NeoChic",
+        "heading_size": "h2",
+        "description": "<p>Stylish Engagement Rings</p>",
+        "show_description": false,
+        "description_style": "subtitle",
+        "collection": "beautiful-rings-under-2000",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "link",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_shop_now_button": true,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
+    "custom_liquid_RVCezV": {
+      "type": "custom-liquid",
+      "custom_css": [
+        ".button-container {display: flex; justify-content: center; align-items: center;}",
+        ".center-button {background-color: #83a78d; color: white; padding: 7px 10px; text-decoration: none; border-radius: 4px; font-size: 16px; text-align: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: background-color 0.3s ease;}",
+        ".center-button:hover {background-color: #333;}"
+      ],
+      "settings": {
+        "custom_liquid": "<div class=\"button-container\">\n  <a href=\"https://neoshine.com/collections/all\" class=\"center-button\">\n    Explore the Full Collection\n  </a>\n</div>",
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "multicolumn_UNUW74": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_LPaecC": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/IMG_3280.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_rRkUAX": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/IMG_3270.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_rqApjt": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/IMG_9586.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_ExeWcr": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/IMG_5816.heic",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_LPaecC",
+        "column_rRkUAX",
+        "column_rqApjt",
+        "column_ExeWcr"
+      ],
+      "custom_css": [
+        ".h1 {font-size: 30px;}"
+      ],
+      "settings": {
+        "title": "Discover How Our Diamonds Shine in Real Life",
+        "heading_size": "h2",
+        "title_align": "center",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_mCPjPz": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_3GeW34": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/IMG_3257.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_HG9wbr": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/IMG_3276.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_PdJM6y": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/IMG_9583.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_KBYAAU": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/IMG_0527.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_3GeW34",
+        "column_HG9wbr",
+        "column_PdJM6y",
+        "column_KBYAAU"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "title_align": "center",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "pagefly_section_rhp6MN": {
+      "type": "pagefly-section",
+      "settings": {
+        "section_id": "pf-83f47942"
+      }
+    },
+    "image_banner_cFT6hU": {
+      "type": "image-banner",
+      "settings": {
+        "pagewidth": false,
+        "image": "shopify://shop_images/neoshine-landingpage-_finally9_6435b799-f805-426f-9be6-fd26984921f1.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "multicolumn_DDChWT": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_GmFmKV": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/home_page_icon_c8eec1e4-bdef-41df-a782-ddfac22ab992.png",
+            "title": "<strong>Quality Certified</strong>",
+            "text": "<p>Each diamond is individually certified by IGI for purity and quality.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_VfArYp": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/home_page_icon-2.png",
+            "title": "<strong>Elegant Packaging </strong>",
+            "text": "<p>Unwrap an unforgettable experience with every purchase.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_C3htMP": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/1202-neoshine-page_icon-07.svg",
+            "title": "<strong>Free Ring Sizer Service</strong>",
+            "text": "<p></p><p>If you're unsure of your size, we offer a free sizing tool to help you get the perfect fit.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_g7CbQk": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/1202-neoshine-page_icon-08.svg",
+            "title": "<strong>Lifetime Warranty</strong>",
+            "text": "<p>Our lifetime warranty pledges enduring quality for your cherished affection.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_VeMTTj": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/1202-neoshine-page_icon-09.svg",
+            "title": "<strong>Free 30-day Returns</strong>",
+            "text": "<p>We provide free returns and exchanges for up to 30 days.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_GmFmKV",
+        "column_VfArYp",
+        "column_C3htMP",
+        "column_g7CbQk",
+        "column_VeMTTj"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "title_align": "center",
+        "image_width": "third",
+        "image_ratio": "portrait",
+        "columns_desktop": 5,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "173347511270a45481": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_homepage_iB3wpE": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget_homepage/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "product": "1ct-lab-created-diamond-engagement-ring"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_homepage_iB3wpE"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_JMBdjX",
+    "rich_text_Aprq7G",
+    "pagefly_section_9fnFKn",
+    "rich_text_qCkT8m",
+    "featured_collection_GAh3nt",
+    "featured_collection_xPDYQQ",
+    "featured_collection_8rRLHN",
+    "custom_liquid_RVCezV",
+    "multicolumn_UNUW74",
+    "multicolumn_mCPjPz",
+    "pagefly_section_rhp6MN",
+    "image_banner_cFT6hU",
+    "multicolumn_DDChWT",
+    "173347511270a45481"
+  ]
+}
