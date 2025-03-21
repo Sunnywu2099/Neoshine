@@ -125,20 +125,31 @@
       </div>
     {%- endfor -%}
 
-    <fieldset class="product-form__input product-form__input--dropdown line-item-property__field">
-      <legend class="form__label">Ring Size</legend>
-      <select id="ring-size" name="properties[Ring Size]" class="ring-size-dropdown">
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6" selected>6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-      </select>
-    </fieldset>
+    <div class="v-wrapper">
+      <fieldset class="js product-form__input product-form__input--pill line-item-property__field">
+          <legend class="form__label">
+              <span class="option_name">Ring Size: </span>
+              <span data-selected-value>
+                {% comment %} {{- option.selected_value -}} {% endcomment %}
+              </span>
+              <span class="level_icon">{{ level_icon }}</span>
+            </legend>
+            <div class="value-wrapper has-level">
+              <input
+                type="radio"
+                id="size-4"
+                name="size 4"
+                value="4.00"
+                form="{{ product_form_id }}"
+                {% if value.selected %}
+                  checked
+                {% endif %}
+                {{ input_dataset }}
+              >
+              <label for="size-4">4</label>
+            </div>
+      </fieldset>
+    </div>
 
     <div class="find-size" style="text-decoration: underline;">{{ block.settings.find_size }}</div>
 
