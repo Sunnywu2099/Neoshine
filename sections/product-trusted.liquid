@@ -100,15 +100,12 @@
   }
 </style>
 
-{% assign full_width = '100vw' %}
-{% assign sizes = full_width %}
-{% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
 <div class="product-trusted-wrapper">
   <h2 class="section-title">{{section.settings.title}}</h2>
   <div class="trusted-grid">
     {% for block in section.blocks %}
       <div class="trusted-item">
-        <div class="icon-wrapper">{{  }}</div>
+        <div class="icon-wrapper">{{ block.settings.icon }}</div>
         <div class="content-box">
           <h3 class="item-title">{{block.settings.title}}</h3>
           <p class="item-text">{{block.settings.content}}</p>
