@@ -302,7 +302,7 @@
         "item_4BFyLw": {
           "type": "item",
           "settings": {
-            "img": "shopify://shop_images/image_01a99643-01f6-4706-a866-ebbc33580ae9.png",
+            "img": "shopify://shop_images/product_page-_clarity_if.webp",
             "title": "Flawless (FL) and<br>\nInternally Flawless (IF)",
             "content": "diamonds are exceptionally rare and command high premiums."
           }
@@ -310,7 +310,7 @@
         "item_jRqTKd": {
           "type": "item",
           "settings": {
-            "img": "shopify://shop_images/image_01a99643-01f6-4706-a866-ebbc33580ae9.png",
+            "img": "shopify://shop_images/product_page-_clarity_vvs1.webp",
             "title": "VVS1-VVS2<br>\n(Very, Very Slightly Included)",
             "content": "Inclusions are almost impossible to spot even under 10x magnification."
           }
@@ -318,7 +318,7 @@
         "item_8d3hg3": {
           "type": "item",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_12586.png",
+            "img": "shopify://shop_images/product_page-_clarity_vs1.webp",
             "title": "VS1-VS2<br>\n(Very Slightly Included)",
             "content": "Inclusions are minor and almost always invisible to the naked eye."
           }
@@ -326,7 +326,7 @@
         "item_33VFpq": {
           "type": "item",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_12586.png",
+            "img": "shopify://shop_images/product_page-_SI1-SI2.webp",
             "title": "SI1-SI2<br>\n(Slightly Included)",
             "content": "Some inclusions may be visible without magnification, but a well-selected SI1 can still appear eye-clean."
           }
@@ -334,7 +334,7 @@
         "item_JqU8QU": {
           "type": "item",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_12586.png",
+            "img": "shopify://shop_images/product_page-_i1-i3.webp",
             "title": "I1-I3<br>\n(Included)",
             "content": "Inclusions are visible and can impact durability."
           }
