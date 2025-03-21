@@ -149,17 +149,7 @@
   <div class="product-perfection-grid">
     {% for block in section.blocks %}
       <div class="product-perfection-item">
-        {{
-              block.settings.icon
-              | image_url: width: 3840
-              | image_tag:
-                width: block.settings.icon.width,
-                height: block.settings.icon.height,
-                class: '',
-                sizes: sizes,
-                widths: widths,
-                loading: 'lazy'
-        }}
+        <div class="icon-wrapper">{{block.settings.icon}}</div>
         <div class="content-box">
           <h3 class="item-title">{{block.settings.title}}</h3>
           <p class="item-text">{{block.settings.content}}</p>
@@ -211,7 +201,7 @@
         "name": "Item",
         "settings": [
           {
-            "type": "image_picker",
+            "type": "html",
             "id": "icon",
             "label": "icon"
           },
