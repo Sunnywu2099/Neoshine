@@ -9,15 +9,21 @@
   {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 {% endcomment %}
 
-{% comment %} <style>
-  fieldset.product-form__input .explain{
-    margin: 0;
-    color: #666;
+<style>
+  .custom-size label{
+    border-radius: var(--variant-pills-radius);
+    color: rgb(var(--color-foreground));
+    display: inline-block;
+    text-align: left;
+    transition: border var(--duration-short) ease;
+    cursor: pointer;
+    position: relative;
+    color: #787878;
     font-size: 14px;
-    margin-top: 5px;
-    margin-left: 5px;
+    font-weight: 400;
+    line-height: 20px;
   }
-</style> {% endcomment %}
+</style>
 
 
 {% capture level_icon %} 
@@ -125,6 +131,25 @@
       </div>
     {%- endfor -%}
 
+    {% if product.template_suffix != 'normal' and product.template_suffix != 'jewelry' %}
+      <div class="v-wrapper">
+      <fieldset class="js product-form__input product-form__input--pill custom-size">
+            <div class="form__label size_selector">
+              <span class="option_name">Ring Size: </span>
+              <span name="properties[Ring Size]">6</span>
+              <span class="level_icon">{{ level_icon }}</span>
+            </div>
+            <div class="value-wrapper has-level">
+              <label for="size-4" onclick="updateRingSize(4)">4</label>
+              <label for="size-5" onclick="updateRingSize(5)">5</label>
+              <label for="size-6" onclick="updateRingSize(6)">6</label>
+              <label for="size-7" onclick="updateRingSize(7)">7</label>
+              <label for="size-8" onclick="updateRingSize(8)">8</label>
+            </div>
+      </fieldset>
+      </div>
+    {% endif %}
+    
     <div class="find-size" style="text-decoration: underline;">{{ block.settings.find_size }}</div>
 
     <script type="application/json" data-selected-variant>
@@ -134,7 +159,13 @@
   </variant-selects>
 {%- endunless -%}
 
-
+<script>
+    function updateRingSize(size) {
+      document.querySelector('span[name="properties[Ring Size]"]').textContent = size;
+      document.getElementById('ring-size').value = size;
+      $('.form__label.size_selector').removeClass('active');
+    }
+</script>
 
 {% comment %} <script>
     function explain(){

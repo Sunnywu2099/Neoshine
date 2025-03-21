@@ -8,6 +8,9 @@
   .product-card-wrapper .option-button{
     height: 18px;
   }
+  #shopify-section-{{section.id}}.related .swiper{
+    overflow: unset;
+  }
   @media screen and (max-width: 1200px) {
     #shopify-section-{{section.id}}.related{
       padding: 60px 0;
@@ -32,6 +35,9 @@
     .product-related .swiper-button-prev,
     .product-related .swiper-button-next{
       display: none;
+    }
+    #shopify-section-{{section.id}}.related .swiper{
+      overflow: clip;
     }
   }
 </style>

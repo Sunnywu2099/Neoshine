@@ -29,6 +29,9 @@
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
+  .card__heading a:after{
+    display: none;
+  }
 
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
@@ -104,16 +107,16 @@
               style="--animation-order: {{ forloop.index }};"
             {% endif %}
           >
-            {% render 'card-product',
+          {% render 'card-product-2',
               card_product: product,
-              media_aspect_ratio: section.settings.image_ratio,
-              image_shape: section.settings.image_shape,
-              show_secondary_image: section.settings.show_secondary_image,
-              show_vendor: section.settings.show_vendor,
-              show_rating: section.settings.show_rating,
-              skip_styles: skip_card_product_styles,
+              media_aspect_ratio: 'square',
+              show_secondary_image: false,
+              lazy_load: true,
+              skip_styles: false,
+              quick_add: false,
               section_id: section.id,
-              quick_add: section.settings.quick_add
+              horizontal_class: false,
+              horizontal_quick_add: false
             %}
           </li>
           {%- assign skip_card_product_styles = true -%}
@@ -196,6 +199,82 @@
     {%- endif -%}
   </div>
 </div>
+
+<script>
+  $(document).ready(function(){
+    function formatPrice(price) {
+        // 将价格除以100以恢复小数点
+        const formattedPrice = price / 100;
+      
+        // 使用toLocaleString方法格式化价格
+        return formattedPrice.toLocaleString('en-US', {
+          style: 'currency',
+          currency: 'USD',
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        });
+    }
+
+    // 为每个产品卡片创建独立的作用域
+    $('.card-wrapper').each(function() {
+      const $card = $(this);
+      const variantData = $card.data('variants');
+      
+      // 动态初始化选项
+      const state = {
+        currentOptions: {}
+      };
+
+      // 初始化选项按钮事件（使用事件委托）
+      $card.on('click', '.option-button', function() {
+        const $btn = $(this);
+        const optionType = $btn.data('option');
+        const optionValue = $btn.data('value');
+        
+        state.currentOptions[optionType] = optionValue;
+        $btn.addClass('active').siblings(`[data-option="${optionType}"]`).removeClass('active');
+        updateCardInfo($card, state, variantData);
+      });
+
+      // 初始化默认选项
+      $card.find('.option-button').each(function() {
+        const $btn = $(this);
+        const optionType = $btn.data('option');
+        if (!state.currentOptions[optionType]) {
+          state.currentOptions[optionType] = $btn.data('value');
+          $btn.addClass('active');
+        }
+      });
+      updateCardInfo($card, state, variantData);
+    });
+
+    // 独立更新每个卡片的信息
+    function updateCardInfo(cardElement, state, variants) {
+      const selectedOptions = Object.values(state.currentOptions);
+
+      // 查找匹配的变体（改进版）
+      const matchedVariant = variants.find(v => {
+        const optionValues = new Set(v.options);
+        return selectedOptions.every(option => optionValues.has(option));
+      });
+
+      if (matchedVariant) {
+        console.log(matchedVariant);
+        
+        // 更新当前卡片内容
+        const $card = $(cardElement);
+        $card.find('.card__media img').attr('src', matchedVariant.featured_image.src);
+
+        if(matchedVariant.compare_at_price){
+          $card.find('.price-item--regular').text(formatPrice(matchedVariant.compare_at_price));
+        }
+        $card.find('.price-item--sale').text(formatPrice(matchedVariant.price));
+        
+      }
+    }
+  })
+  
+</script>
 
 {% schema %}
 {
