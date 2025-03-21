@@ -266,8 +266,9 @@
   </div>
 </div>
 
-<script src="https://cdn.shopify.com/s/files/1/0897/6921/4241/files/gsap.min.js?v=1741231092" defer></script>
-<script src="https://cdn.shopify.com/s/files/1/0897/6921/4241/files/ScrollTrigger.min.js?v=1741231096" defer></script>
+<script async src="https://cdn.shopify.com/s/files/1/0897/6921/4241/files/gsap.min.js?v=1741231092"></script>
+<script async src="https://cdn.shopify.com/s/files/1/0897/6921/4241/files/ScrollTrigger.min.js?v=1741231096"></script>
+
 <script>
   $(document).ready(function() {
     gsap.registerPlugin(ScrollTrigger);
@@ -289,7 +290,7 @@
 
     // 获取动态元素引用
     const getElements = () => ({
-      container: document.querySelector('.product-igi-wrapper'),
+      container: document.querySelector('.product-igi'),
       itemsWithIcons: document.querySelectorAll('.item-with-icons'),
       itemsWithoutIcons: document.querySelectorAll('.item-without-icons'),
     });
@@ -317,7 +318,7 @@
       state.scrollTrigger = ScrollTrigger.create({
         trigger: elements.container,
         start: () => `top ${window.innerHeight * 0.1}`,
-        end: () => `+=${endPoint}`,
+        end: () => `+=80%`,
         pin: true,
         anticipatePin: 1,
         invalidateOnRefresh: true,
@@ -336,10 +337,10 @@
             imgSecond.style.transform = progress > 0.5 ? 'translateX(0%)' : 'translateX(100%)';
           }
         },
-        onRefresh: self => {
-          self.vars.start = `top ${window.innerHeight * 0.1}`;
-          self.vars.end = `+=${endPoint * elements.itemsWithIcons.length}`;
-        }
+        // onRefresh: self => {
+        //   self.vars.start = `top ${window.innerHeight * 0.1}`;
+        //   self.vars.end = `+=${endPoint * elements.itemsWithIcons.length}`;
+        // }
       });
     };
 
