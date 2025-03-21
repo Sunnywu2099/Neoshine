@@ -122,6 +122,23 @@
             </div>
           </div>
         {%- endif -%}
+        <fieldset class="js product-form__input product-form__input--pill">
+            <legend class="form__label">
+              <span class="option_name">Ring size: </span>
+              <span data-selected-value>
+                {{- option.selected_value -}}
+              </span>
+              <span class="level_icon">{{ level_icon }}</span>
+            </legend>
+            <div class="value-wrapper{% if option.values.size > 3 %} has-level{% endif %}">
+              {% render 'product-variant-options',
+                product: product,
+                option: option,
+                block: block,
+                picker_type: picker_type
+              %}
+            </div>
+          </fieldset>
       </div>
     {%- endfor -%}
 
