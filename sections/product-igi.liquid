@@ -317,8 +317,8 @@
 
       state.scrollTrigger = ScrollTrigger.create({
         trigger: elements.container,
-        start: () => `top top`,
-        end: () => `+=80%`,
+        start: () => `top ${window.innerHeight * 0.1}`,
+        end: () => `+=100%`,
         pin: true,
         anticipatePin: 1,
         invalidateOnRefresh: true,
