@@ -131,7 +131,8 @@
       </div>
     {%- endfor -%}
 
-    <div class="v-wrapper">
+    {% if product.template_suffix != 'normal' and product.template_suffix != 'jewelry' %}
+      <div class="v-wrapper">
       <fieldset class="js product-form__input product-form__input--pill custom-size">
             <div class="form__label size_selector">
               <span class="option_name">Ring Size: </span>
@@ -146,8 +147,9 @@
               <label for="size-8" onclick="updateRingSize(8)">8</label>
             </div>
       </fieldset>
-    </div>
-
+      </div>
+    {% endif %}
+    
     <div class="find-size" style="text-decoration: underline;">{{ block.settings.find_size }}</div>
 
     <script type="application/json" data-selected-variant>
