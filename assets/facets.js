@@ -324,7 +324,6 @@ class FacetFiltersForm extends HTMLElement {
       }
 
       function updateVariantInfo($currentCard) {
-        console.log(variantData);
         const selectedOptions = {};
         // const selectedMetal = $currentCard.find('.option-button[data-option="Metal"].active').data('value');
         // const selectedClarity = $currentCard.find('.option-button[data-option="Clarity"].active').data('value');
