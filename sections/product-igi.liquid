@@ -290,7 +290,7 @@
 
     // 获取动态元素引用
     const getElements = () => ({
-      container: document.querySelector('.product-igi-wrapper'),
+      container: document.querySelector('.product-igi'),
       itemsWithIcons: document.querySelectorAll('.item-with-icons'),
       itemsWithoutIcons: document.querySelectorAll('.item-without-icons'),
     });
@@ -317,7 +317,7 @@
 
       state.scrollTrigger = ScrollTrigger.create({
         trigger: elements.container,
-        start: () => `top ${window.innerHeight * 0.1}`,
+        start: () => `top top`,
         end: () => `+=100%`,
         pin: true,
         anticipatePin: 1,
