@@ -9,15 +9,21 @@
   {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 {% endcomment %}
 
-{% comment %} <style>
-  fieldset.product-form__input .explain{
-    margin: 0;
-    color: #666;
+<style>
+  .custom-size label{
+    border-radius: var(--variant-pills-radius);
+    color: rgb(var(--color-foreground));
+    display: inline-block;
+    text-align: left;
+    transition: border var(--duration-short) ease;
+    cursor: pointer;
+    position: relative;
+    color: #787878;
     font-size: 14px;
-    margin-top: 5px;
-    margin-left: 5px;
+    font-weight: 400;
+    line-height: 20px;
   }
-</style> {% endcomment %}
+</style>
 
 
 {% capture level_icon %} 
@@ -126,7 +132,7 @@
     {%- endfor -%}
 
     <div class="v-wrapper">
-      <fieldset class="js product-form__input product-form__input--pill line-item-property__field">
+      <fieldset class="js product-form__input product-form__input--pill custom-size">
             <div class="form__label size_selector">
               <span class="option_name">Ring Size: </span>
               <span name="properties[Ring Size]">4</span>
