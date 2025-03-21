@@ -26,8 +26,8 @@
     display: flex;
     align-items: center;
   }
-  .trusted-grid .trusted-item img{
-    max-width: 80px;
+  .trusted-grid .trusted-item svg{
+    display: block;
   }
   .trusted-grid .trusted-item .item-title{
     margin: 0 0 7px;
@@ -58,7 +58,7 @@
       font-size: 12px;
       line-height: 18px;
     }
-    .trusted-grid .trusted-item img{
+    .trusted-grid .trusted-item svg{
       max-width: 53px;
       height: auto;
       object-fit: contain;
@@ -100,25 +100,12 @@
   }
 </style>
 
-{% assign full_width = '100vw' %}
-{% assign sizes = full_width %}
-{% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
 <div class="product-trusted-wrapper">
   <h2 class="section-title">{{section.settings.title}}</h2>
   <div class="trusted-grid">
     {% for block in section.blocks %}
       <div class="trusted-item">
-        {{
-              block.settings.icon
-              | image_url: width: 3840
-              | image_tag:
-                width: block.settings.icon.width,
-                height: block.settings.icon.height,
-                class: '',
-                sizes: sizes,
-                widths: widths,
-                loading: 'lazy'
-        }}
+        <div class="icon-wrapper">{{ block.settings.icon }}</div>
         <div class="content-box">
           <h3 class="item-title">{{block.settings.title}}</h3>
           <p class="item-text">{{block.settings.content}}</p>
@@ -155,7 +142,7 @@
         "name": "Item",
         "settings": [
           {
-            "type": "image_picker",
+            "type": "html",
             "id": "icon",
             "label": "icon"
           },

@@ -14,10 +14,14 @@
     display: flex;
     gap: 70px;
     justify-content: space-between;
+    align-items: center;
   }
   .trigger-box .item-with-icons .icon-box{
     width: 38px;
     flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .trigger-box .item-with-icons .icon-box img{
     width: auto;
@@ -85,6 +89,9 @@
     position: relative;
     overflow: hidden;
   }
+  .product-igi-wrapper .media-box img{
+    object-fit: contain;
+  }
   .product-igi-wrapper .media-box .img-second{
     position: absolute;
     top: 0;
@@ -123,7 +130,7 @@
     }
     .info-box-swiper .item .title-main{
       color: #79A88B;
-      font-size: 18px;
+      font-size: 16px;
     }
     .item-with-icons{
       margin-bottom: 0;
@@ -148,8 +155,8 @@
   <h2 class="section-title">{{section.settings.title}}</h2>
   <div class="trigger-box">
     <div class="media-box">
-      <img class="img-first" src="{{ section.settings.image_1 | img_url: 'master' }}" alt="section.settings.title" loading="lazy" width="900" height="">
-      <img class="img-second" src="{{ section.settings.image_2 | img_url: 'master' }}" alt="section.settings.title" loading="lazy" width="" height=""> 
+      <img class="img-first" src="{{ section.settings.image_1 | img_url: 'master' }}" alt="section.settings.title" loading="lazy" width="900" height="588">
+      <img class="img-second" src="{{ section.settings.image_2 | img_url: 'master' }}" alt="section.settings.title" loading="lazy" width="900" height="588"> 
     </div>
     <div class="info-box">
       {% for block in section.blocks %} 
@@ -158,7 +165,7 @@
               <h3 class="title-main">{{ block.settings.title_main }}</h3>
               <div class="flex">
                 <div class="icon-box">
-                  <img src="{{ block.settings.icon1 | img_url: 'master' }}" alt="block.settings.title_main" loading="lazy" width="" height="">
+                  {{ block.settings.icon1 }}
                 </div>
                 <div>
                   <div class="icon-title">{{ block.settings.title1 }}</div>
@@ -167,7 +174,7 @@
               </div>
               <div class="flex">
                 <div class="icon-box">
-                  <img src="{{ block.settings.icon2 | img_url: 'master' }}" alt="block.settings.title_main" loading="lazy" width="" height="">
+                  {{ block.settings.icon2 }}
                 </div>
                 <div>
                   <div class="icon-title">{{ block.settings.title2 }}</div>
@@ -176,7 +183,7 @@
               </div>
               <div class="flex">
                 <div class="icon-box">
-                  <img src="{{ block.settings.icon3 | img_url: 'master' }}" alt="block.settings.title_main" loading="lazy" width="" height="">
+                  {{ block.settings.icon3 }}
                 </div>
                 <div>
                   <div class="icon-title">{{ block.settings.title3 }}</div>
@@ -185,7 +192,7 @@
               </div>
               <div class="flex">
                 <div class="icon-box">
-                  <img src="{{ block.settings.icon4 | img_url: 'master' }}" alt="block.settings.title_main" loading="lazy" width="" height="">
+                  {{ block.settings.icon4 }}
                 </div>
                 <div>
                   <div class="icon-title">{{ block.settings.title4 }}</div>
@@ -214,7 +221,7 @@
                 <h3 class="title-main">{{ block.settings.title_main }}</h3>
                 <div class="flex">
                   <div class="icon-box">
-                    <img src="{{ block.settings.icon1 | img_url: 'master' }}" alt="block.settings.title_main" loading="lazy" width="" height="">
+                    {{ block.settings.icon1 }}
                   </div>
                   <div>
                     <div class="icon-title">{{ block.settings.title1 }}</div>
@@ -223,7 +230,7 @@
                 </div>
                 <div class="flex">
                   <div class="icon-box">
-                    <img src="{{ block.settings.icon2 | img_url: 'master' }}" alt="block.settings.title_main" loading="lazy" width="" height="">
+                    {{ block.settings.icon2 }}
                   </div>
                   <div>
                     <div class="icon-title">{{ block.settings.title2 }}</div>
@@ -232,7 +239,7 @@
                 </div>
                 <div class="flex">
                   <div class="icon-box">
-                    <img src="{{ block.settings.icon3 | img_url: 'master' }}" alt="block.settings.title_main" loading="lazy" width="" height="">
+                    {{ block.settings.icon3 }}
                   </div>
                   <div>
                     <div class="icon-title">{{ block.settings.title3 }}</div>
@@ -241,7 +248,7 @@
                 </div>
                 <div class="flex">
                   <div class="icon-box">
-                    <img src="{{ block.settings.icon4 | img_url: 'master' }}" alt="block.settings.title_main" loading="lazy" width="" height="">
+                    {{ block.settings.icon4 }}
                   </div>
                   <div>
                     <div class="icon-title">{{ block.settings.title4 }}</div>
@@ -265,6 +272,7 @@
     </div>
   </div>
 </div>
+
 
 <script async src="https://cdn.shopify.com/s/files/1/0897/6921/4241/files/gsap.min.js?v=1741231092"></script>
 <script async src="https://cdn.shopify.com/s/files/1/0897/6921/4241/files/ScrollTrigger.min.js?v=1741231096"></script>
@@ -428,7 +436,7 @@
             "label": "main title"
           },
           {
-            "type": "image_picker",
+            "type": "html",
             "id": "icon1",
             "label": "icon 1"
           },
@@ -443,7 +451,7 @@
             "label": "content 1"
           },
           {
-            "type": "image_picker",
+            "type": "html",
             "id": "icon2",
             "label": "icon 2"
           },
@@ -458,7 +466,7 @@
             "label": "content 2"
           },
           {
-            "type": "image_picker",
+            "type": "html",
             "id": "icon3",
             "label": "icon 3"
           },
@@ -473,7 +481,7 @@
             "label": "content 3"
           },
           {
-            "type": "image_picker",
+            "type": "html",
             "id": "icon4",
             "label": "icon 4"
           },

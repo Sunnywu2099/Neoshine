@@ -28,7 +28,7 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(1, 1fr);
     gap: 50px;
-    margin-top: 65px;
+    /* margin-top: 65px; */
     padding-top: 38px;
     border-top: 1px solid #121212;
   }
@@ -39,13 +39,16 @@
   .item-title{
     font-size: 20px;
     font-weight: 500;
-    line-height: 26px;
+    line-height: 1;
     margin: 0 0 12px;
   }
   .item-text{
     font-size: 15px;
     line-height: 1.4;
     margin: 0;
+  }
+  .product-perfection .icon-wrapper{
+    min-height: 65px;
   }
   @media screen and (max-width: 1200px) {
     #shopify-section-{{section.id}}.product-perfection{
@@ -139,7 +142,7 @@
       {% render 'responsive-image',
         sid: section.id,
         image_desktop: section.settings.img_pc,
-        image_mobile: section.settings.img_pc,
+        image_mobile: section.settings.img_m,
         alt: section.settings.title,
         lazy: true,
         preload: false
@@ -149,17 +152,7 @@
   <div class="product-perfection-grid">
     {% for block in section.blocks %}
       <div class="product-perfection-item">
-        {{
-              block.settings.icon
-              | image_url: width: 3840
-              | image_tag:
-                width: block.settings.icon.width,
-                height: block.settings.icon.height,
-                class: '',
-                sizes: sizes,
-                widths: widths,
-                loading: 'lazy'
-        }}
+        <div class="icon-wrapper">{{block.settings.icon}}</div>
         <div class="content-box">
           <h3 class="item-title">{{block.settings.title}}</h3>
           <p class="item-text">{{block.settings.content}}</p>
@@ -211,7 +204,7 @@
         "name": "Item",
         "settings": [
           {
-            "type": "image_picker",
+            "type": "html",
             "id": "icon",
             "label": "icon"
           },
