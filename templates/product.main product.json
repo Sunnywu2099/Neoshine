@@ -291,7 +291,7 @@
       "type": "product-toggle",
       "settings": {
         "title": "Color：What You See vs. What You Pay For",
-        "content": "Color in diamonds isn’t about bold hues—it’s about how white or yellow a diamond appears. The highest color grades, D-F, are completely colorless and the most sought after. But many buyers prefer G-J diamonds because they appear nearly identical to the untrained eye yet cost significantly less.<br><br>\nOne overlooked factor? Fluorescence. Diamonds with medium to strong fluorescence may look whiter than their grade suggests, especially in natural sunlight. A well-chosen H or I color diamond with fluorescence can look as bright as a D-F diamond while costing much less.",
+        "content": "Color in diamonds isn’t about bold hues—it’s about how <span class=\"brand-color\">white or yellow</span> a diamond appears. The highest color grades, <span class=\"brand-color\">D-F</span>, are completely colorless and the most sought after. But many buyers prefer <span class=\"brand-color\">G-J diamonds</span> because they appear nearly identical to the untrained eye yet cost significantly less.<br><br>\nOne overlooked factor? <span class=\"brand-color\">Fluorescence</span>. Diamonds with medium to strong fluorescence may look <span class=\"brand-color\">whiter than their grade suggests</span>, especially in natural sunlight. A well-chosen <span class=\"brand-color\">H or I color diamond with fluorescence</span> can look as bright as a D-F diamond while costing much less.",
         "img_pc": "shopify://shop_images/Group_1000002456.png",
         "img_m": "shopify://shop_images/Group_1000002457_1.png"
       }
